@@ -11,6 +11,12 @@ The pipeline is split in two on purpose. You gather and write content into an
 edition JSON; `scripts/build_email.py` turns that into the HTML. **Never
 hand-write the HTML** — the layout is not yours to redesign.
 
+**Two runtimes.** This file holds the editorial briefs and applies to both.
+The daily automated send runs in GitHub Actions and has no MCP connectors —
+see `.github/RUNBOOK_ACTIONS.md` for what changes there (SMTP instead of the
+Gmail tool, `fetch_arxiv.py` instead of alphaXiv). Run by hand from a Claude
+session and the connectors are available instead.
+
 ---
 
 ## 0. Load the memory first
@@ -33,7 +39,8 @@ last 60 days) before choosing content.
 ## 1. Gather
 
 ```bash
-python3 scripts/fetch_hn.py --hours 24 --limit 8 > /tmp/hn.json
+python3 scripts/fetch_hn.py --hours 24 --limit 8   > /tmp/hn.json
+python3 scripts/fetch_arxiv.py --days 3 --limit 12 > /tmp/arxiv.json
 ```
 
 | Section | Where from | What to get |
@@ -42,7 +49,7 @@ python3 scripts/fetch_hn.py --hours 24 --limit 8 > /tmp/hn.json
 | **Hacker News** | `fetch_hn.py` output | Top 5. **WebFetch each story URL** and write bullets from what the article actually says. Never summarise from a headline. |
 | **Markets** | WebSearch, most recent Indian close | Sensex and Nifty 50 closing levels with point *and* percentage change, notable sector indices, USD/INR, FII/DII flows. Exact figures from a named, linked source. |
 | **Trends** | WebSearch / Google News | 3 items: one Indian macro angle, one platform/industry shift, one wildcard. Real source links. |
-| **Research** | `alphaXiv discover_papers`, `prioritize: recency` | 2–3 recent papers. Link `https://www.alphaxiv.org/abs/<id>`. |
+| **Research** | `scripts/fetch_arxiv.py` (or `alphaXiv discover_papers` in a Claude session) | 2–3 recent papers. Read the abstract and write a takeaway, don't restate the title. |
 | **Odd ideas** | WebSearch for recent unusual company moves | 2–3 concrete things a *named* company actually did. A category ("brands are being weird") is not an item. |
 | **Learn** | You | One concept in 3 short paragraphs. Bias toward ML systems, statistics, optimisation, control, or finance. Tie it to something else in today's issue when you can. |
 | **Ten Ideas** | You | See the ideas brief below. |

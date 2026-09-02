@@ -1,0 +1,96 @@
+# The Morning — GitHub Actions runbook
+
+You are building and sending today's edition of *The Morning*, a personal
+newsletter for Ojas — a chemical engineering / data science student at IIT
+Madras. You are running headless in GitHub Actions. Nobody is watching, so
+never stop to ask for confirmation: make the call and keep going.
+
+The working directory is the repository root. `PROMPT.md` holds the editorial
+briefs — **read it first**, it is the source of truth for the quote brief, the
+ten-ideas brief, the accuracy rules and the voice. This file only covers what
+is *different* about running here.
+
+## What is different in Actions
+
+There are no MCP connectors on this runner. In particular:
+
+- **No Gmail tool.** Send with `scripts/send_email.py` over SMTP instead.
+- **No alphaXiv tool.** Use `scripts/fetch_arxiv.py` for the research section.
+- **Full internet access.** WebFetch works on any domain, so the rule about
+  reading each article before summarising it applies with no excuses.
+
+## Step 1 — memory
+
+```bash
+python3 scripts/history.py show
+```
+
+`state/history.json` is committed to this repository and pushed after every
+send, so it is authoritative and complete. Nothing may ever repeat: no quote,
+no idea, no ideas prompt, no Hacker News story, no link.
+
+## Step 2 — gather
+
+```bash
+python3 scripts/fetch_hn.py --hours 24 --limit 8      > /tmp/hn.json
+python3 scripts/fetch_arxiv.py --days 3 --limit 12    > /tmp/arxiv.json
+```
+
+Then follow the table in `PROMPT.md`. Specifically:
+
+- **WebFetch each Hacker News story URL** and write the bullets from what the
+  article actually says. Never summarise from a headline.
+- **Markets:** WebSearch plus WebFetch for the most recent Indian close.
+  Exact Sensex and Nifty levels with point *and* percentage change, sector
+  indices, USD/INR, FII/DII flows, each from a named source you link.
+- **Quote:** fetch a Goodreads tag page and quote verbatim. Re-read the quote
+  brief — an ordinary motivational quote is a failure, not a near miss.
+- **Research:** pick 2–3 from `/tmp/arxiv.json`. The API gives you the real
+  abstract; read it and write a takeaway rather than restating the title.
+- **Ten Ideas:** a fresh prompt every day, never one used in the last 120 days.
+
+If a figure cannot be verified, leave it out. Do not approximate.
+
+## Step 3 — build and check
+
+```bash
+python3 scripts/history.py check editions/<TODAY>.json    # MUST exit 0
+python3 scripts/build_email.py editions/<TODAY>.json > /tmp/edition.html
+```
+
+If `check` fails, replace the offending items and run it again. Never edit
+`history.py` to make it pass. Never send an edition that has not passed.
+
+## Step 4 — send
+
+Write a short plain-text fallback to `/tmp/edition.txt` (masthead, quote, the
+HN headlines with links, the market line, the section names). Then:
+
+```bash
+python3 scripts/send_email.py \
+  --html /tmp/edition.html \
+  --text-file /tmp/edition.txt \
+  --subject "The Morning · <Day D Mon> — <the three most interesting things>" \
+  --to "$RECIPIENT" \
+  <extra flags given to you, e.g. --dry-run>
+```
+
+`GMAIL_USER` and `GMAIL_APP_PASSWORD` are already in the environment. Never
+print them, never write them to a file, never include them in your summary.
+
+If you were given `--dry-run`, pass it through and do not record history.
+
+## Step 5 — record
+
+```bash
+python3 scripts/history.py record editions/<TODAY>.json
+```
+
+The workflow commits and pushes `editions/` and `state/` for you. Do not push
+yourself.
+
+## Finish
+
+End your final message with a short report: the quote and its author, the five
+HN headlines, the market line, the ideas prompt, and whether the send
+succeeded. If anything was omitted for lack of verification, say what and why.

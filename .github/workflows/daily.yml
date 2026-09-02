@@ -1,0 +1,112 @@
+name: The Morning
+
+on:
+  schedule:
+    # 01:30 UTC = 07:00 IST. GitHub may delay scheduled runs under load.
+    - cron: '30 1 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Build the edition but do not send it'
+        type: boolean
+        default: false
+
+concurrency:
+  group: the-morning
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install Claude Code
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Preflight
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: |
+          set -euo pipefail
+          missing=""
+          [ -n "${CLAUDE_CODE_OAUTH_TOKEN:-}" ] || missing="$missing CLAUDE_CODE_OAUTH_TOKEN"
+          [ -n "${GMAIL_USER:-}" ]              || missing="$missing GMAIL_USER"
+          [ -n "${GMAIL_APP_PASSWORD:-}" ]      || missing="$missing GMAIL_APP_PASSWORD"
+          if [ -n "$missing" ]; then
+            echo "::error::Missing repository secrets:$missing"
+            exit 1
+          fi
+          # Fail loudly here rather than half-way through a build.
+          python3 scripts/fetch_hn.py --hours 24 --limit 3 > /tmp/hn_probe.json
+          python3 -c "import json,sys; d=json.load(open('/tmp/hn_probe.json')); sys.exit(0 if d.get('stories') else 1)" \
+            || { echo '::error::Hacker News fetch returned nothing'; exit 1; }
+          echo "Preflight OK"
+
+      - name: Build and send today's edition
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          RECIPIENT: ${{ vars.RECIPIENT || 'ch22b007@smail.iitm.ac.in' }}
+          DRY_RUN: ${{ inputs.dry_run && '--dry-run' || '' }}
+        run: |
+          set -euo pipefail
+          TODAY=$(TZ=Asia/Kolkata date +%F)
+          echo "Building edition for $TODAY"
+
+          claude -p "$(cat .github/RUNBOOK_ACTIONS.md)
+
+          Today's edition date is $TODAY (Asia/Kolkata). Send to: $RECIPIENT
+          Pass these extra flags to scripts/send_email.py: $DRY_RUN" \
+            --model claude-opus-5 \
+            --permission-mode bypassPermissions \
+            --max-turns 120 \
+            --output-format text \
+            2>&1 | tee /tmp/agent.log
+
+          test -f "editions/$TODAY.json" \
+            || { echo "::error::Agent did not produce editions/$TODAY.json"; exit 1; }
+
+      - name: Commit history so tomorrow knows what today used
+        if: ${{ !inputs.dry_run }}
+        run: |
+          set -euo pipefail
+          git config user.name  "Ojas Phadake"
+          git config user.email "ch22b007@smail.iitm.ac.in"
+          git add editions state
+          if git diff --cached --quiet; then
+            echo "Nothing to commit"
+          else
+            git commit -m "Issue for $(TZ=Asia/Kolkata date +%F)"
+            git push
+          fi
+
+      - name: Upload the edition for inspection
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: edition-${{ github.run_id }}
+          path: |
+            editions/
+            /tmp/edition.html
+            /tmp/agent.log
+          if-no-files-found: warn
+          retention-days: 14

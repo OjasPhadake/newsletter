@@ -61,3 +61,31 @@ python3 scripts/history.py record editions/2026-09-04.json --message-id <id>
 
 The daily agent commits `state/history.json` back to this repo after each
 send, which is how tomorrow's run knows what yesterday used.
+
+## Automation
+
+The daily send runs in GitHub Actions (`.github/workflows/daily.yml`) at
+01:30 UTC = 07:00 IST, so it lands whether or not any machine of yours is on.
+The runner follows `.github/RUNBOOK_ACTIONS.md`, which defers to `PROMPT.md`
+for all editorial judgement.
+
+Actions runners have no MCP connectors, so two things differ from running this
+by hand in a Claude session:
+
+| | Claude session | GitHub Actions |
+|---|---|---|
+| Sending | Gmail connector | `scripts/send_email.py` over SMTP |
+| Research | alphaXiv connector | `scripts/fetch_arxiv.py` (arXiv Atom API) |
+
+### Required repository secrets
+
+| Secret | What it is |
+|---|---|
+| `CLAUDE_CODE_OAUTH_TOKEN` | From `claude setup-token` — runs on your Claude subscription, no API billing |
+| `GMAIL_USER` | The Gmail address that sends the newsletter |
+| `GMAIL_APP_PASSWORD` | A Google [app password](https://myaccount.google.com/apppasswords) (needs 2-Step Verification) |
+
+Optionally set a repository *variable* `RECIPIENT` to change where it goes.
+
+Run it by hand from the Actions tab with **Run workflow** — tick `dry_run` to
+build the edition and skip the send.
