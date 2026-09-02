@@ -70,6 +70,7 @@ jobs:
         run: |
           set -euo pipefail
           TODAY=$(TZ=Asia/Kolkata date +%F)
+          mkdir -p build
           echo "Building edition for $TODAY"
 
           claude -p "$(cat .github/RUNBOOK_ACTIONS.md)
@@ -80,7 +81,7 @@ jobs:
             --permission-mode bypassPermissions \
             --max-turns 120 \
             --output-format text \
-            2>&1 | tee /tmp/agent.log
+            2>&1 | tee build/agent.log
 
           test -f "editions/$TODAY.json" \
             || { echo "::error::Agent did not produce editions/$TODAY.json"; exit 1; }
@@ -106,7 +107,6 @@ jobs:
           name: edition-${{ github.run_id }}
           path: |
             editions/
-            /tmp/edition.html
-            /tmp/agent.log
-          if-no-files-found: warn
+            build/
+          if-no-files-found: error
           retention-days: 14

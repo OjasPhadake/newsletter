@@ -55,7 +55,7 @@ If a figure cannot be verified, leave it out. Do not approximate.
 
 ```bash
 python3 scripts/history.py check editions/<TODAY>.json    # MUST exit 0
-python3 scripts/build_email.py editions/<TODAY>.json > /tmp/edition.html
+python3 scripts/build_email.py editions/<TODAY>.json > build/edition.html
 ```
 
 If `check` fails, replace the offending items and run it again. Never edit
@@ -63,13 +63,13 @@ If `check` fails, replace the offending items and run it again. Never edit
 
 ## Step 4 — send
 
-Write a short plain-text fallback to `/tmp/edition.txt` (masthead, quote, the
+Write a short plain-text fallback to `build/edition.txt` (masthead, quote, the
 HN headlines with links, the market line, the section names). Then:
 
 ```bash
 python3 scripts/send_email.py \
-  --html /tmp/edition.html \
-  --text-file /tmp/edition.txt \
+  --html build/edition.html \
+  --text-file build/edition.txt \
   --subject "The Morning · <Day D Mon> — <the three most interesting things>" \
   --to "$RECIPIENT" \
   <extra flags given to you, e.g. --dry-run>
