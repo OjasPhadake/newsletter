@@ -1,0 +1,300 @@
+{
+  "date_line": "Thursday, 3 September 2026",
+  "issue": 1,
+  "preheader": "Clarke on the impossible; Firefox's last stand; Sensex slips on crude; and a $175 banana.",
+  "quote": {
+    "text": "The only way of discovering the limits of the possible is to venture a little way past them into the impossible.",
+    "author": "Arthur C. Clarke",
+    "work": "Profiles of the Future",
+    "source_url": "https://www.goodreads.com/quotes/tag/motivational",
+    "note": "Clarke's Second Law. He meant it as a rebuke to expert consensus: the people best qualified to say a thing is impossible are usually the ones with the most invested in it staying that way."
+  },
+  "hn": [
+    {
+      "title": "Hang on to Your Firefox",
+      "url": "https://www.newsonaut.com/articles/hang-on-to-your-firefox",
+      "hn_url": "https://news.ycombinator.com/item?id=49527748",
+      "points": 911,
+      "comments": 497,
+      "bullets": [
+        "Argues Firefox is the last genuinely independent browser engine — drop it and the web is Chrome variants plus Safari.",
+        "Frames Mozilla's unpopular decisions (staying on X, ad experiments) as symptoms of a shrinking user base, not the cause of it.",
+        "The comment thread is the real story: 497 replies split between 'this is emotional blackmail' and 'engine diversity is genuinely load-bearing'."
+      ]
+    },
+    {
+      "title": "A Note from LWN",
+      "url": "https://lwn.net/Articles/1090585/",
+      "hn_url": "https://news.ycombinator.com/item?id=49535752",
+      "points": 599,
+      "comments": 123,
+      "bullets": [
+        "LWN raises subscription prices ~20% from 15 September — its first increase since 2022. Tiers now run $6.00 to $55.00 a month.",
+        "The stated reason is simply cumulative inflation, which has run to almost exactly 20% over the same period.",
+        "Existing monthly subscribers keep the old rate for six more months. Notable mostly for how rare an unapologetic, arithmetic-only price rise has become."
+      ]
+    },
+    {
+      "title": "Gemini 3.8 Flash and 3.8 Flash Cyber",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/",
+      "hn_url": "https://news.ycombinator.com/item?id=49537553",
+      "points": 521,
+      "comments": 310,
+      "bullets": [
+        "Two releases: a general Flash model, and Flash Cyber — a variant tuned specifically for finding vulnerabilities and writing patches.",
+        "Google claims the base model beats most larger frontier models on DeepSWE v1.1, and that Cyber clears 70% success on internal real-world vulnerability tests across 20 languages.",
+        "$0.75 per million input tokens, $3.75 output (introductory, through 31 December). Cyber is gated to vetted defenders via a new 'Fairwind' programme."
+      ]
+    },
+    {
+      "title": "The ChatGPT/Codex app bundles a full copy of LibreOffice",
+      "url": "https://simonwillison.net/2026/Sep/1/codex-libreoffice/",
+      "hn_url": "https://news.ycombinator.com/item?id=49527396",
+      "points": 475,
+      "comments": 230,
+      "bullets": [
+        "Simon Willison went digging in the Codex desktop app's cache folder and found full Python and Node runtimes, plus native git, Poppler and LibreOffice binaries.",
+        "The runtime directory alone is 1.7 GB; LibreOffice accounts for 429.7 MB of it.",
+        "It is a shipping decision, not a bug: the agent gets to open and convert real documents locally without asking you to install anything. The cost is that a chat app now weighs as much as an OS."
+      ]
+    },
+    {
+      "title": "FBI Probes Service Selling 153M+ Drivers Licenses",
+      "url": "https://krebsonsecurity.com/2026/09/fbi-probes-service-selling-153m-drivers-licenses/",
+      "hn_url": "https://news.ycombinator.com/item?id=49529621",
+      "points": 352,
+      "comments": 231,
+      "bullets": [
+        "A dark-web service called Nexus advertised 153 million US and Canadian licences, 10M+ ID cards and 579,000 medical cards — as high-resolution scans including infrared and UV layers.",
+        "Krebs traced the source to idscan.net, a Louisiana ID-verification vendor whose scans happen at rental counters and dispensaries. It processes 21M+ verifications a month across 20,000 locations.",
+        "The FBI's New Orleans office opened an investigation on 1 September; Nexus went dark shortly after publication. The database had grown ~400,000 records in its first 24 hours online."
+      ]
+    }
+  ],
+  "markets": {
+    "indices": [
+      {
+        "name": "Sensex",
+        "value": "76,570.35",
+        "change": "373.93  (0.49%)",
+        "direction": "down"
+      },
+      {
+        "name": "Nifty 50",
+        "value": "23,914.45",
+        "change": "141.35  (0.59%)",
+        "direction": "down"
+      },
+      {
+        "name": "Nifty IT",
+        "value": "—",
+        "change": "1.25%",
+        "direction": "down"
+      },
+      {
+        "name": "Nifty Auto",
+        "value": "—",
+        "change": "1.79%",
+        "direction": "down"
+      },
+      {
+        "name": "Rupee (USD/INR)",
+        "value": "94.95",
+        "change": "2-month high",
+        "direction": "up"
+      },
+      {
+        "name": "Nifty Realty / PSU Bank",
+        "value": "—",
+        "change": "Both closed green",
+        "direction": "up"
+      }
+    ],
+    "stories": [
+      {
+        "headline": "Crude does the damage: Sensex ends 374 lower as Middle East strikes lift oil",
+        "url": "https://www.indiatvnews.com/business/markets/sensex-ends-373-93-points-lower-nifty-near-23-900-it-and-auto-shares-under-pressure-2026-09-02-1053062",
+        "source": "India TV",
+        "bullets": [
+          "A second day of losses. Another round of US strikes on Iran pushed crude higher and put global markets into risk-off.",
+          "IT (-1.25%) and auto (-1.79%) did the dragging; value buying in banks pulled the index off its intraday low.",
+          "Rate-sensitives held up — Nifty Realty and PSU Bank both closed green, which is the tell that this was an oil story, not a domestic-demand story."
+        ]
+      },
+      {
+        "headline": "The domestic picture underneath is still strong",
+        "url": "https://www.goldmansachs.com/insights/articles/the-outlook-for-indias-economy-in-2026-amid-new-us-tradedeal",
+        "source": "Goldman Sachs",
+        "bullets": [
+          "Q2 GDP came in at 7.8% year-on-year, ahead of expectations — the economy has absorbed the external shock better than the tape suggests.",
+          "Flows were positive into the fall: FIIs bought ₹1,143 crore and DIIs ₹1,847 crore on 1 September.",
+          "The rupee at 94.95 is a two-month high, having come off its 96.8 record low in May."
+        ]
+      }
+    ]
+  },
+  "trends": [
+    {
+      "tag": "Macro · India",
+      "headline": "Inflation is the thing to watch, not the index",
+      "url": "https://tradingeconomics.com/india/inflation-cpi",
+      "subtitle": "Energy is quietly re-entering the CPI print",
+      "bullets": [
+        "Headline inflation rose to 4.45% in July from 4.38% — the highest since December 2024, driven by Middle East energy prices feeding through.",
+        "The RBI has held the repo at 5.25% since February. A sustained crude move is the one thing that changes that calculus.",
+        "Consensus has the rupee ranging 94–96 through year-end, with the RBI's record net short dollar position as the structural worry."
+      ],
+      "link_label": "Data"
+    },
+    {
+      "tag": "Platforms",
+      "headline": "The app-store walls went up several inches this week",
+      "url": "https://webiterate.dev/google-removed-extensions-ublock-origin-108/",
+      "subtitle": "Three separate stories, one direction of travel",
+      "bullets": [
+        "Google finished removing Manifest V2 extensions from the Chrome Web Store, uBlock Origin among them.",
+        "Play Store blocked AuroraStore, which mainly hurts GrapheneOS users, and told AnkiDroid to drop its Open Collective donation link.",
+        "Counter-move the same week: Mozilla shipped a real ad blocker for Firefox on iOS. Worth watching as a coherent trend rather than three unrelated complaints."
+      ],
+      "link_label": "Read"
+    },
+    {
+      "tag": "Hardware",
+      "headline": "Apple got caught short by AI demand for desktop Macs",
+      "url": "https://www.macrumors.com/2026/08/30/apple-unexpected-mac-mini-and-studio-demand/",
+      "subtitle": "Unified memory turns out to be a cheap inference box",
+      "bullets": [
+        "Mac Mini and Mac Studio demand ran well ahead of Apple's forecasts, driven by people buying them to run models locally.",
+        "The draw is unified memory: large models fit in RAM at a price no discrete-GPU setup matches.",
+        "A useful signal that local inference is becoming a real hardware market, not just a hobbyist one."
+      ],
+      "link_label": "Read"
+    }
+  ],
+  "research": [
+    {
+      "tag": "Agents · RL",
+      "title": "SkillForge: Evolving Verifiable Skills for Reinforcement Learning Agents",
+      "url": "https://www.alphaxiv.org/abs/2608.24747",
+      "subtitle": "The week's most-upvoted agent paper on alphaXiv",
+      "bullets": [
+        "Tackles a real limitation: RL-trained LLM agents are episodic — they solve a task, then forget how they did it.",
+        "Proposes growing a library of reusable, verifiable skills across episodes so competence accumulates instead of resetting."
+      ],
+      "link_label": "Abstract"
+    },
+    {
+      "tag": "Inference",
+      "title": "AgentSpec: Speculative Decoding for Batch Inference of LLM Agents",
+      "url": "https://www.alphaxiv.org/abs/2608.24004",
+      "subtitle": "Latency work aimed squarely at agent workloads",
+      "bullets": [
+        "Applies speculative decoding to batched agent inference, where response time is the dominant complaint.",
+        "The claim is faster responses with no change to generation quality — see today's 'One Thing to Learn' for how that trick works."
+      ],
+      "link_label": "Abstract"
+    },
+    {
+      "tag": "Evaluation",
+      "title": "Learning Simple Test-Time Environments for LLM Web Agents",
+      "url": "https://www.alphaxiv.org/abs/2608.29305",
+      "subtitle": "On the gap between benchmark and browser",
+      "bullets": [
+        "Documents the familiar collapse: web agents that look strong in hand-built environments fall apart on real sites.",
+        "Proposes learning simplified stand-in environments at test time to close some of that distance."
+      ],
+      "link_label": "Abstract"
+    }
+  ],
+  "wild": [
+    {
+      "tag": "Retail theatre",
+      "headline": "The Ordinary opened a fake grocery store to sell a $175 banana",
+      "url": "https://www.famouscampaigns.com/2026/06/the-best-brand-campaigns-of-2026-so-far/",
+      "bullets": [
+        "'Markup Marché' was a working shop stocked with ordinary groceries at beauty-industry markups — the banana priced as if it were skincare.",
+        "It turns an abstract pricing argument into something you can pick up. Far more persuasive than a chart about margins."
+      ],
+      "link_label": "The full list"
+    },
+    {
+      "tag": "Product as message",
+      "headline": "KitKat made a wrapper that blocks phone signal",
+      "url": "https://www.famouscampaigns.com/2026/06/the-best-brand-campaigns-of-2026-so-far/",
+      "bullets": [
+        "A Faraday-cage wrapper that enforces 'have a break' literally: put the phone in the sleeve, and the break happens whether you meant it or not.",
+        "The rare case where a 60-year-old tagline gets re-argued as a physical object rather than a new film."
+      ],
+      "link_label": "Read"
+    },
+    {
+      "tag": "Media buying",
+      "headline": "National Geographic replaced its billboards with working bee hotels",
+      "url": "https://www.famouscampaigns.com/2026/06/the-best-brand-campaigns-of-2026-so-far/",
+      "bullets": [
+        "Purchased ad inventory, then converted the boards themselves into functioning habitats for solitary bees.",
+        "Honourable mentions this year: LEGO's ten driveable brick-built F1 cars at the Miami GP, and Supreme releasing a branded coffin."
+      ],
+      "link_label": "Read"
+    }
+  ],
+  "learn": {
+    "title": "Speculative decoding — why your model can be fast and exact at once",
+    "body": [
+      "An LLM normally generates one token at a time, and each token costs a full pass over the network. That is the bottleneck: you are memory-bandwidth-bound, running an enormous model to produce a handful of bits.",
+      "The trick: let a small, cheap draft model guess the next k tokens. Then run the big model once over all k in parallel — checking k tokens costs roughly the same as generating one, because the expensive part is loading the weights, not the arithmetic. Keep every prefix token the big model agrees with, throw away the rest, and repeat.",
+      "The elegant part is that this is not an approximation. With the right acceptance rule the output distribution is provably identical to what the big model would have produced alone. You are not trading quality for speed — you are just spending idle compute to buy back wasted bandwidth. Typical speedups run 2–3x, and it is why the AgentSpec paper above matters for anything agent-shaped."
+    ],
+    "tags": [
+      "Inference",
+      "Systems",
+      "Free lunch, almost"
+    ]
+  },
+  "ideas": {
+    "prompt": "Ten products that should exist but don't",
+    "note": "Altucher's drill from Tools of Titans: ten ideas a day, prompt changes daily, quality is not the point — the muscle is.",
+    "items": [
+      {
+        "text": "A kettle that tells you what your water is made of.",
+        "why": "An inline conductivity and turbidity sensor in the spout, logging anonymously to a public map. Chennai would have a live TDS atlas inside a month, built entirely by people making tea."
+      },
+      {
+        "text": "Scoville strips on restaurant menus.",
+        "why": "Dip it in the gravy, it changes colour on a printed scale. Ends the 'medium spicy?' negotiation permanently, in every language at once."
+      },
+      {
+        "text": "A résumé that ships as a container image.",
+        "why": "`docker run ojas/cv` and the projects actually execute in front of the recruiter instead of being described to them."
+      },
+      {
+        "text": "Textbooks that print their own errata.",
+        "why": "A QR on the spine resolving to the live corrections list for that exact edition and printing. The errata already exist; they are just stranded on a publisher's website nobody visits."
+      },
+      {
+        "text": "Noise-cancelling, but for smell.",
+        "why": "Directed airflow plus an activated-carbon collar. The destructive-interference trick doesn't transfer, but selective adsorption does — and the Chennai bus problem is worth solving."
+      },
+      {
+        "text": "Rentable thermal mass.",
+        "why": "Phase-change bricks you charge overnight on the cheap tariff and set in the room at 3pm. Cooling with no compressor, no duty cycle, and no wiring."
+      },
+      {
+        "text": "A citation half-life badge on arXiv.",
+        "why": "One number per paper: what fraction of its cited work has since been retracted, superseded, or failed to replicate. Brutal, cheap to compute, and nobody wants to ship it."
+      },
+      {
+        "text": "A regret button at checkout.",
+        "why": "Holds the order 24 hours and shows what else that money buys. No retailer will build it, which is exactly why it should be a browser extension."
+      },
+      {
+        "text": "A hostel-scale pressure-cook-and-seal machine.",
+        "why": "One cycle, a week of dal, vacuum-sealed portions. Unit operations you already know, aimed at the problem you actually have."
+      },
+      {
+        "text": "Receipts that print water footprint beside the price.",
+        "why": "Same font size, same line, no commentary. Nothing else about the receipt changes — that restraint is the whole design."
+      }
+    ]
+  }
+}

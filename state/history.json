@@ -1,0 +1,55 @@
+{
+  "editions": [
+    {
+      "date": "2026-09-03",
+      "issue": 1,
+      "quote_text": [
+        "The only way of discovering the limits of the possible is to venture a little way past them into the impossible."
+      ],
+      "quote_author": [
+        "Arthur C. Clarke"
+      ],
+      "idea_text": [
+        "A kettle that tells you what your water is made of.",
+        "Scoville strips on restaurant menus.",
+        "A résumé that ships as a container image.",
+        "Textbooks that print their own errata.",
+        "Noise-cancelling, but for smell.",
+        "Rentable thermal mass.",
+        "A citation half-life badge on arXiv.",
+        "A regret button at checkout.",
+        "A hostel-scale pressure-cook-and-seal machine.",
+        "Receipts that print water footprint beside the price."
+      ],
+      "idea_prompt": [
+        "Ten products that should exist but don't"
+      ],
+      "hn_id": [
+        "49527748",
+        "49535752",
+        "49537553",
+        "49527396",
+        "49529621"
+      ],
+      "link": [
+        "https://www.newsonaut.com/articles/hang-on-to-your-firefox",
+        "https://lwn.net/Articles/1090585/",
+        "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/",
+        "https://simonwillison.net/2026/Sep/1/codex-libreoffice/",
+        "https://krebsonsecurity.com/2026/09/fbi-probes-service-selling-153m-drivers-licenses/",
+        "https://tradingeconomics.com/india/inflation-cpi",
+        "https://webiterate.dev/google-removed-extensions-ublock-origin-108/",
+        "https://www.macrumors.com/2026/08/30/apple-unexpected-mac-mini-and-studio-demand/",
+        "https://www.famouscampaigns.com/2026/06/the-best-brand-campaigns-of-2026-so-far/",
+        "https://www.famouscampaigns.com/2026/06/the-best-brand-campaigns-of-2026-so-far/",
+        "https://www.famouscampaigns.com/2026/06/the-best-brand-campaigns-of-2026-so-far/",
+        "https://www.alphaxiv.org/abs/2608.24747",
+        "https://www.alphaxiv.org/abs/2608.24004",
+        "https://www.alphaxiv.org/abs/2608.29305",
+        "https://www.indiatvnews.com/business/markets/sensex-ends-373-93-points-lower-nifty-near-23-900-it-and-auto-shares-under-pressure-2026-09-02-1053062",
+        "https://www.goldmansachs.com/insights/articles/the-outlook-for-indias-economy-in-2026-amid-new-us-tradedeal"
+      ],
+      "gmail_message_id": "1a0637881ce0b1df"
+    }
+  ]
+}
