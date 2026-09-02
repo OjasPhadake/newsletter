@@ -138,10 +138,14 @@ def cmd_record(args):
         ed = json.load(f)
 
     day = os.path.splitext(os.path.basename(args.edition))[0]
+    issue = ed.get("issue")
     hist.setdefault("editions", [])
-    hist["editions"] = [x for x in hist["editions"] if x.get("date") != day]
+    # Re-recording the same issue replaces it; a second issue on the same day
+    # is kept alongside the first, so nothing it used is ever forgotten.
+    hist["editions"] = [x for x in hist["editions"]
+                        if not (x.get("date") == day and x.get("issue") == issue)]
 
-    entry = {"date": day, "issue": ed.get("issue")}
+    entry = {"date": day, "issue": issue}
     entry.update(harvest(ed))
     if args.message_id:
         entry["gmail_message_id"] = args.message_id
