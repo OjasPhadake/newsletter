@@ -94,3 +94,11 @@ yourself.
 End your final message with a short report: the quote and its author, the five
 HN headlines, the market line, the ideas prompt, and whether the send
 succeeded. If anything was omitted for lack of verification, say what and why.
+
+## If today's edition file already exists
+
+`editions/<TODAY>.json` may already be present if an issue went out earlier
+today. Do not overwrite it. Write `editions/<TODAY>-2.json` instead (then
+`-3`, and so on), and set `"issue"` to the next number. `history.py` reads the
+date from the filename prefix and keys records on (date, issue), so both
+issues stay on record and neither one's quote or ideas can come back.

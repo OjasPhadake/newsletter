@@ -89,22 +89,29 @@ jobs:
             --output-format text \
             2>&1 | tee build/agent.log
 
-          test -f "editions/$TODAY.json" \
-            || { echo "::error::Agent did not produce editions/$TODAY.json"; exit 1; }
+          # The agent writes <date>.json, or <date>-2.json for a second issue.
+          if ! compgen -G "editions/$TODAY*.json" > /dev/null; then
+            echo "::error::Agent produced no edition file for $TODAY"
+            exit 1
+          fi
+          echo "Built: $(ls editions/$TODAY*.json)"
 
       - name: Commit history so tomorrow knows what today used
-        # Skip on dry runs, and on tag builds (the tag ref is not a branch).
-        if: ${{ !inputs.dry_run && !startsWith(github.ref_name, 'run-') }}
+        # Only skipped for dry runs. A real tag run still has to record what it
+        # sent, or tomorrow's duplicate check is blind to it.
+        if: ${{ !inputs.dry_run && !startsWith(github.ref_name, 'run-dry-') }}
         run: |
           set -euo pipefail
           git config user.name  "Ojas Phadake"
           git config user.email "ch22b007@smail.iitm.ac.in"
           git add editions state
           if git diff --cached --quiet; then
-            echo "Nothing to commit"
+            echo "::warning::Nothing to commit — history was not updated"
           else
             git commit -m "Issue for $(TZ=Asia/Kolkata date +%F)"
-            git push
+            # A tag build has no branch checked out, so push HEAD at main.
+            git push origin HEAD:main || \
+              echo "::warning::Push failed; the issue was sent but history is unrecorded"
           fi
 
       - name: Upload the edition for inspection

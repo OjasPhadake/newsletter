@@ -137,7 +137,14 @@ def cmd_record(args):
     with open(args.edition, encoding="utf-8") as f:
         ed = json.load(f)
 
-    day = os.path.splitext(os.path.basename(args.edition))[0]
+    stem = os.path.splitext(os.path.basename(args.edition))[0]
+    # Accept 2026-09-03.json and 2026-09-03-2.json alike; the date is the
+    # prefix, and the issue number distinguishes editions within a day.
+    m = re.match(r"(\d{4}-\d{2}-\d{2})", stem)
+    if not m:
+        print(f"edition filename must start with YYYY-MM-DD: {stem}", file=sys.stderr)
+        return 2
+    day = m.group(1)
     issue = ed.get("issue")
     hist.setdefault("editions", [])
     # Re-recording the same issue replaces it; a second issue on the same day
