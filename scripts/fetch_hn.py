@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Fetch the best Hacker News stories from the last N hours.
+"""Fetch the top-voted Hacker News stories from the last N hours.
 
 Zero dependencies (stdlib only). Outputs JSON on stdout so the newsletter
 agent gets deterministic, real data instead of recalling it from memory.
 
 Usage:
-    python3 fetch_hn.py [--hours 24] [--limit 8] [--min-points 50]
+    python3 fetch_hn.py [--hours 48] [--limit 5] [--min-points 50]
 """
 import argparse
 import json
@@ -50,15 +50,15 @@ def fetch(hours: int, limit: int, min_points: int):
             "is_self_post": not h.get("url"),
         })
 
-    # Rank by points, but give a nudge to heavily-discussed items.
-    stories.sort(key=lambda s: s["points"] + 0.5 * s["comments"], reverse=True)
+    # Purely top-voted. Comment count is shown but never sways the ranking.
+    stories.sort(key=lambda s: s["points"], reverse=True)
     return stories[:limit]
 
 
 def main():
     p = argparse.ArgumentParser()
-    p.add_argument("--hours", type=int, default=24)
-    p.add_argument("--limit", type=int, default=8)
+    p.add_argument("--hours", type=int, default=48)
+    p.add_argument("--limit", type=int, default=5)
     p.add_argument("--min-points", type=int, default=50)
     a = p.parse_args()
 

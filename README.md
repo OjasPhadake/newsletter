@@ -13,7 +13,9 @@ Content and presentation are separate on purpose.
 
 ```
 PROMPT.md            what the scheduled agent does each morning
-scripts/fetch_hn.py  pulls top HN stories from the last N hours (stdlib only)
+scripts/fetch_hn.py  top-voted HN stories in a time window (default: 48h, top 5)
+scripts/fetch_papers.py  recent AI/ML/control papers from top labs, affiliation-checked
+scripts/fetch_ideas.py   raw material for Ten Ideas, from Reddit and Ask HN
 scripts/build_email.py  turns an edition JSON into the email HTML
 editions/*.json      one file per issue — the content, as data
 state/history.json   what has been sent, so the newsletter doesn't repeat itself
@@ -75,7 +77,7 @@ by hand in a Claude session:
 | | Claude session | GitHub Actions |
 |---|---|---|
 | Sending | Gmail connector | `scripts/send_email.py` over SMTP |
-| Research | alphaXiv connector | `scripts/fetch_arxiv.py` (arXiv Atom API) |
+| Research | alphaXiv connector | `scripts/fetch_papers.py` (OpenAlex + Hugging Face) |
 
 ### Required repository secrets
 
@@ -89,3 +91,23 @@ Optionally set a repository *variable* `RECIPIENT` to change where it goes.
 
 Run it by hand from the Actions tab with **Run workflow** — tick `dry_run` to
 build the edition and skip the send.
+
+## Where each section's material comes from
+
+| Section | Source | Note |
+|---|---|---|
+| Hacker News | Algolia API | Top 5 by points, last 48h. Ranking is votes only — never re-ordered by hand. |
+| Research | OpenAlex + Hugging Face daily papers | OpenAlex confirms author affiliation against ~26 frontier labs and universities; HF supplies freshness but must be affiliation-checked before use. |
+| Ten Ideas | Reddit RSS + Ask HN + YC RFS | Raw material only. Eight of ten are written fresh, informed by what people actually asked for; up to two may be adapted from a curated list, with attribution. |
+
+Two limitations worth knowing, both handled rather than hidden:
+
+- **Anthropic barely appears in OpenAlex** (`works_count` 0), so its papers
+  cannot be found by affiliation filter. The runbook tells the agent to search
+  for them instead.
+- **x.com cannot be read** — login-walled and JS-rendered, so no script or
+  WebFetch can pull a researcher's posts. Hugging Face upvotes and web search
+  stand in for "what respected people are highlighting".
+- **Reddit rejects unauthenticated JSON** (403) but serves Atom, so the
+  subreddits come in as RSS. It rate-limits bursts, so `fetch_ideas.py` paces
+  itself and stops asking after two consecutive 429s.

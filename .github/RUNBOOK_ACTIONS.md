@@ -15,7 +15,7 @@ is *different* about running here.
 There are no MCP connectors on this runner. In particular:
 
 - **No Gmail tool.** Send with `scripts/send_email.py` over SMTP instead.
-- **No alphaXiv tool.** Use `scripts/fetch_arxiv.py` for the research section.
+- **No alphaXiv tool.** Use `scripts/fetch_papers.py` for the research section.
 - **Full internet access.** WebFetch works on any domain, so the rule about
   reading each article before summarising it applies with no excuses.
 
@@ -32,22 +32,27 @@ no idea, no ideas prompt, no Hacker News story, no link.
 ## Step 2 — gather
 
 ```bash
-python3 scripts/fetch_hn.py --hours 24 --limit 8      > /tmp/hn.json
-python3 scripts/fetch_arxiv.py --days 3 --limit 12    > /tmp/arxiv.json
+python3 scripts/fetch_hn.py                    > /tmp/hn.json      # 48h, top 5 by votes
+python3 scripts/fetch_papers.py --days 30      > /tmp/papers.json
+python3 scripts/fetch_ideas.py                 > /tmp/ideas.json
 ```
 
 Then follow the table in `PROMPT.md`. Specifically:
 
-- **WebFetch each Hacker News story URL** and write the bullets from what the
-  article actually says. Never summarise from a headline.
+- **Hacker News:** take the five stories `fetch_hn.py` returns, in its order.
+  They are the top-voted of the last 48 hours; do not re-rank them. WebFetch
+  each URL and write the bullets from what the article actually says.
 - **Markets:** WebSearch plus WebFetch for the most recent Indian close.
   Exact Sensex and Nifty levels with point *and* percentage change, sector
   indices, USD/INR, FII/DII flows, each from a named source you link.
 - **Quote:** fetch a Goodreads tag page and quote verbatim. Re-read the quote
   brief — an ordinary motivational quote is a failure, not a near miss.
-- **Research:** pick 2–3 from `/tmp/arxiv.json`. The API gives you the real
-  abstract; read it and write a takeaway rather than restating the title.
-- **Ten Ideas:** a fresh prompt every day, never one used in the last 120 days.
+- **Research:** use `/tmp/papers.json`. Prefer the `verified` bucket, whose
+  affiliations OpenAlex has confirmed. Anything from `trending` needs its
+  arXiv page fetched to confirm a qualifying lab before you use it.
+- **Ten Ideas:** a fresh, plainly-worded prompt every day, never one used in
+  the last 120 days. Ground them in `/tmp/ideas.json`; if Reddit rate-limited
+  the script, WebFetch the subreddit RSS feeds directly.
 
 If a figure cannot be verified, leave it out. Do not approximate.
 
