@@ -10,6 +10,12 @@ on:
         description: 'Build the edition but do not send it'
         type: boolean
         default: false
+  push:
+    # Manual trigger without the Actions UI: push a tag.
+    #   run-dry-<n>  builds the edition and skips the send
+    #   run-<n>      builds and sends for real
+    tags:
+      - 'run-*'
 
 concurrency:
   group: the-morning
@@ -66,7 +72,7 @@ jobs:
           GMAIL_USER: ${{ secrets.GMAIL_USER }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           RECIPIENT: ${{ vars.RECIPIENT || 'ch22b007@smail.iitm.ac.in' }}
-          DRY_RUN: ${{ inputs.dry_run && '--dry-run' || '' }}
+          DRY_RUN: ${{ (inputs.dry_run || startsWith(github.ref_name, 'run-dry-')) && '--dry-run' || '' }}
         run: |
           set -euo pipefail
           TODAY=$(TZ=Asia/Kolkata date +%F)
@@ -87,7 +93,8 @@ jobs:
             || { echo "::error::Agent did not produce editions/$TODAY.json"; exit 1; }
 
       - name: Commit history so tomorrow knows what today used
-        if: ${{ !inputs.dry_run }}
+        # Skip on dry runs, and on tag builds (the tag ref is not a branch).
+        if: ${{ !inputs.dry_run && !startsWith(github.ref_name, 'run-') }}
         run: |
           set -euo pipefail
           git config user.name  "Ojas Phadake"
