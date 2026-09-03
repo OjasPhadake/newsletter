@@ -1,0 +1,300 @@
+{
+  "date_line": "Thursday, 3 September 2026 · Third edition",
+  "issue": 3,
+  "preheader": "Douglas Adams on praying against the afterlife; a 67-cent transformer scoring 44% on ARC; the rupee's best level in two months; and Coca-Cola turning its bottle into chopsticks.",
+  "quote": {
+    "text": "He hoped and prayed that there wasn't an afterlife. Then he realized there was a contradiction involved here and merely hoped that there wasn't an afterlife.",
+    "author": "Douglas Adams",
+    "work": "Life, the Universe and Everything",
+    "source_url": "https://www.goodreads.com/quotes/tag/paradox",
+    "note": "The joke is a proof. Prayer presupposes exactly the arrangement he is hoping against, so the act of wishing hard enough quietly refutes the wish. Most stated preferences have a version of this bug in them; his is just short enough to see."
+  },
+  "hn": [
+    {
+      "title": "Claude Fable 5.1 and Claude Mythos 5.1",
+      "url": "https://www.anthropic.com/claude-fable-and-mythos-5-1",
+      "hn_url": "https://news.ycombinator.com/item?id=49525378",
+      "points": 1385,
+      "comments": 1346,
+      "bullets": [
+        "Two models, one set of weights. Fable 5.1 is generally available; Mythos 5.1 is the same underlying model at a different safeguard level, released only into trusted-access programmes.",
+        "Terminal-Bench-Science 0.1 goes from 24.7% on Fable 5 to 52.6% — the largest single jump on the board. Agentic coding on Terminal-Bench 4.0 is 55.8% for Fable, 60.9% for Mythos; Humanity's Last Exam with tools is 65.0%; OSWorld 2.0 strict is 41.7%.",
+        "$10 per million input tokens and $50 per million output. Cache reads dropped 75% to $0.25/Mtok, which is where the claimed ~25% cost reduction on typical workloads (up to ~45% on agentic ones) actually comes from.",
+        "The science claims are the ones to argue about: protein binders with binding affinities \"10 times higher\" than competition submissions and a hit rate of nearly 50% across 12 targets, and a Venus elevation map resolved to two or three kilometres where the prior maps sat at 10–20 km."
+      ]
+    },
+    {
+      "title": "Google Play will not let AnkiDroid link to its donation page",
+      "url": "https://github.com/ankidroid/Anki-Android/issues/21656",
+      "hn_url": "https://news.ycombinator.com/item?id=49520022",
+      "points": 908,
+      "comments": 274,
+      "bullets": [
+        "Play's Payments Policy allows apps to point outside Google's billing only for donations to \"a validated tax-exempt organization\". AnkiDroid links to Open Collective, whose fiscal host is the Open Source Collective.",
+        "AnkiDroid supplied the IRS determination letter. Open Source Collective is tax-exempt under IRC 501(c)(6). Google rejected it on 6 August on the grounds that the organisation \"is not tax-exempt\", and rejected the app update on 28 August.",
+        "The timeline: notice on 20 July, restricted everywhere except India and Russia on 3 August, worldwide removal threatened from 11 September.",
+        "AnkiDroid is removing the donation link \"under protest\" and has asked Google to say plainly whether 501(c)(6) counts. The unresolved question is not the policy but who at Google is qualified to read an IRS letter."
+      ]
+    },
+    {
+      "title": "How accurate have Ed Zitron's AI skeptic predictions been?",
+      "url": "https://danluu.com/zitron/",
+      "hn_url": "https://news.ycombinator.com/item?id=49526069",
+      "points": 843,
+      "comments": 1011,
+      "bullets": [
+        "Dan Luu scores 26-plus dated predictions from the most widely cited AI sceptic and finds none of them came true. \"Peak AI\" is called in March 2024 and again in January 2025; \"running out of data\" in April 2024; the bubble popping \"no later than Q2 2026\" in October 2025.",
+        "Specific misses: Anthropic's $34.5bn 2027 revenue projection called \"laughable\" in February 2025; Gemini reaching 500M users by end-2025 called unrealistic, and it reached 750M; Cursor \"going to die\" in July 2025, followed by a $60bn exit.",
+        "The financial argument gets the same treatment. Meta was described as dying while posting $165bn revenue and $69bn profit in 2024; Alphabet went $350bn to $403bn; Microsoft $262bn to $305bn.",
+        "Luu's real target is the method, not the score. He argues the numbers are decoration — a gish gallop that costs more to refute than to produce — and compares it to Kurzweil in reverse: the same rhetorical machinery, pointed the other way. Worth reading as a lesson in how to audit a pundit rather than as a defence of AI."
+      ]
+    },
+    {
+      "title": "A transformer trained in 1.5 hours for 67 cents scores 44% on ARC-AGI-1",
+      "url": "https://mvakde.github.io/blog/44-on-arc-1/",
+      "hn_url": "https://news.ycombinator.com/item?id=49519939",
+      "points": 652,
+      "comments": 163,
+      "bullets": [
+        "An 8-layer transformer from scratch — SwiGLU, RMSNorm, flash attention with varlen packing, 3D RoPE over the grids, per-task learnable embeddings — trained for 1.5 hours on one RTX 5090. Total lifetime compute cost: 67 cents. Score: 44% on ARC-AGI-1, 7% on ARC-2.",
+        "It is transductive, and the author says so up front: the model trains at test time on the example pairs and the hidden test inputs of every eval puzzle at once, then votes across colour and dihedral augmentations and submits the two most common outputs.",
+        "Dropping the input-modelling loss moved it 40% → 44%, and the author admits to not knowing why. The ablations are the interesting part: most of the score survives with neither augmentation nor synthetic data.",
+        "He also refuses the headline comparison he could have made. LLM scores on the public eval are contaminated, and LLM cost figures exclude pretraining, so he argues for separate leaderboards by training paradigm rather than one graph with everything on it."
+      ]
+    },
+    {
+      "title": "Firefox on iOS gets a built-in ad blocker",
+      "url": "https://blog.mozilla.org/en/firefox/ad-blocker-on-ios/",
+      "hn_url": "https://news.ycombinator.com/item?id=49521973",
+      "points": 575,
+      "comments": 185,
+      "bullets": [
+        "Built on Apple's WebKit Content Blocker API and the EasyList filter list, shipped inside the browser rather than as an extension, because iOS does not give Firefox the extension model it has on desktop. Settings → Browsing → Ad Blocker, off by default.",
+        "It blocks third-party ads and their trackers before they load. It does not block ads the site serves itself, search-result ads, or Mozilla's own sponsored new-tab shortcuts — which is stated on the page rather than buried.",
+        "Announced 1 September. Read next to the AnkiDroid thread above: the same week one store tightened what an app may say about money, a browser shipped the thing extensions used to do."
+      ]
+    }
+  ],
+  "markets": {
+    "indices": [
+      {
+        "name": "Sensex · 11:00 IST",
+        "value": "76,741.75",
+        "change": "171.40  (0.22%)",
+        "direction": "up"
+      },
+      {
+        "name": "Nifty 50 · 11:00 IST",
+        "value": "23,963.20",
+        "change": "48.75  (0.20%)",
+        "direction": "up"
+      },
+      {
+        "name": "Sensex · 2 Sep close",
+        "value": "76,570.35",
+        "change": "373.93  (0.49%)",
+        "direction": "down"
+      },
+      {
+        "name": "Nifty 50 · 2 Sep close",
+        "value": "23,914.45",
+        "change": "141.35  (0.59%)",
+        "direction": "down"
+      },
+      {
+        "name": "Rupee (USD/INR) · open",
+        "value": "94.30",
+        "change": "67 paise stronger",
+        "direction": "up"
+      },
+      {
+        "name": "Nifty Smallcap",
+        "value": "—",
+        "change": "0.9% (early trade)",
+        "direction": "up"
+      },
+      {
+        "name": "Nifty Midcap",
+        "value": "—",
+        "change": "0.2% (early trade)",
+        "direction": "up"
+      }
+    ],
+    "stories": [
+      {
+        "headline": "The rupee's two-month high has an RBI number behind it",
+        "url": "https://www.businesstoday.in/latest/economy/story/rupee-jumps-67-paise-to-open-at-94-30-against-the-us-dollar-highest-level-in-two-months-553025-2026-09-03",
+        "source": "Business Today",
+        "bullets": [
+          "The rupee opened Thursday at 94.30 to the dollar, 67 paise stronger and its best level in two months.",
+          "The stated cause is not flows or oil. The RBI's special capital-raising programmes brought in roughly $136 billion against a previously estimated $80 billion — a 70% overshoot on the number the market had priced.",
+          "MUFG's Michael Wan reads it as the RBI's FX measures having cut the risk of a sharp depreciation. Shinhan Bank sees roughly 93.50 in the coming days.",
+          "Written mid-session. This is Thursday's opening level, not a close."
+        ]
+      },
+      {
+        "headline": "Foreign money kept buying a falling market",
+        "url": "https://groww.in/fii-dii-data",
+        "source": "Groww (NSE/BSE provisional cash data)",
+        "bullets": [
+          "Wednesday 2 September, the last completed session: FIIs net bought ₹6,688.37 crore in cash — ₹26,715.88 crore bought against ₹20,027.51 crore sold — while the Nifty fell 141.35 points.",
+          "DIIs added ₹2,812.98 crore net, on ₹17,639.89 crore of buying against ₹14,826.91 crore of selling.",
+          "On 1 September the same measure was ₹1,143.38 crore of FII net buying. The foreign bid multiplied roughly sixfold into a down day, which is the opposite of what a risk-off tape looks like.",
+          "Thursday opened green on that base, snapping a three-day losing streak, with financials leading and market breadth at 1,913 advances to 425 declines in early trade."
+        ]
+      }
+    ]
+  },
+  "trends": [
+    {
+      "tag": "Macro · India",
+      "headline": "A year of tariff whiplash did not reduce India's dependence on America",
+      "url": "https://www.outlookbusiness.com/news/trump-tariffs-couldnt-break-indias-us-export-habit-heres-why",
+      "subtitle": "The diversification story and the trade data disagree",
+      "bullets": [
+        "Over the twelve months to July 2026 the US took about 20% of India's exports, worth $88.5 billion. In 2022-23, before any of this, the share was 17.4%. It went up.",
+        "That is despite a tariff line that ran to 50% at its peak, fell to 18% in February 2026 and sits at 10% now. Exports to China grew 42% year on year to $21.5 billion — real diversification, but from a base a quarter the size.",
+        "FIEO's Ajay Sahai puts the honest timeline on it: \"it will take at least two to three years for market diversification to show meaningful results.\" Trade routes are capital and relationships, and neither reroutes at the speed of a tariff announcement."
+      ],
+      "link_label": "Read"
+    },
+    {
+      "tag": "AI · Security",
+      "headline": "Both frontier labs shipped an offensive-cyber model this week, then locked the door",
+      "url": "https://blog.google/innovation-and-ai/technology/safety-security/fairwind-program/",
+      "subtitle": "The capability arrived first and the access policy is being written around it",
+      "bullets": [
+        "Google announced Fairwind on 2 September: Gemini 3.8 Flash Cyber plus the CodeMender harness, doing autonomous vulnerability discovery and patch generation, available only to governments, critical-infrastructure operators and trusted partners. It claims patches in minutes rather than weeks, with 650+ partners and $100M of Google.org cyber funding behind it.",
+        "OpenAI's own post the day before says Astra is its first model to meet the Critical cybersecurity threshold under the Preparedness Framework — defined as finding and weaponising zero-days in hardened real-world systems without human intervention. Its August assessment already listed isolated test environments, restricted network and tool access, encrypted weights and universal monitoring for risky actions.",
+        "The pattern is worth naming. For two years the safety argument was hypothetical; this is the first week both labs shipped the capability and simultaneously said who is not allowed to have it. A gated-access list is a weaker control than a capability limit, and it is the one they chose."
+      ],
+      "link_label": "Read"
+    },
+    {
+      "tag": "Wildcard · Space",
+      "headline": "Roman launched, and will survey the sky a thousand times faster than Hubble",
+      "url": "https://www.nasa.gov/news-release/nasas-dark-universe-seeking-nancy-grace-roman-space-telescope-launches/",
+      "subtitle": "Same resolution, vastly bigger field of view",
+      "bullets": [
+        "The Nancy Grace Roman Space Telescope went up on a Falcon Heavy from LC-39A at 7:26 a.m. EDT on Sunday 30 August. It takes about three months to reach L2, roughly 1.6 million km out.",
+        "The mission claim is throughput, not sharpness: a large field of view paired with crisp infrared vision, surveying \"a thousand times faster than\" Hubble. Dark matter, dark energy and exoplanets are the three targets, with a coronagraph riding along as a technology demo for imaging Jupiter-like planets.",
+        "First images are expected early 2027. NASA administrator Jared Isaacman noted it arrived \"ahead of schedule and on budget\", which for a flagship observatory is the genuinely surprising part."
+      ],
+      "link_label": "Read"
+    }
+  ],
+  "research": [
+    {
+      "tag": "Industry · Microsoft Research",
+      "title": "Skala 1.1: a learned exchange-correlation functional, now in the mainstream DFT codes",
+      "url": "https://www.microsoft.com/en-us/research/blog/broadening-access-to-skala-creates-a-faster-path-to-predictive-dft/",
+      "subtitle": "Hybrid-functional accuracy at semi-local cost",
+      "bullets": [
+        "Skala is a neural exchange-correlation functional. Version 1.1, posted 20 August, scores a weighted average error of 2.8 kcal/mol on GMTKN55 and ranks first in 32 of its 55 categories — beating the best and most expensive global hybrids while costing what a semi-local functional costs.",
+        "On GPUs it runs at the same cost as r2SCAN, and the overhead disappears above roughly 300 orbitals. It was trained on 2.5x more data than 1.0, all of it from MSR-ACC, their own collection of wavefunction-method reference calculations.",
+        "The distribution news is the real news: it is now in CP2K, with integration underway into Psi4, FHI-aims, ORCA and VASP, plus a PySCF community release. A functional nobody can run in their existing workflow is a paper; one shipped inside ORCA is a tool.",
+        "Note the framing they chose. Skala is versioned and each release supersedes the last, rather than joining the permanent zoo of functionals you have to know how to choose between. That is a software convention imported into computational chemistry, and it is arguably the more consequential idea."
+      ],
+      "link_label": "Read"
+    },
+    {
+      "tag": "Academia · UC Berkeley & LBNL",
+      "title": "uMOF: a universal database, benchmark and interatomic potentials for metal-organic frameworks",
+      "url": "https://arxiv.org/abs/2608.28100",
+      "subtitle": "The dataset was the bottleneck, not the model",
+      "bullets": [
+        "Submitted 28 August by Jaffrelot Inizan, Divakar Kamath, Elena and Persson (Berkeley Lab, UC Berkeley, STFC Daresbury). 85,524 configurations across 19,950 unique frameworks and 79 elements, all at r2SCAN-D4 — empty and gas-loaded structures, geometry optimisations, equations of state and finite-temperature MD.",
+        "The benchmark is the part to steal. 3,986 verified property values, 3,146 of them experimental, mined from 626 papers by an LLM pipeline and linked back to 650+ CIF files. Somebody finally did the tedious job of connecting computed structures to measured reality.",
+        "Two potentials released, uMOF-MH and uMOF-POLAR, both fine-tuned from different MACE foundation models. On gas adsorption they beat every baseline tested, cutting error by more than 80% to within experimental uncertainty; on near-equilibrium properties like bulk modulus and phonon heat capacity they are merely comparable.",
+        "Read together with Skala above: one paper makes quantum-accurate energies cheap, the other makes the reference data exist. Both are attacking the same bottleneck from opposite ends, and for anything gas-separation-shaped this is the pair that matters."
+      ],
+      "link_label": "Abstract"
+    }
+  ],
+  "wild": [
+    {
+      "tag": "Product as brand cue",
+      "headline": "Coca-Cola turned its contour bottle into a chopstick",
+      "url": "https://www.yankodesign.com/2026/06/01/coca-cola-just-turned-its-iconic-bottle-into-chopsticks/",
+      "bullets": [
+        "CokeSticks are food-grade stainless steel chopsticks shaped as the silhouette of the contour bottle. No logo, no wordmark — the outline and the red do the work.",
+        "The problem being solved is a real one: Coke is the default pairing with Western food and not with Asian food, so it is absent from the table where most meals in the region happen. They are not sold, only distributed through restaurants, street stalls and delivery platforms across Southeast Asia, targeting around 700,000 diners.",
+        "Most brand assets ask to be looked at. This one asks to be held for the length of a meal, which is a different and much cheaper kind of media buy."
+      ],
+      "link_label": "Read"
+    },
+    {
+      "tag": "Instructions as produce",
+      "headline": "Corona laser-etched cutting guides onto limes",
+      "url": "https://creative.salon/articles/features/cannes-lions-2026-winners-tuesday-23-june",
+      "bullets": [
+        "Real limes with subtle food-safe laser marks on the skin showing exactly where to slice for a wedge that fits the bottle neck. Thousands of them, distributed through retailers and delivery apps.",
+        "Grey New York took a Design Lions Bronze at Cannes for it. The insight is that the ritual has a failure mode nobody complains about because it feels like your own incompetence.",
+        "The fruit becomes the manual. It is the only packaging insert in history that gets eaten."
+      ],
+      "link_label": "Read"
+    },
+    {
+      "tag": "Scarcity, taken literally",
+      "headline": "Liquid Death sold ten cans of Ozzy Osbourne's DNA at $450 each",
+      "url": "https://loudwire.com/liquid-death-cans-ozzy-osbourne-dna/",
+      "bullets": [
+        "\"Infinite Ozzy\": ten iced tea cans he drank from, then sealed to preserve the DNA, each hand-signed and boxed in a lab-quality display case. $450 a can, on their own site.",
+        "Osbourne's contribution to the copy was \"Clone me, you bastards.\"",
+        "The commercial logic is that a limited edition is normally a manufactured constraint. Here the constraint is genuine — there are exactly ten of them, and the input cannot be reordered."
+      ],
+      "link_label": "Read"
+    }
+  ],
+  "learn": {
+    "title": "The barcode took twenty-five years to get from a beach in Miami to a pack of chewing gum",
+    "body": [
+      "In January 1949 Joe Woodland was sitting on Miami Beach thinking about Morse code, and he drew four fingers through the sand and pulled them towards himself. Dots and dashes, stretched downwards into thick and thin lines. He and Bernard Silver filed the patent that year and it was granted in 1952. Nothing happened. The idea was fine; the laser that could read it cheaply and the computer that could look up the price did not exist yet, and would not for two decades.",
+      "What eventually unblocked it was not a better invention but a committee. American grocers, who were the ones losing money to slow checkouts and bad inventory counts, formed one to pick a single standard, and on 30 March 1973 they chose IBM's design over RCA's. Woodland's original bull's-eye lost. George Laurer's rectangle won, for the unglamorous reason that a rectangle prints accurately on a cheap press and a circle smears. The whole modern retail world turns on a printing-tolerance argument.",
+      "The first real scan happened at 8:02 in the morning on 26 June 1974, at a Marsh supermarket in Troy, Ohio. Clyde Dawson, Marsh's head of R&D, brought a multipack of Wrigley's Juicy Fruit to the till; Sharon Buchanan scanned it; it cost 67 cents. The pack is now in the Smithsonian. Adoption still took another decade — it only really moved in the 1980s, and by 2004 it was in use at 80 to 90 percent of America's 500 largest companies. Fifty-five years from the sand to saturation, and the hard part was never the stripes."
+    ],
+    "tags": [
+      "Origin stories",
+      "Standards",
+      "Retail"
+    ]
+  },
+  "ideas": {
+    "prompt": "Ten ways to make a long train journey something you look forward to",
+    "note": "Altucher's drill: ten ideas a day against one prompt. Today's is the travel-and-experiences family — nothing technical, nothing that needs a business plan.",
+    "items": [
+      {
+        "text": "A seat-swap board at the station, so groups travelling apart can trade into one bay."
+      },
+      {
+        "text": "Sleeper-class curtains that actually close, sold as a ten-rupee clip you carry in your bag."
+      },
+      {
+        "text": "A regional snack subscription that meets you on the platform at whichever junction you pass at dinnertime."
+      },
+      {
+        "text": "Route-timed audio: a two-hour story that ends exactly as you pull into your station."
+      },
+      {
+        "text": "A window seat rated by what is outside it, not by legroom.",
+        "why": "Somebody should publish the good stretches — the ghats, the Godavari bridge — and the times of day you actually get to see them."
+      },
+      {
+        "text": "A one-page paper newspaper printed for that specific train, that morning."
+      },
+      {
+        "text": "Compartment-sized board games with magnetic pieces and no small parts to lose."
+      },
+      {
+        "text": "A shared playlist per coach that anyone aboard can add one song to."
+      },
+      {
+        "text": "Left-luggage lockers at the arrival station booked from the train, so you can walk out and go straight somewhere."
+      },
+      {
+        "text": "Something that puts randomness back into what you watch or read on a long journey.",
+        "why": "A recurring ask on r/SomebodyMakeThis, where people keep requesting a way to break their own algorithmic feeds; a train is the one place you have the time for it."
+      }
+    ]
+  }
+}
