@@ -15,6 +15,7 @@ Content and presentation are separate on purpose.
 PROMPT.md            what the scheduled agent does each morning
 scripts/fetch_hn.py  top-voted HN stories in a time window (default: 48h, top 5)
 scripts/fetch_papers.py  recent AI/ML/control papers from top labs, affiliation-checked
+scripts/fetch_labs.py    recent posts from the labs' own research blogs
 scripts/fetch_ideas.py   raw material for Ten Ideas, from Reddit and Ask HN
 scripts/build_email.py  turns an edition JSON into the email HTML
 editions/*.json      one file per issue — the content, as data
@@ -97,14 +98,17 @@ build the edition and skip the send.
 | Section | Source | Note |
 |---|---|---|
 | Hacker News | Algolia API | Top 5 by points, last 48h. Ranking is votes only — never re-ordered by hand. |
-| Research | OpenAlex + Hugging Face daily papers | OpenAlex confirms author affiliation against ~26 frontier labs and universities; HF supplies freshness but must be affiliation-checked before use. |
+| Research | Lab blogs + OpenAlex + Hugging Face | Lab blogs first — a post on anthropic.com/research needs no affiliation inference. OpenAlex confirms university affiliations; HF supplies freshness but must be checked. |
 | Ten Ideas | Reddit RSS + Ask HN + YC RFS | Raw material only. Eight of ten are written fresh, informed by what people actually asked for; up to two may be adapted from a curated list, with attribution. |
 
 Two limitations worth knowing, both handled rather than hidden:
 
-- **Anthropic barely appears in OpenAlex** (`works_count` 0), so its papers
-  cannot be found by affiliation filter. The runbook tells the agent to search
-  for them instead.
+- **OpenAlex resolves industry affiliations badly.** Measured: only ~2% of the
+  last month's arXiv AI papers carry a resolved affiliation to any of the 26
+  institutions (~5% at 90 days, as indexing catches up), and it knows of just
+  ~22 OpenAI and ~88 DeepMind arXiv papers in a year — a small fraction of
+  reality. Anthropic's `works_count` is 0. This is why `fetch_labs.py` exists
+  and is consulted first.
 - **x.com cannot be read** — login-walled and JS-rendered, so no script or
   WebFetch can pull a researcher's posts. Hugging Face upvotes and web search
   stand in for "what respected people are highlighting".

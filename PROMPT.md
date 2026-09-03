@@ -37,6 +37,7 @@ enforces it and the send is blocked until it passes.
 ```bash
 python3 scripts/fetch_hn.py                        > /tmp/hn.json      # 48h, top 5 by votes
 python3 scripts/fetch_papers.py --days 30          > /tmp/papers.json
+python3 scripts/fetch_labs.py   --days 30          > /tmp/labs.json
 python3 scripts/fetch_ideas.py                     > /tmp/ideas.json
 ```
 
@@ -46,7 +47,7 @@ python3 scripts/fetch_ideas.py                     > /tmp/ideas.json
 | **Hacker News** | `fetch_hn.py` | See the Hacker News brief. |
 | **Markets** | WebSearch + WebFetch | Sensex and Nifty 50 closing levels with point *and* percentage change, sector indices, USD/INR, FII/DII flows. Exact figures from a named, linked source. |
 | **Trends** | WebSearch / Google News | 3 items: one Indian macro angle, one platform/industry shift, one wildcard. Real source links. |
-| **Research** | `fetch_papers.py` | See the research brief. |
+| **Research** | `fetch_labs.py` + `fetch_papers.py` | See the research brief. |
 | **Odd ideas** | WebSearch | 2–3 concrete things a *named* company actually did. A category ("brands are being weird") is not an item. |
 | **Learn** | You | See the learn brief. |
 | **Ten Ideas** | `fetch_ideas.py` | See the ideas brief. |
@@ -98,12 +99,31 @@ UW, Cornell, NYU, UIUC, Georgia Tech, Columbia, Michigan, Oxford, Cambridge,
 ETH Zürich, EPFL, Toronto, Mila. This list is a floor, not a ceiling — any
 comparably serious group counts.
 
-`fetch_papers.py` returns two buckets:
+**Start with `fetch_labs.py`.** It pulls recent posts straight from the labs'
+own research blogs — Anthropic, OpenAI, DeepMind, Google Research, Microsoft
+Research, Meta FAIR, MIT News, CMU MLD, Berkeley BAIR. This is the most
+reliable source by a wide margin, because a post on `anthropic.com/research`
+is Anthropic's by construction and needs no affiliation inference. Blog posts
+are also often more readable than the paper, and usually link to it.
+
+Two things to watch in that output:
+
+- **OpenAI's feed is general news**, not research. It mixes papers with
+  customer stories and product launches. Filter hard; "How law firm X scales
+  AI with OpenAI" is not a research paper.
+- **Anthropic entries have slug-derived titles and no dates** (`title_is_slug`
+  and `needs_date_check` are set), because the site publishes no feed. Fetch
+  the page to get the real title and confirm it is within the month.
+
+`fetch_papers.py` then returns two further buckets:
 
 - **`verified`** — OpenAlex has resolved the author affiliations to one of the
-  institutions above, so the affiliation is confirmed. Prefer these. The
-  catch is that OpenAlex indexes arXiv with a lag, so this bucket skews a
-  week or two old.
+  institutions above, so the affiliation is confirmed. Good for *university*
+  work. Be aware it is far from complete: only about 2% of the last month's
+  arXiv AI papers carry a resolved affiliation, rising to ~5% at 90 days as
+  indexing catches up, and industry labs resolve especially badly (OpenAlex
+  knows of only ~22 OpenAI arXiv papers in a year). Absence here means
+  nothing — use `fetch_labs.py` for the frontier labs.
 - **`trending`** — Hugging Face's daily papers. Fresh and community-picked,
   but carries **no affiliation data**. Before using one, WebFetch its arXiv
   abstract page and confirm a qualifying affiliation. If you cannot confirm
@@ -111,17 +131,21 @@ comparably serious group counts.
 
 Two known gaps to work around:
 
-- **Anthropic is essentially absent from OpenAlex.** For Anthropic and some
-  OpenAI work, search instead: their research pages, or WebSearch for recent
-  releases. Verify the date is within the month.
+- **Anthropic is essentially absent from OpenAlex** (`works_count` 0). Its
+  work comes from `fetch_labs.py` or a direct search of anthropic.com/research.
 - **x.com cannot be read.** It is login-walled and JavaScript-rendered, so
   neither WebFetch nor a script can reliably pull a researcher's posts. To get
   the same signal — what respected people are actually highlighting — use the
   Hugging Face upvote counts in `trending`, and WebSearch for coverage of a
   lab's recent work. Do not pretend to have read a post you could not fetch.
 
-Pick 2–3. Read the abstract and write a takeaway, don't restate the title.
-Say which lab or university it came from — that is half the reason it is here.
+Pick 2–3, and prefer a spread — not three papers from the same lab. A lab
+blog post counts, provided it is genuinely about research rather than a
+product launch or a customer story.
+
+Read the actual page or abstract and write a takeaway; never restate the
+title. Say which lab or university it came from — that is half the reason it
+is here.
 
 ### The learn brief
 
