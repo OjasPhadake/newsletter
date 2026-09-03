@@ -1,0 +1,313 @@
+{
+  "date_line": "Thursday, 3 September 2026 · Second edition",
+  "issue": 2,
+  "preheader": "Gauss on having the answer first; who actually writes the web that AI reads; 86 tonnes of Dutch gold moves to London; and diamond turns out to be piezoelectric.",
+  "quote": {
+    "text": "I have had my results for a long time: but I do not yet know how I am to arrive at them.",
+    "author": "Carl Friedrich Gauss",
+    "source_url": "https://www.goodreads.com/quotes/tag/epistemology",
+    "note": "The order is the joke, and it is not a joke. Gauss knew what was true before he could prove it — the proof was reconstruction, not discovery. Every paper you have ever read was written backwards from the result, then presented as if it had been derived forwards."
+  },
+  "hn": [
+    {
+      "title": "Three sites made 215,128 “best software” pages for AI. Perplexity cites them",
+      "url": "https://trellner.com/reports/manufactured-sources-behind-ai-recommendations/",
+      "hn_url": "https://news.ycombinator.com/item?id=49536375",
+      "points": 333,
+      "comments": 159,
+      "bullets": [
+        "760 queries to Perplexity's sonar and sonar-pro across 380 software categories returned 7,534 citations across 2,055 domains. 59.8% of them pointed at sites ranked worse than #100,000 on Tranco; 23.4% were outside the top million entirely. Median cited domain rank: 71,611.",
+        "Three linked domains — wifitalents.com, worldmetrics.org, gitnux.org — account for 215,128 machine-generated /best/<category>-software/ pages between them. Each has a sitemap of 100,000+ URLs and roughly six actual blog posts. All three registered between December 2023 and May 2024.",
+        "The tell is that they stopped pretending to address humans: shared Cloudflare nameservers, identical templates, pages captioned \"Facts & Grounding Page\", and homepages still showing unrendered template variables like \"Within the next 26 days\".",
+        "Caveats the author states himself: Perplexity only, a single day's snapshot, a research user-agent, and 380 categories he wrote rather than observed. The third-most-cited source overall was GuideFlow — a company that sells interactive product demos, not reviews."
+      ]
+    },
+    {
+      "title": "Dutch central bank moves a quarter of its North American gold to London",
+      "url": "https://nltimes.nl/2026/09/02/dutch-central-bank-moves-share-gold-us-canada-london-cites-instability",
+      "hn_url": "https://news.ycombinator.com/item?id=49535526",
+      "points": 222,
+      "comments": 223,
+      "bullets": [
+        "DNB shifted about 86 tonnes out of New York and Ottawa between March and August 2026 — more than a quarter of the ~313 tonnes it held there. The Netherlands holds 612.4 tonnes in total, worth €72.2bn at end-2025.",
+        "Only 27 tonnes physically moved. The other 59 were sold in New York and repurchased in London, which sidesteps shipping and re-melting costs entirely — the gold in the Manhattan vault never left.",
+        "London goes from 18.1% to 32.1% of reserves and is now the largest single location; New York falls from 31.3% to 18.5%. The stated reason is \"crisis readiness\": London is where physical gold actually trades, so reserves held there can be sold faster.",
+        "Read plainly, this is a liquidity decision. Read the way the comment thread read it, a central bank quietly reduced its exposure to assets sitting in the United States."
+      ]
+    },
+    {
+      "title": "Muse Spark 1.3",
+      "url": "https://developer.meta.com/ai/models/muse-spark/",
+      "hn_url": "https://news.ycombinator.com/item?id=49541256",
+      "points": 442,
+      "comments": 297,
+      "bullets": [
+        "Meta's agentic coding model, updated: 1M-token context, native video/image/document input, and a max-reasoning mode. The pitch is fewer unnecessary turns on long-horizon tasks rather than a benchmark number.",
+        "The interesting part is the price list. $1.25/Mtok in, $4.25/Mtok out if your data is not used for product improvement — or $0.10 and $0.20 if it is. Meta has put an explicit price on your privacy: roughly 20x.",
+        "Available via the Meta Model API, a terminal tool called Muse Code, and OpenRouter. Cached input is $0.15/Mtok on the private tier."
+      ]
+    },
+    {
+      "title": "Can I opt out of my input or output data being used for training?",
+      "url": "https://help.mistral.ai/en/articles/455207-can-i-opt-out-of-my-input-or-output-data-being-used-for-training",
+      "hn_url": "https://news.ycombinator.com/item?id=49535284",
+      "points": 392,
+      "comments": 168,
+      "bullets": [
+        "A support article, upvoted 392 times, which tells you what the news actually was: standard Vibe users are not opted out by default. Vibe Enterprise customers are.",
+        "The opt-outs do not compose. Vibe and the API are separate toggles, and turning one off leaves the other on — the page says so directly.",
+        "Pairs uncomfortably with the Muse Spark pricing above. One vendor charges you for privacy, the other makes you find the switch. Neither makes it the default for the people least likely to look."
+      ]
+    },
+    {
+      "title": "Commodore 64 released September 1, 1982",
+      "url": "https://dfarq.homeip.net/commodore-64-released-september-1-1982/",
+      "hn_url": "https://news.ycombinator.com/item?id=49533497",
+      "points": 335,
+      "comments": 175,
+      "bullets": [
+        "Under $600 for 64KB of RAM, 16 colours, 8 hardware sprites and the three-voice SID chip. 500,000 units in six months, about 5 million by fiscal 1984, and somewhere between 10.6 and 12.3 million lifetime.",
+        "The date is contested because Commodore sold through retailers: to have machines on shelves on 1 September they had to ship in August, which is why engineers remember an August launch.",
+        "The author's argument is about compromise, not nostalgia. The disk drive was slow and the modem support poor, but the graphics/sound/memory budget was allocated exactly where programmers could exploit it — and they kept exploiting it for years past Commodore's own three-year projection."
+      ]
+    }
+  ],
+  "markets": {
+    "indices": [
+      {
+        "name": "Sensex",
+        "value": "76,570.35",
+        "change": "373.93  (0.49%)",
+        "direction": "down"
+      },
+      {
+        "name": "Nifty 50",
+        "value": "23,914.45",
+        "change": "141.35  (0.59%)",
+        "direction": "down"
+      },
+      {
+        "name": "Bank Nifty",
+        "value": "57,172.00",
+        "change": "237.60  (0.41%)",
+        "direction": "down"
+      },
+      {
+        "name": "Nifty Auto",
+        "value": "—",
+        "change": "1.79%",
+        "direction": "down"
+      },
+      {
+        "name": "Nifty Energy",
+        "value": "—",
+        "change": "0.59%",
+        "direction": "up"
+      },
+      {
+        "name": "Brent crude",
+        "value": "$96.99",
+        "change": "0.46%",
+        "direction": "down"
+      },
+      {
+        "name": "Rupee (USD/INR)",
+        "value": "94.90",
+        "change": "near 2-month high",
+        "direction": "up"
+      }
+    ],
+    "stories": [
+      {
+        "headline": "The index fell and foreigners bought it anyway",
+        "url": "https://www.5paisa.com/share-market-today/fii-dii-data",
+        "source": "5paisa (NSE/BSE provisional cash data)",
+        "bullets": [
+          "Wednesday 2 September close, the last completed session. FIIs were net buyers of ₹6,688.40 crore in the cash segment — ₹26,715.90 crore bought against ₹20,027.50 crore sold — on a day the Nifty lost 141 points.",
+          "DIIs added ₹2,813.00 crore on top. Combined institutional net buying of about ₹9,500 crore against a falling tape is not what risk-off looks like.",
+          "For scale: the same measure on 1 September was ₹1,143 crore of FII buying. The foreign bid multiplied roughly sixfold into the weakness."
+        ]
+      },
+      {
+        "headline": "Where the damage actually was: autos and IT, not the whole market",
+        "url": "https://blog.liquide.life/share-market-today-nifty-falls-below-24-000-auto-it-stocks-drag-market-lower-while-energy-gains/",
+        "source": "Liquide",
+        "bullets": [
+          "Auto (-1.79%) and IT (-1.25%) did almost all of it. Energy closed up 0.59% and Realty up 0.21%; Pharma was flat at -0.04%.",
+          "Coal India +4.05% to ₹417.85 led the index. Eicher Motors -3.24% to ₹7,711.50, Wipro -2.54% and M&M -2.12% led it down.",
+          "Brent sat at $96.99, itself down 0.46% on the day. The oil scare that drove the selling had already stopped getting worse by the close — which is roughly the shape of a sentiment move, not a demand one.",
+          "Markets are open as this goes out; these are Wednesday's closing figures, not live prices."
+        ]
+      }
+    ]
+  },
+  "trends": [
+    {
+      "tag": "Macro · India",
+      "headline": "The rupee is holding a two-month high into a Fed that may hike",
+      "url": "https://www.fxstreet.com/news/indian-rupee-holds-onto-two-month-high-against-us-dollar-202609020548",
+      "subtitle": "Growth upgrades on one side, hawkish Fed bets on the other",
+      "bullets": [
+        "USD/INR at 94.90 on Wednesday, holding Tuesday's move to roughly 94.80 — the strongest in two months.",
+        "Standard Chartered lifted its FY27 India growth forecast to 7.2% from 6.6% after Q1-FY27 GDP printed 7.8%.",
+        "The counterweight is a market leaning toward a 25bp Fed hike on 16 September. A currency this firm against a dollar that may be about to get more expensive is being held up by domestic fundamentals, not by carry."
+      ],
+      "link_label": "Read"
+    },
+    {
+      "tag": "Antitrust",
+      "headline": "Google keeps its ad stack. Again.",
+      "url": "https://techxplore.com/news/2026-09-google-ad-business.html",
+      "subtitle": "Behavioural remedies, no divestiture",
+      "bullets": [
+        "Judge Leonie Brinkema (E.D. Va.) declined on 2 September to order Google to sell AdX or open-source its auction logic, after ruling in 2025 that Google had illegally monopolised the publisher ad-server and ad-exchange markets by tying them.",
+        "She imposed operating rules instead. Nobody knows what they say: the opinion is sealed for 14 days for redactions, and the parties have 30 days to file a joint proposed final judgment.",
+        "The DOJ's framing had been that this was \"Goldman Sachs owning the New York Stock Exchange\". Google's VP said the company was \"very pleased\". It is the second time in a year a court has found a tech monopoly and then declined to break it up — the Chrome divestiture was refused too."
+      ],
+      "link_label": "Read"
+    },
+    {
+      "tag": "Materials",
+      "headline": "Diamond is piezoelectric after all, if you make it thin enough",
+      "url": "https://www.sciencedaily.com/releases/2026/08/260829035223.htm",
+      "subtitle": "A century-old classification, overturned by a grain boundary",
+      "bullets": [
+        "HKU's Zhiqin Chu and Yuan Lin made ultrathin polycrystalline diamond membranes by edge exfoliation, bent them, and got stable, repeatable voltage.",
+        "Single-crystal diamond is centrosymmetric, which is exactly why it was classed non-piezoelectric for over a century. The membranes are polycrystalline — the grain boundaries are asymmetric, and the symmetry argument stops applying at the boundary.",
+        "Published in Science Advances on 31 August. Named applications are self-powered implants and diamond sensors; the more useful lesson is that \"the theory says no\" often means \"the theory says no for the idealised structure\"."
+      ],
+      "link_label": "Read"
+    }
+  ],
+  "research": [
+    {
+      "tag": "Numerics · GPU",
+      "title": "GRADSOLVE: fast exact gradients for ODE ensembles on GPUs",
+      "url": "https://arxiv.org/abs/2609.02876v1",
+      "subtitle": "Record the steps once, differentiate the recording forever",
+      "bullets": [
+        "The trick is separating the two jobs an adaptive solver does. It runs adaptively once, records which steps it accepted, then differentiates a fixed-step replay of exactly those steps — a fixed-length chain is far cheaper to reverse than an adaptive loop.",
+        "The gradient is not an approximation: it is the exact discrete adjoint of the accepted steps, the same derivative Diffrax returns by default.",
+        "2.8x faster than DiffEqGPU.jl as a plain solver; 5.6–14.1x faster than Diffrax's checkpointed adjoint for gradients once a record exists, at matched forward accuracy. The advantage narrows on large ensembles and falls to parity on stiff systems at tight tolerance — which is honest reporting, and worth noting if your ODEs are reaction kinetics."
+      ],
+      "link_label": "Abstract"
+    },
+    {
+      "tag": "Optimisation",
+      "title": "Improved Gradient Descent Lower Bounds Beyond Nesterov",
+      "url": "https://arxiv.org/abs/2609.02855v1",
+      "subtitle": "How much can a stepsize schedule alone buy you?",
+      "bullets": [
+        "Question: with stepsizes fixed in advance, how fast can plain gradient descent possibly be made to converge on smooth convex problems? The paper pushes the lower bound from Ω(n⁻¹·⁹³²) to Ω(n⁻¹·⁶³⁴²) in the non-anytime setting.",
+        "The result that matters is the anytime bound of Ω(n⁻¹·²⁴⁰⁸). Combined with the O(n^-log₂(1+√2)) rate that silver schedules achieve without the anytime requirement, it proves a strict separation.",
+        "In plain terms: demanding that your iterate be good at *every* step, rather than only at a step you named in advance, provably costs you convergence rate. Early stopping is not free, and now there is a number attached."
+      ],
+      "link_label": "Abstract"
+    },
+    {
+      "tag": "Evaluation",
+      "title": "User Feedback Provides a Unique Signal that LLMs Cannot Detect",
+      "url": "https://arxiv.org/abs/2609.02859v1",
+      "subtitle": "The signal was fine; the judge was broken",
+      "bullets": [
+        "Consensus has been that naturally occurring user feedback is too noisy to train on. The authors build synthetic data with definitive ground truth and show the opposite: feedback-informed revisions fix the targeted issue at significantly higher rates.",
+        "The failure was in the measurement. When a model fixes a problem *only* because a user pointed it out, LLM judges frequently fail to recognise the corrected response and systematically prefer the worse baseline.",
+        "Worth sitting with: an evaluation bias made a real learning signal look like noise for long enough that the field wrote it off. Gauss's quote at the top applies — the result was there before anyone could show it."
+      ],
+      "link_label": "Abstract"
+    }
+  ],
+  "wild": [
+    {
+      "tag": "Packaging as argument",
+      "headline": "Chupa Chups made 250 lollipops that are genuinely impossible to open",
+      "url": "https://packagingeurope.com/news/impossible-chupa-chups-packaging-promotes-new-easier-to-open-wrapper/14021.article",
+      "bullets": [
+        "The actual news is boring: Perfetti Van Melle fixed the wrapper so it peels. To announce it, BBH London built the opposite — a limited run of 250 lollipops coated in carbon fibre, aramid, silicon carbide and dipped in liquid rubber.",
+        "Blade-proof, fireproof, and rated to 1,000 kg before cracking. They were sent to influencers including the Hydraulic Press Channel, which is the entire media plan and probably the entire brief.",
+        "The inversion is the craft: you cannot make people notice that something got easier, so you spend the budget making one thing impossible instead."
+      ],
+      "link_label": "Read"
+    },
+    {
+      "tag": "Format engineering",
+      "headline": "Heinz put ketchup in a keg",
+      "url": "https://news.kraftheinzcompany.com/press-releases-details/2026/Pour-Yourself-a-Red-One-Introducing-the-KegChup--the-First-Keg-of-Unmistakably-Rich-HEINZ-Ketchup/default.aspx",
+      "bullets": [
+        "19.5 inches of stainless steel holding 114 oz of ketchup, with a spigot. Giveaway ran 27–29 January on Instagram; pre-orders opened with the 2026 football season.",
+        "The stated problem is real and unglamorous — ketchup only ships in bottles, and bottles run out mid-party. The solution is a dispensing format borrowed wholesale from beer.",
+        "Most brand stunts change the message. This one changed the unit of sale, which is a much harder thing to fake."
+      ],
+      "link_label": "Read"
+    },
+    {
+      "tag": "Retail theatre",
+      "headline": "Chili's opened a fake loan office next door to a McDonald's",
+      "url": "https://storychief.io/blog/recent-innovative-marketing-campaigns",
+      "bullets": [
+        "\"Fast Food Financing\" was a working storefront in New York, staged as a lending office for people who could no longer afford fast food, positioned beside an actual McDonald's.",
+        "The product argument — that the Big QP undercuts the competition — is a price claim, and price claims are forgettable. A loan office for a burger is not."
+      ],
+      "link_label": "Read"
+    }
+  ],
+  "learn": {
+    "title": "Discrete vs continuous adjoints — why you should differentiate the solver, not the equation",
+    "body": [
+      "You have an ODE with parameters — a reactor model, say — and you want d(loss)/d(parameters) so you can fit it. There are two honest ways to get that gradient, and they do not give the same answer. The continuous adjoint derives a second ODE backwards in time from the mathematics, then solves it numerically. The discrete adjoint takes the numerical solver you actually ran — every accepted Runge-Kutta stage, every step size the controller chose — and backpropagates through that sequence of arithmetic operations.",
+      "The continuous adjoint is memory-cheap, because you never store the forward trajectory. Its problem is consistency: you are differentiating the true ODE while your loss was computed by an approximate solver, so the gradient you get is the gradient of a slightly different function than the one you are minimising. With a loose tolerance or a stiff system, that mismatch shows up as an optimiser that stalls at a point where the true gradient is not zero. The discrete adjoint has no such gap. It returns the exact derivative of the number your forward pass actually produced, tolerance error and all.",
+      "The catch has always been cost: an adaptive solver is a variable-length loop with data-dependent control flow, which is miserable to reverse and forces checkpointing. GRADSOLVE, in today's research section, gets around it by noticing that you usually solve the same ensemble many times. Run adaptively once, record which steps were accepted, then replay those steps at fixed size — now the reverse pass is a fixed-length chain, trivially differentiable, and 5–14x cheaper. The gradient is still exact, because the recorded steps *are* what the solver did. Reuse the mesh, not the trajectory."
+    ],
+    "tags": [
+      "Numerics",
+      "Autodiff",
+      "ODEs"
+    ]
+  },
+  "ideas": {
+    "prompt": "Ten businesses that only make sense now that machines, not people, read the web",
+    "note": "Altucher's drill: ten ideas a day, prompt changes daily, quality is not the point — the muscle is. Today's prompt comes from the Trellner report at the top of this issue.",
+    "items": [
+      {
+        "text": "A bonded claim registry: publish a fact, stake money against it.",
+        "why": "You post ₹5,000 per claim into escrow, forfeited to whoever disproves it. Detection of machine-written slop is an arms race you lose; making a false claim cost money is a game the 215,128-page farms cannot afford to enter."
+      },
+      {
+        "text": "Source-quality scoring for answer engines, published monthly.",
+        "why": "Trellner computed a median Tranco rank of 71,611 for Perplexity's citations in one afternoon. Run that continuously across every engine and you have the Nielsen ratings of AI search — and the first number a procurement team will ask for."
+      },
+      {
+        "text": "Reverse SEO: getting a person's name *out* of model outputs.",
+        "why": "The right-to-be-forgotten was built for search indexes you could petition. Nobody sells the equivalent for weights and retrieval caches, and the first defamation suit over a hallucinated bio will create the market overnight."
+      },
+      {
+        "text": "A robots.txt licensing broker for publishers under 100k readers.",
+        "why": "Individually they have no leverage and no lawyer. Pooled into one negotiating block with one machine-readable licence file, they are a corpus. This is a collecting society, and collecting societies are famously durable businesses."
+      },
+      {
+        "text": "Stringers-for-hire who go physically verify one fact.",
+        "why": "₹200 to have someone walk to the address, photograph the shopfront and confirm the business exists. Every AI-generated local directory in India is unfalsifiable at scale — which means ground truth becomes a per-unit purchase."
+      },
+      {
+        "text": "Structured-claim hosting: your facts, emitted for retrieval, not for reading.",
+        "why": "Not a website. A signed, versioned feed of atomic claims with provenance, designed to be the cheapest correct thing for a retriever to grab. The farms already write for machines; the honest version of that is a product nobody sells yet."
+      },
+      {
+        "text": "Competitive intelligence on which fake sites recommend your rival.",
+        "why": "If gitnux.org ranks your competitor first in 400 categories, that is an ad buy you never made and cannot see. Someone should sell the dashboard, and then, inevitably, the remediation."
+      },
+      {
+        "text": "Errors-and-omissions insurance for purchases made on an AI recommendation.",
+        "why": "Procurement teams are already buying software an LLM suggested. The moment one of those tools fails an audit, somebody asks who carried the risk. Pricing it requires exactly the citation-quality data in idea 2."
+      },
+      {
+        "text": "A domain-age and template-similarity API, sold as one boolean.",
+        "why": "All three farm domains shared nameservers, page templates and a registration window of five months. That is a cheap query. Selling it as `is_content_farm(url) -> bool` is a much better business than selling the research."
+      },
+      {
+        "text": "Print-only publishing for things that must stay uncrawlable.",
+        "why": "The one distribution channel a scraper cannot enter. Currently framed as nostalgia; it is actually a moat, and the first B2B newsletter to price it that way will be able to charge five times what it does now."
+      }
+    ]
+  }
+}

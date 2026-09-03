@@ -50,6 +50,56 @@
         "https://www.goldmansachs.com/insights/articles/the-outlook-for-indias-economy-in-2026-amid-new-us-tradedeal"
       ],
       "gmail_message_id": "1a0637881ce0b1df"
+    },
+    {
+      "date": "2026-09-03",
+      "issue": 2,
+      "quote_text": [
+        "I have had my results for a long time: but I do not yet know how I am to arrive at them."
+      ],
+      "quote_author": [
+        "Carl Friedrich Gauss"
+      ],
+      "idea_text": [
+        "A bonded claim registry: publish a fact, stake money against it.",
+        "Source-quality scoring for answer engines, published monthly.",
+        "Reverse SEO: getting a person's name *out* of model outputs.",
+        "A robots.txt licensing broker for publishers under 100k readers.",
+        "Stringers-for-hire who go physically verify one fact.",
+        "Structured-claim hosting: your facts, emitted for retrieval, not for reading.",
+        "Competitive intelligence on which fake sites recommend your rival.",
+        "Errors-and-omissions insurance for purchases made on an AI recommendation.",
+        "A domain-age and template-similarity API, sold as one boolean.",
+        "Print-only publishing for things that must stay uncrawlable."
+      ],
+      "idea_prompt": [
+        "Ten businesses that only make sense now that machines, not people, read the web"
+      ],
+      "hn_id": [
+        "49536375",
+        "49535526",
+        "49541256",
+        "49535284",
+        "49533497"
+      ],
+      "link": [
+        "https://trellner.com/reports/manufactured-sources-behind-ai-recommendations/",
+        "https://nltimes.nl/2026/09/02/dutch-central-bank-moves-share-gold-us-canada-london-cites-instability",
+        "https://developer.meta.com/ai/models/muse-spark/",
+        "https://help.mistral.ai/en/articles/455207-can-i-opt-out-of-my-input-or-output-data-being-used-for-training",
+        "https://dfarq.homeip.net/commodore-64-released-september-1-1982/",
+        "https://www.fxstreet.com/news/indian-rupee-holds-onto-two-month-high-against-us-dollar-202609020548",
+        "https://techxplore.com/news/2026-09-google-ad-business.html",
+        "https://www.sciencedaily.com/releases/2026/08/260829035223.htm",
+        "https://packagingeurope.com/news/impossible-chupa-chups-packaging-promotes-new-easier-to-open-wrapper/14021.article",
+        "https://news.kraftheinzcompany.com/press-releases-details/2026/Pour-Yourself-a-Red-One-Introducing-the-KegChup--the-First-Keg-of-Unmistakably-Rich-HEINZ-Ketchup/default.aspx",
+        "https://storychief.io/blog/recent-innovative-marketing-campaigns",
+        "https://arxiv.org/abs/2609.02876v1",
+        "https://arxiv.org/abs/2609.02855v1",
+        "https://arxiv.org/abs/2609.02859v1",
+        "https://www.5paisa.com/share-market-today/fii-dii-data",
+        "https://blog.liquide.life/share-market-today-nifty-falls-below-24-000-auto-it-stocks-drag-market-lower-while-energy-gains/"
+      ]
     }
   ]
 }
