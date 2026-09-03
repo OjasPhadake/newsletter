@@ -28,21 +28,23 @@ UA = {"User-Agent": "Mozilla/5.0 (compatible; daily-newsletter/1.0; "
 
 # Note: OpenAI's feed is general news, not a research feed — it mixes papers
 # with customer stories and product launches. The caller must filter.
+# (lab, url, sector) — sector matters because the newsletter runs one
+# industry paper and one academic paper each day.
 FEEDS = [
-    ("OpenAI",             "https://openai.com/news/rss.xml"),
-    ("Google DeepMind",    "https://deepmind.google/blog/rss.xml"),
-    ("Google Research",    "https://research.google/blog/rss/"),
-    ("Microsoft Research", "https://www.microsoft.com/en-us/research/feed/"),
-    ("Meta (FAIR)",        "https://research.facebook.com/feed/"),
-    ("Berkeley BAIR",      "https://bair.berkeley.edu/blog/feed.xml"),  # slow; often times out
-    ("MIT News — AI",      "https://news.mit.edu/rss/topic/artificial-intelligence2"),
-    ("CMU MLD",            "https://blog.ml.cmu.edu/feed/"),
+    ("OpenAI",             "https://openai.com/news/rss.xml",                        "industry"),
+    ("Google DeepMind",    "https://deepmind.google/blog/rss.xml",                   "industry"),
+    ("Google Research",    "https://research.google/blog/rss/",                      "industry"),
+    ("Microsoft Research", "https://www.microsoft.com/en-us/research/feed/",         "industry"),
+    ("Meta (FAIR)",        "https://research.facebook.com/feed/",                    "industry"),
+    ("Berkeley BAIR",      "https://bair.berkeley.edu/blog/feed.xml",                "academia"),
+    ("MIT News — AI",      "https://news.mit.edu/rss/topic/artificial-intelligence2","academia"),
+    ("CMU MLD",            "https://blog.ml.cmu.edu/feed/",                          "academia"),
 ]
 
 # No feed of any kind; the index page is the only option.
 SCRAPE = [
-    ("Anthropic", "https://www.anthropic.com/research", r"/research/([a-z0-9-]{8,})"),
-    ("Anthropic", "https://www.anthropic.com/news",     r"/news/([a-z0-9-]{8,})"),
+    ("Anthropic", "https://www.anthropic.com/research", r"/research/([a-z0-9-]{8,})", "industry"),
+    ("Anthropic", "https://www.anthropic.com/news",     r"/news/([a-z0-9-]{8,})",     "industry"),
 ]
 
 DATE_FORMATS = (
@@ -93,7 +95,7 @@ def tag(block, *names):
     return ""
 
 
-def from_feed(lab, url, cutoff, per_lab):
+def from_feed(lab, url, sector, cutoff, per_lab):
     xml = get(url)
     out = []
     # RSS uses <item>, Atom uses <entry>.
@@ -109,7 +111,7 @@ def from_feed(lab, url, cutoff, per_lab):
         if when and when < cutoff:
             continue
         out.append({
-            "lab": lab, "title": title, "url": link,
+            "lab": lab, "sector": sector, "title": title, "url": link,
             "published": when.date().isoformat() if when else None,
             "summary": clean(tag(block, "description", "summary", "content"))[:500],
         })
@@ -118,7 +120,7 @@ def from_feed(lab, url, cutoff, per_lab):
     return out
 
 
-def from_scrape(lab, url, pattern, per_lab):
+def from_scrape(lab, url, pattern, sector, per_lab):
     """No feed available — recover post slugs from the index page.
 
     There are no dates here, so the caller must check recency on the page
@@ -134,6 +136,7 @@ def from_scrape(lab, url, pattern, per_lab):
         path = url[len(base):].rstrip("/")
         out.append({
             "lab": lab,
+            "sector": sector,
             "title": slug.replace("-", " ").capitalize(),
             "url": f"{base}{path}/{slug}",
             "published": None,
@@ -154,16 +157,16 @@ def main():
     cutoff = datetime.now(timezone.utc) - timedelta(days=a.days)
     result = {"window_days": a.days, "posts": [], "errors": []}
 
-    for lab, url in FEEDS:
+    for lab, url, sector in FEEDS:
         try:
-            result["posts"].extend(from_feed(lab, url, cutoff, a.per_lab))
+            result["posts"].extend(from_feed(lab, url, sector, cutoff, a.per_lab))
         except Exception as exc:  # noqa: BLE001 - one dead feed must not stop the rest
             result["errors"].append(f"{lab}: {exc}")
         time.sleep(0.5)
 
-    for lab, url, pattern in SCRAPE:
+    for lab, url, pattern, sector in SCRAPE:
         try:
-            result["posts"].extend(from_scrape(lab, url, pattern, a.per_lab))
+            result["posts"].extend(from_scrape(lab, url, pattern, sector, a.per_lab))
         except Exception as exc:  # noqa: BLE001
             result["errors"].append(f"{lab} ({url}): {exc}")
         time.sleep(0.5)
@@ -171,7 +174,11 @@ def main():
     by_lab = {}
     for post in result["posts"]:
         by_lab[post["lab"]] = by_lab.get(post["lab"], 0) + 1
-    result["counts"] = {"total": len(result["posts"]), "by_lab": by_lab}
+    by_sector = {}
+    for post in result["posts"]:
+        by_sector[post["sector"]] = by_sector.get(post["sector"], 0) + 1
+    result["counts"] = {"total": len(result["posts"]),
+                        "by_sector": by_sector, "by_lab": by_lab}
 
     print(json.dumps(result, indent=2, ensure_ascii=False))
     return 0 if result["posts"] else 1

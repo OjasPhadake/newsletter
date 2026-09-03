@@ -12,10 +12,11 @@ from two complementary sources and labels which is which:
   hf        Hugging Face's daily papers list. Fresh and community-curated,
             but carries no affiliation data — the caller must verify.
 
-Neither source covers Anthropic, which barely appears in OpenAlex at all
-(works_count 0 at time of writing). Those have to be found by search.
+Results are tagged `sector` (academia / industry / both) because the
+newsletter runs exactly one paper from each side per day. In practice the
+industry half comes from fetch_labs.py — see the coverage note below.
 
-    python3 fetch_papers.py --days 30 --limit 20
+    python3 fetch_papers.py --days 30 --limit 20 --sector academia
 """
 import argparse
 import json
@@ -30,14 +31,23 @@ ARXIV_SOURCE = "S4306400194"          # arXiv (Cornell University)
 MAILTO = "ch22b007@smail.iitm.ac.in"  # OpenAlex asks for this; it buys a faster pool
 UA = {"User-Agent": f"daily-newsletter/1.0 (mailto:{MAILTO})"}
 
-# Frontier labs and the universities that publish alongside them.
-INSTITUTIONS = {
+# Split by sector, because the newsletter runs exactly one paper from each.
+#
+# Measured coverage (arXiv, 30-day window, AI/ML/control terms): the academic
+# side resolves well — UIUC 12, Berkeley 9, Georgia Tech 9, Stanford 6, UW 6,
+# NYU 6, CMU 5, ETH 5 — while the industry side barely registers, with OpenAI,
+# Meta, AI2 and Caltech all at 0 and DeepMind at 1. Industry papers therefore
+# come from fetch_labs.py; these entries stay only so a genuine hit is caught.
+INDUSTRY = {
     "I4210161460": "OpenAI",
     "I4210090411": "Google DeepMind",
     "I1291425158": "Google",
     "I4210114444": "Meta",
     "I4210164937": "Microsoft Research",
     "I4210156221": "Allen Institute for AI",
+}
+
+ACADEMIC = {
     "I63966007":   "MIT",
     "I97018004":   "Stanford",
     "I95457486":   "UC Berkeley",
@@ -60,6 +70,8 @@ INSTITUTIONS = {
     "I4210164802": "Mila",
 }
 
+INSTITUTIONS = {**INDUSTRY, **ACADEMIC}
+
 # Topic net: LLMs and ML, plus control theory, which the reader asked for by name.
 TERMS = ("language model OR LLM OR transformer OR reinforcement learning OR "
          "neural network OR machine learning OR agent OR alignment OR "
@@ -71,11 +83,12 @@ def get(url, timeout=40):
         return json.loads(r.read().decode("utf-8", "replace"))
 
 
-def from_openalex(days, limit):
+def from_openalex(days, limit, sector="all"):
     since = (date.today() - timedelta(days=days)).isoformat()
+    pool = {"industry": INDUSTRY, "academia": ACADEMIC}.get(sector, INSTITUTIONS)
     flt = ",".join([
         f"from_publication_date:{since}",
-        "authorships.institutions.lineage:" + "|".join(INSTITUTIONS),
+        "authorships.institutions.lineage:" + "|".join(pool),
         f"primary_location.source.id:{ARXIV_SOURCE}",
         "title_and_abstract.search:" + TERMS,
     ])
@@ -85,19 +98,26 @@ def from_openalex(days, limit):
 
     out = []
     for w in get(url).get("results", []):
-        insts, matched = set(), set()
+        insts, matched, sectors = set(), set(), set()
         for a in w.get("authorships", []):
             for i in a.get("institutions", []):
                 insts.add(i.get("display_name"))
                 for lin in i.get("lineage", []):
                     key = lin.rsplit("/", 1)[-1]
-                    if key in INSTITUTIONS:
-                        matched.add(INSTITUTIONS[key])
+                    if key in INDUSTRY:
+                        matched.add(INDUSTRY[key])
+                        sectors.add("industry")
+                    elif key in ACADEMIC:
+                        matched.add(ACADEMIC[key])
+                        sectors.add("academia")
         doi = (w.get("ids") or {}).get("doi") or ""
         arxiv_id = doi.split("arxiv.")[-1] if "arxiv." in doi else None
         out.append({
             "source": "openalex",
             "affiliation_verified": True,
+            "sector": "industry" if sectors == {"industry"}
+                      else "academia" if sectors == {"academia"}
+                      else "both",
             "title": " ".join((w.get("title") or "").split()),
             "url": f"https://arxiv.org/abs/{arxiv_id}" if arxiv_id
                    else (w.get("primary_location") or {}).get("landing_page_url"),
@@ -150,12 +170,13 @@ def main():
     p = argparse.ArgumentParser()
     p.add_argument("--days", type=int, default=30)
     p.add_argument("--limit", type=int, default=15)
+    p.add_argument("--sector", choices=("all", "academia", "industry"), default="all")
     a = p.parse_args()
 
     result = {"generated_at": datetime.now().isoformat(timespec="seconds"),
               "window_days": a.days, "errors": []}
     try:
-        result["verified"] = from_openalex(a.days, a.limit)
+        result["verified"] = from_openalex(a.days, a.limit, a.sector)
     except Exception as exc:  # noqa: BLE001
         result["verified"], _ = [], result["errors"].append(f"openalex: {exc}")
     try:

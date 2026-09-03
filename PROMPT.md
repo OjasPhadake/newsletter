@@ -36,7 +36,7 @@ enforces it and the send is blocked until it passes.
 
 ```bash
 python3 scripts/fetch_hn.py                        > /tmp/hn.json      # 48h, top 5 by votes
-python3 scripts/fetch_papers.py --days 30          > /tmp/papers.json
+python3 scripts/fetch_papers.py --days 30 --sector academia > /tmp/papers.json
 python3 scripts/fetch_labs.py   --days 30          > /tmp/labs.json
 python3 scripts/fetch_ideas.py                     > /tmp/ideas.json
 ```
@@ -90,62 +90,68 @@ Hofstadter.
 
 ### The research brief
 
-Papers on **AI, LLMs, machine learning, and control theory**, published in the
-**last month**, from **frontier labs or top universities**.
+**Exactly two papers a day: one from industry, one from academia.** That
+split is the point of the section — the reader wants to see what the frontier
+labs are shipping *and* what the universities are proving, side by side.
 
-Labs: Anthropic, OpenAI, Google DeepMind, Meta AI, Microsoft Research, AI2.
-Universities: MIT, Stanford, Berkeley, CMU, Princeton, Harvard, Caltech,
-UW, Cornell, NYU, UIUC, Georgia Tech, Columbia, Michigan, Oxford, Cambridge,
-ETH Zürich, EPFL, Toronto, Mila. This list is a floor, not a ceiling — any
-comparably serious group counts.
+Topics: AI, LLMs, machine learning, control theory. Published in the **last
+month**.
 
-**Start with `fetch_labs.py`.** It pulls recent posts straight from the labs'
-own research blogs — Anthropic, OpenAI, DeepMind, Google Research, Microsoft
-Research, Meta FAIR, MIT News, CMU MLD, Berkeley BAIR. This is the most
-reliable source by a wide margin, because a post on `anthropic.com/research`
-is Anthropic's by construction and needs no affiliation inference. Blog posts
-are also often more readable than the paper, and usually link to it.
+**The industry paper — from `fetch_labs.py`.** It pulls recent posts straight
+from the labs' own research blogs: Anthropic, OpenAI, DeepMind, Google
+Research, Microsoft Research, Meta FAIR. Provenance is certain by
+construction, so no affiliation inference is needed, and the blog post is
+usually more readable than the paper it links to.
 
-Two things to watch in that output:
+Two things to watch there:
 
 - **OpenAI's feed is general news**, not research. It mixes papers with
   customer stories and product launches. Filter hard; "How law firm X scales
-  AI with OpenAI" is not a research paper.
-- **Anthropic entries have slug-derived titles and no dates** (`title_is_slug`
-  and `needs_date_check` are set), because the site publishes no feed. Fetch
-  the page to get the real title and confirm it is within the month.
+  AI with OpenAI" is not research.
+- **Anthropic entries carry `title_is_slug` and `needs_date_check`** because
+  the site publishes no feed and its index page is scraped. Fetch the page for
+  the real title and confirm the date is inside the month.
 
-`fetch_papers.py` then returns two further buckets:
+**The academic paper — from `fetch_papers.py --sector academia`.** OpenAlex
+resolves university affiliations well, and this is where it earns its place.
+Measured over a 30-day window on arXiv, AI/ML/control terms:
 
-- **`verified`** — OpenAlex has resolved the author affiliations to one of the
-  institutions above, so the affiliation is confirmed. Good for *university*
-  work. Be aware it is far from complete: only about 2% of the last month's
-  arXiv AI papers carry a resolved affiliation, rising to ~5% at 90 days as
-  indexing catches up, and industry labs resolve especially badly (OpenAlex
-  knows of only ~22 OpenAI arXiv papers in a year). Absence here means
-  nothing — use `fetch_labs.py` for the frontier labs.
-- **`trending`** — Hugging Face's daily papers. Fresh and community-picked,
-  but carries **no affiliation data**. Before using one, WebFetch its arXiv
-  abstract page and confirm a qualifying affiliation. If you cannot confirm
-  it, do not use it.
+```
+UIUC              12    Microsoft Research   4
+Google             9    MIT                  4
+UC Berkeley        9    U. Michigan          4
+Georgia Tech       9    Cambridge            4
+Stanford           6    Oxford               3
+U. Washington      6    EPFL                 3
+NYU                6    Cornell              2
+CMU                5    Columbia             2
+ETH Zurich         5    DeepMind 1 · Princeton 1 · Harvard 1
+                        Toronto 1 · Mila 1
+                        OpenAI 0 · Meta 0 · AI2 0 · Caltech 0
+                                              → 82 distinct papers
+```
 
-Two known gaps to work around:
+Read that table as the reason for the split. The academic names have real
+depth; the industry names are near-empty because arXiv metadata carries no
+affiliation and OpenAlex can only infer it later from a published version,
+which frontier labs often never produce. A zero there means "not indexed",
+never "did not publish" — so never conclude a lab was quiet from this source.
 
-- **Anthropic is essentially absent from OpenAlex** (`works_count` 0). Its
-  work comes from `fetch_labs.py` or a direct search of anthropic.com/research.
-- **x.com cannot be read.** It is login-walled and JavaScript-rendered, so
-  neither WebFetch nor a script can reliably pull a researcher's posts. To get
-  the same signal — what respected people are actually highlighting — use the
-  Hugging Face upvote counts in `trending`, and WebSearch for coverage of a
-  lab's recent work. Do not pretend to have read a post you could not fetch.
+`fetch_papers.py` also returns a **`trending`** bucket from Hugging Face's
+daily papers: fresh and community-picked, but with **no affiliation data**.
+Use it only as a tie-breaker, and only after fetching the arXiv abstract page
+to confirm a qualifying affiliation.
 
-Pick 2–3, and prefer a spread — not three papers from the same lab. A lab
-blog post counts, provided it is genuinely about research rather than a
-product launch or a customer story.
+**If one side has nothing** worth running, prefer two academic papers over a
+product launch dressed up as research. Say plainly which lab or university
+each came from — that is half the reason it is here. Read the actual page or
+abstract and write a takeaway; never restate the title.
 
-Read the actual page or abstract and write a takeaway; never restate the
-title. Say which lab or university it came from — that is half the reason it
-is here.
+**x.com cannot be read.** It is login-walled and JavaScript-rendered, so
+neither WebFetch nor a script can pull a researcher's posts. For the same
+signal — what respected people are highlighting — use the Hugging Face upvote
+counts and WebSearch for coverage of a lab's recent work. Never imply you read
+a post you could not fetch.
 
 ### The learn brief
 

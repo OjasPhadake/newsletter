@@ -33,7 +33,7 @@ no idea, no ideas prompt, no Hacker News story, no link.
 
 ```bash
 python3 scripts/fetch_hn.py                    > /tmp/hn.json      # 48h, top 5 by votes
-python3 scripts/fetch_papers.py --days 30      > /tmp/papers.json
+python3 scripts/fetch_papers.py --days 30 --sector academia > /tmp/papers.json
 python3 scripts/fetch_labs.py   --days 30      > /tmp/labs.json
 python3 scripts/fetch_ideas.py                 > /tmp/ideas.json
 ```
@@ -48,10 +48,10 @@ Then follow the table in `PROMPT.md`. Specifically:
   indices, USD/INR, FII/DII flows, each from a named source you link.
 - **Quote:** fetch a Goodreads tag page and quote verbatim. Re-read the quote
   brief — an ordinary motivational quote is a failure, not a near miss.
-- **Research:** start with `/tmp/labs.json` — posts from the labs' own blogs,
-  where the affiliation is certain. Then `/tmp/papers.json`: the `verified`
-  bucket is affiliation-checked but very incomplete for industry labs, and
-  anything from `trending` needs its arXiv page fetched to confirm the lab.
+- **Research:** exactly two items — one industry, one academic. The industry
+  one comes from `/tmp/labs.json` (lab blogs, provenance certain); the academic
+  one from `/tmp/papers.json` `verified`. Anything from `trending` is a
+  tie-breaker only and needs its arXiv page fetched to confirm the lab.
 - **Ten Ideas:** a fresh, plainly-worded prompt every day, never one used in
   the last 120 days. Ground them in `/tmp/ideas.json`; if Reddit rate-limited
   the script, WebFetch the subreddit RSS feeds directly.
