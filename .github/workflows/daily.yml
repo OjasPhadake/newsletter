@@ -2,8 +2,11 @@ name: The Morning
 
 on:
   schedule:
-    # 01:30 UTC = 07:00 IST. GitHub may delay scheduled runs under load.
-    - cron: '30 1 * * *'
+    # 20:30 UTC. GitHub reliably dispatches this repo's scheduled run ~5h late,
+    # so in practice it fires ~01:30 UTC = 07:00 IST. If GitHub ever runs it on
+    # time, the edition just lands early (02:00 IST) — the date is computed in
+    # IST at run time either way.
+    - cron: '30 20 * * *'
   workflow_dispatch:
     inputs:
       dry_run:

@@ -67,8 +67,10 @@ send, which is how tomorrow's run knows what yesterday used.
 
 ## Automation
 
-The daily send runs in GitHub Actions (`.github/workflows/daily.yml`) at
-01:30 UTC = 07:00 IST, so it lands whether or not any machine of yours is on.
+The daily send runs in GitHub Actions (`.github/workflows/daily.yml`), so it
+lands whether or not any machine of yours is on. The cron is set to 20:30 UTC:
+GitHub consistently dispatches this repo's scheduled run about five hours late,
+which puts the real send near 01:30 UTC = 07:00 IST.
 The runner follows `.github/RUNBOOK_ACTIONS.md`, which defers to `PROMPT.md`
 for all editorial judgement.
 
