@@ -1,0 +1,305 @@
+{
+  "date_line": "Friday, 4 September 2026",
+  "issue": 1,
+  "preheader": "Samuel Johnson on where absurdity comes from; a top-level domain being deleted out from under 22,000 people; the 99.9% that is really 62.7%; and a $175.90 banana.",
+  "quote": {
+    "text": "Almost all absurdity of conduct arises from the imitation of those whom we cannot resemble.",
+    "author": "Samuel Johnson",
+    "work": "The Rambler",
+    "source_url": "https://www.goodreads.com/quotes/tag/absurdity",
+    "note": "The useful move is locating the fault. Absurd behaviour is not a failure of judgement here, it is a copying error — the model was fine, you just are not the thing being copied. Every founder cosplaying a different founder is in this sentence."
+  },
+  "hn": [
+    {
+      "title": ".name Termination",
+      "url": "https://neil.fraser.name/news/2026/09/03/",
+      "hn_url": "https://news.ycombinator.com/item?id=49550772",
+      "points": 1610,
+      "comments": 411,
+      "bullets": [
+        "Verisign asked ICANN on 15 April 2026 to eliminate the entire third level of the .name hierarchy — the john.smith.name form the TLD was built around — as an administrative simplification. ICANN approved it on 28 July. The domains stop working in February 2027.",
+        "Roughly 22,000 registrations are affected. Fraser's own is prepaid through December 2040, which does not help: the registry is not refusing to renew, it is removing the level the name lives on.",
+        "The failure is wider than a dead website. Email at those addresses stops, and any device or service authenticating against the domain stops with it.",
+        "The security argument is the one that should worry people. Once a third-level name dies, the second level under it (fraser.name) becomes purchasable by anyone, who then controls password resets for every account tied to an address at it — twenty-five years of accounts, in his case. He calls it \"a way to hijack hundreds of accounts\"."
+      ]
+    },
+    {
+      "title": "GPT-6 Astra",
+      "url": "https://openai.com/index/gpt-6-astra/",
+      "hn_url": "https://news.ycombinator.com/item?id=49554643",
+      "points": 1607,
+      "comments": 1376,
+      "bullets": [
+        "Shipped 3 September at $10 per million input tokens and $50 per million output — 2.5x GPT-5.6 Sol, and level with Anthropic's Fable 5.1. OpenAI's counter-argument is cost per completed task rather than cost per token. Greg Brockman's line was \"Welcome to the AGI era.\"",
+        "The headline scores against Sol: ARC-AGI-3 99.9% vs 7.8%, FrontierMath Tier 4 v2 97.6% vs 83.0%, ExploitBench 100% vs 78.5%, OSWorld 2.0 72.6% vs 65.7%. Long context holds up too — 100% on MRCR v2 8-needle from 256K–512K tokens, 96.3% from 512K–1M.",
+        "Read the ARC number with the asterisk. ARC Prize scored Astra at 62.7% for $26K on ARC-AGI-3 Semi-Private under its standard harness; the 99.9% is the provider-adapter run, which lets the model keep opaque reasoning state across turns. That run cost $19K and used 49% fewer tokens, so it is cheaper and faster — but it is not the apples-to-apples number.",
+        "It is also OpenAI's first model classified Critical for cybersecurity under the Preparedness Framework, meaning autonomous zero-day discovery. Access to the cyber capability is gated to vetted defenders, and OpenAI concedes Astra's reasoning is harder to monitor than its predecessor's."
+      ]
+    },
+    {
+      "title": "Audacity 4.0",
+      "url": "https://github.com/audacity/audacity/releases/tag/Audacity-4.0.0",
+      "hn_url": "https://news.ycombinator.com/item?id=49548395",
+      "points": 1091,
+      "comments": 243,
+      "bullets": [
+        "Published 3 September. The interface is rebuilt on Qt with native high-DPI rendering, saveable Workspaces (Modern, Classic, Music), dockable and floatable panels, light/dark/high-contrast themes, and a home screen with project thumbnails.",
+        "The editing model is the real change. Clips are now first-class: click a header to select, Shift-click for several, and move, trim or time-stretch them together. Clips can be grouped, moved between mono and stereo tracks, and dropped over one another to replace the overlap rather than being blocked.",
+        "The Select / Envelope / Draw / Multi-tool modes are gone, replaced by context: hold S to split, zoom to samples to draw, use Clip gain for envelopes. Sync-Lock is gone too, replaced by explicit leave-a-gap or preserve-timing variants of cut, delete and paste.",
+        "Twenty years of features did not survive the port. Time Tracks, MIDI/Note tracks, the Mixer, Macro Manager and the scripting pipe, VAMP and LADSPA hosting, and play-at-speed are all absent, plus \"some missing exporting and rendering features, analyzers, and effects\". New project format is .aup4; .aup3 opens and converts but cannot be saved back."
+      ]
+    },
+    {
+      "title": "Any Human Ever – One life, drawn at random from all who have ever lived",
+      "url": "https://anyhumanever.com/",
+      "hn_url": "https://news.ycombinator.com/item?id=49550698",
+      "points": 538,
+      "comments": 258,
+      "bullets": [
+        "Press a button and it deals you one life out of the 100 billion-plus humans it estimates have existed: a birth year, a place, and what that life probably contained. Birth years are drawn on a log scale, so the draw is honestly weighted towards the recent — most humans who ever lived, lived lately.",
+        "The sourcing page is more interesting than the toy. 103 datasets and scholarly works, 50,845 rows across 54 tables: UN World Population Prospects 2024, the Human Mortality Database, Coale-Demeny-Vaughan model life tables, IHME Global Burden of Disease 2021, FAO food balance sheets, the Maddison Project 2023, Ethnologue, PAGES 2k temperature reconstructions, ice-core volcanic sulfur, and computed Halley's Comet perihelia back to 240 BCE.",
+        "Every fact is labelled by provenance — Extracted (straight from a table), Attributed (an AI claim about a source, spot-checked), or Authored (generated because no source exists). That taxonomy, printed next to the output, is the part worth stealing.",
+        "It also declines to guess. Money is always given in 2026 prices, and where no measured income data exists the site says nothing rather than estimating — which is why, as it notes, most lives are told nothing about money at all."
+      ]
+    },
+    {
+      "title": "Qwen 3.8 27B available on Cerebras at 1500 tokens/s",
+      "url": "https://inference-docs.cerebras.ai/models/overview",
+      "hn_url": "https://news.ycombinator.com/item?id=49554520",
+      "points": 512,
+      "comments": 164,
+      "bullets": [
+        "The model catalogue lists it as qwen-3.8-27b at roughly 1,500 output tokens per second, with a 64k context window on the free tier and 128k on pay-as-you-go.",
+        "It is one of exactly two models on the page — the other being OpenAI's GPT OSS 120B. Cerebras is not competing on breadth of catalogue.",
+        "No per-model pricing on the catalogue page itself; it only says the models are available on the free trial and pay-as-you-go tiers subject to rate limits, and points elsewhere for rates.",
+        "The number to hold onto is the ratio, not the speed. At 1,500 tok/s a 27B open-weights model finishes a long answer before a frontier model has finished thinking about it, which is a different product even when it is a worse model."
+      ]
+    }
+  ],
+  "markets": {
+    "indices": [
+      {
+        "name": "Sensex · 3 Sep close",
+        "value": "76,152.86",
+        "change": "417.49  (0.55%)",
+        "direction": "down"
+      },
+      {
+        "name": "Nifty 50 · 3 Sep close",
+        "value": "23,873.45",
+        "change": "41.00  (0.17%)",
+        "direction": "down"
+      },
+      {
+        "name": "Nifty Realty",
+        "value": "—",
+        "change": "2.5%",
+        "direction": "up"
+      },
+      {
+        "name": "Nifty Bank",
+        "value": "—",
+        "change": "0.36%",
+        "direction": "up"
+      },
+      {
+        "name": "Nifty IT",
+        "value": "—",
+        "change": "0.85%",
+        "direction": "down"
+      },
+      {
+        "name": "BSE SmallCap",
+        "value": "—",
+        "change": "1.01%",
+        "direction": "up"
+      },
+      {
+        "name": "Rupee (USD/INR) · 3 Sep close",
+        "value": "94.60",
+        "change": "14 paise weaker",
+        "direction": "down"
+      }
+    ],
+    "stories": [
+      {
+        "headline": "A fourth straight fall that most of the market did not feel",
+        "url": "https://theindianawaaz.com/market-wrap-sensex-nifty-decline-for-fourth-day-as-it-auto-stocks-drag/",
+        "source": "The Indian Awaaz (market wrap, 3 September)",
+        "bullets": [
+          "Thursday 3 September, the last completed session: Sensex −417.49 to 76,152.86 (0.55%), Nifty 50 −41.00 to 23,873.45 (0.17%). Fourth consecutive decline. The Nifty touched 24,025.40 intraday, slipped under 23,950 around noon and never came back.",
+          "The gap between the two indices is the story. A 0.55% fall on the Sensex against 0.17% on the Nifty means the damage sat in a handful of heavyweights, not the market.",
+          "Breadth agrees. Nifty Realty +2.5%, Media +1.7%, Bank +0.36%; IT −0.85%, FMCG and Pharma −0.5% each. BSE SmallCap +1.01%, MidCap +0.15%. Money rotated, it did not leave.",
+          "Written before Friday's close. Indian markets are open as this goes out; these are Thursday's closing figures."
+        ]
+      },
+      {
+        "headline": "Domestic institutions absorbed the whole of the foreign exit",
+        "url": "https://www.niftytrader.in/fii-dii-data",
+        "source": "NiftyTrader (NSE/BSE provisional cash data)",
+        "bullets": [
+          "3 September provisional cash: FIIs net sold ₹2,346 crore, DIIs net bought ₹4,977 crore. Domestic buying exceeded foreign selling by ₹2,632 crore.",
+          "That arithmetic explains the shallow Nifty fall better than any narrative does. The index dropped 0.17% on a day foreign money left, because the money replacing it did not need convincing.",
+          "The stated overhang is crude and West Asia, neither of which a domestic fund can hedge away. What it can do is keep bidding, and it did.",
+          "Provisional figures. Final exchange data can move them by a few hundred crore."
+        ]
+      }
+    ]
+  },
+  "trends": [
+    {
+      "tag": "Macro · India",
+      "headline": "India grew 7.8%. The oil bill grew 57%.",
+      "url": "https://www.econiti.org/daily-news/2026-09-01/2026-09-01-india-q1-fy27-gdp-7-8-percent/",
+      "subtitle": "A very good quarter with one line item eating it",
+      "bullets": [
+        "MoSPI's 31 August release put Q1 FY27 real GDP growth at 7.8% year on year, against the RBI's 7% forecast and 6.9% a year earlier — though below the 8.6% of January-March. Real GVA rose 8.2% and nominal GDP 10.3%, an eight-quarter high.",
+        "The composition is unusually clean: manufacturing 9.2% (from 8.3%), services 10% (from 8%), gross fixed capital formation up 11.9% in real terms and 20.4% nominal, reaching 34.3% of GDP. Agriculture eased to 3.6% and mining contracted 2.4%.",
+        "Now the counterweight. PPAC data reported by ThePrint on 19 August shows the April-July crude import bill at $63.4 billion against $40.5 billion a year earlier — a 57% jump on volumes that barely moved, 81.9 million tonnes versus 81.5. India buys about 85% of its crude, so this is a price shock, not a demand story.",
+        "Both facts are true at once, and that is the interesting part. Investment-led growth at 7.8% is the strongest domestic engine India has had in years; it is also the reason the import bill is inelastic. You cannot build 34.3% of GDP worth of fixed capital without burning the fuel to do it."
+      ],
+      "link_label": "Read"
+    },
+    {
+      "tag": "Platforms · Antitrust",
+      "headline": "Google keeps its ad exchange and loses its favourite auction mechanics",
+      "url": "https://www.adexchanger.com/antitrust/google-wont-have-to-break-up-its-ad-tech-business-judge-brinkema-rules/",
+      "subtitle": "Behavioural remedies after a finding of illegal monopolisation",
+      "bullets": [
+        "Judge Leonie Brinkema ruled on 2 September that Google does not have to divest AdX or its DFP publisher ad server. This is the remedies phase of the case she decided in April 2025, when she found Google had illegally monopolised publisher ad servers and ad exchanges and unlawfully tied the two.",
+        "What she ordered instead: Google must expose real-time bid amounts for open-web display to rival ad servers, deprecate Unified Pricing Rules, let publishers set per-bidder price floors inside Ad Manager, and stop using \"first look\" and \"last look\" to adjust its own bids.",
+        "Her stated reasoning cuts against the DOJ's theory of the case: breaking up AdX or DFP could hurt the small publishers who use DFP for free, and behavioural fixes get there faster than a divestiture would.",
+        "The reaction from the sell side is that interoperability without structural separation is a hard thing to actually use — CartographAI's Jay Friedman asked how a publisher runs a different ad server and still reaches Google's demand. The full opinion is still sealed."
+      ],
+      "link_label": "Read"
+    },
+    {
+      "tag": "Wildcard · Neuroscience",
+      "headline": "The largest brain map ever made is a male fruit fly",
+      "url": "https://research.google/blog/a-connectomics-milestone-mapping-the-complete-male-fruit-fly-brain/",
+      "subtitle": "166,000 neurons, 125 million synapses, published 3 September",
+      "bullets": [
+        "HHMI's Janelia Research Campus, with Google Research and others, published the complete male Drosophila connectome in Cell on 3 September: over 166,000 neurons and 125 million synaptic connections, the largest brain map by neuron count so far.",
+        "The method is brute force plus machine learning. The brain is cut into millions of thin slices, each imaged, then stitched and reconstructed in 3D by flood-filling convolutional networks and a system called PATHFINDER — with synthetic neurons added to the training data to speed the reconstruction up.",
+        "This is the end of a decade-long arc: a fully automated female fly brain reconstruction in 2019, a verified 25,000-neuron half-brain in 2020, and now the whole male brain.",
+        "Having both sexes is what makes it a scientific instrument rather than a trophy. You can now diff two brains — the male AOTU008 neuron has two projections its female counterpart lacks — which is the concrete way in to courtship and aggression circuitry."
+      ],
+      "link_label": "Read"
+    }
+  ],
+  "research": [
+    {
+      "tag": "Industry · Google DeepMind",
+      "title": "WeatherNext 3: a weather model that learns from raw satellite pixels",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/introducing-weathernext-3/",
+      "subtitle": "Hourly, 5 km, and no physics engine in the loop",
+      "bullets": [
+        "Posted 3 September. A single Functional Generative Network mesh transformer takes live hourly geostationary satellite mosaics alongside historical analysis and emits three different output types at once: dense gridded fields, cyclone tracks, and station-level sparse coordinates.",
+        "Resolution is 5 km for surface temperature and moisture, 10 km for other surface variables, 25 km for atmospheric ones like wind speed, updating hourly where WeatherNext 2 stepped in six-hour increments. DeepMind calls the result roughly five times sharper than the previous model.",
+        "On medium-range precipitation the CRPS improvements are 60% against NASA's IMERG satellite product, 30% against MRMS, and 10% against rain gauges at early lead times — up to 50% more accurate for planning a day or more ahead.",
+        "The architectural claim is the one to sit with. Feeding it satellite observations directly, rather than the assimilated analysis fields every numerical forecast starts from, removes a step that has been assumed necessary since numerical weather prediction began. It ships into Search, the Gemini app, Google Maps and the Maps Platform Weather API, with bulk access via Earth Engine, BigQuery and Cloud Storage."
+      ],
+      "link_label": "Read"
+    },
+    {
+      "tag": "Academia · Georgia Tech, UCD & Dalian UT",
+      "title": "Phantom Gains: Auditing Self-Improvement Against a Measured Null",
+      "url": "https://arxiv.org/abs/2608.20290",
+      "subtitle": "Seven ways to measure an improvement that is not there",
+      "bullets": [
+        "Submitted 20 August by Cheng Xu, Nan Yan, Liming Chen and M-Tahar Kechadi. They run three rounds of rank-32 LoRA self-training on Qwen3-8B and push a frozen, untrained control through the identical pipeline — the control being the whole point.",
+        "They find seven measurement failures, each of which flips a reported result when the control is missing. Several are standard practice. A per-problem ledger built on a single greedy decode manufactures capability changes on a model that was never trained, largely as an artifact of inference batching; the statistic meant to separate genuine acquisition from mere sharpening assigns that untrained model a rate of 0.280.",
+        "The obvious repair — pick a threshold above the noise — does not replicate: estimated across frozen comparisons the study already contains, the null stays non-zero. They replace it with a per-problem exact test against a pooled baseline under false-discovery-rate control, which then detects nothing on any held-out replicate and is stable to the multiple-testing rule, error rate and pool size.",
+        "The finding that survives the audit: external distillation improves problems the base model rarely reaches, three forms of self-training do not (a regression rejects this as a by-product of distillation's larger overall gain at p < 10⁻⁸), and self-training corrupts problems the base model already solved at rates well above the measured floor. Their closing line is the practical one — the null costs no new experiments, because any multi-arm study already owns the baseline replicates needed to build it."
+      ],
+      "link_label": "Abstract"
+    }
+  ],
+  "wild": [
+    {
+      "tag": "Pricing, made visible",
+      "headline": "The Ordinary opened a fake grocery store and put a $175.90 banana in it",
+      "url": "https://www.famouscampaigns.com/2026/05/the-ordinary-opens-fake-grocery-store-puts-175-banana-on-sale/",
+      "bullets": [
+        "The Markup Marché ran in six cities from May — Toronto, London, Paris, São Paulo, Mexico City and Melbourne — built with Uncommon Creative Studio. Baskets, fridges, a produce section, toilet paper, a checkout counter, all of it minimalist and none of it for sale.",
+        "A banana relabelled \"All-Natural Magical Energy-Boosting Bar\", $175.90. A coconut as an \"Exotic Thirst Defying Hydration Vessel\", $195.50. Avocados as \"Natural Glow-Enhancing Vitality Orbs\". You walk out with actual skincare instead.",
+        "Nils Leonard's framing: take the codes the beauty industry relies on — language, packaging, presentation — and apply them to the most familiar products possible. The argument only works because you already know what a banana costs. There is no equivalent anchor for a serum, which is the entire point."
+      ],
+      "link_label": "Read"
+    },
+    {
+      "tag": "The medium is the premise",
+      "headline": "Netflix put a man inside a billboard on Sunset Boulevard for three days",
+      "url": "https://www.timeout.com/los-angeles/news/yes-that-is-a-real-live-human-trapped-inside-a-netflix-billboard-over-sunset-boulevard-heres-why-080726",
+      "bullets": [
+        "About thirty feet above the corner of Sunset and Selma, a furnished, air-conditioned living room with a bay window, a couch and a pair of binoculars. A performer lived in it from Thursday to Saturday in early August, talking to the traffic below with a dry-erase whiteboard.",
+        "It promotes The Last House, a Netflix thriller with Greta Lee and Wagner Moura about how long you could survive trapped in your own home as supplies run out.",
+        "Almost every outdoor ad asks you to look at an image of the thing. This one made the premise structurally true and left it running for seventy-two hours — the rare stunt where the format and the plot are the same object."
+      ],
+      "link_label": "Read"
+    },
+    {
+      "tag": "Reviews as ad creative",
+      "headline": "Dove turned the first fifty unfiltered Reddit reviews of a product into the campaign",
+      "url": "https://www.marketingdive.com/news/best-brand-campaigns-h1-2026-sold-honesty-consumers-buying/819960/",
+      "bullets": [
+        "\"Dove r/eal reviews\" took the first 50 unedited Reddit reviews of its Intensive Repair 10-in-1 Serum Mask and ran them as the creative. Not selected quotes — the first fifty, in order, whatever they said. Agencies: David London, AKQA Paris and WPP Media.",
+        "It took six Cannes Lions. For a brand valued around $8 billion, handing the copy deck to an unmoderated subreddit is a larger bet than it looks.",
+        "The same roundup has Burger King deleting its own mascot in March to put customers at the centre, followed by 5.8% comparable sales acceleration in Q1 2026 and 97% of franchisees voting to raise ad fund contributions. Two different ways of saying the brand is not the hero."
+      ],
+      "link_label": "Read"
+    }
+  ],
+  "learn": {
+    "title": "Nobody actually knows why ice is slippery, and the argument is 180 years old",
+    "body": [
+      "Michael Faraday noticed the problem in 1842. Two ice cubes pressed together freeze into one; a warm hand sticks to ice rather than sliding off it. He guessed there was a thin film of liquid already sitting on the surface, and had no idea why it would be there. Shortly after, James Thomson proposed the explanation most of us were taught at school — pressure lowers the melting point of ice, so your weight melts a lubricating film under the blade — and his brother William, better known as Lord Kelvin, confirmed the pressure-melting relationship in the lab. Case closed for about eighty years.",
+      "It was not closed. In the 1930s Frank Bowden and T.P. Hughes did the arithmetic and found that an average skier exerts nowhere near enough pressure to shift ice's melting point meaningfully. They went to an ice cave in the Swiss Alps to test their own idea instead — friction heating — and found that materials which conduct heat well, like brass, gave *higher* friction than poor conductors, which fitted. That theory has its own obvious hole, pointed out by the physicist Daniel Bonn: ice is slippery the instant you step on it, before anything has moved, and friction requires motion.",
+      "So there are now four candidate mechanisms and no agreement. Simulations by Luis MacDowell at Complutense University of Madrid in 2023 concluded that premelting, pressure melting and frictional heating all operate at once, in proportions that depend on conditions, with the premelted layer only a few molecules thick. Then in 2025 a group at Saarland University led by Achraf Atila proposed a fourth: sliding does not melt the ice, it *amorphises* it — mechanically smashing the crystal lattice into a disordered layer — which would explain why ice stays slippery at temperatures far too cold for any liquid film to exist. Bonn finds it convincing. Atila's own co-author thinks it is a separate mechanism rather than the answer. The researchers involved note that a large part of the disagreement is that nobody has agreed on shared terminology, which is a very honest thing to admit about a substance everyone has walked on."
+    ],
+    "tags": [
+      "Science of ordinary things",
+      "Physics",
+      "Unsettled"
+    ]
+  },
+  "ideas": {
+    "prompt": "Ten terrible business ideas that would somehow still work",
+    "note": "Altucher's drill: ten ideas a day against one prompt. Today's is the creative-and-fun family — the test is not whether it is sensible, it is whether you can picture someone paying.",
+    "items": [
+      {
+        "text": "A gym that locks the door behind you for a full hour."
+      },
+      {
+        "text": "A courier that is proudly slow and guarantees your parcel arrives on the day you actually need it, not before."
+      },
+      {
+        "text": "A phone plan that gets more expensive the more you use it."
+      },
+      {
+        "text": "A shop that stocks exactly one of everything and never restocks."
+      },
+      {
+        "text": "A newspaper printed a week late.",
+        "why": "Seven days is long enough for most of a front page to turn out not to have mattered, and you would be reading the survivors."
+      },
+      {
+        "text": "A subscription whose only job is to cancel your other subscriptions."
+      },
+      {
+        "text": "A hotel with no windows, no clock and no wifi, sold as the best sleep of your life."
+      },
+      {
+        "text": "Quiet rooms in malls and stations, rented by the ten minutes.",
+        "why": "A recurring ask on r/Lightbulb, where people keep pointing out that public buildings have nowhere to simply be alone for five minutes."
+      },
+      {
+        "text": "A moving company that throws away a third of your things, chosen by you before packing day."
+      },
+      {
+        "text": "A neighbourhood noticeboard that charges local traders nothing and refuses to expand past one postcode.",
+        "why": "Adapted from a running complaint on r/SomebodyMakeThis that Nextdoor bills the small businesses it depends on."
+      }
+    ]
+  }
+}

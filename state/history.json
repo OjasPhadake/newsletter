@@ -149,6 +149,55 @@
         "https://www.businesstoday.in/latest/economy/story/rupee-jumps-67-paise-to-open-at-94-30-against-the-us-dollar-highest-level-in-two-months-553025-2026-09-03",
         "https://groww.in/fii-dii-data"
       ]
+    },
+    {
+      "date": "2026-09-04",
+      "issue": 1,
+      "quote_text": [
+        "Almost all absurdity of conduct arises from the imitation of those whom we cannot resemble."
+      ],
+      "quote_author": [
+        "Samuel Johnson"
+      ],
+      "idea_text": [
+        "A gym that locks the door behind you for a full hour.",
+        "A courier that is proudly slow and guarantees your parcel arrives on the day you actually need it, not before.",
+        "A phone plan that gets more expensive the more you use it.",
+        "A shop that stocks exactly one of everything and never restocks.",
+        "A newspaper printed a week late.",
+        "A subscription whose only job is to cancel your other subscriptions.",
+        "A hotel with no windows, no clock and no wifi, sold as the best sleep of your life.",
+        "Quiet rooms in malls and stations, rented by the ten minutes.",
+        "A moving company that throws away a third of your things, chosen by you before packing day.",
+        "A neighbourhood noticeboard that charges local traders nothing and refuses to expand past one postcode."
+      ],
+      "idea_prompt": [
+        "Ten terrible business ideas that would somehow still work"
+      ],
+      "hn_id": [
+        "49550772",
+        "49554643",
+        "49548395",
+        "49550698",
+        "49554520"
+      ],
+      "link": [
+        "https://neil.fraser.name/news/2026/09/03/",
+        "https://openai.com/index/gpt-6-astra/",
+        "https://github.com/audacity/audacity/releases/tag/Audacity-4.0.0",
+        "https://anyhumanever.com/",
+        "https://inference-docs.cerebras.ai/models/overview",
+        "https://www.econiti.org/daily-news/2026-09-01/2026-09-01-india-q1-fy27-gdp-7-8-percent/",
+        "https://www.adexchanger.com/antitrust/google-wont-have-to-break-up-its-ad-tech-business-judge-brinkema-rules/",
+        "https://research.google/blog/a-connectomics-milestone-mapping-the-complete-male-fruit-fly-brain/",
+        "https://www.famouscampaigns.com/2026/05/the-ordinary-opens-fake-grocery-store-puts-175-banana-on-sale/",
+        "https://www.timeout.com/los-angeles/news/yes-that-is-a-real-live-human-trapped-inside-a-netflix-billboard-over-sunset-boulevard-heres-why-080726",
+        "https://www.marketingdive.com/news/best-brand-campaigns-h1-2026-sold-honesty-consumers-buying/819960/",
+        "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/introducing-weathernext-3/",
+        "https://arxiv.org/abs/2608.20290",
+        "https://theindianawaaz.com/market-wrap-sensex-nifty-decline-for-fourth-day-as-it-auto-stocks-drag/",
+        "https://www.niftytrader.in/fii-dii-data"
+      ]
     }
   ]
 }
