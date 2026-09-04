@@ -198,6 +198,55 @@
         "https://theindianawaaz.com/market-wrap-sensex-nifty-decline-for-fourth-day-as-it-auto-stocks-drag/",
         "https://www.niftytrader.in/fii-dii-data"
       ]
+    },
+    {
+      "date": "2026-09-05",
+      "issue": 1,
+      "quote_text": [
+        "When you want to know how things really work, study them when they're coming apart."
+      ],
+      "quote_author": [
+        "William Gibson"
+      ],
+      "idea_text": [
+        "A repair counter for exactly one category of thing — zips, and nothing else.",
+        "A room where you rent the tool you need for one afternoon and give it back the same day.",
+        "A photographer who only does the boring compulsory photographs: passports, visas, insurance claims, house inventories.",
+        "A one-room laundry that specialises in things other laundries refuse: sarees, jerseys, curtains, toys.",
+        "Assembly-as-a-service for flat-pack furniture, bought by the hour.",
+        "A shop that scans and returns your old photo albums, letters and VHS tapes, then throws nothing away.",
+        "A weekend STEAM class run out of a spare room for homeschooled kids in one neighbourhood.",
+        "A cash-only tailoring desk inside a gym, altering clothes that no longer fit.",
+        "A service that sits with elderly people for two hours a week and does whatever the phone requires: forms, bills, appointments, banks.",
+        "A verified-purchase-only review desk for one product category, funded by shoppers rather than sellers."
+      ],
+      "idea_prompt": [
+        "Ten small businesses you could run out of a single room"
+      ],
+      "hn_id": [
+        "49563355",
+        "49561320",
+        "49544762",
+        "49546753",
+        "49551096"
+      ],
+      "link": [
+        "https://collusion.wiki/",
+        "http://www.techdirt.com/2026/09/03/hackers-had-a-live-feed-of-every-id-this-verification-company-scanned-for-over-a-year/",
+        "https://www.kedglobal.com/artificial-intelligence/newsView/ked202607210007",
+        "https://pola.rs/posts/announcing-polars-2/",
+        "https://news.ycombinator.com/item?id=49551096",
+        "https://www.businesstoday.in/latest/economy/story/fcnrb-deposits-surge-65-4-billion-pushing-indias-forex-reserves-to-a-record-729-33-billion-552025-2026-08-29",
+        "https://northeasttimes.com/2026/09/03/microsoft-overhauls-financial-reporting-will-disclose-azure-revenue-each-quarter/",
+        "https://phys.org/news/2026-09-hubble-tracks-decagon-encircling-saturn.html",
+        "https://www.marketingdive.com/news/chilis-pop-up-finances-fast-food-meals-latest-dig-rising-prices/745371/",
+        "https://www.famouscampaigns.com/2026/03/kfc-leans-into-absurdity-with-pickle-filled-puffer-jacket-drop/",
+        "https://www.dexerto.com/entertainment/4000-supreme-casket-sells-out-in-minutes-3326648/",
+        "https://www.anthropic.com/research/formalizing-fermats-last-theorem",
+        "https://arxiv.org/abs/2608.27046",
+        "https://tradingeconomics.com/india/stock-market",
+        "https://www.nseindia.com/reports/fii-dii"
+      ]
     }
   ]
 }
