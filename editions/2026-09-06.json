@@ -1,0 +1,324 @@
+{
+  "date_line": "Sunday, 6 September 2026",
+  "issue": 1,
+  "preheader": "A Chrome zero-day that earned its finder $1,000; Texas freezing 474 GW of data-centre grid requests; one xenon event that might be dark matter; and the astrophysicist who proved airlines board planes backwards.",
+  "quote": {
+    "text": "The only thing that makes life possible is permanent, intolerable uncertainty: not knowing what comes next.",
+    "author": "Ursula K. Le Guin",
+    "work": "The Left Hand of Darkness",
+    "source_url": "https://www.goodreads.com/author/quotes/874602.Ursula_K_Le_Guin",
+    "note": "Every plan you make is an attempt to reduce this, and the sentence says the attempt is the mistake. Not that uncertainty is bearable — she calls it intolerable — but that it is the load-bearing wall. Remove it and there is nothing left to do."
+  },
+  "hn": [
+    {
+      "title": "Actively exploited sandbox RCE in all Chromium versions",
+      "url": "https://nvd.nist.gov/vuln/detail/cve-2026-85046",
+      "hn_url": "https://news.ycombinator.com/item?id=49570669",
+      "points": 727,
+      "comments": 419,
+      "bullets": [
+        "CVE-2026-85046 is a type confusion bug in V8, the JavaScript and WebAssembly engine, rated 8.8 on CVSS. A crafted HTML page corrupts the engine's assumptions about objects in memory and gets arbitrary code running inside Chrome's sandbox. Google's advisory on Thursday 4 September said an exploit for it exists in the wild.",
+        "The fix is 152.0.7977.82/.83 on Windows and macOS and 152.0.7977.82 on Linux. It is the sixth Chrome zero-day patched in 2026, after CVE-2026-2441, CVE-2026-3909, CVE-2026-3910, CVE-2026-5281 and CVE-2026-11645. Everything built on Chromium inherits it until it rebases.",
+        "The thread is not really arguing about the bug. Salvatore Gulizia reported it on 4 August and was paid $1,000. Google's Vulnerability Reward Program has paid out $81,933,423 in total and offers up to $250,000 for a full chain, and the top comment's objection is that the pricing treats a live, exploited primitive as a component rather than a weapon.",
+        "The dissent is worth keeping too: this lands you inside the sandbox, not outside it, so a working attack still needs a second escape bug chained on. Commenters note you can turn off V8's JIT in Chromium if you are willing to pay for it in speed."
+      ]
+    },
+    {
+      "title": "Nitter has more working instances than before the takedowns",
+      "url": "https://codeberg.org/mv12star/shitter/wiki/Instances",
+      "hn_url": "https://news.ycombinator.com/item?id=49571634",
+      "points": 583,
+      "comments": 271,
+      "bullets": [
+        "The page is a plain wiki list, maintained on Codeberg, of Nitter deployments — the privacy-preserving front end that renders Twitter without the login wall. Twelve are listed as working, among them three redirector services (nitt.tr, twit.0r.cx, xxcancel.com) and three Tor onion addresses.",
+        "It is sorted by status rather than by quality: working, active but rate-limited, and formerly active. Eight instances sit in the rate-limited bucket and at least six are recorded as taken down. There are no uptime figures and no feature matrix — the list is a census, not a leaderboard.",
+        "The operational notes are the interesting part. Operators are told to hold several session tokens and to plan for DMCA pressure. That is the whole economics of the thing: the technical cost of running an instance is trivial, the legal cost is the binding constraint, and onions and redirectors are how the list routes around it.",
+        "The headline claim is a count, not a health check. More endpoints exist than before the takedowns; most of them are rate-limited, and the page says so."
+      ]
+    },
+    {
+      "title": "Record-High 89% in U.S. Say Government Corruption Widespread",
+      "url": "https://news.gallup.com/poll/713933/record-high-say-government-corruption-widespread.aspx",
+      "hn_url": "https://news.ycombinator.com/item?id=49570772",
+      "points": 539,
+      "comments": 491,
+      "bullets": [
+        "89% of American adults say corruption is widespread in their national government, up ten points on 2025. From 2010 to 2025 the figure never left the 72–79% band. Fieldwork ran 1 May to 10 June 2026 with 1,000 adults aged 15 and over, margin of error ±4.1 points.",
+        "It is not a partisan reading any more. Democrats 91%, independents 90%, Republicans 83%. The number that moved is the Democratic one: 57% in 2024, 76% in 2025, 91% in 2026. Independents are up 12 points since 2024 and now sit closer to Democrats than to Republicans.",
+        "Business corruption is also at 71%, up eight points. That leaves an 18-point gap between how corrupt Americans think their government is and how corrupt they think business is — the widest in the trend.",
+        "The comparison that stings: the OECD median in 2025 was 59%. The United States is twenty points above the club it belongs to."
+      ]
+    },
+    {
+      "title": "Shutting down our public encrypted DNS",
+      "url": "https://mullvad.net/en/blog/shutting-down-our-public-encrypted-dns-servers-and-sponsoring-quad9-instead",
+      "hn_url": "https://news.ycombinator.com/item?id=49568579",
+      "points": 434,
+      "comments": 216,
+      "bullets": [
+        "Mullvad is closing the public DNS-over-HTTPS resolvers it launched in 2022. The deadline is 2 November 2026. It is sponsoring the Quad9 Foundation instead and pointing its users there.",
+        "The stated reason is unusually plain for a shutdown notice: running a privacy-focused public resolver is a highly specialised job, Quad9 already does it better, and duplicating the work is worse value than funding it.",
+        "Nothing changes for people using the VPN. Traffic there is already encrypted and Mullvad's own internal DNS answers the queries. The affected users are the ones who pointed a phone or router at Mullvad's public resolver without ever being customers.",
+        "Practical bit: Mullvad Browser on defaults migrates to Quad9 by itself. Anyone with a hand-edited DoH setting, or an installed iOS or macOS configuration profile, has to swap it before 2 November or lose resolution."
+      ]
+    },
+    {
+      "title": "Statichost.eu – European static site hosting",
+      "url": "https://www.statichost.eu/",
+      "hn_url": "https://news.ycombinator.com/item?id=49569896",
+      "points": 428,
+      "comments": 193,
+      "bullets": [
+        "A static-site host run from Stockholm by Eric Selin, whose pitch is a supply-chain claim rather than a feature claim: European company, European infrastructure, European CDN, no AWS and no Cloudflare anywhere in the path.",
+        "It does the expected things. Deploys from GitHub, GitLab, Bitbucket, Forgejo, SourceHut and Azure DevOps, builds any static site generator, free SSL on custom domains, webhook rebuilds and instant rollbacks. The worldwide CDN is in private beta and branch preview links are listed as coming soon.",
+        "Pricing: Hobby is free with one site, 10 GB of bandwidth and 100 build minutes. Starter is €9 a month for unlimited sites, 500 GB and 5,000 build minutes. Professional is €49 a month with 1 TB, five seats, and €19 for each seat after that. Overages are €1 per 10 GB and €1 per 100 build minutes.",
+        "It arrived on the front page next to a European-only git host and a European encrypted DNS handover. The interesting signal is not the product; it is that jurisdiction has become a listed feature."
+      ]
+    }
+  ],
+  "markets": {
+    "indices": [
+      {
+        "name": "Sensex · Fri 4 Sep close",
+        "value": "76,515.43",
+        "change": "362.57  (0.48%)",
+        "direction": "up"
+      },
+      {
+        "name": "Nifty 50 · Fri 4 Sep close",
+        "value": "23,897.70",
+        "change": "24.25  (0.10%)",
+        "direction": "up"
+      },
+      {
+        "name": "Sensex · week",
+        "value": "",
+        "change": "749 pts  (1.0%)",
+        "direction": "down"
+      },
+      {
+        "name": "Nifty 50 · week",
+        "value": "",
+        "change": "277.95 pts  (1.1%)",
+        "direction": "down"
+      },
+      {
+        "name": "Nifty Auto · week",
+        "value": "",
+        "change": "4.0%",
+        "direction": "down"
+      },
+      {
+        "name": "Nifty Oil & Gas · week",
+        "value": "",
+        "change": "1.1%",
+        "direction": "up"
+      },
+      {
+        "name": "Nifty Consumer Durables · week",
+        "value": "",
+        "change": "2.6%",
+        "direction": "down"
+      },
+      {
+        "name": "Rupee (USD/INR) · 4 Sep",
+        "value": "94.3840",
+        "change": "0.23% stronger on the day",
+        "direction": "up"
+      }
+    ],
+    "stories": [
+      {
+        "headline": "Markets are shut today. The week they just finished was worse than Friday made it look.",
+        "url": "https://upstox.com/news/market-news/stocks/weekly-wrap-nifty-50-sensex-drop-1-this-week-as-adani-enterprises-eicher-motors-maruti-suzuki-others-drag-losses/article-199849/",
+        "source": "Upstox weekly wrap (NSE data), week ended 4 September",
+        "bullets": [
+          "Indian exchanges are closed on a Sunday, so the last completed session remains Friday 4 September. Sensex closed at 76,515.43, up 362.57 points or 0.48% from 76,152.86. Nifty 50 closed at 23,897.70, up 24.25 points or 0.10% from 23,873.45, snapping a four-day losing streak.",
+          "Across the full week the Nifty 50 lost 277.95 points, or 1.1%, and the Sensex lost 749 points, or 1%. Friday's 362-point rise gave back under half of the week's fall — one green day on the end of a red week reads better than it was.",
+          "Only three sectors finished the week up: Oil & Gas +1.1%, Private Bank +0.3%, Energy +0.2%. The damage was Auto −4%, Consumer Durables −2.6%, Media −2.3%, Healthcare −2.3% and FMCG −2%. Consumption, in other words, and cars in particular.",
+          "Stock level: Adani Enterprises −7.3%, Eicher Motors −5.3%, Maruti Suzuki −5.1%, Mahindra & Mahindra −4.9%, Shriram Finance −4.2%. Coal India +3.6% and Reliance +2.7% led the other way. The midcaps were rougher still — KEI Industries −12.9%, Polycab −8.7%, Havells −5.6% — while IFCI rose 12.7% in the smallcaps. India VIX finished flat after a week that ranged from 9.25 to 12.12."
+        ]
+      },
+      {
+        "headline": "Foreigners sold for a second day. Domestic funds bought nearly three times as much.",
+        "url": "https://optionx.trade/fii-dii-activity",
+        "source": "OptionX (FII/DII cash activity), provisional",
+        "bullets": [
+          "Friday 4 September provisional cash: FIIs net sellers of ₹3,111.94 crore, DIIs net buyers of ₹8,930.12 crore. Combined, ₹5,818.18 crore of net institutional buying on a day the Nifty 50 moved 24 points.",
+          "The three-session sequence is the interesting bit. 2 September: FIIs +₹6,688.37 crore, DIIs +₹2,812.98 crore, Nifty 23,914.45. 3 September: FIIs −₹2,345.87 crore, DIIs +₹4,977.46 crore, Nifty 23,873.45. 4 September: FIIs −₹3,111.94 crore, DIIs +₹8,930.12 crore, Nifty 23,897.70.",
+          "Foreign money went from a ₹6,689 crore buy to ₹5,458 crore of selling across the two days that followed. Domestic institutions bought on all three, and raised the size each time: 2,813, then 4,977, then 8,930.",
+          "The index barely moved through any of it. Roughly ₹18,000 crore of institutional buying and selling passed through in three sessions to leave the Nifty 17 points higher than where it started. Provisional figures; final exchange data can shift them."
+        ]
+      },
+      {
+        "headline": "The rupee is near a two-month high, and the RBI has spent a great deal putting it there",
+        "url": "https://tradingeconomics.com/india/currency",
+        "source": "Trading Economics (USD/INR), last updated 4 September",
+        "bullets": [
+          "USD/INR finished Friday at 94.3840, down 0.2221 or 0.23% on the day — a stronger rupee — and close to its best level in more than two months.",
+          "The horizons disagree, which is normal and worth reading anyway. Over the week the pair is up 1.00%, a weaker rupee. Over the month it is down 0.73%, a stronger one. Over the year it is up 7.01%, which is the trend the rest of this is noise around.",
+          "Trading Economics puts the support down to strong dollar inflows and continued RBI intervention, noting the central bank has mobilised more than $136 billion through special measures — well past what was expected of it. Broad dollar weakness helped, particularly yen strength ahead of anticipated Bank of Japan rate rises.",
+          "Pushing the other way: crude above $96 a barrel on US–Iran tension, which has lifted Treasury yields and firmed expectations of a Fed hike. A large oil importer does not want that combination, and it is the reason a stronger rupee here still reads as defended rather than earned."
+        ]
+      }
+    ]
+  },
+  "trends": [
+    {
+      "tag": "Macro · India",
+      "headline": "Indian carmakers had a very good August. Their shares had a very bad week.",
+      "url": "https://upstox.com/news/market-news/stocks/august-auto-sales-2026-live-updates-tata-motors-pv-maruti-suzuki-mahindra-and-mahindra-bajaj-auto-eicher-motors-force-tvs-hero-motocorp-share-price/liveblog-199547/",
+      "subtitle": "Maruti +21%, Tata PV +56%, Mahindra +42% — and Nifty Auto the week's worst sector",
+      "bullets": [
+        "August volumes, released 1 September. Maruti Suzuki 219,220 units, up 21.32% year on year. Tata Motors 67,753 passenger vehicles, up 56%, and 44,411 commercial vehicles, up 49%. Mahindra & Mahindra 107,648 vehicles overall, up 42%, with domestic utility vehicles at 59,257, up 50%. Hyundai 65,796, up 8.8%, with domestic sales up 23.6%.",
+        "Two-wheelers ran just as hot. TVS Motor 616,540 units, up 21%. Bajaj Auto 535,764, up 28%. Royal Enfield 126,479, up 11%. Ashok Leyland moved 21,038 trucks and buses, up 20%.",
+        "Then the week to 4 September happened. Nifty Auto fell 4%, the worst of any sector, and three carmakers were among the Nifty 50's five biggest losers: Eicher Motors −5.3%, Maruti −5.1%, Mahindra & Mahindra −4.9%.",
+        "No neat story reconciles those two paragraphs, and it is worth resisting the urge to invent one. A monthly sales print is a fact about the month that ended; a share price is a bet on the next twelve. They are allowed to disagree, and this week they did so loudly."
+      ],
+      "link_label": "Read"
+    },
+    {
+      "tag": "Industry · Power",
+      "headline": "Texas stopped plugging in data centres because the queue asked for five times the whole grid",
+      "url": "https://www.utilitydive.com/news/texas-hits-pause-data-center-interconnections/827046/",
+      "subtitle": "474 GW of interconnection requests, and about 90% of them are data centres",
+      "bullets": [
+        "Governor Greg Abbott wrote to ERCOT and state regulators on 3 August asking for an audit of data-centre power requests. Until it is finished, connections above the review threshold do not move.",
+        "The number that forced it: roughly 474 GW of interconnection requests sitting in the queue, which Abbott's letter puts at more than five times the record peak electricity demand ERCOT has ever served. Around 90% of new power requests now come from data centres.",
+        "The audit is not about capacity, it is about who is real. It asks whether a project brings its own generation or leans on the grid, how much water it uses against what the community needs, and which sites are collecting state or local tax abatements and grants. Abbott: \"Any data center project that fails to comply with the verification and audit process to protect the reliability and resilience of the Texas electric grid must be denied.\"",
+        "A queue position is cheap and a data centre is not, so the queue is not a forecast. ERCOT's own May outlook warned its load forecast may be inflated, and utilities elsewhere have watched speculative filings bloat theirs. ERCOT has already pushed back its Batch Zero transmission planning study, requesting a good-cause exemption at its 20 August open meeting."
+      ],
+      "link_label": "Read"
+    },
+    {
+      "tag": "Wildcard · Physics",
+      "headline": "One event in a xenon tank that nobody can explain away",
+      "url": "https://www.bristol.ac.uk/news/2026/september/new-research-reveals-surprising-result-in-search-for-dark-matter.html",
+      "subtitle": "LUX-ZEPLIN, 2.6 sigma, and the discipline of not getting excited",
+      "bullets": [
+        "The LUX-ZEPLIN experiment — ten tonnes of ultrapure liquid xenon, 220 live days of data from March 2023 to April 2024 — recorded a single particle interaction sitting in the region where a dark matter signal would be expected and where backgrounds are lowest. Months of work failed to pin it on cosmic rays, stray neutrons or anything made of ordinary matter.",
+        "It is 2.6 sigma: roughly a one-in-two-hundred chance of arising by fluke. Particle physics calls nothing a discovery below 5 sigma, and the graveyard of 3-sigma results is the reason for that rule.",
+        "The quotes are a lesson in how to hold a result. Sam Eriksen of Bristol, who led the analysis: \"What we have observed in this analysis could be the first step in understanding dark matter as a particle.\" LZ spokesperson Rick Gaitskell of Brown: \"With only one event, we don't want to get ahead of ourselves.\"",
+        "Presented on 1 September at the TeV Particle Astrophysics conference in Japan; the preprint is out and submitted for peer review. There is no clever analysis that settles this. Either more events show up and the significance climbs, or they do not and it dissolves."
+      ],
+      "link_label": "Read"
+    }
+  ],
+  "research": [
+    {
+      "tag": "Industry · Google Research",
+      "title": "TimesFM-3: a zero-shot foundation model for multivariate forecasting",
+      "url": "https://research.google/blog/timesfm-3-a-zero-shot-foundation-model-for-multivariate-forecasting/",
+      "subtitle": "330M parameters, a trillion time points, and no fitting step",
+      "bullets": [
+        "Posted 31 August by Ayush Jain and Rajat Sen. TimesFM-3 has 330 million parameters and was pre-trained on a corpus of more than one trillion time points, real and synthetic. The claim is accurate multivariate forecasting in a single forward pass, with no training on your series.",
+        "The jump from 2.5 is the whole point. TimesFM-2.5 was univariate only. TimesFM-3 is natively pre-trained for multivariate work and takes multiple target series, past covariates and past-future dynamic covariates at once — which is what an actual forecasting problem looks like.",
+        "Architecture: a decoder-only transformer over patches of 32 time steps, with alternating attention — causal attention across time within a series, full attention across the variates. \"Contiguous Patch Masking\" lets it emit the entire horizon non-autoregressively instead of stepping forward one patch at a time, and it predicts nine quantiles per target rather than a point.",
+        "Results: top-ranked on GIFT-Eval, FEV-Bench and the TIME-leaderboard for both point and probabilistic forecasting, and ahead of Chronos-2 and Toto 2.0 in multivariate mode. Open weights on GitHub and Hugging Face; BigQuery integration is listed as coming. The takeaway for anyone who fits ARIMA for a living: the default is quietly becoming download-then-predict."
+      ],
+      "link_label": "Read"
+    },
+    {
+      "tag": "Academia · University of Washington",
+      "title": "Teaching a Large Language Model Tutor to Withhold the Answer",
+      "url": "https://arxiv.org/abs/2608.12292",
+      "subtitle": "A supervisor architecture for making a model refuse a capability it has",
+      "bullets": [
+        "Submitted 12 August by Yusuf Pisan, filed under Computers and Society. The premise is a result worth knowing on its own: in a randomised study, students using an unguarded chatbot scored higher while practising and lower on a later test taken without it. A Socratically guarded version of the same model kept the practice gain and removed the later loss.",
+        "So the tutor's value depends on declining to answer — and the paper's blunt observation is that a capable model, pressed by a frustrated student, does not withhold reliably on a prompt alone. Asking nicely in the system prompt is not a control.",
+        "The architecture treats withholding as a machine-checkable contract, per turn. A non-LLM policy core reads only trusted learner state and sets a ceiling on an eight-rung help ladder; a deterministic detector strips solution code; a separate LLM judge checks each risky reply against the contract. Tuning runs on scripted student personas driven through the live pipeline and re-scored by a stronger model, with every rejection's stated reason logged so fixes are made by cause.",
+        "The finding that generalises is the \"over-help ladder\". Fix the blatant solution leaks and the model starts naming the exact bug; fix that and it over-cites general facts. Each repair exposes the next rung. Anyone who has tried to make an agent refuse something it is perfectly able to do will recognise the shape."
+      ],
+      "link_label": "Abstract"
+    }
+  ],
+  "wild": [
+    {
+      "tag": "Advertising as public nuisance",
+      "headline": "Channel 4 built a ten-metre fountain of sewage on the South Bank",
+      "url": "https://www.channel4.com/press/news/channel-4s-4creative-exposes-sick-truth-behind-britains-sewage-scandal-bold-new-fountain",
+      "bullets": [
+        "Installed at Observation Point on London's South Bank from 23 to 25 February 2026, timed to the three-night run of the drama Dirty Business. Ten metres across, open to the public, and full of bronze-look statues of men, women and children vomiting brown water. Standing above them, a suited executive with cash in his pockets and a briefcase.",
+        "The statues are not generic. Real people who say sewage-polluted water made them ill were 3D-scanned for it, including the former national surfing champion Sophie Hellyer and the outdoor swimming journalist Ella Foote. A QR code on the plaque led to their filmed interviews.",
+        "Made by Channel 4's in-house agency 4Creative with the Glue Society, produced by Biscuit Filmworks and Revolver, media by OMD UK. Ad vans ran alongside it — parked outside water company headquarters telling them to get ready for their close-up, and at beaches where sewage had been released asking passers-by whether they would swim there.",
+        "4Creative's David Wigglesworth on the mechanism: \"We wanted to take something as familiar as a public fountain and turn it into a national talking point.\" A fountain is the most civic object there is, which is exactly why filling it with effluent works."
+      ],
+      "link_label": "Read"
+    },
+    {
+      "tag": "The demo is the ad",
+      "headline": "HP printed a billboard on a Clapham street, one A4 sheet at a time",
+      "url": "https://www.signlink.co.uk/news/hp-unveils-billboard-made-of-300-a4-sheets-printed-live/",
+      "bullets": [
+        "319 sheets of A4, printed live on the street in March 2026 and pasted up into a full outdoor billboard while people walked past. Shot as stills and a time-lapse.",
+        "The product is HP's Smart Tank range, whose entire claim is refillable ink that lasts — the company says at least three years. There is no way to argue with that claim more directly than by asking one desktop printer to produce a billboard in public and not run out.",
+        "The same campaign put broadcaster Alexander Armstrong in charge of a \"Rapid Response Print Squad\", a mobile printing service parked outside Farringdon Station and in Manchester and Bristol for people with a document emergency. Armstrong: \"Printing is one of those things you don't think about until you really need it.\"",
+        "Credits: Edelman on creative, Grand Visual and Talon on out-of-home, Omnicom and PHD on media."
+      ],
+      "link_label": "Read"
+    },
+    {
+      "tag": "Engineering, filmed once",
+      "headline": "Honda strapped a 50-year-old turntable to a car roof and drove off",
+      "url": "https://www.thestable.com.au/special-honda-cr-v-hybrid-plays-a-vinyl-record-smoothly-on-its-roof/",
+      "bullets": [
+        "The record player on the roof of the CR-V hybrid is half a century old and is the only turntable in the collection of the Museum of Modern Art in New York. It played the Isley Brothers' \"Smooth Sailin'\" while the car drove through regional New South Wales.",
+        "One shot, no post-production trickery, audio captured live through the car's own Bose system. Getting a stylus to hold a groove on a moving roof took weeks of development — which is the actual advertisement, since the claim being made is about ride smoothness.",
+        "Creative by Special Australia, directed by Kiku Ohe at Rabbit, with Zenith on media, Burson on PR and WiredCo on social. Special's Lea Egan on the brief: license \"to push the boundaries of car advertising as they so famously did before\".",
+        "Note the inversion. Most car advertising is a film that implies an engineering claim. This is an engineering test that happens to have been filmed."
+      ],
+      "link_label": "Read"
+    }
+  ],
+  "learn": {
+    "title": "An astrophysicist proved airlines board planes backwards, and airlines carried on",
+    "body": [
+      "Almost every airline boards from the back forwards, in blocks. It feels self-evidently right: fill the far end first and nobody has to walk past anyone. In 2008 Jason Steffen, an astrophysicist at Fermilab who spent his working life hunting exoplanets, got stuck in one of these queues and did what physicists do with an annoyance, which is model it. Three years later he and the television producer Jon Hotchkiss stopped modelling and rented a mock Boeing 757 fuselage on a Southern California soundstage — twelve rows of six seats, one aisle — and boarded 72 volunteers five different ways with a stopwatch running.",
+      "Back-to-front took 6 minutes 11 seconds. Boarding in four-row blocks, the other airline standby, took 6:54 — worse than the thing it was meant to improve. Boarding in a completely random order took 4:44. Window seats first, then middles, then aisles took 4:13. Steffen's own method took 3 minutes 36 seconds: the same 72 people, seated two and a half minutes sooner. Sit with the random number for a moment. Letting passengers walk on in no order whatsoever beat the airline's carefully sequenced procedure by about ninety seconds.",
+      "The reason is that there are two ways to get stuck and airlines optimise against the wrong one. Seat interference is when the people already in your row have to stand up to let you in. Aisle interference is when you wait behind someone wrestling a bag into an overhead bin. Back-to-front abolishes seat interference and maximises aisle interference — it deliberately gathers everyone who needs the same three metres of aisle into the same thirty seconds, roughly seventy times over. Steffen's method does the opposite: window seats in alternating rows on one side first, so that consecutive passengers are two rows apart and can all lift their bags at the same time. It looks like chaos from the gate desk and resolves faster than the orderly version. Which is the general lesson, and the reason nobody boards this way: the procedure was designed to look correct to the person operating it, not to the system it runs on."
+    ],
+    "tags": [
+      "How everyday systems work",
+      "Queues",
+      "Aviation"
+    ]
+  },
+  "ideas": {
+    "prompt": "Ten things to do with a free Sunday and ₹500",
+    "note": "Altucher's drill: ten ideas a day against one prompt. It is Sunday, the budget is ₹500, and nothing on this list needs booking, planning or a second person's agreement.",
+    "items": [
+      {
+        "text": "Ride one city bus route from its first stop to its last, then get off wherever it looked most interesting on the way out."
+      },
+      {
+        "text": "Do the one small task you have been avoiding for months, then spend the rest of the day insufferably pleased with yourself.",
+        "why": "A live thread on r/AppIdeas this week asks people which task they have put off far longer than it would take to finish; almost nobody's answer was a big one."
+      },
+      {
+        "text": "Cook something from a state you have never visited, buying only what a single neighbourhood market can supply."
+      },
+      {
+        "text": "Walk for two hours with a 1940s radio serial in your ears instead of music.",
+        "why": "Adapted from a r/AppIdeas post begging someone to build an old-time radio player — the wish is really for something that fills the time without demanding attention."
+      },
+      {
+        "text": "Eat the second-cheapest thing on the menu at five different places instead of one proper meal at one."
+      },
+      {
+        "text": "Find the oldest building within walking distance, read everything you can about it, and only then go and stand in front of it."
+      },
+      {
+        "text": "Sit in a park for an hour with paper and write down every distinct sound you hear."
+      },
+      {
+        "text": "Photograph the same street corner once an hour from sunrise to sunset."
+      },
+      {
+        "text": "Walk into a shop for a hobby you do not have and ask the owner what beginners always get wrong."
+      },
+      {
+        "text": "Take a friend somewhere neither of you has been and let them choose the direction at every junction."
+      }
+    ]
+  }
+}
