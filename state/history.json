@@ -297,6 +297,56 @@
         "https://optionx.trade/fii-dii-activity",
         "https://tradingeconomics.com/india/currency"
       ]
+    },
+    {
+      "date": "2026-09-07",
+      "issue": 1,
+      "quote_text": [
+        "Common sense is the most widely shared commodity in the world, for every man is convinced that he is well supplied with it."
+      ],
+      "quote_author": [
+        "René Descartes"
+      ],
+      "idea_text": [
+        "Reading a spoiler — thirty seconds to un-know it before it sets.",
+        "Leaving the house, so you can check the stove without losing the twenty minutes.",
+        "The eleven near-identical photos you took of the same sunset.",
+        "Installing the fourth app your workplace has decided everyone now needs.",
+        "Agreeing to something three weeks out that you would never agree to tomorrow.",
+        "The last hour of a night out, refunded as sleep.",
+        "Saying the funnier version of the remark about someone standing directly behind you.",
+        "The haircut. Not a refund — an undo.",
+        "The first ten minutes of a film, so it can start properly once everyone has stopped talking.",
+        "Learning the fact that ruined a song you liked."
+      ],
+      "idea_prompt": [
+        "Ten things that should have an undo button in real life"
+      ],
+      "hn_id": [
+        "49586171",
+        "49580369",
+        "49582000",
+        "49580939",
+        "49581870"
+      ],
+      "link": [
+        "https://beige.party/@intransitivelie/117057396732763183",
+        "https://www.space.com/space-exploration/launches-spacecraft/isar-aerospace-second-launch-norway-andoya-spaceport-spectrum-rocket",
+        "https://cloudinabottle.org/blog/launch-post",
+        "https://bcantrill.dtrace.org/2026/09/05/the-revolt-of-the-reader/",
+        "https://lapcatsoftware.com/articles/2026/9/1.html",
+        "https://www.forbesindia.com/article/news/gross-gst-collections-climb-15-percent-in-august-import-revenue-29-percent/2997680/1",
+        "https://thenextweb.com/news/tcs-hypervault-one-gigawatt-hyderabad-campus-7-4-billion-water-neutral-claim-eu-data-centre-reporting-delegated-regulation-2024-1364",
+        "https://www.sciencedaily.com/releases/2026/09/260901010713.htm",
+        "https://creative.salon/articles/work/columbia-expedition-impossible-adam-eve",
+        "https://www.yankodesign.com/2026/04/15/delonghi-just-turned-5-coffee-machines-into-tiny-cafes/",
+        "https://creative.salon/articles/work/burger-king-uk-whopper-of-a-finish-bbh",
+        "https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures",
+        "https://arxiv.org/abs/2608.27115",
+        "https://univest.in/blogs/nifty-50-prediction-for-monday-7-september-2026",
+        "https://www.kotakneo.com/share-market-today/fii-dii-data/",
+        "https://www.fxempire.com/currencies/usd-inr"
+      ]
     }
   ]
 }

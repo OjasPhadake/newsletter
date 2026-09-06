@@ -1,0 +1,320 @@
+{
+  "date_line": "Monday, 7 September 2026",
+  "issue": 1,
+  "preheader": "A private German rocket put satellites in orbit from European soil; 78% of developers say they stop reading the moment they smell an LLM; Claude closed 85% of a deception safety gap where humans managed 20%; and the Victorian safety mark shipowners were allowed to paint wherever they liked.",
+  "quote": {
+    "text": "Common sense is the most widely shared commodity in the world, for every man is convinced that he is well supplied with it.",
+    "author": "René Descartes",
+    "source_url": "https://www.goodreads.com/quotes/tag/irony",
+    "note": "The evidence offered for the claim is the same evidence that destroys it. If everyone is certain they have enough, the certainty is the symptom, and there is no vantage point from which you get to exempt yourself."
+  },
+  "hn": [
+    {
+      "title": "QBittorrent breaks out of sandbox to commit crimes",
+      "url": "https://beige.party/@intransitivelie/117057396732763183",
+      "hn_url": "https://news.ycombinator.com/item?id=49586171",
+      "points": 1176,
+      "comments": 244,
+      "bullets": [
+        "The most-voted thing on Hacker News in 48 hours is four sentences on a Mastodon server. In full: \"I regret to inform everyone that my copy of QBittorrent escaped its sandbox last night and downloaded a whole bunch of content owned by major corporations, and then my copy of Jellyfin broke containment and added those unfortunately-downloaded media files to its various libraries. I'm conducting an internal investigation to figure out how this happened, which will involve consuming these media files until the answers become apparent. Thank you for your cooperation during this trying time.\"",
+        "Nothing happened. qBittorrent is a BitTorrent client and Jellyfin is a self-hosted media server; both did exactly what their owner told them to. The headline as it reaches Hacker News reads like a security disclosure, which is part of why it travelled.",
+        "The joke is entirely in the register. \"Escaped its sandbox\", \"broke containment\", \"conducting an internal investigation\", \"during this trying time\" — this is the language of a breach notification, and every clause is passive precisely where a person would otherwise appear. Software agency is the alibi.",
+        "Posted by @intransitivelie on beige.party, an account whose display name is \"Ritalin Invitees\". The post has 4,504 favourites, 3,000 boosts and 77 replies on Mastodon itself, roughly four times the Hacker News vote count."
+      ]
+    },
+    {
+      "title": "Private German rocket makes history, reaches orbit from European soil",
+      "url": "https://www.space.com/space-exploration/launches-spacecraft/isar-aerospace-second-launch-norway-andoya-spaceport-spectrum-rocket",
+      "hn_url": "https://news.ycombinator.com/item?id=49580369",
+      "points": 705,
+      "comments": 389,
+      "bullets": [
+        "Sourcing note first: Space.com's article body sits behind its membership wall and could not be read this morning. The figures below come from Isar Aerospace's own press release and ESA's launch page, both fetched today.",
+        "Isar Aerospace's Spectrum lifted off from Andøya Space in Norway at 10:12 pm CEST on 5 September, reached orbit and deployed its payloads — the first commercial European company to put satellites in orbit from continental European soil. The mission is called Onward and Upward; ESA describes the manifest as five commercial and educational cubesats plus one in-orbit technology-demonstration experiment, selected through the German Space Agency's Microlauncher Competition.",
+        "Spectrum is a two-stage vehicle designed and built in-house: 28 m tall, 2 m across, ten engines, rated to 1,000 kg to low Earth orbit. Flight 1, in March 2025, cleared the pad and flew for about 30 seconds before failing — which is why the company's line all along has been that liftoff itself was the thing being proved.",
+        "ESA co-funded Isar through its Boost! programme and selected the company for the European Launcher Challenge in 2025, which requires an orbital launch by 2027. That box is now ticked with a year to spare. Isar has over 400 employees across five locations.",
+        "CEO Daniel Metzler: \"Today, Isar Aerospace opened space from Continental Europe\", and \"Europe now has sovereign access to space.\" ESA Director General Josef Aschbacher had earlier called the company \"poised to rise to a great challenge, one instrumental in advancing a resilient and autonomous Europe in space.\" Sovereign access is the operative phrase — Europe has had launch capability for decades, but not a private, small-lift one it could buy from at will."
+      ]
+    },
+    {
+      "title": "Cloud in a Bottle: making self-hosting accessible to everyone",
+      "url": "https://cloudinabottle.org/blog/launch-post",
+      "hn_url": "https://news.ycombinator.com/item?id=49582000",
+      "points": 598,
+      "comments": 294,
+      "bullets": [
+        "Zack Polizzi's description of what he built is admirably deflationary: \"It's just an Ubuntu machine with a web server that hosts a dashboard and routes HTTP(s) requests to containerized apps.\" AGPL-3.0, zero telemetry, built in the open by Polizzi and his employer Imbue after six-plus months of private work.",
+        "The argument is economic, not technical. \"Software served from the cloud delivers a great experience... But to serve something in the cloud costs money\" — and that cost is what pushes open-source authors into hosting their own project centrally, at which point the incentives quietly rotate away from the user. Cheap personal hosting is the intervention.",
+        "The differentiator against the existing crowd is integration rather than isolation. Apps run in rootless, hardened containers, but with opt-in platform features so they can talk to each other and share a single sign-in: log into your instance and you are logged into everything on it. Polizzi's stated model is a \"cloud smartphone\" where installing a good app is trivial.",
+        "He is blunt about the graveyard he is walking into: Sandstorm.io abandoned and requiring apps be modified, Nextcloud slow and enterprise-shaped, YunoHost with no sandboxing, Coolify isolating apps with minimal integration. Run it on your own hardware, a VPS, or a managed instance from Imbue with $10 of free credit. He also names the actual risk himself — the chicken-and-egg problem of a platform with no catalogue."
+      ]
+    },
+    {
+      "title": "The revolt of the reader",
+      "url": "https://bcantrill.dtrace.org/2026/09/05/the-revolt-of-the-reader/",
+      "hn_url": "https://news.ycombinator.com/item?id=49580939",
+      "points": 557,
+      "comments": 271,
+      "bullets": [
+        "Bryan Cantrill's argument, posted 5 September, is not that LLM-written prose is bad. It is that readers can tell, hate it, and punish the author rather than the tool. The tells trip what he calls an LLM-triggered ejection handle — a phrase like \"and here's why that framing matters!\" and the reader is gone.",
+        "The number doing the work: Cynthia Dunlop's survey of 668 developers found 78% stop reading immediately once they believe a piece is AI-authored, 71% avoid that author in future, and 98% would rather read an imperfect human piece than a polished machine one. Publishing this way does not fail slowly; it costs you the audience permanently.",
+        "Detection is the part that makes it enforceable. Cantrill endorses Pangram Labs' models — Pangram 4 specifically — for an \"astonishingly low false positive rate\", and Oxide has adopted RFD 576, a policy requiring that public writing be verified as human-authored before it goes out.",
+        "The framing he lands on is worth borrowing whatever you think of the policy: this is not a complaint about grammar, it is about the social contract between writer and reader. A reader gives you attention on the understanding that a person spent something to earn it."
+      ]
+    },
+    {
+      "title": "Chrome again exempts Google from user site data settings",
+      "url": "https://lapcatsoftware.com/articles/2026/9/1.html",
+      "hn_url": "https://news.ycombinator.com/item?id=49581870",
+      "points": 549,
+      "comments": 302,
+      "bullets": [
+        "Jeff Johnson of Lap Cat Software turned on Chrome's \"Delete data sites have saved to your device when you close all windows\", switched his default search engine to DuckDuckGo, confirmed he was not signed in, and confirmed the browser was storing zero bytes. He then ran one Google search and quit.",
+        "On reopening, 1,216 KB of www.google.com data was still there — Cookies, Local Storage and Session Storage — at chrome://settings/content/all. Every other site had been cleared. In his testing www.google.com is the only site Chrome exempts. He reproduced it on two different Macs on Chrome 152.0.7977.83.",
+        "He has been here before. Johnson documented a near-identical Chrome bug in 2020; it got picked up by The Verge and others and Google fixed it. Six years later the same shape of behaviour is back, which is why the headline says \"again\".",
+        "One detail for the version-watchers: 152.0.7977.83 is the same build that shipped last week's fix for the actively exploited V8 zero-day. Johnson's secondary gripe in the piece is unrelated but familiar — Google search results now rendering as opaque https://www.google.com/goto?url= redirects instead of the destination."
+      ]
+    }
+  ],
+  "markets": {
+    "indices": [
+      {
+        "name": "Sensex · Fri 4 Sep close",
+        "value": "76,515.43",
+        "change": "362.57  (0.48%)",
+        "direction": "up"
+      },
+      {
+        "name": "Nifty 50 · Fri 4 Sep close",
+        "value": "23,897.70",
+        "change": "24.25  (0.10%)",
+        "direction": "up"
+      },
+      {
+        "name": "Nifty 50 · day high",
+        "value": "24,005.75",
+        "change": "day low 23,895.85",
+        "direction": "flat"
+      },
+      {
+        "name": "India VIX · 4 Sep",
+        "value": "10.79",
+        "change": "4.85%",
+        "direction": "down"
+      },
+      {
+        "name": "FII net cash · 4 Sep",
+        "value": "−₹3,111.94 cr",
+        "change": "sold for a second day",
+        "direction": "down"
+      },
+      {
+        "name": "DII net cash · 4 Sep",
+        "value": "+₹8,930.12 cr",
+        "change": "bought for a third day",
+        "direction": "up"
+      },
+      {
+        "name": "USD/INR · 4 Sep",
+        "value": "94.4335",
+        "change": "0.07% stronger rupee",
+        "direction": "up"
+      }
+    ],
+    "stories": [
+      {
+        "headline": "Nothing has traded since Friday. Here is what the open is actually being asked to decide.",
+        "url": "https://univest.in/blogs/nifty-50-prediction-for-monday-7-september-2026",
+        "source": "Univest — Nifty 50 outlook for Monday 7 September",
+        "bullets": [
+          "Indian exchanges were shut Saturday and Sunday, so the last completed session is still Friday 4 September: Sensex 76,515.43, up 362.57 points or 0.48%; Nifty 50 23,897.70, up 24.25 points or 0.10%. It snapped a four-day losing streak and capped the index's longest weekly losing run in five months.",
+          "The intraday range is the more interesting number than the close. Nifty printed a high of 24,005.75 and a low of 23,895.85 — it touched 24,000, could not hold it, and finished within ten points of the day's floor. A 24-point gain that spent its afternoon giving back a 108-point one.",
+          "India VIX closed at 10.79, down 4.85%. Volatility is being priced as if this is a quiet market, which is a claim rather than an observation.",
+          "The macro input is external. Fed Governor Christopher Waller's dovish remarks cut market-implied odds of a September US rate hike from around 63% to roughly 50%, easing global yields and doing most of the work behind Friday's recovery. Levels flagged for today: support 23,780–23,830 then 23,650–23,700, resistance 24,000–24,050 then 24,150–24,200. Note that Friday's close sits above the first support by 68 points and below the first resistance by 102."
+        ]
+      },
+      {
+        "headline": "Look at the gross figures, not the net. Domestic funds are not just buying, they are trading twice as hard.",
+        "url": "https://www.kotakneo.com/share-market-today/fii-dii-data/",
+        "source": "Kotak Neo — FII/DII cash-segment activity (NSE/BSE), provisional",
+        "bullets": [
+          "Friday 4 September: FIIs bought ₹13,857.58 crore and sold ₹16,969.52 crore, for a net sale of ₹3,111.94 crore. DIIs bought ₹19,254.19 crore and sold ₹10,324.07 crore, for a net purchase of ₹8,930.12 crore.",
+          "The DII gross buy is the standout. At ₹19,254 crore it is larger than either side of the foreign book, and DIIs sold barely half what they bought — a ratio of 1.86 to 1. That is not two-way trading around a view; it is one-directional accumulation.",
+          "The three sessions in sequence. 2 September: FII net +₹6,688.37 crore, DII net +₹2,812.98 crore. 3 September: FII net −₹2,345.87 crore, DII net +₹4,977.46 crore. 4 September: FII net −₹3,111.94 crore, DII net +₹8,930.12 crore.",
+          "Now read the gross column instead. Foreign buying collapsed across the three days: ₹26,715.88 crore on Tuesday, ₹13,596.04 crore on Wednesday, ₹13,857.58 crore on Thursday. Domestic buying went the other way — ₹17,639.89 crore, then ₹17,063.65 crore, then ₹19,254.19 crore. The net line says foreigners turned sellers; the gross line says they mostly stopped showing up. Provisional exchange figures; finals can move them."
+        ]
+      },
+      {
+        "headline": "The rupee's year is a single direction with a lot of weather on top",
+        "url": "https://www.fxempire.com/currencies/usd-inr",
+        "source": "FX Empire — USD/INR, last updated 4 September 21:02 UTC",
+        "bullets": [
+          "USD/INR was last quoted at 94.4335, down 0.0617 or 0.07% on the session — a marginally stronger rupee — with the market closed at the time of the update.",
+          "The 52-week range is 87.5601 to 97.2594. That is a band nearly ten rupees wide, and the current level sits about 70% of the way up it.",
+          "Year to date the pair is up 5.19%; over twelve months, up 7.22%. Both are rupee depreciation. The daily prints that read as recoveries are movements inside a trend that has not turned.",
+          "Worth holding this next to Friday's equity close. A 0.07% currency move and a 0.10% index move on the same day is a market that did nothing, twice, and it is the kind of session that tells you far less than the size of the flows underneath it."
+        ]
+      }
+    ]
+  },
+  "trends": [
+    {
+      "tag": "Macro · India",
+      "headline": "GST collections grew 14.8% in August. Net of refunds they grew 8.3%.",
+      "url": "https://www.forbesindia.com/article/news/gross-gst-collections-climb-15-percent-in-august-import-revenue-29-percent/2997680/1",
+      "subtitle": "₹1,99,853 crore gross, and a refund bill that jumped 67.9%",
+      "bullets": [
+        "Released 1 September. Gross GST for August 2026 came in at ₹1,99,853 crore against ₹1.74 lakh crore a year earlier, up 14.8%. Domestic revenue was ₹1.37 lakh crore, up 9.3%. Import IGST was ₹62,604 crore, up 29%.",
+        "The headline is carried almost entirely by imports. Domestic collections — the part that tracks what people in India are actually buying — grew at a third the rate of the import line.",
+        "Refunds went to ₹31,795 crore, up 67.9%. Domestic refunds nearly doubled to ₹18,490 crore and export refunds through ICEGATE rose 61.8% to ₹13,305 crore. That takes net collections to ₹1.68 lakh crore, up 8.3%. Two numbers, 14.8% and 8.3%, describing the same month.",
+        "State-level variance is wide enough to be worth a squint: Assam up 162% to ₹3,679 crore, Uttar Pradesh up 19% to ₹9,092 crore, Gujarat up 15% to ₹12,047 crore, Maharashtra up 8% to ₹28,779 crore, Sikkim down 63% to ₹170 crore. April–August gross now stands at ₹10.43 lakh crore, up 11%."
+      ],
+      "link_label": "Read"
+    },
+    {
+      "tag": "Industry · AI infrastructure",
+      "headline": "TCS is putting ₹70,000 crore into a one-gigawatt AI campus in Hyderabad",
+      "url": "https://thenextweb.com/news/tcs-hypervault-one-gigawatt-hyderabad-campus-7-4-billion-water-neutral-claim-eu-data-centre-reporting-delegated-regulation-2024-1364",
+      "subtitle": "264 acres, $7.4 billion, and a water-neutrality claim nobody is obliged to check",
+      "bullets": [
+        "Announced by exchange filing on 5 September. TCS's HyperVault unit and partners have committed ₹700 billion — about $7.4 billion — to a data-centre campus on 264 acres in Hyderabad, Telangana, with capacity of up to one gigawatt. It would be among the largest AI infrastructure sites in India.",
+        "The build is aimed at frontier AI companies and hyperscalers: high-density, liquid-cooled compute for training and inference rather than general enterprise hosting.",
+        "The filing claims green energy and water-neutral design. Neither term is defined in it, and that is the article's actual point: an EU data centre drawing over 500 kW must report water consumption and renewable-energy metrics annually to a European database under the 2024 delegated regulation. India has no equivalent disclosure requirement.",
+        "The line the piece closes on is a good one to keep: water neutrality is \"a phrase in Hyderabad and a filed number in Frankfurt. Neither guarantees the water, but only one leaves evidence.\" One gigawatt is roughly the scale of demand that made Texas freeze its own interconnection queue last month."
+      ],
+      "link_label": "Read"
+    },
+    {
+      "tag": "Wildcard · Biology",
+      "headline": "Over 500 bat species carry a second set of antibody genes, which no mammal was thought to have",
+      "url": "https://www.sciencedaily.com/releases/2026/09/260901010713.htm",
+      "subtitle": "Published in Science Advances on 3 September, and the caveats are half the story",
+      "bullets": [
+        "Vesper bats — the largest bat family, more than 500 species on every continent except Antarctica — turn out to have two distinct sets of immunoglobulin heavy-chain genes. Every other mammal ever examined, humans included, builds antibody heavy chains from one set.",
+        "The work is from Tulane, with Stanford and the CDC. Corresponding author Hannah Frank, associate professor of ecology and evolutionary biology at Tulane: \"We've never seen anything like this in a mammal before. This completely changes our understanding of how mammalian immune systems can be organized.\" Reference: Taylor Pursell et al., \"Immunoglobulin heavy chain locus duplication in bats\", Science Advances, 2026, DOI 10.1126/sciadv.aeb6714.",
+        "The obvious hypothesis is that a second locus buys a wider antibody repertoire, and that this is part of why bats carry viruses that would flatten us without getting notably ill themselves.",
+        "The team declines to make that claim, which is the part worth copying. Frank: \"It doesn't fully explain why bats are such effective viral reservoirs, but it reveals a level of immune variety we didn't know existed.\" It is not established that every bat has this architecture, that a single B cell makes two antibodies at once, or that the extra locus protects against anything at all. A structural discovery is not yet a functional one."
+      ],
+      "link_label": "Read"
+    }
+  ],
+  "research": [
+    {
+      "tag": "Industry · Anthropic",
+      "title": "Automated researchers can reliably mitigate alignment failures",
+      "url": "https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures",
+      "subtitle": "85% of a deception gap closed, against 20% for humans given eight hours",
+      "bullets": [
+        "Posted 28 August. Claude was given the whole loop of an alignment research project and left to run it: read the literature, propose a training method, generate the dataset, train a student model, score it on benchmarks including Petri, ConfAIde and PrivaCI-Bench, and iterate. A separate monitoring agent vetted every proposed method before it was allowed to execute.",
+        "The metric is \"percentage of safety gap closed\" — how far a model travels from where it starts towards a theoretical perfect score. Across ten failure categories, among them deception, sycophancy, privacy violations and reward hacking, all ten showed substantial closure with no measured capability degradation.",
+        "The head-to-head is the number people will quote. On deception, Claude submitted more than 150 attempts and closed 85% of the gap; human safety researchers given eight hours closed 20%. The methods it found generalised to benchmarks it had not been tuned on and to models 4.7× larger than its training targets.",
+        "At production scale: Claude Sonnet 5 fixed alignment issues in Claude Opus 4.8 within 60 hours, closing 65% of a frontier model's safety gap using 2,000 training examples — which Anthropic puts at roughly 15,000× more sample-efficient than its production procedure.",
+        "The stated limits do real work here and should not be skipped. These are narrow, well-benchmarked failures; anything rare or newly emerged has no benchmark and was excluded; nobody tested whether the fixes survive extensive downstream RL. Anthropic's own line: \"evaluations like Petri are only proxies for real-world misalignment.\" A model that is good at closing a measured gap is, so far, evidence about the measurement."
+      ],
+      "link_label": "Read"
+    },
+    {
+      "tag": "Academia · University of Cambridge",
+      "title": "Cross-Lingual Alignment Without Joint Training: Do Monolingual Language Models Converge on Universal Representations?",
+      "url": "https://arxiv.org/abs/2608.27115",
+      "subtitle": "One rotation matrix, fit on parallel sentences, and an English fact answered in German",
+      "bullets": [
+        "Submitted 27 August under cs.CL by Ej Zhou, Suchir Salhan, Catherine Arnett and Anna Korhonen; OpenAlex resolves the affiliation to Cambridge. The question is deliberately clean: take models each trained on one language alone, never jointly, never on parallel data — do they end up in comparable representational shape?",
+        "They do. Testing strictly monolingual models such as the Goldfish family and independently developed architectures, the authors find \"alignable representational geometry across layers, with alignment strengthening as data scale, model scale, or linguistic proximity increases.\" More data, bigger models, or closer languages all push the geometries together.",
+        "The mechanism is unglamorous and that is what makes it interesting: \"a single Procrustes rotation fit on parallel sentences maps hidden states between models.\" One orthogonal rotation matrix. Not a learned adapter, not a fine-tune.",
+        "The result that earns the paper its place: the rotation carries content, not just shape. Rotate an English residual stream into a German model and the German model goes on to predict the donor's capital city on a factual task. The information survived the change of coordinate system.",
+        "The takeaway is that cross-lingual alignment need not be trained in — enough of it falls out of language structure itself. Which makes model stitching and modular multilingual systems a far more reasonable thing to attempt than the usual joint-training assumption suggests."
+      ],
+      "link_label": "Abstract"
+    }
+  ],
+  "wild": [
+    {
+      "tag": "Betting the company, literally",
+      "headline": "Columbia Sportswear offered everything it owns to anyone who photographs the edge of the Earth",
+      "url": "https://creative.salon/articles/work/columbia-expedition-impossible-adam-eve",
+      "bullets": [
+        "Launched 2 December 2025 with an open letter from CEO Tim Boyle in The New York Times. The offer is to flat-earthers: go and find the edge, photograph it, and the company is yours. Boyle: \"This is a message to Flat Earthers... it's time to put your map where your mouth is.\"",
+        "The itemised assets are the joke's engine — mannequins, coffee machines, snowshoes, toboggans, office plants, and a taxidermy beaver in the cafeteria. Specificity is what makes an absurd wager read as a real one.",
+        "Made by adam&eveDDB under Columbia's \"Engineered for Whatever\" platform, with Ant Nelson and Mike Sutherland as chief creative officers, James Crosby and Will Cottom as creative directors, and Smuggler directing the film. The brand also went and argued in the Reddit threads and YouTube comments rather than waiting to be mentioned.",
+        "The structure is worth admiring separately from the joke. The prize is only payable on an impossible condition, so the expected cost is zero — but it is a real, public, itemised offer, which is what stops it feeling like a slogan."
+      ],
+      "link_label": "Read"
+    },
+    {
+      "tag": "1,500 hours for a coffee machine",
+      "headline": "De'Longhi hired Wes Anderson's model maker to build five cafés the size of a coffee machine",
+      "url": "https://www.yankodesign.com/2026/04/15/delonghi-just-turned-5-coffee-machines-into-tiny-cafes/",
+      "bullets": [
+        "Five miniature café façades, each mounted on a working bean-to-cup machine and each modelled on a coffee city: Paris on the Rivelia, Tokyo on the Magnifica Evo Next, Milan on the Eletta Ultra, Copenhagen on the Eletta Explore, Berlin on the Primadonna Aromatic.",
+        "Built by Simon Weisse, the miniaturist behind The Grand Budapest Hotel and Asteroid City, with Cindy Schnitter — 1,500 hours of traditional model-making, with aged finishes, tiny windows and miniature signage, using forced perspective so the little sets read as full size on camera.",
+        "The brief is a single statistic. 72% of consumers still believe the best coffee can only be made in a café by an actual expert; the machines are already in the house. Concept by LOLA Madrid, shown at Milan Design Week 2026 — the first time all five were exhibited together.",
+        "De'Longhi's CMO: \"The café hasn't just been miniaturised; it has been brought home.\" A furniture-fair stunt that is really an argument about where the authority of a barista actually lives."
+      ],
+      "link_label": "Read"
+    },
+    {
+      "tag": "Mile 27",
+      "headline": "Burger King photographed marathon finishers eating a Whopper and put them on hundreds of billboards",
+      "url": "https://creative.salon/articles/work/burger-king-uk-whopper-of-a-finish-bbh",
+      "bullets": [
+        "Timed to the 2026 London Marathon on Sunday 26 April and running for a week. Documentary photographer Sophie Green — better known for candid portraits of overlooked British subcultures — shot real finishers eating a Whopper immediately after crossing the line, sweaty and wrecked. Those images went straight onto hundreds of out-of-home sites across central London.",
+        "The mechanic is the good bit. Burger King put pacemakers on the street after the race to lead finishers to \"Mile 27\" — its Leicester Square restaurant. Show your medal at Leicester Square or the Strand and the Whopper was free; other central London branches, transport hubs excluded, ran buy-one-get-one-free.",
+        "Made by BBH as the second outing of the \"Foodfillment\" platform, with Felipe Guimaraes as executive creative director, Charlene Chandrasekaran as deputy ECD and Holly Fallows and Charlotte Watmough as associate creative directors.",
+        "Fallows and Watmough on the thinking: \"The running movement has taken over culture, and this campaign highlights that you can be healthy and still enjoy a tasty Whopper at the end of a race.\" Note the inversion of the usual fast-food defence — instead of arguing the food is virtuous, it argues the customer already is."
+      ],
+      "link_label": "Read"
+    }
+  ],
+  "learn": {
+    "title": "Shipowners were told to paint a safety line on the hull, and were allowed to choose where",
+    "body": [
+      "In Victorian Britain there was a well-understood trade called sending out a coffin ship. You bought an old vessel, over-insured it, loaded it past any sane waterline, and waited. If it arrived, you had a profitable voyage. If it foundered, you had a claim. The people carrying the risk were the crew, who were not consulted and had no way to refuse: in 1855, nine of the twelve prisoners held in jails across southwest England were sailors, each serving twelve weeks for declining to board a ship they judged unseaworthy. The law's position was that an unwilling sailor was the crime.",
+      "Samuel Plimsoll, a coal merchant turned MP for Derby, started digging into this in 1870 and found it worse than he had expected. His 1872 book Our Seamen laid out the rotten hulls, the undermanning, the filthy quarters and above all the over-insurance, and it did something no select committee had managed: it made the public furious. A Royal Commission on Unseaworthy Ships followed the same year. Plimsoll's own speeches in the Commons were violent enough to get him censured; the shipowners sued. In 1876 the Merchant Shipping Act finally made a load line compulsory on foreign-going British vessels, coasting vessels over 80 tons, and foreign ships using British ports. His idea was beautifully simple. Put a mark on the outside of the hull, and overloading stops being a matter of expert testimony. Anyone standing on the dock can see the water above the line.",
+      "Then comes the part that is easy to miss and hard to forget. The Act did not say where the line went. Shipowners were left to position their own mark, and some of them painted it on the funnel. The mechanism that made overloading visible had been handed to the people doing the overloading, and it stayed that way for years — the Board of Trade did not enforce the line as Plimsoll intended until 1890, and the position was not fixed by law until 1894. Foreign ships calling at British ports were only brought fully into the regime in 1906. Thirty years, in other words, between passing the rule and owning the ruler. Any regulation that turns on a measurement has two separate questions inside it, and the second one — who gets to decide where zero is — is usually the one that matters."
+    ],
+    "tags": [
+      "Origin stories",
+      "Shipping",
+      "Regulation"
+    ]
+  },
+  "ideas": {
+    "prompt": "Ten things that should have an undo button in real life",
+    "note": "Altucher's drill: ten ideas a day against one prompt. Undo is the one interface convention that reliably feels like a superpower, and it stops dead at the edge of the screen.",
+    "items": [
+      {
+        "text": "Reading a spoiler — thirty seconds to un-know it before it sets.",
+        "why": "r/SomebodyMakeThis is currently arguing that streaming services should hide finale names and later-season blurbs until you have caught up."
+      },
+      {
+        "text": "Leaving the house, so you can check the stove without losing the twenty minutes."
+      },
+      {
+        "text": "The eleven near-identical photos you took of the same sunset."
+      },
+      {
+        "text": "Installing the fourth app your workplace has decided everyone now needs.",
+        "why": "A live thread on r/SomebodyMakeThis asks whether people would give up features just to use fewer work apps; the answers are not close."
+      },
+      {
+        "text": "Agreeing to something three weeks out that you would never agree to tomorrow."
+      },
+      {
+        "text": "The last hour of a night out, refunded as sleep."
+      },
+      {
+        "text": "Saying the funnier version of the remark about someone standing directly behind you."
+      },
+      {
+        "text": "The haircut. Not a refund — an undo."
+      },
+      {
+        "text": "The first ten minutes of a film, so it can start properly once everyone has stopped talking."
+      },
+      {
+        "text": "Learning the fact that ruined a song you liked."
+      }
+    ]
+  }
+}
