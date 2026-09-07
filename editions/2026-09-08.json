@@ -1,0 +1,331 @@
+{
+  "date_line": "Tuesday, 8 September 2026",
+  "issue": 1,
+  "preheader": "LG TVs recorded clean microphone audio with the screen off; Nvidia is buying Hugging Face for $12.93 billion; DeepMind ran an evaluation where neither side could see the other's data; and the airport that cured its baggage complaints by making everyone walk further.",
+  "quote": {
+    "text": "If someone doesn't value evidence, what evidence are you going to provide to prove that they should value it? If someone doesn't value logic, what logical argument could you provide to show the importance of logic?",
+    "author": "Sam Harris",
+    "source_url": "https://www.goodreads.com/quotes/tag/paradox",
+    "note": "Every tool of persuasion you own is already inside the system the other person has declined to enter. It is not an argument for giving up, but it does explain why the argument you are about to make will not work."
+  },
+  "hn": [
+    {
+      "title": "LG smart TVs caught logging audio with screen off and snooping on local devices",
+      "url": "https://www.notebookcheck.net/LG-smart-TVs-caught-logging-audio-with-screen-off-and-snooping-on-local-devices.1391214.0.html",
+      "hn_url": "https://news.ycombinator.com/item?id=49594878",
+      "points": 1094,
+      "comments": 3,
+      "bullets": [
+        "Gamers Nexus, working with Wendell of Level1Techs and independent researchers, put retail LG OLED sets — the G5 among them — behind Wireshark and watched what they sent. The finding that carries the headline: the TVs captured \"clean microphone audio while the screen was (or at least looked to be) powered down\". Unplug the Ethernet and the set stored the voice data locally, then uploaded it when the network came back.",
+        "The network behaviour is the less-quoted half and arguably the worse one. The sets were \"actively scanning the local area network for unrelated hardware, including phones and smartwatches\", and collecting internal IP addresses plus the names and signal strengths of neighbouring Wi-Fi networks along with location data. Automatic content recognition fingerprinted what was on screen, in some configurations even when the TV was being used as a plain HDMI monitor.",
+        "Follow where it goes and the business model appears. LG reports roughly 216 million smart TVs sold globally; LG Ad Solutions says it has access to 363 million secondary addressable devices in the US alone. That second number is only reachable if the television is inventorying the house around it. The panel is the loss leader; the household graph is the product.",
+        "Separately, the researchers documented remote code execution vulnerabilities in webOS, still under responsible disclosure. Their recommendation was blunt and structural rather than a settings tweak: disconnect the set from the internet entirely and drive it with an external streaming box. LG had not commented as of writing. The 135-minute video is the primary source; this is the write-up of it."
+      ]
+    },
+    {
+      "title": "Keep Our Servers Running",
+      "url": "https://blog.archive.org/2026/09/01/keep-our-servers-running-your-recurring-donation-goes-3x-this-september/",
+      "hn_url": "https://news.ycombinator.com/item?id=49593563",
+      "points": 927,
+      "comments": 235,
+      "bullets": [
+        "Posted 1 September by Tom Mayer. The Internet Archive is running a September match: start a recurring donation of $25 or more and the first gift is matched 2:1, so $25 becomes $75 and $100 becomes $300. $25 is also, they say, roughly the average donation that keeps the place running.",
+        "The number the post is built around is 210 petabytes of preserved, publicly accessible material. No charge to read it, no data sold, no advertising — which means the entire cost of that storage has to arrive as gifts.",
+        "The argument for why it is expensive is the interesting part: \"Rather than contracting out our core technology to corporations, we build and maintain our own systems.\" That independence is the thing being funded. Outsourcing to a cloud provider would be somebody else's decision about what stays online.",
+        "What the post does not give is a cost figure, a server count, or a budget gap — no runway number, no deadline beyond the month. It is an appeal built on a single storage statistic and a principle, which is either refreshing or evasive depending on how you read fundraising."
+      ]
+    },
+    {
+      "title": "Nitter and XCancel resume service after legal advice",
+      "url": "https://github.com/zedeus/nitter/commit/1428b4c2b4246f92a7e5b2673438e5fb39fcc4a3",
+      "hn_url": "https://news.ycombinator.com/item?id=49588988",
+      "points": 891,
+      "comments": 380,
+      "bullets": [
+        "The story is a two-file commit titled \"Update README - Nitter lives\". The substantive change is one line added to the cease-and-desist notice at the top of the README: \"UPDATE: Following legal advice, the Nitter project will continue. More details will be announced soon.\" That is the entire public statement.",
+        "Context for the sentence: X Corp sent cease-and-desist letters on 24 August demanding permanent takedown of Nitter instances and the repository, alleging \"unlawful use and circumvention of X's Application Programming Interface (API) and associated data\" and citing, among others, the Texas Harmful Access by Computer Act and the Lanham Act. The deadline was 5pm EST on 25 August. Nitter.net went dark and XCancel went with it.",
+        "The rest of the diff is what a project does when it has decided to survive. Ko-fi added to FUNDING.yml; the donations section moved and rebuilt with badge links for GitHub Sponsors, Patreon, Liberapay and Ko-fi; CI status badges added; the legal contact line clarified to cover DMCA requests specifically.",
+        "As of Privacy Guides' 7 September write-up, xcancel.com and other instances are back up while nitter.net itself was still not serving. Worth noticing that the resolution here is a README edit rather than a filing — the project's answer to a legal threat is a commit, and the details are still promised rather than given."
+      ]
+    },
+    {
+      "title": "Your intellectual fly is open when you use an LLM to author a post (2025)",
+      "url": "https://bcantrill.dtrace.org/2025/12/05/your-intellectual-fly-is-open/",
+      "hn_url": "https://news.ycombinator.com/item?id=49585644",
+      "points": 705,
+      "comments": 431,
+      "bullets": [
+        "A December 2025 post, originally written for LinkedIn in November, resurfaced on Hacker News ten months later — two days after a newer Bryan Cantrill piece on the same theme did the same thing. The original line: \"your intellectual fly is open: lots of people notice — but no one is pointing it out.\"",
+        "The mechanism is social, not aesthetic. Readers spot the tells — emojis, single-sentence paragraphs, em-dashes deployed with no ear for them — and then quietly stop trusting the byline. Cantrill's own reaction to suspecting a piece: \"I don't know what's real and what is in fact generated fanfic.\" The cost is not a worse post; it is that nobody tells you they have stopped reading you.",
+        "He is careful not to be anti-tool about it. LLMs are \"incredibly useful\", \"invaluable for comprehending text\", and \"astonishingly good editors\". They are, in his phrase, lousy writers. The distinction he is drawing is between using a machine to think and using one to speak.",
+        "The setting matters to the argument: he calls LinkedIn \"the Gerald Ford of social networks: the normal one that was left standing\" — and it is precisely that platform that keeps offering to rewrite your post for you. The place with the most residual trust is the one most actively spending it."
+      ]
+    },
+    {
+      "title": "A/I shuts down",
+      "url": "https://keepitfree.ai/announcements/a/i-shuts-down-stay-human/",
+      "hn_url": "https://news.ycombinator.com/item?id=49586898",
+      "points": 616,
+      "comments": 527,
+      "bullets": [
+        "Autistici/Inventati, the Italian collective that has run free privacy-focused email, blogs and hosting since 2001, announced on 6 September that it is closing after 25 years. The announcement is short and the last two words are \"Stay human.\"",
+        "The sequence that ended it is administrative rather than judicial. On 26 August the US State Department and Treasury's OFAC designated A/I a specially designated global terrorist entity under Executive Order 13224 as amended by 13886, alleging it supplied digital infrastructure to groups the US treats as extremist. PayPal suspended the account on 27 August; Public Interest Registry put autistici.org into serverhold on 28 August; Banca Etica froze the bank account on 1 September.",
+        "The State Department's own tally of what the designation reaches: roughly 16,000 mailboxes, 1,500 websites, 5,500 mailing lists and 10,000 blogs. No court has ruled on any of it. A sanctions listing removed a domain, a payment processor and a bank in six days.",
+        "The collective's stated reason for folding rather than fighting is the one worth sitting with: \"The possibility that our work may cause legal and financial consequences to those who are close to us leaves us no choice.\" They explicitly reject heroic gestures and martyrs. The threat model that finally worked was not against the servers but against everyone standing near them."
+      ]
+    }
+  ],
+  "markets": {
+    "indices": [
+      {
+        "name": "Sensex · Mon 7 Sep close",
+        "value": "76,132.81",
+        "change": "382.62  (0.50%)",
+        "direction": "down"
+      },
+      {
+        "name": "Nifty 50 · Mon 7 Sep close",
+        "value": "23,779.15",
+        "change": "118.55  (0.50%)",
+        "direction": "down"
+      },
+      {
+        "name": "Bank Nifty · 7 Sep",
+        "value": "57,088.30",
+        "change": "281.35  (0.49%)",
+        "direction": "down"
+      },
+      {
+        "name": "Nifty IT · 7 Sep",
+        "value": "2.28%",
+        "change": "worst sector; Infosys 3.76% lower",
+        "direction": "down"
+      },
+      {
+        "name": "Nifty Pharma · 7 Sep",
+        "value": "0.75%",
+        "change": "the only sector index that rose",
+        "direction": "up"
+      },
+      {
+        "name": "FII net cash · 7 Sep",
+        "value": "+₹280.10 cr",
+        "change": "bought, after two sessions of selling",
+        "direction": "up"
+      },
+      {
+        "name": "DII net cash · 7 Sep",
+        "value": "+₹567 cr",
+        "change": "smallest domestic net in the month so far",
+        "direction": "up"
+      },
+      {
+        "name": "USD/INR · 7 Sep",
+        "value": "94.50",
+        "change": "7 paise weaker rupee",
+        "direction": "down"
+      },
+      {
+        "name": "Brent crude · 7 Sep",
+        "value": "$97.05",
+        "change": "0.80%",
+        "direction": "up"
+      }
+    ],
+    "stories": [
+      {
+        "headline": "A 0.5% fall that was really one sector falling and everything else standing still",
+        "url": "https://blog.liquide.life/share-market-today-nifty-slips-below-23-800-sensex-falls-383-points-as-it-realty-drag-pharma-outperforms/",
+        "source": "Liquide — Share Market Today, 7 September 2026",
+        "bullets": [
+          "Monday's close: Sensex 76,132.81, down 382.62 points or 0.50%; Nifty 50 23,779.15, down 118.55 points or 0.50%; Bank Nifty 57,088.30, down 281.35 points or 0.49%. Three headline indices, three near-identical percentages.",
+          "The sector table is where the day actually happened. IT −2.28%, Realty −1.70%, Metal −1.24%, FMCG −0.66%, Financial Services −0.44%, Consumer Durables −0.42%, Energy −0.25%, Auto −0.04%. Pharma was the only one up, at +0.75%.",
+          "Infosys fell 3.76% and was the single biggest drag on the benchmark; SBI Life and HDFC Life both closed 2.42% lower. On the other side, Apollo Hospitals +1.27%, Larsen & Toubro +0.88%, Coal India +0.84%.",
+          "Read the spread rather than the index. Auto moved four hundredths of a percent and IT moved 2.28% on the same day, which is not a market-wide risk-off session. It is one sector being repriced while the rest of the board waits."
+        ]
+      },
+      {
+        "headline": "Both sides of the institutional book went quiet on the same day",
+        "url": "https://stockmojo.in/fii-dii-data-summary",
+        "source": "StockMojo — FII/DII cash-market activity, provisional",
+        "bullets": [
+          "7 September: FIIs bought ₹9,581 crore and sold ₹9,301 crore for a net purchase of ₹280 crore. DIIs bought ₹13,154 crore and sold ₹12,587 crore for a net purchase of ₹567 crore. Combined net institutional flow, around +₹847 crore.",
+          "The nets look like a calm, balanced session. The gross figures say something else. FII gross buying was ₹26,716 crore on 2 September and ₹9,581 crore on Monday — down by nearly two-thirds in four sessions.",
+          "The domestic side dropped harder in net terms. DII net buying ran ₹8,930 crore on 4 September, ₹4,977 crore on 3 September, ₹2,813 crore on 2 September — and then ₹567 crore. The bid that has spent the month absorbing foreign selling essentially stepped away.",
+          "So the index fell half a percent on the two smallest institutional prints of the month, with foreigners technically net buyers. Nobody sold this down. It fell because one sector was repriced and nothing was there to catch it. Provisional exchange figures; finals can move them."
+        ]
+      },
+      {
+        "headline": "Crude near $97 is doing more to the rupee than the equity market is",
+        "url": "https://hdfcsky.com/news/inr-vs-usd-rate-september-7-2026",
+        "source": "HDFC Sky — INR vs USD, 7 September 2026",
+        "bullets": [
+          "The rupee closed at 94.50 against the dollar, 7 paise weaker than Friday's 94.43. It had opened at 94.40 and touched 94.39 early — four paise stronger — before giving it all back and more.",
+          "Brent was at $97.05 a barrel, up 0.80% in futures trade. India imports the overwhelming majority of its crude, so this is the mechanism: every dollar on the barrel is dollars that have to be bought.",
+          "The support the rupee did have came from FCNR inflows — deposits from non-resident Indians held in foreign currency — and it was not enough. As one forex desk put it, \"the global backdrop remains a challenge\".",
+          "Hold the three numbers together: an intraday high of 94.39, a close of 94.50, and Brent up 0.8%. The currency market decided in the middle of the session which of those two forces mattered."
+        ]
+      }
+    ]
+  },
+  "trends": [
+    {
+      "tag": "Macro · India",
+      "headline": "Semicon 2.0 is ₹1,27,500 crore, and the interesting change is what it will pay for",
+      "url": "https://www.impriindia.com/insights/policy-update/india-semiconductor-mission-2-0-2026/",
+      "subtitle": "Cabinet approved 15 July; MeitY has now notified the operating framework",
+      "bullets": [
+        "The outlay is ₹1,27,500 crore against ₹76,000 crore for Semicon 1.0 — not quite a doubling. Six pillars: design, machines and materials, more fabs, ATMP/OSAT packaging, R&D on advanced nodes, and talent development across institutes.",
+        "The capex support rates are where policy intent shows. CMOS silicon fabs get 40% of capex on a pari-passu basis, other fabs 35%, advanced packaging 35%, conventional packaging 25%. The premium is aimed squarely at the hardest, most capital-intensive end.",
+        "What Semicon 1.0 actually produced, as of July 2026: 12 manufacturing units approved with ₹1.64 lakh crore of cumulative committed investment, 24 design projects supported, 105 startups and MSMEs given EDA tool access, and commercial production started at three units — Micron, CG Semi and Kaynes. The first fab is scheduled to be commissioned in 2028.",
+        "Read pillar two as the real shift. Semicon 1.0 was about getting fabs built; 2.0 puts money into making the equipment, chemicals and gases that fabs consume, plus full-stack Indian semiconductor IP. Owning a fab you cannot supply or maintain is a different kind of dependence, not the end of one."
+      ],
+      "link_label": "Read"
+    },
+    {
+      "tag": "Industry · AI platforms",
+      "headline": "Nvidia is buying Hugging Face for $12.93 billion",
+      "url": "https://blogs.nvidia.com/blog/nvidia-to-acquire-hugging-face/",
+      "subtitle": "The chip company is acquiring the place where the models live",
+      "bullets": [
+        "Announced 3 September, on a definitive agreement signed 2 September: roughly $11.9 billion to Hugging Face stockholders plus up to about $1.0 billion in equity-based retention for employees joining Nvidia. Expected to close in the first half of 2027, subject to regulatory approval. Nvidia's second-largest deal after the $20 billion Groq asset purchase in December.",
+        "What is being bought: 18 million developers, researchers and creators; 3 million shared models; 500,000 datasets; 1 million applications; more than 200,000 companies using the platform to discover and deploy AI.",
+        "Jensen Huang's stated commitment is the load-bearing sentence: \"NVIDIA compute will not be required to build on or deploy through Hugging Face\", with multi-cloud and multi-accelerator support maintained. \"Developers will choose the models they want, the frameworks they want, the clouds and inference service providers they want and the computing platforms they want.\"",
+        "The structural point stands whatever the commitment. Hugging Face is where an enormous share of open model distribution happens, and it is being bought by the company that sells the hardware those models run on. A promise of neutrality made in a press release is not the same thing as a structure that enforces it — and regulators have until 2027 to say so."
+      ],
+      "link_label": "Read"
+    },
+    {
+      "tag": "Wildcard · Astronomy",
+      "headline": "Saturn has grown a decagon at its south pole, and it was spotted by amateurs first",
+      "url": "https://science.nasa.gov/missions/hubble/nasas-hubble-tracks-new-decagon-encircling-saturns-south-pole/",
+      "subtitle": "Published in Science Advances on 4 September",
+      "bullets": [
+        "Saturn's north pole has had a hexagon for over forty years — a six-sided standing wave in the jet stream, stable and famous. The south pole now has a ten-sided one, embedded in a jet stream and centred near 63 degrees south latitude, and it is the first large regular-sided pattern ever seen in the southern hemisphere.",
+        "The discovery chain is the good bit. Saturn's seasons gradually brought the south pole back into view from Earth; Agustín Sánchez-Lavega of the University of the Basque Country, together with amateur astronomers Trevor Barry and Jean-Paul Oger, noticed a subtle undulating band in 2024 ground-based images collected through the Planetary Virtual Observatory Laboratory. Confirmation came in 2025 imagery, then Hubble.",
+        "It is not a mirror of the hexagon. The hexagon's sides and vertices have stayed uniformly dark for decades; the decagon varies in darkness across its features and has become steadily more distinct since 2023. The team's reading is that they may be watching one of these things form, which nobody has done before.",
+        "Named on the work with Sánchez-Lavega: Amy Simon at NASA Goddard and Mike Wong at UC Berkeley. Webb observations are planned. An eight-hundred-million-mile-away weather system was first noticed by two hobbyists comparing pictures."
+      ],
+      "link_label": "Read"
+    }
+  ],
+  "research": [
+    {
+      "tag": "Industry · Google DeepMind",
+      "title": "Piloting the world's first double-blind AI evaluations",
+      "url": "https://deepmind.google/blog/piloting-the-worlds-first-double-blind-ai-evaluations/",
+      "subtitle": "The evaluator cannot see the weights; the lab cannot see the test questions",
+      "bullets": [
+        "Posted 27 August by William Isaac, Sol Messing and Kristian Lum. The problem being solved is stated plainly: \"if models are able to 'peek' at the evaluation questions in advance, it can artificially inflate scores and undermine this trust.\" Benchmark contamination is not a hypothetical failure of AI evaluation; it is the default one.",
+        "The usual fix is a tradeoff and both sides lose something. Hand the lab your test set and it leaks into training data. Hand the evaluator your model and you have shipped your weights. Every serious external evaluation so far has had to pick which of those to accept.",
+        "The mechanism here is cryptographic rather than contractual. A Gemini Flash Lite model was run against confidential benchmarks inside Confidential Space, part of Google Cloud's confidential computing stack, which is used to \"verify that both the external evaluation data and the proprietary model remain private to their respective owners\". The stated guarantee: \"The evaluator cannot see the Gemini model weights, and Google cannot see the evaluator's test prompts.\"",
+        "Partners on the pilot were the Singapore AI Safety Institute, OpenMined, AVERI and MLCommons — a national safety institute, a privacy-tech nonprofit and the body that runs MLPerf.",
+        "What the post does not contain is a result. No benchmark is named, no score is reported, no limitations section is offered; the closing line is a hope that the pilot \"establishes a new frontier for model oversight\". Judge it as infrastructure for future claims, not as a claim. Which is fine — but it means the thing you cannot yet check is whether an evaluation nobody can inspect is one anybody will believe."
+      ],
+      "link_label": "Read"
+    },
+    {
+      "tag": "Academia · Cornell and Georgia Tech",
+      "title": "When LLMs Slow Down: How Environmental Impacts Mediate University Students' LLM Usage",
+      "url": "https://arxiv.org/abs/2608.23968",
+      "subtitle": "Show 89 computing-ethics students the carbon cost of a query and watch latency win anyway",
+      "bullets": [
+        "Submitted 25 August by Hyeonwook Kim, Xuesi Chen, Alex Cabral, Cindy Kaiying Lin, Udit Gupta and Josiah Hester; OpenAlex resolves the affiliations to Cornell and Georgia Tech. They built an interface that visualises the latency–carbon tradeoff live, during the conversation, and deployed it on 89 undergraduate computer science students aged 18–24 enrolled in a computing ethics course.",
+        "The population is chosen to stack the deck in favour of the intervention. These are technically sophisticated students, actively studying the ethics of computing, told exactly what each option costs. If eco-feedback works anywhere, it works here.",
+        "The headline result is that it does not survive waiting. The likelihood of choosing the lower-carbon system fell significantly as perceived response latency rose (p < .001). Willingness went up when users recognised the carbon savings (p < .01) — but the latency effect is the stronger and more reliable one.",
+        "Students with stronger eco-mindedness started from a higher baseline willingness and reported more awareness afterwards, \"though this effect diminished as latency increased\". Prior conviction buys you patience; it does not buy you unlimited patience.",
+        "The framing figure in the abstract is worth carrying separately: LLM adoption \"exceeding 80% among university students\", against \"limited insight into the environmental impacts of individual usage\". The paper's own conclusion is optimistic about eco-feedback as an educational tool. The measured finding is that a few hundred milliseconds outranks a stated value, which is a more useful thing to know when designing anything."
+      ],
+      "link_label": "Abstract"
+    }
+  ],
+  "wild": [
+    {
+      "tag": "Three days, thirty feet up",
+      "headline": "Netflix put a man in a furnished living room inside a billboard over Sunset Boulevard",
+      "url": "https://www.famouscampaigns.com/2026/08/netflix-traps-a-man-in-a-billboard-above-sunset-boulevard/",
+      "bullets": [
+        "For three days in early August, roughly thirty feet above Sunset Boulevard in Los Angeles, a performer lived inside a fully furnished, air-conditioned living room built into a billboard. Sofa, bay window, cereal, and a pair of binoculars for scanning the traffic.",
+        "His only channel to the street was a dry-erase whiteboard. People below shouted or wrote; he wrote back. Three days of a one-man correspondence conducted in marker pen with strangers stuck at a light.",
+        "It was promoting The Last House, a Netflix sci-fi thriller starring Greta Lee and Wagner Moura, whose premise is how long you could survive trapped inside your own home with resources running out. The ad is a live-action demonstration of the logline.",
+        "The structural joke is on the medium. A billboard is the one format that cannot be skipped, cannot be blocked and cannot answer back. This one answered back — and it is the latest activation at Netflix's permanent site on that stretch of Sunset, which is to say the company owns a wall and keeps finding new things to do to it."
+      ],
+      "link_label": "Read"
+    },
+    {
+      "tag": "150 pounds of real human hair",
+      "headline": "K18 rolled a ten-foot hairball through Manhattan and it worked",
+      "url": "https://www.marketingbrew.com/stories/k18-tumblehair-hairball-activation-ooh-strategy",
+      "bullets": [
+        "Ten feet across, 150 pounds, made of real human hair collected from K18's partner salons — nicknamed Tumblehair and pushed through Midtown, the West Village, Chinatown and the Seaport in August, finishing at a Sephora in the Meatpacking District.",
+        "The size is not arbitrary and this is the part worth stealing. K18 claims its FutureIQ serum helps a person retain 19,000 hairs; multiply that by New York's roughly 8.5 million people and you get 161 billion strands. The ball is that number, made touchable.",
+        "Made with the agency Uncommon. Reported returns: about $150,000 in earned media value, over 1.1 million social impressions and nearly 30,000 engagements — modest numbers, and honest ones for a physical object rolled down a street.",
+        "CMO Kleona Mack on the reaction, which is the most useful sentence in the whole story: \"We didn't fear it. We expected it... Either people were disgusted or obsessed with it.\" A campaign built to be one of two things and indifferent to which."
+      ],
+      "link_label": "Read"
+    },
+    {
+      "tag": "$450 a can",
+      "headline": "Liquid Death sold ten empty cans because Ozzy Osbourne had drunk from them",
+      "url": "https://popcrush.com/ozzy-osbourne-dna-liquid-death/",
+      "bullets": [
+        "The drop was called Infinite Ozzy and appeared on 17–18 June 2025: ten iced tea cans Osbourne had drunk from, sealed to preserve trace DNA, hand-signed by him, at $450 each.",
+        "The stated proposition was that once technology and the law permit, a buyer could attempt to clone him. Osbourne's own line in the campaign: \"Clone me, you bastards.\"",
+        "They sold out. Ten units at $450 is $4,500, so revenue is not the point — the point is that the cost of goods was ten cans of iced tea somebody had already finished.",
+        "Keep it as the clean reference case for the format: the thing being sold is provenance, not the object. Physically, each can is identical to one in a bin behind the studio."
+      ],
+      "link_label": "Read"
+    }
+  ],
+  "learn": {
+    "title": "Houston's airport fixed its baggage complaints by making everyone walk further",
+    "body": [
+      "Executives at Houston's airport had a problem they had already tried to solve with money. Passengers were complaining constantly about how long it took to get their luggage, so the airport put more baggage handlers on. Wait times came down to about eight minutes, which is a genuinely good number. The complaints did not move at all.",
+      "So somebody actually measured the journey rather than the queue. It took a passenger roughly one minute to walk from the arrival gate to baggage claim, and then seven more minutes standing at the carousel. Eight minutes total — but 88% of it spent doing nothing. The fix was to stop treating those eight minutes as one number. The airport moved arrival gates away from the main terminal and routed bags to the outermost carousel, so passengers now walked about six times longer to reach their luggage. Total time went up. Complaints dropped to near zero.",
+      "The principle, reported by Alex Stone in the New York Times in August 2012, is that occupied time feels dramatically shorter than unoccupied time, and people are far worse at estimating the first than the second. It is why restaurants hand you a menu before the table is ready, why lifts have mirrors beside them, and why the walk to your gate never feels like the wait at it. Once you have noticed it, a lot of well-designed public space stops looking like generosity and starts looking like arithmetic — and the next time you find yourself walking a strangely long corridor, it is worth asking who decided you should be moving."
+    ],
+    "tags": [
+      "Human behaviour",
+      "Queues",
+      "Design"
+    ]
+  },
+  "ideas": {
+    "prompt": "Ten things that should be much easier than they are",
+    "note": "Altucher's drill: ten ideas a day against one prompt. Not things that don't exist — things that do exist and are, for no good reason, a hassle every single time.",
+    "items": [
+      {
+        "text": "Deleting the four hundred screenshots on your phone without also deleting the six that mattered.",
+        "why": "A recurring ask on r/SomebodyMakeThis, where a thread on halving phone photo storage is currently running alongside one asking for a \"Digital Marie Kondo\"."
+      },
+      {
+        "text": "Splitting a restaurant bill where three people shared a starter and one person only had water."
+      },
+      {
+        "text": "Finding out whether the shop you are standing outside is actually open right now."
+      },
+      {
+        "text": "Sending someone a photo at the quality you actually took it at."
+      },
+      {
+        "text": "Cancelling anything you signed up for on a phone in under a minute."
+      },
+      {
+        "text": "Watching a show from the beginning without being told how it ends by the interface itself.",
+        "why": "A well-upvoted r/SomebodyMakeThis post is asking streaming services for a no-spoilers mode that hides later-season titles and blurbs."
+      },
+      {
+        "text": "Getting everyone's photos from a trip into one place before the trip stops being interesting."
+      },
+      {
+        "text": "Returning something you bought online without owning a printer."
+      },
+      {
+        "text": "Confirming you locked the door, from anywhere, without having installed anything in advance."
+      },
+      {
+        "text": "Buying a train ticket for someone who is not you."
+      }
+    ]
+  }
+}
