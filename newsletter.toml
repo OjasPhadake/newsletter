@@ -16,8 +16,9 @@ timezone = "Asia/Kolkata"
 # Local send time. Change the cron in .github/workflows/daily.yml to match —
 # `python3 scripts/config.py --cron` prints the line to paste.
 send_time = "07:00"
-# Used for the archive's canonical links. Leave blank until you publish one.
-site_url = ""
+# Used for the archive's canonical links. Leave blank until you publish one:
+# a feed with relative links does not resolve in a reader.
+site_url = "https://ojasphadake.github.io/newsletter"
 # The look, from templates/. Ships with:
 #   morning     warm paper and ink, serif masthead, numbered rules  (default)
 #   broadsheet  high-contrast newsprint, heavy rules, tall masthead
