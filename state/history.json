@@ -49,6 +49,78 @@
         "https://www.indiatvnews.com/business/markets/sensex-ends-373-93-points-lower-nifty-near-23-900-it-and-auto-shares-under-pressure-2026-09-02-1053062",
         "https://www.goldmansachs.com/insights/articles/the-outlook-for-indias-economy-in-2026-amid-new-us-tradedeal"
       ],
+      "subject": [
+        "Inflation is the thing to watch, not the index",
+        "The app-store walls went up several inches this week",
+        "Apple got caught short by AI demand for desktop Macs",
+        "The Ordinary opened a fake grocery store to sell a $175 banana",
+        "KitKat made a wrapper that blocks phone signal",
+        "National Geographic replaced its billboards with working bee hotels",
+        "SkillForge: Evolving Verifiable Skills for Reinforcement Learning Agents",
+        "AgentSpec: Speculative Decoding for Batch Inference of LLM Agents",
+        "Learning Simple Test-Time Environments for LLM Web Agents",
+        "Speculative decoding — why your model can be fast and exact at once"
+      ],
+      "brand": [
+        "Ordinary",
+        "KitKat",
+        "National Geographic"
+      ],
+      "brand_mention": [
+        "Markup Marché",
+        "LEGO's",
+        "F1",
+        "Miami GP",
+        "Supreme"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "Inflation is the thing to watch, not the index"
+        ],
+        [
+          "trends",
+          "The app-store walls went up several inches this week"
+        ],
+        [
+          "trends",
+          "Apple got caught short by AI demand for desktop Macs"
+        ],
+        [
+          "wild",
+          "The Ordinary opened a fake grocery store to sell a $175 banana"
+        ],
+        [
+          "wild",
+          "KitKat made a wrapper that blocks phone signal"
+        ],
+        [
+          "wild",
+          "National Geographic replaced its billboards with working bee hotels"
+        ],
+        [
+          "research",
+          "SkillForge: Evolving Verifiable Skills for Reinforcement Learning Agents"
+        ],
+        [
+          "research",
+          "AgentSpec: Speculative Decoding for Batch Inference of LLM Agents"
+        ],
+        [
+          "research",
+          "Learning Simple Test-Time Environments for LLM Web Agents"
+        ],
+        [
+          "learn",
+          "Speculative decoding — why your model can be fast and exact at once"
+        ]
+      ],
+      "editorial_domains": [
+        "famouscampaigns.com",
+        "macrumors.com",
+        "tradingeconomics.com",
+        "webiterate.dev"
+      ],
       "gmail_message_id": "1a0637881ce0b1df"
     },
     {
@@ -99,6 +171,82 @@
         "https://arxiv.org/abs/2609.02859v1",
         "https://www.5paisa.com/share-market-today/fii-dii-data",
         "https://blog.liquide.life/share-market-today-nifty-falls-below-24-000-auto-it-stocks-drag-market-lower-while-energy-gains/"
+      ],
+      "subject": [
+        "The rupee is holding a two-month high into a Fed that may hike",
+        "Google keeps its ad stack. Again.",
+        "Diamond is piezoelectric after all, if you make it thin enough",
+        "Chupa Chups made 250 lollipops that are genuinely impossible to open",
+        "Heinz put ketchup in a keg",
+        "Chili's opened a fake loan office next door to a McDonald's",
+        "GRADSOLVE: fast exact gradients for ODE ensembles on GPUs",
+        "Improved Gradient Descent Lower Bounds Beyond Nesterov",
+        "User Feedback Provides a Unique Signal that LLMs Cannot Detect",
+        "Discrete vs continuous adjoints — why you should differentiate the solver, not the equation"
+      ],
+      "brand": [
+        "Chupa Chups",
+        "Heinz",
+        "Chili's"
+      ],
+      "brand_mention": [
+        "Perfetti Van Melle",
+        "BBH",
+        "Hydraulic Press Channel",
+        "Fast Food Financing",
+        "York",
+        "McDonald's",
+        "Big QP"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "The rupee is holding a two-month high into a Fed that may hike"
+        ],
+        [
+          "trends",
+          "Google keeps its ad stack. Again."
+        ],
+        [
+          "trends",
+          "Diamond is piezoelectric after all, if you make it thin enough"
+        ],
+        [
+          "wild",
+          "Chupa Chups made 250 lollipops that are genuinely impossible to open"
+        ],
+        [
+          "wild",
+          "Heinz put ketchup in a keg"
+        ],
+        [
+          "wild",
+          "Chili's opened a fake loan office next door to a McDonald's"
+        ],
+        [
+          "research",
+          "GRADSOLVE: fast exact gradients for ODE ensembles on GPUs"
+        ],
+        [
+          "research",
+          "Improved Gradient Descent Lower Bounds Beyond Nesterov"
+        ],
+        [
+          "research",
+          "User Feedback Provides a Unique Signal that LLMs Cannot Detect"
+        ],
+        [
+          "learn",
+          "Discrete vs continuous adjoints — why you should differentiate the solver, not the equation"
+        ]
+      ],
+      "editorial_domains": [
+        "fxstreet.com",
+        "news.kraftheinzcompany.com",
+        "packagingeurope.com",
+        "sciencedaily.com",
+        "storychief.io",
+        "techxplore.com"
       ]
     },
     {
@@ -148,6 +296,79 @@
         "https://arxiv.org/abs/2608.28100",
         "https://www.businesstoday.in/latest/economy/story/rupee-jumps-67-paise-to-open-at-94-30-against-the-us-dollar-highest-level-in-two-months-553025-2026-09-03",
         "https://groww.in/fii-dii-data"
+      ],
+      "subject": [
+        "A year of tariff whiplash did not reduce India's dependence on America",
+        "Both frontier labs shipped an offensive-cyber model this week, then locked the door",
+        "Roman launched, and will survey the sky a thousand times faster than Hubble",
+        "Coca-Cola turned its contour bottle into a chopstick",
+        "Corona laser-etched cutting guides onto limes",
+        "Liquid Death sold ten cans of Ozzy Osbourne's DNA at $450 each",
+        "Skala 1.1: a learned exchange-correlation functional, now in the mainstream DFT codes",
+        "uMOF: a universal database, benchmark and interatomic potentials for metal-organic frameworks",
+        "The barcode took twenty-five years to get from a beach in Miami to a pack of chewing gum"
+      ],
+      "brand": [
+        "Coca-Cola",
+        "Corona",
+        "Liquid Death"
+      ],
+      "brand_mention": [
+        "Coke",
+        "Western",
+        "Asian",
+        "Southeast Asia",
+        "Grey New York",
+        "Design",
+        "Infinite Ozzy",
+        "DNA",
+        "Clone"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "A year of tariff whiplash did not reduce India's dependence on America"
+        ],
+        [
+          "trends",
+          "Both frontier labs shipped an offensive-cyber model this week, then locked the door"
+        ],
+        [
+          "trends",
+          "Roman launched, and will survey the sky a thousand times faster than Hubble"
+        ],
+        [
+          "wild",
+          "Coca-Cola turned its contour bottle into a chopstick"
+        ],
+        [
+          "wild",
+          "Corona laser-etched cutting guides onto limes"
+        ],
+        [
+          "wild",
+          "Liquid Death sold ten cans of Ozzy Osbourne's DNA at $450 each"
+        ],
+        [
+          "research",
+          "Skala 1.1: a learned exchange-correlation functional, now in the mainstream DFT codes"
+        ],
+        [
+          "research",
+          "uMOF: a universal database, benchmark and interatomic potentials for metal-organic frameworks"
+        ],
+        [
+          "learn",
+          "The barcode took twenty-five years to get from a beach in Miami to a pack of chewing gum"
+        ]
+      ],
+      "editorial_domains": [
+        "blog.google",
+        "creative.salon",
+        "loudwire.com",
+        "nasa.gov",
+        "outlookbusiness.com",
+        "yankodesign.com"
       ]
     },
     {
@@ -197,6 +418,92 @@
         "https://arxiv.org/abs/2608.20290",
         "https://theindianawaaz.com/market-wrap-sensex-nifty-decline-for-fourth-day-as-it-auto-stocks-drag/",
         "https://www.niftytrader.in/fii-dii-data"
+      ],
+      "subject": [
+        "India grew 7.8%. The oil bill grew 57%.",
+        "Google keeps its ad exchange and loses its favourite auction mechanics",
+        "The largest brain map ever made is a male fruit fly",
+        "The Ordinary opened a fake grocery store and put a $175.90 banana in it",
+        "Netflix put a man inside a billboard on Sunset Boulevard for three days",
+        "Dove turned the first fifty unfiltered Reddit reviews of a product into the campaign",
+        "WeatherNext 3: a weather model that learns from raw satellite pixels",
+        "Phantom Gains: Auditing Self-Improvement Against a Measured Null",
+        "Nobody actually knows why ice is slippery, and the argument is 180 years old"
+      ],
+      "brand": [
+        "Ordinary",
+        "Netflix",
+        "Dove"
+      ],
+      "brand_mention": [
+        "Markup Marché",
+        "Toronto",
+        "São Paulo",
+        "Mexico City",
+        "Melbourne",
+        "Uncommon Creative Studio Baskets",
+        "All-Natural Magical Energy-Boosting Bar",
+        "Exotic Thirst Defying Hydration Vessel",
+        "Natural Glow-Enhancing Vitality Orbs",
+        "Nils Leonard's",
+        "Selma",
+        "House",
+        "Netflix",
+        "Greta Lee",
+        "Wagner Moura",
+        "Dove",
+        "Intensive Repair 10",
+        "Serum Mask",
+        "David",
+        "AKQA",
+        "WPP Media",
+        "Burger King"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "India grew 7.8%. The oil bill grew 57%."
+        ],
+        [
+          "trends",
+          "Google keeps its ad exchange and loses its favourite auction mechanics"
+        ],
+        [
+          "trends",
+          "The largest brain map ever made is a male fruit fly"
+        ],
+        [
+          "wild",
+          "The Ordinary opened a fake grocery store and put a $175.90 banana in it"
+        ],
+        [
+          "wild",
+          "Netflix put a man inside a billboard on Sunset Boulevard for three days"
+        ],
+        [
+          "wild",
+          "Dove turned the first fifty unfiltered Reddit reviews of a product into the campaign"
+        ],
+        [
+          "research",
+          "WeatherNext 3: a weather model that learns from raw satellite pixels"
+        ],
+        [
+          "research",
+          "Phantom Gains: Auditing Self-Improvement Against a Measured Null"
+        ],
+        [
+          "learn",
+          "Nobody actually knows why ice is slippery, and the argument is 180 years old"
+        ]
+      ],
+      "editorial_domains": [
+        "adexchanger.com",
+        "econiti.org",
+        "famouscampaigns.com",
+        "marketingdive.com",
+        "research.google",
+        "timeout.com"
       ]
     },
     {
@@ -246,6 +553,103 @@
         "https://arxiv.org/abs/2608.27046",
         "https://tradingeconomics.com/india/stock-market",
         "https://www.nseindia.com/reports/fii-dii"
+      ],
+      "subject": [
+        "India's reserves hit a record, and most of the increase is borrowed",
+        "After eleven years, Microsoft will say how big Azure actually is",
+        "Saturn has grown a decagon, and nobody expected to watch one form",
+        "Chili's opened a fake payday-loan shop next door to a McDonald's",
+        "KFC made one puffer jacket, filled it with pickle juice, and gave it away",
+        "Supreme sold a branded coffin and it went in under a minute",
+        "Formalizing Fermat's Last Theorem",
+        "Performance Foundations of Parallel & Distributed Reasoning Language Models",
+        "Houston fixed its baggage complaints by making passengers walk six times further"
+      ],
+      "brand": [
+        "Chili's",
+        "KFC",
+        "Supreme"
+      ],
+      "brand_mention": [
+        "Manhattan's Union Square",
+        "Chili's",
+        "Fast Food Financing",
+        "McDonald's Signage",
+        "Eat Like",
+        "Trillionaire",
+        "Fast Food Prices",
+        "Out",
+        "Control",
+        "Finance Your Fast Food Today",
+        "Walk",
+        "Big QP",
+        "Quarter Pounder",
+        "JM&D",
+        "M",
+        "Launched 24",
+        "AI-generated",
+        "KFC",
+        "Be Dragons",
+        "Robin Collective",
+        "Pickle Mania",
+        "Pickle Burger",
+        "Frickles",
+        "Pickle Pepsi Max Brand",
+        "James Channon",
+        "Producing",
+        "Released 26",
+        "Titan Casket",
+        "Titan Orion",
+        "Supreme Red",
+        "National Funeral Directors Association",
+        "Orions",
+        "Supreme"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "India's reserves hit a record, and most of the increase is borrowed"
+        ],
+        [
+          "trends",
+          "After eleven years, Microsoft will say how big Azure actually is"
+        ],
+        [
+          "trends",
+          "Saturn has grown a decagon, and nobody expected to watch one form"
+        ],
+        [
+          "wild",
+          "Chili's opened a fake payday-loan shop next door to a McDonald's"
+        ],
+        [
+          "wild",
+          "KFC made one puffer jacket, filled it with pickle juice, and gave it away"
+        ],
+        [
+          "wild",
+          "Supreme sold a branded coffin and it went in under a minute"
+        ],
+        [
+          "research",
+          "Formalizing Fermat's Last Theorem"
+        ],
+        [
+          "research",
+          "Performance Foundations of Parallel & Distributed Reasoning Language Models"
+        ],
+        [
+          "learn",
+          "Houston fixed its baggage complaints by making passengers walk six times further"
+        ]
+      ],
+      "editorial_domains": [
+        "businesstoday.in",
+        "dexerto.com",
+        "famouscampaigns.com",
+        "marketingdive.com",
+        "northeasttimes.com",
+        "phys.org"
       ]
     },
     {
@@ -296,6 +700,113 @@
         "https://upstox.com/news/market-news/stocks/weekly-wrap-nifty-50-sensex-drop-1-this-week-as-adani-enterprises-eicher-motors-maruti-suzuki-others-drag-losses/article-199849/",
         "https://optionx.trade/fii-dii-activity",
         "https://tradingeconomics.com/india/currency"
+      ],
+      "subject": [
+        "Indian carmakers had a very good August. Their shares had a very bad week.",
+        "Texas stopped plugging in data centres because the queue asked for five times the whole grid",
+        "One event in a xenon tank that nobody can explain away",
+        "Channel 4 built a ten-metre fountain of sewage on the South Bank",
+        "HP printed a billboard on a Clapham street, one A4 sheet at a time",
+        "Honda strapped a 50-year-old turntable to a car roof and drove off",
+        "TimesFM-3: a zero-shot foundation model for multivariate forecasting",
+        "Teaching a Large Language Model Tutor to Withhold the Answer",
+        "An astrophysicist proved airlines board planes backwards, and airlines carried on"
+      ],
+      "brand": [
+        "Channel 4",
+        "HP",
+        "Honda"
+      ],
+      "brand_mention": [
+        "Observation Point",
+        "London's South Bank",
+        "Dirty Business",
+        "D-scanned",
+        "Sophie Hellyer",
+        "Ella Foote A QR",
+        "Channel 4",
+        "Creative",
+        "Glue Society",
+        "Biscuit Filmworks",
+        "Revolver",
+        "OMD UK Ad",
+        "Creative's David Wigglesworth",
+        "A4",
+        "HP's Smart Tank",
+        "Alexander Armstrong",
+        "Rapid Response Print Squad",
+        "Farringdon Station",
+        "Manchester",
+        "Bristol",
+        "Printing",
+        "Credits",
+        "Edelman",
+        "Visual",
+        "Talon",
+        "Omnicom",
+        "PHD",
+        "CR-V",
+        "Museum",
+        "Modern Art",
+        "York",
+        "Isley Brothers",
+        "Smooth Sailin",
+        "Wales",
+        "Bose",
+        "Special Australia",
+        "Kiku Ohe",
+        "Rabbit",
+        "Zenith",
+        "Burson",
+        "PR",
+        "WiredCo",
+        "Special's Lea Egan"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "Indian carmakers had a very good August. Their shares had a very bad week."
+        ],
+        [
+          "trends",
+          "Texas stopped plugging in data centres because the queue asked for five times the whole grid"
+        ],
+        [
+          "trends",
+          "One event in a xenon tank that nobody can explain away"
+        ],
+        [
+          "wild",
+          "Channel 4 built a ten-metre fountain of sewage on the South Bank"
+        ],
+        [
+          "wild",
+          "HP printed a billboard on a Clapham street, one A4 sheet at a time"
+        ],
+        [
+          "wild",
+          "Honda strapped a 50-year-old turntable to a car roof and drove off"
+        ],
+        [
+          "research",
+          "TimesFM-3: a zero-shot foundation model for multivariate forecasting"
+        ],
+        [
+          "research",
+          "Teaching a Large Language Model Tutor to Withhold the Answer"
+        ],
+        [
+          "learn",
+          "An astrophysicist proved airlines board planes backwards, and airlines carried on"
+        ]
+      ],
+      "editorial_domains": [
+        "bristol.ac.uk",
+        "channel4.com",
+        "signlink.co.uk",
+        "thestable.com.au",
+        "upstox.com",
+        "utilitydive.com"
       ]
     },
     {
@@ -346,6 +857,113 @@
         "https://univest.in/blogs/nifty-50-prediction-for-monday-7-september-2026",
         "https://www.kotakneo.com/share-market-today/fii-dii-data/",
         "https://www.fxempire.com/currencies/usd-inr"
+      ],
+      "subject": [
+        "GST collections grew 14.8% in August. Net of refunds they grew 8.3%.",
+        "TCS is putting ₹70,000 crore into a one-gigawatt AI campus in Hyderabad",
+        "Over 500 bat species carry a second set of antibody genes, which no mammal was thought to have",
+        "Columbia Sportswear offered everything it owns to anyone who photographs the edge of the Earth",
+        "De'Longhi hired Wes Anderson's model maker to build five cafés the size of a coffee machine",
+        "Burger King photographed marathon finishers eating a Whopper and put them on hundreds of billboards",
+        "Automated researchers can reliably mitigate alignment failures",
+        "Cross-Lingual Alignment Without Joint Training: Do Monolingual Language Models Converge on Universal Representations?",
+        "Shipowners were told to paint a safety line on the hull, and were allowed to choose where"
+      ],
+      "brand": [
+        "Columbia Sportswear",
+        "De'Longhi",
+        "Burger King"
+      ],
+      "brand_mention": [
+        "Launched 2 December 2025",
+        "CEO Tim Boyle",
+        "York Times",
+        "Flat Earthers",
+        "DDB",
+        "Columbia's",
+        "Engineered",
+        "Whatever",
+        "Ant Nelson",
+        "Mike Sutherland",
+        "James Crosby",
+        "Cottom",
+        "Smuggler",
+        "Rivelia",
+        "Magnifica Evo",
+        "Milan",
+        "Eletta Ultra",
+        "Copenhagen",
+        "Eletta Explore",
+        "Berlin",
+        "Primadonna Aromatic Built",
+        "Simon Weisse",
+        "Budapest Hotel",
+        "Asteroid City",
+        "Cindy Schnitter",
+        "LOLA Madrid",
+        "Milan Design Week 2026",
+        "De'Longhi's CMO",
+        "Marathon",
+        "Sophie Green",
+        "Whopper",
+        "Burger King",
+        "Mile 27",
+        "Leicester Square",
+        "Strand",
+        "BBH",
+        "Foodfillment",
+        "Felipe Guimaraes",
+        "Charlene Chandrasekaran",
+        "ECD",
+        "Holly Fallows",
+        "Charlotte Watmough",
+        "Watmough",
+        "Note"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "GST collections grew 14.8% in August. Net of refunds they grew 8.3%."
+        ],
+        [
+          "trends",
+          "TCS is putting ₹70,000 crore into a one-gigawatt AI campus in Hyderabad"
+        ],
+        [
+          "trends",
+          "Over 500 bat species carry a second set of antibody genes, which no mammal was thought to have"
+        ],
+        [
+          "wild",
+          "Columbia Sportswear offered everything it owns to anyone who photographs the edge of the Earth"
+        ],
+        [
+          "wild",
+          "De'Longhi hired Wes Anderson's model maker to build five cafés the size of a coffee machine"
+        ],
+        [
+          "wild",
+          "Burger King photographed marathon finishers eating a Whopper and put them on hundreds of billboards"
+        ],
+        [
+          "research",
+          "Automated researchers can reliably mitigate alignment failures"
+        ],
+        [
+          "research",
+          "Cross-Lingual Alignment Without Joint Training: Do Monolingual Language Models Converge on Universal Representations?"
+        ],
+        [
+          "learn",
+          "Shipowners were told to paint a safety line on the hull, and were allowed to choose where"
+        ]
+      ],
+      "editorial_domains": [
+        "creative.salon",
+        "forbesindia.com",
+        "sciencedaily.com",
+        "thenextweb.com",
+        "yankodesign.com"
       ]
     },
     {
@@ -396,6 +1014,91 @@
         "https://blog.liquide.life/share-market-today-nifty-slips-below-23-800-sensex-falls-383-points-as-it-realty-drag-pharma-outperforms/",
         "https://stockmojo.in/fii-dii-data-summary",
         "https://hdfcsky.com/news/inr-vs-usd-rate-september-7-2026"
+      ],
+      "subject": [
+        "Semicon 2.0 is ₹1,27,500 crore, and the interesting change is what it will pay for",
+        "Nvidia is buying Hugging Face for $12.93 billion",
+        "Saturn has grown a decagon at its south pole, and it was spotted by amateurs first",
+        "Netflix put a man in a furnished living room inside a billboard over Sunset Boulevard",
+        "K18 rolled a ten-foot hairball through Manhattan and it worked",
+        "Liquid Death sold ten empty cans because Ozzy Osbourne had drunk from them",
+        "Piloting the world's first double-blind AI evaluations",
+        "When LLMs Slow Down: How Environmental Impacts Mediate University Students' LLM Usage",
+        "Houston's airport fixed its baggage complaints by making everyone walk further"
+      ],
+      "brand": [
+        "Netflix",
+        "K18",
+        "Liquid Death"
+      ],
+      "brand_mention": [
+        "Los Angeles",
+        "House",
+        "Netflix",
+        "Greta Lee",
+        "Wagner Moura",
+        "K18's",
+        "Tumblehair",
+        "Midtown",
+        "Village",
+        "Chinatown",
+        "Seaport",
+        "Sephora",
+        "Meatpacking District",
+        "FutureIQ",
+        "York's",
+        "Uncommon Reported",
+        "CMO Kleona Mack",
+        "Infinite Ozzy",
+        "Osbourne",
+        "DNA",
+        "Clone"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "Semicon 2.0 is ₹1,27,500 crore, and the interesting change is what it will pay for"
+        ],
+        [
+          "trends",
+          "Nvidia is buying Hugging Face for $12.93 billion"
+        ],
+        [
+          "trends",
+          "Saturn has grown a decagon at its south pole, and it was spotted by amateurs first"
+        ],
+        [
+          "wild",
+          "Netflix put a man in a furnished living room inside a billboard over Sunset Boulevard"
+        ],
+        [
+          "wild",
+          "K18 rolled a ten-foot hairball through Manhattan and it worked"
+        ],
+        [
+          "wild",
+          "Liquid Death sold ten empty cans because Ozzy Osbourne had drunk from them"
+        ],
+        [
+          "research",
+          "Piloting the world's first double-blind AI evaluations"
+        ],
+        [
+          "research",
+          "When LLMs Slow Down: How Environmental Impacts Mediate University Students' LLM Usage"
+        ],
+        [
+          "learn",
+          "Houston's airport fixed its baggage complaints by making everyone walk further"
+        ]
+      ],
+      "editorial_domains": [
+        "blogs.nvidia.com",
+        "famouscampaigns.com",
+        "impriindia.com",
+        "marketingbrew.com",
+        "popcrush.com",
+        "science.nasa.gov"
       ]
     }
   ]

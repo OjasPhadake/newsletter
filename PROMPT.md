@@ -21,16 +21,35 @@ available instead.
 
 ## 0. Load the memory first
 
-Everything ever sent is recorded in `state/history.json`. Read it before
-choosing anything:
+Everything ever sent is recorded in `state/history.json`. Read the briefing
+before choosing anything — it is the first command of the day, not an
+afterthought:
 
 ```bash
-python3 scripts/history.py show
+python3 scripts/history.py brief
 ```
 
+It prints, in one screen: every story subject already covered, the brands the
+odd-ideas section has already used, the domains you keep going back to, the
+quote authors and ideas prompts still on cooldown, and the last Learn topics.
+Read it, then pick against it.
+
 This is a hard constraint, not a preference. **Nothing repeats — ever.** No
-quote, no idea, no ideas prompt, no Hacker News story. `scripts/history.py`
-enforces it and the send is blocked until it passes.
+quote, no idea, no ideas prompt, no Hacker News story, and **no story you have
+already told, however differently you word it**.
+
+`check` matches subjects loosely, so all of these are caught and all of them
+count as failures:
+
+- the same event under a different outlet's link;
+- the same story with a reworded headline ("Chili's opened a fake loan office"
+  → "Chili's opened a fake payday-loan shop");
+- a brand whose stunt already ran, or that was merely name-dropped in a bullet
+  in the last 60 days.
+
+**A collision means find a different story.** Rewriting the headline to slip
+past the matcher is the one failure mode this file cannot detect, and it is
+worse than an empty section.
 
 ## 1. Gather
 
@@ -48,7 +67,7 @@ python3 scripts/fetch_ideas.py                     > /tmp/ideas.json
 | **Markets** | WebSearch + WebFetch | Sensex and Nifty 50 closing levels with point *and* percentage change, sector indices, USD/INR, FII/DII flows. Exact figures from a named, linked source. |
 | **Trends** | WebSearch / Google News | 3 items: one Indian macro angle, one platform/industry shift, one wildcard. Real source links. |
 | **Research** | `fetch_labs.py` + `fetch_papers.py` | See the research brief. |
-| **Odd ideas** | WebSearch | 2–3 concrete things a *named* company actually did. A category ("brands are being weird") is not an item. |
+| **Odd ideas** | WebSearch | See the odd-ideas brief. |
 | **Learn** | You | See the learn brief. |
 | **Ten Ideas** | `fetch_ideas.py` | See the ideas brief. |
 
@@ -153,13 +172,45 @@ signal — what respected people are highlighting — use the Hugging Face upvot
 counts and WebSearch for coverage of a lab's recent work. Never imply you read
 a post you could not fetch.
 
+### The odd-ideas brief
+
+2–3 concrete things a *named* company actually did. A category ("brands are
+being weird") is not an item.
+
+This is the section that went stale first, so it has rules now.
+
+- **Search for the campaign, not for a list of campaigns.** Six of the first
+  twenty-four items came off one "best brand campaigns of the year" listicle,
+  which is why the same banana, the same coffin and the same billboard kept
+  coming back. Year-in-review roundups are a map, never a source: at most one
+  item may ever be traced to one, and you must then fetch and link the primary
+  coverage.
+- **Three items, three different domains.** Two items from one page is a sign
+  you stopped looking.
+- **Recent by default.** Prefer something from the last 60 days. An older
+  campaign needs a reason to be here beyond "it is famous".
+- **A brand gets one turn per 60 days**, and being name-dropped in someone
+  else's bullets counts. `brief` lists who is currently out.
+- Widen the search past the awards-and-marketing press: trade publications for
+  the industry involved, the company's own newsroom, local news where the
+  stunt physically happened, packaging and design press, subreddits for the
+  category.
+
+Optional keys you can set on an item, both of which sharpen the duplicate
+guard: `entities` (a list naming the brands involved, if the headline does not
+make it obvious) and `subject` (a plain description of the event, if the
+headline is oblique).
+
 ### The learn brief
 
 **Keep this one relaxed and non-technical.** It is the section the reader
 enjoys rather than studies. No equations, no ML internals, nothing that needs
 a background to follow. If it reads like a lecture, rewrite it.
 
-Rotate across these four flavours, roughly one per day:
+Rotate across these four flavours, roughly one per day. `brief` prints the
+last ten topics — check that you are not about to run the same flavour twice
+running, or the same story twice ever. Houston airport's baggage walk ran
+twice in four days.
 
 - **How everyday systems really work** — why airline seats are priced the way
   they are, how a shipping port moves a box, why supermarkets put milk at the back.
@@ -238,8 +289,11 @@ python3 scripts/history.py check editions/YYYY-MM-DD.json   # MUST pass
 python3 scripts/build_email.py editions/YYYY-MM-DD.json > build/edition.html
 ```
 
-**If `check` fails, replace the offending items and run it again.** Do not
-send an edition that has not passed. Do not edit `history.py` to make it pass.
+**If `check` fails, replace the offending items and run it again.** Go and find
+a different story — do not reword the headline until the matcher stops
+complaining, and do not swap in a different outlet's link for the same event.
+Do not send an edition that has not passed. Do not edit `history.py` to make it
+pass.
 
 ## 3. Send and record
 

@@ -56,10 +56,23 @@ HN story and link that has been sent, and `check` hard-fails the daily run if
 today's edition collides with anything in `state/history.json`. Quotes and
 ideas are barred forever; authors for 90 days, idea prompts for 120, links 45.
 
+Remembering links alone was not enough — the same story kept coming back under
+a different outlet's URL, so the first week ran the Ordinary's $175 banana
+twice, Chili's fake loan office twice and Houston airport's baggage walk twice.
+So it also records what each item was *about*:
+
+- **subject**, barred forever and matched loosely, so a reworded headline or a
+  different outlet's coverage of the same event still collides;
+- **brand**, 60 days, for the odd-ideas section — including brands merely
+  name-dropped in a bullet, which is how Burger King headlined three days after
+  appearing in someone else's.
+
 ```bash
+python3 scripts/history.py brief    # what today may not use — read this first
 python3 scripts/history.py show
 python3 scripts/history.py check editions/2026-09-04.json
 python3 scripts/history.py record editions/2026-09-04.json --message-id <id>
+python3 scripts/history.py backfill # rebuild state/ from editions/
 ```
 
 The daily agent commits `state/history.json` back to this repo after each

@@ -22,12 +22,18 @@ There are no MCP connectors on this runner. In particular:
 ## Step 1 — memory
 
 ```bash
-python3 scripts/history.py show
+python3 scripts/history.py brief
 ```
 
-`state/history.json` is committed to this repository and pushed after every
-send, so it is authoritative and complete. Nothing may ever repeat: no quote,
-no idea, no ideas prompt, no Hacker News story, no link.
+Run this first and read all of it. `state/history.json` is committed to this
+repository and pushed after every send, so it is authoritative and complete.
+
+Nothing may ever repeat: no quote, no idea, no ideas prompt, no Hacker News
+story, no link — **and no story already told, however differently you word
+it**. `check` matches subjects loosely, so the same event under another
+outlet's link, a reworded headline, or a brand used in the last 60 days all
+fail. When one does, go and find a different story. Do not reword until the
+matcher gives up.
 
 ## Step 2 — gather
 
@@ -52,6 +58,10 @@ Then follow the table in `PROMPT.md`. Specifically:
   one comes from `/tmp/labs.json` (lab blogs, provenance certain); the academic
   one from `/tmp/papers.json` `verified`. Anything from `trending` is a
   tie-breaker only and needs its arXiv page fetched to confirm the lab.
+- **Odd ideas:** three items, three different source domains, none of them a
+  "best campaigns of the year" roundup. Search for individual campaigns in the
+  trade press, company newsrooms and local news — the marketing listicles are
+  where the section went stale. Prefer the last 60 days.
 - **Ten Ideas:** a fresh, plainly-worded prompt every day, never one used in
   the last 120 days. Ground them in `/tmp/ideas.json`; if Reddit rate-limited
   the script, WebFetch the subreddit RSS feeds directly.
@@ -65,8 +75,10 @@ python3 scripts/history.py check editions/<TODAY>.json    # MUST exit 0
 python3 scripts/build_email.py editions/<TODAY>.json > build/edition.html
 ```
 
-If `check` fails, replace the offending items and run it again. Never edit
-`history.py` to make it pass. Never send an edition that has not passed.
+If `check` fails, replace the offending items with different stories and run it
+again. Never reword a headline to get past the subject matcher, never swap in
+another outlet's link for the same event, never edit `history.py` to make it
+pass, and never send an edition that has not passed.
 
 ## Step 4 — send
 
