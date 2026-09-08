@@ -77,11 +77,16 @@ norepeat check --state s.json --kind story --fuzzy --value "$HEADLINE" || exit 1
 
 ## Install
 
+Not on PyPI — the name is taken by an unrelated package, so `pip install
+norepeat` gets you someone else's code. Copy the file instead:
+
 ```bash
-pip install norepeat
+curl -O https://raw.githubusercontent.com/OjasPhadake/newsletter/main/scripts/norepeat.py
 ```
 
-One file, standard library only — vendoring `norepeat.py` works just as well.
+One file, standard library only, so there is nothing else to install. The
+repository's `pyproject.toml` builds a wheel if you would rather package it —
+pick an unused name first.
 
 MIT licensed. Extracted from [The Morning](https://github.com/OjasPhadake/newsletter),
 a daily newsletter written by an agent, where it is the thing that keeps the

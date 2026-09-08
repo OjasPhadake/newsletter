@@ -174,9 +174,14 @@ The matching half is [`norepeat`](docs/norepeat.md) — no newsletter knowledge,
 one file, standard library only. Useful for anything recurring that must not
 repeat itself: a standup digest, a changelog summary, a scheduled agent.
 
+It is not on PyPI, so copy the file:
+
 ```bash
-pip install norepeat
+curl -O https://raw.githubusercontent.com/OjasPhadake/newsletter/main/scripts/norepeat.py
 ```
+
+No dependencies, nothing to install. `pyproject.toml` will build a wheel if you
+would rather package it yourself.
 
 ## Automation
 

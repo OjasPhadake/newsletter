@@ -8,6 +8,12 @@
 # To turn it on: Settings -> Pages -> Source: GitHub Actions. Then put the
 # resulting URL in newsletter.toml as [newsletter].site_url so the feed
 # carries absolute links.
+#
+# This must be the *only* workflow that deploys Pages. Enabling Pages in the
+# UI offers to add GitHub's "Deploy static content" starter, which uploads the
+# repository root (path: '.') — that publishes the source tree instead of the
+# built archive, and because both fire on push to main, whichever finishes
+# last wins. If that file comes back, delete it; this one builds the site.
 name: Archive
 
 on:

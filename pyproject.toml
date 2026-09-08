@@ -1,13 +1,13 @@
 # Packages `norepeat` — the duplicate guard — on its own.
 #
-# The newsletter itself is not a pip package; it is a repository you fork.
-# But the thing that stops it repeating itself is useful to any recurring job
-# that produces content, so it ships separately:
+# The newsletter itself is not a pip package; it is a repository you fork. But
+# the thing that stops it repeating itself is useful to any recurring job that
+# produces content, so it is kept separately packageable.
 #
-#     pip install norepeat
-#
-# It is one file with no dependencies, so it can equally well be vendored by
-# copying scripts/norepeat.py into your own project.
+# NOT PUBLISHED. `norepeat` on PyPI is an unrelated package by another author,
+# so this cannot go out under that name — rename it here before publishing,
+# and note there is no release workflow yet either. Today the documented way
+# to use it is to copy scripts/norepeat.py, which needs no packaging at all.
 [build-system]
 requires = ["setuptools>=61"]
 build-backend = "setuptools.build_meta"
