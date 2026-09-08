@@ -1,0 +1,77 @@
+# Broadsheet — a front page.
+#
+# Black ink on white stock, a tall condensed masthead, heavy rules and no
+# colour except where a section needs marking. Headlines carry the weight,
+# so body copy is set smaller and tighter than Morning's. Reads like something
+# printed rather than something sent.
+name = "Broadsheet"
+description = "High-contrast newsprint: black on white, heavy rules, tall serif masthead."
+
+[fonts]
+serif   = "'Playfair Display','Times New Roman',Times,Georgia,serif"
+sans    = "'Helvetica Neue',Helvetica,Arial,sans-serif"
+heading = "serif"
+body    = "sans"
+
+[light]
+paper = "#FFFFFF"
+card  = "#F4F2EE"
+ink   = "#0B0B0C"
+soft  = "#3D3F44"
+faint = "#7A7D84"
+rule  = "#CDCFD3"
+
+[dark]
+paper = "#0B0B0C"
+card  = "#161719"
+ink   = "#F2F1EE"
+soft  = "#B9BBC0"
+faint = "#84878E"
+rule  = "#2C2E33"
+
+# Ink-led, with one restrained colour per department.
+[accents]
+amber  = ["#8A6A12", "#D8B36A"]
+pine   = ["#14554C", "#6FB3A8"]
+indigo = ["#25336B", "#8C9AD4"]
+plum   = ["#6A2F5C", "#C588B6"]
+clay   = ["#993B12", "#E08A5B"]
+moss   = ["#3F5418", "#A5BC65"]
+iris   = ["#3F2F7A", "#9C8BD6"]
+
+[market]
+up = "#166B3E"
+down = "#A32718"
+up_dark = "#6FC094"
+down_dark = "#E38578"
+
+[masthead]
+size = 46
+weight = 700
+leading = "1.0"
+tracking = ".04em"
+transform = "uppercase"
+rule = 6
+small_size = 34
+small_tracking = ".02em"
+
+[section]
+number = true
+bar = 3
+size = 11
+tracking = ".22em"
+transform = "uppercase"
+
+[quote]
+style = "rule"
+mark = false
+italic = true
+size = 22
+
+[body]
+size = 14
+leading = "1.5"
+h1 = 20
+h2 = 19
+radius = 0
+link_underline = false

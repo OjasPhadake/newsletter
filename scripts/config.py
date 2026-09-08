@@ -11,11 +11,13 @@ stderr. A config mistake must never be the reason a morning send fails.
     python3 scripts/config.py --get reader.email
 """
 import os
+import re
 import sys
 import tomllib
 
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CONFIG = os.path.join(HERE, "newsletter.toml")
+TEMPLATES = os.path.join(HERE, "templates")
 
 DEFAULTS = {
     "newsletter": {
@@ -25,6 +27,7 @@ DEFAULTS = {
         "timezone": "Asia/Kolkata",
         "send_time": "07:00",
         "site_url": "",
+        "template": "morning",
     },
     "reader": {
         "name": "Ojas",
@@ -55,11 +58,120 @@ DEFAULTS = {
     ],
 }
 
-# Renderers build_email.py knows about, and accents the stylesheet defines.
+# Renderers build_email.py knows about, and accents every template defines.
 RENDERERS = {"hn", "markets", "stories", "stories_title", "learn", "ideas"}
 ACCENTS = {"amber", "pine", "indigo", "plum", "clay", "moss", "iris"}
 
+# The look. Every key has a default here, so a template file only has to say
+# what it changes — and a template that goes missing degrades to `morning`
+# rather than taking the send down with it.
+DEFAULT_TEMPLATE = {
+    "name": "Morning",
+    "description": "Warm paper and ink, serif masthead, numbered section rules.",
+    "fonts": {
+        "serif": "'Iowan Old Style','Palatino Linotype',Palatino,Georgia,"
+                 "'Times New Roman',serif",
+        "sans": "-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,"
+                "sans-serif",
+        "heading": "serif",     # which stack headings use: serif or sans
+        "body": "sans",         # and body copy
+    },
+    "light": {"paper": "#FBF8F3", "card": "#FFFDFA", "ink": "#23272B",
+              "soft": "#6E6A63", "faint": "#94908A", "rule": "#E6DED1"},
+    "dark":  {"paper": "#15181B", "card": "#1C2025", "ink": "#E9E5DD",
+              "soft": "#A39E95", "faint": "#7C776F", "rule": "#31363C"},
+    "accents": {
+        "amber":  ["#A8792F", "#DCBA72"],
+        "pine":   ["#2F6B62", "#77B8AE"],
+        "indigo": ["#47527A", "#96A2CC"],
+        "plum":   ["#77496B", "#C293B4"],
+        "clay":   ["#AF5C36", "#E29268"],
+        "moss":   ["#5A6B33", "#AFC17A"],
+        "iris":   ["#5B4B8A", "#A99AD6"],
+    },
+    "market": {"up": "#2F7A52", "down": "#B04A3C",
+               "up_dark": "#7FBF9A", "down_dark": "#E08A7C"},
+    "masthead": {"size": 36, "weight": 400, "leading": "1.05",
+                 "tracking": ".22em", "transform": "uppercase",
+                 "rule": 3, "small_size": 30, "small_tracking": ".16em"},
+    "section": {"number": True, "bar": 2, "size": 12,
+                "tracking": ".19em", "transform": "uppercase"},
+    "quote": {"style": "card", "mark": True, "italic": True, "size": 21},
+    "body": {"size": 15, "leading": "1.55", "h1": 18, "h2": 17,
+             "radius": 0, "link_underline": False},
+}
+
 _cache = None
+_tpl_cache = {}
+
+
+def _merge(base, over):
+    """Deep-merge a template file over the defaults."""
+    out = dict(base)
+    for k, v in (over or {}).items():
+        if k in out and isinstance(out[k], dict) and isinstance(v, dict):
+            out[k] = _merge(out[k], v)
+        else:
+            out[k] = v
+    return out
+
+
+def template_names():
+    if not os.path.isdir(TEMPLATES):
+        return ["morning"]
+    got = sorted(os.path.splitext(os.path.basename(p))[0]
+                 for p in os.listdir(TEMPLATES) if p.endswith(".toml"))
+    return got or ["morning"]
+
+
+def load_template(name=None, cfg=None):
+    """A complete look, defaults filled in. Never raises."""
+    name = name or (cfg or load())["newsletter"]["template"]
+    name = str(name).strip() or "morning"
+    if name in _tpl_cache:
+        return _tpl_cache[name]
+
+    raw = {}
+    path = os.path.join(TEMPLATES, f"{os.path.basename(name)}.toml")
+    if os.path.exists(path):
+        try:
+            with open(path, "rb") as f:
+                raw = tomllib.load(f)
+        except (tomllib.TOMLDecodeError, OSError) as exc:
+            _warn(f"template {name!r} is unreadable ({exc}); using the default look")
+    elif name != "morning":
+        _warn(f"template {name!r} not found in templates/; using the default look. "
+              f"Available: {', '.join(template_names())}")
+
+    tpl = _merge(DEFAULT_TEMPLATE, raw)
+    tpl["id"] = name
+
+    # Colours go straight into a stylesheet, so a malformed one is invisible
+    # until someone opens the email. Check them here instead.
+    def ok_colour(v):
+        return isinstance(v, str) and re.fullmatch(r"#[0-9A-Fa-f]{3,8}", v.strip())
+
+    for table in ("light", "dark"):
+        for k, default in DEFAULT_TEMPLATE[table].items():
+            if not ok_colour(tpl[table].get(k)):
+                _warn(f"template {name!r}: [{table}].{k} = "
+                      f"{tpl[table].get(k)!r} is not a colour; using {default}")
+                tpl[table][k] = default
+
+    for k, default in DEFAULT_TEMPLATE["market"].items():
+        if not ok_colour(tpl["market"].get(k)):
+            _warn(f"template {name!r}: [market].{k} is not a colour; using {default}")
+            tpl["market"][k] = default
+
+    # A template that forgot an accent would raise deep inside the renderer.
+    for k, v in DEFAULT_TEMPLATE["accents"].items():
+        got = tpl["accents"].get(k)
+        if not (isinstance(got, (list, tuple)) and len(got) == 2
+                and all(ok_colour(x) for x in got)):
+            _warn(f"template {name!r} has no usable accent {k!r}; keeping the default")
+            tpl["accents"][k] = list(v)
+    _tpl_cache[name] = tpl
+    return tpl
 
 
 def _warn(msg):
@@ -218,6 +330,10 @@ def main():
         print(f"[{table}]")
         for k, v in cfg[table].items():
             print(f"  {k:<10} {v!r}")
+    tpl = load_template(cfg=cfg)
+    print(f"\n[template] {tpl['id']} — {tpl['name']}: {tpl['description']}")
+    print(f"  available: {', '.join(template_names())}")
+
     print("\n[[sections]] — the running order")
     for i, s in enumerate(cfg["sections"], 1):
         print(f"  {i}. {s['key']:<9} {s['title']:<30} "

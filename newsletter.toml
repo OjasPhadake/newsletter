@@ -18,6 +18,15 @@ timezone = "Asia/Kolkata"
 send_time = "07:00"
 # Used for the archive's canonical links. Leave blank until you publish one.
 site_url = ""
+# The look, from templates/. Ships with:
+#   morning     warm paper and ink, serif masthead, numbered rules  (default)
+#   broadsheet  high-contrast newsprint, heavy rules, tall masthead
+#   digest      clean system sans, rounded cards, generous whitespace
+#   mono        monospace throughout, near-black on bone
+#   dusk        dark-first, cool greys and jewel accents
+# Compare them: python3 scripts/preview_templates.py
+# Make your own: copy templates/morning.toml, which documents every key.
+template = "morning"
 
 [reader]
 # Who the newsletter is written for. The briefs address this person directly,

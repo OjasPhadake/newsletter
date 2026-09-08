@@ -61,6 +61,27 @@ python3 scripts/config.py --cron   # the cron line for your send time
 A missing or malformed config falls back to built-in defaults with a warning
 rather than failing a send.
 
+## Pick a look
+
+Five templates ship in [`templates/`](templates/) — `morning` (the default),
+`broadsheet`, `digest`, `mono` and `dusk`. Set one in `newsletter.toml`:
+
+```toml
+[newsletter]
+template = "digest"
+```
+
+Compare them side by side before you decide:
+
+```bash
+python3 scripts/preview_templates.py && open build/templates/index.html
+```
+
+Templates are TOML, not code: palettes, font stacks, masthead, section
+headings, quote style and type scale. Copy `templates/morning.toml`, which
+documents every key, to make your own. A missing or malformed template falls
+back to the default look rather than failing a send.
+
 ## Sending
 
 Pick a provider in `[sender]`, then add its secrets:
@@ -93,6 +114,8 @@ scripts/fetch_labs.py     recent posts from the labs' own research blogs
 scripts/fetch_ideas.py    raw material for Ten Ideas, from Reddit and Ask HN
 scripts/build_email.py    turns an edition JSON into the email HTML
 scripts/build_archive.py  turns editions/ into the web archive
+scripts/preview_templates.py  renders one issue in every template, to choose
+templates/*.toml          the look: palettes, type, masthead, section styling
 scripts/history.py        the duplicate guard, newsletter half
 scripts/norepeat.py       the duplicate guard, reusable half
 editions/*.json           one file per issue — the content, as data
@@ -174,12 +197,15 @@ sends, `run-dry-<n>` builds only.
 
 ## Design
 
-Editorial: serif masthead, numbered section rules, warm paper ground
-(`#FBF8F3`) against ink (`#23272B`). Each section owns one muted accent —
-pine, indigo, moss, plum, amber, clay, iris — so the eye can find its place
-without anything shouting. Typography lives in a `<style>` block; layout stays
-inline, so a client that strips `<style>` still gets a correctly structured
-page. Both the email and the archive are theme-aware.
+Default look (`morning`): serif masthead, numbered section rules, warm paper
+ground (`#FBF8F3`) against ink (`#23272B`). Each section owns one muted accent
+— pine, indigo, moss, plum, amber, clay, iris — so the eye can find its place
+without anything shouting.
+
+Typography lives in a `<style>` block; layout stays inline, so a client that
+strips `<style>` still gets a correctly structured page. Every font stack ends
+in a generic family because email clients have no webfonts. Both the email and
+the archive are theme-aware, and follow whichever template you picked.
 
 ## Licence
 

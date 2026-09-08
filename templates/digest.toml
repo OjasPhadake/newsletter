@@ -1,0 +1,76 @@
+# Digest — a modern product newsletter.
+#
+# System sans everywhere, generous line height, soft rounded cards and a cool
+# neutral ground. No uppercase tracking anywhere: headings are simply larger
+# and heavier. The friendliest of the set, and the one that looks least like
+# it came out of a script.
+name = "Digest"
+description = "Clean system sans, soft rounded cards, generous whitespace."
+
+[fonts]
+serif   = "-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif"
+sans    = "-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif"
+heading = "serif"
+body    = "sans"
+
+[light]
+paper = "#FFFFFF"
+card  = "#F6F8FA"
+ink   = "#111827"
+soft  = "#4B5563"
+faint = "#7C8494"
+rule  = "#E5E7EB"
+
+[dark]
+paper = "#0D1117"
+card  = "#161B22"
+ink   = "#E6EDF3"
+soft  = "#9BA7B4"
+faint = "#6E7781"
+rule  = "#262C33"
+
+[accents]
+amber  = ["#B45309", "#F0B357"]
+pine   = ["#0F766E", "#5EC5B8"]
+indigo = ["#4338CA", "#9AA0F5"]
+plum   = ["#9D2C6F", "#EE8FC0"]
+clay   = ["#C2410C", "#F59767"]
+moss   = ["#4D7C0F", "#A6D065"]
+iris   = ["#6D28D9", "#B79BF5"]
+
+[market]
+up = "#15803D"
+down = "#B91C1C"
+up_dark = "#6EE7A0"
+down_dark = "#F98F8F"
+
+[masthead]
+size = 30
+weight = 700
+leading = "1.15"
+tracking = "-.01em"
+transform = "none"
+rule = 0
+small_size = 26
+small_tracking = "-.01em"
+
+[section]
+number = true
+bar = 0
+size = 13
+tracking = ".02em"
+transform = "none"
+
+[quote]
+style = "card"
+mark = false
+italic = false
+size = 18
+
+[body]
+size = 15
+leading = "1.65"
+h1 = 18
+h2 = 17
+radius = 10
+link_underline = false

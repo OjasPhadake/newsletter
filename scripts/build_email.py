@@ -27,29 +27,37 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import config as _config
 
 # ---------------------------------------------------------------- palette ---
-# Warm paper + ink, with muted jewel accents. One accent per section so the
-# eye can find its place without anything shouting.
-L = {"paper": "#FBF8F3", "card": "#FFFDFA", "ink": "#23272B",
-     "soft": "#6E6A63", "faint": "#94908A", "rule": "#E6DED1"}
-D = {"paper": "#15181B", "card": "#1C2025", "ink": "#E9E5DD",
-     "soft": "#A39E95", "faint": "#7C776F", "rule": "#31363C"}
+# The look is data, not code: templates/*.toml, chosen by [newsletter].template.
+# These module globals are the *active* template, rebound by apply_template()
+# so the renderers below stay readable. The defaults are the Morning look —
+# warm paper and ink, with muted jewel accents, one per section so the eye can
+# find its place without anything shouting.
+T = _config.DEFAULT_TEMPLATE
+L = dict(T["light"])
+D = dict(T["dark"])
+ACCENTS = {k: tuple(v) for k, v in T["accents"].items()}
+UP, DOWN = T["market"]["up"], T["market"]["down"]
+UP_D, DOWN_D = T["market"]["up_dark"], T["market"]["down_dark"]
+SERIF = T["fonts"]["serif"]
+SANS = T["fonts"]["sans"]
+HEAD = SERIF          # stack used for headings
+BODY = SANS           # stack used for body copy
 
-# (light, dark) pairs
-ACCENTS = {
-    "amber":  ("#A8792F", "#DCBA72"),
-    "pine":   ("#2F6B62", "#77B8AE"),
-    "indigo": ("#47527A", "#96A2CC"),
-    "plum":   ("#77496B", "#C293B4"),
-    "clay":   ("#AF5C36", "#E29268"),
-    "moss":   ("#5A6B33", "#AFC17A"),
-    "iris":   ("#5B4B8A", "#A99AD6"),
-}
 
-UP, DOWN = "#2F7A52", "#B04A3C"
-UP_D, DOWN_D = "#7FBF9A", "#E08A7C"
-
-SERIF = "'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',serif"
-SANS = "-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif"
+def apply_template(name_or_tpl=None):
+    """Make a template the active look for everything rendered after this."""
+    global T, L, D, ACCENTS, UP, DOWN, UP_D, DOWN_D, SERIF, SANS, HEAD, BODY
+    tpl = (name_or_tpl if isinstance(name_or_tpl, dict)
+           else _config.load_template(name_or_tpl))
+    T = tpl
+    L, D = dict(tpl["light"]), dict(tpl["dark"])
+    ACCENTS = {k: tuple(v) for k, v in tpl["accents"].items()}
+    UP, DOWN = tpl["market"]["up"], tpl["market"]["down"]
+    UP_D, DOWN_D = tpl["market"]["up_dark"], tpl["market"]["down_dark"]
+    SERIF, SANS = tpl["fonts"]["serif"], tpl["fonts"]["sans"]
+    HEAD = SERIF if tpl["fonts"]["heading"] == "serif" else SANS
+    BODY = SANS if tpl["fonts"]["body"] == "sans" else SERIF
+    return tpl
 
 
 def e(s):
@@ -59,6 +67,10 @@ def e(s):
 # ------------------------------------------------------------- stylesheet ---
 
 def stylesheet():
+    mh, sec, q, b = T["masthead"], T["section"], T["quote"], T["body"]
+    qi = "italic " if q["italic"] else ""
+    radius = f";border-radius:{b['radius']}px" if b["radius"] else ""
+    underline = "underline" if b["link_underline"] else "none"
     acc_light = "\n".join(f".{k}{{color:{v[0]}}}.bg-{k}{{background:{v[0]}}}"
                           for k, v in ACCENTS.items())
     acc_dark = "\n".join(f".{k}{{color:{v[1]}!important}}"
@@ -66,46 +78,46 @@ def stylesheet():
                          for k, v in ACCENTS.items())
     return f"""
 body{{margin:0;padding:0;background:{L['paper']};-webkit-font-smoothing:antialiased}}
-a{{text-decoration:none}}
+a{{text-decoration:{underline}}}
 .w{{background:{L['paper']}}}
 .ink,.ink a{{color:{L['ink']}}}
 .soft{{color:{L['soft']}}}
 .fnt{{color:{L['faint']}}}
-.card{{background:{L['card']};border:1px solid {L['rule']}}}
+.card{{background:{L['card']};border:1px solid {L['rule']}{radius}}}
 .hr{{background:{L['ink']}}}
 .hair{{background:{L['rule']}}}
 .up{{color:{UP}}}
 .dn{{color:{DOWN}}}
 .chip{{border:1px solid {L['rule']};color:{L['soft']}}}
 .cite{{border-bottom:1px solid {L['rule']}}}
-.ttl{{font:400 36px/1.05 {SERIF};letter-spacing:.22em;text-transform:uppercase}}
+.ttl{{font:{mh['weight']} {mh['size']}px/{mh['leading']} {HEAD};letter-spacing:{mh['tracking']};text-transform:{mh['transform']}}}
 .dat{{font:600 11px/1 {SANS};letter-spacing:.2em;text-transform:uppercase}}
-.qm{{font:700 42px/.6 {SERIF};opacity:.55}}
-.qt{{font:400 italic 21px/1.62 {SERIF}}}
+.qm{{font:700 42px/.6 {HEAD};opacity:.55}}
+.qt{{font:400 {qi}{q['size']}px/1.62 {HEAD}}}
 .att{{font:600 13px/1.4 {SANS};letter-spacing:.05em}}
 .note{{font:400 14px/1.6 {SANS}}}
 .snum{{font:700 13px/1 {SANS};letter-spacing:.06em}}
-.shd{{font:700 12px/1 {SANS};letter-spacing:.19em;text-transform:uppercase}}
-.idx{{font:600 15px/1.4 {SERIF}}}
-.h1{{font:600 18px/1.4 {SERIF}}}
-.h2{{font:600 17px/1.42 {SERIF}}}
-.sub{{font:400 italic 13px/1.45 {SERIF}}}
+.shd{{font:700 {sec['size']}px/1 {BODY};letter-spacing:{sec['tracking']};text-transform:{sec['transform']}}}
+.idx{{font:600 {b['size']}px/1.4 {HEAD}}}
+.h1{{font:600 {b['h1']}px/1.4 {HEAD}}}
+.h2{{font:600 {b['h2']}px/1.42 {HEAD}}}
+.sub{{font:400 italic 13px/1.45 {HEAD}}}
 .meta{{font:400 12px/1 {SANS};letter-spacing:.04em}}
-.bul{{font:700 15px/1.55 {SANS}}}
-.txt{{font:400 15px/1.55 {SANS}}}
-.bod{{font:400 15px/1.65 {SANS}}}
+.bul{{font:700 {b['size']}px/{b['leading']} {BODY}}}
+.txt{{font:400 {b['size']}px/{b['leading']} {BODY}}}
+.bod{{font:400 {b['size']}px/1.65 {BODY}}}
 .lnk{{font:600 13px/1 {SANS};letter-spacing:.02em}}
 .sep{{font:400 13px/1 {SANS}}}
 .tag{{font:700 10px/1 {SANS};letter-spacing:.14em;text-transform:uppercase}}
 .ilbl{{font:600 10px/1 {SANS};letter-spacing:.14em;text-transform:uppercase}}
-.ival{{font:600 19px/1.2 {SERIF}}}
+.ival{{font:600 19px/1.2 {HEAD}}}
 .idl{{font:600 13px/1.3 {SANS}}}
 .cptn{{font:400 12px/1.7 {SANS}}}
 .chipf{{font:600 10px/1 {SANS};letter-spacing:.1em;text-transform:uppercase}}
-.inum{{font:400 22px/1 {SERIF}}}
-.itxt{{font:400 15px/1.5 {SANS}}}
-.iwhy{{font:400 italic 13px/1.5 {SERIF}}}
-.iprom{{font:600 italic 16px/1.45 {SERIF}}}
+.inum{{font:400 22px/1 {HEAD}}}
+.itxt{{font:400 {b['size']}px/1.5 {BODY}}}
+.iwhy{{font:400 italic 13px/1.5 {HEAD}}}
+.iprom{{font:600 italic 16px/1.45 {HEAD}}}
 {acc_light}
 @media (prefers-color-scheme:dark){{
 body,.w{{background:{D['paper']}!important}}
@@ -123,7 +135,7 @@ body,.w{{background:{D['paper']}!important}}
 }}
 @media only screen and (max-width:620px){{
 .pad{{padding-left:22px!important;padding-right:22px!important}}
-.ttl{{font-size:30px!important;letter-spacing:.16em!important}}
+.ttl{{font-size:{mh['small_size']}px!important;letter-spacing:{mh['small_tracking']}!important}}
 }}
 """
 
@@ -154,13 +166,21 @@ def links(pairs, accent):
 
 
 def section_head(num, title, accent):
-    """`01 | HACKER NEWS` -- a numbered rule, newspaper-department style."""
+    """`01 | HACKER NEWS` -- a numbered rule, newspaper-department style.
+
+    The number and the accent bar are both template switches; drop either and
+    the section still reads, it just reads quieter.
+    """
+    sec = T["section"]
+    cell = (f'<td class="snum {accent}" style="width:34px;padding:0 0 9px 0">'
+            f'{num:02d}</td>\n' if sec["number"] else "")
+    bar = (f'<div class="bg-{accent}" style="height:{sec["bar"]}px;font-size:0;'
+           f'line-height:0">&nbsp;</div>' if sec["bar"] else "")
     return f"""<tr><td style="padding:34px 0 0 0">
 <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:100%"><tr>
-<td class="snum {accent}" style="width:34px;padding:0 0 9px 0">{num:02d}</td>
-<td class="shd ink" style="padding:0 0 9px 0">{e(title)}</td>
+{cell}<td class="shd ink" style="padding:0 0 9px 0">{e(title)}</td>
 </tr></table>
-<div class="bg-{accent}" style="height:2px;font-size:0;line-height:0">&nbsp;</div>
+{bar}
 </td></tr>"""
 
 
@@ -181,9 +201,20 @@ def render_quote(q):
             if q.get("work") else "")
     note = (f'<p class="note soft" style="margin:16px 0 0 0">{e(q["note"])}</p>'
             if q.get("note") else "")
+    style = T["quote"]["style"]
+    if style == "card":
+        box = (f'<div class="card" style="border-left:3px solid '
+               f'{ACCENTS["amber"][0]};padding:28px 30px 26px 30px">')
+    elif style == "rule":
+        box = (f'<div style="border-left:2px solid {ACCENTS["amber"][0]};'
+               f'padding:4px 0 4px 22px">')
+    else:
+        box = '<div style="padding:4px 0">'
+    mark = ('<div class="qm amber" style="padding:0 0 6px 0">&ldquo;</div>'
+            if T["quote"]["mark"] else "")
     return f"""<tr><td style="padding:36px 0 4px 0">
-<div class="card" style="border-left:3px solid {ACCENTS['amber'][0]};padding:28px 30px 26px 30px">
-<div class="qm amber" style="padding:0 0 6px 0">&ldquo;</div>
+{box}
+{mark}
 <p class="qt ink" style="margin:0">{e(q.get('text', ''))}</p>
 <p class="att soft" style="margin:18px 0 0 0">&mdash;&nbsp;{author}{work}</p>
 {note}</div></td></tr>"""
@@ -304,8 +335,9 @@ RENDERERS = {
 }
 
 
-def build(c, cfg=None):
+def build(c, cfg=None, template=None):
     cfg = cfg or _config.load()
+    apply_template(template or cfg["newsletter"]["template"])
     paper = cfg["newsletter"]
     date_line = c.get("date_line") or datetime.now().strftime("%A, %d %B %Y")
     rows, n = [], 0
@@ -328,6 +360,9 @@ def build(c, cfg=None):
              if c.get("issue") else "")
     preheader = c.get("preheader") or paper["tagline"]
     title = paper["title"]
+    rule_px = T["masthead"]["rule"]
+    top_rule = (f'<div class="hr" style="height:{rule_px}px;font-size:0;'
+                f'line-height:0">&nbsp;</div>' if rule_px else "")
 
     return f"""<!doctype html>
 <html lang="en"><head>
@@ -345,7 +380,7 @@ def build(c, cfg=None):
 <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:620px">
 
 <tr><td class="pad" style="padding:0 34px">
-<div class="hr" style="height:3px;font-size:0;line-height:0">&nbsp;</div>
+{top_rule}
 <div style="text-align:center;padding:26px 0 0 0">
 <div class="ttl ink">{e(title).replace(" ", "&nbsp;")}</div>
 <div style="padding:16px 0 0 0"><span class="dat fnt">{e(date_line)}</span>{issue}</div>
@@ -385,12 +420,19 @@ def minify(h):
 
 
 def main():
-    if len(sys.argv) < 2:
-        print("usage: build_email.py content.json > edition.html", file=sys.stderr)
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    if not args:
+        print("usage: build_email.py content.json [--template NAME] [--raw] "
+              "> edition.html", file=sys.stderr)
+        print(f"templates: {', '.join(_config.template_names())}", file=sys.stderr)
         return 2
-    with open(sys.argv[1], encoding="utf-8") as f:
+    tpl = None
+    for a in sys.argv[1:]:
+        if a.startswith("--template="):
+            tpl = a.split("=", 1)[1]
+    with open(args[0], encoding="utf-8") as f:
         content = json.load(f)
-    out = build(content)
+    out = build(content, template=tpl)
     if "--raw" not in sys.argv:
         out = minify(out)
     sys.stdout.write(out)

@@ -1,0 +1,78 @@
+# Mono — a terminal that happens to be an email.
+#
+# One monospaced stack for everything, near-black on bone, and a single green
+# used sparingly. No quote card, no accent bar, no numbers — the structure is
+# carried by spacing and capitals alone. Suits a newsletter about software
+# read by people who live in a terminal.
+name = "Mono"
+description = "Monospace throughout, near-black on bone, structure from spacing alone."
+
+[fonts]
+serif   = "'SFMono-Regular',ui-monospace,Menlo,Consolas,'Liberation Mono',monospace"
+sans    = "'SFMono-Regular',ui-monospace,Menlo,Consolas,'Liberation Mono',monospace"
+heading = "serif"
+body    = "sans"
+
+[light]
+paper = "#F7F6F2"
+card  = "#EFEEE8"
+ink   = "#16181A"
+soft  = "#4A4E52"
+faint = "#7E8286"
+rule  = "#D8D6CE"
+
+[dark]
+paper = "#101214"
+card  = "#181B1E"
+ink   = "#DFE3E6"
+soft  = "#9AA0A6"
+faint = "#6C7276"
+rule  = "#282C30"
+
+# Deliberately close together: the palette is nearly monochrome, and the
+# accents differ just enough to tell one department from the next.
+[accents]
+amber  = ["#8A6D1F", "#CFAE62"]
+pine   = ["#1F6B4A", "#6FBF95"]
+indigo = ["#3B4E7A", "#8AA0CC"]
+plum   = ["#6B4468", "#B990B4"]
+clay   = ["#96502F", "#D28A63"]
+moss   = ["#4C6330", "#9DB877"]
+iris   = ["#4E4680", "#9992CC"]
+
+[market]
+up = "#1F6B4A"
+down = "#9E3B2E"
+up_dark = "#6FBF95"
+down_dark = "#D98476"
+
+[masthead]
+size = 26
+weight = 700
+leading = "1.1"
+tracking = ".38em"
+transform = "uppercase"
+rule = 1
+small_size = 20
+small_tracking = ".28em"
+
+[section]
+number = true
+bar = 1
+size = 11
+tracking = ".16em"
+transform = "uppercase"
+
+[quote]
+style = "plain"
+mark = false
+italic = false
+size = 16
+
+[body]
+size = 14
+leading = "1.6"
+h1 = 15
+h2 = 15
+radius = 0
+link_underline = true

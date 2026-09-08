@@ -17,6 +17,7 @@ on:
       - 'editions/**'
       - 'scripts/build_archive.py'
       - 'scripts/build_email.py'
+      - 'templates/**'
       - 'newsletter.toml'
       - '.github/workflows/pages.yml'
   workflow_dispatch:

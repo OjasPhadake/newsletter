@@ -60,30 +60,41 @@ def teaser(ed, cfg):
     return out[:4]
 
 
-def index_css(cfg):
-    L, D, SERIF, SANS = (build_email.L, build_email.D,
-                         build_email.SERIF, build_email.SANS)
-    acc = "\n".join(f".{k}{{color:{v[0]}}}" for k, v in build_email.ACCENTS.items())
-    acc_d = "\n".join(f".{k}{{color:{v[1]}}}" for k, v in build_email.ACCENTS.items())
+def index_css(cfg, tpl):
+    """The index wears the same template as the issues it links to.
+
+    Read from `tpl` rather than build_email's module globals: those are set as
+    a side effect of rendering, and the index is built after the loop.
+    """
+    L, D = tpl["light"], tpl["dark"]
+    head = tpl["fonts"]["serif" if tpl["fonts"]["heading"] == "serif" else "sans"]
+    body = tpl["fonts"]["sans" if tpl["fonts"]["body"] == "sans" else "serif"]
+    mh, b = tpl["masthead"], tpl["body"]
+    radius = f"border-radius:{b['radius']}px;" if b["radius"] else ""
+    acc = "\n".join(f".{k}{{color:{v[0]}}}" for k, v in tpl["accents"].items())
+    acc_d = "\n".join(f".{k}{{color:{v[1]}}}" for k, v in tpl["accents"].items())
+    SERIF, SANS = head, body
+    qi = "italic " if tpl["quote"]["italic"] else ""
     return f"""
 *{{box-sizing:border-box}}
 body{{margin:0;background:{L['paper']};color:{L['ink']};font:400 16px/1.6 {SANS};
 -webkit-font-smoothing:antialiased}}
 a{{color:inherit}}
 .wrap{{max-width:640px;margin:0 auto;padding:40px 22px 72px}}
-.rule{{height:3px;background:{L['ink']}}}
+.rule{{height:{max(mh['rule'], 1)}px;background:{L['ink']}}}
 .hair{{height:1px;background:{L['rule']}}}
-.ttl{{font:400 34px/1.05 {SERIF};letter-spacing:.2em;text-transform:uppercase;
+.ttl{{font:{mh['weight']} {mh['size']}px/{mh['leading']} {SERIF};
+letter-spacing:{mh['tracking']};text-transform:{mh['transform']};
 text-align:center;margin:26px 0 0}}
 .tag{{font:400 14px/1.6 {SANS};color:{L['soft']};text-align:center;margin:14px 0 0}}
 .count{{font:600 12px/1 {SANS};letter-spacing:.14em;text-transform:uppercase;
 color:{L['faint']};margin:34px 0 10px}}
-.issue{{display:block;text-decoration:none;padding:20px 0;border-top:1px solid {L['rule']}}}
+.issue{{display:block;text-decoration:none;padding:20px 0;border-top:1px solid {L['rule']};{radius}}}
 .issue:hover .dt{{text-decoration:underline}}
-.dt{{font:600 18px/1.35 {SERIF}}}
+.dt{{font:600 {b['h1']}px/1.35 {SERIF}}}
 .no{{font:600 11px/1 {SANS};letter-spacing:.12em;color:{L['faint']};
 text-transform:uppercase;margin-left:8px}}
-.qt{{font:400 italic 15px/1.55 {SERIF};color:{L['soft']};margin:8px 0 0}}
+.qt{{font:400 {qi}15px/1.55 {SERIF};color:{L['soft']};margin:8px 0 0}}
 .heads{{margin:10px 0 0;padding:0;list-style:none}}
 .heads li{{font:400 14px/1.55 {SANS};color:{L['soft']};padding:1px 0}}
 .heads b{{font-weight:600}}
@@ -100,7 +111,7 @@ body{{background:{D['paper']};color:{D['ink']}}}
 """
 
 
-def render_index(issues, cfg):
+def render_index(issues, cfg, tpl):
     paper = cfg["newsletter"]
     rows = []
     for it in issues:
@@ -125,7 +136,7 @@ def render_index(issues, cfg):
 <title>{e(paper['title'])} &mdash; archive</title>
 <meta name="description" content="{e(paper['tagline'])}">
 <link rel="alternate" type="application/rss+xml" title="{e(paper['title'])}" href="feed.xml">
-<style>{index_css(cfg)}</style>
+<style>{index_css(cfg, tpl)}</style>
 </head>
 <body><div class="wrap">
 <div class="rule"></div>
@@ -172,9 +183,12 @@ def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--out", default=os.path.join(HERE, "site"))
     p.add_argument("--editions", default=EDITIONS)
+    p.add_argument("--template", default=None,
+                   help="override [newsletter].template for this build")
     args = p.parse_args()
 
     cfg = _config.load()
+    tpl = _config.load_template(args.template or cfg["newsletter"]["template"])
     os.makedirs(args.out, exist_ok=True)
 
     issues = []
@@ -189,17 +203,17 @@ def main():
         issues.append({"ed": ed, "slug": name, "date": issue_date(name),
                        "teaser": teaser(ed, cfg)})
         with open(os.path.join(args.out, f"{name}.html"), "w", encoding="utf-8") as f:
-            f.write(build_email.build(ed, cfg))
+            f.write(build_email.build(ed, cfg, template=tpl))
 
     # Newest first, and a second issue on a day sorts above the first.
     issues.sort(key=lambda i: (i["date"], i["slug"]), reverse=True)
 
-    for name, body in (("index.html", render_index(issues, cfg)),
+    for name, body in (("index.html", render_index(issues, cfg, tpl)),
                        ("feed.xml", render_feed(issues, cfg))):
         with open(os.path.join(args.out, name), "w", encoding="utf-8") as f:
             f.write(body)
 
-    print(f"{len(issues)} issue(s) -> {args.out}")
+    print(f"{len(issues)} issue(s) -> {args.out}  (template: {tpl['name']})")
     return 0 if issues else 1
 
 

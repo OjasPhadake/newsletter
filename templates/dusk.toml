@@ -1,0 +1,75 @@
+# Dusk — for people who read at night.
+#
+# Tuned dark-first: the dark palette is the one that got the attention, and
+# the light palette is a cool grey rather than paper. Jewel accents sit high
+# enough in chroma to carry against a near-black ground without glowing.
+name = "Dusk"
+description = "Dark-first, cool greys and jewel accents, tuned for night reading."
+
+[fonts]
+serif   = "'Charter','Iowan Old Style',Georgia,'Times New Roman',serif"
+sans    = "'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif"
+heading = "serif"
+body    = "sans"
+
+[light]
+paper = "#F2F3F5"
+card  = "#FFFFFF"
+ink   = "#1A1D21"
+soft  = "#565B62"
+faint = "#71777F"
+rule  = "#DDE0E4"
+
+[dark]
+paper = "#0E1116"
+card  = "#161A20"
+ink   = "#E8EAED"
+soft  = "#A2A9B3"
+faint = "#727A85"
+rule  = "#242A32"
+
+[accents]
+amber  = ["#8A6718", "#F0C36D"]
+pine   = ["#12695E", "#5FC7B6"]
+indigo = ["#3A4B8F", "#8FA3F0"]
+plum   = ["#83407A", "#DD97CE"]
+clay   = ["#A85030", "#F09468"]
+moss   = ["#55712C", "#B3D077"]
+iris   = ["#5A45A8", "#B0A0F0"]
+
+[market]
+up = "#1F7A4D"
+down = "#B03A2E"
+up_dark = "#68D69B"
+down_dark = "#F0897C"
+
+[masthead]
+size = 32
+weight = 400
+leading = "1.1"
+tracking = ".14em"
+transform = "uppercase"
+rule = 2
+small_size = 26
+small_tracking = ".1em"
+
+[section]
+number = false
+bar = 2
+size = 12
+tracking = ".16em"
+transform = "uppercase"
+
+[quote]
+style = "rule"
+mark = true
+italic = true
+size = 20
+
+[body]
+size = 15
+leading = "1.6"
+h1 = 18
+h2 = 17
+radius = 6
+link_underline = false
