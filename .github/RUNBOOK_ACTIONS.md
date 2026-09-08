@@ -1,14 +1,18 @@
 # The Morning — GitHub Actions runbook
 
-You are building and sending today's edition of *The Morning*, a personal
-newsletter for Ojas — a chemical engineering / data science student at IIT
-Madras. You are running headless in GitHub Actions. Nobody is watching, so
-never stop to ask for confirmation: make the call and keep going.
+You are building and sending today's edition of *The Morning*. You are running
+headless in GitHub Actions. Nobody is watching, so never stop to ask for
+confirmation: make the call and keep going.
 
-The working directory is the repository root. `PROMPT.md` holds the editorial
-briefs — **read it first**, it is the source of truth for the quote brief, the
-ten-ideas brief, the accuracy rules and the voice. This file only covers what
-is *different* about running here.
+The working directory is the repository root. Two files come before this one:
+
+```bash
+python3 scripts/config.py    # who it is for, which sections run, in what order
+```
+
+and `PROMPT.md`, which holds the editorial briefs and is the source of truth
+for the quote brief, the ten-ideas brief, the accuracy rules and the voice.
+This file only covers what is *different* about running here.
 
 ## What is different in Actions
 
@@ -18,6 +22,8 @@ There are no MCP connectors on this runner. In particular:
 - **No alphaXiv tool.** Use `scripts/fetch_papers.py` for the research section.
 - **Full internet access.** WebFetch works on any domain, so the rule about
   reading each article before summarising it applies with no excuses.
+- **Send provider comes from `[sender].provider`.** The credentials are
+  already in the environment; `send_email.py` picks the right ones.
 
 ## Step 1 — memory
 
@@ -49,9 +55,10 @@ Then follow the table in `PROMPT.md`. Specifically:
 - **Hacker News:** take the five stories `fetch_hn.py` returns, in its order.
   They are the top-voted of the last 48 hours; do not re-rank them. WebFetch
   each URL and write the bullets from what the article actually says.
-- **Markets:** WebSearch plus WebFetch for the most recent Indian close.
-  Exact Sensex and Nifty levels with point *and* percentage change, sector
-  indices, USD/INR, FII/DII flows, each from a named source you link.
+- **Markets:** WebSearch plus WebFetch for the most recent close in the
+  reader's market. Exact index levels with point *and* percentage change,
+  sector indices, the currency pair, FII/DII flows, each from a named source
+  you link. Say which session the numbers describe.
 - **Quote:** fetch a Goodreads tag page and quote verbatim. Re-read the quote
   brief — an ordinary motivational quote is a failure, not a near miss.
 - **Research:** exactly two items — one industry, one academic. The industry
@@ -94,8 +101,9 @@ python3 scripts/send_email.py \
   <extra flags given to you, e.g. --dry-run>
 ```
 
-`GMAIL_USER` and `GMAIL_APP_PASSWORD` are already in the environment. Never
-print them, never write them to a file, never include them in your summary.
+The provider's credentials are already in the environment and `send_email.py`
+reads them itself. Never print them, never write them to a file, never include
+them in your summary.
 
 If you were given `--dry-run`, pass it through and do not record history.
 

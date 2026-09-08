@@ -12,6 +12,11 @@ twice in two days, Chili's fake loan office twice in three, Houston's airport
 twice in four. So it now remembers what an item was *about*: the subject line of
 every story, matched loosely, plus the brands named in the odd-ideas section.
 
+The matching itself lives in `norepeat.py`, which knows nothing about
+newsletters and is useful to any job that runs every day and must not repeat
+itself. This file is the newsletter's half: what to harvest out of an edition,
+and what to tell the writer about it.
+
     python3 scripts/history.py brief                     # what tomorrow may not use
     python3 scripts/history.py show
     python3 scripts/history.py check editions/2026-09-04.json
@@ -27,6 +32,10 @@ import sys
 from collections import Counter
 from datetime import date, datetime, timedelta
 from urllib.parse import urlparse
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import norepeat
+from norepeat import Guard, dedupe, names, norm_name
 
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 HISTORY = os.path.join(HERE, "state", "history.json")
@@ -50,48 +59,17 @@ COOLDOWN_DAYS = {
 # Never checked in its own right: bullet copy names cities, agencies and
 # people, and blocking on all of that would reject good stories.
 NOT_CHECKED = {"brand_mention"}
+ALSO_CHECK = {"brand": ["brand_mention"]}
 
-# Kinds matched loosely as well as exactly: a reworded repeat of the same story
-# is still a repeat. See `near()`.
+# Kinds matched loosely as well as exactly: a reworded repeat is still a repeat.
 FUZZY = {"subject"}
 
-# Domains reported in `brief` as over-mined. Not a hard rule — a data source
-# like tradingeconomics is meant to recur — but six odd-ideas items out of
-# twenty-four came off one "best campaigns of the year" listicle, and that is
-# the whole reason the section started feeling stale.
-DOMAIN_WINDOW_DAYS = 30
+# Possessives are noise in a brand name; they are signal nowhere else.
+KEY_NORM = {"brand": norm_name, "brand_mention": norm_name}
 
-# Dropped before comparing subjects: too common to carry meaning.
-STOP = set("""
-a an the and or but if so as at by for from in into of off on to up with within
-without over under after before while since until because that this these those
-its it his her their our your my is are was were be been being has have had do
-does did will would can could should may might must not no nor than then there
-here when what which who whom whose how why about again more most other some
-such only own same very just now new one two three four five six seven eight
-nine ten first second last next per via out down out
-""".split())
-
-# Long words that are common in this newsletter and so prove nothing on their
-# own when two headlines share them.
-COMMON_LONG = set("""
-company companies business businesses billion million trillion percent country
-government customers customer announced released research researchers language
-languages models modelling learning industry industries technology september
-october november december january february market markets product products
-""".split())
-
-# Capitalised words that start sentences or name places, platforms and awards.
-# None of them identify a brand, so none of them should lock one out.
-NOT_A_BRAND = set("""
-the a an it its this that these those in on at for to of and but or if so as by
-with from into through over under after before while since until because when
-what which who how why now then most every each no not you your we they there
-here both nobody somebody everyone one two three four five six seven eight nine
-ten first second third last next is was are were has have had will would can
-could should may might must do does did new news read more still just about
-january february march april may june july august september october november
-december monday tuesday wednesday thursday friday saturday sunday
+# Newsletter-specific additions to norepeat's generic ignore list: places,
+# platforms and awards that turn up in campaign copy without naming a brand.
+NOT_A_BRAND = norepeat.NOT_A_NAME | set("""
 instagram reddit youtube tiktok twitter facebook linkedin snapchat whatsapp
 threads twitch spotify google apple amazon microsoft
 london paris tokyo delhi mumbai manhattan brooklyn america american americans
@@ -101,116 +79,17 @@ cannes lions bronze silver gold grand prix effie clio dandad webby
 q1 q2 q3 q4 ai llm llms gdp cpi rbi
 """.split())
 
-BRAND_RUN = re.compile(r"[A-Z][\w'’&.\-]*(?:[ \-](?:[A-Z][\w'’&.\-]*|\d+))*")
-SENT_START = re.compile(r"[.!?…]\s+")
+DOMAIN_WINDOW_DAYS = 30
 
 
-def norm(s):
-    """Loose match, so a reworded repeat is still caught."""
-    return re.sub(r"[^a-z0-9]+", " ", (s or "").lower()).strip()
-
-
-def norm_brand(s):
-    """Normalise a brand, dropping the possessive that `norm` leaves behind."""
-    n = norm(s)
-    n = re.sub(r"\bs\b", "", n)          # Chili's -> chili, McDonald's -> mcdonald
-    return re.sub(r"\s+", " ", n).strip()
-
-
-def toks(s):
-    """Content words of a subject line, for loose comparison."""
-    return {t for t in norm(s).split() if len(t) > 2 and t not in STOP}
-
-
-def distinctive(t):
-    return len(t) >= 5 and t not in COMMON_LONG
-
-
-def near(a, b):
-    """Are two subject lines the same story wearing different words?
-
-    Two ways to be a repeat. Either most of the shorter line's content words
-    also appear in the other one ("Chili's opened a fake loan office next door
-    to a McDonald's" against "...a fake payday-loan shop next door to a
-    McDonald's"), or the lines share two unusual words, which is enough on its
-    own ("Saturn ... grown ... decagon", twice, three days apart).
-
-    Thresholds were picked by sweeping them over every subject the newsletter
-    has run: looser than this changes nothing, so there is headroom.
-    """
-    if not a or not b:
-        return False
-    shared = a & b
-    if len(shared) < 3:
-        return False
-    if len(shared) / min(len(a), len(b)) >= 0.5:
-        return True
-    return sum(1 for t in shared if distinctive(t)) >= 2
+def guard():
+    return Guard(HISTORY, cooldowns=COOLDOWN_DAYS, fuzzy=FUZZY,
+                 not_checked=NOT_CHECKED, also_check=ALSO_CHECK,
+                 key_norm=KEY_NORM, entries_field="editions")
 
 
 def brands(text, actor_only=False):
-    """Named companies and people in a blob of odd-ideas copy.
-
-    Deliberately crude: capitalised runs, minus the words that start sentences
-    or name a city, a platform or an award. `actor_only` takes just the first
-    one, which in a sentence-case headline is reliably whose stunt it is —
-    "Chili's opened a fake payday-loan shop", "Burger King photographed
-    marathon finishers". That is the name worth blocking. The rest of the copy
-    is harvested too, but only so a passing mention counts as used.
-    """
-    text = text or ""
-    starts = {0} | {m.end() for m in SENT_START.finditer(text)}
-    out = []
-    for m in BRAND_RUN.finditer(text):
-        words = [w.strip(".,;:!?'’\"") for w in m.group(0).split()]
-        while words and words[0].lower() in NOT_A_BRAND:
-            words.pop(0)
-        while words and words[-1].lower() in NOT_A_BRAND:
-            words.pop()
-        words = [w for w in words if w]
-        if not words:
-            continue
-        name = " ".join(words)
-        n = norm_brand(name)
-        if not re.search(r"[a-z]", n):
-            continue
-        if len(n) < 3 and not name.isupper():   # keep HP, KFC; drop stray initials
-            continue
-        # A lone capitalised word opening a sentence is usually just the
-        # sentence opening. In a headline the opening word is the subject, so
-        # this only applies to bullet copy.
-        if not actor_only and len(words) == 1 and m.start() in starts:
-            continue
-        out.append(name)
-        if actor_only:
-            break
-    return out
-
-
-def load():
-    if not os.path.exists(HISTORY):
-        return {"editions": []}
-    with open(HISTORY, encoding="utf-8") as f:
-        return json.load(f)
-
-
-def entries(hist, kind, within_days=None):
-    """Every recorded value of `kind`, optionally limited to a recent window."""
-    cutoff = None
-    if within_days is not None:
-        cutoff = date.today() - timedelta(days=within_days)
-    out = {}
-    for ed in hist.get("editions", []):
-        try:
-            when = datetime.strptime(ed["date"], "%Y-%m-%d").date()
-        except (KeyError, ValueError):
-            continue
-        if cutoff and when < cutoff:
-            continue
-        for v in ed.get(kind, []) or []:
-            key = norm_brand(v) if kind == "brand" else norm(v)
-            out.setdefault(key, (v, ed["date"]))
-    return out
+    return names(text, first_only=actor_only, ignore=NOT_A_BRAND)
 
 
 def harvest(ed):
@@ -245,15 +124,6 @@ def harvest(ed):
     # Brands only from the odd-ideas section. Trends recur legitimately —
     # India, Google and the RBI are in the news most weeks — but the same
     # brand's stunt twice in a month is exactly what went wrong.
-    def dedupe(names):
-        seen, uniq = set(), []
-        for n in names:
-            k = norm_brand(n)
-            if k and k not in seen:
-                seen.add(k)
-                uniq.append(n)
-        return uniq
-
     actors, mentions = [], []
     for it in ed.get("wild") or []:
         actors.extend(it.get("entities") or [])
@@ -269,8 +139,8 @@ def harvest(ed):
                          for s in ed.get("hn") or [] if s.get("hn_url")],
         "link":         [u for u in links if u],
         "subject":      [s for s in subjects if s],
-        "brand":        dedupe(actors),
-        "brand_mention": dedupe(mentions),
+        "brand":        dedupe(actors, norm_name),
+        "brand_mention": dedupe(mentions, norm_name),
     }
 
 
@@ -288,12 +158,34 @@ def sections_of(ed):
     return out
 
 
+def entry_for(path, ed):
+    stem = os.path.splitext(os.path.basename(path))[0]
+    # Accept 2026-09-03.json and 2026-09-03-2.json alike; the date is the
+    # prefix, and the issue number distinguishes editions within a day.
+    m = re.match(r"(\d{4}-\d{2}-\d{2})", stem)
+    if not m:
+        return None
+    entry = {"date": m.group(1), "issue": ed.get("issue")}
+    entry.update(harvest(ed))
+    # Kept alongside the flat subject list so `brief` can say which section a
+    # subject ran in without reopening every edition file.
+    entry["section_subjects"] = [list(x) for x in sections_of(ed)]
+    # Where the editorial sections went shopping. Research and markets are
+    # excluded: arxiv and the lab blogs are supposed to recur, a campaign
+    # listicle is not.
+    entry["editorial_domains"] = sorted({
+        urlparse(it.get("url") or "").netloc.replace("www.", "")
+        for key in ("trends", "wild") for it in ed.get(key) or []
+        if it.get("url")} - {""})
+    return entry
+
+
 def cmd_show(_):
-    hist = load()
-    eds = hist.get("editions", [])
+    g = guard()
+    eds = g.load().get("editions", [])
     print(f"{len(eds)} edition(s) recorded")
     for kind, days in COOLDOWN_DAYS.items():
-        used = entries(hist, kind, days)
+        used = g.entries(kind, days)
         window = "ever" if days is None else f"last {days}d"
         print(f"\n{kind} ({window}) — {len(used)}")
         for _, (val, when) in sorted(used.items(), key=lambda kv: kv[1][1], reverse=True)[:12]:
@@ -307,8 +199,8 @@ def cmd_brief(args):
     `show` lists mostly URLs, which is no help when the question is "has this
     story run before". This prints the things a writer actually needs to avoid.
     """
-    hist = load()
-    eds = hist.get("editions", [])
+    g = guard()
+    eds = g.load().get("editions", [])
     if not eds:
         print("No editions on record yet — nothing to avoid.")
         return 0
@@ -317,8 +209,14 @@ def cmd_brief(args):
     cutoff = date.today() - timedelta(days=days)
 
     def recent(kind, within):
-        return sorted(entries(hist, kind, within).values(),
-                      key=lambda v: v[1], reverse=True)
+        return sorted(g.entries(kind, within).values(),
+                      key=lambda v: str(v[1]), reverse=True)
+
+    def within(ed, window):
+        try:
+            return datetime.strptime(ed["date"], "%Y-%m-%d").date() >= window
+        except (KeyError, ValueError):
+            return False
 
     print(f"THE MORNING — what today may not repeat  ({len(eds)} editions on record)")
     print("Anything below has already been sent. Pick something else; rewording is not a fix.")
@@ -327,11 +225,7 @@ def cmd_brief(args):
     print("A story counts as used however it is worded, and whoever published it.")
     by_day = {}
     for ed in eds:
-        try:
-            when = datetime.strptime(ed["date"], "%Y-%m-%d").date()
-        except (KeyError, ValueError):
-            continue
-        if when < cutoff:
+        if not within(ed, cutoff):
             continue
         by_day.setdefault(ed["date"], []).extend(
             (ed.get("section_subjects") or [])
@@ -352,15 +246,10 @@ def cmd_brief(args):
     print(f"\n── SOURCE DOMAINS (last {DOMAIN_WINDOW_DAYS}d) " + "─" * 28)
     print("Not blocked, but a domain you keep returning to is a well running dry.")
     doms = Counter()
+    dom_cut = date.today() - timedelta(days=DOMAIN_WINDOW_DAYS)
     for ed in eds:
-        try:
-            when = datetime.strptime(ed["date"], "%Y-%m-%d").date()
-        except (KeyError, ValueError):
-            continue
-        if when < date.today() - timedelta(days=DOMAIN_WINDOW_DAYS):
-            continue
-        for host in ed.get("editorial_domains") or []:
-            doms[host] += 1
+        if within(ed, dom_cut):
+            doms.update(ed.get("editorial_domains") or [])
     if not doms:
         print("  (none yet)")
     for host, n in doms.most_common(15):
@@ -389,49 +278,14 @@ def cmd_brief(args):
 
 
 def cmd_check(args):
-    hist = load()
     with open(args.edition, encoding="utf-8") as f:
         new = harvest(json.load(f))
 
-    collisions = []
-    for kind, values in new.items():
-        if kind in NOT_CHECKED:
-            continue
-        used = entries(hist, kind, COOLDOWN_DAYS[kind])
-        if kind == "brand":
-            # A brand named in passing yesterday still counts as used.
-            used = {**entries(hist, "brand_mention", COOLDOWN_DAYS["brand_mention"]),
-                    **used}
-        used_toks = ([(k, toks(v), v, when) for k, (v, when) in used.items()]
-                     if kind in FUZZY else [])
-        seen_in_file = {}
-        for v in values:
-            k = norm_brand(v) if kind == "brand" else norm(v)
-            if k in used:
-                collisions.append((kind, v, f"already used on {used[k][1]}"))
-                continue
-            # Loose match, against history only. Within one edition the Learn
-            # section is allowed to unpack a paper from the Research section,
-            # and those two lines legitimately overlap.
-            hit = None
-            if kind in FUZZY:
-                mine = toks(v)
-                for _, other, oval, when in used_toks:
-                    if near(mine, other):
-                        hit = (oval, when)
-                        break
-            if hit:
-                collisions.append(
-                    (kind, v, f"same story as {hit[1]}: {str(hit[0])[:70]!r}"))
-            elif k in seen_in_file:
-                collisions.append((kind, v, "duplicated within this edition"))
-            else:
-                seen_in_file[k] = True
-
+    collisions = guard().check(new)
     if collisions:
         print(f"FAIL — {len(collisions)} collision(s):", file=sys.stderr)
-        for kind, val, why in collisions:
-            print(f"  [{kind}] {str(val)[:100]}\n      {why}", file=sys.stderr)
+        for c in collisions:
+            print(f"  [{c.kind}] {str(c.value)[:100]}\n      {c.why}", file=sys.stderr)
         print("\nReplace these before sending. Pick a different story — rewording",
               file=sys.stderr)
         print("the headline is not a fix, and neither is a different outlet's link.",
@@ -442,30 +296,7 @@ def cmd_check(args):
     return 0
 
 
-def entry_for(path, ed):
-    stem = os.path.splitext(os.path.basename(path))[0]
-    # Accept 2026-09-03.json and 2026-09-03-2.json alike; the date is the
-    # prefix, and the issue number distinguishes editions within a day.
-    m = re.match(r"(\d{4}-\d{2}-\d{2})", stem)
-    if not m:
-        return None
-    entry = {"date": m.group(1), "issue": ed.get("issue")}
-    entry.update(harvest(ed))
-    # Kept alongside the flat subject list so `brief` can say which section a
-    # subject ran in without reopening every edition file.
-    entry["section_subjects"] = [list(x) for x in sections_of(ed)]
-    # Where the editorial sections went shopping. Research and markets are
-    # excluded: arxiv and the lab blogs are supposed to recur, a campaign
-    # listicle is not.
-    entry["editorial_domains"] = sorted({
-        urlparse(it.get("url") or "").netloc.replace("www.", "")
-        for key in ("trends", "wild") for it in ed.get(key) or []
-        if it.get("url")} - {""})
-    return entry
-
-
 def cmd_record(args):
-    hist = load()
     with open(args.edition, encoding="utf-8") as f:
         ed = json.load(f)
 
@@ -475,21 +306,20 @@ def cmd_record(args):
         print(f"edition filename must start with YYYY-MM-DD: {stem}", file=sys.stderr)
         return 2
 
-    hist.setdefault("editions", [])
+    g = guard()
     # Re-recording the same issue replaces it; a second issue on the same day
     # is kept alongside the first, so nothing it used is ever forgotten.
-    prior = [x for x in hist["editions"]
+    prior = [x for x in g.load().get("editions", [])
              if x.get("date") == entry["date"] and x.get("issue") == entry["issue"]]
-    hist["editions"] = [x for x in hist["editions"] if x not in prior]
     if prior and prior[0].get("gmail_message_id"):
         entry["gmail_message_id"] = prior[0]["gmail_message_id"]
     if args.message_id:
         entry["gmail_message_id"] = args.message_id
 
-    hist["editions"].append(entry)
-    hist["editions"].sort(key=lambda x: (x.get("date", ""), x.get("issue") or 0))
-    write(hist)
-    print(f"recorded {entry['date']} ({len(hist['editions'])} editions on file)")
+    state = g.record(entry, replace_on=("date", "issue"))
+    state["editions"].sort(key=lambda x: (x.get("date", ""), x.get("issue") or 0))
+    g.save(state)
+    print(f"recorded {entry['date']} ({len(state['editions'])} editions on file)")
     return 0
 
 
@@ -499,7 +329,8 @@ def cmd_backfill(_):
     Needed once, because editions sent before subjects and brands were tracked
     have none on record — and until they do, the guard is still blind to them.
     """
-    old = {(e.get("date"), e.get("issue")): e for e in load().get("editions", [])}
+    g = guard()
+    old = {(e.get("date"), e.get("issue")): e for e in g.load().get("editions", [])}
     rebuilt = []
     for path in sorted(glob.glob(os.path.join(EDITIONS, "*.json"))):
         with open(path, encoding="utf-8") as f:
@@ -515,22 +346,16 @@ def cmd_backfill(_):
         print(f"  {entry['date']} #{entry['issue']}  "
               f"{len(entry['subject'])} subjects, {len(entry['brand'])} brands")
 
-    rebuilt.sort(key=lambda x: (x.get("date", ""), x.get("issue") or 0))
-    dropped = [k for k in old if k not in {(e["date"], e["issue"]) for e in rebuilt}]
-    for k in dropped:
-        print(f"  WARNING: {k} was on record but has no edition file; keeping it")
-        rebuilt.append(old[k])
+    done = {(e["date"], e["issue"]) for e in rebuilt}
+    for k, v in old.items():
+        if k not in done:
+            print(f"  WARNING: {k} was on record but has no edition file; keeping it")
+            rebuilt.append(v)
     rebuilt.sort(key=lambda x: (x.get("date", ""), x.get("issue") or 0))
 
-    write({"editions": rebuilt})
+    g.save({"editions": rebuilt})
     print(f"rebuilt {len(rebuilt)} edition(s)")
     return 0
-
-
-def write(hist):
-    os.makedirs(os.path.dirname(HISTORY), exist_ok=True)
-    with open(HISTORY, "w", encoding="utf-8") as f:
-        json.dump(hist, f, indent=2, ensure_ascii=False)
 
 
 def main():

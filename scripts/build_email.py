@@ -18,9 +18,13 @@ Usage:
 """
 import html
 import json
+import os
 import re
 import sys
 from datetime import datetime
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import config as _config
 
 # ---------------------------------------------------------------- palette ---
 # Warm paper + ink, with muted jewel accents. One accent per section so the
@@ -287,38 +291,43 @@ def render_ideas(x, accent):
 
 # ------------------------------------------------------------------- shell ---
 
-PLAN = [
-    ("hn",       "Hacker News · Last 24 Hours", "pine",   render_hn),
-    ("markets",  "Markets · India & World", "indigo", render_markets),
-    ("trends",   "Trends & Signals",             "moss",   render_stories),
-    ("research", "From the Research Desk",           "plum",
-     lambda v, a: render_stories(v, a, "title")),
-    ("wild",     "Wonderfully Odd Ideas",            "amber",  render_stories),
-    ("learn",    "One Thing to Learn",               "clay",   render_learn),
-    ("ideas",    "Ten Ideas",                        "iris",   render_ideas),
-]
+# What a section's `render` name in newsletter.toml maps to. Adding a layout
+# means adding it here and to RENDERERS in config.py; adding a *section* that
+# reuses an existing layout needs no code at all.
+RENDERERS = {
+    "hn":            render_hn,
+    "markets":       render_markets,
+    "stories":       render_stories,
+    "stories_title": lambda v, a: render_stories(v, a, "title"),
+    "learn":         render_learn,
+    "ideas":         render_ideas,
+}
 
 
-def build(c):
+def build(c, cfg=None):
+    cfg = cfg or _config.load()
+    paper = cfg["newsletter"]
     date_line = c.get("date_line") or datetime.now().strftime("%A, %d %B %Y")
     rows, n = [], 0
 
     if c.get("quote"):
         rows.append(render_quote(c["quote"]))
 
-    for key, title, accent, fn in PLAN:
-        val = c.get(key)
+    for sec in cfg["sections"]:
+        val = c.get(sec["key"])
         if not val:
             continue
+        fn = RENDERERS.get(sec["render"])
+        if fn is None:              # config.py validates, so this is paranoia
+            continue
         n += 1
-        rows.append(section_head(n, title, accent))
-        rows.append(fn(val, accent))
+        rows.append(section_head(n, sec["title"], sec["accent"]))
+        rows.append(fn(val, sec["accent"]))
 
     issue = (f'<span class="fnt"> &nbsp;&middot;&nbsp; No. {e(c["issue"])}</span>'
              if c.get("issue") else "")
-    preheader = c.get("preheader") or (
-        "Your daily brief: a quote, the best of Hacker News, markets, "
-        "and a little something new.")
+    preheader = c.get("preheader") or paper["tagline"]
+    title = paper["title"]
 
     return f"""<!doctype html>
 <html lang="en"><head>
@@ -326,7 +335,7 @@ def build(c):
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light dark">
 <meta name="supported-color-schemes" content="light dark">
-<title>The Morning &mdash; {e(date_line)}</title>
+<title>{e(title)} &mdash; {e(date_line)}</title>
 <style>{stylesheet()}</style>
 </head>
 <body>
@@ -338,7 +347,7 @@ def build(c):
 <tr><td class="pad" style="padding:0 34px">
 <div class="hr" style="height:3px;font-size:0;line-height:0">&nbsp;</div>
 <div style="text-align:center;padding:26px 0 0 0">
-<div class="ttl ink">The&nbsp;Morning</div>
+<div class="ttl ink">{e(title).replace(" ", "&nbsp;")}</div>
 <div style="padding:16px 0 0 0"><span class="dat fnt">{e(date_line)}</span>{issue}</div>
 </div>
 <div class="hair" style="height:1px;margin:24px 0 0 0;font-size:0;line-height:0">&nbsp;</div>

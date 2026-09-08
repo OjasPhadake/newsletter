@@ -1,11 +1,18 @@
 # The Morning — daily build instructions
 
-You are assembling and sending today's edition of *The Morning*, a personal
-newsletter for Ojas — a chemical engineering / data science student at IIT
-Madras. Work from the repository root.
+You are assembling and sending today's edition of *The Morning*. Work from the
+repository root.
 
-**Recipient:** ch22b007@smail.iitm.ac.in
-**Send time:** 07:00 IST daily.
+**Who it is for, where it goes and when, and which sections run** are all in
+`newsletter.toml`. Read it first — never assume the reader, the address or the
+running order:
+
+```bash
+python3 scripts/config.py
+```
+
+`[reader].about` is the one to take seriously. The briefs below are written for
+a specific person; write for the person that field describes.
 
 The pipeline is split in two on purpose. You gather and write content into an
 edition JSON; `scripts/build_email.py` turns that into the HTML. **Never
@@ -64,8 +71,8 @@ python3 scripts/fetch_ideas.py                     > /tmp/ideas.json
 |---|---|---|
 | **Quote** | Goodreads | See the quote brief. |
 | **Hacker News** | `fetch_hn.py` | See the Hacker News brief. |
-| **Markets** | WebSearch + WebFetch | Sensex and Nifty 50 closing levels with point *and* percentage change, sector indices, USD/INR, FII/DII flows. Exact figures from a named, linked source. |
-| **Trends** | WebSearch / Google News | 3 items: one Indian macro angle, one platform/industry shift, one wildcard. Real source links. |
+| **Markets** | WebSearch + WebFetch | See the markets brief. |
+| **Trends** | WebSearch / Google News | See the trends brief. |
 | **Research** | `fetch_labs.py` + `fetch_papers.py` | See the research brief. |
 | **Odd ideas** | WebSearch | See the odd-ideas brief. |
 | **Learn** | You | See the learn brief. |
@@ -88,6 +95,23 @@ actually says. Never summarise from a headline. Specific numbers, names and
 mechanisms — the bullets exist so the reader can skip the article.
 
 The visual format of this section is settled and must not change.
+
+### The markets brief
+
+Sensex and Nifty 50 closing levels with point *and* percentage change, sector
+indices, USD/INR, FII/DII flows. Exact figures from a named, linked source.
+
+Name the session the numbers describe. If the market was closed — weekend,
+holiday — say so and report the last close rather than implying today's.
+
+### The trends brief
+
+Three items: one macro angle from the reader's own country, one
+platform/industry shift, one wildcard. Real source links, fetched and read.
+
+The wildcard is the one that earns the section. It is not a third tech story;
+it is the physics result, the archaeology, the thing from a field nobody in the
+first two items works in.
 
 ### The quote brief
 
@@ -280,9 +304,11 @@ sentences to justify an idea, the idea is not self-explanatory: replace it.
 ## 2. Build and verify
 
 Write `editions/YYYY-MM-DD.json` (or `-2` for a second issue in one day). Use
-the most recent file in `editions/` as the schema reference. Keys:
-`date_line`, `issue`, `preheader`, `quote`, `hn`, `markets`, `trends`,
-`research`, `wild`, `learn`, `ideas`.
+the most recent file in `editions/` as the schema reference. The keys are
+`date_line`, `issue`, `preheader`, `quote`, and then one per section in
+`newsletter.toml` — `python3 scripts/config.py` lists them in order. A section
+whose key is missing is skipped and the rest renumber, so omit anything that
+genuinely had nothing worth running.
 
 ```bash
 python3 scripts/history.py check editions/YYYY-MM-DD.json   # MUST pass

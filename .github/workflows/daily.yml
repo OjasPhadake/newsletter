@@ -53,16 +53,33 @@ jobs:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           GMAIL_USER: ${{ secrets.GMAIL_USER }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          RESEND_FROM: ${{ vars.RESEND_FROM }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
         run: |
           set -euo pipefail
+          # Which secrets are required depends on [sender].provider.
+          PROVIDER=$(python3 scripts/config.py --get sender.provider)
+          echo "Send provider: $PROVIDER"
           missing=""
           [ -n "${CLAUDE_CODE_OAUTH_TOKEN:-}" ] || missing="$missing CLAUDE_CODE_OAUTH_TOKEN"
-          [ -n "${GMAIL_USER:-}" ]              || missing="$missing GMAIL_USER"
-          [ -n "${GMAIL_APP_PASSWORD:-}" ]      || missing="$missing GMAIL_APP_PASSWORD"
+          case "$PROVIDER" in
+            gmail)
+              [ -n "${GMAIL_USER:-}" ]         || missing="$missing GMAIL_USER"
+              [ -n "${GMAIL_APP_PASSWORD:-}" ] || missing="$missing GMAIL_APP_PASSWORD" ;;
+            resend)
+              [ -n "${RESEND_API_KEY:-}" ]     || missing="$missing RESEND_API_KEY"
+              [ -n "${RESEND_FROM:-}" ]        || missing="$missing RESEND_FROM(variable)" ;;
+            smtp)
+              [ -n "${SMTP_USER:-}" ]          || missing="$missing SMTP_USER"
+              [ -n "${SMTP_PASSWORD:-}" ]      || missing="$missing SMTP_PASSWORD" ;;
+          esac
           if [ -n "$missing" ]; then
             echo "::error::Missing repository secrets:$missing"
             exit 1
           fi
+          python3 scripts/config.py
           # Fail loudly here rather than half-way through a build.
           python3 scripts/fetch_hn.py --hours 24 --limit 3 > /tmp/hn_probe.json
           python3 -c "import json,sys; d=json.load(open('/tmp/hn_probe.json')); sys.exit(0 if d.get('stories') else 1)" \
@@ -74,17 +91,27 @@ jobs:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           GMAIL_USER: ${{ secrets.GMAIL_USER }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-          RECIPIENT: ${{ vars.RECIPIENT || 'ch22b007@smail.iitm.ac.in' }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          RESEND_FROM: ${{ vars.RESEND_FROM }}
+          SMTP_HOST: ${{ vars.SMTP_HOST }}
+          SMTP_PORT: ${{ vars.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          # Falls back to [reader].email in newsletter.toml.
+          RECIPIENT_VAR: ${{ vars.RECIPIENT }}
           DRY_RUN: ${{ (inputs.dry_run || startsWith(github.ref_name, 'run-dry-')) && '--dry-run' || '' }}
         run: |
           set -euo pipefail
-          TODAY=$(TZ=Asia/Kolkata date +%F)
+          TZNAME=$(python3 scripts/config.py --get newsletter.timezone)
+          RECIPIENT="${RECIPIENT_VAR:-$(python3 scripts/config.py --get reader.email)}"
+          export RECIPIENT
+          TODAY=$(TZ="$TZNAME" date +%F)
           mkdir -p build
-          echo "Building edition for $TODAY"
+          echo "Building edition for $TODAY ($TZNAME) -> $RECIPIENT"
 
           claude -p "$(cat .github/RUNBOOK_ACTIONS.md)
 
-          Today's edition date is $TODAY (Asia/Kolkata). Send to: $RECIPIENT
+          Today's edition date is $TODAY ($TZNAME). Send to: $RECIPIENT
           Pass these extra flags to scripts/send_email.py: $DRY_RUN" \
             --model claude-opus-5 \
             --permission-mode bypassPermissions \
@@ -105,13 +132,13 @@ jobs:
         if: ${{ !inputs.dry_run && !startsWith(github.ref_name, 'run-dry-') }}
         run: |
           set -euo pipefail
-          git config user.name  "Ojas Phadake"
-          git config user.email "ch22b007@smail.iitm.ac.in"
+          git config user.name  "${{ github.actor }}"
+          git config user.email "$(python3 scripts/config.py --get reader.email)"
           git add editions state
           if git diff --cached --quiet; then
             echo "::warning::Nothing to commit — history was not updated"
           else
-            git commit -m "Issue for $(TZ=Asia/Kolkata date +%F)"
+            git commit -m "Issue for $(TZ="$(python3 scripts/config.py --get newsletter.timezone)" date +%F)"
             # A tag build has no branch checked out, so push HEAD at main.
             git push origin HEAD:main || \
               echo "::warning::Push failed; the issue was sent but history is unrecorded"

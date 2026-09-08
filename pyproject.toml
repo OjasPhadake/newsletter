@@ -1,0 +1,37 @@
+# Packages `norepeat` — the duplicate guard — on its own.
+#
+# The newsletter itself is not a pip package; it is a repository you fork.
+# But the thing that stops it repeating itself is useful to any recurring job
+# that produces content, so it ships separately:
+#
+#     pip install norepeat
+#
+# It is one file with no dependencies, so it can equally well be vendored by
+# copying scripts/norepeat.py into your own project.
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "norepeat"
+version = "1.0.0"
+description = "Stop a recurring job from repeating itself, including when it rewords."
+readme = "docs/norepeat.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Ojas Phadake" }]
+keywords = ["deduplication", "newsletter", "agents", "llm", "cron", "content"]
+classifiers = [
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Topic :: Text Processing :: Filters",
+]
+
+[project.scripts]
+norepeat = "norepeat:main"
+
+[tool.setuptools]
+py-modules = ["norepeat"]
+
+[tool.setuptools.package-dir]
+"" = "scripts"

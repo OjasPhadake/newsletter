@@ -20,15 +20,22 @@ industry half comes from fetch_labs.py — see the coverage note below.
 """
 import argparse
 import json
+import os
 import sys
 import urllib.parse
 import urllib.request
 from datetime import date, datetime, timedelta
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import config as _config
+
+
 OPENALEX = "https://api.openalex.org/works"
 HF_DAILY = "https://huggingface.co/api/daily_papers"
 ARXIV_SOURCE = "S4306400194"          # arXiv (Cornell University)
-MAILTO = "ch22b007@smail.iitm.ac.in"  # OpenAlex asks for this; it buys a faster pool
+# OpenAlex asks for a contact address; it buys a faster pool. From
+# [sender].contact in newsletter.toml.
+MAILTO = _config.load()["sender"]["contact"]
 UA = {"User-Agent": f"daily-newsletter/1.0 (mailto:{MAILTO})"}
 
 # Split by sector, because the newsletter runs exactly one paper from each.

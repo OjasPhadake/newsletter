@@ -1,0 +1,61 @@
+# Publishes editions/ as a browsable archive on GitHub Pages.
+#
+# Deliberately a separate workflow from daily.yml: the send is the thing that
+# must not break, and publishing a website is not worth putting in its path.
+# This runs *after* the daily run has committed its issue, and a failure here
+# leaves the newsletter itself untouched.
+#
+# To turn it on: Settings -> Pages -> Source: GitHub Actions. Then put the
+# resulting URL in newsletter.toml as [newsletter].site_url so the feed
+# carries absolute links.
+name: Archive
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'editions/**'
+      - 'scripts/build_archive.py'
+      - 'scripts/build_email.py'
+      - 'newsletter.toml'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+# Never race the daily send's push, and never cancel a half-finished deploy.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build the archive
+        run: |
+          set -euo pipefail
+          python3 scripts/build_archive.py --out site
+          test -s site/index.html
+          python3 -c "import xml.dom.minidom;xml.dom.minidom.parse('site/feed.xml')"
+          echo "Built $(ls site/*.html | wc -l) page(s)"
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

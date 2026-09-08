@@ -22,9 +22,12 @@ import time
 import urllib.error
 import urllib.request
 from datetime import datetime, timedelta, timezone
+import os
 
-UA = {"User-Agent": "Mozilla/5.0 (compatible; daily-newsletter/1.0; "
-                    "+https://github.com/OjasPhadake/newsletter)"}
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import config as _config
+
+UA = _config.user_agent()   # identifies us by [sender].repo in newsletter.toml
 
 # Note: OpenAI's feed is general news, not a research feed — it mixes papers
 # with customer stories and product launches. The caller must filter.

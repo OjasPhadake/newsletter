@@ -1,0 +1,100 @@
+# The Morning — everything personal about this newsletter, in one file.
+#
+# This is the only file you have to edit to make the newsletter yours. The
+# scripts and the workflow all read from here; nothing else needs your name,
+# your address or your interests hardcoded in it.
+#
+# Every value below has a built-in default, and a missing or broken config
+# falls back to those defaults rather than failing a send. Run
+# `python3 scripts/config.py` to see what is actually in effect.
+
+[newsletter]
+title    = "The Morning"
+# The archive subtitle, and the email preheader when an edition sets none.
+tagline  = "Your daily brief: a quote, the best of Hacker News, markets, and a little something new."
+timezone = "Asia/Kolkata"
+# Local send time. Change the cron in .github/workflows/daily.yml to match —
+# `python3 scripts/config.py --cron` prints the line to paste.
+send_time = "07:00"
+# Used for the archive's canonical links. Leave blank until you publish one.
+site_url = ""
+
+[reader]
+# Who the newsletter is written for. The briefs address this person directly,
+# so being specific here matters more than being brief.
+name  = "Ojas"
+email = "ch22b007@smail.iitm.ac.in"
+about = "a chemical engineering / data science student at IIT Madras"
+
+[sender]
+from_name = "The Morning"
+# gmail  — SMTP with an app password (GMAIL_USER, GMAIL_APP_PASSWORD)
+# resend — HTTPS API (RESEND_API_KEY, RESEND_FROM)
+# smtp   — any other host (SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASSWORD)
+provider = "gmail"
+# Sent to OpenAlex and in the User-Agent of every fetcher, so the services we
+# lean on can get in touch instead of just blocking us. Courtesy, and it buys
+# a faster OpenAlex pool.
+contact = "ch22b007@smail.iitm.ac.in"
+repo    = "https://github.com/OjasPhadake/newsletter"
+
+# The running order of the email. Drop a table to drop the section, reorder
+# them to reorder the email, change a title to retitle it.
+#
+#   key    — the key the agent writes in editions/<date>.json
+#   title  — the section heading
+#   accent — amber, pine, indigo, plum, clay, moss or iris
+#   render — how to lay it out: hn, markets, stories, stories_title,
+#            learn or ideas. `stories` is the general-purpose one.
+#   brief  — the heading of this section's editorial brief in PROMPT.md.
+#            Adding a section means adding its brief there too; without one
+#            the agent has nothing to go on.
+
+[[sections]]
+key = "hn"
+title = "Hacker News · Last 24 Hours"
+accent = "pine"
+render = "hn"
+brief = "The Hacker News brief"
+
+[[sections]]
+key = "markets"
+title = "Markets · India & World"
+accent = "indigo"
+render = "markets"
+brief = "The markets brief"
+
+[[sections]]
+key = "trends"
+title = "Trends & Signals"
+accent = "moss"
+render = "stories"
+brief = "The trends brief"
+
+[[sections]]
+key = "research"
+title = "From the Research Desk"
+accent = "plum"
+render = "stories_title"
+brief = "The research brief"
+
+[[sections]]
+key = "wild"
+title = "Wonderfully Odd Ideas"
+accent = "amber"
+render = "stories"
+brief = "The odd-ideas brief"
+
+[[sections]]
+key = "learn"
+title = "One Thing to Learn"
+accent = "clay"
+render = "learn"
+brief = "The learn brief"
+
+[[sections]]
+key = "ideas"
+title = "Ten Ideas"
+accent = "iris"
+render = "ideas"
+brief = "The ideas brief"

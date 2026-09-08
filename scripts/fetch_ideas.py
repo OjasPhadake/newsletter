@@ -19,9 +19,12 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
+import os
 
-UA = {"User-Agent": "Mozilla/5.0 (compatible; daily-newsletter/1.0; "
-                    "+https://github.com/OjasPhadake/newsletter)"}
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import config as _config
+
+UA = _config.user_agent()   # identifies us by [sender].repo in newsletter.toml
 
 # Subreddits where people post things they wish existed.
 SUBS = [
