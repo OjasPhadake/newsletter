@@ -1,0 +1,348 @@
+{
+  "date_line": "Wednesday, 9 September 2026",
+  "issue": 1,
+  "preheader": "An NYU professor says OpenAI leaned on him hours before it announced Navier–Stokes; Mistral raised €3 billion; the RBI's core-sector index quietly grew a ninth industry; and bubble wrap spent four years failing at two other jobs.",
+  "quote": {
+    "text": "There is no absurdity so palpable but that it may be firmly planted in the human head if you only begin to inculcate it before the age of five.",
+    "author": "Arthur Schopenhauer",
+    "source_url": "https://www.goodreads.com/quotes/tag/absurdity",
+    "note": "The claim is not that people are gullible. It is that belief is a question of installation order, not of evidence — which is why the arguments you find hardest to answer are usually the ones you were never asked to accept."
+  },
+  "hn": [
+    {
+      "title": "Navier-Stokes – Tristan Buckmaster [pdf]",
+      "url": "https://cims.nyu.edu/~tristanb/statement.pdf",
+      "hn_url": "https://news.ycombinator.com/item?id=49605915",
+      "points": 1039,
+      "comments": 459,
+      "bullets": [
+        "A four-page statement from Tristan Buckmaster, a mathematician at NYU's Courant Institute, posted 8 September. With Levent Alpöge he has released three results — finite-time blowup with smooth forcing for incompressible porous media, for Boussinesq, and for 3d incompressible Euler. They believe they also have blowup for hypo-dissipative Navier–Stokes but have not released it, because the Lean verification has not finished.",
+        "He is emphatic about credit: the programme was not started by them and was not proposed by a model. The basic idea belongs to Diego Córdoba and Luis Martínez-Zoroa, who spent years constructing forced blowups with rough forcing. \"In view of this body of work, I believe Luis Martínez-Zoroa deserves a Fields Medal.\" What he and Alpöge did, with heavy LLM help, was push it to smooth forcing and to Euler.",
+        "The timeline: a year of slow progress, then on 15 August the blowup results for Boussinesq and Euler, Lean-verified on 22 August. He is blunt about the writeups — \"The Euler writeup, in particular, can only be described as AI slop\" — and blames being rushed. Tools used were Claude, Codex with GPT‑5.6 Sol, and Astra for writeups and auditing.",
+        "Most of the document is about what happened next. On 3 September, hearing a rumour, he emailed a mathematician at OpenAI to give them the facts. On Sunday 6 September he was pulled into two calls with Sébastien Bubeck and told an internal OpenAI model had proved blowup for forced Navier–Stokes — \"options c and d in Fefferman\", the exact route he and Alpöge had quietly chosen and almost nobody else was working on.",
+        "He says he was shown a prompt and told the model had simply been given the problem statement; over the call it emerged that a whole team had been working on it, that the prompt itself had been written by prompting Codex, and that \"an insane amount of compute\" had been used. He was offered two deals, both of which removed Alpöge — who works at Anthropic — from authorship. He declined. He records the reply to his saying he would go public: \"Why would you ruin your career?\"",
+        "He is careful about what he is not claiming: he has not seen OpenAI's proof, does not know what the model did, and is not accusing anyone. \"I am stating what I was told, when, and what was proposed to me.\""
+      ]
+    },
+    {
+      "title": "On the Navier–Stokes Millennium Prize Problem",
+      "url": "https://openai.com/index/navier-stokes-solution/",
+      "hn_url": "https://news.ycombinator.com/item?id=49613262",
+      "points": 1004,
+      "comments": 818,
+      "bullets": [
+        "OpenAI's own post, published the same day. It claims an internal system produced both an analytical proof and a Lean formalization that a smooth fluid starting at rest, under a smooth applied force and with finite energy throughout, develops a singularity in finite time. It says this resolves the Millennium Prize problem, and that it does not intend to claim the prize.",
+        "The method is the striking part. Since 28 August they have been training a new internal model \"significantly more capable than GPT‑6 Astra\". On 1 September, having heard rumours that two Millennium problems had fallen, they pointed coordinating agent groups at all of them. The group that cracked Navier–Stokes ran \"on the order of 10,000 concurrent agents\".",
+        "Different groups were given different variants — A and B pointing at a proof, C and D at a disproof. Agents first resolved the unforced Euler regularity question: nearly 100 agents, roughly 50 hours. That solution was then fed back as a prompt to the Navier–Stokes groups, with Codex used to cross-pollinate insights between groups.",
+        "The numbers: the agents reached the resolution on Saturday 5 September, about 88 hours after launch, with a further 17 hours of Lean formalization via GPT‑6 Astra. Across all attempted problems the agents sent 4.9 million messages and burned about 300 billion output tokens; Navier–Stokes alone took 2.7 million messages and roughly 130 billion.",
+        "On the collision with Buckmaster and Alpöge, OpenAI says it reached out after completing its own verification to offer a concurrent release, and that it recognises their priority on forced Euler. It says no user data was accessed, while conceding it \"cannot rule out that de-identified data derived from their usage of our products helped improve our models\". Read alongside Buckmaster's account of the same calls, the two documents disagree less about facts than about what was said on the phone."
+      ]
+    },
+    {
+      "title": "Mistral raises €3B",
+      "url": "https://mistral.ai/news/mistral-makes-sovereign-open-weight-ai-to-frontier/",
+      "hn_url": "https://news.ycombinator.com/item?id=49605767",
+      "points": 797,
+      "comments": 561,
+      "bullets": [
+        "A €3 billion Series D at a post-money valuation above €21 billion, which Mistral calls the largest equity round ever completed by a European technology company. Samsung Electronics led it, co-led by the Scaleup Europe Fund (managed by EQT) and returning investor PSG Equity.",
+        "The cap table is the message. New money includes Advent, BlackRock-managed funds and the Grand Duchy of Luxembourg; returning names include a16z, ASML, BNP Paribas CIB, Bpifrance, DST Global, General Catalyst, Index Ventures, NVIDIA and Salesforce Ventures. A chip-equipment maker, a bank, a GPU vendor and a sovereign state on one line.",
+        "The pitch is \"sovereign AI\" as a full stack rather than a model licence: data governance, customisable open-weight models, private compute and auditable production systems. The company says it operates across 20 countries and serves more than 125 enterprises, Airbus, ASML and HSBC among them.",
+        "Products named in the post: Vibe and Vibe for Code, Studio, Forge for model training, and an AI Cloud. Recent models include Mistral OCR 4, Mistral Medium 3.5, Mistral Small 4 and Voxtral TTS. The money goes to frontier research, training compute and international commercial expansion. The company is three years old."
+      ]
+    },
+    {
+      "title": "LibreOffice breaks download records after declaring it has no AI features",
+      "url": "https://manualdousuario.net/en/libreoffice-download-record-no-ai/",
+      "hn_url": "https://news.ycombinator.com/item?id=49610538",
+      "points": 641,
+      "comments": 216,
+      "bullets": [
+        "LibreOffice 26.8 shipped on 26 August 2026 and passed one million installer downloads inside a week — a figure that excludes everyone updating through a Linux distribution's own repositories, so the true number is higher.",
+        "The Document Foundation's position, set out by Italo Vignoli in a 3 September post, is not that AI is bad. It is that no current implementation clears their bar. They list six conditions: the model runs under user control, nothing is transmitted without consent, no telemetry, no dependence on a single vendor, document format integrity preserved, and the whole thing optional.",
+        "The sharpest line is about business models rather than technology — that for a competitor, \"an AI assistant justifies a price increase and strengthens the case for keeping all documents within its own infrastructure\". The foundation frames its stance as pragmatic, not ideological, and points users at community plugins.",
+        "Worth being careful about causation. The post is dated a week after the release, so the download record is not obviously a referendum on the AI stance — but it is the first time in a while that \"we did not add this\" was the headline feature."
+      ]
+    },
+    {
+      "title": "Jellyfin 12.0",
+      "url": "https://jellyfin.org/posts/jellyfin-release-12.0/",
+      "hn_url": "https://news.ycombinator.com/item?id=49604861",
+      "points": 582,
+      "comments": 315,
+      "bullets": [
+        "Released 7 September, and the version number jump is doing real work: this is the first release built on the database rewrite that landed in 10.11. Playlists and collections were previously stored as one big list inside the playlist itself, so any operation loaded the whole structure. Now every item in a playlist is its own row.",
+        "Alternate versions, which used to be a movies-only feature, now work for episodes — broadcast cuts, extended cuts and different resolutions can be grouped inside a series. The trade is that automatic version groupings are cleared on upgrade and libraries must be rescanned.",
+        "Breaking changes to read before upgrading: you must be on 10.10.7 or some 10.11.x first; two accounts whose names differ only in capitalisation will fail the migration; third-party plugins need rebuilding for .NET 10; and the legacy /emby/ and /mediabrowser/ endpoints are gone.",
+        "The rest is quality-of-life. Books and comics get metadata from OPF and ComicInfo files, generated posters, and chapter extraction from audiobooks. Themes were rebuilt on CSS variables, the Modern layout is now default, and deleting a large number of items no longer fails partway through."
+      ]
+    }
+  ],
+  "markets": {
+    "indices": [
+      {
+        "name": "Sensex · Tue 8 Sep close",
+        "value": "75,577.58",
+        "change": "555.23  (0.73%)",
+        "direction": "down"
+      },
+      {
+        "name": "Nifty 50 · Tue 8 Sep close",
+        "value": "23,635.10",
+        "change": "144.05  (0.61%)",
+        "direction": "down"
+      },
+      {
+        "name": "Nifty Midcap 100",
+        "value": "—",
+        "change": "0.21%",
+        "direction": "up"
+      },
+      {
+        "name": "Nifty Smallcap 100",
+        "value": "—",
+        "change": "0.17%",
+        "direction": "up"
+      },
+      {
+        "name": "Nifty Defence",
+        "value": "—",
+        "change": "2.52%",
+        "direction": "up"
+      },
+      {
+        "name": "USD/INR",
+        "value": "94.81",
+        "change": "0.2446  (0.26%)",
+        "direction": "up"
+      },
+      {
+        "name": "Dow Jones · 8 Sep close",
+        "value": "52,786.07",
+        "change": "628.18  (1.2%)",
+        "direction": "down"
+      },
+      {
+        "name": "S&P 500 · 8 Sep close",
+        "value": "7,673.52",
+        "change": "45.08  (0.6%)",
+        "direction": "down"
+      },
+      {
+        "name": "Nasdaq Composite · 8 Sep close",
+        "value": "26,421.41",
+        "change": "85.58  (0.3%)",
+        "direction": "down"
+      }
+    ],
+    "stories": [
+      {
+        "headline": "A second straight fall, and a three-month low, on a barrel of oil",
+        "url": "https://www.business-standard.com/markets/news/stock-market-live-september-8-nse-bse-sensex-today-nifty50-gift-nifty-brent-crude-oil-price-deepa-jewllers-ipo-listing-today-126090800082_1.html",
+        "source": "Business Standard — Stock Market Close, 8 September 2026",
+        "bullets": [
+          "Tuesday's close: Sensex 75,577.58, down 555.23 points or 0.73%; Nifty 50 23,635.10, down 144.05 points or 0.61%. Both ended at their lowest level since mid-June, the second consecutive down session.",
+          "The index fall was not a broad one. Nifty Midcap 100 rose 0.21% and Nifty Smallcap 100 rose 0.17%; sectoral indices settled mixed. Nifty Private Bank and Nifty Financial Services fell the most, roughly a per cent, while Nifty Pharma and Nifty Healthcare outperformed.",
+          "The one big move was defence: the index rallied 2.52%, per Shrikant Chouhan of Kotak Securities, quoted in the same blog. SBI Life Insurance, ICICI Bank and Axis Bank were the top Nifty 50 losers.",
+          "The stated cause was Brent, which SBI Securities' Sunny Agrawal put at $99 a barrel intraday after reports that Houthi forces had hit multiple Saudi Aramco facilities. These are Tuesday's closing numbers; Indian markets trade normally today."
+        ]
+      },
+      {
+        "headline": "Wall Street took the oil news harder than Mumbai did",
+        "url": "https://eurasiabusinessnews.com/2026/09/08/stock-market-today-dow-drops-628-points-as-oil-nears-100-and-gold-slides/",
+        "source": "Eurasia Business News — 8 September 2026",
+        "bullets": [
+          "Dow Jones 52,786.07, down 628.18 points or 1.2%. S&P 500 7,673.52, down 45.08 or 0.6%. Nasdaq Composite 26,421.41, down 85.58 or 0.3% — a spread that says this was an index-weighting story as much as a macro one.",
+          "Brent settled near $98 after briefly approaching $100; WTI ended near $93, its highest close since early June. Gold traded around $4,400 an ounce, down roughly 1.7%.",
+          "Part of the Dow's outsized fall was one stock: Amgen dropped about 10% on disappointing trial results from rival Novartis, and the Dow is price-weighted.",
+          "For India the arithmetic is unpleasant and familiar. More than 85% of the country's crude requirement is imported, so a barrel in the high nineties feeds straight into the import bill and the rupee at the same time."
+        ]
+      },
+      {
+        "headline": "Foreigners sold a rounding error; domestic funds bought ten times more",
+        "url": "https://www.moneycontrol.com/stocks/marketstats/fiidiiactivity/index.php",
+        "source": "Moneycontrol — FII & DII activity (cash), 8 September 2026",
+        "bullets": [
+          "In the cash segment on 8 September, FIIs were net sellers of just ₹123.19 crore. On 7 September they had been net buyers of ₹280.13 crore. Either way, foreign money barely moved.",
+          "DIIs were net buyers of ₹1,349.64 crore on 8 September, after ₹566.76 crore the day before — roughly eleven times the foreign net on the day, and the reason a 0.73% index fall came with midcaps and smallcaps closing higher.",
+          "USD/INR was quoted at 94.8108 on 8 September, up 0.2446 or 0.26% on the day, per Trading Economics. The rupee has firmed 0.62% over the past month and is still down 7.44% over twelve months; the all-time low was 99.82 in March 2026.",
+          "So the domestic bid is absorbing the foreign one comfortably, and the pressure on the index is coming from oil and the currency rather than from anyone leaving."
+        ]
+      }
+    ]
+  },
+  "trends": [
+    {
+      "tag": "Macro · India",
+      "headline": "India's core-sector index quietly grew a ninth industry, and steel got bigger",
+      "url": "https://blitzindiamedia.com/news/india-index-core-industries-2026-iron-ore-ninth-sector/",
+      "subtitle": "Rebased to 2022-23 by the Office of the Economic Adviser, DPIIT, released 20 July 2026",
+      "bullets": [
+        "The Index of Core Industries — the monthly reading that arrives before IIP and sets the tone for industrial data — has been rebased from 2011-12 to 2022-23. Iron ore joins as the ninth core industry with a weight of 4.905%, on the reasoning that it is an intensive input to everything downstream.",
+        "The new weights: electricity 30.932%, refinery products 22.572%, steel 17.584%, crude oil 7.430%, coal 5.596%, iron ore 4.905%, cement 4.410%, natural gas 3.841%, fertilisers 2.731%. Electricity and refining together are now more than half the index.",
+        "Two methodology fixes matter more than they sound. Steel now uses gross rather than net production, aligning it with the IIP. Coal keeps only raw coal — middlings and washed coal are out, which was double-counting the same tonnage twice on its way through the value chain.",
+        "The back series runs from April 2023, and the linking factor between the old and new series is 1.47. On the new basis the index grew 5.0% year on year in June 2026, against 3.2% in May. Anyone comparing a 2026 print to a 2019 print is now comparing two different baskets."
+      ],
+      "link_label": "Read"
+    },
+    {
+      "tag": "Platforms · Payments",
+      "headline": "From 4 September, your phone number is no longer your UPI identity",
+      "url": "https://www.medianama.com/2026/07/223-npci-upi-phone-numbers-username/",
+      "subtitle": "NPCI's masking mandate, and the quiet demotion of the mobile-number VPA",
+      "bullets": [
+        "NPCI set 4 September 2026 as the compliance deadline for banks and UPI apps to stop showing full mobile numbers during transactions. Only the last four digits are visible to the counterparty. On QR-code payments the number is not shown at all, even after the transaction completes. Account numbers and VPAs are covered by the same rule.",
+        "The second half is the structural one. Most first-time users end up with a mobile-number-based VPA because it is the default and they never learn there is an alternative. NPCI has told apps to make a username-based VPA the default instead — so a payment identity need not carry a phone number at all.",
+        "The trigger was safety rather than compliance theory: repeated complaints, disproportionately from women, about strangers obtaining their number from a transaction screen. The legal hook is the DPDP Act, under which a displayed phone number or full name is arguably a privacy risk.",
+        "The scale explains why this took a coordinated rollout rather than a circular. UPI had 55.49 crore users as of June 2026 per a parliamentary answer by minister of state Pankaj Chaudhary, and transactions of ₹314.23 lakh crore in FY 2025-26, up from ₹84.16 lakh crore in 2021-22. Changes touch the account-holding bank, the NPCI backend and the app at once.",
+        "What has not been published: penalties for missing the deadline, how masking interacts with dispute resolution and wrongful-transfer cases, and whether existing number-based UPI IDs are migrated or grandfathered."
+      ],
+      "link_label": "Read"
+    },
+    {
+      "tag": "Wildcard · Astrophysics",
+      "headline": "A red dot in the early universe turned out to be a star wrapped around a black hole",
+      "url": "https://phys.org/news/2026-08-black-hole-star-astronomers-brand.html",
+      "subtitle": "MoM-BH*-1, found by JWST's Mirage or Miracle survey, published in Nature",
+      "bullets": [
+        "The object sits a few hundred million years after the Big Bang and is about 100 billion times more luminous than the Sun. It is extremely red and shows the deepest Balmer break yet observed, with a spectrum of hydrogen and helium only.",
+        "The team, led by Rohan Naidu at MIT, concludes the best explanation is a black hole of roughly 100,000 solar masses swaddled in a hydrogen envelope the size of our solar system — which behaves, spectroscopically, like a very large star.",
+        "That is a category, not a curiosity. It would be neither a star nor an ordinary accreting black hole but a third thing, and it offers a route to explaining how supermassive black holes got so big so early without waiting for generations of stars to die.",
+        "The caveat is stated plainly by the team: simulations support the interpretation, but confirmation needs more objects like it. Published in Nature in August 2026, DOI 10.1038/s41586-026-10846-4."
+      ],
+      "link_label": "Read"
+    }
+  ],
+  "research": [
+    {
+      "tag": "Industry · Anthropic",
+      "title": "Learning more about Claude's mathematical capabilities",
+      "url": "https://www.anthropic.com/research/riemann-zeta",
+      "subtitle": "A research Claude pushed a Riemann-hypothesis bound from 41.6% to 67.2% — and named the mathematicians who checked it",
+      "bullets": [
+        "Posted 10 August 2026. An unreleased research version of Claude improved a long-standing bound on the proportion of the Riemann zeta function's non-trivial zeros known to lie on the critical line, which mathematicians had raised over decades to 41.6%. Claude took it to 67.2%.",
+        "The process is the interesting part in hindsight. About 650 ideas were tried and failed. The successful run had Claude coordinating roughly 60 subagents for a day and a half, running 2,400 shell commands and writing hundreds of Python scripts, for 31 million output tokens across two sessions.",
+        "It is not an unverified claim. Working with Anthropic's Eric Easley, Claude produced a Lean formalization that passes the standard validation tool comparator, alongside a paper and an informal proof summary.",
+        "The checking chain is worth reading next to today's first two Hacker News stories. Anthropic names its own mathematicians Levent Alpöge and Ralph Furman as examining the work, and Brian Conrey and Dan Goldston as outside experts who looked at the paper on short notice. Alpöge is the same Anthropic mathematician at the centre of Tristan Buckmaster's statement.",
+        "The caveat is Anthropic's own: \"We don't expect that the techniques Claude used will lead to proving the Riemann hypothesis.\" A better bound is not a proof, and the post does not pretend otherwise."
+      ],
+      "link_label": "Read"
+    },
+    {
+      "tag": "Academia · UIUC",
+      "title": "One Model, Many Minds: Unlocking Multi-Agent Synergy in a Single Agent via Mixture of Roles",
+      "url": "https://arxiv.org/abs/2608.27338",
+      "subtitle": "Zhichen Zeng, Hanghang Tong and colleagues at the University of Illinois Urbana-Champaign, 27 August 2026",
+      "bullets": [
+        "The premise is the cost of multi-agent systems. Running several specialised agents against one problem works, but you pay for it in tokens and round trips. The paper asks whether one model can hold several perspectives at once instead.",
+        "The method, Mixture of Roles (MoRe), keeps a diversified codebook of steering vectors, each encoding a distinct role. A query-aware router fuses codebook entries into a single steering vector for single-turn inference. The backbone LLM stays frozen; training is three-stage supervised fine-tuning plus GRPO post-training on the router and codebook.",
+        "The reported result: 2.2% average improvement over single-agent baselines, and performance on par with a multi-agent system at a twentieth of the token cost. Nineteen pages, ten figures.",
+        "Read it against OpenAI's ten thousand concurrent agents and the two papers are arguing about the same thing from opposite ends. One buys capability with parallel compute; the other asks how much of that capability was ever really about having several agents."
+      ],
+      "link_label": "Read"
+    }
+  ],
+  "wild": [
+    {
+      "tag": "A six-month-late reply, on a billboard",
+      "headline": "Stella Artois rented the board next to a Häagen-Dazs ad and answered it",
+      "url": "https://lbbonline.com/news/Stella-Artois-Answers-Haagen-Dazs-OOH-with-Flirty-Response",
+      "entities": [
+        "Stella Artois",
+        "Häagen-Dazs"
+      ],
+      "subject": "Stella Artois buys the adjacent Toronto billboard to reply to a Haagen-Dazs 'grab a pint' ad",
+      "bullets": [
+        "Häagen-Dazs had put up outdoor work in Toronto's west end reading 'Let's grab a pint' — meaning ice cream, not beer. It ran, it did its job, and nothing happened for months.",
+        "Then Stella Artois and draftLine found an available board directly alongside one of them and put up four words: 'Are you asking us out?' No coordination with the other brand at all. They spotted the campaign mid-August when it took over downtown sites and streetcars, and were live within a week of finding the open space.",
+        "Natalie Lucas, head of premium and above core, framed it as a shared vocabulary rather than a hijack: \"putting up an, 'Are you asking us out?' OOH next to their board was our playful, welcoming acknowledgement of our shared brand language.\"",
+        "The economics are the point. One board, one line, and a campaign that mostly travelled as a screenshot — most of the people who know about it have never been near the intersection. It follows last winter's weather-reactive snow chalice, so this is a deliberate habit rather than a lucky spot."
+      ],
+      "link_label": "Read"
+    },
+    {
+      "tag": "The only media space everyone already owns",
+      "headline": "Samaritans Ireland asked the public to donate their voicemail greetings",
+      "url": "https://www.adworld.ie/2026/07/24/droga5-dublin-turns-missed-calls-into-media-for-samaritans/",
+      "entities": [
+        "Samaritans Ireland"
+      ],
+      "subject": "Samaritans Ireland Donate Your Voicemail campaign turning missed calls into media",
+      "bullets": [
+        "The insight, from Droga5 Dublin: people answer only about half the calls they receive. Every unanswered one lands in a recorded greeting that nobody has ever thought of as advertising space. So the campaign asks people to re-record theirs to say that although they cannot pick up, Samaritans is on freephone 116 123, around the clock.",
+        "It launched unbranded. Murals in Dublin and Cork read only \"Call me anytime\" and gave a number. The reveal came on Louise Cantillon's Today FM show when she rang it live on air and reached a voicemail recorded by Nicola, a Samaritans caller who says contacting the service saved her life.",
+        "Creative directors Alex Ingarfield and Carina Caye put the mechanic plainly: \"voicemail is the only channel in the world that every single person already owns and has never been asked to donate in this way\" — millions of dormant voicemails as direct media, at zero cost.",
+        "The buy that does exist was donated by WPP Media Ireland and placed near gyms, cinemas and shops, on the reasoning that those are the places people are least likely to answer. Bressie, The Corrs, Kodaline and Aaron Rowe donated greetings. Sarah O'Toole, executive director of Samaritans Ireland, says volunteers answered 350,000 calls last year."
+      ],
+      "link_label": "Read"
+    },
+    {
+      "tag": "The mess is still there, it is just in a box",
+      "headline": "IKEA Sweden built billboards with the clutter stacked up behind them",
+      "url": "https://www.media4growth.com/showcase/campaigns/ikea-puts-the-mess-behind-its-tidy-billboards-86041",
+      "entities": [
+        "IKEA"
+      ],
+      "subject": "IKEA Sweden tidy billboards with SAMLA boxes of real household clutter stacked behind",
+      "bullets": [
+        "From the end of August, across major Swedish cities, the front of the billboard is an ordinary styled room. Walk round the back and there are hundreds of SAMLA storage boxes, stacked, filled with toys, batteries, socks, clothes, records, electronics and half-finished children's drawings.",
+        "It is an unusually honest product demo. The promise is not that the mess goes away; it is that the mess goes into a box. Art director Tiago Pinho: \"The front of the billboards like any typical ad for home furnishing. But when you look again, there´s an honest twist.\"",
+        "The supporting research, IKEA's own: 83% of Swedish respondents have at least one room they cannot keep tidy. The worst offenders are the closet at 24%, the garage or attic and the kitchen counter at 22% each, kitchen cupboards and drawers at 19%, and the bathroom at 19%.",
+        "Made by NoA Åkestam Holst, with social and digital support. Marketing communication leader Jonas Westberg's ambition for it was modest and correct: \"We wanted to remind people of our great storage boxes in an out-of-the-box way hopefully we can stop people in their tracks.\""
+      ],
+      "link_label": "Read"
+    }
+  ],
+  "learn": {
+    "title": "Bubble wrap failed as wallpaper, then failed as greenhouse insulation, before anyone thought of packing",
+    "subject": "The origin of bubble wrap: failed wallpaper, failed greenhouse insulation, then IBM 1401 packaging",
+    "body": [
+      "In 1957 Alfred Fielding and the Swiss chemist Marc Chavannes were trying to invent textured plastic wallpaper. Their method was to run two plastic shower curtains through a heat-sealing machine and hope for something the Beat generation would want on a wall. What came out was a sheet of film with air trapped in it, and it disappointed them. Interior decorators were not interested in walls that looked like packing material — a judgement that was correct about the look and spectacularly wrong about the future.",
+      "So they went looking for another use, and by their own account worked through more than four hundred of them. The next serious candidate was greenhouse insulation, which was actually tested and did not work well enough. They founded Sealed Air Corporation in 1960 with a product still in search of a problem. The problem arrived in 1961, from an industry that had not existed when they started: IBM had just launched the 1401, the machine sometimes called the Model-T of computing, and needed to ship delicate computers across the country without breaking them.",
+      "The lesson is not that persistence pays, which is a poster. It is that the invention was finished for four years while the market for it was still being built somewhere else. Fielding and Chavannes had not made a bad product; they had made a product for a use case that had not shown up yet. The company that came out the other side had annual sales of $5 million when T. J. Dermot Dunphy became chief executive in 1971 and $3 billion by 2000. And the most popular application — the one every person reading this has performed — is one nobody at Sealed Air ever designed for, invoiced for, or can stop."
+    ],
+    "tags": [
+      "Origin stories",
+      "Materials",
+      "Accidental products"
+    ]
+  },
+  "ideas": {
+    "prompt": "Ten words we need for things that happen all the time but have no name",
+    "note": "Altucher's drill: ten ideas a day against one prompt. The test for a good one is that you can use it in a sentence tomorrow and be understood without explaining it.",
+    "items": [
+      {
+        "text": "Doorstep dread — the certainty, arriving about ninety seconds after you leave, that you left the stove on."
+      },
+      {
+        "text": "Spoilerdrift — when a streaming app's episode list quietly tells you a character survives to season four."
+      },
+      {
+        "text": "Toogoodhoard — the pile of things you cannot use and refuse to throw out because someone, somewhere, would want them.",
+        "why": "A recurring ask on r/SomebodyMakeThis, where someone is currently trying to build an app for exactly this pile."
+      },
+      {
+        "text": "Photo lag — the four days between a trip ending and the one friend who took the good pictures sending them."
+      },
+      {
+        "text": "Tab guilt — the specific weight of forty open browser tabs you are keeping because closing one admits you will never read it."
+      },
+      {
+        "text": "The overtake — accelerating slightly to pass a slow walker before the corner, for no reason and no prize."
+      },
+      {
+        "text": "Queue faith — the moment you commit to a checkout line and refuse to switch even as the other one empties."
+      },
+      {
+        "text": "App sprawl — the six workplace tools that each do one ninth of a job and none of which anyone chose."
+      },
+      {
+        "text": "Recess hunger — the mid-afternoon office feeling that what you actually need is fifteen minutes on a climbing frame.",
+        "why": "Straight off a well-upvoted r/crazyideas thread arguing that every workplace should have an adult-sized playground."
+      },
+      {
+        "text": "Lift limbo — the silence between floors when two colleagues have already said everything they are willing to say."
+      }
+    ]
+  }
+}

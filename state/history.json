@@ -1100,6 +1100,150 @@
         "popcrush.com",
         "science.nasa.gov"
       ]
+    },
+    {
+      "date": "2026-09-09",
+      "issue": 1,
+      "quote_text": [
+        "There is no absurdity so palpable but that it may be firmly planted in the human head if you only begin to inculcate it before the age of five."
+      ],
+      "quote_author": [
+        "Arthur Schopenhauer"
+      ],
+      "idea_text": [
+        "Doorstep dread — the certainty, arriving about ninety seconds after you leave, that you left the stove on.",
+        "Spoilerdrift — when a streaming app's episode list quietly tells you a character survives to season four.",
+        "Toogoodhoard — the pile of things you cannot use and refuse to throw out because someone, somewhere, would want them.",
+        "Photo lag — the four days between a trip ending and the one friend who took the good pictures sending them.",
+        "Tab guilt — the specific weight of forty open browser tabs you are keeping because closing one admits you will never read it.",
+        "The overtake — accelerating slightly to pass a slow walker before the corner, for no reason and no prize.",
+        "Queue faith — the moment you commit to a checkout line and refuse to switch even as the other one empties.",
+        "App sprawl — the six workplace tools that each do one ninth of a job and none of which anyone chose.",
+        "Recess hunger — the mid-afternoon office feeling that what you actually need is fifteen minutes on a climbing frame.",
+        "Lift limbo — the silence between floors when two colleagues have already said everything they are willing to say."
+      ],
+      "idea_prompt": [
+        "Ten words we need for things that happen all the time but have no name"
+      ],
+      "hn_id": [
+        "49605915",
+        "49613262",
+        "49605767",
+        "49610538",
+        "49604861"
+      ],
+      "link": [
+        "https://cims.nyu.edu/~tristanb/statement.pdf",
+        "https://openai.com/index/navier-stokes-solution/",
+        "https://mistral.ai/news/mistral-makes-sovereign-open-weight-ai-to-frontier/",
+        "https://manualdousuario.net/en/libreoffice-download-record-no-ai/",
+        "https://jellyfin.org/posts/jellyfin-release-12.0/",
+        "https://blitzindiamedia.com/news/india-index-core-industries-2026-iron-ore-ninth-sector/",
+        "https://www.medianama.com/2026/07/223-npci-upi-phone-numbers-username/",
+        "https://phys.org/news/2026-08-black-hole-star-astronomers-brand.html",
+        "https://lbbonline.com/news/Stella-Artois-Answers-Haagen-Dazs-OOH-with-Flirty-Response",
+        "https://www.adworld.ie/2026/07/24/droga5-dublin-turns-missed-calls-into-media-for-samaritans/",
+        "https://www.media4growth.com/showcase/campaigns/ikea-puts-the-mess-behind-its-tidy-billboards-86041",
+        "https://www.anthropic.com/research/riemann-zeta",
+        "https://arxiv.org/abs/2608.27338",
+        "https://www.business-standard.com/markets/news/stock-market-live-september-8-nse-bse-sensex-today-nifty50-gift-nifty-brent-crude-oil-price-deepa-jewllers-ipo-listing-today-126090800082_1.html",
+        "https://eurasiabusinessnews.com/2026/09/08/stock-market-today-dow-drops-628-points-as-oil-nears-100-and-gold-slides/",
+        "https://www.moneycontrol.com/stocks/marketstats/fiidiiactivity/index.php"
+      ],
+      "subject": [
+        "India's core-sector index quietly grew a ninth industry, and steel got bigger",
+        "From 4 September, your phone number is no longer your UPI identity",
+        "A red dot in the early universe turned out to be a star wrapped around a black hole",
+        "Stella Artois buys the adjacent Toronto billboard to reply to a Haagen-Dazs 'grab a pint' ad",
+        "Samaritans Ireland Donate Your Voicemail campaign turning missed calls into media",
+        "IKEA Sweden tidy billboards with SAMLA boxes of real household clutter stacked behind",
+        "Learning more about Claude's mathematical capabilities",
+        "One Model, Many Minds: Unlocking Multi-Agent Synergy in a Single Agent via Mixture of Roles",
+        "The origin of bubble wrap: failed wallpaper, failed greenhouse insulation, then IBM 1401 packaging"
+      ],
+      "brand": [
+        "Stella Artois",
+        "Häagen-Dazs",
+        "Samaritans Ireland",
+        "IKEA",
+        "IKEA Sweden"
+      ],
+      "brand_mention": [
+        "Toronto's",
+        "Let's",
+        "Stella Artois",
+        "Line",
+        "Natalie Lucas",
+        "OOH",
+        "Droga5 Dublin",
+        "Samaritans",
+        "Dublin",
+        "Cork",
+        "Call",
+        "Louise Cantillon's Today FM",
+        "Nicola",
+        "Alex Ingarfield",
+        "Carina Caye",
+        "WPP Media Ireland",
+        "Corrs",
+        "Kodaline",
+        "Aaron Rowe",
+        "Sarah O'Toole",
+        "Samaritans Ireland",
+        "Swedish",
+        "SAMLA",
+        "Tiago Pinho",
+        "IKEA's",
+        "NoA",
+        "Holst",
+        "Jonas Westberg's"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "India's core-sector index quietly grew a ninth industry, and steel got bigger"
+        ],
+        [
+          "trends",
+          "From 4 September, your phone number is no longer your UPI identity"
+        ],
+        [
+          "trends",
+          "A red dot in the early universe turned out to be a star wrapped around a black hole"
+        ],
+        [
+          "wild",
+          "Stella Artois rented the board next to a Häagen-Dazs ad and answered it"
+        ],
+        [
+          "wild",
+          "Samaritans Ireland asked the public to donate their voicemail greetings"
+        ],
+        [
+          "wild",
+          "IKEA Sweden built billboards with the clutter stacked up behind them"
+        ],
+        [
+          "research",
+          "Learning more about Claude's mathematical capabilities"
+        ],
+        [
+          "research",
+          "One Model, Many Minds: Unlocking Multi-Agent Synergy in a Single Agent via Mixture of Roles"
+        ],
+        [
+          "learn",
+          "Bubble wrap failed as wallpaper, then failed as greenhouse insulation, before anyone thought of packing"
+        ]
+      ],
+      "editorial_domains": [
+        "adworld.ie",
+        "blitzindiamedia.com",
+        "lbbonline.com",
+        "media4growth.com",
+        "medianama.com",
+        "phys.org"
+      ]
     }
   ]
 }
