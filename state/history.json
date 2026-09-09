@@ -1244,6 +1244,139 @@
         "medianama.com",
         "phys.org"
       ]
+    },
+    {
+      "date": "2026-09-10",
+      "issue": 1,
+      "quote_text": [
+        "You can prove anything you want by coldly logical reason — if you pick the proper postulates."
+      ],
+      "quote_author": [
+        "Isaac Asimov"
+      ],
+      "idea_text": [
+        "A Saturday-morning bicycle repair stall parked outside whichever park everyone actually cycles in.",
+        "Photographing people's parents properly — one hour, good light, prints delivered, no album, no drama.",
+        "One dish, no menu, Sunday breakfast delivered to hostel rooms until you run out.",
+        "A café that becomes a bar after seven — same room, two businesses, one rent split between them.",
+        "Plant-sitting for people who leave town on long weekends and come back to a corpse.",
+        "A weekend left-luggage counter near the station, for the four hours between one train and the next.",
+        "Teaching parents to use the phone they already own — two hours, at their house, no jargon, no upselling.",
+        "A text-back service for local tradespeople who never answer the phone and lose the job because of it.",
+        "Renting out a projector, a speaker and a bedsheet for terrace film nights.",
+        "A furniture-moving crew that works only at the start and end of term, when every student in the city moves at once."
+      ],
+      "idea_prompt": [
+        "Ten side businesses you could run only at weekends"
+      ],
+      "hn_id": [
+        "49623754",
+        "49626190",
+        "49630931",
+        "49615537",
+        "49611251"
+      ],
+      "link": [
+        "https://opusfived.dev/",
+        "https://tailwindcss.com/blog/tailwind-is-joining-shopify",
+        "https://www.apple.com/iphone-duo/",
+        "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/",
+        "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/alphagenome-atlas/",
+        "https://www.business-standard.com/finance/news/rbi-withdraws-over-6-trillion-of-bank-liquidity-after-record-spike-126090700475_1.html",
+        "https://weirdgloop.org/blog/google-jail",
+        "https://www.eurekalert.org/news-releases/1141933",
+        "https://www.adgully.com/post/18967/zomato-marks-swiggy-s-birthday-with-a-playful-print-campaign",
+        "https://investors.crocs.com/news-and-events/press-releases/press-release-details/2026/Crocs-Introduces-Niles-New-Mascot-Launches-a-Bold-New-Era-of-Character-Driven-Storytelling/default.aspx",
+        "https://www.itsnicethat.com/articles/the-view-from-tokyo-why-a-japanese-potato-chip-bag-lost-its-colour-graphic-design-170826",
+        "https://research.google/blog/mapping-global-methane-emissions-from-space-with-deep-learning/",
+        "https://arxiv.org/abs/2608.24094",
+        "https://www.business-standard.com/markets/news/stock-market-live-september-9-nse-bse-sensex-today-nifty50-gift-nifty-brent-crude-oil-prices-126090900115_1.html",
+        "https://www.business-standard.com/india-news/rupee-falls-past-95-as-crude-surges-rbi-steps-in-with-dollar-sales-126090901376_1.html",
+        "https://investrade.com/market-review-september-09-2026/"
+      ],
+      "subject": [
+        "RBI drains a record banking liquidity surplus created by its own FCNR(B) dollar swap window",
+        "Weird Gloop says Google has not ranked newly registered wiki domains beyond their homepage since March 2024",
+        "Quantum Galileo interferometer measures the quantum phase of a freely falling atom in superposition",
+        "Zomato runs a full-page orange print ad in the Times of India wishing rival Swiggy a happy birthday",
+        "Crocs turns the crocodile silhouette on its Classic Clog rivet into a six-foot mascot called Niles",
+        "Calbee prints fourteen snack products in monochrome after an ink feedstock shortage, labelling the packs as petroleum-saving",
+        "Mapping global methane emissions from space with deep learning",
+        "SIREN-Bench: Behavior-Driven Generation and Evaluation of Emergency-Vehicle Interactions",
+        "Neisser and Harsch's flashbulb memory study: confidence and accuracy came apart completely"
+      ],
+      "brand": [
+        "Zomato",
+        "Swiggy",
+        "Crocs",
+        "Calbee"
+      ],
+      "brand_mention": [
+        "Zomato",
+        "Bengaluru",
+        "Times",
+        "Delhi-only",
+        "Announced 13",
+        "Classic Clog",
+        "Niles",
+        "Shop",
+        "Terence Reilly",
+        "CMO Carly Gomez",
+        "Calbee's",
+        "Iran",
+        "Strait",
+        "Hormuz",
+        "Ray Masaki's",
+        "Colour",
+        "JA Nakanoshi",
+        "Aesthetic"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "The RBI asked for dollars, got $136 billion, and now has to mop up the rupees"
+        ],
+        [
+          "trends",
+          "New wikis have been effectively invisible on Google for two years"
+        ],
+        [
+          "trends",
+          "They split an atom in two, dropped one half, and measured what Einstein said would happen"
+        ],
+        [
+          "wild",
+          "Zomato bought a full page in the Bengaluru paper to wish Swiggy a happy birthday"
+        ],
+        [
+          "wild",
+          "Crocs gave the crocodile on the side of the shoe a name, a height and a sitcom"
+        ],
+        [
+          "wild",
+          "Calbee's crisp packets went grey, and the label explains exactly why"
+        ],
+        [
+          "research",
+          "Mapping global methane emissions from space with deep learning"
+        ],
+        [
+          "research",
+          "SIREN-Bench: Behavior-Driven Generation and Evaluation of Emergency-Vehicle Interactions"
+        ],
+        [
+          "learn",
+          "Forty-four people were shown what they wrote the day after the Challenger exploded, and did not believe it"
+        ]
+      ],
+      "editorial_domains": [
+        "adgully.com",
+        "business-standard.com",
+        "eurekalert.org",
+        "investors.crocs.com",
+        "itsnicethat.com",
+        "weirdgloop.org"
+      ]
     }
   ]
 }
