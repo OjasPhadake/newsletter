@@ -1,0 +1,353 @@
+{
+ "date_line": "Friday, 11 September 2026",
+ "issue": 1,
+ "preheader": "A DeepSeek model that keeps 552 billion parameters and wakes up 16 of them; a pretraining researcher resigns from Anthropic in public; Shopify walks back from React Native; and why your bread goes stale faster in the fridge.",
+ "quote": {
+  "text": "When stress is the problem, slack is the solution.",
+  "author": "Tom DeMarco",
+  "source_url": "https://www.goodreads.com/quotes/tag/counterintuitive",
+  "note": "From Slack: Getting Past Burnout, Busywork, and the Myth of Total Efficiency. The instinct when a system is under strain is to tighten it — cut the gaps, raise the utilisation, fill the calendar. DeMarco's point is that the gaps were the thing absorbing the strain, and a system run at 100% has nowhere to put a surprise."
+ },
+ "hn": [
+  {
+   "title": "DeepSeek v4.1 Flash",
+   "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+   "hn_url": "https://news.ycombinator.com/item?id=49639090",
+   "points": 930,
+   "comments": 514,
+   "bullets": [
+    "The submitted link is a post on X, which cannot be read without an account, so this is from the Hugging Face model card the thread points to. The release is MIT-licensed.",
+    "The shape is the story: a 552B-parameter backbone that activates 8B parameters during prefill and 16B during decode. Each mixture-of-experts layer carries one shared expert and 384 routed ones, of which six fire per token, and a separate 196B-parameter \"Engram\" conditional memory is accessed sparsely on top.",
+    "It is a causal encoder-decoder — 20 encoder layers and 20 decoder layers — rather than the decoder-only stack almost everything else uses. Context runs to 1M tokens, extended late in a 45T-token multimodal pretraining run.",
+    "The efficiency claim is in the cache. Compressed Sparse Attention 2 with an FP4 (E2M1) main KV cache brings the KV footprint to roughly 890 bytes per token, about a quarter of DeepSeek-V4-Flash. Decoding uses a semi-autoregressive speculative scheme they call DSpark.",
+    "Reported scores at maximum reasoning effort: GPQA Diamond 90.9, Terminal-Bench 2.1 90.6, DeepSWE v1.1 74.2. The card lists Novita and HuggingChat as inference routes."
+   ]
+  },
+  {
+   "title": "I resigned from Anthropic today",
+   "url": "https://www.nbcchicago.com/news/national-international/anthropic-researcher-resigns-warning-ai/3986667/",
+   "hn_url": "https://news.ycombinator.com/item?id=49619227",
+   "points": 719,
+   "comments": 1000,
+   "bullets": [
+    "The submission is a thread on X and cannot be fetched; the account below is from NBC's report on it, published 9 September.",
+    "Jacob Coxon, 27, resigned after three years of pretraining research split between OpenAI and Anthropic. His stated reason: \"Neither company is acting responsibly. They are racing straight to self-improving superintelligence and gambling with our lives.\"",
+    "He also said that \"many people working in the industry, including executives, senior researchers, believe that there's a substantial probability that this technology could kill everyone\" — the claim being about what insiders privately hold, not about a specific model.",
+    "Anthropic's response was that it has been consistent that AI brings \"enormous benefits and unprecedented risks\", ships \"with some of the strongest safeguards in the industry\", and wants \"a lawful, verifiable way to work together to pace how we release powerful models\".",
+    "NBC reports the posts reached over 100 million people overnight, and that Senator Bernie Sanders responded by pledging legislation to pause frontier development and ban superintelligence. The 1,000-comment HN thread is mostly the object-level argument, not the resignation."
+   ]
+  },
+  {
+   "title": "Shopify moves back to Native from React Native",
+   "url": "https://shopify.engineering/back-to-native",
+   "hn_url": "https://news.ycombinator.com/item?id=49643982",
+   "points": 637,
+   "comments": 432,
+   "bullets": [
+    "Shopify went all-in on React Native in 2020 and is now moving four apps — Shop, Shopify, Point of Sale and Inbox — to Swift and Kotlin. Shop has already shipped fully native; the main Shopify app, 300-plus screens, lands later in 2026.",
+    "The reason given is not that the framework failed. The post says \"React Native was the right choice for Shopify in 2020\" and that it \"consistently delivered these benefits\". What changed is the cost of the alternative.",
+    "\"LLMs changed one of the core assumptions behind our 2020 decision\" — coding agents now do the implementation, translation, review and test work that made writing every feature twice prohibitive, so \"building the same feature in Swift and Kotlin no longer carries the cost it used to\".",
+    "The number they lead with: the Shop team went from proof of concept to a fully rebuilt native app in the app stores in 12 weeks.",
+    "Worth noticing what the argument implies in general — a tooling decision taken to avoid duplicated human effort is worth re-opening once the duplication is cheap."
+   ]
+  },
+  {
+   "title": "Rust is tier-1 language at Microsoft",
+   "url": "https://rustfoundation.org/media/guest-post-rust-is-tier-1-language-at-microsoft/",
+   "hn_url": "https://news.ycombinator.com/item?id=49643546",
+   "points": 569,
+   "comments": 309,
+   "bullets": [
+    "A guest post on the Rust Foundation site by Victor Ciura, a principal engineer on Microsoft's Rust tooling team, dated 10 September.",
+    "\"Tier-1\" is an internal classification, not a marketing line: Rust now gets the same engineering support as C++, C# and TypeScript — secure toolchain builds, developer tooling, deep platform integration and compliance with Microsoft's Security Development Lifecycle requirements.",
+    "The concrete piece of engineering is rustc_codegen_utc, a code generation backend that hands Rust's compiler off to the MSVC backend, so hybrid Rust/C++ projects on Windows share one build and debug workflow.",
+    "It has been production-ready since early 2026, self-hosted since Rust 1.90, and is used in more than 100 Microsoft project repositories, with adoption still growing weekly.",
+    "The stated span of use runs from firmware and drivers through kernel and hypervisors to microservices and apps; the post names no individual products."
+   ]
+  },
+  {
+   "title": "Flock Wants a Closely Surveilled World with No Exit",
+   "url": "https://www.newyorker.com/culture/infinite-scroll/flock-wants-a-closely-surveilled-world-with-no-exit",
+   "hn_url": "https://news.ycombinator.com/item?id=49624394",
+   "points": 567,
+   "comments": 544,
+   "bullets": [
+    "The New Yorker will not open to a machine reader, so this is not a summary of the piece. It is a profile by Brady Brickner-Wood of Flock Safety and its founder Garrett Langley, who started the company in 2017 after thefts in his Atlanta neighbourhood. The figures below come from Karmactive's account of the same reporting.",
+    "Flock's automatic licence-plate readers number about 130,000 cameras, in every state except Alaska, under contract with roughly 40% of US law-enforcement agencies. The cameras log plate, make, model and colour, and police can query the database without a warrant.",
+    "Documented misuse includes officers searching the network to track ex-partners and relatives, and a Texas sheriff's deputy running a query across more than 80,000 cameras to pursue a woman who had obtained a medication abortion. ICE has reached the data through municipal police departments.",
+    "The politics are not falling along the expected lines: Texas froze state spending on Flock and Florida revoked permits and ordered cameras off state highways. Nearly half of Americans tell pollsters they oppose automated plate readers.",
+    "The company was recently valued at more than $8 billion, with Andreessen Horowitz as lead investor. A volunteer project, DeFlock, maps the camera network nationally."
+   ]
+  }
+ ],
+ "markets": {
+  "indices": [
+   {
+    "name": "Sensex · Thu 10 Sep close",
+    "value": "74,902.59",
+    "change": "138.36  (0.19%)",
+    "direction": "up"
+   },
+   {
+    "name": "Nifty 50 · Thu 10 Sep close",
+    "value": "23,477.80",
+    "change": "46.30  (0.20%)",
+    "direction": "up"
+   },
+   {
+    "name": "Bank Nifty",
+    "value": "56,471.95",
+    "change": "176.40  (0.31%)",
+    "direction": "up"
+   },
+   {
+    "name": "Nifty Financial Services",
+    "value": "—",
+    "change": "0.57%",
+    "direction": "up"
+   },
+   {
+    "name": "Nifty Metal",
+    "value": "—",
+    "change": "0.65%",
+    "direction": "down"
+   },
+   {
+    "name": "Nifty Pharma",
+    "value": "—",
+    "change": "0.51%",
+    "direction": "down"
+   },
+   {
+    "name": "Nifty Auto",
+    "value": "—",
+    "change": "0.41%",
+    "direction": "down"
+   },
+   {
+    "name": "Nifty IT",
+    "value": "—",
+    "change": "0.08%",
+    "direction": "down"
+   },
+   {
+    "name": "USD/INR · 10 Sep close",
+    "value": "95.44",
+    "change": "0.3% — steepest one-day fall since mid-July",
+    "direction": "up"
+   },
+   {
+    "name": "FII cash · 10 Sep",
+    "value": "−₹438.20 cr",
+    "change": "net sellers, a fourth straight session",
+    "direction": "down"
+   },
+   {
+    "name": "DII cash · 10 Sep",
+    "value": "+₹1,025.80 cr",
+    "change": "net buyers",
+    "direction": "up"
+   }
+  ],
+  "stories": [
+   {
+    "headline": "A late recovery ended a three-day slide, and almost nothing else moved",
+    "url": "https://blog.liquide.life/share-market-today-nifty-ends-higher-sensex-gains-as-financials-support-metals-it-remain-weak/",
+    "source": "Liquide — Share Market Today, Thursday 10 September 2026",
+    "bullets": [
+     "Thursday's close: the Sensex added 138.36 points, or 0.19%, to 74,902.59 and the Nifty 50 added 46.30 points, or 0.20%, to 23,477.80. That snaps three consecutive down sessions, on a recovery in the last stretch of trade.",
+     "Financials did the work. Nifty Financial Services rose 0.57%, the best sector of the day, and Bank Nifty rose 0.31% to 56,471.95 — ahead of the broad market.",
+     "Everything cyclical or defensive leaked: Metal −0.65%, Pharma −0.51%, Auto −0.41%, Energy −0.29%, IT −0.08%. HDFC Life (+2.36%), Power Grid (+2.22%) and ONGC (+1.39%) led the Nifty 50; HCL Technologies (−1.85%), Hindalco (−1.26%) and Tata Steel (−1.04%) trailed it.",
+     "Brent stayed above $100 on continuing West Asia tension, which is the fact underneath both the rupee and the metals move. These are Thursday's closing numbers."
+    ]
+   },
+   {
+    "headline": "The index went nowhere. The rupee had its worst day since July",
+    "url": "https://www.5paisa.com/blog/post-market-update-sensex-nifty-recover-crude-100-september-10-2026",
+    "source": "5paisa — Post-Market Update, 10 September 2026",
+    "bullets": [
+     "The rupee closed 0.3% weaker at 95.44 per dollar, which 5paisa calls its steepest single-day decline since mid-July. It had settled at 95.08 the session before.",
+     "India VIX fell 1.44% and slipped below 12 — the equity market is pricing calm even while the currency is not.",
+     "Institutional flows stayed in their pattern: FIIs sold ₹438.20 crore of cash equities on Thursday, DIIs bought ₹1,025.80 crore. On Wednesday it was −₹583 crore against +₹1,509 crore, and on Tuesday −₹123.20 crore against +₹1,349.60 crore.",
+     "Read together: domestic money is absorbing foreign selling almost exactly, which is why the index barely moves while the currency does the adjusting."
+    ]
+   }
+  ]
+ },
+ "trends": [
+  {
+   "tag": "India · Infrastructure",
+   "headline": "₹10,783 crore of new railway track, and the point of it is coal",
+   "url": "https://www.businesstoday.in/latest/economy/story/cabinet-clears-rs-10783-crore-railway-projects-656-km-network-expansion-across-5-states-check-full-details-554319-2026-09-09",
+   "subject": "Cabinet clears three railway multitracking projects worth Rs 10,783 crore across five states",
+   "subtitle": "Three multitracking projects, 656 km, and 27 million tonnes a year of extra freight capacity through the mineral belt",
+   "bullets": [
+    "The Cabinet Committee on Economic Affairs approved three projects on 9 September: the Kharagpur–Jharsuguda (Bagdehi) fourth line, the Katni–Pendra Road fourth line, and the Bilaspur (Uslapur)–Pendra Road third line. Total cost ₹10,783 crore, target completion 2029-30.",
+    "Geography explains the choice. The lines run through West Bengal, Jharkhand, Odisha, Madhya Pradesh and Chhattisgarh — 14 districts across the coal-and-steel corridor — and add roughly 656 km of track to existing routes rather than opening new ones.",
+    "The capacity number is the one that matters: an additional 27 million tonnes per annum of freight, aimed at coal, cement, iron ore and steel. These are congested trunk routes where a third or fourth line is the cheapest way to buy throughput.",
+    "The government's own framing puts connectivity for about 4,790 villages and 56 lakh people alongside an estimated saving of 12 crore litres of oil and 62 crore kg of CO₂ — the standard modal-shift arithmetic, worth roughly 2.48 crore trees by its own comparison."
+   ],
+   "link_label": "Read"
+  },
+  {
+   "tag": "Platforms",
+   "headline": "OpenAI stopped selling the model and started renting the harness",
+   "url": "https://developers.openai.com/api/docs/changelog",
+   "subject": "OpenAI puts its Codex agent harness behind a managed Agents API in public beta",
+   "subtitle": "The Agents API went into public beta on 10 September: OpenAI runs the loop, you supply the tools",
+   "bullets": [
+    "The changelog entry is plain about what is being sold: \"Build agents with a managed Codex harness while OpenAI handles session orchestration, context compaction, and recovery.\" The scaffolding around the model, not the model, is the product.",
+    "It ships with durable sessions that survive across turns, streamed progress, custom tools and MCP server support. Execution runs either in OpenAI-hosted sandboxes or in sandboxes you manage yourself.",
+    "The same day brought GPT-Live-1 to general availability for full-duplex voice at $0.05 per minute, billed separately from whatever backend model or agent is doing the reasoning behind it, and mandatory expiry dates for project API keys.",
+    "Why it is a shift rather than a launch: context compaction, retries and recovery are precisely the parts every team building agents has written for itself. Handing them over is convenient and is also the part that decides how much of your agent lives on someone else's server."
+   ],
+   "link_label": "Read"
+  },
+  {
+   "tag": "Wildcard · Catalysis",
+   "headline": "The nickel doing the work in a nickel catalyst turns out not to be nickel metal",
+   "url": "https://www.sciencedaily.com/releases/2026/09/260909005148.htm",
+   "subject": "Ni1O4Ni4 motif on nickel oxide, not metallic nickel, is the active site in partial oxidation of methane",
+   "subtitle": "A 0.8% nickel catalyst matching one with ten times the metal, because the active site forms during the reaction",
+   "bullets": [
+    "Partial oxidation of methane to syngas has been taught for decades as a reaction driven by metallic nickel nanoparticles. A group at the Dalian Institute of Chemical Physics, Chinese Academy of Sciences, went looking for that metal in a spent catalyst and found almost none of it.",
+    "What they found instead was a reconstructed atomic arrangement that forms in situ on the NiO(100) surface during the reaction — a Ni₁O₄Ni₄ motif. The activity tracks the motif, not the metal: as they put it, activity \"does not come simply from metallic nickel or ordinary nickel oxide\".",
+    "The practical consequence is a loading number. A catalyst with 0.8 wt% nickel converted 92% of the methane at 87% CO selectivity with a steady H₂/CO ratio near 2.0 — comparable to a conventional impregnated catalyst carrying 8.0 wt%, ten times the metal.",
+    "Published in Nature Catalysis. Syngas is the front end of ammonia, methanol and Fischer–Tropsch fuels, so an order of magnitude less active metal per unit of throughput is a cost line, not just a mechanism paper."
+   ],
+   "link_label": "Read"
+  }
+ ],
+ "research": [
+  {
+   "tag": "Industry · Google DeepMind",
+   "title": "AlphaGenome Atlas: a predictive map of every possible DNA letter change in the human genome",
+   "url": "https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome/",
+   "subtitle": "Published 8 September 2026 — 9 billion single-nucleotide variants, scored in advance",
+   "bullets": [
+    "The framing is the interesting part. Rather than ship a model you query, DeepMind ran AlphaGenome over every one of the 9 billion possible single-letter substitutions in the human genome and published the answers: a one-petabyte dataset, about thirty times the size of the AlphaFold database.",
+    "Each variant carries thousands of predicted molecular effects across hundreds of human and mouse cell types and tissues, plus feature attributions saying which biological process drove the score, and a compendium of over 2,500 sequence motifs.",
+    "It also introduces a single Allelic Variant Impact score that spans coding and non-coding regions — the non-coding half being where most disease-associated variants sit and where existing pathogenicity predictors are weakest. DeepMind reports best-in-class results across several variant pathogenicity and rare-disease benchmarks, with external groups validating predictions experimentally.",
+    "Reported downstream results include identifying a DNM1 variant in epileptic encephalopathy work and surfacing 22% more non-coding genetic associations in population studies. Free for academic research through the portal and API; commercial access sits on Google Cloud."
+   ],
+   "link_label": "Read"
+  },
+  {
+   "tag": "Academia · MIT",
+   "title": "Teach a Molmo2Fish: towards interactive fish tracking with natural language guidance",
+   "url": "https://arxiv.org/abs/2608.18602",
+   "subtitle": "Kai Van Brunt, Justin Kay and Sara Beery, MIT — arXiv, 19 August 2026",
+   "bullets": [
+    "The setting is sonar footage of rivers, where fisheries counts are made. Automatic trackers get most of it right and then lose a fish behind another fish, and the correction work falls to a human with a mouse.",
+    "The proposal is to correct the tracker by talking to it: a multimodal language model sits over an imperfect set of track predictions and takes conversational instructions about which track is wrong and how.",
+    "They evaluate two regimes separately — unguided correction, where the model finds and fixes errors on its own, and guided correction, where a person says what is wrong. Molmo2Fish does well on tracking and on track correction; the authors are explicit that using the natural-language guidance well is where it still falls short, which is the honest and more interesting half of the result.",
+    "29 pages, 6 figures, forthcoming at the Third Workshop on Computer Vision for Ecology at ECCV 2026, with code and data released. Worth reading as a template: the model is not replacing the annotator, it is changing what the annotator has to say."
+   ],
+   "link_label": "Read"
+  }
+ ],
+ "wild": [
+  {
+   "tag": "A state won a candy",
+   "headline": "Idaho won a selfie contest, so it got a potato-shaped gummy flavoured with huckleberry",
+   "url": "https://www.joyridesweets.com/products/potato-wedges",
+   "entities": [
+    "Joyride"
+   ],
+   "subject": "Joyride made an Idaho-only potato-shaped huckleberry gummy after Idaho won its 50 States Challenge",
+   "bullets": [
+    "Joyride ran a contest with a Guinness World Record attached to it: most photos of people holding candy uploaded to Instagram in 24 hours. Fifty states competed. Idaho posted the most, the challenge drew 11,495 submissions, and more than 2.6 million people watched the live leaderboard.",
+    "The prize was a candy designed for the winning state. Idaho got Potato Wedges — chewy gummies moulded as potatoes and flavoured with huckleberry, which is Idaho's official state fruit, so the joke and the flavour come from two different Idaho clichés.",
+    "It launched on 10 August, sold only from Joyride's own site at $25 for a five-pack, in deliberately limited quantities. It is sold out.",
+    "The mechanism is worth stealing: the prize costs almost nothing to manufacture, the contest generates the photographs, and the state that wins is the one that most wants to be a running joke about itself."
+   ],
+   "link_label": "See it"
+  },
+  {
+   "tag": "Two flavours that were never dating",
+   "headline": "Cheez-It's first collaboration with a beer brand is a cracker that tastes like beer cheese dip",
+   "url": "https://www.bakeryandsnacks.com/Article/2026/08/04/cheese-snack-launches-2026-cheez-it-mcvities-cabot-and-more/",
+   "entities": [
+    "Cheez-It",
+    "Coors Light",
+    "Kellanova"
+   ],
+   "subject": "Cheez-It and Coors Light made a beer-cheese-flavoured cracker",
+   "bullets": [
+    "Kellanova's Cheez-It put out Coors Light Beer Cheese crackers in August — the brand's first collaboration with a beer company, and a cracker flavoured after a dip rather than after a cheese.",
+    "The flavour brief is specific: the savoury, tangy profile of a classic beer cheese dip, with toasted spice notes layered over it, on a cracker still baked with real cheese.",
+    "$4.99 a box, US retailers nationwide, while stocks last. Nicole Sorensen, VP of marketing for Cheez-It: \"we had the golden opportunity to bring one of America's favourite dips to life in a whole new way\".",
+    "The move underneath it is a category swap. A cracker that tastes of the dip you would have put on the cracker collapses two steps of the snack into one, which is the same trick as crisps flavoured after a roast dinner."
+   ],
+   "link_label": "Read"
+  },
+  {
+   "tag": "One hundred of everything",
+   "headline": "A Pilates chain is putting 100 reformers in a hotel ballroom because 100 is the number this year",
+   "url": "https://hoodline.com/2026/09/frisco-hotel-fills-with-100-reformers-as-bodybar-marks-milestone-gives-10-000/",
+   "entities": [
+    "BODYBAR Pilates"
+   ],
+   "subject": "BODYBAR Pilates fills the Omni Frisco Hotel ballroom with 100 reformers for a mass class",
+   "bullets": [
+    "BODYBAR Pilates has booked the ballroom of the Omni Frisco Hotel, at The Star in Frisco, Texas, and is filling it with 100 reformers for a single 50-minute class on Saturday morning, 9:30 to 10:20.",
+    "The number is doing triple duty: the chain opened its 100th studio in Presidio, north Fort Worth, on 8 September; Pilates as a practice turns 100 this year; and the class uses exactly 100 machines.",
+    "The donation is priced off the same number — $100 per reformer, $10,000 in total, to the Foundation for Women's Cancer, timed to Gynecologic Cancer Awareness Month.",
+    "Co-founder and chief brand officer Kamille McCollum is teaching it herself. A reformer is a large sprung carriage that does not stack, so the logistics of getting a hundred of them into a hotel are most of the stunt."
+   ],
+   "link_label": "Read"
+  }
+ ],
+ "learn": {
+  "title": "Bread does not go stale by drying out, and the fridge is the worst place you can put it",
+  "subject": "Bread staling is starch retrogradation, fastest just above freezing, and reversible by heating",
+  "body": [
+   "Everyone knows what stale bread is and almost everyone has the mechanism wrong. The obvious theory is that the bread dries out — water leaves, the crumb hardens, that is that. It is a good theory that fails one experiment: bread goes stale in a sealed bag, in a damp kitchen, in a humid room. The water is still in there. It has just moved.",
+   "What is actually happening is called retrogradation. Baking gelatinises the starch — the amylose and amylopectin chains swell, take up water and settle into a loose, disordered, soft arrangement. From the moment the loaf leaves the oven those chains begin creeping back towards the ordered crystalline packing they had before, squeezing water out of the granules and into the spaces between them. Total moisture barely changes; its location does, and the crumb goes firm and leathery as a result.",
+   "This gives you two facts worth repeating. The first is that recrystallisation runs fastest at temperatures just above freezing, which means the refrigerator — the place people put bread to keep it — is the single worst temperature available. Freeze it and the molecules cannot rearrange at all; leave it on the counter and it stales more slowly than in the fridge. The second is that staling partly reverses: heat stale bread to about 60 °C and the crystallites melt back into disorder, which is why a hard roll comes back to life in an oven for a few minutes and then goes stale again faster than before. Commercial bakers cheat the same chemistry with enzymes, monoglycerides and added gluten, which is the real difference between a supermarket loaf that lasts a week and a good baguette that is finished by evening."
+  ],
+  "tags": [
+   "Science of ordinary things",
+   "Food chemistry",
+   "Starch"
+  ]
+ },
+ "ideas": {
+  "prompt": "Ten ways to make a new city feel like home in a week",
+  "note": "Altucher's drill: ten ideas a day against one prompt. The test for each of these is whether you could start it on a Tuesday having arrived on a Monday.",
+  "items": [
+   {
+    "text": "Pick one café and go at the same time three days running, until they start the order before you say it."
+   },
+   {
+    "text": "Learn the route between two places well enough to walk it without your phone out. One route is enough to stop feeling lost."
+   },
+   {
+    "text": "Buy something that needs repairing later — shoes, a watch strap, a kettle. Now you have a reason to find the repair man, who knows everyone."
+   },
+   {
+    "text": "Eat the thing the city is embarrassed about rather than the thing it is famous for."
+   },
+   {
+    "text": "Find the one park bench with the best view and go back to it at a different hour."
+   },
+   {
+    "text": "Ask the person at the counter where they eat on their day off, then actually go."
+   },
+   {
+    "text": "Get on a bus with no destination and get off when it looks interesting. You will learn the shape of the place faster than any map."
+   },
+   {
+    "text": "Introduce yourself to exactly one neighbour before you have a reason to.",
+    "why": "The recurring complaint on r/SomebodyMakeThis is that people want an app for this; the app is a doorbell."
+   },
+   {
+    "text": "Find where the city is quiet in the middle of the day — a library reading room, an empty temple, a cinema at 2pm.",
+    "why": "A popular r/Lightbulb post this week argues every public building should have a small private quiet room; most cities already have one, unmarked."
+   },
+   {
+    "text": "Take a photograph from the same spot on day one and day seven. The second one will be of a place you know."
+   }
+  ]
+ }
+}

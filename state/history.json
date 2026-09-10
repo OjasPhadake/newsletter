@@ -1377,6 +1377,145 @@
         "itsnicethat.com",
         "weirdgloop.org"
       ]
+    },
+    {
+      "date": "2026-09-11",
+      "issue": 1,
+      "quote_text": [
+        "When stress is the problem, slack is the solution."
+      ],
+      "quote_author": [
+        "Tom DeMarco"
+      ],
+      "idea_text": [
+        "Pick one café and go at the same time three days running, until they start the order before you say it.",
+        "Learn the route between two places well enough to walk it without your phone out. One route is enough to stop feeling lost.",
+        "Buy something that needs repairing later — shoes, a watch strap, a kettle. Now you have a reason to find the repair man, who knows everyone.",
+        "Eat the thing the city is embarrassed about rather than the thing it is famous for.",
+        "Find the one park bench with the best view and go back to it at a different hour.",
+        "Ask the person at the counter where they eat on their day off, then actually go.",
+        "Get on a bus with no destination and get off when it looks interesting. You will learn the shape of the place faster than any map.",
+        "Introduce yourself to exactly one neighbour before you have a reason to.",
+        "Find where the city is quiet in the middle of the day — a library reading room, an empty temple, a cinema at 2pm.",
+        "Take a photograph from the same spot on day one and day seven. The second one will be of a place you know."
+      ],
+      "idea_prompt": [
+        "Ten ways to make a new city feel like home in a week"
+      ],
+      "hn_id": [
+        "49639090",
+        "49619227",
+        "49643982",
+        "49643546",
+        "49624394"
+      ],
+      "link": [
+        "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+        "https://www.nbcchicago.com/news/national-international/anthropic-researcher-resigns-warning-ai/3986667/",
+        "https://shopify.engineering/back-to-native",
+        "https://rustfoundation.org/media/guest-post-rust-is-tier-1-language-at-microsoft/",
+        "https://www.newyorker.com/culture/infinite-scroll/flock-wants-a-closely-surveilled-world-with-no-exit",
+        "https://www.businesstoday.in/latest/economy/story/cabinet-clears-rs-10783-crore-railway-projects-656-km-network-expansion-across-5-states-check-full-details-554319-2026-09-09",
+        "https://developers.openai.com/api/docs/changelog",
+        "https://www.sciencedaily.com/releases/2026/09/260909005148.htm",
+        "https://www.joyridesweets.com/products/potato-wedges",
+        "https://www.bakeryandsnacks.com/Article/2026/08/04/cheese-snack-launches-2026-cheez-it-mcvities-cabot-and-more/",
+        "https://hoodline.com/2026/09/frisco-hotel-fills-with-100-reformers-as-bodybar-marks-milestone-gives-10-000/",
+        "https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome/",
+        "https://arxiv.org/abs/2608.18602",
+        "https://blog.liquide.life/share-market-today-nifty-ends-higher-sensex-gains-as-financials-support-metals-it-remain-weak/",
+        "https://www.5paisa.com/blog/post-market-update-sensex-nifty-recover-crude-100-september-10-2026"
+      ],
+      "subject": [
+        "Cabinet clears three railway multitracking projects worth Rs 10,783 crore across five states",
+        "OpenAI puts its Codex agent harness behind a managed Agents API in public beta",
+        "Ni1O4Ni4 motif on nickel oxide, not metallic nickel, is the active site in partial oxidation of methane",
+        "Joyride made an Idaho-only potato-shaped huckleberry gummy after Idaho won its 50 States Challenge",
+        "Cheez-It and Coors Light made a beer-cheese-flavoured cracker",
+        "BODYBAR Pilates fills the Omni Frisco Hotel ballroom with 100 reformers for a mass class",
+        "AlphaGenome Atlas: a predictive map of every possible DNA letter change in the human genome",
+        "Teach a Molmo2Fish: towards interactive fish tracking with natural language guidance",
+        "Bread staling is starch retrogradation, fastest just above freezing, and reversible by heating"
+      ],
+      "brand": [
+        "Joyride",
+        "Idaho",
+        "Cheez-It",
+        "Coors Light",
+        "Kellanova",
+        "BODYBAR Pilates",
+        "Pilates"
+      ],
+      "brand_mention": [
+        "Guinness World Record",
+        "Potato Wedges",
+        "Idaho's",
+        "Joyride's",
+        "Kellanova's Cheez-It",
+        "Coors Light Beer Cheese",
+        "Nicole Sorensen",
+        "VP",
+        "Cheez-It",
+        "America's",
+        "BODYBAR Pilates",
+        "Omni Frisco Hotel",
+        "Star",
+        "Frisco",
+        "Texas",
+        "Presidio",
+        "Fort Worth",
+        "Pilates",
+        "Foundation",
+        "Women's Cancer",
+        "Gynecologic Cancer Awareness Month Co-founder",
+        "Kamille McCollum"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "₹10,783 crore of new railway track, and the point of it is coal"
+        ],
+        [
+          "trends",
+          "OpenAI stopped selling the model and started renting the harness"
+        ],
+        [
+          "trends",
+          "The nickel doing the work in a nickel catalyst turns out not to be nickel metal"
+        ],
+        [
+          "wild",
+          "Idaho won a selfie contest, so it got a potato-shaped gummy flavoured with huckleberry"
+        ],
+        [
+          "wild",
+          "Cheez-It's first collaboration with a beer brand is a cracker that tastes like beer cheese dip"
+        ],
+        [
+          "wild",
+          "A Pilates chain is putting 100 reformers in a hotel ballroom because 100 is the number this year"
+        ],
+        [
+          "research",
+          "AlphaGenome Atlas: a predictive map of every possible DNA letter change in the human genome"
+        ],
+        [
+          "research",
+          "Teach a Molmo2Fish: towards interactive fish tracking with natural language guidance"
+        ],
+        [
+          "learn",
+          "Bread does not go stale by drying out, and the fridge is the worst place you can put it"
+        ]
+      ],
+      "editorial_domains": [
+        "bakeryandsnacks.com",
+        "businesstoday.in",
+        "developers.openai.com",
+        "hoodline.com",
+        "joyridesweets.com",
+        "sciencedaily.com"
+      ]
     }
   ]
 }
