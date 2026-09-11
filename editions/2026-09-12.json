@@ -1,0 +1,365 @@
+{
+ "date_line": "Saturday, 12 September 2026",
+ "issue": 1,
+ "preheader": "A second mathematician says OpenAI gave him a misleading answer about his own ChatGPT conversations; markets shut after a fifth losing week; JWST catches Chariklo's rings changing; and why the traffic light knows you are there.",
+ "quote": {
+  "text": "There are two tragedies in life. One is to lose your heart's desire. The other is to gain it.",
+  "author": "George Bernard Shaw",
+  "source_url": "https://www.goodreads.com/quotes/tag/paradox",
+  "note": "From Man and Superman. The first half is the one everybody expects; the second is the one that does the work. Shaw is pointing out that wanting is a state you live in, and that getting the thing does not end the state so much as remove the thing that was organising it."
+ },
+ "hn": [
+  {
+   "title": "More questions about whether researchers can trust OpenAI with unpublished math",
+   "url": "https://mathstodon.xyz/@andreasthom/117240535270608201",
+   "hn_url": "https://news.ycombinator.com/item?id=49639408",
+   "points": 855,
+   "comments": 800,
+   "bullets": [
+    "A three-post Mastodon thread from Andreas Thom, posted 9 September as a reply to Tristan Buckmaster. Thom is not talking about the Navier–Stokes dispute itself; he is adding a second, earlier episode of his own — OpenAI's announcement of a non-sofic group, found using the methods of Thom and Gábor Kun.",
+    "He quotes his own email to Mark Sellke and Sébastien Bubeck: he and a colleague in Dresden had been discussing the expander matching problem and extensions of the Kun work “actively over the last months with ChatGPT”, and asked two distinct questions — did those conversations enter training data, and were they accessible to the reasoning process.",
+    "Sellke's complete reply, per Thom: “Regarding your conversations with ChatGPT: that did not happen.” Thom's complaint is the shape of the answer. A categorical denial that appears to cover both questions, offered with no qualification or evidence, sits badly beside OpenAI's later statement that it “cannot rule out that de-identified data derived from their usage of our products helped improve our models”.",
+    "The verifiable detail he adds: he disabled model training on 29 June, a control he notes is prospective and unauditable — it says nothing about earlier conversations or derivatives already selected. He also flags a mathematical tell: the Kun–Thom route was not the main line of attack on non-soficity, so a model's “detailed command of our techniques” is itself the thing wanting explanation.",
+    "A separate three-post thread the next day is the more durable part. Thom argues a publication used to do three jobs at once — announce a result, assign credit, and add to human understanding — and that AI severs them: “A formal proof certificate is comparable, in a sense, to the detection of a new star. It confirms that something is there, but further work is needed to understand what it is.”"
+   ]
+  },
+  {
+   "title": "Don't let anyone take away your big box of cables",
+   "url": "https://blog.jim-nielsen.com/2026/hands-off-my-cables/",
+   "hn_url": "https://news.ycombinator.com/item?id=49645393",
+   "points": 744,
+   "comments": 449,
+   "bullets": [
+    "A very short post by Jim Nielsen, prompted by a Bluesky post from Tyler Gaw about a cable that had sat in a box for more than ten years and was finally the exact thing needed. Gaw's line: “'when are you ever gonna use these?' was today.”",
+    "Nielsen's response was to print the post out and tape it to the outside of his own box — labelled, by his wife, FAMILY TECHNO BOX — so that anyone who opens it in future reads the argument before deciding to throw anything away.",
+    "The thesis is an option-value one dressed up as sentiment: the cost of storage is a shoebox, the payoff is bounded but real, and the payoff arrives at an unpredictable date. He is explicit that he is writing it down for his children to find.",
+    "It is 700-odd points for four paragraphs and no code, which is most of what you need to know about the audience."
+   ]
+  },
+  {
+   "title": "Ask HN: Can we please limit the AI news flood?",
+   "url": "https://news.ycombinator.com/item?id=49657850",
+   "hn_url": "https://news.ycombinator.com/item?id=49657850",
+   "points": 734,
+   "comments": 353,
+   "bullets": [
+    "cromka's complaint: “Over past couple months I noticed that HN feed is almost exclusively AI or AI-adjacent news.” The two examples of things he thinks got buried are a Lenovo laptop with solid-state air cooling and a modular wall display from Brax Industries. He asks YC for curation or tags.",
+    "The one number in the thread comes from the maintainer of unslop.news, which filters AI stories out of the front page: on the day cited, 179 posts reduced to 92 once AI-related items were removed — about 49% — with some days closer to 75%.",
+    "The strongest counter-argument is that the ranking already is the curation. If AI dominates the front page it is because HN readers upvoted it, and the same pattern showed up for Ruby, cryptocurrency and JavaScript frameworks in their turn.",
+    "No moderator reply in the thread. What people are actually doing instead is using third-party filters — unslop.news and sprinklz.io both got recommended more than once."
+   ]
+  },
+  {
+   "title": "Show HN: What if the speed of light was 5 km/h?",
+   "url": "https://rivendell.dmitrybrant.com/relativity/",
+   "hn_url": "https://news.ycombinator.com/item?id=49637385",
+   "points": 599,
+   "comments": 274,
+   "bullets": [
+    "Dmitry Brant's Relativity Park: a browser simulation of an amusement park in a universe where c is 5 km/h, roughly a brisk walk. Everything relativistic therefore happens at pedestrian speed.",
+    "The effects are toggleable one at a time, which is the pedagogical trick — light-travel delay, aberration and length contraction, Doppler colour shift, and relativistic beaming each have their own switch, so you can see which distortion each one is responsible for.",
+    "Specific things to look at: Terrell rotation on the moving Ferris wheel and shuttle; time dilation read off a “Your watch” clock against a “World clock”; the field of view condensing forward as you accelerate, with blueshift ahead and redshift behind.",
+    "Brant claims all the motion effects are physically accurate within the modified-c framework. Render scale, exposure and ground detail are adjustable; source is on GitHub."
+   ]
+  },
+  {
+   "title": "Claude is only available to people over 18 years",
+   "url": "https://support.claude.com/en/articles/15171100-age-assurance-on-claude",
+   "hn_url": "https://news.ycombinator.com/item?id=49656225",
+   "points": 533,
+   "comments": 573,
+   "bullets": [
+    "A support-centre page, not an announcement, which is why it got the attention it did. The rule stated is flat: Claude, the consumer product, is only available to people over 18.",
+    "The enforcement mechanism is the part worth reading. Anthropic says it runs safety systems to detect possible under-18 use and will disable accounts “based on indicators of minor activity”. A flagged user is notified and must verify age or lose the account. The page does not say what the indicators are.",
+    "Verification is outsourced to Yoti and offers three routes: facial age estimation from a selfie, an ID document, or an existing Yoti Digital ID. The page states that Yoti deletes the selfie, document images and personal data as soon as the check completes, and that Anthropic “never sees your ID or image; we receive only a pass/fail result”.",
+    "What is absent is as notable as what is there: no effective date, no regional breakdown, and no detail on appeal beyond re-verification."
+   ]
+  }
+ ],
+ "markets": {
+  "indices": [
+   {
+    "name": "Sensex · Fri 11 Sep close",
+    "value": "74,781.76",
+    "change": "120.83  (0.16%)",
+    "direction": "down"
+   },
+   {
+    "name": "Nifty 50 · Fri 11 Sep close",
+    "value": "23,398.10",
+    "change": "79.70  (0.34%)",
+    "direction": "down"
+   },
+   {
+    "name": "Bank Nifty",
+    "value": "56,606.55",
+    "change": "134.60  (0.24%)",
+    "direction": "up"
+   },
+   {
+    "name": "Nifty IT",
+    "value": "—",
+    "change": "0.11%",
+    "direction": "up"
+   },
+   {
+    "name": "Nifty Financial Services",
+    "value": "—",
+    "change": "0.10%",
+    "direction": "up"
+   },
+   {
+    "name": "Nifty FMCG",
+    "value": "—",
+    "change": "0.29%",
+    "direction": "down"
+   },
+   {
+    "name": "Nifty Energy",
+    "value": "—",
+    "change": "0.75%",
+    "direction": "down"
+   },
+   {
+    "name": "Nifty Auto",
+    "value": "—",
+    "change": "0.86%",
+    "direction": "down"
+   },
+   {
+    "name": "Nifty Metal",
+    "value": "—",
+    "change": "2.30%",
+    "direction": "down"
+   },
+   {
+    "name": "Nifty Realty",
+    "value": "—",
+    "change": "2.70%  — sixth straight losing session",
+    "direction": "down"
+   },
+   {
+    "name": "USD/INR · 11 Sep close",
+    "value": "95.55",
+    "change": "0.1% on the day, over 1% on the week",
+    "direction": "up"
+   },
+   {
+    "name": "Brent crude",
+    "value": "$105.16",
+    "change": "$5.58  (5.04%)",
+    "direction": "down"
+   },
+   {
+    "name": "FII cash · 11 Sep",
+    "value": "−₹930.90 cr",
+    "change": "net sellers",
+    "direction": "down"
+   },
+   {
+    "name": "DII cash · 11 Sep",
+    "value": "+₹1,968.20 cr",
+    "change": "net buyers",
+    "direction": "up"
+   }
+  ],
+  "stories": [
+   {
+    "headline": "A fifth straight losing week, and the damage was all in metal and realty",
+    "url": "https://blog.liquide.life/share-market-today-nifty-trades-lower-metals-realty-drag-market-financials-provide-support/",
+    "source": "Liquide — Share Market Today, Friday 11 September 2026",
+    "bullets": [
+     "Indian markets are closed today and tomorrow. These are Friday's closing numbers. The Sensex ended at 74,781.76, down 120.83 points or 0.16%, and the Nifty 50 at 23,398.10, down 79.70 points or 0.34%.",
+     "The headline moves understate the dispersion underneath. Nifty Metal fell 2.30% and Nifty Realty 2.70% — realty's sixth consecutive losing session — while Nifty IT (+0.11%), Financial Services (+0.10%) and Bank Nifty (+0.24%, 56,606.55) held the index up. Auto fell 0.86%, energy 0.75%.",
+     "Single names tell the same story: HDFC Bank +2.08%, Dr Reddy's +1.97% and Tech Mahindra +1.00% against Hindalco −3.21%, JSW Steel −2.99% and Eicher Motors −2.17%.",
+     "Institutional flows were the familiar split. FIIs sold a net ₹930.90 crore in the cash segment (₹12,616.90 cr bought against ₹13,547.80 cr sold) and DIIs bought a net ₹1,968.20 crore (₹15,109.60 cr against ₹13,141.40 cr), per 5paisa's FII/DII tape."
+    ]
+   },
+   {
+    "headline": "Oil gave back five percent on Friday, after a week that had already done the damage",
+    "url": "https://www.5paisa.com/blog/post-market-update-us-futures-gain-nifty-sensex-lower-bank-nifty-gains-september-11-2026",
+    "source": "5paisa — post-market update, 11 September 2026",
+    "bullets": [
+     "Brent settled at $105.16 a barrel, down $5.58 or 5.04%, having briefly traded above $109 earlier in the session. That is a fall on the day inside a week of sharp gains driven by Middle East tensions.",
+     "The Nifty 50 lost 2.09% over the week — a fifth consecutive weekly decline. India VIX rose more than 4% to above 12, which is a rise off a low base rather than a panic.",
+     "Breadth was negative below the large caps: Nifty Midcap 100 −0.26%, Nifty Smallcap 100 −0.58%.",
+     "The rupee closed at 95.55 to the dollar by 5paisa's reckoning, down about 0.1% on the session and more than 1% on the week — the mechanism being straightforward, since a dearer barrel means more dollars bought to pay for it. Note that intraday quotes elsewhere on Friday ran nearer 95.7–95.9, so treat the last decimal as approximate."
+    ]
+   }
+  ]
+ },
+ "trends": [
+  {
+   "tag": "India · Energy",
+   "headline": "The government is paying gas distributors in gas, and it cuts a ten-year payback to three",
+   "url": "https://theprint.in/economy/govt-to-offer-city-gas-distributers-200-scm-extra-gas-to-push-household-png-switch/3019161/",
+   "subject": "Incentive scheme gives city gas distributors 200 scm of cheap APM gas per new billed domestic PNG connection",
+   "subtitle": "The Incentive Scheme for Promotion of Domestic PNG Connections took effect on 1 September",
+   "bullets": [
+    "The mechanism is unusual. For every new billed household piped-gas connection above a threshold set for each geographical area, the city gas distributor gets an extra 200 standard cubic metres of domestic APM gas — the administered, cheap kind — rather than a cash subsidy.",
+    "The value comes from substitution. The distributor can use that cheap allocation in place of costlier imported LNG it would otherwise have bought for its CNG transport business. The government's estimate is that this cuts the payback period on the capital cost of a domestic connection from roughly ten years to about three.",
+    "Scale: India has around 17.4 million domestic PNG connections today. Since March 2026 more than 500,000 have been activated and roughly 570,000 customers have registered for new ones. The scheme runs in two six-month tranches from 1 September.",
+    "The target is not only new pipe. A large share of the problem is connections that exist but are unbilled and inactive, and the incentive is written against billed connections specifically — which is the sort of detail that tells you what the actual failure mode was."
+   ],
+   "link_label": "Read"
+  },
+  {
+   "tag": "Platforms",
+   "headline": "Automattic's board removed its founder on Wednesday. He was back by Friday morning.",
+   "url": "https://techcrunch.com/2026/09/11/matt-mullenweg-tells-automattic-staff-in-slack-hes-back-in-control-after-ceo-ouster/",
+   "subject": "Automattic board put Matt Mullenweg on paid leave and made CFO Mark Davies interim CEO; Mullenweg retook control two days later",
+   "subtitle": "Forty-eight hours, no stated reason, and a Slack post",
+   "bullets": [
+    "On Wednesday 9 September Automattic's board voted to place Matt Mullenweg, founder and CEO, on paid leave and install CFO Mark Davies as interim chief executive. Mullenweg, a board member, voted against and was outvoted. He says he learned of the resolution 50 minutes before the meeting and was refused time to consult independent counsel.",
+    "On Friday morning he posted in the company Slack: “(Don't call it a comeback…) Howdy everybody! Happy to announce the board is back in agreement, and I'm in control of Automattic.” Davies's Slack account was deactivated shortly afterwards. Mullenweg removed the other Slack admins and posted about being a pirate; on X he wrote “Boards are never boring.”",
+    "No reason for the original vote has been given publicly, by the board or by the company, and Automattic had not confirmed the reversal at the time of writing. Mullenweg has pointed at the WP Engine litigation — WP Engine is backed by Silver Lake — as the context.",
+    "The thing to take from it is structural rather than personal. A board that can remove a founder on Wednesday and restore him on Friday, with no public account of either decision, is telling you where control of the company actually sits — and WordPress runs a large fraction of the web underneath that arrangement."
+   ],
+   "link_label": "Read"
+  },
+  {
+   "tag": "Wildcard · Planetary science",
+   "headline": "A 250-km rock between Saturn and Uranus has rings, and they have changed since 2013",
+   "url": "https://lte.observatoiredeparis.psl.eu/The-James-Webb-Space-Telescope-Reveals-That-Chariklo-s-Invisible-Rings-Are",
+   "subject": "JWST stellar occultation shows Chariklo's inner ring denser and outer ring fainter than in 2013-2020 observations",
+   "subtitle": "Science Advances, 9 September 2026 — the inner ring gained material, the outer ring lost it",
+   "bullets": [
+    "Chariklo is about 250 km across and orbits roughly 17 astronomical units out, between Saturn and Uranus. In 2013 it became the first small body known to have rings, which was not supposed to be possible at that size.",
+    "You cannot image the rings. They are found by stellar occultation — watching a background star blink as the rings pass in front of it. JWST did exactly that on 18 October 2022, with a relative velocity of 2.5 km/s, and the analysis has only now been published.",
+    "The two rings moved in opposite directions. The dense inner ring is significantly more opaque than in the 2013–2020 occultations, implying replenishment or dynamical restructuring. The outer ring gave a much weaker signature in the near-infrared than it had in visible light, consistent with material loss and with the possibility that it is transient.",
+    "The authors are careful: the change could be real temporal evolution, or an artefact of comparing different observation filters, or both. Led by Pablo Santos-Sanz at the Institute of Astrophysics of Andalusia (IAA-CSIC), with collaborators in Spain, Brazil, France, Hungary and the United States."
+   ],
+   "link_label": "Read"
+  }
+ ],
+ "research": [
+  {
+   "tag": "Industry · Google Research",
+   "title": "ToolGrad: efficient tool-use dataset generation with textual “gradients”",
+   "url": "https://research.google/blog/toolgrad-efficient-tool-use-dataset-generation-with-textual-gradients/",
+   "subtitle": "Published 10 September 2026 — write the answer first, then invent the question",
+   "bullets": [
+    "The standard way to build a tool-use training set is to write a plausible user query and then search for a chain of API calls that satisfies it. Most of the cost is in that search, and most of the search fails. ToolGrad inverts it: build a valid tool-use chain first, then annotate the user prompt that would have produced it.",
+    "The loop has four parts. An API Proposer suggests candidate calls to extend the current workflow, API Executors run them in parallel and report, an API Selector picks the best-performing call as feedback, and an LLM Updater rewrites the synthetic query and response to match the new set. The “gradient” is the textual feedback, borrowed from prompt-optimisation work.",
+    "Reported generation pass rate is 99.8%, at lower cost and with more complex workflows than the query-first baselines.",
+    "The downstream number is the one that matters: ToolGrad-12B, a Gemma-3 12B fine-tuned on the small ToolGrad-500 set, scores 83.1 on the Berkeley Function Calling Leaderboard — against Gemini 2.5-pro at 83.2 and Claude 4.5 Opus at 82.8, and ahead of the tool-use specialist ToolACE. Gains hold at 1B and 4B too. Zhongyi Zhou and Ruofei Du, Google XR; ACL 2026; code on GitHub."
+   ],
+   "link_label": "Read"
+  },
+  {
+   "tag": "Academia · Harvard",
+   "title": "Correction as Annotation: Bootstrapping a Dependency Parser for Documentary Medieval Latin",
+   "url": "https://arxiv.org/abs/2609.06266",
+   "subtitle": "arXiv, 5 September 2026 — 33 hours of expert corrections beat every existing model",
+   "bullets": [
+    "The setup is a genuinely hard low-resource case: 160 household inventories compiled in Marseille between 1258 and 1446. None of the five available Latin treebank models is usable on them. Best labelled attachment score 0.62, best morphology-aware score 0.24, and — the interesting part — performance does not correlate with either genre or period proximity, so you cannot pick a model by picking the closest-looking corpus.",
+    "The method is deliberately dull. Nine iterations; each time the current model pre-annotates 200 sentences, an expert corrects them, and the corrections train the next model. Batches are sampled independently of model state, with no active-learning selection — the paper is testing whether the plain loop is enough.",
+    "It is. Thirty-three hours of annotation over 1,804 sentences took part-of-speech accuracy from 0.80 to 0.98 and labelled attachment from 0.48 to 0.92, beating every baseline while using 97% less training data than the largest of them.",
+    "The transferable idea is the stopping criterion. The share of tokens the annotator had to touch fell from 54% to a plateau of 14–18%, and that curve is an operational progress metric that needs no held-out gold standard — when the correction rate stops falling, you stop. Gabriel H. Pizzorno, Harvard University."
+   ],
+   "link_label": "Read"
+  }
+ ],
+ "wild": [
+  {
+   "tag": "Four desserts, brewed",
+   "headline": "An Edinburgh brewery put half a tonne of rice into a beer that is meant to taste like mochi",
+   "url": "https://www.beerguild.co.uk/news/mary-beer-y-edinburgh-brewery-puts-a-boozy-twist-on-four-bake-off-desserts",
+   "entities": [
+    "Vault City Brewing",
+    "UCHU Brewing",
+    "Evil Twin Brewing",
+    "Samata Brewing",
+    "Azvex Brewing"
+   ],
+   "subject": "Vault City brewed four sour beers based on desserts with four overseas breweries, timed to the Bake Off return",
+   "bullets": [
+    "Vault City, a sour-beer brewery in Edinburgh, released a four-can series on 27 August timed to the return of The Great British Bake Off. Each beer is a different country's dessert, brewed with a partner brewery from that country rather than approximated at home.",
+    "Matcha Mochi, with UCHU Brewing in Japan, uses about 500kg of rice — half a tonne — to chase the texture rather than the flavour, which is the part that makes it more than a label gag. £8.10.",
+    "The other three: New York Cheesecake with Evil Twin Brewing, on berries and rhubarb; Sago Pudding with Samata Brewing in Thailand, brewed with actual sago pearls and spirulina, both firsts for the brewery; and Cranachan with Azvex, using heather honey from Scottish Bee Co and aged in Speyside whisky barrels. £7.90 each.",
+    "Cans are hand-illustrated by Edinburgh artist Heather Fletcher in the style of vintage travel postcards, which is the tell that the series was conceived as four souvenirs rather than four beers. Vault City exports to 26 countries and expects 38% volume growth this year."
+   ],
+   "link_label": "See it"
+  },
+  {
+   "tag": "An internet joke, rented a storefront",
+   "headline": "A cat-treat brand is opening a bodega on the Bowery, for cats",
+   "url": "https://www.prnewswire.com/news-releases/the-temptations-brand-debuts-first-of-its-kind-cat-bodega-to-celebrate-shop-cats-everywhere-302873788.html",
+   "entities": [
+    "Temptations"
+   ],
+   "subject": "Temptations is opening a Cat Bodega pop-up at 213 Bowery in Manhattan",
+   "bullets": [
+    "Announced 9 September: Temptations is turning 213 Bowery into a Cat Bodega from 17 to 19 September, noon to 6pm, free entry. The premise is the bodega cat — the animal asleep on the counter of a New York corner shop — taken literally and given its own shop.",
+    "Inside: shelves of cat-themed products, a claw machine, scratch-off tickets for branded merchandise, free treats, and a life-sized cat condo built as a staff break room.",
+    "There is a national version, because a three-day Manhattan pop-up is not a campaign. From 17 to 26 September the site runs a digital scratch-off and lets people gift treats to working cats in their own neighbourhoods.",
+    "Heidi Gardner fronts it, with the line that explains the location: “The magic of a true NYC bodega is that it's the only place on earth where you can buy an iced coffee, long-stem roses, and cat treats all in one stop.”"
+   ],
+   "link_label": "See it"
+  },
+  {
+   "tag": "A loyalty programme indexed to a quarterback",
+   "headline": "Delta pays Washington State residents one air mile for every yard the Seahawks throw",
+   "url": "https://news.delta.com/down-set-hike-delta-runs-it-back-its-12status-skymiles-loyalty-program-another-seahawks-season",
+   "entities": [
+    "Delta",
+    "Seattle Seahawks"
+   ],
+   "subject": "Delta's 12Status promotion awards SkyMiles for Seahawks passing yards",
+   "bullets": [
+    "Announced 28 August, running through the 2026-27 season. Register as a SkyMiles member, be 18 or over, live in Washington State, and you earn one mile per passing yard the Seahawks record — home and away, regular season and post-season.",
+    "Last season the Seahawks threw for 4,063 yards. Delta issued more than 535 million miles to over 129,000 enrolled members on the back of it. Cumulative total since the programme launched in 2016: 2.4 billion miles.",
+    "The trimmings lean hard on the number twelve, Seattle's name for its fans: Zone 5 priority boarding out of Sea-Tac during the season, and 12% off at the Seahawks Pro Shop on the 12th of every month.",
+    "The design is quietly clever. The liability is capped by the laws of football, the payout is unhedgeable but bounded, and every completed pass is an airline reminding a state full of people that it exists. Registration closed at the first game on 9 September; late sign-ups forfeit the yards already thrown."
+   ],
+   "link_label": "See it"
+  }
+ ],
+ "learn": {
+  "title": "The traffic light knows you are there because the road is a metal detector — and before that, you had to honk at it",
+  "subject": "How traffic signals detect vehicles: Adler's 1928 horn-activated microphone, pressure treadles, and the inductive loop",
+  "body": [
+   "Look at the road at a big junction and you will usually see a rectangle of tar-filled slots cut into the asphalt, a few metres back from the stop line. That is an inductive loop, and it is the reason the light changes for you. A coil of wire sits in those slots carrying an alternating current, which makes a magnetic field above the road. A car parked over it is a large lump of metal; the field induces small eddy currents in the underside of the vehicle, those currents fight back, and the loop's inductance drops. The circuit it belongs to is tuned, so the inductance drop pushes the oscillator frequency up, and a box at the kerb reads that shift as “there is a car here”. It is not weight, it is not heat, and it is not a camera. It is a metal detector buried in the road.",
+   "This also explains a thing motorcyclists and cyclists complain about and drivers never notice. The loop is responding to conductive area lying flat over the coil, not to mass, so a bicycle with an aluminium frame or a motorbike sitting neatly in the middle of the lane can produce a change too small to trip the threshold, and the light simply never turns green. The usual advice — stop over the cut lines rather than beside them, put the bike on the slot itself — is not folklore. It is instructions for a sensor most road users do not know they are standing on.",
+   "The prehistory is better than the technology. The first traffic sensor was installed in Baltimore in 1928 by Charles Adler Jr., and it was a microphone in a small box on a utility pole: you drove up to the red light and honked, and the light changed. It worked, in the sense that it was the first signal to assign right of way from a vehicle detection rather than a fixed timer, and it failed in every way you would expect a system that rewards honking to fail. Adler tried again in 1931 with steel boxes set into the road listening for tyre noise. Meanwhile Henry A. Haugh built the pressure treadle — two metal plates that touched when a car drove over them — which ran as the standard for more than thirty years despite being destroyed by snowploughs and needing reinstallation every time the road was resurfaced. The loop won in the 1960s for the dullest possible reason: nothing about it moves."
+  ]
+ },
+ "ideas": {
+  "prompt": "Ten new Olympic sports based on things people already do every day",
+  "note": "Altucher's drill: ten ideas a day against one prompt. Rule for these: no new equipment, and a spectator should understand the scoring in one sentence.",
+  "items": [
+   {
+    "text": "Wardrobe Clean & Jerk: competitors have twelve minutes to decide which of forty garments to keep. Judged by a panel of their own future selves.",
+    "why": "The recurring wish on r/SomebodyMakeThis this week was a “digital Marie Kondo”; the physical version is harder and funnier."
+   },
+   {
+    "text": "Synchronised Queue Selection. Two teammates enter a supermarket at opposite ends and must independently choose the same checkout lane."
+   },
+   {
+    "text": "The 400m Cable Identification Sprint. A box of forty cables, twenty devices, no labels, clock running."
+   },
+   {
+    "text": "Freestyle Group Chat Extraction: leaving a WhatsApp group without anyone noticing you left. Points deducted for every “who left?” message."
+   },
+   {
+    "text": "Competitive Fitted Sheet Folding, with a bronze medal reserved for the most confident failure."
+   },
+   {
+    "text": "The Long Hold: staying on a customer service line and reaching a human. Timed, no shortcuts, hold music audible to the crowd."
+   },
+   {
+    "text": "Parallel Parking Biathlon. Drive a course, park in a space 40cm longer than the car, then answer a phone call politely while doing it."
+   },
+   {
+    "text": "Team Restaurant Bill Division, four courses, seven people, one person who only had a starter and left early."
+   },
+   {
+    "text": "The Auto Rickshaw Negotiation Dash: same route, same hour, lowest agreed fare wins. Held in a different city every Games."
+   },
+   {
+    "text": "Marathon Inbox: clear a thousand unread emails without archiving anything unread. The Olympic record will never be broken.",
+    "why": "Adapted from a well-worn Ask HN complaint that inbox zero tools all cheat by hiding mail rather than handling it."
+   }
+  ]
+ }
+}

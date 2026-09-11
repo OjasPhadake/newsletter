@@ -1516,6 +1516,156 @@
         "joyridesweets.com",
         "sciencedaily.com"
       ]
+    },
+    {
+      "date": "2026-09-12",
+      "issue": 1,
+      "quote_text": [
+        "There are two tragedies in life. One is to lose your heart's desire. The other is to gain it."
+      ],
+      "quote_author": [
+        "George Bernard Shaw"
+      ],
+      "idea_text": [
+        "Wardrobe Clean & Jerk: competitors have twelve minutes to decide which of forty garments to keep. Judged by a panel of their own future selves.",
+        "Synchronised Queue Selection. Two teammates enter a supermarket at opposite ends and must independently choose the same checkout lane.",
+        "The 400m Cable Identification Sprint. A box of forty cables, twenty devices, no labels, clock running.",
+        "Freestyle Group Chat Extraction: leaving a WhatsApp group without anyone noticing you left. Points deducted for every “who left?” message.",
+        "Competitive Fitted Sheet Folding, with a bronze medal reserved for the most confident failure.",
+        "The Long Hold: staying on a customer service line and reaching a human. Timed, no shortcuts, hold music audible to the crowd.",
+        "Parallel Parking Biathlon. Drive a course, park in a space 40cm longer than the car, then answer a phone call politely while doing it.",
+        "Team Restaurant Bill Division, four courses, seven people, one person who only had a starter and left early.",
+        "The Auto Rickshaw Negotiation Dash: same route, same hour, lowest agreed fare wins. Held in a different city every Games.",
+        "Marathon Inbox: clear a thousand unread emails without archiving anything unread. The Olympic record will never be broken."
+      ],
+      "idea_prompt": [
+        "Ten new Olympic sports based on things people already do every day"
+      ],
+      "hn_id": [
+        "49639408",
+        "49645393",
+        "49657850",
+        "49637385",
+        "49656225"
+      ],
+      "link": [
+        "https://mathstodon.xyz/@andreasthom/117240535270608201",
+        "https://blog.jim-nielsen.com/2026/hands-off-my-cables/",
+        "https://news.ycombinator.com/item?id=49657850",
+        "https://rivendell.dmitrybrant.com/relativity/",
+        "https://support.claude.com/en/articles/15171100-age-assurance-on-claude",
+        "https://theprint.in/economy/govt-to-offer-city-gas-distributers-200-scm-extra-gas-to-push-household-png-switch/3019161/",
+        "https://techcrunch.com/2026/09/11/matt-mullenweg-tells-automattic-staff-in-slack-hes-back-in-control-after-ceo-ouster/",
+        "https://lte.observatoiredeparis.psl.eu/The-James-Webb-Space-Telescope-Reveals-That-Chariklo-s-Invisible-Rings-Are",
+        "https://www.beerguild.co.uk/news/mary-beer-y-edinburgh-brewery-puts-a-boozy-twist-on-four-bake-off-desserts",
+        "https://www.prnewswire.com/news-releases/the-temptations-brand-debuts-first-of-its-kind-cat-bodega-to-celebrate-shop-cats-everywhere-302873788.html",
+        "https://news.delta.com/down-set-hike-delta-runs-it-back-its-12status-skymiles-loyalty-program-another-seahawks-season",
+        "https://research.google/blog/toolgrad-efficient-tool-use-dataset-generation-with-textual-gradients/",
+        "https://arxiv.org/abs/2609.06266",
+        "https://blog.liquide.life/share-market-today-nifty-trades-lower-metals-realty-drag-market-financials-provide-support/",
+        "https://www.5paisa.com/blog/post-market-update-us-futures-gain-nifty-sensex-lower-bank-nifty-gains-september-11-2026"
+      ],
+      "subject": [
+        "Incentive scheme gives city gas distributors 200 scm of cheap APM gas per new billed domestic PNG connection",
+        "Automattic board put Matt Mullenweg on paid leave and made CFO Mark Davies interim CEO; Mullenweg retook control two days later",
+        "JWST stellar occultation shows Chariklo's inner ring denser and outer ring fainter than in 2013-2020 observations",
+        "Vault City brewed four sour beers based on desserts with four overseas breweries, timed to the Bake Off return",
+        "Temptations is opening a Cat Bodega pop-up at 213 Bowery in Manhattan",
+        "Delta's 12Status promotion awards SkyMiles for Seahawks passing yards",
+        "ToolGrad: efficient tool-use dataset generation with textual “gradients”",
+        "Correction as Annotation: Bootstrapping a Dependency Parser for Documentary Medieval Latin",
+        "How traffic signals detect vehicles: Adler's 1928 horn-activated microphone, pressure treadles, and the inductive loop"
+      ],
+      "brand": [
+        "Vault City Brewing",
+        "UCHU Brewing",
+        "Evil Twin Brewing",
+        "Samata Brewing",
+        "Azvex Brewing",
+        "Edinburgh",
+        "Temptations",
+        "Bowery",
+        "Delta",
+        "Seattle Seahawks"
+      ],
+      "brand_mention": [
+        "Vault City",
+        "Edinburgh",
+        "Great British Bake Off",
+        "Matcha Mochi",
+        "UCHU Brewing",
+        "York Cheesecake",
+        "Evil Twin Brewing",
+        "Sago Pudding",
+        "Samata Brewing",
+        "Thailand",
+        "Cranachan",
+        "Azvex",
+        "Scottish Bee Co",
+        "Speyside",
+        "Heather Fletcher",
+        "Announced 9",
+        "Temptations",
+        "Bowery",
+        "Cat Bodega",
+        "York",
+        "Heidi Gardner",
+        "NYC",
+        "Announced 28",
+        "SkyMiles",
+        "Washington State",
+        "Seahawks",
+        "Seattle's",
+        "Zone 5",
+        "Sea-Tac",
+        "Seahawks Pro Shop"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "The government is paying gas distributors in gas, and it cuts a ten-year payback to three"
+        ],
+        [
+          "trends",
+          "Automattic's board removed its founder on Wednesday. He was back by Friday morning."
+        ],
+        [
+          "trends",
+          "A 250-km rock between Saturn and Uranus has rings, and they have changed since 2013"
+        ],
+        [
+          "wild",
+          "An Edinburgh brewery put half a tonne of rice into a beer that is meant to taste like mochi"
+        ],
+        [
+          "wild",
+          "A cat-treat brand is opening a bodega on the Bowery, for cats"
+        ],
+        [
+          "wild",
+          "Delta pays Washington State residents one air mile for every yard the Seahawks throw"
+        ],
+        [
+          "research",
+          "ToolGrad: efficient tool-use dataset generation with textual “gradients”"
+        ],
+        [
+          "research",
+          "Correction as Annotation: Bootstrapping a Dependency Parser for Documentary Medieval Latin"
+        ],
+        [
+          "learn",
+          "The traffic light knows you are there because the road is a metal detector — and before that, you had to honk at it"
+        ]
+      ],
+      "editorial_domains": [
+        "beerguild.co.uk",
+        "lte.observatoiredeparis.psl.eu",
+        "news.delta.com",
+        "prnewswire.com",
+        "techcrunch.com",
+        "theprint.in"
+      ]
     }
   ]
 }
