@@ -1666,6 +1666,146 @@
         "techcrunch.com",
         "theprint.in"
       ]
+    },
+    {
+      "date": "2026-09-13",
+      "issue": 1,
+      "quote_text": [
+        "It is forbidden to kill; therefore all murderers are punished unless they kill in large numbers and to the sound of trumpets."
+      ],
+      "quote_author": [
+        "Voltaire"
+      ],
+      "idea_text": [
+        "The first week in a new flat. One page: which switch does what, which neighbour to introduce yourself to, and the day the water tank is filled.",
+        "Leaving a group chat. A short manual on the exit that does not read as a statement, because the current options are all statements.",
+        "Throwing away something that still works. Rules for the cutoff between 'useful' and 'stored', written by someone who has moved house recently.",
+        "Your own parents' medical history. A one-page form you fill in once, while they can still tell you.",
+        "The end of a friendship that nobody ended. Instructions for the three-year gap and the message that reopens it.",
+        "Being a guest in a house with different rules. Shoes, fridge, bathroom, and when to leave.",
+        "Splitting a bill among people with very different amounts of money.",
+        "Recovering from a compliment. Nobody is taught this and everybody fumbles it.",
+        "The last week of a job you are leaving. What to write down, who to actually thank, and what not to say on the way out.",
+        "Reading a lease. Not the legal advice — the five clauses that are always the ones that matter and the two that never are."
+      ],
+      "idea_prompt": [
+        "Ten things that should come with instructions but don't"
+      ],
+      "hn_id": [
+        "49662371",
+        "49666735",
+        "49662990",
+        "49668386",
+        "49671329"
+      ],
+      "link": [
+        "https://mathandai.org/",
+        "https://www.rubyhack.ai/",
+        "https://dayzlegame.com/blog/google-ads-bot-farm/",
+        "https://www.autom.dev/blog/google-search-goto-links",
+        "https://www.joelotter.com/posts/2026/09/make-it-anyway/",
+        "https://knmindia.com/fema-export-import-regulations-2026/",
+        "https://www.cnbc.com/2026/09/08/qualcomm-amazon-data-center-infrastructure-deal.html",
+        "https://www.theartnewspaper.com/2026/08/28/neolithic-sculpture-of-human-riding-a-leopard-discovered-in-turkey",
+        "https://www.adgully.com/post/19642/underneat-takes-over-bengaluru-billboards-to-announce-myntra-m-now-launch",
+        "https://mediabrief.com/jk-super-cement-launches-53-episode-microdrama/",
+        "https://www.generalmills.com/news-and-stories/press-releases/betty-crocker-celebrates-bettier-than-ever-era-with-fresh-packaging-and-statement-handbags",
+        "https://www.microsoft.com/en-us/research/blog/gigapath-flash-and-gigatime-flash-toward-population-scale-discovery-with-efficient-pathology-foundation-models/",
+        "https://arxiv.org/abs/2609.05517",
+        "https://hdfcsky.com/news/sensex-plunges-1734-points-to-74781-as-brent-tops-109-nifty-falls-2-09percent-in-fifth-straight-weekly-loss",
+        "https://abcnews.com/Business/wireStory/major-us-stock-indexes-fared-friday-9112026-136375931"
+      ],
+      "subject": [
+        "RBI's FEMA Export and Import of Goods and Services Regulations 2026 replace the 2015 framework from 1 October",
+        "Qualcomm issues Amazon warrants over 25 million shares tied to up to $60bn of AWS purchases of Qualcomm data-centre silicon",
+        "Karahan Tepe excavation uncovers a 70cm limestone statue of a human seated on a leopard, announced August 2026",
+        "Underneat runs Bengaluru outdoor campaign showing bra imprints on a woman's back to announce its Myntra M-Now launch",
+        "JK Super Cement releases Tera Ghar Mera Ghar, a 53-episode branded micro-drama on ZEE5 Bullet, ShareChat and Moj",
+        "General Mills launches The Betty Ate Collection, three $89 cake-slice handbags, alongside a Betty Crocker packaging refresh",
+        "GigaPath-Flash: a billion-parameter pathology model distilled to 43 million, at 97% of the accuracy",
+        "Emergent Goal-Directed Attention in Large Vision-Language Models",
+        "Old Assyrian clay letter envelopes at Kültepe and the ENCI portable CT scanner reading a sealed letter from Anna-anna"
+      ],
+      "brand": [
+        "Underneat",
+        "Myntra",
+        "JK Super Cement",
+        "JK Cement",
+        "JUJU Films",
+        "Betty Crocker",
+        "General Mills"
+      ],
+      "brand_mention": [
+        "Kusha Kapila",
+        "Bengaluru",
+        "Myntra's M-Now",
+        "Tera Ghar Mera Ghar",
+        "JUJU Films",
+        "ZEE5 Bullet",
+        "ShareChat",
+        "Moj",
+        "JK Cement's",
+        "Kanpur",
+        "Asha",
+        "Keshav Sadhna",
+        "Yogita Bihani",
+        "Sumit Arora Group",
+        "Pushp Raj Singh's",
+        "General Mills",
+        "Betty Crocker's",
+        "Betty Ate Collection",
+        "Yellow Cake",
+        "Triple Chocolate Fudge Cake",
+        "Strawberry Cake",
+        "Betty",
+        "Sarah Peck"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "167 RBI circulars become one rulebook, and the export clock goes from nine months to fifteen"
+        ],
+        [
+          "trends",
+          "Qualcomm gave Amazon $4 billion of warrants to make sure Amazon buys its chips"
+        ],
+        [
+          "trends",
+          "Eleven thousand years ago someone carved a man sitting on a leopard, and that is the wrong way round"
+        ],
+        [
+          "wild",
+          "Underneat put the marks a bra leaves on your back on billboards across the city"
+        ],
+        [
+          "wild",
+          "A cement company made a 53-episode vertical soap opera about building a house"
+        ],
+        [
+          "wild",
+          "Betty Crocker turned its new packaging into handbags shaped like slices of cake"
+        ],
+        [
+          "research",
+          "GigaPath-Flash: a billion-parameter pathology model distilled to 43 million, at 97% of the accuracy"
+        ],
+        [
+          "research",
+          "Emergent Goal-Directed Attention in Large Vision-Language Models"
+        ],
+        [
+          "learn",
+          "Clay envelopes were invented so letters could not be read, and a scanner has just read one after 3,800 years"
+        ]
+      ],
+      "editorial_domains": [
+        "adgully.com",
+        "cnbc.com",
+        "generalmills.com",
+        "knmindia.com",
+        "mediabrief.com",
+        "theartnewspaper.com"
+      ]
     }
   ]
 }
