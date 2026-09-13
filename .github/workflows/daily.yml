@@ -26,6 +26,7 @@ concurrency:
 
 permissions:
   contents: write
+  actions: write
 
 jobs:
   send:
@@ -129,6 +130,7 @@ jobs:
       - name: Commit history so tomorrow knows what today used
         # Only skipped for dry runs. A real tag run still has to record what it
         # sent, or tomorrow's duplicate check is blind to it.
+        id: commit
         if: ${{ !inputs.dry_run && !startsWith(github.ref_name, 'run-dry-') }}
         run: |
           set -euo pipefail
@@ -137,12 +139,24 @@ jobs:
           git add editions state
           if git diff --cached --quiet; then
             echo "::warning::Nothing to commit — history was not updated"
+            echo "pushed=false" >> "$GITHUB_OUTPUT"
+          elif git commit -m "Issue for $(TZ="$(python3 scripts/config.py --get newsletter.timezone)" date +%F)" \
+              && git push origin HEAD:main; then
+            echo "pushed=true" >> "$GITHUB_OUTPUT"
           else
-            git commit -m "Issue for $(TZ="$(python3 scripts/config.py --get newsletter.timezone)" date +%F)"
-            # A tag build has no branch checked out, so push HEAD at main.
-            git push origin HEAD:main || \
-              echo "::warning::Push failed; the issue was sent but history is unrecorded"
+            echo "::warning::Push failed; the issue was sent but history is unrecorded"
+            echo "pushed=false" >> "$GITHUB_OUTPUT"
           fi
+
+      - name: Trigger the archive rebuild
+        # A push made with the default GITHUB_TOKEN doesn't fire pages.yml's
+        # `on: push` trigger — Actions suppresses workflow runs that would
+        # recurse from the token's own actions — so nudge it directly.
+        # workflow_dispatch is exempt from that suppression.
+        if: steps.commit.outputs.pushed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run pages.yml --ref main
 
       - name: Upload the edition for inspection
         if: always()
