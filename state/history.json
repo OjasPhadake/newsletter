@@ -1806,6 +1806,160 @@
         "mediabrief.com",
         "theartnewspaper.com"
       ]
+    },
+    {
+      "date": "2026-09-14",
+      "issue": 1,
+      "quote_text": [
+        "An adventure is only an inconvenience rightly considered. An inconvenience is only an adventure wrongly considered."
+      ],
+      "quote_author": [
+        "G.K. Chesterton"
+      ],
+      "idea_text": [
+        "Your parking space, rented by the hour on match days and wedding nights.",
+        "Your terrace, once a month, to somebody who wants to host a dinner and has nowhere to put one.",
+        "One paid seat in the car, on a commute you are already driving.",
+        "Your scanner: collect a family's photo albums, return them digitised, charge by the box.",
+        "Your kitchen on a Sunday — one dish, twenty portions, sold to the four buildings nearest you.",
+        "Your washing machine, for the hostels within walking distance.",
+        "Your textbooks, rented by the semester instead of sold once at the end.",
+        "Your daily walk, with somebody else's dog on the end of it.",
+        "The spare half of your freezer, rented to whoever is batch-cooking this month.",
+        "A scenic route you already know by heart, sold as a Saturday ride with the stops planned."
+      ],
+      "idea_prompt": [
+        "Ten ways to make money from something you already own"
+      ],
+      "hn_id": [
+        "49678683",
+        "49672510",
+        "49674050",
+        "49678969",
+        "49681545"
+      ],
+      "link": [
+        "https://xeiaso.net/notes/2026/everyone-slowdown-but-me/",
+        "https://darioamodei.com/post/we-must-pace-the-frontier",
+        "https://high5apps.github.io/josm-plugin-website-wizard/",
+        "https://yoshuabengio.org/en/publication/why-are-ai-agents-lying-cheating-and-coordinating",
+        "https://brew.sh/2026/09/13/homebrew-7.0.0/",
+        "https://newsonair.gov.in/brics-nations-unanimously-adopted-new-delhi-declaration-on-1st-day-of-brics-summit-2026/",
+        "https://www.engadget.com/2230544/old-reddit-could-be-the-next-casualty-of-reddits-war-on-ai-scraping/",
+        "https://iop.uva.nl/content/news/2026/08/an-atoms-interaction-with-light-is-not-where-it-is-supposed-to-be.html",
+        "https://www.bundesliga.com/en/bundesliga/news/first-goal-reconstructed-ai-borussia-dortmund-footage-38903",
+        "https://newsroom.chipotle.com/2026-08-31-CHIPOTLE-HANDS-THE-CAMERAS-TO-100-CREATORS-FOR-ITS-NEW-NATIONAL-AD-CAMPAIGN",
+        "https://marcommnews.com/coo-coo-canvas-creative-pigeon-returns-to-help-a-stray-cat-find-a-home/",
+        "https://research.google/blog/transfer-learning-for-genomic-prediction-in-underrepresented-populations/",
+        "https://arxiv.org/abs/2609.04172",
+        "https://www.goodreturns.in/news/stock-market-holiday-on-september-14-2026-is-trading-closed-bse-nse-ganesh-chaturthi-sensex-nifty-1534491.html",
+        "https://wtop.com/national/2026/09/how-major-us-stock-indexes-fared-friday-9-11-2026"
+      ],
+      "subject": [
+        "BRICS leaders unanimously adopt the 140-paragraph New Delhi Declaration at the summit at Bharat Mandapam on 12 September 2026",
+        "Reddit winds down its public Data API in favour of the Devvit Developer Platform and restricts logged-out access to Old Reddit, as an anti-AI-scraping measure",
+        "First direct observation of the optical Magnus effect using a single trapped calcium ion, published in Physical Review Letters 137, 063202",
+        "Vodafone and Borussia Dortmund release The Unseen Goal, an AI reconstruction of Timo Konietzka's first-ever Bundesliga goal from August 1963",
+        "Chipotle hands its national advertising campaign to 100 creators filming inside 50 of its own restaurant kitchens, with no brand-shot footage",
+        "Canva launches Wild Design Chapter II, a handmade stop-motion campaign for Italy starring a pigeon called Picci1",
+        "Borrowing European genetic data helps predict Japanese traits — right up to 15,000 samples, then it hurts",
+        "Rethinking On-Policy Distillation of Large Language Models II: One Training Example",
+        "Souman et al., Walking Straight into Circles — GPS study of blindfolded and overcast walking in the Sahara and the Bienwald forest"
+      ],
+      "brand": [
+        "Vodafone",
+        "Borussia Dortmund",
+        "Bundesliga",
+        "Chipotle",
+        "Canva"
+      ],
+      "brand_mention": [
+        "24 August 1963",
+        "Timo Konietzka",
+        "Bundesliga",
+        "Borussia Dortmund",
+        "Werder Bremen",
+        "BVB",
+        "Dortmund",
+        "Bremen",
+        "Gerd Kolbe",
+        "Eugen Kraas",
+        "Günther Konietzka",
+        "Unseen Goal",
+        "I",
+        "Vodafone",
+        "Whether",
+        "Announced 31",
+        "Chipotle",
+        "Canada",
+        "Pollo Asado",
+        "Chili Lime Chips",
+        "TV",
+        "Reels",
+        "Shorts",
+        "Fernando Machado",
+        "São Paulo",
+        "KIDS Machado's",
+        "Real",
+        "Launched 1",
+        "Italian",
+        "Canva's Wild Design",
+        "Picci1",
+        "Bartolomiao",
+        "DUDE Milan",
+        "C",
+        "Dan Richards",
+        "Aardman",
+        "OMD Creative",
+        "Antonio Mitra",
+        "Canva"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "Delhi got its declaration adopted on day one, and put a risk lab in Gujarat"
+        ],
+        [
+          "trends",
+          "Reddit is closing the door the whole internet reads it through"
+        ],
+        [
+          "trends",
+          "A laser pushes hardest somewhere other than the middle of the beam"
+        ],
+        [
+          "wild",
+          "The first goal in Bundesliga history was never filmed, so a phone company generated it"
+        ],
+        [
+          "wild",
+          "Chipotle's national TV campaign contains no footage Chipotle shot"
+        ],
+        [
+          "wild",
+          "A design software company made its ad entirely by hand"
+        ],
+        [
+          "research",
+          "Borrowing European genetic data helps predict Japanese traits — right up to 15,000 samples, then it hurts"
+        ],
+        [
+          "research",
+          "Rethinking On-Policy Distillation of Large Language Models II: One Training Example"
+        ],
+        [
+          "learn",
+          "Nobody can walk in a straight line, and it is not because one leg is shorter"
+        ]
+      ],
+      "editorial_domains": [
+        "bundesliga.com",
+        "engadget.com",
+        "iop.uva.nl",
+        "marcommnews.com",
+        "newsonair.gov.in",
+        "newsroom.chipotle.com"
+      ]
     }
   ]
 }
