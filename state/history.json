@@ -1960,6 +1960,163 @@
         "newsonair.gov.in",
         "newsroom.chipotle.com"
       ]
+    },
+    {
+      "date": "2026-09-15",
+      "issue": 1,
+      "quote_text": [
+        "Nothing perhaps has so retarded the reception of the higher conclusions of Geology among men in general, as [the] instinctive parsimony of the human mind in matters where time is concerned."
+      ],
+      "quote_author": [
+        "Charles Lapworth"
+      ],
+      "idea_text": [
+        "\"Out of social battery.\" Treated exactly like a phone at 2%: believed instantly, no follow-up questions.",
+        "\"I already have plans with myself.\" Standing, recurring, and nobody gets to ask what they are.",
+        "\"I'm in a different mood than the one who agreed to this.\" The person who said yes three weeks ago is not available for comment.",
+        "\"I'm rationing conversations this week.\" A stated budget, spent early, with no shame attached to running out.",
+        "\"My one good pair of shoes is wet.\" A real logistical constraint that is currently considered too small to mention.",
+        "\"I'm at a point in a book where I genuinely cannot leave.\"",
+        "\"I'm going to be at home, on purpose, doing nothing, on purpose.\" The word 'nothing' being the load-bearing part.",
+        "\"That journey is ninety minutes each way at that hour, and I like myself too much.\"",
+        "\"I'd like to come but I don't want to.\" Both halves true, said together, and somehow currently unsayable.",
+        "\"I've used my excuse for the month and this is it.\" One free withdrawal, no reason given, everyone gets the same allowance."
+      ],
+      "idea_prompt": [
+        "Ten excuses that should be socially acceptable"
+      ],
+      "hn_id": [
+        "49688695",
+        "49686445",
+        "49681152",
+        "49684393",
+        "49686766"
+      ],
+      "link": [
+        "https://www.vals.ai/blogs/fable-solves-cyphral-distich",
+        "https://www.atomic14.com/2026/09/13/why-is-google-still-serving-dodgy-ads",
+        "https://jetkvm.com/blog/introducing-jetkvm-mini",
+        "https://www.lesswrong.com/posts/munJKF7iWMsWJLAH2/astra-and-fable-still-hack-on-simple-variants-of-alignment",
+        "https://dreamstation.systems/personal/tesla.html",
+        "https://www.tribuneindia.com/news/consumer-prices/cpi-inflation-in-august-at-4-82-yoy-led-by-food-inflation",
+        "https://9to5mac.com/2026/09/14/ios-27-code-shows-you-may-be-able-to-replace-siri-ai-with-claude-or-chatgpt-poll/",
+        "https://www.sci.news/paleontology/adult-tyrannosaurus-rex-trackway-15056.html",
+        "https://www.amny.com/nyc-transit/degree-renames-manhattan-subway-stations/",
+        "https://www.media4growth.com/showcase/creative-concepts/poppi-turns-nyc-billboard-into-a-peel-win-experience-for-sour-apple-launch-85842",
+        "https://www.creativeboom.com/news/stanley-chow-fills-the-arndale-with-13-giant-inflatable-manchester-icons-for-a-free-summer-trail/",
+        "https://research.google/blog/planetary-prediction-engine-automating-global-models-via-earth-ai/",
+        "https://arxiv.org/abs/2609.10434",
+        "https://finance.yahoo.com/markets/live/stock-market-today-monday-september-14-dow-sp-500-nasdaq-080559558.html",
+        "https://zerodha.com/marketintel/bulletin/457567/trading-holiday-on-account-of-ganesh-chaturthi-on-september-14-2026"
+      ],
+      "subject": [
+        "India's August 2026 CPI released at 4.82% year on year and August 2026 WPI at 9.92%, both published by the government on 14 September 2026",
+        "Developer pdfu finds private Model Delegation API and inference-provider hooks in shipping iOS 27 and macOS 27 code allowing third-party models to replace Siri's backend",
+        "First known adult Tyrannosaurus rex trackway, four connected prints in the Hell Creek Formation of southwestern North Dakota, described in the Journal of Vertebrate Paleontology on 8 September 2026",
+        "Degree deodorant partners with the New York MTA to rename three Manhattan subway stations with mosaic-style signage and give away free antiperspirant with Tap-to-Pay subway ride codes, August 2026",
+        "Poppi launches a Peel + Win interactive billboard at 161 Lafayette Street, New York, covered in 500 removable green apple stickers, for its limited-edition Sour Apple flavour in August 2026",
+        "Manchester Arndale commissions illustrator Stanley Chow for MCR Made, thirteen giant inflatable portraits of Manchester figures suspended above the shops, running 4 August to 24 October 2026",
+        "A system that turns a plain-English question into a trained geospatial model, in minutes",
+        "Do speech foundation models really learn words?",
+        "Structural colour in nature: blue morpho butterflies, the obrina olivewing as the only animal with a true blue pigment, and anthocyanin pH instability"
+      ],
+      "brand": [
+        "Degree",
+        "Poppi",
+        "Lil Sweet Treat",
+        "Manchester Arndale",
+        "Stanley Chow",
+        "Mancunians"
+      ],
+      "brand_mention": [
+        "Union Square",
+        "Sweat Central 34",
+        "Street-Herald Square",
+        "Molten Core West 4",
+        "Street",
+        "Boiler Room",
+        "MTA's",
+        "Yorkers",
+        "Degree Advanced",
+        "Tap",
+        "Pay",
+        "Chris Symmes",
+        "Lafayette Street",
+        "Sour",
+        "Pricing 500",
+        "Lil Sweet Treat",
+        "York",
+        "Los Angeles",
+        "Chicago",
+        "MCR Made",
+        "Manchester Arndale",
+        "Stanley Chow",
+        "Liam",
+        "Noel Gallagher",
+        "Marcus Rashford",
+        "Phil Foden",
+        "Emmeline Pankhurst",
+        "Alan Turing",
+        "L.S Lowry",
+        "Lemn Sissay",
+        "Caroline Aherne",
+        "Aitch Chow",
+        "Ellen Wilkinson",
+        "Manchester-born",
+        "Britain's",
+        "Education Secretary",
+        "Ask",
+        "Ellen",
+        "Arndale Centre",
+        "Mecca Art",
+        "Arndale"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "Retail inflation is 4.82%. Wholesale inflation is 9.92%. Both came out yesterday."
+        ],
+        [
+          "trends",
+          "Siri's brain is built to be swapped out, and the plumbing shipped yesterday"
+        ],
+        [
+          "trends",
+          "Only two adult T. rex footprints had ever been found. Now there are four in a row."
+        ],
+        [
+          "wild",
+          "Degree renamed three Manhattan subway stations after how they feel in August"
+        ],
+        [
+          "wild",
+          "Poppi put 500 peel-off apple stickers on a billboard. They were gone in two hours."
+        ],
+        [
+          "wild",
+          "A shopping centre hung thirteen six-metre inflatable Mancunians above the shops"
+        ],
+        [
+          "research",
+          "A system that turns a plain-English question into a trained geospatial model, in minutes"
+        ],
+        [
+          "research",
+          "Do speech foundation models really learn words?"
+        ],
+        [
+          "learn",
+          "Almost nothing alive is actually blue — including the things you are picturing"
+        ]
+      ],
+      "editorial_domains": [
+        "9to5mac.com",
+        "amny.com",
+        "creativeboom.com",
+        "media4growth.com",
+        "sci.news",
+        "tribuneindia.com"
+      ]
     }
   ]
 }
