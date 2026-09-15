@@ -1,0 +1,359 @@
+{
+  "date_line": "Wednesday, 16 September 2026",
+  "issue": 1,
+  "preheader": "A Raspberry Pi that listens for birds and draws them as 1800s plates; the Sensex gives up 778 points to a five-month low; chemistry textbooks have had the inductive effect wrong for a century; and Bombay refused to change its clocks until 1955.",
+  "quote": {
+    "text": "Thank you for sending me a copy of your book. I'll waste no time reading it.",
+    "author": "Moses Hadas",
+    "source_url": "https://www.goodreads.com/quotes/13263",
+    "note": "Read it once and it is gracious. Read it twice and the same eleven words are the most economical insult in English. Nothing has been added between the two readings — the sentence was always doing both jobs, and the reader is the one who decides which one arrives."
+  },
+  "hn": [
+    {
+      "title": "Show HN: An e-ink frame that hears birds and draws them as 1800s illustrations",
+      "url": "https://github.com/arnegiacomo/fugleramme",
+      "hn_url": "https://news.ycombinator.com/item?id=49711544",
+      "points": 1191,
+      "comments": 162,
+      "bullets": [
+        "Fugleramme is a Raspberry Pi 5 driving an Inky Impression 13.3-inch Spectra 6 e-ink panel, mounted in an ordinary A4 picture frame. A microphone listens to the garden continuously; the picture on the wall is whatever is currently singing outside.",
+        "Identification is BirdNET-Go, built on the model from the Cornell Lab of Ornithology and Chemnitz University of Technology with eBird's taxonomy. It can run on the Pi itself or on another machine on the network. The licence is CC BY-NC-SA 4.0, so the whole thing is non-commercial by construction.",
+        "The artwork is the part that took the work. Over 800 illustrations covering more than 400 species, hand-cut from public-domain Scandinavian, British and central European natural history plates, backgrounds removed, then packed onto a textured paper page with the larger birds toward the centre and everything sized by body mass. No AI-generated artwork; some pieces have AI retouching.",
+        "The panel only refreshes when the set of detected birds changes, which is what makes e-ink the right choice rather than a decorative one. Coverage is strongest in the Nordics, the British Isles and Germany; wider European and North American plates are listed as in progress."
+      ]
+    },
+    {
+      "title": "I can't stop thinking about Papua New Guinea",
+      "url": "https://notnottalmud.substack.com/p/why-i-cant-stop-thinking-about-papua",
+      "hn_url": "https://news.ycombinator.com/item?id=49708431",
+      "points": 995,
+      "comments": 413,
+      "bullets": [
+        "The headline numbers: nearly 1,000 distinct languages, about 12% of every language on earth, in one country whose authorities cannot say whether it contains 10 million people or 17 million. The uncertainty is itself the argument about state capacity.",
+        "In 1930 the Australian prospector Mick Leahy walked into the highlands and found roughly a million people nobody outside knew were there. They had been self-sufficient for about 10,000 years. It was filmed and photographed, which makes it the only first contact of that scale with a documentary record.",
+        "The essay's best section is why the isolation held. Highland root crops like taro rot within weeks, so there was no storable surplus, so there was nothing to tax and no reason to centralise. No draft animals, no writing, no protein surplus, constant inter-tribal warfare making travel dangerous, and malarial swamp between the highlands and the coast.",
+        "Goods crossed that barrier and ideas did not. Pigs arrived 3,000 years ago; sweet potato and tobacco 300 to 400 years ago, carried in from the Spanish and Portuguese via Indonesian sultanates. Highlanders treasured sea shells without knowing there was a sea. Europeans, receiving birds of paradise with the feet cut off by traders, concluded the birds had no feet.",
+        "Genetics settles it. Highland populations carry zero Austronesian ancestry despite 3,000 years of coastal contact, against 10 to 30% on the coast, and lack the malaria adaptations that are dense among coastal peoples. Trade flowed; people did not.",
+        "The modern country inherits the shape. Port Moresby has no road connection to any other population centre. The Highlands Highway, roughly 700 km, is the one major road and closes for landslides and bandits. \"Wantok\" — one talk — means loyalty runs to your language group, not to the nation."
+      ]
+    },
+    {
+      "title": "XCancel service is suspended until further notice",
+      "url": "https://xcancel.com/#",
+      "hn_url": "https://news.ycombinator.com/item?id=49694296",
+      "points": 746,
+      "comments": 1009,
+      "bullets": [
+        "The linked page is now a single notice: the service is suspended until further notice. XCancel was the last widely used public Nitter instance — the way people read an X post without an account, and the reason a linked post still resolved for the logged-out half of the internet.",
+        "It drew 1,009 comments, more than any other story in the window, which is its own data point about how many workflows quietly depended on it.",
+        "The reading offered repeatedly in the thread is legal rather than technical. X went login-only in the wake of hiQ v. LinkedIn, which established that scraping a site with no login is lawful. A login wall does not make scraping harder so much as it converts scraping into a terms-of-service violation, which is enforceable.",
+        "What commenters report still working are browser extensions rather than servers — Post Peek on Chrome, Dumpster Fire on Firefox, Litterbox on Safari — with longer posts truncated and replies not visible. A client-side workaround is harder to sue than a hosted one, which is probably the whole point."
+      ]
+    },
+    {
+      "title": "25 years of mass surveillance is enough",
+      "url": "https://www.schneier.com/blog/archives/2026/09/25-years-of-mass-surveillance-is-enough.html",
+      "hn_url": "https://news.ycombinator.com/item?id=49710883",
+      "points": 745,
+      "comments": 273,
+      "bullets": [
+        "Bruce Schneier and Cindy Cohn mark 25 years since 9/11 by arguing the post-2001 settlement has quietly moved from counterterrorism into ordinary law enforcement, without ever passing the test it was sold on.",
+        "The programme list is the spine of the piece: the President's Surveillance Program, Section 215 telephone metadata collection that ran for nearly 14 years before the USA Freedom Act ended it in 2015, Upstream interception at telecom junctions, and Section 702, which sweeps up US persons while nominally collecting foreign intelligence.",
+        "The specifics that land hardest are the small ones. 19,000 campaign donors improperly accessed through backdoor searches. Over 150 communities that have rejected Flock automatic licence plate readers. Chatrie v. United States rejecting mass geofence warrants.",
+        "The timing is not incidental: Section 702 runs to spring 2027, and the authors read the 2026 US Counterterrorism Strategy as stating an intention to point national-security powers at domestic activists.",
+        "Their asks are structural rather than programme-by-programme: a warrant requirement covering collection, access and use of US persons' data; a private right of action with automatic exclusionary remedies; a ban on the government buying from data brokers what it would need a warrant to seize; and a right to encryption."
+      ]
+    },
+    {
+      "title": "Steam Frame starts at $1059",
+      "url": "https://store.steampowered.com/hardware/steamframe",
+      "hn_url": "https://news.ycombinator.com/item?id=49700661",
+      "points": 720,
+      "comments": 614,
+      "bullets": [
+        "$1,059 for 256GB and $1,299 for 1TB. Both have 16GB of RAM and a microSD slot, so the $240 between the tiers buys storage you can partly buy back yourself.",
+        "The internals: a Snapdragon 8 Gen 3 running SteamOS 3, a 2160 x 2160 LCD per eye, 72Hz to 144Hz with 144 marked experimental, inside-out tracking, Wi-Fi 7 and Bluetooth 5.4.",
+        "In the box are the Steam Frame controllers — full 6-DoF tracking plus conventional gamepad controls — a wireless adapter for streaming from a PC, and a copy of Half-Life: Alyx. There is no power supply; Valve sells a 45W one for $29, or a Steam Deck charger works.",
+        "Reservations are randomised rather than first-come-first-served. Signups close 17 September at 10am Pacific and purchase emails start going out on the 18th. It arrives alongside the Steam Machine at $1,049, completing the three-product hardware line Valve announced in November 2025.",
+        "Reported from Dexerto's write-up of the listing; the Steam store page itself renders its specification table client-side and returns nothing to a fetcher."
+      ]
+    }
+  ],
+  "markets": {
+    "indices": [
+      {
+        "name": "Sensex · Tue 15 Sep close",
+        "value": "74,003.82",
+        "change": "777.94  (1.04%) on the day",
+        "direction": "down"
+      },
+      {
+        "name": "Nifty 50 · Tue 15 Sep close",
+        "value": "23,118.60",
+        "change": "279.50  (1.19%) — a five-month low",
+        "direction": "down"
+      },
+      {
+        "name": "Nifty IT · 15 Sep",
+        "value": "+2.2%",
+        "change": "the only sector that worked; HCLTech +3.95%, Infosys +3.79%",
+        "direction": "up"
+      },
+      {
+        "name": "Financials / autos · 15 Sep",
+        "value": "-1.8% / -2%",
+        "change": "banks and mid-caps took the heavier selling",
+        "direction": "down"
+      },
+      {
+        "name": "USD/INR · 15 Sep close",
+        "value": "95.92",
+        "change": "38 paise weaker against a 95.54 previous close; opened 95.84",
+        "direction": "down"
+      },
+      {
+        "name": "Brent crude · 15 Sep",
+        "value": "$107.71",
+        "change": "1.92% on the day, briefly touching $108",
+        "direction": "up"
+      },
+      {
+        "name": "FII cash · 15 Sep",
+        "value": "-₹2,978 cr",
+        "change": "bought ₹13,195 cr, sold ₹16,173 cr",
+        "direction": "down"
+      },
+      {
+        "name": "DII cash · 15 Sep",
+        "value": "+₹2,686 cr",
+        "change": "net institutional flow for the day: -₹292 cr",
+        "direction": "up"
+      },
+      {
+        "name": "Dow Jones · Tue 15 Sep close",
+        "value": "52,093.11",
+        "change": "328.09  (0.63%) on the day",
+        "direction": "down"
+      },
+      {
+        "name": "S&P 500 · Tue 15 Sep close",
+        "value": "7,585.73",
+        "change": "34.25  (0.45%) on the day",
+        "direction": "down"
+      },
+      {
+        "name": "Nasdaq composite · Tue 15 Sep close",
+        "value": "25,981.57",
+        "change": "204.84  (0.78%) on the day",
+        "direction": "down"
+      },
+      {
+        "name": "US 10-year Treasury · 15 Sep",
+        "value": "5.041%",
+        "change": "highest since 2007",
+        "direction": "up"
+      }
+    ],
+    "stories": [
+      {
+        "headline": "India reopened after three days shut and gave up 778 points in one session",
+        "url": "https://hdfcsky.com/news/market-close-report-today-september-15-2026-sensex-nifty-crash-as-oil-and-yields-drag-stocks-overpowering-gains-in-it",
+        "source": "HDFC Sky market close report — Tuesday 15 September 2026",
+        "bullets": [
+          "The Sensex closed at 74,003.82, down 777.94 points or 1.04%. The Nifty 50 closed at 23,118.60, down 279.50 points or 1.19%, its lowest in five months. The session opened higher — Sensex 75,369.63, Nifty 23,576.15 — and spent the rest of the day giving it back.",
+          "One sector held. Nifty IT rose 2.2%, with HCLTech up 3.95%, Infosys 3.79%, TCS 2.28%, Tech Mahindra 2.26% and HDFC Bank 1.17%. Financials fell about 1.8% and autos about 2%, and the mid- and small-cap indices fell with them.",
+          "The losers were specific rather than broad: Bharat Electronics -5.30%, Shriram Finance -4.74%, Adani Enterprises -4.29%, InterGlobe Aviation -3.96%, Grasim -3.38%.",
+          "The two inputs were both external. Brent went above $107 after fresh attacks on Saudi infrastructure, and the US 10-year Treasury yield touched 5% for the first time since 2007. For an importer of crude, that pair widens the current account deficit, pressures the rupee and adds to inflation in the same motion.",
+          "The rupee did exactly that, closing at 95.92 against the dollar, 38 paise weaker than Friday's 95.54, on dollar demand from oil importers. Brent was at $107.71, up 1.92%, and the dollar index at 99.61."
+        ]
+      },
+      {
+        "headline": "Foreigners sold ₹2,978 crore. Domestic funds bought ₹2,686 crore. That is the whole month in miniature.",
+        "url": "https://tapetide.com/fii-dii-data",
+        "source": "Tapetide FII/DII cash market data (NSE provisional) — 15 September 2026",
+        "bullets": [
+          "On Tuesday FIIs bought ₹13,195 crore of Indian equities in the cash segment and sold ₹16,173 crore, a net ₹2,978 crore of selling. DIIs bought ₹15,222 crore against ₹12,536 crore of sales, a net ₹2,686 crore of buying. The two together leave a net institutional outflow of ₹292 crore.",
+          "Month to date on NSE's provisional numbers the gap is starker: FIIs net sellers of ₹2,399 crore across September, DIIs net buyers of ₹27,673 crore. Domestic money is not merely supporting this market, it is the market.",
+          "Wall Street closed lower the same day ahead of the Fed: Dow 52,093.11 down 328.09 points (0.63%), S&P 500 7,585.73 down 34.25 (0.45%), Nasdaq composite 25,981.57 down 204.84 (0.78%).",
+          "Traders were pricing a 91-93% chance of a 25 basis point hike at today's FOMC decision, with the 10-year at 5.041% — its highest since 2007. WTI settled at $105.34, down 49 cents.",
+          "Saudi Arabia's East-West pipeline shutdown and continued Red Sea attacks are the supply story behind the oil price, affecting roughly 4% of global supply."
+        ]
+      }
+    ]
+  },
+  "trends": [
+    {
+      "tag": "India · Primary market",
+      "headline": "The secondary market is at a five-month low. The primary market is having its best year but one.",
+      "url": "https://www.businesstoday.in/markets/ipo-corner/story/nse-ipo-to-take-2026-ipo-fundraising-past-rs-1-lakh-crore-3rd-year-in-a-row-4th-overall-554779-2026-09-11",
+      "subject": "India's 2026 IPO fundraising set to cross ₹1 lakh crore for the third consecutive year, with the NSE offer-for-sale of ₹22,568.92 crore opening on 17 September 2026",
+      "subtitle": "62 mainboard issues and ₹73,673.54 crore to end-August, before the NSE listing",
+      "bullets": [
+        "Between January and August, 62 mainboard IPOs raised ₹73,673.54 crore and 126 SME IPOs raised ₹5,738.88 crore. The NSE's own listing opens tomorrow at ₹22,568.92 crore and takes the year past ₹1 lakh crore — the third year running and the fourth ever.",
+        "For scale: ₹1,75,914.29 crore in 2025, ₹1,59,783.76 crore in 2024, ₹1,18,723.17 crore in 2021. This is now the normal size of the Indian primary market rather than a spike.",
+        "The NSE issue is entirely an offer for sale, so the exchange itself receives none of the proceeds. Existing shareholders are the ones selling, which is worth holding next to the fact that the index the exchange runs closed at a five-month low yesterday.",
+        "The month has been frantic in a way that has a record attached: six IPOs opened on 9 September, the first time in nearly three decades that has happened in one day. August had 23 launches, July 12, June seven.",
+        "And the queue behind it is longer than the year so far. SEBI has cleared 159 companies that have not yet named a date, Jio Platforms among them — which would be the largest issue India has ever done. Primary and secondary markets are pointing in opposite directions, and the primary one is where the supply is."
+      ]
+    },
+    {
+      "tag": "Platform · Cloudflare",
+      "headline": "From yesterday, a crawler has to say what it wants the page for",
+      "url": "https://www.helpnetsecurity.com/2026/07/02/cloudflare-ai-crawler-controls/",
+      "subject": "Cloudflare's Search / Agent / Training crawler categories take effect as the new default on 15 September 2026, blocking Training and Agent crawlers by default on ad-supported pages",
+      "subtitle": "Announced 1 July, defaults flipped 15 September",
+      "bullets": [
+        "Cloudflare has split automated traffic into three categories instead of one. Search means collecting or indexing content to answer questions later. Agent means acting in real time on a person's behalf. Training means taking content to train or fine-tune a model.",
+        "From 15 September — yesterday — the defaults for new domains changed. Training and Agent crawlers are blocked by default on pages that show ads. Search crawlers stay allowed. Site owners who wanted the old behaviour had to opt out in Security settings before the date.",
+        "The clever and slightly brutal part is the multi-purpose rule. A crawler that does both Search and Training is judged under both policies, so blocking Training blocks Googlebot, Applebot and Bingbot outright. You cannot keep the referral traffic and refuse the training data if the same bot does both.",
+        "This is available on the free plan, not just enterprise, which is what makes it a default rather than a feature. A meaningful share of the web sits behind one company's edge, and that company has just changed what an unannounced crawler gets.",
+        "The underlying shift is that robots.txt asked politely about identity. This asks about purpose, and enforces the answer at the edge."
+      ]
+    },
+    {
+      "tag": "Wildcard · Chemistry",
+      "headline": "The inductive effect does not travel down the chain, and has not for about a century of textbooks",
+      "url": "https://scitechdaily.com/textbooks-may-need-rewriting-after-researchers-debunk-a-core-chemistry-concept/",
+      "subject": "Cardiff University and University of Newcastle researchers find the inductive effect in neutral molecules does not extend beyond one bond, contradicting nearly a century of organic chemistry teaching, Journal of Chemical Education 2026",
+      "subtitle": "Journal of Chemical Education, DOI 10.1021/acs.jchemed.6c00141",
+      "bullets": [
+        "Every introductory organic chemistry course teaches that an electronegative atom pulls electron density along a chain of bonds, weakening as it goes, three or four bonds deep. It is the standard explanation for why chloroacetic acid is a stronger acid than acetic acid.",
+        "Edwin Johnson at the University of Newcastle, with Mark C. Elliott, Kasimir P. Gregory and Colan E. Hughes, modelled what the electrons actually do. Their conclusion is that in a neutral molecule the effect does not extend beyond the bond directly attached to the atom in question.",
+        "Johnson: \"Using modern computer modeling, we found that the traditional explanation (the inductive effect), developed nearly a century ago, does not match current evidence in important cases.\"",
+        "What they propose instead is not more machinery but less: look at the distribution of electrons across the whole molecule rather than tracking a pull down a chain. The chain was a mental convenience that got promoted to a mechanism.",
+        "It is in the Journal of Chemical Education rather than a research journal, which tells you the target is the teaching. Cardiff's announcement this week says two A-level exam boards have opened reviews of how they teach it and cited this work as the reason — an unusually fast turn from paper to syllabus."
+      ]
+    }
+  ],
+  "research": [
+    {
+      "tag": "Industry · Google Research",
+      "title": "Do the slow reasoning once, at training time, and ship a 53.9M-parameter model instead",
+      "url": "https://research.google/blog/bypassing-inference-bottlenecks-accelerating-complex-ai-search-with-retrieve-for-train/",
+      "subtitle": "Published 15 September 2026 — Pengcheng Jiang and Judith Yue Li, Google Research; ICML 2026",
+      "bullets": [
+        "The problem is a search box that needs a set of results, not one result. Ask for festival clothes and a good answer contains boots and lace and a jacket, not five phrasings of the same thing. Language models asked to fan out a query produce what the authors call paraphrastic collapse: \"bohemian festival fashion\" and \"bohemian festival clothes\" are not two searches.",
+        "The obvious fix — let a reasoning model think it through — breaks on latency. Autoregressive fan-out reaches nearly 50 seconds under large context batches. A search bar has under a second.",
+        "Retrieve-for-Train moves the thinking to training time. Reinforcement learning tunes a fan-out language model once, against a composite reward balancing groundedness in the actual database, diversity measured by Vendi Score, and semantic alignment. That model then generates query-to-result-set pairs offline, with no human labels.",
+        "Those pairs train a 53.9-million-parameter diffusion retriever that maps a query straight to result embeddings in a single non-autoregressive pass. 12 to 20 times faster than the autoregressive approach, sub-second to a few seconds, beating single-query search, zero-shot expansion and a heavily optimised Best-of-N baseline on both fashion and music retrieval.",
+        "The design note worth keeping is the reward. The three terms are described as mutual counter-anchors: maximise diversity alone and the model invents queries nothing in the database answers; maximise groundedness alone and it collapses back to paraphrase. Neither term is a safety rail on the other — they are each other's."
+      ]
+    },
+    {
+      "tag": "Academia · Cornell and MIT",
+      "title": "Induction and Inquiry via Probabilistic Reasoning over Language and Code",
+      "url": "https://arxiv.org/abs/2609.01815",
+      "subtitle": "arXiv, 1 September 2026 — Piriyakulkij, Acquaviva, Langenfeld, Tenenbaum and Ellis",
+      "bullets": [
+        "The question is an old cognitive science one. People build durable abstract knowledge out of sparse, noisy, arriving-one-at-a-time experience, and no computational account has managed all three of the things that requires at once.",
+        "The paper states the three plainly: be efficient in both data and compute; carry gradations of uncertainty, so the learner knows what it does not know and can go and ask; and be flexible enough to represent the open-ended range of things a person can think about.",
+        "Their model encodes knowledge as mental programs that mix natural language with source code, then infers those programs sequentially using LLM-guided Bayesian learning. Language carries the parts that resist formalisation; code carries the parts that need to run.",
+        "The evaluation is against humans rather than a benchmark. The model reproduces quantitative signatures of human learning, including anchoring and garden-pathing — the characteristic way a person locks onto an early hypothesis and then has to be dragged off it.",
+        "The baselines fail in instructive ways. Plain language models do not show the human-like behaviour; classical Bayesian approaches either cannot represent the concepts or need prohibitive compute. The claim is that the hybrid is not a convenience, it is what makes all three properties hold together. Joshua Tenenbaum and Kevin Ellis are on the author list, which is the MIT and Cornell halves of exactly that argument."
+      ]
+    }
+  ],
+  "wild": [
+    {
+      "tag": "Confectionery · Prompt engineering",
+      "headline": "Snickers made a digital candy bar you paste into ChatGPT when it starts talking nonsense",
+      "url": "https://www.adweek.com/creativity/snickers-says-even-your-ai-chatbot-isnt-itself-when-its-hungry/",
+      "entities": [
+        "Snickers",
+        "Mars",
+        "BBDO"
+      ],
+      "subject": "Snickers launches Hungr.AI, a digital candy bar that is actually a copy-and-paste prompt package users feed to a chatbot after a bad answer, created with BBDO, August 2026",
+      "bullets": [
+        "Hungr.AI is a Snickers bar for an AI. You copy it from snickers.com/hungr-ai and paste it into the chat after an answer you did not like, and the assistant reconsiders and tries again.",
+        "What it actually is, stripped of the wrapper, is a prompt package: a structured 'you did that badly, do it again properly' instruction with candy branding on it. Which is a genuinely accurate description of a large fraction of what prompt engineering is.",
+        "The joke is an exact fit rather than a stretch. Twenty-eight years of \"You're not you when you're hungry\" maps onto a chatbot that hallucinates, flatters and agrees with you when it should push back — the brand already owned the diagnosis before the symptom existed.",
+        "BBDO made it, with two films of AI behaving badly. Using it on Reddit or Snapchat gets you a real Snickers delivered, which means the campaign's conversion event is a physical chocolate bar arriving because a model was wrong."
+      ],
+      "link_label": "See it"
+    },
+    {
+      "tag": "Chocolate · Cosmetics",
+      "headline": "Cadbury made a watermelon chocolate block and MCoBeauty made an eyeshadow palette shaped like a chocolate bar",
+      "url": "https://www.confectionerynews.com/Article/2026/08/18/cadbury-and-mcobeauty-launch-chocolate-and-cosmetics-range/",
+      "entities": [
+        "Cadbury",
+        "MCoBeauty",
+        "Mondelez",
+        "Woolworths"
+      ],
+      "subject": "Cadbury Dairy Milk and MCoBeauty swap categories in a cross-category collaboration exclusive to Woolworths Australia, August 2026 — watermelon chocolate block plus a chocolate-bar eyeshadow palette and lip peptide treatment",
+      "bullets": [
+        "Both brands walked into the other's aisle at the same time. Cadbury Dairy Milk made a watermelon block inspired by MCoBeauty's Watermelon Glow range; MCoBeauty made an eyeshadow palette, a lip peptide treatment and an Icons set inspired by a bar of Dairy Milk.",
+        "It is exclusive to Woolworths across Australia, which is the part that makes it work commercially rather than just visually: one retailer, two aisles, and a shopper who was going down both of them anyway.",
+        "Lucy Robinson, MCoBeauty's head of marketing: \"We've always believed beauty should be fun, accessible and a little unexpected.\" Katrina Watson, Mondelez ANZ's chocolate director, says it was designed to \"spark conversation, fuel discovery and create new ways for consumers to engage with the brands they love.\"",
+        "The quietly odd bit is the direction of travel. Chocolate that tastes of a cosmetic, and a cosmetic that looks like chocolate, is a loop with no original in it — neither product is the reference for the other."
+      ],
+      "link_label": "See it"
+    },
+    {
+      "tag": "Fragrance · Nostalgia",
+      "headline": "A perfume house built three scents out of a 1990s pocket toy's imaginary shops",
+      "url": "https://blog.dossier.co/dossier-news/the-world-is-enchante-introducing-the-new-polly-pocket-fragrance-collection/",
+      "entities": [
+        "Dossier",
+        "Polly Pocket",
+        "Mattel"
+      ],
+      "subject": "Dossier launches a three-scent Polly Pocket fragrance collection on 8 September 2026, with each scent built around a fictional location inside the toy",
+      "bullets": [
+        "Dossier's usual business is making affordable versions of expensive designer fragrances. On 8 September it did the opposite and made three originals, at $49 each, out of a plastic toy from 1989.",
+        "Each one is a room inside the toy rather than a mood. Berry Daydream is Polly's Sweets Shop — strawberry, raspberry and rhubarb over rose, violet and peony, on cedarwood and sandalwood. Pistachio Swirl is the Milkshake Parlor: pistachio, almond and bergamot over a milky accord, coconut and peach. Marshmallow Mood is the Cloud Lounge.",
+        "The briefing document, in other words, was a set of places that never existed at a scale that never existed, and a perfumer was asked to work out what they smelled like. Two of the three land on vanilla, brown sugar and white musks, which is what a Cloud Lounge was always going to smell like.",
+        "The collection is designed to be layered — wear any two, or all three. Which is a reasonable translation of the toy, where the point was never one compact."
+      ],
+      "link_label": "See it"
+    }
+  ],
+  "learn": {
+    "title": "Bombay refused to change its clocks for forty-nine years, and the Parsi fire temples still haven't",
+    "subject": "The history of Indian Standard Time: Bombay Time and Calcutta Time, the 1906 adoption, Bombay's resistance led by Pherozeshah Mehta, the Rajabai Clock Tower and mill workers, and the 1955 capitulation",
+    "body": [
+      "Before 1906 India ran on sunlight, city by city. Madras Time was set in 1802 by the astronomer John Goldingham at the Madras Observatory, 5 hours 21 minutes and 14 seconds ahead of Greenwich, and by the 1850s the railways had adopted it as Railway Time because a timetable needs one clock. Bombay kept its own, 4 hours 51 minutes ahead of Greenwich. Calcutta kept its own, 5 hours 53 minutes and 20 seconds. In 1905 Lord Curzon picked the 82.5° East meridian through the Allahabad Observatory, exactly 5 hours 30 minutes ahead, and Indian Standard Time took effect on 1 January 1906. That half-hour offset the rest of the world finds funny is just where that line falls.",
+      "Bombay declined. The Municipal Corporation, the University and the High Court all kept Bombay Time, and the barrister Pherozeshah Mehta led the objection on the grounds that nobody had been asked. The argument became physical: the clock on Victoria Terminus showed Standard Time while the municipal clocks across the square showed Bombay Time, newspapers printed event listings marked BT or ST so you knew which one was meant, and public clock towers were stoned. The Corporation offered to pay half the cost of lighting the Rajabai Clock Tower if it could keep its own time; the government offered the same money for the opposite answer. At the Jacob Sassoon Mill the workers ransacked the timekeeper's office rather than lose 38 minutes and 50 seconds of morning — the mill eventually settled on letting them arrive at 6am Bombay Time, which is 6:39am IST.",
+      "None of this was really about clocks. Curzon partitioned Bengal the same year, and refusing his time became a small, daily, extremely visible piece of the Swadeshi movement. Calcutta held out until 1948. Bombay held out until 1955, eight years after independence, when the Corporation finally moved its hands forward by those 38 minutes and 50 seconds. And it is not quite finished: the Parsi fire temples of Mumbai still keep Bombay Time on clocks by the gate, because some rituals are fixed to the sun's actual position rather than to a meridian near Allahabad. Which was, all along, the only technically correct position in the argument."
+    ]
+  },
+  "ideas": {
+    "prompt": "Ten things worth doing alone",
+    "note": "Altucher's drill: ten ideas a day against one prompt. Today's rule — not things you do alone because nobody came. Things that are actually better with nobody there, and are quietly assumed to require company.",
+    "items": [
+      {
+        "text": "Go to the cinema on a weekday afternoon. Nobody to check on, nobody's reaction to manage, and the film gets your whole attention for the first time in years."
+      },
+      {
+        "text": "Eat at a restaurant good enough that you would normally save it for an occasion, with a book, at the bar."
+      },
+      {
+        "text": "Take a long train journey with an unreserved window seat and no plan for the other end."
+      },
+      {
+        "text": "Walk a city at 6am. Every city is a different city at 6am, and the version you share with other people is the loud one."
+      },
+      {
+        "text": "Drive a scenic route with no destination and permission to turn around whenever you want.",
+        "why": "A recurring wish on r/SomebodyMakeThis, which keeps asking for a maps app built around the drive rather than the arrival."
+      },
+      {
+        "text": "Go to a live gig by a band you have never heard, chosen purely because the poster was interesting."
+      },
+      {
+        "text": "Spend an afternoon in a museum's least popular wing. Ceramics, coins, agricultural implements — empty rooms, better labels, no queue for anything."
+      },
+      {
+        "text": "Cook something genuinely ambitious for one person, and be allowed to fail at it with no witnesses."
+      },
+      {
+        "text": "Sit through the second half of a sport you do not follow, in a stadium, with nobody explaining the rules to you."
+      },
+      {
+        "text": "Re-read the book that made you the person you are, slowly, and notice which bits you had quietly rewritten in memory."
+      }
+    ]
+  }
+}

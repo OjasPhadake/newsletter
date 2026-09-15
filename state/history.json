@@ -2117,6 +2117,145 @@
         "sci.news",
         "tribuneindia.com"
       ]
+    },
+    {
+      "date": "2026-09-16",
+      "issue": 1,
+      "quote_text": [
+        "Thank you for sending me a copy of your book. I'll waste no time reading it."
+      ],
+      "quote_author": [
+        "Moses Hadas"
+      ],
+      "idea_text": [
+        "Go to the cinema on a weekday afternoon. Nobody to check on, nobody's reaction to manage, and the film gets your whole attention for the first time in years.",
+        "Eat at a restaurant good enough that you would normally save it for an occasion, with a book, at the bar.",
+        "Take a long train journey with an unreserved window seat and no plan for the other end.",
+        "Walk a city at 6am. Every city is a different city at 6am, and the version you share with other people is the loud one.",
+        "Drive a scenic route with no destination and permission to turn around whenever you want.",
+        "Go to a live gig by a band you have never heard, chosen purely because the poster was interesting.",
+        "Spend an afternoon in a museum's least popular wing. Ceramics, coins, agricultural implements — empty rooms, better labels, no queue for anything.",
+        "Cook something genuinely ambitious for one person, and be allowed to fail at it with no witnesses.",
+        "Sit through the second half of a sport you do not follow, in a stadium, with nobody explaining the rules to you.",
+        "Re-read the book that made you the person you are, slowly, and notice which bits you had quietly rewritten in memory."
+      ],
+      "idea_prompt": [
+        "Ten things worth doing alone"
+      ],
+      "hn_id": [
+        "49711544",
+        "49708431",
+        "49694296",
+        "49710883",
+        "49700661"
+      ],
+      "link": [
+        "https://github.com/arnegiacomo/fugleramme",
+        "https://notnottalmud.substack.com/p/why-i-cant-stop-thinking-about-papua",
+        "https://xcancel.com/#",
+        "https://www.schneier.com/blog/archives/2026/09/25-years-of-mass-surveillance-is-enough.html",
+        "https://store.steampowered.com/hardware/steamframe",
+        "https://www.businesstoday.in/markets/ipo-corner/story/nse-ipo-to-take-2026-ipo-fundraising-past-rs-1-lakh-crore-3rd-year-in-a-row-4th-overall-554779-2026-09-11",
+        "https://www.helpnetsecurity.com/2026/07/02/cloudflare-ai-crawler-controls/",
+        "https://scitechdaily.com/textbooks-may-need-rewriting-after-researchers-debunk-a-core-chemistry-concept/",
+        "https://www.adweek.com/creativity/snickers-says-even-your-ai-chatbot-isnt-itself-when-its-hungry/",
+        "https://www.confectionerynews.com/Article/2026/08/18/cadbury-and-mcobeauty-launch-chocolate-and-cosmetics-range/",
+        "https://blog.dossier.co/dossier-news/the-world-is-enchante-introducing-the-new-polly-pocket-fragrance-collection/",
+        "https://research.google/blog/bypassing-inference-bottlenecks-accelerating-complex-ai-search-with-retrieve-for-train/",
+        "https://arxiv.org/abs/2609.01815",
+        "https://hdfcsky.com/news/market-close-report-today-september-15-2026-sensex-nifty-crash-as-oil-and-yields-drag-stocks-overpowering-gains-in-it",
+        "https://tapetide.com/fii-dii-data"
+      ],
+      "subject": [
+        "India's 2026 IPO fundraising set to cross ₹1 lakh crore for the third consecutive year, with the NSE offer-for-sale of ₹22,568.92 crore opening on 17 September 2026",
+        "Cloudflare's Search / Agent / Training crawler categories take effect as the new default on 15 September 2026, blocking Training and Agent crawlers by default on ad-supported pages",
+        "Cardiff University and University of Newcastle researchers find the inductive effect in neutral molecules does not extend beyond one bond, contradicting nearly a century of organic chemistry teaching, Journal of Chemical Education 2026",
+        "Snickers launches Hungr.AI, a digital candy bar that is actually a copy-and-paste prompt package users feed to a chatbot after a bad answer, created with BBDO, August 2026",
+        "Cadbury Dairy Milk and MCoBeauty swap categories in a cross-category collaboration exclusive to Woolworths Australia, August 2026 — watermelon chocolate block plus a chocolate-bar eyeshadow palette and lip peptide treatment",
+        "Dossier launches a three-scent Polly Pocket fragrance collection on 8 September 2026, with each scent built around a fictional location inside the toy",
+        "Do the slow reasoning once, at training time, and ship a 53.9M-parameter model instead",
+        "Induction and Inquiry via Probabilistic Reasoning over Language and Code",
+        "The history of Indian Standard Time: Bombay Time and Calcutta Time, the 1906 adoption, Bombay's resistance led by Pherozeshah Mehta, the Rajabai Clock Tower and mill workers, and the 1955 capitulation"
+      ],
+      "brand": [
+        "Snickers",
+        "Mars",
+        "BBDO",
+        "Cadbury",
+        "MCoBeauty",
+        "Mondelez",
+        "Woolworths",
+        "Dossier",
+        "Polly Pocket",
+        "Mattel"
+      ],
+      "brand_mention": [
+        "Snickers",
+        "You're",
+        "Cadbury Dairy Milk",
+        "MCoBeauty's Watermelon Glow",
+        "MCoBeauty",
+        "Icons",
+        "Dairy Milk",
+        "Woolworths",
+        "Australia",
+        "Lucy Robinson",
+        "We've",
+        "Katrina Watson",
+        "Mondelez ANZ's",
+        "Berry Daydream",
+        "Polly's Sweets Shop",
+        "Pistachio Swirl",
+        "Milkshake Parlor",
+        "Marshmallow Mood",
+        "Cloud Lounge"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "The secondary market is at a five-month low. The primary market is having its best year but one."
+        ],
+        [
+          "trends",
+          "From yesterday, a crawler has to say what it wants the page for"
+        ],
+        [
+          "trends",
+          "The inductive effect does not travel down the chain, and has not for about a century of textbooks"
+        ],
+        [
+          "wild",
+          "Snickers made a digital candy bar you paste into ChatGPT when it starts talking nonsense"
+        ],
+        [
+          "wild",
+          "Cadbury made a watermelon chocolate block and MCoBeauty made an eyeshadow palette shaped like a chocolate bar"
+        ],
+        [
+          "wild",
+          "A perfume house built three scents out of a 1990s pocket toy's imaginary shops"
+        ],
+        [
+          "research",
+          "Do the slow reasoning once, at training time, and ship a 53.9M-parameter model instead"
+        ],
+        [
+          "research",
+          "Induction and Inquiry via Probabilistic Reasoning over Language and Code"
+        ],
+        [
+          "learn",
+          "Bombay refused to change its clocks for forty-nine years, and the Parsi fire temples still haven't"
+        ]
+      ],
+      "editorial_domains": [
+        "adweek.com",
+        "blog.dossier.co",
+        "businesstoday.in",
+        "confectionerynews.com",
+        "helpnetsecurity.com",
+        "scitechdaily.com"
+      ]
     }
   ]
 }
