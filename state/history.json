@@ -2256,6 +2256,142 @@
         "helpnetsecurity.com",
         "scitechdaily.com"
       ]
+    },
+    {
+      "date": "2026-09-17",
+      "issue": 1,
+      "quote_text": [
+        "If you think this Universe is bad, you should see some of the others."
+      ],
+      "quote_author": [
+        "Philip K. Dick"
+      ],
+      "idea_text": [
+        "A good suitcase, delivered the night before the trip and collected the day you get back.",
+        "A dining table for eight, for the one weekend a year you have people over.",
+        "Power tools by the hour from a locker outside the hardware shop, opened with a code on your phone.",
+        "A camera lens waiting at the airport when you land, and dropped back at the same desk when you leave.",
+        "Wedding clothes for men, tailoring included, returned unwashed.",
+        "A quiet room near the station for two hours, for the call you have nowhere to take.",
+        "Houseplants on a monthly swap, so the ones you are slowly killing get taken away and replaced.",
+        "A boot's worth of camping gear, packed by somebody who has actually camped.",
+        "A second monitor and a decent chair for the month you are working from your parents' house.",
+        "A dog for a Sunday — vetted, insured, and returned tired."
+      ],
+      "idea_prompt": [
+        "Ten things that should be rentable but aren't"
+      ],
+      "hn_id": [
+        "49717558",
+        "49716176",
+        "49724141",
+        "49710253",
+        "49723408"
+      ],
+      "link": [
+        "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+        "https://blog.archive.org/2026/09/15/an-update-on-wayback-machine-access/",
+        "https://www.bbc.com/news/articles/cjwyzrr9d3dko",
+        "https://www.bbc.com/news/articles/c8ly49w9g1edo",
+        "https://mistral.ai/news/mistral-x-mozilla/",
+        "https://www.business-standard.com/finance/news/npci-sets-0-4-fee-on-upi-merchant-payments-above-2-000-effective-oct-15-126091501061_1.html",
+        "https://security.apple.com/blog/apple-reference-image/",
+        "https://www.sci.news/space/exeter-space-weather-train-delay-15072.html",
+        "https://wwd.com/business-news/marketing-promotion/duolingo-phonetic-fashion-nyfw-pop-up-1239198929/",
+        "https://3dprintingindustry.com/news/uk-charity-launches-free-3d-printed-tactile-ultrasounds-for-blind-parents-254682/",
+        "https://www.adweek.com/creativity/goodwipes-uses-ai-spoof-openai-astra-ad/",
+        "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents",
+        "https://arxiv.org/abs/2609.11261",
+        "https://www.business-standard.com/markets/news/stock-market-live-september-16-nse-bse-sensex-today-nifty-gift-nifty-crude-oil-price-today-kanohar-electricals-ipo-listing-126091600091_1.html",
+        "https://www.deccanherald.com/business/rupee-loses-7-paise-to-settle-at-9595-against-us-dollar-4148103"
+      ],
+      "subject": [
+        "NPCI introduces a 0.4% merchant discount rate on UPI person-to-merchant transactions above Rs 2,000 from 15 October 2026",
+        "Apple Reference Image: iPhone 18 Pro cryptographically signs raw sensor output at capture to prove a photo is real",
+        "Lancaster University study re-dates the 1841 Exeter telegraph space-weather train delay to 1848",
+        "Duolingo launches a Phonetic Fashion capsule collection and NYFW pop-up with designer Megan O'Cain",
+        "Guide Dogs UK launches First Hello, free 3D-printed tactile sonograms for expectant parents with sight loss",
+        "Goodwipes releases Asstra, an AI-generated parody of OpenAI's Astra advertisement",
+        "A model on a cyber evaluation was accidentally given the real internet, and did not believe it",
+        "INDRA: A New AI Tool for Exploring Tobacco, Fossil Fuel, and Chemical Industry Archives",
+        "TV pickup: synchronised UK electricity demand surges after popular programmes, and pumped storage at Dinorwig"
+      ],
+      "brand": [
+        "Duolingo",
+        "Guide Dogs",
+        "Goodwipes"
+      ],
+      "brand_mention": [
+        "Megan O'Cain",
+        "Fashion",
+        "Phonetic Fashion",
+        "York Fashion Week",
+        "MESS",
+        "SHEE Jacquemus",
+        "MOOS",
+        "Moschino",
+        "SKEE-noh",
+        "Loewe",
+        "EH-vey",
+        "Null Object",
+        "Duolingo",
+        "Guide Dogs",
+        "JPG",
+        "PNG",
+        "MB",
+        "D",
+        "Hope",
+        "Glory",
+        "Asstra",
+        "OK Future",
+        "Frank Cartagena's"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "UPI gets its first fee since 2020, and consumers are not the ones paying it"
+        ],
+        [
+          "trends",
+          "Apple is signing photographs inside the camera sensor, before the image exists"
+        ],
+        [
+          "trends",
+          "The first train ever delayed by the Sun was delayed seven years after the record says"
+        ],
+        [
+          "wild",
+          "Duolingo made clothes that spell out how to pronounce the labels you cannot pronounce"
+        ],
+        [
+          "wild",
+          "Guide Dogs is 3D-printing 20-week ultrasound scans so blind parents can feel the baby"
+        ],
+        [
+          "wild",
+          "A wet-wipe brand spent four days making an AI ad about people using AI on the toilet"
+        ],
+        [
+          "research",
+          "A model on a cyber evaluation was accidentally given the real internet, and did not believe it"
+        ],
+        [
+          "research",
+          "INDRA: A New AI Tool for Exploring Tobacco, Fossil Fuel, and Chemical Industry Archives"
+        ],
+        [
+          "learn",
+          "The British electricity grid employs people to watch soap operas, because the country boils the kettle in unison"
+        ]
+      ],
+      "editorial_domains": [
+        "3dprintingindustry.com",
+        "adweek.com",
+        "business-standard.com",
+        "sci.news",
+        "security.apple.com",
+        "wwd.com"
+      ]
     }
   ]
 }
