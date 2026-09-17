@@ -2392,6 +2392,145 @@
         "security.apple.com",
         "wwd.com"
       ]
+    },
+    {
+      "date": "2026-09-18",
+      "issue": 1,
+      "quote_text": [
+        "He who fears he shall suffer, already suffers what he fears."
+      ],
+      "quote_author": [
+        "Michel de Montaigne"
+      ],
+      "idea_text": [
+        "A shed of tools everyone owns together, with a list on the door of who borrowed the ladder.",
+        "One noticeboard that is actually maintained, so the plumber recommendation is nine days old rather than nine years.",
+        "A covered place to wait that is not a shop doorway, with somewhere to put a bag down.",
+        "A shaded walking route to the nearest school and station, chosen deliberately and planted for.",
+        "A repair evening once a month, where whoever can fix a kettle sits at a table and does.",
+        "A public tap and a bowl for dogs, which is the cheapest infrastructure ever invented.",
+        "A room you can book for two hours for ₹100 — for a class, a meeting, a birthday, a fight with the builder.",
+        "A single phone number for the things nobody knows who to call: the streetlight, the open drain, the dead tree.",
+        "A map by the entrance showing the scenic way out, not the fast one.",
+        "One bench facing the street rather than the park, for people who came outside to watch other people."
+      ],
+      "idea_prompt": [
+        "Ten things every neighbourhood should have but most don't"
+      ],
+      "hn_id": [
+        "49724881",
+        "49731285",
+        "49729000",
+        "49726586",
+        "49732270"
+      ],
+      "link": [
+        "https://developer.nvidia.com/blog/introducing-cuda-rust-two-tracks-for-writing-gpu-kernels/",
+        "https://rohanbansal.com/qorl",
+        "https://will-keleher.com/posts/small-programming-tricks-matter/",
+        "https://www.wired.com/story/hackers-flock-camera-data-shows-how-system-works/",
+        "https://mimo.xiaomi.com/rl/",
+        "https://www.pmindia.gov.in/en/news_updates/cabinet-approves-enhancement-of-epfo-wage-ceiling-from-rs-15000-to-rs-25000-per-month/",
+        "https://forkast.news/openais-sponsored-agents-turn-chatgpt-into-an-ad-platform-where-brands-are-the-product/",
+        "https://physics.aps.org/articles/v19/s112",
+        "https://www.creativeboom.com/news/a-billboard-of-signed-school-leavers-shirts-has-appeared-in-london-and-the-messages-arent-what-youd-expect/",
+        "https://soranews24.com/2026/09/12/starbucks-japan-unveils-first-ever-vending-machine-with-an-exclusive-coffee-drink/",
+        "https://stories.hilton.com/releases/hampton-by-hilton-introduces-first-guest-created-waffle-flavor",
+        "https://www.anthropic.com/research/claude-uplifts-biomolecular-modeling",
+        "https://arxiv.org/abs/2609.15989",
+        "https://hdfcsky.com/news/sectoral-snapshot-today-september-17-2026-realty-pharma-lead-gains-banking-stocks-end-lower",
+        "https://www.etvbharat.com/en/business/rupee-vs-dollar-currency-transaction-exchange-rate-enn26091701251"
+      ],
+      "subject": [
+        "Union Cabinet approves raising the EPFO mandatory coverage wage ceiling from Rs 15,000 to Rs 25,000 per month",
+        "OpenAI announces Sponsored Agents, letting advertisers run labelled AI agents inside ChatGPT, with HubSpot and Shopify integrations",
+        "Proposed superfluid helium quantum sensor to measure Earth's frame-dragging in the laboratory",
+        "Everyone's Invited and agency Don't Panic pin real school leavers' shirts carrying testimonies about AI-enabled sexual harm to a London billboard",
+        "Starbucks and Suntory roll out Japan's first Starbucks-only vending machines with a machine-exclusive bottled drink",
+        "Hampton by Hilton serves its first guest-created waffle flavour, a peach cobbler recipe from a competition winner, across 2,500 hotels",
+        "A model spent four weeks rewriting the kernels under open-source biology, and made them about four times faster",
+        "Corrupt Plans, Clean Traces: Evading Chain-of-Thought Monitoring with Plan Injection",
+        "The peak-end rule: Redelmeier and Kahneman's colonoscopy experiments show remembered pain depends on the peak and the ending, not duration"
+      ],
+      "brand": [
+        "Everyone's Invited",
+        "Don't Panic",
+        "Starbucks",
+        "Suntory",
+        "Hampton by Hilton"
+      ],
+      "brand_mention": [
+        "Everyone's Invited",
+        "Don't Panic",
+        "AI-enabled",
+        "I'm",
+        "I",
+        "Call",
+        "Starbucks",
+        "Suntory",
+        "Japan's",
+        "Starbucks-only",
+        "Anytime",
+        "Coffee Signatures Black",
+        "My Retreat Caramel Macchiato",
+        "Hilton",
+        "Guest Waffle Boss",
+        "National Waffle Day",
+        "Kaylee Voight",
+        "Lansing",
+        "Michigan",
+        "Hampton",
+        "Canada",
+        "Belgian",
+        "Michigan Stadium 278",
+        "Hilton Honors"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "The EPF wage ceiling moves to ₹25,000, twelve years after it last moved"
+        ],
+        [
+          "trends",
+          "The ad in ChatGPT is no longer a link. It is a conversation with the brand's own agent."
+        ],
+        [
+          "trends",
+          "Earth twists spacetime as it spins, and you may soon be able to measure it in a second on a bench"
+        ],
+        [
+          "wild",
+          "A London billboard is made of real school leavers' shirts, and the messages on them are about deepfakes"
+        ],
+        [
+          "wild",
+          "Starbucks has spent 55 years refusing to be a vending machine. In Japan, it just became one."
+        ],
+        [
+          "wild",
+          "A hotel chain ran a national competition to find a waffle flavour, and is now serving the winner at 2,500 hotels"
+        ],
+        [
+          "research",
+          "A model spent four weeks rewriting the kernels under open-source biology, and made them about four times faster"
+        ],
+        [
+          "research",
+          "Corrupt Plans, Clean Traces: Evading Chain-of-Thought Monitoring with Plan Injection"
+        ],
+        [
+          "learn",
+          "A longer, more painful colonoscopy is remembered as the better one, and 682 patients proved it"
+        ]
+      ],
+      "editorial_domains": [
+        "creativeboom.com",
+        "forkast.news",
+        "physics.aps.org",
+        "pmindia.gov.in",
+        "soranews24.com",
+        "stories.hilton.com"
+      ]
     }
   ]
 }
