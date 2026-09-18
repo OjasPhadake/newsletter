@@ -47,6 +47,7 @@ COOLDOWN_DAYS = {
     "quote_author": 90,
     "idea_text":    None,   # nor is an idea
     "idea_prompt":  120,
+    "tip_text":     None,   # nor an agent-craft tip
     "hn_id":        None,
     "link":         45,
     "subject":      None,   # what a story was about, however it was worded
@@ -102,6 +103,8 @@ def harvest(ed):
     def idea_text(it):
         return it if isinstance(it, str) else it.get("text")
 
+    tips = (ed.get("agent_craft") or {}).get("items") or []
+
     links = []
     for s in ed.get("hn") or []:
         links.append(s.get("url"))
@@ -135,6 +138,7 @@ def harvest(ed):
         "quote_author": [q.get("author")] if q.get("author") else [],
         "idea_text":    [idea_text(i) for i in items if idea_text(i)],
         "idea_prompt":  [ideas["prompt"]] if ideas.get("prompt") else [],
+        "tip_text":     [t.get("text") for t in tips if t.get("text")],
         "hn_id":        [re.sub(r".*id=", "", s.get("hn_url", ""))
                          for s in ed.get("hn") or [] if s.get("hn_url")],
         "link":         [u for u in links if u],
@@ -262,6 +266,12 @@ def cmd_brief(args):
     print(f"\n── IDEAS PROMPTS (last {COOLDOWN_DAYS['idea_prompt']}d, blocked) " + "─" * 15)
     for v, when in recent("idea_prompt", COOLDOWN_DAYS["idea_prompt"]):
         print(f"  {when}  {v}")
+
+    print("\n── AGENT-CRAFT TIPS ALREADY USED (ever, blocked) " + "─" * 12)
+    tips = recent("tip_text", None)
+    print(f"  {len(tips)} on record" if tips else "  (none)")
+    for v, when in tips[:15]:
+        print(f"  {when}  {str(v)[:100]}")
 
     print("\n── LEARN, MOST RECENT FIRST " + "─" * 33)
     print("Rotate the flavour: everyday systems / origin stories / science of")

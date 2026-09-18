@@ -55,10 +55,17 @@ repo    = "https://github.com/OjasPhadake/newsletter"
 #   title  — the section heading
 #   accent — amber, pine, indigo, plum, clay, moss or iris
 #   render — how to lay it out: hn, markets, stories, stories_title,
-#            learn or ideas. `stories` is the general-purpose one.
+#            learn, ideas or tips. `stories` is the general-purpose one.
 #   brief  — the heading of this section's editorial brief in PROMPT.md.
 #            Adding a section means adding its brief there too; without one
 #            the agent has nothing to go on.
+
+[[sections]]
+key = "agent_craft"
+title = "Agent Craft"
+accent = "iris"
+render = "tips"
+brief = "The agent-craft brief"
 
 [[sections]]
 key = "hn"

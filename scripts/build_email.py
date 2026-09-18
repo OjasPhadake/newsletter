@@ -292,6 +292,28 @@ def render_learn(x, accent):
 {body}{chips}</div></td></tr>"""
 
 
+def render_tips(x, accent):
+    """One or two short, source-linked ways to get more out of an agent.
+
+    Deliberately the lightest layout in the file: a numeral, one line of text,
+    an optional one-line source. No bullets, no card, no room to sprawl — the
+    brief caps this section at two items for a reason.
+    """
+    rows = []
+    for i, it in enumerate(x.get("items") or [], 1):
+        source = (f'<div class="sub fnt" style="padding:4px 0 0 0">{e(it["source"])}</div>'
+                  if it.get("source") else "")
+        link = links([("Source", it.get("url"))], accent) if it.get("url") else ""
+        rows.append(
+            f'<tr><td class="inum {accent}" style="width:34px;vertical-align:top;'
+            f'padding:14px 8px 0 0;text-align:right">{i}</td>'
+            f'<td style="padding:14px 0 0 0">'
+            f'<div class="itxt ink">{e(it.get("text"))}</div>{source}{link}</td></tr>')
+    return (f'<tr><td style="padding:0 0 6px 0">'
+            f'<table role="presentation" cellpadding="0" cellspacing="0" border="0"'
+            f' style="width:100%">{"".join(rows)}</table></td></tr>')
+
+
 def render_ideas(x, accent):
     """The Altucher drill: ten ideas against one prompt, every morning.
 
@@ -332,6 +354,7 @@ RENDERERS = {
     "stories_title": lambda v, a: render_stories(v, a, "title"),
     "learn":         render_learn,
     "ideas":         render_ideas,
+    "tips":          render_tips,
 }
 
 

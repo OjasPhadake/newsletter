@@ -70,6 +70,7 @@ python3 scripts/fetch_ideas.py                     > /tmp/ideas.json
 | Section | Source | What to get |
 |---|---|---|
 | **Quote** | Goodreads | See the quote brief. |
+| **Agent Craft** | WebSearch | See the agent-craft brief. |
 | **Hacker News** | `fetch_hn.py` | See the Hacker News brief. |
 | **Markets** | WebSearch + WebFetch | See the markets brief. |
 | **Trends** | WebSearch / Google News | See the trends brief. |
@@ -112,6 +113,50 @@ platform/industry shift, one wildcard. Real source links, fetched and read.
 The wildcard is the one that earns the section. It is not a third tech story;
 it is the physics result, the archaeology, the thing from a field nobody in the
 first two items works in.
+
+### The agent-craft brief
+
+The reader codes with Claude Code daily and wants to get sharper at it — not
+another AI news item, a *technique*. One or two lines they read once, get
+immediately, and use that same day.
+
+**One item most days. Two only if both are genuinely tight.** This section
+fails the moment it reads like homework — if you are still explaining a tip
+in its fourth line, cut it or cut it entirely.
+
+What counts:
+
+- A concrete prompting or workflow move: how to phrase a plan-first prompt,
+  a short adversarial-code-review prompt, how to scope a subagent, how to
+  keep context lean over a long session, a CLAUDE.md pattern, a slash-command
+  or hook trick.
+- Not: general LLM news, a model release, a benchmark result, an opinion
+  piece about AI. That belongs in Hacker News or Trends, not here.
+
+Where to find one:
+
+- **x.com cannot be fetched** (login-walled, JS-rendered — same limit as the
+  research brief), so do not claim to have read a tweet. Instead WebSearch
+  for practitioner write-ups that discuss or quote what is circulating:
+  Anthropic's own Claude Code changelog and engineering blog, Simon Willison's
+  blog, and similar hands-on write-ups that name a real technique.
+  Site-restricted searches like `site:simonwillison.net claude code` or
+  `Anthropic "Claude Code" tips` tend to surface exactly this.
+  A search-result snippet that names and quotes a real tip is a legitimate
+  source — read the actual page before writing the item, same as anywhere
+  else in this newsletter; never invent one because search came up thin.
+- **Prefer a named source you can link**: a person (their site or a real
+  post you fetched) or a publication (Anthropic's changelog, a lab's
+  engineering blog). If nothing from the last few weeks is genuinely new and
+  well-sourced, omit the section for the day — a manufactured tip or a
+  restated obvious one ("write clear prompts") is worse than skipping it.
+
+Format: `text` is the tip itself, one or two sentences, written as an
+instruction the reader can act on ("Ask for a plan before code, then review
+the plan, not just the diff" beats "Planning first is a good practice").
+`source` names who said it. `url` links it — omit only if truly unlinkable.
+
+Never reuse a tip. `history.py brief` lists the ones already sent.
 
 ### The quote brief
 

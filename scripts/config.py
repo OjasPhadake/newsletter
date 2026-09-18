@@ -41,6 +41,8 @@ DEFAULTS = {
         "repo": "https://github.com/OjasPhadake/newsletter",
     },
     "sections": [
+        {"key": "agent_craft", "title": "Agent Craft", "accent": "iris",
+         "render": "tips", "brief": "The agent-craft brief"},
         {"key": "hn", "title": "Hacker News · Last 24 Hours", "accent": "pine",
          "render": "hn", "brief": "The Hacker News brief"},
         {"key": "markets", "title": "Markets · India & World", "accent": "indigo",
@@ -59,7 +61,7 @@ DEFAULTS = {
 }
 
 # Renderers build_email.py knows about, and accents every template defines.
-RENDERERS = {"hn", "markets", "stories", "stories_title", "learn", "ideas"}
+RENDERERS = {"hn", "markets", "stories", "stories_title", "learn", "ideas", "tips"}
 ACCENTS = {"amber", "pine", "indigo", "plum", "clay", "moss", "iris"}
 
 # The look. Every key has a default here, so a template file only has to say
