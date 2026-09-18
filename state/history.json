@@ -2531,6 +2531,173 @@
         "soranews24.com",
         "stories.hilton.com"
       ]
+    },
+    {
+      "date": "2026-09-19",
+      "issue": 1,
+      "quote_text": [
+        "If your experiment needs a statistician, you need a better experiment."
+      ],
+      "quote_author": [
+        "Ernest Rutherford"
+      ],
+      "idea_text": [
+        "A phone case with a stiff clasp, so unlocking it is a decision rather than a reflex.",
+        "A 'send in the morning' button that quietly replaces 'send' in every app between midnight and six.",
+        "A breathalyser built into the keyboard, so the laptop only types once you blow a clean zero.",
+        "A checkout that pauses thirty seconds on anything over ₹5,000, showing the item and nothing else.",
+        "A basket that tells you what the same money bought you last month.",
+        "A reply box that makes you retype an angry message once before it will send it.",
+        "A subscription list that messages you on each renewal's anniversary and asks whether you used it this year.",
+        "An alarm that only stops once the phone is plugged in on the other side of the room.",
+        "A group chat that holds anything sent between 1am and 5am until lunchtime, and lets you take it back.",
+        "A 'leave the party' alarm you set on arrival, while you still have an opinion about when to go home."
+      ],
+      "idea_prompt": [
+        "Ten ways to stop yourself doing something you'll regret"
+      ],
+      "tip_text": [
+        "Pick your model and effort level in a fresh session, before you type the first instruction. Changing either mid-conversation invalidates the prompt cache, so you pay full price to re-read everything said up to that point.",
+        "@-mention a file rather than describing where it is. Naming it makes the agent spend a search and a read finding it; @-mentioning attaches it outright — and once per conversation is enough, because it stays in context after that."
+      ],
+      "hn_id": [
+        "49752056",
+        "49753211",
+        "49743097",
+        "49746163",
+        "49745940"
+      ],
+      "link": [
+        "https://techcrunch.com/2026/09/17/microsoft-exec-called-ai-scraping-the-largest-theft-of-labor-in-human-history-new-unredacted-filings-reveal/",
+        "https://hawksley.dev/blog/i-dont-like-passkeys",
+        "https://github.com/asciimoo/hister",
+        "https://bend-lang.com/",
+        "https://openai.com/index/astra-for-law/",
+        "https://www.tribuneindia.com/news/business/trai-introduces-termination-charge-of-up-to-5-paise-per-minute-on-a2p-calls-to-curb-spam",
+        "https://www.engadget.com/2260280/google-home-is-going-agentic-via-integration-with-the-mcp-standard/",
+        "https://www.sci.news/space/mcgetchin-crater-15076.html",
+        "https://www.netinfluencer.com/dr-squatch-and-ishowspeed-launch-1m-usd-fan-contest-across-four-countries/",
+        "https://foodfoundation.org.uk/press-release/michelin-star-chef-and-food-activists-serve-ultimate-school-food-standards-stunt-star",
+        "https://www.beveragedaily.com/Article/2026/08/28/new-beer-launches-hit-the-shelves-in-npd-roundup/",
+        "https://research.google/blog/millemiglia-a-realistic-instance-generator-for-middle-mile-logistics/",
+        "https://arxiv.org/abs/2609.14988",
+        "https://blog.liquide.life/share-market-today-nifty-gains-marginally-metal-realty-lead-gains-it-stocks-under-pressure/",
+        "https://www.dtnext.in/news/business/rupee-closes-unchanged-at-9589-against-us-dollar"
+      ],
+      "subject": [
+        "TRAI issues the Telecom Commercial Communications Customer Preference Third Amendment Regulations 2026, defining application-to-person calls and setting a termination charge on them",
+        "Google launches Home MCP early access, letting third-party AI agents including Claude read and control Google Home devices",
+        "McGetchin crater, the largest newly formed impact crater ever found in the Solar System, identified on the Moon from LRO imagery",
+        "Dr. Squatch and IShowSpeed run SPEEDRUN: Million Dollar Mission, hiding briefcases of cash across four countries with Walmart stores as gameplay hubs",
+        "The School Food Project opens Centena, a fake Covent Garden pop-up fronted by Angela Hartnett, and serves guests real school meals",
+        "Battle Brewery brews Bayeux Lager for the British Museum's Bayeux Tapestry exhibition",
+        "Every logistics network is a trade secret, so Google built a machine that invents realistic ones",
+        "Biomedical Reference Generation Remains Unreliable across 26 Large Language Models",
+        "Sylvan Goldman's 1937 shopping cart was rejected by shoppers until he hired models to push them around his stores"
+      ],
+      "brand": [
+        "Dr. Squatch",
+        "IShowSpeed",
+        "Walmart",
+        "MSCHF",
+        "The School Food Project",
+        "Angela Hartnett",
+        "BBH London",
+        "Chefs in Schools",
+        "The Food Foundation",
+        "Diners",
+        "Battle Brewery",
+        "British Museum",
+        "Battle"
+      ],
+      "brand_mention": [
+        "Million Dollar Mission",
+        "Canada",
+        "Australia",
+        "Dr Squatch",
+        "Walmart",
+        "QR",
+        "Speed Instead",
+        "Built",
+        "Applied MSCHF",
+        "Kyle Beiermeister",
+        "Echobend Productions",
+        "Centena",
+        "Covent Garden",
+        "Angela Hartnett's",
+        "Chefs",
+        "Schools",
+        "Hugh Fearnley-Whittingstall",
+        "Prue Leith",
+        "Thomasina Miers",
+        "Alexander Armstrong",
+        "Dr Ranj",
+        "Olympians Laviai",
+        "Lina Nielson",
+        "Bite Back",
+        "Jamie Oliver Group",
+        "School Food Matters",
+        "Food Foundation",
+        "BBH",
+        "Battle Brewery",
+        "Battle",
+        "Sussex",
+        "Bayeux Lager",
+        "Museum",
+        "Bayeux Tapestry",
+        "Pilsner-style",
+        "Saaz",
+        "Tettnang",
+        "Mittelfrüh",
+        "Pilsner",
+        "Owner Darren Edmonstone"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "India has now written the robocall into law, and put a price on every minute of it"
+        ],
+        [
+          "trends",
+          "Google has opened the house to any agent that speaks MCP, and it is not just Gemini any more"
+        ],
+        [
+          "trends",
+          "A 222-metre crater appeared on the Moon and nobody noticed for a year and a half"
+        ],
+        [
+          "wild",
+          "A soap brand buried a million dollars across four countries and told a streamer's fans to go and dig"
+        ],
+        [
+          "wild",
+          "Diners booked a Michelin-starred chef's new restaurant and were served a school lunch"
+        ],
+        [
+          "wild",
+          "A brewery in Battle made a lager for the Bayeux Tapestry, which is arguably its home fixture"
+        ],
+        [
+          "research",
+          "Every logistics network is a trade secret, so Google built a machine that invents realistic ones"
+        ],
+        [
+          "research",
+          "Biomedical Reference Generation Remains Unreliable across 26 Large Language Models"
+        ],
+        [
+          "learn",
+          "The shopping trolley failed on its first day, and had to be rescued by actors"
+        ]
+      ],
+      "editorial_domains": [
+        "beveragedaily.com",
+        "engadget.com",
+        "foodfoundation.org.uk",
+        "netinfluencer.com",
+        "sci.news",
+        "tribuneindia.com"
+      ]
     }
   ]
 }

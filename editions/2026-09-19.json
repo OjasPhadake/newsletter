@@ -1,0 +1,332 @@
+{
+  "date_line": "Saturday, 19 September 2026",
+  "issue": 1,
+  "preheader": "A Microsoft memo called AI scraping the largest theft of labour in human history; TRAI writes the robocall into Indian law and puts a price on it; a 222-metre crater appeared on the Moon and nobody noticed for a year; and why nobody would touch the first shopping trolley.",
+  "quote": {
+    "text": "If your experiment needs a statistician, you need a better experiment.",
+    "author": "Ernest Rutherford",
+    "source_url": "https://www.goodreads.com/quotes/681906-if-your-experiment-needs-a-statistician-you-need-a-better",
+    "note": "Rutherford is being unfair on purpose, and the unfairness is the useful part. Statistics is the machinery for pulling a signal out of noise you could not otherwise beat — so the amount of it you need is a measurement of your experiment, not of your statistician."
+  },
+  "agent_craft": {
+    "items": [
+      {
+        "text": "Pick your model and effort level in a fresh session, before you type the first instruction. Changing either mid-conversation invalidates the prompt cache, so you pay full price to re-read everything said up to that point.",
+        "source": "Lydia Hallie, Anthropic — 'Maximizing the value of your Claude Code sessions'",
+        "url": "https://claude.com/blog/maximizing-the-value-of-your-claude-code-sessions"
+      },
+      {
+        "text": "@-mention a file rather than describing where it is. Naming it makes the agent spend a search and a read finding it; @-mentioning attaches it outright — and once per conversation is enough, because it stays in context after that.",
+        "source": "Lydia Hallie, Anthropic — same piece",
+        "url": "https://claude.com/blog/maximizing-the-value-of-your-claude-code-sessions"
+      }
+    ]
+  },
+  "hn": [
+    {
+      "title": "Microsoft exec called AI scraping 'the largest theft of labor in human history'",
+      "url": "https://techcrunch.com/2026/09/17/microsoft-exec-called-ai-scraping-the-largest-theft-of-labor-in-human-history-new-unredacted-filings-reveal/",
+      "hn_url": "https://news.ycombinator.com/item?id=49752056",
+      "points": 840,
+      "comments": 745,
+      "bullets": [
+        "Newly unredacted filings in the New York Times' copyright suit against OpenAI and Microsoft — filed December 2023, still running — put the companies' own internal language on the record. The line in the headline is from Brent Hecht, Microsoft's director of applied science, in a January 2023 memo that also called scraping 'an astonishing theft of unprecedented proportions'.",
+        "Satya Nadella's deposition is the more consequential document. He testified that 'anything that is paywalled should be licensed by anyone who wants to use it… for grounding or training', and said that had he known OpenAI was scraping paywalled content he would have required the models to be retrained.",
+        "OpenAI's own side is quoted too. Nick Turley, who runs ChatGPT, wrote internally that publishers face an 'existential threat' from products that are 'largely substitutive'. Greg Brockman's reply to a colleague describing a 'hack to get around nytimes paywall' was 'ah nice'.",
+        "The scale numbers: mid-training datasets held over 91,692 copies of work from the Times, the Daily News and the Center for Investigative Reporting; a Common Crawl-derived set held over 2 million documents from nytimes.com; 'Project Mango' held more than 160,903 unique works from news publishers. Copyright notices were stripped before training.",
+        "The market-harm figure is the one that bites, because substitution is the part of fair use that is hardest to argue past: click-through rates to the Times' domain fell as much as 93% under Copilot compared with ordinary Bing search."
+      ]
+    },
+    {
+      "title": "I don't like passkeys",
+      "url": "https://hawksley.dev/blog/i-dont-like-passkeys",
+      "hn_url": "https://news.ycombinator.com/item?id=49753211",
+      "points": 703,
+      "comments": 697,
+      "bullets": [
+        "The argument is not that passkeys are insecure. It is that the recovery story is worse than the thing they replace, and that the ecosystem around them is still too immature to bet an identity on.",
+        "Hardware keys cannot be backed up — only added and deleted — so you need two or three per site, at real cost. Discoverable credentials are capped at roughly 25–100 accounts per key, with the top models reaching about 300, so past a certain number of accounts you are buying more hardware.",
+        "Platform passkeys move the failure mode rather than removing it: if Apple or Google bans your account, you irreversibly lose access to every passkey you used across every third-party service.",
+        "Export and third-party password-manager support are described as 'fragmented and inconsistent', with native app autofill the worst of it. Hybrid Transport — the QR-code-plus-Bluetooth flow you use to sign in on someone else's machine — is 'plagued with edge-cases where connections fail'.",
+        "The author's recommendation for an individual is unglamorous and specific: randomly generated passwords in a third-party manager, paired with an independent TOTP app. Flexibility now, no lockout later."
+      ]
+    },
+    {
+      "title": "Hister: A private search engine for the pages you visit and the files you keep",
+      "url": "https://github.com/asciimoo/hister",
+      "hn_url": "https://news.ycombinator.com/item?id=49743097",
+      "points": 691,
+      "comments": 188,
+      "bullets": [
+        "Hister indexes the full text of pages you have actually visited and files you actually keep, and then lets you search them the way you would search the web. The premise is that your own browsing history is the corpus you most want and least often get to query.",
+        "It ships as a Go binary (1.26+, plus npm and a C compiler for the CGO dependencies) with a backend server, a web UI, Firefox and Chrome extensions, a terminal client and an MCP server so an agent can query it too.",
+        "Search supports field filters, phrases, wildcards, negation, aliases and result priorities. Semantic search is optional and off by default — it is the one feature that sends anything to an external embeddings endpoint.",
+        "It can import existing browser history, crawl sites and index local directories. Documents and indexes stay on your own server; the project states no telemetry and no mandatory cloud service.",
+        "AGPLv3 or later, 4.9k stars, active development, with community channels on IRCnet and Discord."
+      ]
+    },
+    {
+      "title": "Bend – a language that blocks AI mistakes via proof and runs on GPUs",
+      "url": "https://bend-lang.com/",
+      "hn_url": "https://news.ycombinator.com/item?id=49746163",
+      "points": 588,
+      "comments": 302,
+      "bullets": [
+        "Bend's pitch is four things at once: 'C speed · CUDA parallelism · Lean proofs · Python syntax'. The interesting claim is the third one, and it is aimed squarely at agent-written code.",
+        "You write a LAWS.bend file declaring invariants that must never break, and a PROOF.bend that establishes them. Code cannot merge unless the laws still hold, which the site states as 'merging a bug is mathematically impossible: it is a theorem'. Their example is a game whose law is that winning is impossible — no agent-suggested change that would let you win can get in.",
+        "The type system is affine dependent type theory, described in the BendTT paper. The site claims type checking takes 'a second at most'.",
+        "The runtime, BendRT, compiles to native code that runs nearly as fast as C on one core, and the same binary spreads across CPU cores and GPUs with no explicit threading or locks — a demo shows pow2 running across 4,096 GPU cores.",
+        "It is honest about its age: young, evolving, bugs expected, no version number on the page. Source is at github.com/bendlang/bend."
+      ]
+    },
+    {
+      "title": "Astra for Law",
+      "url": "https://openai.com/index/astra-for-law/",
+      "hn_url": "https://news.ycombinator.com/item?id=49745940",
+      "points": 566,
+      "comments": 667,
+      "bullets": [
+        "Not a new model. Astra for Law is GPT-6 Astra wrapped in a legal search index and a set of instructions for legal analysis, announced 17 September. (OpenAI's own page blocks automated readers; the details here come from SiliconANGLE's write-up, linked in the section.)",
+        "The index is the product: US case law, statutes, regulations, court rules and administrative decisions across more than 230 million URLs, updated daily, with case law supplied by the non-profit Free Law Project's CourtListener database.",
+        "On 200 questions from the private validation set of Vals AI's Legal Research Bench, it passed the overall correctness check 54% of the time, against 38.7% for GPT-6 Astra with plain web search — both at highest reasoning effort. It also found 24% more reference cases and up to 54% more target passages from the correct opinions.",
+        "Access is a Trusted Access programme inside ChatGPT and Codex, where it appears as GPT-6 Astra Law. An API version, gpt-6-astra-law, is promised later with no date and no price; Harvey and Legora are named as API customers, and Latham & Watkins, Sullivan & Cromwell, Ropes & Gray and Cooley as early firms. Twenty-six partner plugins launch alongside it, into Relativity, Clio, iManage and DeepJudge.",
+        "The Hacker News thread is almost entirely lawyers, and it is notably unexcited. The top comment is a firm that went from 2–3 documents an hour to 8–10 by having a model turn PDFs into JSON — with attorneys still reading every output. The consensus is that the win is data entry, not analysis."
+      ]
+    }
+  ],
+  "markets": {
+    "indices": [
+      {
+        "name": "Sensex · Fri 18 Sep close",
+        "value": "74,294.96",
+        "change": "19.63  (0.03%) on the day",
+        "direction": "down"
+      },
+      {
+        "name": "Nifty 50 · Fri 18 Sep close",
+        "value": "23,346.40",
+        "change": "75.80  (0.33%) on the day",
+        "direction": "up"
+      },
+      {
+        "name": "Nifty Bank",
+        "value": "56,358.70",
+        "change": "302.95  (0.54%)",
+        "direction": "up"
+      },
+      {
+        "name": "Nifty Metal",
+        "value": "—",
+        "change": "1.51% — the day's best sector",
+        "direction": "up"
+      },
+      {
+        "name": "Nifty IT",
+        "value": "—",
+        "change": "1.03% — the day's worst, dragged by TCS",
+        "direction": "down"
+      },
+      {
+        "name": "USD/INR · Fri 18 Sep close",
+        "value": "95.89",
+        "change": "unchanged on the day (provisional)",
+        "direction": "flat"
+      }
+    ],
+    "stories": [
+      {
+        "headline": "Markets are shut this weekend; these are Friday's numbers",
+        "url": "https://blog.liquide.life/share-market-today-nifty-gains-marginally-metal-realty-lead-gains-it-stocks-under-pressure/",
+        "source": "Liquide market close report — Friday 18 September 2026",
+        "bullets": [
+          "Indian exchanges were closed on Saturday 19 September. The last completed session was Friday 18 September: Sensex 74,294.96, down 19.63 points or 0.03%; Nifty 50 23,346.40, up 75.80 points or 0.33%; Bank Nifty 56,358.70, up 302.95 points or 0.54%.",
+          "The two benchmarks disagreed again, and again it was composition rather than mood. Metal closed 1.51% higher, Realty 1.19%, Energy 1.05%, Financial Services 0.76% and Pharma 0.49%. IT fell 1.03%, Consumer Durables 0.43%, FMCG 0.23% and Auto 0.11%.",
+          "TCS was the single largest drag, down 3.88% as the market read through the Tata Sons dispute. Adani Ports rose 4.93%, Adani Enterprises 3.31% and HDFC Bank 2.52%; Tata Motors PV fell 3.40% and SBI Life 2.03%.",
+          "Breadth was wide: 2,531 advances against 1,452 declines on the NSE, with the Smallcap index up 1.7% and the Midcap index 1.2%. Almost everything outside large-cap IT went up."
+        ]
+      },
+      {
+        "headline": "The rupee did not move at all, which took some doing",
+        "url": "https://www.dtnext.in/news/business/rupee-closes-unchanged-at-9589-against-us-dollar",
+        "source": "DT Next — rupee close, 18 September 2026",
+        "bullets": [
+          "The rupee opened at 95.75, touched an intraday high of 95.71, and settled at 95.89 provisional — exactly its previous close. A flat print after a week of Fed-driven movement is a result, not an absence of one.",
+          "The dollar index sat at 99.97, down 0.02%, two days after the Federal Reserve's quarter-point increase. Traders quoted in the report put the near-term band at 95.65 to 96.15.",
+          "Institutional flows turned. On Friday, FIIs were net buyers of ₹599.50 crore in the cash segment (₹38,461.60 crore bought against ₹37,862.10 crore sold) and DIIs net buyers of ₹1,019.70 crore, per 5paisa's provisional NSE tally.",
+          "That ends the pattern of the previous nine sessions, in which foreign money sold and domestic money absorbed it — FIIs had sold ₹3,208.76 crore net as recently as Thursday."
+        ]
+      }
+    ]
+  },
+  "trends": [
+    {
+      "tag": "India · Telecom",
+      "headline": "India has now written the robocall into law, and put a price on every minute of it",
+      "url": "https://www.tribuneindia.com/news/business/trai-introduces-termination-charge-of-up-to-5-paise-per-minute-on-a2p-calls-to-curb-spam",
+      "subject": "TRAI issues the Telecom Commercial Communications Customer Preference Third Amendment Regulations 2026, defining application-to-person calls and setting a termination charge on them",
+      "subtitle": "TRAI third amendment to TCCCPR 2018, issued 18 September 2026",
+      "bullets": [
+        "TRAI issued the third amendment to the 2018 commercial-communications regulations on 18 September, and it contains India's first legal definition of an application-to-person call: a voice call started by an application, software system or automated platform without direct human dialling, including autodiallers, robocalls and pre-recorded or artificial-voice technology.",
+        "Anyone placing such calls must now pre-declare the fact, and the calling line identities they will use, to their telecom operator. An undeclared A2P call is by definition unsolicited commercial communication, with the existing spam enforcement attached.",
+        "The new lever is economic. The originating operator pays the terminating operator up to 5 paise a minute for A2P traffic — a ceiling, with the actual rate left to commercial negotiation, as TRAI chairman Anil Kumar Lahoti put it. Calls on the designated 1600xx, 1601xx and 140xx series are exempt.",
+        "Detection becomes an obligation rather than an initiative: operators must run AI/ML classification on suspected spam and share flagged identities with each other. Five flagged CLIs from one sender inside ten days triggers graded enforcement — KYC re-verification, physical verification, barring, disconnection — and misused headers or templates must be suspended within six hours. Consumers unhappy with how a complaint was closed now get 15 days to appeal."
+      ]
+    },
+    {
+      "tag": "Platforms · Smart home",
+      "headline": "Google has opened the house to any agent that speaks MCP, and it is not just Gemini any more",
+      "url": "https://www.engadget.com/2260280/google-home-is-going-agentic-via-integration-with-the-mcp-standard/",
+      "subject": "Google launches Home MCP early access, letting third-party AI agents including Claude read and control Google Home devices",
+      "subtitle": "Google Home & Nest announcement, 16 September 2026",
+      "bullets": [
+        "Google has published a Model Context Protocol server for Google Home. Any agent that can call MCP tools — Google named Antigravity, Claude, Hermes and Open Claw — can now read device state and event history across the ecosystem and act on it.",
+        "The capability list is broader than a voice assistant's: analyse and answer questions about activity in the house, summarise camera footage across rooms, manage devices on your behalf, and build a smart-home dashboard by describing it in ordinary language.",
+        "It is gated behind Google Home Premium Advanced — $20 a month or $200 a year — in English, in the US, and setup requires standing up a Google Cloud project and granting MCP permissions. Early access rolls out over the coming weeks.",
+        "Google applies rate limits and blocks sensitive actions; a third-party agent cannot unlock a door. The obvious caveat is that MCP's security model is young — Engadget notes the lack of enforced authentication in the standard and the breaches already logged against it — and this is the first time it has been pointed at the physical fabric of a house."
+      ]
+    },
+    {
+      "tag": "Wildcard · Planetary science",
+      "headline": "A 222-metre crater appeared on the Moon and nobody noticed for a year and a half",
+      "url": "https://www.sci.news/space/mcgetchin-crater-15076.html",
+      "subject": "McGetchin crater, the largest newly formed impact crater ever found in the Solar System, identified on the Moon from LRO imagery",
+      "subtitle": "Two papers in Science Advances, reported 18 September 2026",
+      "bullets": [
+        "Something the size of a three- to six-storey building hit the eastern limb of the Moon between 11 April and 22 May 2024. It left a crater 222 metres across and 43 metres deep, with disturbed ground for about 6 kilometres around it.",
+        "Nobody saw it happen. Robert Wagner, an image-processing specialist at Intuitive Machines, found it on 24 October 2025 during routine analysis, as an unusually large bright spot ringed by a dark halo in lunar maps — the signature of freshly thrown-out material.",
+        "NASA's Lunar Reconnaissance Orbiter went back for close-ups with its narrow-angle camera on 5 December 2025, and the Diviner thermal instrument found a matching heat anomaly. The crater is named McGetchin.",
+        "It is, per the reporting, the biggest newly formed impact crater ever discovered anywhere in the Solar System — meaning the largest one we have both before-and-after pictures of. Two peer-reviewed papers in Science Advances, led by Mark S. Robinson and Tyler M. Powell, describe it."
+      ]
+    }
+  ],
+  "research": [
+    {
+      "tag": "Industry · Google Research",
+      "title": "Every logistics network is a trade secret, so Google built a machine that invents realistic ones",
+      "url": "https://research.google/blog/millemiglia-a-realistic-instance-generator-for-middle-mile-logistics/",
+      "subtitle": "Google Research, 18 September 2026 — Aymane Lotfi and Thibaut Cuvelier",
+      "bullets": [
+        "Middle-mile logistics — moving goods between distribution centres, regionally and across a continent — is where a large share of shipping cost sits, and it is close to invisible in the academic literature. The reason is not lack of interest. As the authors put it, most logistics companies treat their network topologies and demand volumes as highly sensitive proprietary information, so there is nothing public to optimise against.",
+        "MilleMiglia is a C++ instance generator, using Protocol Buffers, that produces synthetic but realistic problems: spatial clustering for where the depots go, gravity models for who ships to whom, and demand distributions with the right shape — without any real company's data in it.",
+        "The generated instances carry the constraints that make the problem hard rather than the ones that make it tidy: fixed vehicle schedules, throughput limits at each distribution centre, and synchronisation between legs. Sizes run from toy problems up to industrial, continent-wide networks, in graded difficulty levels.",
+        "It is open source on GitHub with sample instances. The contribution is not an algorithm — it is the benchmark that lets anyone else's algorithm be compared, which is the thing this field has been missing."
+      ]
+    },
+    {
+      "tag": "Academia · Columbia",
+      "title": "Biomedical Reference Generation Remains Unreliable across 26 Large Language Models",
+      "url": "https://arxiv.org/abs/2609.14988",
+      "subtitle": "Maxim Topaz, Zhihong Zhang, Nir Roguin and colleagues — arXiv, 14 September 2026",
+      "bullets": [
+        "Twenty-six models from eight developers were given 69 biomedical passages across ten domains and asked for the references. Every output was then classified as verifiable, a partial match, fabricated, or declined — which is a narrower and more useful question than 'does it hallucinate'.",
+        "Across all models, 55.4% of responses were fabricated and only 14.9% were correct in every bibliographic field. The spread between models is enormous: fabrication runs from 10.2% at the best to 98.4% at the worst.",
+        "The best result reported is 77.6% verifiable references and 54.6% correct across all fields. Even at the top of the table, roughly one reference in two has something wrong with it.",
+        "The five models released in 2026 do better — 35.3% fabrication and 31.8% fully correct — so the trend is real, but the failure mode has shifted rather than gone. The common error is no longer inventing a paper outright; it is misstating the metadata of a paper that genuinely exists, which is precisely the error a quick glance will not catch."
+      ]
+    }
+  ],
+  "wild": [
+    {
+      "tag": "Soap · Retail",
+      "headline": "A soap brand buried a million dollars across four countries and told a streamer's fans to go and dig",
+      "url": "https://www.netinfluencer.com/dr-squatch-and-ishowspeed-launch-1m-usd-fan-contest-across-four-countries/",
+      "entities": [
+        "Dr. Squatch",
+        "IShowSpeed",
+        "Walmart",
+        "MSCHF"
+      ],
+      "subject": "Dr. Squatch and IShowSpeed run SPEEDRUN: Million Dollar Mission, hiding briefcases of cash across four countries with Walmart stores as gameplay hubs",
+      "bullets": [
+        "SPEEDRUN: Million Dollar Mission runs nine weeks, from the start of September to 31 October, across the US, UK, Canada and Australia, with 25 separate challenges and a $1 million prize pool.",
+        "Every week, briefcases containing a gold bar of Dr. Squatch soap are hidden in selected cities. Each bar is redeemable for a cash prize of up to $50,000. There are also 25 scratch-off tickets worth $10,000 each, and a $250,000 final hunt to close it out.",
+        "More than 4,000 Walmart stores become gameplay hubs: in-store displays carry QR codes that drop shoppers straight into the live leaderboard and that week's mission.",
+        "The brand is explicit that this replaces the ad it would otherwise have made. Its chief brand officer: 'We could have launched a traditional ad campaign with Speed. Instead, we decided to hide a million dollars and ask fans around the world to see if they could find it.' Built with Applied MSCHF, director Kyle Beiermeister and Echobend Productions."
+      ],
+      "link_label": "See it"
+    },
+    {
+      "tag": "Public health · Stunt",
+      "headline": "Diners booked a Michelin-starred chef's new restaurant and were served a school lunch",
+      "url": "https://foodfoundation.org.uk/press-release/michelin-star-chef-and-food-activists-serve-ultimate-school-food-standards-stunt-star",
+      "entities": [
+        "The School Food Project",
+        "Angela Hartnett",
+        "BBH London",
+        "Chefs in Schools",
+        "The Food Foundation"
+      ],
+      "subject": "The School Food Project opens Centena, a fake Covent Garden pop-up fronted by Angela Hartnett, and serves guests real school meals",
+      "bullets": [
+        "On 14 September a pop-up called Centena opened in Covent Garden, billed as Angela Hartnett's new dining experience. Centena is an anagram of canteen, which nobody noticed until afterwards.",
+        "The first course was a processed chicken burger in a stale bun with soggy chips and cold baked beans — a real school meal, served to adults. The second course was what the same budget can produce: curry with rice, flatbread and raita, then fresh fruit with yoghurt, from Chefs in Schools recipes.",
+        "The guests were chosen to make the footage travel: Hugh Fearnley-Whittingstall, Prue Leith, Thomasina Miers, Alexander Armstrong, Dr Ranj, and the Olympians Laviai and Lina Nielson.",
+        "The numbers behind it: fewer than one in ten teenagers eat five a day, 95% of children exceed the recommended free-sugar intake, over a third of eleven-year-olds are overweight or obese, and 80% of teachers say unhealthy lunches cause disruptive behaviour. The coalition — Bite Back, Chefs in Schools, the Jamie Oliver Group, School Food Matters and the Food Foundation, with BBH — wants new school food standards with actual monitoring."
+      ],
+      "link_label": "See it"
+    },
+    {
+      "tag": "Beer · Museums",
+      "headline": "A brewery in Battle made a lager for the Bayeux Tapestry, which is arguably its home fixture",
+      "url": "https://www.beveragedaily.com/Article/2026/08/28/new-beer-launches-hit-the-shelves-in-npd-roundup/",
+      "entities": [
+        "Battle Brewery",
+        "British Museum"
+      ],
+      "subject": "Battle Brewery brews Bayeux Lager for the British Museum's Bayeux Tapestry exhibition",
+      "bullets": [
+        "Battle Brewery — based in Battle, East Sussex, on the site of the 1066 battle the tapestry is about — has made Bayeux Lager for the British Museum, timed to the Bayeux Tapestry exhibition opening on 10 September.",
+        "It is a Pilsner-style lager brewed with Saaz, Tettnang and Mittelfrüh hops on Pilsner and dextrin malts: clean, crisp, low bitterness. The brewery is not attempting an eleventh-century recipe, which is the correct decision.",
+        "The label carries an original illustration in the tapestry's storytelling style, with contemporary details worked in — a 900-year-old comic strip redrawn as packaging.",
+        "It is sold across the museum's food and drink outlets and shops, and in a souvenir gift box. Owner Darren Edmonstone calls it the brewery's biggest collaboration to date."
+      ],
+      "link_label": "See it"
+    }
+  ],
+  "learn": {
+    "title": "The shopping trolley failed on its first day, and had to be rescued by actors",
+    "subject": "Sylvan Goldman's 1937 shopping cart was rejected by shoppers until he hired models to push them around his stores",
+    "body": [
+      "Sylvan Goldman ran the Humpty Dumpty supermarket chain in Oklahoma City, and he had noticed something expensive: people stopped shopping when the basket on their arm got heavy. The fix, built with an employee called Fred Young, was a wire basket mounted on a folding chair frame, with a second basket underneath and castors on each leg. He filed the patent on 4 May 1937 and advertised the debut in the Oklahoma City Times on 4 June: 'Can you imagine wending your way through a spacious food market without having to carry a cumbersome shopping basket on your arm?'",
+      "They could imagine it, and they did not want it. Men refused on the grounds that they were perfectly capable of carrying their own groceries. Women said it was too much like pushing a pram, which they had come to the shop to get away from. The carts sat unused in the entrance. Goldman's response was not to redesign the trolley but to redesign the room: he hired people — attractive men and women, roughly the age of his customers — and paid them to push trolleys up and down the aisles pretending to shop. Real customers, seeing other people doing it, started doing it. Within weeks the carts were in use across every store he owned.",
+      "The rest followed from the size of the basket. Once shoppers could carry more, food companies started selling bigger packs, because customers could now get them to the car. Aisles were widened, checkouts were rebuilt, and the trolley itself was redesigned to nest — Orla Watson's telescoping cart with a swinging rear gate, which Goldman copied in 1947 and settled with him over in 1949. By 1940 grocers were on a seven-year waiting list. There are now somewhere between 20 and 25 million trolleys in American shops, about one for every thirteen people, and the entire edifice rests on a fortnight in 1937 when a man paid strangers to pretend."
+    ]
+  },
+  "ideas": {
+    "prompt": "Ten ways to stop yourself doing something you'll regret",
+    "note": "Altucher's drill: ten ideas a day against one prompt. Today's came out of r/SomebodyMakeThis, where the wish that keeps resurfacing is not for a smarter tool but for a small, cheerful obstacle between you and your own worst two minutes.",
+    "items": [
+      {
+        "text": "A phone case with a stiff clasp, so unlocking it is a decision rather than a reflex."
+      },
+      {
+        "text": "A 'send in the morning' button that quietly replaces 'send' in every app between midnight and six."
+      },
+      {
+        "text": "A breathalyser built into the keyboard, so the laptop only types once you blow a clean zero.",
+        "why": "A recurring ask on r/SomebodyMakeThis, where someone requested exactly this device last week."
+      },
+      {
+        "text": "A checkout that pauses thirty seconds on anything over ₹5,000, showing the item and nothing else."
+      },
+      {
+        "text": "A basket that tells you what the same money bought you last month."
+      },
+      {
+        "text": "A reply box that makes you retype an angry message once before it will send it."
+      },
+      {
+        "text": "A subscription list that messages you on each renewal's anniversary and asks whether you used it this year."
+      },
+      {
+        "text": "An alarm that only stops once the phone is plugged in on the other side of the room."
+      },
+      {
+        "text": "A group chat that holds anything sent between 1am and 5am until lunchtime, and lets you take it back."
+      },
+      {
+        "text": "A 'leave the party' alarm you set on arrival, while you still have an opinion about when to go home."
+      }
+    ]
+  }
+}
