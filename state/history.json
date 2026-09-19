@@ -2698,6 +2698,157 @@
         "sci.news",
         "tribuneindia.com"
       ]
+    },
+    {
+      "date": "2026-09-20",
+      "issue": 1,
+      "quote_text": [
+        "The people heard it, and approved the doctrine, and immediately practiced the contrary."
+      ],
+      "quote_author": [
+        "Benjamin Franklin"
+      ],
+      "idea_text": [
+        "A cooking show where the chef has to use only what is already in the contestant's fridge, filmed in the contestant's kitchen.",
+        "A financial-advice show, but for the very rich — same format, same blunt host, applied to people who cannot explain where their money goes either.",
+        "Thirty minutes of a single object being repaired by someone who has repaired ten thousand of them, with no presenter.",
+        "A travel show that never leaves one street, and spends six episodes on it.",
+        "A quiz where contestants are asked only about things they claimed on their CV.",
+        "A show where two people who have argued online for years meet and have to assemble furniture together.",
+        "Reruns of old weather forecasts, with a meteorologist explaining what they got wrong and why.",
+        "A property show in reverse: people who sold something, revisiting it ten years later to see what the buyers did.",
+        "A cover-band competition where the rule is you may not play the famous song.",
+        "One long episode of a translator explaining every joke they could not translate in a film you have already seen."
+      ],
+      "idea_prompt": [
+        "Ten TV shows that should exist but don't"
+      ],
+      "tip_text": [
+        "Hold Claude's production code to a higher bar than your own, and enforce it with machinery rather than by reading the diff harder: strict lint rules, dense tests, Claude-written end-to-end tests, and an automated review pass. Anthropic builds Claude Code that way."
+      ],
+      "hn_id": [
+        "49764791",
+        "49758736",
+        "49765348",
+        "49754785",
+        "49760187"
+      ],
+      "link": [
+        "https://john.hartnup.uk/2026/06/07/ai-event-posters.html",
+        "https://grapheneos.social/@GrapheneOS/117282080803799576",
+        "https://laya.convaiinnovations.com/",
+        "https://try.cloudflare.com/",
+        "https://code.claude.com/docs/en/changelog",
+        "https://www.canada.ca/en/global-affairs/news/2026/09/canada-advances-trade-talks-on-agreements-with-india-asean-and-the-philippines.html",
+        "https://www.apple.com/newsroom/2026/08/apple-announces-changes-for-apps-in-the-european-union/",
+        "https://phys.org/news/2026-09-diplodocus-north-america-reshapes-late.html",
+        "https://blog.trekcore.com/2026/09/star-trek-le-creuset-cookware-collaboration-announced/",
+        "https://brand-innovators.com/jcpenney-features-real-teachers-in-fall-campaign/",
+        "https://www.scconline.com/blog/post/2026/09/18/delhi-high-court-bombay-shaving-switch4-gillette-advertisement/",
+        "https://research.google/blog/the-future-of-practice-enabling-teachers-to-create-learning-interactives-with-generative-ui/",
+        "https://arxiv.org/abs/2609.15309",
+        "https://www.theweek.in/news/biz-tech/2026/09/18/sensex-losing-streak-nifty-gains-explainer.html",
+        "https://upstox.com/news/market-news/stocks/market-weekly-wrap-sensex-nifty-50-fall-for-6th-straight-week-oil-prices-us-fed-tata-sons-among-key-triggers/article-200533/",
+        "https://www.kotakneo.com/news/market-news/fiis-turn-buyers-with-600-crore-fii-inflow-as-diis-add-1020-crore/"
+      ],
+      "subject": [
+        "Canada's international trade minister Maninder Sidhu visits Mumbai on 18-19 September 2026 for the fourth round of India-Canada CEPA negotiations, targeting conclusion by end of 2026",
+        "Apple's new EU App Store business terms take effect on 1 October 2026, replacing the Core Technology Fee with a 5% Core Technology Commission and widening who may run an alternative marketplace",
+        "Diplodocus tail bones excavated in Teruel province, Spain, the first specimen of the genus found outside the Morrison Formation of the western United States",
+        "Le Creuset and Paramount make nine pieces of Star Trek cookware, including a Klingon braiser, three alien mini cocottes and a grater named the Communi-Grater",
+        "JCPenney launches The Other September Issue, a Substack fashion publication styling real schoolteachers as a parody of Vogue's September issue",
+        "Delhi High Court orders Bombay Shaving Company to take down its Switch4 razor advertisement over its depiction of court proceedings, then rejects the amended version",
+        "A teacher asks for a physics game, and an agent keeps rebuilding it until it is actually solvable",
+        "Elo-per-token curves show that very long agent sessions eventually gain less per token than random sampling, while human competitive programmers improve superlinearly over the same horizon",
+        "Virot and Ponomarenko's 2015 high-speed-camera study of popcorn physics in Royal Society Interface"
+      ],
+      "brand": [
+        "Le Creuset",
+        "Paramount",
+        "JCPenney",
+        "Catalyst Brands",
+        "Bombay Shaving Company",
+        "Gillette"
+      ],
+      "brand_mention": [
+        "Star Trek's 60",
+        "Paramount Products",
+        "Experiences",
+        "U.S.S Enterprise",
+        "Dutch",
+        "Klingon",
+        "Galileo Shuttlecraft",
+        "Talosian",
+        "Balok",
+        "Gorn",
+        "Spock Ear Mug",
+        "Live Long",
+        "Prosper",
+        "Communi-Grater",
+        "Starfleet",
+        "Le Creuset's",
+        "Vogue's",
+        "Other September Issue",
+        "Substack",
+        "Marisa Thalberg",
+        "Catalyst Brands",
+        "TV",
+        "Amazon's Thursday Night Football",
+        "Michief",
+        "Gajraj Rao",
+        "Justice Jyoti Singh",
+        "High Court",
+        "Court",
+        "Bombay Shaving Company",
+        "Gillette",
+        "Intellectual Property Division"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "Canada wants a trade deal with India signed by December, and sent its trade minister to Mumbai to say so"
+        ],
+        [
+          "trends",
+          "From 1 October, Apple takes 5% on transactions in apps it never touched"
+        ],
+        [
+          "trends",
+          "Diplodocus was a North American animal for 150 years of science. Fourteen tail bones in Spain just ended that."
+        ],
+        [
+          "wild",
+          "Le Creuset made a cast-iron Klingon braiser, three alien mini cocottes and a cheese grater called the Communi-Grater"
+        ],
+        [
+          "wild",
+          "JCPenney published its own September Issue on Substack, and put five real teachers on the pages"
+        ],
+        [
+          "wild",
+          "A razor brand staged a courtroom in its ad. A real judge watched it and called it an outright mockery."
+        ],
+        [
+          "research",
+          "A teacher asks for a physics game, and an agent keeps rebuilding it until it is actually solvable"
+        ],
+        [
+          "research",
+          "When Agents Slow Down: Understanding LLM Agents' Test-Time Strategies via Elo-per-token Analysis"
+        ],
+        [
+          "learn",
+          "A popcorn kernel does not burst. It builds a leg, kicks off the pan and somersaults."
+        ]
+      ],
+      "editorial_domains": [
+        "apple.com",
+        "blog.trekcore.com",
+        "brand-innovators.com",
+        "canada.ca",
+        "phys.org",
+        "scconline.com"
+      ]
     }
   ]
 }

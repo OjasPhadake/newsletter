@@ -1,0 +1,334 @@
+{
+  "date_line": "Sunday, 20 September 2026",
+  "issue": 1,
+  "preheader": "Android 17 adds developer APIs without ever reaching AOSP; the Sensex closes a sixth straight losing week; Diplodocus turns up in Spain, 150 million years late; and why one popcorn kernel in a hundred refuses to pop.",
+  "quote": {
+    "text": "The people heard it, and approved the doctrine, and immediately practiced the contrary.",
+    "author": "Benjamin Franklin",
+    "source_url": "https://www.goodreads.com/quotes/333215-the-people-heard-it-and-approved-the-doctrine-and-immediately",
+    "note": "Franklin is describing his own audience, moments after they applauded a sermon on thrift and then went out and bought things. The line lands because it is the honest version of every talk, every post-mortem and every resolution: agreement is cheap, and we routinely mistake having agreed for having changed."
+  },
+  "agent_craft": {
+    "items": [
+      {
+        "text": "Hold Claude's production code to a higher bar than your own, and enforce it with machinery rather than by reading the diff harder: strict lint rules, dense tests, Claude-written end-to-end tests, and an automated review pass. Anthropic builds Claude Code that way.",
+        "source": "Boris Cherny, creator of Claude Code, quoted by Simon Willison",
+        "url": "https://simonwillison.net/2026/Sep/11/boris-cherny/"
+      }
+    ]
+  },
+  "hn": [
+    {
+      "title": "AI-generated posters don't have to be horrible",
+      "url": "https://john.hartnup.uk/2026/06/07/ai-event-posters.html",
+      "hn_url": "https://news.ycombinator.com/item?id=49764791",
+      "points": 1255,
+      "comments": 703,
+      "bullets": [
+        "The complaint the piece starts from is not that AI posters are badly made. It is that they are all the same poster: the village fair flyers circulating online share one house style, and, as the author puts it, 'once you've seen that style 20 times it starts to irritate just from the sheer repetition.'",
+        "The diagnosis is that the sameness comes from the prompt, not the model. Asking for a 'clean, unfussy, bright layout' got conventional craft-fair output back; asking for something fundamentally different got Bauhaus modernism. The tool has the range, the request does not.",
+        "So he asked ChatGPT to enumerate the range instead: it produced 15 labelled style categories — risograph, Memphis, brutalist and the rest — which he then used as prompts. Eight spring fayre posters came back in styles including stamp-and-letterpress, Japanese minimal, punk fanzine, drum and bass, and cubist exhibition.",
+        "The conclusion is deliberately unambitious: the posters still look AI-generated, and that is fine. The failure being fixed is homogeneity, not detectability — naming a design movement is enough to escape the default.",
+        "He has since published a catalogue of one hundred poster styles with ready-to-use prompts, which is the part of this the commenters actually took away."
+      ]
+    },
+    {
+      "title": "Android 17 is the first since 3.x to add new APIs without releasing to the AOSP",
+      "url": "https://grapheneos.social/@GrapheneOS/117282080803799576",
+      "hn_url": "https://news.ycombinator.com/item?id=49758736",
+      "points": 1096,
+      "comments": 639,
+      "bullets": [
+        "The claim, posted by GrapheneOS on 16 September, is precise and narrow: 'Android 17 QPR1 is the first release since Android Honeycomb (3.x) adding new APIs for app developers without a release to the Android Open Source Project.'",
+        "Honeycomb, the reference point, is from 2011 — the tablet-only release Google held back from AOSP and later folded into Ice Cream Sandwich. Nothing in the fifteen years since has shipped developer-facing APIs outside the open-source tree.",
+        "The consequence for anyone who is not Google: 'The new APIs are currently exclusive to the Pixel OS and aren't available to other Android OEMs.' An app can call them, but only on Pixel hardware.",
+        "The receipt is Google's own API difference report for API level 37.1, at developer.android.com/sdk/api_diff/37.1/changes — a published diff against a tree that has not received the code."
+      ]
+    },
+    {
+      "title": "I built non-autoregressive decision models with RL a year ago",
+      "url": "https://laya.convaiinnovations.com/",
+      "hn_url": "https://news.ycombinator.com/item?id=49765348",
+      "points": 1005,
+      "comments": 231,
+      "bullets": [
+        "Laya, from Nandakishor Mukkunnoth of ConvAI Innovations, is built on the premise that most of what people use an LLM for is not generation at all — it is classification wearing a chat interface. So it does not generate. Bidirectional encoders (ModernBERT and mmBERT) emit a calibrated probability distribution over a fixed schema in one forward pass.",
+        "Everything reduces to three primitives: Choice (pick from categories), Score (place on an ordinal rubric) and Noul (true/false). Training uses RLCD — reinforcement learning for calibrated decisions — which is where the year-ago claim in the title comes from.",
+        "The numbers it leads with are latency and calibration, not accuracy. 32.8ms for a single inference against 236–276ms for the autoregressive baseline it compares to, 7.2ms per question when batched, and expected calibration error of 0.081 against 0.246 — the second being the more interesting figure, since a miscalibrated classifier is worse than a slow one.",
+        "Three checkpoints: English at 421M parameters, multilingual at 322M covering 100+ languages with automatic routing, and a typed-decisions variant at 421M. Context windows run 512 to 8,192 tokens depending on the variant.",
+        "Apache 2.0, on Hugging Face, `pip install laya>=0.3.3`, with a live Spaces demo. Reported task scores include 0.993 on email spam and 0.980 on phishing detection, and 95% on AG News against the baseline's 91%."
+      ]
+    },
+    {
+      "title": "Cloudflare Quick Tunnels",
+      "url": "https://try.cloudflare.com/",
+      "hn_url": "https://news.ycombinator.com/item?id=49754785",
+      "points": 807,
+      "comments": 306,
+      "bullets": [
+        "One command — `cloudflared tunnel --url http://localhost:8000` — and the server on your laptop has a public HTTPS address on Cloudflare's edge. No account, no DNS record, no port forwarding. The page claims roughly three seconds to live.",
+        "The mechanism is that nothing is opened inbound. Your machine dials out to the nearest of Cloudflare's 335+ edge locations and traffic comes back down that connection, which is why it works behind NAT and why there is no firewall rule to write.",
+        "TLS and DDoS filtering come attached rather than configured. The tunnel is ephemeral by design: it dies with the process, and as the page puts it, there is 'nothing to revoke, nothing to clean up.'",
+        "There is JSON output for automation, which is the detail that explains the timing of the interest — it makes the thing scriptable by an agent that needs to expose a local service and then throw it away.",
+        "Free, with no bandwidth, duration or usage limits stated on the page."
+      ]
+    },
+    {
+      "title": "Claude Code now reads AGENTS.md if there is no Claude.md",
+      "url": "https://code.claude.com/docs/en/changelog",
+      "hn_url": "https://news.ycombinator.com/item?id=49760187",
+      "points": 713,
+      "comments": 265,
+      "bullets": [
+        "Version 2.1.277, shipped 18 September: 'Added AGENTS.md support: in a project with no CLAUDE.md, Claude Code reads AGENTS.md instead; change it under \"Project instructions\" in /config (not yet on Bedrock, Vertex or Foundry).'",
+        "The precedence is the whole story. CLAUDE.md still wins where it exists; AGENTS.md is the fallback, not a merge. A repository carrying both files gets exactly the behaviour it had yesterday.",
+        "It is a convention convergence rather than a feature — AGENTS.md is the vendor-neutral file other coding agents already read, so a repo can stop shipping one instructions file per tool.",
+        "The same release added `CLAUDE_GATEWAY_PROXY_IS_EGRESS_BOUNDARY=1` for gateways behind a forward proxy, and fixed conversations failing with 'text content blocks must be non-empty' errors.",
+        "Nearby in the changelog: 2.1.278 on 19 September moved auto mode to a server-side classifier for API and Enterprise users, and 2.1.275 added ctrl+enter to interrupt the current turn and send queued messages."
+      ]
+    }
+  ],
+  "markets": {
+    "indices": [
+      {
+        "name": "Sensex · Fri 18 Sep close",
+        "value": "74,294.96",
+        "change": "19.63 (0.03%) on the day · 486.80 (0.65%) on the week",
+        "direction": "down"
+      },
+      {
+        "name": "Nifty 50 · Fri 18 Sep close",
+        "value": "23,346.40",
+        "change": "75.80 (0.33%) on the day · 51.70 (0.2%) on the week",
+        "direction": "up"
+      },
+      {
+        "name": "Nifty Media · week",
+        "value": "—",
+        "change": "1.1% — the week's best sector",
+        "direction": "up"
+      },
+      {
+        "name": "Nifty India Defence · week",
+        "value": "—",
+        "change": "3.8% — the week's worst sector",
+        "direction": "down"
+      },
+      {
+        "name": "USD/INR · Fri 18 Sep close",
+        "value": "95.89",
+        "change": "unchanged on the day (provisional)",
+        "direction": "flat"
+      },
+      {
+        "name": "Brent crude · Fri 18 Sep",
+        "value": "$103.85",
+        "change": "0.93% on the day, after a $108.75 high during the week",
+        "direction": "down"
+      }
+    ],
+    "stories": [
+      {
+        "headline": "Indian markets are shut this weekend. Friday closed a sixth straight losing week for the Sensex.",
+        "url": "https://www.theweek.in/news/biz-tech/2026/09/18/sensex-losing-streak-nifty-gains-explainer.html",
+        "source": "The Week — 18 September 2026",
+        "bullets": [
+          "The exchanges were closed on Saturday and are closed today. The last completed session was Friday 18 September: Sensex 74,294.96, down 19.63 points or 0.03%; Nifty 50 23,346.40, up 75.80 points or 0.33%, its third consecutive daily gain.",
+          "The weekly picture is the one worth having. The Sensex fell 0.65% over the week — its sixth consecutive weekly decline, the longest such streak since 2020. The Nifty 50 lost 51.70 points or 0.2% across the same five sessions.",
+          "The Week attributes the run to three things at once: the geopolitical situation, higher global interest rates, and crude hovering above $100 a barrel, which for a net importer is a cost line rather than a headline.",
+          "Friday itself was a composition story rather than a mood story: banking, energy and life insurers rose, offsetting declines in tech and across Tata group stocks, which is how one index closes red and the other green on the same day."
+        ]
+      },
+      {
+        "headline": "What did the damage: Brent above $100 all week, and the Fed's first hike in three years",
+        "url": "https://upstox.com/news/market-news/stocks/market-weekly-wrap-sensex-nifty-50-fall-for-6th-straight-week-oil-prices-us-fed-tata-sons-among-key-triggers/article-200533/",
+        "source": "Upstox weekly wrap — week ended 18 September 2026",
+        "bullets": [
+          "Brent ran to $108.75 a barrel during the week on West Asia conflict concerns before retreating to $103.87 by Friday, helped by Saudi Arabia offering additional cargoes through Oman.",
+          "The Federal Reserve raised its benchmark rate by 25 basis points to 3.75–4%, its first increase in more than three years, citing a 'solid expansion pace of economic activity'. Higher US rates are the second half of the pressure on a market that imports both oil and capital.",
+          "The domestic irritant was governance rather than macro: Tata Sons' board voted to reappoint N Chandrasekaran as chairman for a third five-year term, and the duelling statements that followed pulled Tata group stocks down with it.",
+          "Breadth held up better than the headline indices. The Nifty Midcap 100 finished the week flat and the Smallcap 100 fell 0.2%, while India VIX dropped 7.3% — a market that has stopped being frightened, even as it keeps drifting down.",
+          "Sector spread over the week: India Defence fell 3.8% and Consumer Durables 2.7%; Media gained 1.1%, FMCG 0.9% and Pharma 0.7%."
+        ]
+      },
+      {
+        "headline": "Foreign money has sold ₹7,041 crore in September. Domestic money has bought ₹36,219 crore.",
+        "url": "https://www.kotakneo.com/news/market-news/fiis-turn-buyers-with-600-crore-fii-inflow-as-diis-add-1020-crore/",
+        "source": "Kotak Neo — provisional NSE flows, 18 September 2026",
+        "bullets": [
+          "On Friday, FIIs were net buyers of ₹599.54 crore in the cash segment — ₹38,461.63 crore bought against ₹37,862.09 crore sold. DIIs bought a net ₹1,019.69 crore, on ₹17,310.04 crore of purchases against ₹16,290.35 crore of sales.",
+          "September to date tells the actual story: FIIs are net sellers of about ₹7,041 crore, DIIs net buyers of about ₹36,219 crore. Domestic institutions have absorbed roughly five times what foreign institutions have taken out.",
+          "The rupee closed unchanged at 95.89 (provisional) against the dollar on Friday, having opened at 95.75 and touched 95.71 intraday. The dollar index was at 99.97.",
+          "The supports named for Friday were moderating crude, progress on pipeline repairs, and Treasury yields easing after the Fed move. The risks named were Brent still above $100 and unresolved geopolitics — the same two items, pointing both ways."
+        ]
+      }
+    ]
+  },
+  "trends": [
+    {
+      "tag": "India · Trade",
+      "headline": "Canada wants a trade deal with India signed by December, and sent its trade minister to Mumbai to say so",
+      "url": "https://www.canada.ca/en/global-affairs/news/2026/09/canada-advances-trade-talks-on-agreements-with-india-asean-and-the-philippines.html",
+      "subject": "Canada's international trade minister Maninder Sidhu visits Mumbai on 18-19 September 2026 for the fourth round of India-Canada CEPA negotiations, targeting conclusion by end of 2026",
+      "subtitle": "Global Affairs Canada, announced 17 September 2026",
+      "bullets": [
+        "Minister of International Trade Maninder Sidhu was in Mumbai on 18 and 19 September, meeting Commerce and Industry Minister Piyush Goyal and Indian business, to push the Comprehensive Economic Partnership Agreement along. Manila follows on 21–22 September.",
+        "Three negotiating rounds are complete and the fourth ran during the visit week. Both governments state the same objective: conclude the agreement by the end of 2026, which is now a little over three months away.",
+        "The number Canada is working towards is a doubling of two-way trade to $70 billion a year by 2030. The 2025 base was $30.4 billion in goods and services, of which merchandise was $13.6 billion — so most of the relationship is already services, which is the harder half of any trade agreement to write.",
+        "Sidhu's framing puts India in a set rather than alone: 'India, ASEAN, and the Philippines are among the fastest-growing economies in the world… by concluding agreements with these partners, we will double that reach to 3 billion' consumers. For context on the comparison, Canada–ASEAN merchandise trade was $52.5 billion in 2025, up 23.7% on 2024."
+      ]
+    },
+    {
+      "tag": "Platforms · EU",
+      "headline": "From 1 October, Apple takes 5% on transactions in apps it never touched",
+      "url": "https://www.apple.com/newsroom/2026/08/apple-announces-changes-for-apps-in-the-european-union/",
+      "subject": "Apple's new EU App Store business terms take effect on 1 October 2026, replacing the Core Technology Fee with a 5% Core Technology Commission and widening who may run an alternative marketplace",
+      "subtitle": "Apple Newsroom, announced 18 August 2026 — effective 1 October 2026",
+      "bullets": [
+        "The Core Technology Fee — a flat per-install charge that developers loathed because it could bankrupt a free app that went viral — is gone. In its place is the Core Technology Commission: 5% of digital transactions in apps distributed outside the App Store.",
+        "The rest is a tiered rate card, which is the part that actually reshapes decisions. App Store with Apple's in-app purchase is 26%, or 15% for developers in the reduced programmes. App Store with an alternative payment provider is 20%, or 10%. App Store with web linking out is 15%, or 10%. Alternative marketplaces and web distribution are 5%.",
+        "Read the ladder and the strategy is legible: every rung down costs Apple less to provide and pays it less, and the gap between 26% and 5% is now the price of leaving the storefront entirely. Apple says the point is to 'reduce complexity by moving every developer' onto unified terms.",
+        "Eligibility to run an alternative marketplace widens too — Dun & Bradstreet financial-stability standards, or being publicly traded, or venture funding from established firms, or an audit by a licensed accountant, or being a government, educational or nonprofit body. Child-safety rules tighten in the same release: Kids category apps cannot link out to external transaction sites at all, under-18s need a parental gate, and under-13s get no web transaction links."
+      ]
+    },
+    {
+      "tag": "Palaeontology",
+      "headline": "Diplodocus was a North American animal for 150 years of science. Fourteen tail bones in Spain just ended that.",
+      "url": "https://phys.org/news/2026-09-diplodocus-north-america-reshapes-late.html",
+      "subject": "Diplodocus tail bones excavated in Teruel province, Spain, the first specimen of the genus found outside the Morrison Formation of the western United States",
+      "subtitle": "Journal of Vertebrate Paleontology, reported 14 September 2026",
+      "bullets": [
+        "Every confirmed Diplodocus specimen until now came from one place: the Morrison Formation of the western United States. The new one comes from the La Tejería site at El Castellar, in Teruel, Spain.",
+        "The material is 14 exceptionally preserved caudal vertebrae and several chevron bones — one of the most complete diplodocid skeletons found in Europe. The diagnosis rests on large pneumatic cavities in the vertebrae and deep longitudinal grooves on the underside of the tail bones, checked against a phylogenetic analysis.",
+        "The animal was about 25 metres long, roughly 150 million years old, and a close relative of Diplodocus hallorum — so not a scaled-down European cousin but the same thing, the same size, on the wrong continent.",
+        "The consequence is geographic. Lead researcher Sergio Sánchez Fenollosa, of the Fundación Conjunto Paleontológico de Teruel-Dinópolis, describes it as strong evidence for episodes of dispersal and faunal exchange between the two continents, most likely over temporary land bridges across the proto-Atlantic. The bones are on display at the Museo Aragonés de Paleontología at Dinópolis."
+      ]
+    }
+  ],
+  "research": [
+    {
+      "tag": "Industry · Google Research",
+      "title": "A teacher asks for a physics game, and an agent keeps rebuilding it until it is actually solvable",
+      "url": "https://research.google/blog/the-future-of-practice-enabling-teachers-to-create-learning-interactives-with-generative-ui/",
+      "subtitle": "Google Research, 17 September 2026 — Gal Elidan and Yael Haramaty",
+      "bullets": [
+        "The system generates interactive STEM simulations from a teacher's description, and the interesting part is not the generation but the loop around it: an agentic evaluation pass tests each candidate for solvability, mechanics and visual design, and regenerates until every criterion is met.",
+        "Generation is structured rather than freeform. The teacher states a learning objective, which the system rewrites into something precise and editable; the topic is then split into progressively harder levels; and scaffolding — introductions, a formula toolbox, multi-level hints, contextual feedback and worked solutions — is generated against those levels.",
+        "Two evaluations are reported. UK STEM teachers rated a released library of 30+ interactives good or excellent overall, with physics and chemistry scoring highest. A US pilot with 12 teachers, each requesting three custom interactives, produced an average quality rating of 8 out of 10.",
+        "The argument teachers made back is the one worth noting: the value is not the artefact but the fact that it can be regenerated per class, which is differentiated instruction — long recommended, rarely affordable in practice."
+      ]
+    },
+    {
+      "tag": "Academia · Princeton, U. Washington, UC Berkeley",
+      "title": "When Agents Slow Down: Understanding LLM Agents' Test-Time Strategies via Elo-per-token Analysis",
+      "url": "https://arxiv.org/abs/2609.15309",
+      "subtitle": "Kaiyuan Liu, Qiuyang Mang, Bo Peng, Wenhao Chai, Hanchen Li and colleagues — arXiv, 14 September 2026",
+      "bullets": [
+        "The paper measures something that is usually asserted: how much an agent's score actually improves per token spent. Elo-per-token gives a single curve for open-ended tasks that are scored continuously, so 'more thinking helps' becomes a slope you can read.",
+        "Across four benchmarks, with sessions run out to 100M tokens, the shape is consistent. Agents improve faster than random sampling early, then decelerate — and eventually fall below the random-sampling baseline. The long session is not just diminishing; past a point it is worse than the trivial alternative.",
+        "Human experts on competitive programming go the other way over the same kind of horizon: superlinear improvement with time. That contrast is the paper's sharpest result, and it is not a claim about ceilings so much as about how the two kinds of solver spend their later hours.",
+        "There is an actionable consequence. Splitting the budget into parallel sessions at the scaling inflection point was worth +264 Elo over one long session and +355 over ten short ones on the benchmark tasks — the inflection point being the thing you now have a way to locate."
+      ],
+      "subject": "Elo-per-token curves show that very long agent sessions eventually gain less per token than random sampling, while human competitive programmers improve superlinearly over the same horizon"
+    }
+  ],
+  "wild": [
+    {
+      "tag": "Cookware · Licensing",
+      "headline": "Le Creuset made a cast-iron Klingon braiser, three alien mini cocottes and a cheese grater called the Communi-Grater",
+      "url": "https://blog.trekcore.com/2026/09/star-trek-le-creuset-cookware-collaboration-announced/",
+      "entities": [
+        "Le Creuset",
+        "Paramount"
+      ],
+      "subject": "Le Creuset and Paramount make nine pieces of Star Trek cookware, including a Klingon braiser, three alien mini cocottes and a grater named the Communi-Grater",
+      "bullets": [
+        "Announced on 7 September for Star Trek's 60th anniversary, with Paramount Products & Experiences. Nine pieces, and the naming is committed throughout: a U.S.S. Enterprise round Dutch oven at 5.5 quarts for $500, a Klingon shallow Dutch oven at 3.5 quarts for $450, and a Galileo Shuttlecraft rectangular casserole for $150.",
+        "The small end is where it gets strange. Three 10oz mini cocottes shaped as a Talosian, a Balok and a Gorn, $60 each — the Gorn being a 1967 man-in-a-rubber-suit lizard now rendered in enamelled cast iron.",
+        "Also a Spock Ear Mug ($35), a 'Live Long and Prosper' spoon rest ($55), and the Communi-Grater ($68), which is a cheese grater named after a communicator and is the single most committed pun in homeware this year.",
+        "Two knobs sold separately at $50 each — Starfleet delta and Klingon trefoil — so you can convert cookware you already own. Le Creuset's line on the whole thing: 'Each piece blends exceptional culinary performance with true intergalactic fandom.'"
+      ],
+      "link_label": "See it"
+    },
+    {
+      "tag": "Retail · Publishing",
+      "headline": "JCPenney published its own September Issue on Substack, and put five real teachers on the pages",
+      "url": "https://brand-innovators.com/jcpenney-features-real-teachers-in-fall-campaign/",
+      "entities": [
+        "JCPenney",
+        "Catalyst Brands"
+      ],
+      "subject": "JCPenney launches The Other September Issue, a Substack fashion publication styling real schoolteachers as a parody of Vogue's September issue",
+      "bullets": [
+        "The September Issue is fashion's biggest annual artefact — Vogue's, several hundred pages of clothing nobody in the audience will buy. JCPenney made The Other September Issue, launched 16 September, using its own affordable range and real schoolteachers as the models.",
+        "It was published on Substack, which is the genuinely odd choice: a department store's fall campaign shipped as a newsletter rather than a catalogue, a microsite or a set of posts.",
+        "The teachers are not styled as makeover recipients. They are presented as the fashion subjects, which is the whole joke and also the whole argument.",
+        "Marisa Thalberg, chief marketing officer of Catalyst Brands: 'A lot of things that the more traditional September issues feature are not relatable or attainable, but our edition is.' The campaign extends to a TV spot during Amazon's Thursday Night Football and social posts from the teachers themselves. FleishmanHillard made the Substack; Michief made the TV element."
+      ],
+      "link_label": "Read it"
+    },
+    {
+      "tag": "India · Advertising",
+      "headline": "A razor brand staged a courtroom in its ad. A real judge watched it and called it an outright mockery.",
+      "url": "https://www.scconline.com/blog/post/2026/09/18/delhi-high-court-bombay-shaving-switch4-gillette-advertisement/",
+      "entities": [
+        "Bombay Shaving Company",
+        "Gillette"
+      ],
+      "subject": "Delhi High Court orders Bombay Shaving Company to take down its Switch4 razor advertisement over its depiction of court proceedings, then rejects the amended version",
+      "bullets": [
+        "The Switch4 campaign sells a four-blade cartridge against three-blade razors, with actor Gajraj Rao doing the arguing. Gillette India sued for disparagement, on the grounds that it went past comparative advertising into portraying its products as obsolete — without ever naming them.",
+        "The ad's device was a staged courtroom. Justice Jyoti Singh of the Delhi High Court, sitting in an actual one, described the portrayal as an 'outright mockery' of the Court and asked why the company was still promoting itself this way.",
+        "On 16 September the court gave Bombay Shaving Company until 8:30 that evening to modify the disputed portions and put a revised cut in front of Gillette, warning that a takedown order would follow otherwise. The ad came down from every platform the company controls.",
+        "The revised version, submitted on 17 September, was not agreeable to Gillette or the court either. The underlying disparagement claim is still unresolved, as is the question of whether the Intellectual Property Division has jurisdiction over an advertising dispute with no trademark infringement alleged."
+      ],
+      "link_label": "Read it"
+    }
+  ],
+  "learn": {
+    "title": "A popcorn kernel does not burst. It builds a leg, kicks off the pan and somersaults.",
+    "subject": "Virot and Ponomarenko's 2015 high-speed-camera study of popcorn physics in Royal Society Interface",
+    "body": [
+      "In 2015 two French physicists, Emmanuel Virot and Alexandre Ponomarenko, put a hotplate under a high-speed camera and filmed popcorn at 3,000 frames a second. What they found is that almost everything about the folk explanation is wrong. The kernel does not explode outwards. The hull cracks on one side, and a single piece of starchy flesh extrudes through the crack like a leg, plants itself on the hot pan, compresses, and then releases — kicking the whole kernel into the air at an acceleration of about 200 metres per second per second, with a 490-degree rotation on the way up. The entire performance, from first crack to finished fluffy shape, takes less than 90 milliseconds.",
+      "The pop is not the shell breaking either. The sound arrives slightly after the fracture, and it comes from the escape of the twenty-odd milligrams of water vapour that were locked inside. That vapour leaves so fast it briefly evacuates the interior, air rushes back in, and the cavity rings — which is to say a popcorn kernel is a tiny one-shot musical instrument, closer to a champagne cork than to a firecracker.",
+      "The reason one kernel in a bag always stays stubbornly whole is that the whole thing is a pressure vessel with a very narrow tolerance. Below the critical temperature nothing much happens; at 170°C only about a third of kernels pop, and at 180°C nearly all of them do, regardless of the size or shape of the grain. Under the hull, water heated past boiling cannot boil, because the hull holds it in — pressure climbs to roughly ten atmospheres before the shell fails. A kernel with a hairline crack leaks its steam gently and never builds the pressure; a kernel that is slightly too dry never had enough water to build it with. So the survivor at the bottom of the bowl is not a tough kernel. It is a leaky one."
+    ]
+  },
+  "ideas": {
+    "prompt": "Ten TV shows that should exist but don't",
+    "note": "Altucher's drill: ten ideas a day against one prompt. Today's came out of reading r/SomebodyMakeThis and r/crazyideas back to back, where a surprising share of the requests are not for apps at all — they are for something to watch.",
+    "items": [
+      {
+        "text": "A cooking show where the chef has to use only what is already in the contestant's fridge, filmed in the contestant's kitchen."
+      },
+      {
+        "text": "A financial-advice show, but for the very rich — same format, same blunt host, applied to people who cannot explain where their money goes either.",
+        "why": "A recurring ask on r/SomebodyMakeThis, where someone wanted a Caleb Hammer show aimed upwards."
+      },
+      {
+        "text": "Thirty minutes of a single object being repaired by someone who has repaired ten thousand of them, with no presenter."
+      },
+      {
+        "text": "A travel show that never leaves one street, and spends six episodes on it."
+      },
+      {
+        "text": "A quiz where contestants are asked only about things they claimed on their CV."
+      },
+      {
+        "text": "A show where two people who have argued online for years meet and have to assemble furniture together."
+      },
+      {
+        "text": "Reruns of old weather forecasts, with a meteorologist explaining what they got wrong and why."
+      },
+      {
+        "text": "A property show in reverse: people who sold something, revisiting it ten years later to see what the buyers did."
+      },
+      {
+        "text": "A cover-band competition where the rule is you may not play the famous song."
+      },
+      {
+        "text": "One long episode of a translator explaining every joke they could not translate in a film you have already seen."
+      }
+    ]
+  }
+}
