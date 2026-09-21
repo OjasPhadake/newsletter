@@ -1,0 +1,347 @@
+{
+  "date_line": "Tuesday, 22 September 2026",
+  "issue": 1,
+  "preheader": "Only 1% of the Snowden archive was ever published, and nothing has come out since 2019; the RBI wants banks to freeze the disputed ₹5,000 rather than your whole account; Ice Age carvers in Ukraine read the grain of a mammoth tusk and drew along it; and why you forget what you came for the moment you walk through a door.",
+  "quote": {
+    "text": "Coming back to where you started is not the same as never leaving.",
+    "author": "Terry Pratchett",
+    "source_url": "https://www.goodreads.com/author/quotes/1654.Terry_Pratchett",
+    "note": "A line about travel that is really a line about work. The file you rewrote and then reverted is not the file you had this morning, and the argument you dropped is not the argument you never had. State is cheap to restore; you are not."
+  },
+  "agent_craft": {
+    "items": [
+      {
+        "text": "Count your corrections. If you have told Claude the same thing wrong twice in one session, stop correcting — the context is now mostly failed approaches. Run /clear and write one new prompt that includes what the two failures taught you.",
+        "source": "Anthropic's Claude Code best-practices guide, under \"Course-correct early and often\"",
+        "url": "https://code.claude.com/docs/en/best-practices"
+      },
+      {
+        "text": "For a question you want answered but not remembered — what does this flag do, is this library maintained — ask it with /btw. The answer never enters the conversation history, so checking a detail costs you nothing in context.",
+        "source": "Anthropic's Claude Code best-practices guide, under \"Manage context aggressively\"",
+        "url": "https://code.claude.com/docs/en/best-practices"
+      }
+    ]
+  },
+  "hn": [
+    {
+      "title": "What happened to the Snowden archive",
+      "url": "https://libroot.org/posts/what-happened-to-the-snowden-archive",
+      "hn_url": "https://news.ycombinator.com/item?id=49780820",
+      "points": 672,
+      "comments": 501,
+      "bullets": [
+        "The last document from the Snowden archive was published on 29 May 2019. Nothing has come out since — not from a journalist, not from a news organisation, not from an institution. That is more than seven years of silence.",
+        "Roughly 1% of the archive has ever been published. Snowden handed journalists on the order of 50,000 documents in 2013; Glenn Greenwald and Laura Poitras hold complete copies, Barton Gellman holds 50,000-plus files, and partial sets went to The Guardian (about 58,000), Der Spiegel, the New York Times, ProPublica and The Intercept.",
+        "Each outlet stopped at a different moment. The Guardian's last publication was 27 February 2014; the Washington Post's July 2014; Der Spiegel's January 2015; the New York Times and ProPublica's last joint story 15 August 2015.",
+        "The Intercept's closure is the best-documented. On 4 March 2019 editor Betsy Reed told Poitras budget cuts would remove the archive's research staff; nine days later Greenwald announced it was closing. The reasons shifted over that month from budget to editorial priorities to a plan to find academic partners. Poitras objected that the research department was 1.5% of First Look Media's budget. No academic partner ever materialised.",
+        "Gellman put his copy into \"cold storage\" on security grounds. That explains why he will not share it. It does not explain why nobody who still holds a complete copy has published a line of it in seven years."
+      ]
+    },
+    {
+      "title": "AX – Google's Open Agentic Orchestrator",
+      "url": "https://agentexecutor.io",
+      "hn_url": "https://news.ycombinator.com/item?id=49780797",
+      "points": 628,
+      "comments": 288,
+      "bullets": [
+        "AX is an Apache-2.0 runtime for running agent workloads as infrastructure rather than as a script. Google built it out of DeepMind's agentic-runtime work and its own experience with isolation and scheduling.",
+        "Four primitives: Task, Workspace, Gateway and Model. The pitch is that it \"sandboxes your task, wires up its workspace, fences its network\" — the workspace can bring up a git repo, MCP servers and a dev environment on its own.",
+        "The network is allowlisted explicitly and credentials are injected rather than baked in, which is the part that matters if you have ever handed an agent a shell and a token at the same time.",
+        "Suspended agents resume in under a second, so an agent that is waiting on you is not paying cold-start costs. The claimed ceiling is billions of tasks per cluster via a lightweight actor model on something Google calls Agent Substrate.",
+        "No published benchmarks — \"billions of tasks\" and \"sub-second resumption\" are both assertions on the page, not measurements."
+      ]
+    },
+    {
+      "title": "ZuckOff – Know when a camera is in the room",
+      "url": "https://zuckoff.app/",
+      "hn_url": "https://news.ycombinator.com/item?id=49785429",
+      "points": 588,
+      "comments": 3,
+      "bullets": [
+        "A phone app, iOS and Android, that listens to Bluetooth advertisements and tells you when camera glasses are near you.",
+        "It works off manufacturer signatures — 0x0D53 for Ray-Ban Meta and Oakley Meta, plus product names like Spectacles, VisionPro and VistaView. Snap Spectacles and Meta wearables are both covered.",
+        "You can mark your own glasses so the app stops shouting at you, and it logs every Bluetooth device it sees.",
+        "The author states the limitation plainly: detection is strongest when glasses power on or pair, and some models go quiet once they are being worn. No alert is not evidence that nobody is filming.",
+        "Independent build by one developer, not affiliated with Meta, Luxottica, Ray-Ban, Oakley or Snap."
+      ]
+    },
+    {
+      "title": "Samsung is expected to more than double output of its HBM4 and HBM4E DRAM",
+      "url": "https://en.sedaily.com/finance/2026/09/20/samsung-to-double-hbm4-output-next-year-sources-say",
+      "hn_url": "https://news.ycombinator.com/item?id=49778029",
+      "points": 546,
+      "comments": 441,
+      "bullets": [
+        "Total DRAM capacity goes from about 180,000 wafers a month this year to about 250,000 next year — roughly 40% more wafers.",
+        "The mix is the real move: HBM4-family parts go from about 40% of output to about 80%. Samsung is not just making more memory, it is converting the line to the expensive kind.",
+        "Glass carriers, used in the packaging, scale with it: 10,000 sheets a month in 2025, 20,000 this year, 50,000 planned for 2027.",
+        "HBM4 mass-production shipments began in February 2026, on sixth-generation 10-nanometre DRAM with a 4-nanometre base die. Twelve-layer HBM4E samples went to customers including Nvidia in May.",
+        "Sourcing caveat: the article cites unnamed \"semiconductor industry sources\" and one \"industry official\", and makes no comparison to SK Hynix or Micron."
+      ]
+    },
+    {
+      "title": "Pirate Face Rescues LLM Models from Deletion",
+      "url": "https://pirateface.co/",
+      "hn_url": "https://news.ycombinator.com/item?id=49776699",
+      "points": 546,
+      "comments": 144,
+      "bullets": [
+        "It turns open models on Hugging Face into torrents, so that a model's survival does not depend on one company's decision to keep hosting it.",
+        "While a model is still up, downloads go to Hugging Face as normal. When it is removed, the torrent takes over and the listing is marked \"Rescued\".",
+        "669,000-plus models are listed as eligible. The scope is deliberately narrow for now: MIT and Apache-2.0 licences only.",
+        "Every file carries a SHA-256 checksum against the Hugging Face original, which is the only thing standing between \"decentralised preservation\" and \"unsigned weights from a stranger\".",
+        "Much of it is still roadmap: the drop-in API and direct publishing are both described on the page as planned rather than live."
+      ]
+    }
+  ],
+  "markets": {
+    "indices": [
+      {
+        "name": "Sensex · close, Mon 21 Sep",
+        "value": "74,858.99",
+        "change": "564.03 (0.76%)",
+        "direction": "up"
+      },
+      {
+        "name": "Nifty 50 · close, Mon 21 Sep",
+        "value": "23,414.30",
+        "change": "67.90 (0.29%)",
+        "direction": "up"
+      },
+      {
+        "name": "Nifty Realty · Mon 21 Sep",
+        "value": "—",
+        "change": "1.14% — the day's best Nifty sector",
+        "direction": "up"
+      },
+      {
+        "name": "Nifty IT · Mon 21 Sep",
+        "value": "—",
+        "change": "0.08%; Nifty PSU Bank 0.06%",
+        "direction": "down"
+      },
+      {
+        "name": "Nifty Midcap 100 · Mon 21 Sep",
+        "value": "—",
+        "change": "0.29%; Smallcap 100 0.07%",
+        "direction": "down"
+      },
+      {
+        "name": "USD/INR · Mon 21 Sep close",
+        "value": "95.81",
+        "change": "rupee 15 paise stronger, from 95.96 (provisional)",
+        "direction": "up"
+      }
+    ],
+    "stories": [
+      {
+        "headline": "The Sensex gained 0.76% and the Nifty gained 0.29%, which means the index you own matters more than the market you think you own",
+        "url": "https://www.kotakneo.com/news/market-news/closing-bell-21-september-2026/",
+        "source": "Kotak Neo closing bell — Monday 21 September 2026 session",
+        "bullets": [
+          "Sensex 74,858.99, up 564.03 points (0.76%). Nifty 50 23,414.30, up 67.90 points (0.29%). A 47-basis-point gap between two indices of large Indian companies on the same day is a concentration story, not a market story.",
+          "Underneath, breadth was negative: Nifty Midcap 100 down 0.29%, Nifty Smallcap 100 down 0.07%. Money went into a handful of large caps, not into risk.",
+          "Among the Nifty sectoral indices, Realty led at 1.14% and Auto was barely positive at 0.08%; IT fell 0.08% and PSU Bank 0.06%. Buying interest sat in pharma, realty and FMCG names — Sun Pharma, HDFC Life, SBI Life, Dr Reddy's — while IT, metals and PSU banks lagged.",
+          "The stated driver was oil. Brent for November settled around $101.38 and WTI for October around $93.74. Gold futures for October fell 0.55% to ₹1,53,530 per 10g and silver for December fell 0.51% to ₹2,40,380 per kg.",
+          "Markets are open this morning for a normal session."
+        ]
+      },
+      {
+        "headline": "Foreign money has sold on four of the last five sessions. Domestic money has bought on all five.",
+        "url": "https://www.stockezee.com/fii-dii-data",
+        "source": "Stockezee, NSE/BSE provisional cash-market data — 15 to 21 September 2026",
+        "bullets": [
+          "Monday: FIIs net sellers of ₹576.20 crore, DIIs net buyers of ₹2,797.27 crore. Domestic institutions bought roughly five rupees for every one the foreigners sold.",
+          "The five sessions, FII net then DII net: 15 Sep −₹2,977.86 cr / +₹2,686.05 cr; 16 Sep −₹2,032.61 cr / +₹3,908.23 cr; 17 Sep −₹3,208.76 cr / +₹3,617.75 cr; 18 Sep +₹599.54 cr / +₹1,019.69 cr; 21 Sep −₹576.20 cr / +₹2,797.27 cr.",
+          "One side has been consistently negative, the other consistently positive, and the second has been larger every single day.",
+          "That is the mechanism behind yesterday's split tape: domestic flows are enough to hold the large-cap indices up, and not enough to lift the midcaps and smallcaps with them."
+        ]
+      },
+      {
+        "headline": "The rupee closed at 95.81, and the reason was Iran",
+        "url": "https://www.outlookbusiness.com/markets/rupee-rises-15-paise-to-close-at-9581-against-us-dollar",
+        "source": "Outlook Business (PTI) — Monday 21 September 2026",
+        "bullets": [
+          "The rupee appreciated 15 paise to 95.81 against the dollar, provisional, from 95.96 on Friday. It had opened at 95.86 and touched 95.72 intraday before giving some back.",
+          "Brent was down 2.08% at $101.71 a barrel in futures trade when the domestic market closed, on expectations of US–Iran diplomatic talks. India imports most of its crude, so a risk-on oil move is mechanically a rupee move.",
+          "Softening US Treasury yields and a positive domestic equity session did the rest."
+        ]
+      }
+    ]
+  },
+  "trends": [
+    {
+      "tag": "India",
+      "headline": "The RBI wants your bank to freeze the disputed ₹5,000, not the account it sat in",
+      "url": "https://inc42.com/buzz/rbi-floats-draft-rules-to-standardise-account-blocking-in-cyber-fraud-cases/",
+      "subject": "RBI draft KYC amendment directions on temporary debit holds in cyber-fraud and money-mule cases",
+      "subtitle": "Draft KYC Amendment Directions, 2026 · comments close 2 October · effective 1 April 2027",
+      "bullets": [
+        "Today a single fraud complaint anywhere in the chain can lock an entire bank account, including the salary in it. The draft says banks must hold the suspected transaction amount instead, and reserve account-level holds for accounts suspected of being mules themselves. Nodal, escrow and special-purpose accounts are exempt.",
+        "The clock is written down for once. Flagged same day, or you are notified physically by the next. You get 20 days to explain; the bank gets 10 to assess; unsatisfactory cases get escalated within 30 days through the National Cybercrime Reporting Portal. Absent a statutory order, the hold cannot run past 60 days.",
+        "Banks will have to run automated monitoring that flags suspected mule transactions of ₹1,000 and above — transfers that are sudden, inconsistent with the declared profile, or linked to known fraud networks.",
+        "Every bank must name a grievance nodal officer, publish the details on its website and in branches, and resolve complaints within 30 days.",
+        "This exists because the Supreme Court ordered it. The court asked the RBI for a uniform, time-bound protocol; the draft is the answer, out for comment until 2 October and due to bind from 1 April 2027, earlier if a bank chooses."
+      ]
+    },
+    {
+      "tag": "Platforms",
+      "headline": "X will now tell you which government made your post disappear",
+      "url": "https://techcrunch.com/2026/09/21/x-will-now-tell-users-when-governments-have-forced-it-to-limit-their-posts/",
+      "subject": "X expands its Under the Hood transparency tool to disclose government-ordered downranking and withholding, naming the requesting country",
+      "subtitle": "The Under the Hood panel now names the country behind a withholding order",
+      "bullets": [
+        "X has expanded Under the Hood so it reports when an account or a post had its reach limited under local law — including which posts were withheld in which country, and which country asked.",
+        "This is the shadowban question made answerable from inside the product. Until now a user could tell that reach had collapsed but not whether a state was the reason.",
+        "You need to have posted at least ten times in the month to see it, and the underlying data comes out as JSON.",
+        "X Open Source said it expanded the feature \"after seeing people's appreciation of more transparency into government-required content filtering\". Product VP Keith Coleman called the accompanying open-sourcing \"the kind of thing that I think people will be fairly shocked that we are releasing\".",
+        "The governments doing the asking cite hate-speech law, terrorism content and election rules. Naming them does not stop the order — it just moves the argument into public."
+      ]
+    },
+    {
+      "tag": "Wildcard",
+      "headline": "Ice Age carvers could read the grain of a mammoth tusk, and drew along it",
+      "url": "https://www.sci.news/archaeology/mammoth-ivory-figurines-mizyn-ukraine-15080.html",
+      "subject": "Mizyn mammoth-ivory figurines were engraved to follow the ivory's internal Schreger and Owen growth lines",
+      "subtitle": "18 figurines from Mizyn, northern Ukraine, 18,800–17,400 years old · npj Heritage Science, 11 September 2026",
+      "bullets": [
+        "Mammoth ivory has two internal patterns. Schreger lines are the cross-hatching you see in a transverse break; Owen's lines are concentric dentine growth rings. Both are structure, not decoration — they record how the tusk grew.",
+        "The team modelled 18 anthropomorphic figurines from the Mizyn campsite by photogrammetry, examined tool marks under a digital microscope, and ran a morphometric analysis of 97 separate engravings.",
+        "The zigzag ornaments track the Schreger lines. The meanders and parallel lines track Owen's lines. And the engravings sit where those natural patterns are most visible, rather than wherever there was room.",
+        "The conclusion is not \"they copied the ivory\". It is that they knew what the inside of a tusk looks like well enough to place a mark that would agree with it — a material intuition, 18,000 years before materials science.",
+        "Simon Radchenko (University of Stavanger), Aimée Little (University of York), Dmytro Kiosak (Leibniz Centre for Archaeology) and Oleksandr Naumenko (National Museum of the History of Ukraine)."
+      ]
+    }
+  ],
+  "research": [
+    {
+      "tag": "Industry · Microsoft Research",
+      "title": "RetroChimera: two retrosynthesis models that fail differently, ensembled",
+      "url": "https://www.microsoft.com/en-us/research/blog/improving-synthesis-prediction-of-small-molecules-at-scale-with-retrochimera/",
+      "subtitle": "Microsoft Research, 21 September 2026 · published in Nature",
+      "bullets": [
+        "Retrosynthesis is the working backwards problem: given a molecule you want, find a route to it from things you can buy. Doing it well is still a senior chemist's job, and it gates drug and materials discovery.",
+        "RetroChimera combines two models with opposite failure modes. R-SMILES 2 is a Transformer that writes precursors directly — strong on big structural changes, prone to hallucinating. NeuralLoc is a graph neural network working from reaction templates — reliable, but blind outside its template coverage. A learned ranker ensembles the two.",
+        "Blind evaluation by PhD-level chemists: complete routes were accepted about 90% of the time, against 20–50% for either sub-model alone. On ten hard targets RetroChimera solved nine; competing approaches solved two to five.",
+        "The chemists preferred its disconnections to literature reactions in blind comparison, which is the uncomfortable part of the result.",
+        "The framing is worth stealing even if you never touch a molecule: ensembling two models that are wrong in the same way buys you nothing. The gain here comes from picking two that are wrong in different directions and training something to arbitrate."
+      ]
+    },
+    {
+      "tag": "Academia · Johns Hopkins",
+      "title": "Gricea: An Open Science Platform for Conversational AI Research",
+      "url": "https://arxiv.org/abs/2609.22039",
+      "subtitle": "Nikhil Sharma, Yunlin Gong, Xinyang Cheng and Ziang Xiao, Johns Hopkins University · arXiv, 18 September 2026",
+      "bullets": [
+        "The problem: papers about how people talk to chatbots are almost impossible to reproduce, because the study is a pile of one-off scripts, prompts and interfaces that never leave the authors' laptop.",
+        "Gricea makes a study a deployable artifact — the procedure, the participant-facing system and the conversational task behaviour bundled into one configurable thing you can run, inspect, share and fork.",
+        "The number that stings: the team could reconstruct configurations for 93% of eligible papers from CUI 2026, but found missing information in 96% of them that blocked a faithful replication. Reproducibility failed on description, not on difficulty.",
+        "In a user study, researchers and practitioners from mixed backgrounds built runnable studies against their own open-ended questions, which is the actual test of a platform like this.",
+        "19 pages, 3 figures, 4 tables. If you run any kind of human-in-the-loop evaluation, the failure mode they measured is worth reading as a checklist of what to write down."
+      ]
+    }
+  ],
+  "wild": [
+    {
+      "tag": "Fashion",
+      "headline": "Calzedonia put two pairs of legs on the roof of a New York taxi and drove it around Fashion Week",
+      "url": "https://www.eventmarketer.com/article/top-experiential-brand-collabs-new-york-fashion-week-2026/",
+      "entities": [
+        "Calzedonia",
+        "Beauty of Joseon",
+        "Blindspot"
+      ],
+      "subject": "Calzedonia ran a branded NYC taxi with three-dimensional legs on the roof and a brownstone-stoop pop-up during New York Fashion Week",
+      "bullets": [
+        "A custom branded cab with two sets of three-dimensional legs emerging from its roof circulated the city, advertising tights by being visibly wearing them.",
+        "The cab terminated at The Stoop, 188 Lafayette Street in SoHo, which the Italian hosiery brand dressed as the front steps of a classic New York brownstone for 12–13 September.",
+        "Inside: legwear collections, on-the-spot embroidery personalisation, a Beauty of Joseon salon station, matcha, a photo booth and goodie bags — aimed at editors, stylists and models between shows.",
+        "A Williamsburg billboard, by agency Blindspot, carried the same idea in two dimensions. The taxi is the one people photographed."
+      ]
+    },
+    {
+      "tag": "Drinks",
+      "headline": "Campari dug up a 1970s ad that praised nine people in ten thousand, then went and found nine people",
+      "url": "https://www.prnewswire.com/news-releases/campari-invites-negroni-lovers-to-embrace-their-bitterness-with-alan-cumming-and-the-bitter-nine-302884725.html",
+      "entities": [
+        "Campari",
+        "Alan Cumming",
+        "Imbibe",
+        "Slow Food"
+      ],
+      "subject": "Campari revived its 1970s '9 out of 10,000' advertisement as The Bitter Nine, a group of nine personalities led by Alan Cumming, for Negroni Week 2026",
+      "bullets": [
+        "The source material is a Campari ad from the 1970s built on the idea that only nine people in ten thousand are bold enough to like the stuff. The new campaign casts the nine.",
+        "Alan Cumming leads The Bitter Nine, drawn from entertainment, fashion, media, food and drink, hospitality and photography. His line for it: \"I've always found the things that make people different are usually the most interesting things about them.\"",
+        "It runs through Negroni Week, 21–27 September 2026, the fourteenth edition, with Imbibe magazine.",
+        "The scale is not small. In 2025 more than 15,000 bars and restaurants across 97 countries raised over $700,000 for the Slow Food Negroni Week Fund.",
+        "Note what the brand chose to advertise: not that lots of people like it, but that almost nobody does."
+      ]
+    },
+    {
+      "tag": "Groceries",
+      "headline": "Instacart is selling its AI assistant by making you hungry for a cartoon sandwich",
+      "url": "https://www.contentgrip.com/instacart-clementine-pop-culture/",
+      "entities": [
+        "Instacart",
+        "Prettybird",
+        "Local Produce"
+      ],
+      "subject": "Instacart launched ads for its Clementine AI shopping assistant built around food scenes from Shrek, Scooby-Doo, The Office and A Charlie Brown Thanksgiving",
+      "bullets": [
+        "The campaign, \"Turn any idea into an order\", is built entirely on food scenes from films and TV: Shrek, Scooby-Doo, The Office and A Charlie Brown Thanksgiving.",
+        "In one spot a woman watching Shrek decides she wants a one-pan dinner and Clementine turns it into butternut squash risotto. Another is built on Scooby-Doo's absurdly tall sandwiches.",
+        "Four spots, directed by Brian McGinn — Chef's Table, The Bear, Street Food — through Prettybird, with Instacart's in-house agency Local Produce. Two more follow in the autumn.",
+        "Clementine launched earlier in September across the US and Canada, turning recipes, screenshots and handwritten lists into carts. Orders placed through it average more items than Instacart's usual $115 basket.",
+        "The media buy is everything at once: linear TV, OTT, YouTube, audio, social, influencer and in-app. Brand marketing VP Jasmine Taylor describes the assistant as \"a warm and capable presence that helps you think ahead\"."
+      ]
+    }
+  ],
+  "learn": {
+    "title": "You did not forget why you came into the kitchen. The doorway took it from you.",
+    "subject": "The doorway effect: crossing a threshold acts as an event boundary and degrades memory for what you decided in the previous room",
+    "body": [
+      "Everyone has done it. You get up with a clear purpose, walk into another room, and arrive with nothing. The usual explanation is that you were distracted, or tired, or getting old. Gabriel Radvansky, a psychologist at Notre Dame, ran the experiment and found something better: the door did it.",
+      "In the studies, people picked up an object from a table and carried it to another table to swap it, sometimes crossing a room, sometimes walking the same distance but through a doorway. Memory for what they were carrying got measurably worse after the doorway — in a virtual environment, and again in a real one where the object was hidden in a box so it could not be peeked at. Same distance, same task, same time. Only the door changed.",
+      "The clever part was the third experiment. If the problem were simply being in the wrong place, going back should fix it. So they sent people through several doorways and back into the room they started in. Memory did not recover. What matters is not where you are but how many thresholds you crossed — each one tells your mind the episode is over and files it away. Which means the honest thing to say when you arrive empty-handed is not \"I forgot\", but \"that was a different chapter\"."
+    ],
+    "source_url": "https://news.nd.edu/news/walking-through-doorways-causes-forgetting-new-research-shows/"
+  },
+  "ideas": {
+    "prompt": "Ten things that deserve their own museum",
+    "note": "Altucher's drill: ten ideas a day against one prompt. Today's came out of r/SomebodyMakeThis, where several of this week's requests are variations on the same wish — somebody please archive this before it disappears.",
+    "items": [
+      {
+        "text": "A museum of discontinued flavours, one small cup of each, staffed by the people who developed them."
+      },
+      {
+        "text": "A museum of failed infrastructure: the flyover to nowhere, the metro line drawn four times and never built."
+      },
+      {
+        "text": "A museum of hold music, with headphones and the original phone systems still ringing."
+      },
+      {
+        "text": "A museum of handwriting, arranged by decade, so you can watch a country's script change shape."
+      },
+      {
+        "text": "A museum of things found in returned library books."
+      },
+      {
+        "text": "A museum of the last working example of each thing — the last functioning pager network, the last CRT still in daily use."
+      },
+      {
+        "text": "A museum of interface sounds, from the dial-up handshake to the Nokia message tone."
+      },
+      {
+        "text": "A museum of wrong predictions, each exhibit dated, signed and still wrong."
+      },
+      {
+        "text": "A museum of one street, documenting every shop that has occupied each address since records began.",
+        "why": "Several requests on r/SomebodyMakeThis this week are about preserving art, culture and local information before it is lost; a single street is the smallest version anyone could actually finish."
+      },
+      {
+        "text": "A museum of smells that no longer exist, which would need a perfumer, an archivist and a very good lawyer."
+      }
+    ]
+  }
+}

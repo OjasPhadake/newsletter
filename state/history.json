@@ -2998,6 +2998,164 @@
         "soranews24.com",
         "tacobell.com"
       ]
+    },
+    {
+      "date": "2026-09-22",
+      "issue": 1,
+      "quote_text": [
+        "Coming back to where you started is not the same as never leaving."
+      ],
+      "quote_author": [
+        "Terry Pratchett"
+      ],
+      "idea_text": [
+        "A museum of discontinued flavours, one small cup of each, staffed by the people who developed them.",
+        "A museum of failed infrastructure: the flyover to nowhere, the metro line drawn four times and never built.",
+        "A museum of hold music, with headphones and the original phone systems still ringing.",
+        "A museum of handwriting, arranged by decade, so you can watch a country's script change shape.",
+        "A museum of things found in returned library books.",
+        "A museum of the last working example of each thing — the last functioning pager network, the last CRT still in daily use.",
+        "A museum of interface sounds, from the dial-up handshake to the Nokia message tone.",
+        "A museum of wrong predictions, each exhibit dated, signed and still wrong.",
+        "A museum of one street, documenting every shop that has occupied each address since records began.",
+        "A museum of smells that no longer exist, which would need a perfumer, an archivist and a very good lawyer."
+      ],
+      "idea_prompt": [
+        "Ten things that deserve their own museum"
+      ],
+      "tip_text": [
+        "Count your corrections. If you have told Claude the same thing wrong twice in one session, stop correcting — the context is now mostly failed approaches. Run /clear and write one new prompt that includes what the two failures taught you.",
+        "For a question you want answered but not remembered — what does this flag do, is this library maintained — ask it with /btw. The answer never enters the conversation history, so checking a detail costs you nothing in context."
+      ],
+      "hn_id": [
+        "49780820",
+        "49780797",
+        "49785429",
+        "49778029",
+        "49776699"
+      ],
+      "link": [
+        "https://libroot.org/posts/what-happened-to-the-snowden-archive",
+        "https://agentexecutor.io",
+        "https://zuckoff.app/",
+        "https://en.sedaily.com/finance/2026/09/20/samsung-to-double-hbm4-output-next-year-sources-say",
+        "https://pirateface.co/",
+        "https://inc42.com/buzz/rbi-floats-draft-rules-to-standardise-account-blocking-in-cyber-fraud-cases/",
+        "https://techcrunch.com/2026/09/21/x-will-now-tell-users-when-governments-have-forced-it-to-limit-their-posts/",
+        "https://www.sci.news/archaeology/mammoth-ivory-figurines-mizyn-ukraine-15080.html",
+        "https://www.eventmarketer.com/article/top-experiential-brand-collabs-new-york-fashion-week-2026/",
+        "https://www.prnewswire.com/news-releases/campari-invites-negroni-lovers-to-embrace-their-bitterness-with-alan-cumming-and-the-bitter-nine-302884725.html",
+        "https://www.contentgrip.com/instacart-clementine-pop-culture/",
+        "https://www.microsoft.com/en-us/research/blog/improving-synthesis-prediction-of-small-molecules-at-scale-with-retrochimera/",
+        "https://arxiv.org/abs/2609.22039",
+        "https://www.kotakneo.com/news/market-news/closing-bell-21-september-2026/",
+        "https://www.stockezee.com/fii-dii-data",
+        "https://www.outlookbusiness.com/markets/rupee-rises-15-paise-to-close-at-9581-against-us-dollar"
+      ],
+      "subject": [
+        "RBI draft KYC amendment directions on temporary debit holds in cyber-fraud and money-mule cases",
+        "X expands its Under the Hood transparency tool to disclose government-ordered downranking and withholding, naming the requesting country",
+        "Mizyn mammoth-ivory figurines were engraved to follow the ivory's internal Schreger and Owen growth lines",
+        "Calzedonia ran a branded NYC taxi with three-dimensional legs on the roof and a brownstone-stoop pop-up during New York Fashion Week",
+        "Campari revived its 1970s '9 out of 10,000' advertisement as The Bitter Nine, a group of nine personalities led by Alan Cumming, for Negroni Week 2026",
+        "Instacart launched ads for its Clementine AI shopping assistant built around food scenes from Shrek, Scooby-Doo, The Office and A Charlie Brown Thanksgiving",
+        "RetroChimera: two retrosynthesis models that fail differently, ensembled",
+        "Gricea: An Open Science Platform for Conversational AI Research",
+        "The doorway effect: crossing a threshold acts as an event boundary and degrades memory for what you decided in the previous room"
+      ],
+      "brand": [
+        "Calzedonia",
+        "Beauty of Joseon",
+        "Blindspot",
+        "Campari",
+        "Alan Cumming",
+        "Imbibe",
+        "Slow Food",
+        "Instacart",
+        "Prettybird",
+        "Local Produce"
+      ],
+      "brand_mention": [
+        "Stoop",
+        "Lafayette Street",
+        "SoHo",
+        "Italian",
+        "York",
+        "Inside",
+        "Beauty",
+        "Joseon",
+        "Blindspot",
+        "Campari",
+        "Alan Cumming",
+        "Bitter",
+        "I've",
+        "Negroni Week",
+        "Imbibe",
+        "Slow Food Negroni Week Fund Note",
+        "Turn",
+        "TV",
+        "Shrek",
+        "Scooby-Doo",
+        "Office",
+        "Charlie Brown Thanksgiving",
+        "Clementine",
+        "Brian McGinn",
+        "Chef's Table",
+        "Bear",
+        "Street Food",
+        "Prettybird",
+        "Instacart's",
+        "Local Produce",
+        "Canada",
+        "OTT",
+        "VP Jasmine Taylor"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "The RBI wants your bank to freeze the disputed ₹5,000, not the account it sat in"
+        ],
+        [
+          "trends",
+          "X will now tell you which government made your post disappear"
+        ],
+        [
+          "trends",
+          "Ice Age carvers could read the grain of a mammoth tusk, and drew along it"
+        ],
+        [
+          "wild",
+          "Calzedonia put two pairs of legs on the roof of a New York taxi and drove it around Fashion Week"
+        ],
+        [
+          "wild",
+          "Campari dug up a 1970s ad that praised nine people in ten thousand, then went and found nine people"
+        ],
+        [
+          "wild",
+          "Instacart is selling its AI assistant by making you hungry for a cartoon sandwich"
+        ],
+        [
+          "research",
+          "RetroChimera: two retrosynthesis models that fail differently, ensembled"
+        ],
+        [
+          "research",
+          "Gricea: An Open Science Platform for Conversational AI Research"
+        ],
+        [
+          "learn",
+          "You did not forget why you came into the kitchen. The doorway took it from you."
+        ]
+      ],
+      "editorial_domains": [
+        "contentgrip.com",
+        "eventmarketer.com",
+        "inc42.com",
+        "prnewswire.com",
+        "sci.news",
+        "techcrunch.com"
+      ]
     }
   ]
 }
