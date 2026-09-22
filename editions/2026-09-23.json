@@ -1,0 +1,339 @@
+{
+  "date_line": "Wednesday, 23 September 2026",
+  "issue": 1,
+  "preheader": "Three frontier model launches landed inside 24 hours and Hacker News voted for all of them; India's e-commerce rules now ban manipulated search results; a seafloor bacterium grows a nickel wire that beats the synthetic version; and why every sheet of A4 in the world is exactly that shape.",
+  "quote": {
+    "text": "We no longer believe because it is absurd: it is absurd because we must believe.",
+    "author": "Julio Cortázar",
+    "source_url": "https://www.goodreads.com/quotes/122295-we-no-longer-believe-because-it-is-absurd-it-is",
+    "note": "Cortázar takes Tertullian's old line — I believe because it is absurd — and runs the arrow backwards. The absurdity is not the reason for the belief; it is the residue left behind once the belief became compulsory. Useful the next time someone defends a process by how strange it is."
+  },
+  "agent_craft": {
+    "items": [
+      {
+        "text": "If you have a subagent that does one narrow job — a reviewer, a test-runner, a search agent — put omitClaudeMd in its frontmatter. It then runs without your user, project and local CLAUDE.md files, so the whole house style does not get re-read on every fan-out.",
+        "source": "Claude Code changelog, v2.1.271 (14 September 2026)",
+        "url": "https://code.claude.com/docs/en/changelog"
+      },
+      {
+        "text": "Type /skills. The dialog now shows every skill's source, its token estimate and whether it is on, and you can switch one off from there — the fastest way to find out what is eating your context before the session starts.",
+        "source": "Claude Code changelog, v2.1.280 (22 September 2026)",
+        "url": "https://code.claude.com/docs/en/changelog"
+      }
+    ]
+  },
+  "hn": [
+    {
+      "title": "MiMo v2.6",
+      "url": "https://mimo.xiaomi.com/mimo-v2-6",
+      "hn_url": "https://news.ycombinator.com/item?id=49792730",
+      "points": 1089,
+      "comments": 469,
+      "bullets": [
+        "Xiaomi open-sourced two natively multimodal models on 22 September: MiMo-V2.6-Pro, a 1.02T-parameter sparse mixture of experts with 42B active per token, and MiMo-V2.6-Flash at 309B with 15B active. Both take text, image, video and audio, both carry a 1M-token context window, and both are MIT-licensed on Hugging Face and ModelScope.",
+        "Pro scores 46 on the Artificial Analysis Intelligence Index — first among the 114 open-weight models tracked, ahead of Kimi K3 and Qwen3.8 Max. The closed models at the top of the same index sit at 53.",
+        "The jump is largest on agentic coding. On DeepSWE v1.1, Flash went from 48.8 to 65.7 and Pro from 58.4 to 72.6 against V2.5 — roughly 17 and 14 points. Xiaomi also reports 53.1 on AutomationBench v1.0.6 and 34.9 on Terminal Bench 4.0 for Pro.",
+        "The cost line is the one worth reading twice. Both models completed 30 reinforcement-learning steps in under six days on about 750,000 trajectories, at a reported $2.62 million for Pro and $850,000 for Flash. Pricing is unchanged from V2.5: $0.435 in / $0.87 out per million tokens for Pro, $0.14 / $0.28 for Flash.",
+        "Caveat: every benchmark except the Artificial Analysis index is vendor-reported. An UltraSpeed variant claiming \"up to 20x inference speed\" is also announced, with no independent measurement behind it yet."
+      ]
+    },
+    {
+      "title": "Claude Opus 5.5",
+      "url": "https://www.anthropic.com/claude-opus-5-5",
+      "hn_url": "https://news.ycombinator.com/item?id=49803892",
+      "points": 1047,
+      "comments": 752,
+      "bullets": [
+        "Anthropic's pitch is not a capability jump but a price one: Opus 5.5 performs \"at the level of Claude Fable 5.1 on most work and costs 40% less to run than Opus 5\", and generates output more than 30% faster.",
+        "Terminal-Bench 4.0: 66.4%, against 55.8% for Fable 5.1, 52.3% for Opus 5 and 57.9% for GPT-6 Astra. FrontierCode v1.1: 54.4%. CursorBench 4.0: 57.8%. OSWorld 2.0: 81.8%. GDPval-AA v2.1: 1846 Elo, against 1542 for GPT-6 Astra.",
+        "Pricing per million tokens is $4 in / $20 out, down from $5 / $25. Cache reads fall further, $0.50 to $0.20 — a 60% cut that matters most to anyone running long agentic sessions. Fast mode is $8 / $40.",
+        "Anthropic calls it its strongest-performing model to date on automated behavioural audits, and ships it with the cybersecurity and biology safeguards introduced for Fable 5.1, including verification programs for sensitive uses.",
+        "Available on every platform including AWS, Google Cloud and Azure, as claude-opus-5-5. Sonnet 5.5 and Haiku 5.5 are promised in the following weeks."
+      ]
+    },
+    {
+      "title": "Attention is all you have",
+      "url": "https://alicegg.tech/2026/09/21/attention",
+      "hn_url": "https://news.ycombinator.com/item?id=49787726",
+      "points": 1031,
+      "comments": 315,
+      "bullets": [
+        "An essay by Alice Girard Guittard, co-founder of Tsukumogami Software, arguing that handing your attention to a recommendation algorithm is \"the same as giving them the key to your brain\".",
+        "The hook is the Tetris effect: play long enough and you start seeing the shapes everywhere. Her point is that the same mechanism runs on a feed — sustained attention reshapes what you notice, and the feed chooses the shapes.",
+        "Her examples are specific and unflattering. YouTube slipping doomscroll bait between the things you asked for; Spotify inserting AI-generated filler to avoid paying royalties; LinkedIn burying the career news you came for under third-party opinion.",
+        "The argument's second half is historical. The web used to require intent — a bookmark, a typed URL, a choice of destination. That web still exists underneath the corporate one: blogs, RSS, independent sites. It is just no longer the default.",
+        "No statistics, no study, no data. It is a polemic, and it ranked partly because it is one. The prescription is patience: choose what you read before you open the thing you read it on."
+      ]
+    },
+    {
+      "title": "GPT-6 Sol and Luna",
+      "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "hn_url": "https://news.ycombinator.com/item?id=49805509",
+      "points": 1007,
+      "comments": 545,
+      "bullets": [
+        "Two workhorses rather than a flagship. Sol is for recurring complex work — coding, debugging, agent loops. Luna is for high-volume routine jobs like summarisation and extraction. Both sit below GPT-6 Astra.",
+        "The headline is the price. Sol is $2 in / $10 out per million tokens, down from $4 / $20 for GPT-5.6 Sol. Luna is $0.10 / $0.50, down from $0.20 / $1.20. That is a 50%-plus cut on both, with capability going up rather than down.",
+        "Benchmarks, as reported by OpenAI: Sol at extra-high effort scores 33.2% on AutomationBench 1.0.6 at $0.27 a task, which OpenAI contrasts with Opus 5 at maximum effort on 26.9% at 11.1 times the cost. Sol scores 68.8% on DeepSWE 1.1, 60.5% on OSWorld 2.0 and 56.4% on Agents' Last Exam.",
+        "Luna's number is the more interesting one: 66.6% on DeepSWE, which OpenAI puts level with Opus 5 and Fable 5 at medium effort while costing 93% and 96% less.",
+        "OpenAI credits inference and caching work for the cut, and shipped a companion prompt-caching update the same day with discounts of up to 90% on cached input tokens. Available as gpt-6-sol and gpt-6-luna, plus ChatGPT Work and Codex for Plus, Pro, Business and Enterprise."
+      ]
+    },
+    {
+      "title": "I don't want to read what you didn't write",
+      "url": "https://blog.colinbreck.com/i-dont-want-to-read-what-you-didnt-write/",
+      "hn_url": "https://news.ycombinator.com/item?id=49794330",
+      "points": 984,
+      "comments": 419,
+      "bullets": [
+        "Colin Breck's argument is not that AI writing is bad prose. It is that AI writing is exhausting to read, because the person who prompted it holds context the reader does not, and the reader has to reconstruct all of it from a text that was never shaped by a point of view.",
+        "He quotes Bryan Cantrill on what happens the moment you notice: \"our brains pull an LLM-triggered ejection handle, bailing us out mid-sentence in an act of self-preservation.\"",
+        "The numbers come from Cynthia Dunlop's survey, \"How developers react to AI-scented blog posts\": 78% stop reading if they suspect AI involvement, 71% avoid the author afterwards, and 98% prefer authentic writing to an AI rewrite. Breck reports them without a sample size.",
+        "His line is drawn at generation, not assistance. Checking technical accuracy, grammar, clarity, citation formatting — fine. Producing the design document, the pull request or the message to a colleague — not fine, because the writing is where the thinking happened.",
+        "Worth pairing with the third story on this list. Both are about the same thing from opposite ends: what you lose when the default output of a system stops being anybody's choice."
+      ]
+    }
+  ],
+  "markets": {
+    "indices": [
+      {
+        "name": "Sensex · close, Tue 22 Sep",
+        "value": "74,529.08",
+        "change": "329.91 (0.44%)",
+        "direction": "down"
+      },
+      {
+        "name": "Nifty 50 · close, Tue 22 Sep",
+        "value": "23,329.00",
+        "change": "85.30 (0.36%)",
+        "direction": "down"
+      },
+      {
+        "name": "Nifty IT · Tue 22 Sep",
+        "value": "—",
+        "change": "0.86% — a two-month low, the day's worst sector",
+        "direction": "down"
+      },
+      {
+        "name": "Nifty Media · Tue 22 Sep",
+        "value": "—",
+        "change": "1.21% — fifth straight gaining session",
+        "direction": "up"
+      },
+      {
+        "name": "Bank Nifty · Tue 22 Sep",
+        "value": "—",
+        "change": "0.45%",
+        "direction": "down"
+      },
+      {
+        "name": "USD/INR · Tue 22 Sep close",
+        "value": "95.59",
+        "change": "rupee 22 paise stronger, from 95.81",
+        "direction": "up"
+      }
+    ],
+    "stories": [
+      {
+        "headline": "The Nasdaq had a record day and Indian IT fell to a two-month low, which is the whole argument about what Indian IT actually sells",
+        "url": "https://www.5paisa.com/blog/post-market-update-nifty-ends-4-day-rally-it-stocks-crude-oil-below-100-september-22-2026",
+        "source": "5paisa post-market update — Tuesday 22 September 2026 session; flows from 5paisa's NSE/BSE provisional FII-DII data",
+        "bullets": [
+          "Sensex closed at 74,529.08, down 329.91 points. Nifty 50 closed at 23,329.00, down 85.30 points or 0.36%, snapping a four-session winning streak. Both opened higher and gave it back.",
+          "Only three of the eleven major Nifty sectoral indices finished positive. Nifty IT fell 0.86% to a two-month low; Bank Nifty fell 0.45%; Nifty Media rose 1.21%, its fifth straight gain.",
+          "Breadth was negative but not ugly: of 3,670 stocks traded, 1,679 advanced, 1,868 declined and 123 were unchanged.",
+          "Institutional flows, provisional: FIIs sold ₹13,655.80 crore against ₹9,845.80 crore bought, a net ₹3,810.00 crore out. DIIs bought ₹14,599.70 crore against ₹10,479.60 crore sold, a net ₹4,120.10 crore in. Domestic money absorbed the selling and a bit more, which is why a bad IT day cost the index only 0.36%.",
+          "Indian IT does not rise with American AI capex. It rises when global clients approve outsourcing and transformation budgets — and with US Treasury yields near 5%, those budgets are the first thing to get deferred."
+        ]
+      },
+      {
+        "headline": "The rupee closed at 95.59, up 22 paise, on crude below $100",
+        "url": "https://www.indmoney.com/blog/stocks/why-sensex-fell-september-22-2026-recap",
+        "source": "INDmoney market recap — Tuesday 22 September 2026",
+        "bullets": [
+          "The rupee ended at ₹95.59 to the dollar against ₹95.81 the previous session — 22 paise stronger. 5paisa put the close a paisa lower, at ₹95.58, or 0.2% firmer; the two agree on direction and size.",
+          "Crude below $100 is doing the work. India imports most of what it burns, so an oil move is mechanically a rupee move, and it is the same cooling that lifted the market at the open before IT dragged it back.",
+          "Final FII/DII figures for Tuesday were not yet published when this recap went out; the numbers in the story above are the provisional NSE/BSE cash-market prints.",
+          "Markets are open this morning for a normal session."
+        ]
+      }
+    ]
+  },
+  "trends": [
+    {
+      "tag": "India",
+      "headline": "Manipulating your search results is now specifically illegal for an Indian e-commerce platform",
+      "url": "https://www.indialaw.in/blog/consumer/consumer-protection-e-commerce-amendment-rules-2026/",
+      "subject": "Consumer Protection (E-Commerce) (Amendment) Rules 2026 notified, banning search-ranking manipulation and mandating sponsored-listing and ranking-parameter disclosure",
+      "subtitle": "Notified 9 September 2026 · CG-DL-E-10092026-276125 · in force 1 January 2027",
+      "bullets": [
+        "The amendment writes a specific prohibition into the rules: no \"misleading users by manipulating search results or search indexes\". Until now this was argued under general unfair-trade-practice language.",
+        "Marketplaces must publish the main parameters that determine how goods and sellers are ranked — the recommender has to describe itself. Sponsored listings need \"clear and prominent disclosure\" so a paid placement cannot pass as a relevance result.",
+        "Discount maths gets a definition. \"Prior price\" is now the lowest price of that good in the thirty days before the reduction was announced, which ends the trick of raising a price for a week so the sale looks bigger.",
+        "Grievances get a clock: acknowledge within forty-eight hours, redress within one month, and hand the complainant a copy of the complaint as the officer recorded it. Every entity must also join the National Consumer Helpline convergence, which was voluntary before.",
+        "Also in: mandatory annual self-audits against the 2023 dark-patterns guidelines with the certificate displayed prominently, and full country-of-origin naming for imported goods. Notified 9 September, binding from 1 January 2027 — about fourteen weeks of runway."
+      ]
+    },
+    {
+      "tag": "Platforms",
+      "headline": "From next Tuesday, an Android app in four countries has to be traceable to a verified human",
+      "url": "https://developer.android.com/developer-verification",
+      "subject": "Google begins enforcing Android developer verification on 30 September 2026 in Brazil, Indonesia, Singapore and Thailand",
+      "subtitle": "Enforcement starts 30 September 2026 · global rollout across certified devices from 2027",
+      "bullets": [
+        "Enforcement begins 30 September 2026 in Brazil, Indonesia, Singapore and Thailand, across certified devices running Android 7 and later. Participating stores include Google Play, Galaxy Store, GetApps and the HONOR, OPPO, Palm and V-Appstore markets.",
+        "The point is that it does not stop at the store. Verification links an app to an identified developer account, and the check runs on the device — so it reaches sideloaded apps too, not just ones distributed through a storefront.",
+        "Google says Play Console automatically registers 99% of apps; the remaining ones, and anything distributed outside Play, have to be registered by hand through Play Console or the new Android Developer Console.",
+        "The hobbyist escape hatch exists and is narrow: a limited distribution account lets students, teachers and hobbyists share an app with up to twenty devices \"without a government-issued ID or registration fee\". Beyond twenty devices, you identify yourself.",
+        "There is also an advanced flow for power users who want to install unverified apps. Global rollout across all certified Android devices is planned from 2027, which is when this stops being a four-country story."
+      ]
+    },
+    {
+      "tag": "Wildcard",
+      "headline": "A bacterium in the seafloor grows a metal wire out of nickel, and it conducts better than most things chemists can make",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13534509/",
+      "subject": "Cable bacteria conduct electricity over centimetres through a biosynthetic nickel-organic framework of intertwined nanoribbons inside their periplasmic fibres",
+      "subtitle": "Meysman et al., Nature Communications 17:8814 · 1 September 2026 · University of Antwerp, TU Delft, Imperial College London, UCL, ESRF",
+      "bullets": [
+        "Cable bacteria are centimetre-long filaments living in seafloor mud that move electrons from one end of themselves to the other. Nobody knew what the wire was made of. Now they do: a nickel-organic framework the bacterium builds itself.",
+        "Each conductive fibre — 49 ± 5 nm across — holds about 11 ± 2 intertwined nanoribbons, each 1.40 ± 0.16 nm thick, twisted together like the strands of a copper cable. The repeat unit is nickel centres bridged by organic dithiolene ligands, giving an unbroken conjugated path.",
+        "Measured fibre conductivity is 5–500 S/cm. Back out the single nanoribbon and it is 150–15,000 S/cm, which the authors say ranks among the highest reported for any metal-organic structure. The best synthetic equivalent, poly-nickel(ethene tetrathiolate), manages about 1,200 S/cm.",
+        "The reorganisation energy is roughly 160 meV — very low, which is the physical reason charge moves this well over this far. The cell packs about 75 nickel centres per nanometre of fibre, some 18 million nickel atoms per cell.",
+        "The point that should bother a materials chemist: this is assembled at room temperature, in water, by a bacterium, and it beats the furnace-and-solvent version. Sustainable conductor design has a working prototype it did not design."
+      ]
+    }
+  ],
+  "research": [
+    {
+      "tag": "Industry · Anthropic",
+      "title": "Three outside teams studied 250,000 Claude conversations without reading a single one",
+      "url": "https://www.anthropic.com/research/enabling-independent-research",
+      "subtitle": "Anthropic, Societal Impacts · 26 August 2026 · aggregate data released on Hugging Face",
+      "bullets": [
+        "The problem this addresses is structural: almost everything published about how people actually use AI assistants is written by the company that owns the logs. Outside researchers get surveys and screenshots.",
+        "Anthropic piloted a route around it. Three research institutions designed their own studies and ran them through Anthropic Insights, a privacy-preserving analysis tool, over roughly 250,000 Claude.ai and Claude Code conversations from April–May 2026.",
+        "The mechanism is worth understanding. A researcher poses a question — \"what type of guidance is this person asking for?\" — Claude answers it for every conversation, and the researcher sees only category percentages. No raw conversation is ever exposed, and the outputs pass the same legal and privacy review as internal work.",
+        "Findings from the pilot: over half of conversations involved delegating a consequential task, and in nearly three-quarters the person directed while Claude assisted. Fewer than 5% of categories contained policy violations.",
+        "A third-party privacy audit by Imperial College London verified the protections, and aggregate data from each project is on Hugging Face. The interesting question is whether any other lab copies the arrangement, because one company's transparency programme is still one company's choice."
+      ]
+    },
+    {
+      "tag": "Academia · ETH Zurich & EPFL",
+      "title": "Objective vs. Search: Decomposing What Makes a Good Tokeniser",
+      "url": "https://arxiv.org/abs/2609.19145",
+      "subtitle": "Ahmetcan Yavuz, Clara Meister and Tiago Pimentel · ETH Zurich and EPFL · arXiv, 16 September 2026 · 20 pages, 4 figures, 10 tables",
+      "bullets": [
+        "Every language model starts with a tokeniser, and essentially everyone uses one of two: byte-pair encoding or UnigramLM. They differ on two axes at once — what they optimise (compression vs. log-likelihood) and how they search (bottom-up merging vs. top-down pruning).",
+        "Because the two real algorithms differ on both axes, every previous comparison confounds them. Nobody could say whether BPE wins because of its objective or because of its search.",
+        "So the authors built the missing corners of the 2×2: BottomUpLL, a bottom-up likelihood tokeniser, and TopDownComp, a top-down compression one. Then they trained models across varying sizes, vocabulary sizes and domains (English-only and multilingual).",
+        "The answer: the search procedure dominates, not the objective. Bottom-up tokenisers consistently achieve lower bits-per-byte in most settings. Which of the two things everybody argues about turns out to be the one that mattered less.",
+        "The honest second half: on BLiMP, the linguistic-acceptability benchmark, there is no consistent relationship between design choice and performance at all. Better compression did not buy better grammar, and the paper says so."
+      ]
+    }
+  ],
+  "wild": [
+    {
+      "tag": "Fintech",
+      "headline": "A corporate card company has booked a Broadway theatre for one night to stage a musical about paying invoices",
+      "url": "https://playbill.com/article/broadway-will-get-a-1-night-only-industrial-ramp-bill-pay-musical",
+      "entities": [
+        "Ramp",
+        "Billy Porter",
+        "Billy Zane",
+        "Jessica Vosk"
+      ],
+      "subject": "Ramp is staging Bill Pay The Musical, a one-night original industrial musical about its bill-pay product, at Broadway's Broadhurst Theatre",
+      "bullets": [
+        "Bill Pay The Musical runs for exactly one performance, on 25 September 2026, at the Broadhurst Theatre. It is an original book musical with songs about automated invoice payment.",
+        "The cast is not a joke cast: Tony winner Billy Porter, Billy Zane and Jessica Vosk lead, with Rema Webb and an eight-strong ensemble. Book by Kevin Zak, music and lyrics by Jason Michael Snow, directed by Keaton Wooden, choreographed by Antoinette DiPietropolo, with full scenic, costume and lighting designers.",
+        "You cannot buy a ticket. Attendance is by lottery at BillPaytheMusical.com.",
+        "The form is a deliberate revival. Ramp co-founder Eric Glyman: \"In the 1950s and '60s, America's biggest companies staged lavish musicals about cars, appliances, and soda.\" Industrial musicals were a real genre, performed for dealers and staff and almost never for the public.",
+        "The stunt works because the subject is the least theatrical thing imaginable. A song about accounts payable is funny in a way a song about a sports car never was."
+      ]
+    },
+    {
+      "tag": "Retail",
+      "headline": "Gap has signed a boy band, invented a word for it, and put the docuseries and the mall tour in the same contract",
+      "url": "https://www.prnewswire.com/news-releases/gap-inc-debuts-first-fashiontainment-partnership-with-emerging-boy-band-jyt-302885360.html",
+      "entities": [
+        "Gap",
+        "JYT",
+        "Just Your Type",
+        "Freddy Wexler"
+      ],
+      "subject": "Gap launched a Fashiontainment platform with a multi-year partnership with boy band Just Your Type, covering a docuseries, a national mall tour and a co-designed capsule collection",
+      "bullets": [
+        "Announced 22 September. \"Fashiontainment\" is Gap's new platform for content, licensing and partnerships built around its brands, and JYT — Just Your Type — is the first deal under it.",
+        "The band is five performers: Recker Eans, Toby Green, Caden Adamonis, Bryan Chan and Tyler George. They were created and developed by Grammy-nominated producer Freddy Wexler and signed to Wexler Records / Republic Records.",
+        "The numbers Gap is buying: over 450 million views in the past 90 days and more than 2 million social followers.",
+        "The deal is three things at once — a multi-episode docuseries co-produced by Gap, a national mall tour starting next month with in-store performances, and a Gap x JYT capsule collection co-designed by all five members, dropping this autumn.",
+        "The mall tour is the tell. Gap is not renting an audience for a campaign; it is routing a fanbase through its own stores, which is a retail strategy wearing a music strategy's clothes. Pam Kaufman, Chief Entertainment Officer, runs it."
+      ]
+    },
+    {
+      "tag": "Drinks",
+      "headline": "Pepsi's new prebiotic cola is being sold from the chair of a blow-dry salon",
+      "url": "https://www.pepsico.com/newsroom/press-releases/2026/pepsi-prebiotic-cola-and-drybar-are-giving-your-getting-ready-ritual-a-refresh",
+      "entities": [
+        "Pepsi",
+        "Drybar",
+        "WellBiz Brands"
+      ],
+      "subject": "Pepsi Prebiotic Cola partnered with the Drybar blow-dry chain to hand free cans to guests mid-appointment across 200-plus shops",
+      "bullets": [
+        "From 1 September, every guest in more than 200 Drybar shops in the US gets a free Pepsi Prebiotic Cola — Original Cola or Cherry Vanilla — while they are in the chair having their hair blown out.",
+        "The codes do the rest of the work. PEPSIPREGAME gets a new Drybar client a $30 blowout, and the same code takes 30% off the cola on Amazon from 1 September to 31 October. One string, two businesses, both directions.",
+        "The target is not thirst, it is a routine. Pepsi's Sara Garner: \"we're pairing a reimagined take on Pepsi Cola with a getting ready ritual people already love\". The \"get ready with me\" video format is the actual media buy here, and nobody had to pay for it.",
+        "Drybar's side is blunter. WellBiz Brands CMO Michelle Devore: \"Enjoying a Pepsi Prebiotic Cola in the chair makes it feel like a treat instead of an errand.\"",
+        "Note what a soft drink now has to do to launch. Not a stunt, not a billboard — find a forty-minute window where somebody is sitting still with nothing in their hands, and be the thing in them."
+      ]
+    }
+  ],
+  "learn": {
+    "title": "A4 is that exact shape because of a joke a German physicist made in a letter in 1786",
+    "subject": "Origin of the ISO 216 A-series paper sizes: Lichtenberg's 1786 root-two letter, Porstmann's one-square-metre A0, DIN 476 in 1922 and worldwide adoption",
+    "body": [
+      "Pick up a sheet of A4. It is 210 by 297 millimetres, which is an odd pair of numbers until you notice what they do: fold it in half and you get A5, which is exactly the same shape. Fold again and you get A6, same shape. No other rectangle survives being halved without changing its proportions, and only one ratio manages it — the square root of two, about 1.414. Georg Christoph Lichtenberg, a physicist at Göttingen better known for his aphorisms, pointed this out in a letter dated 25 October 1786. Then nothing happened with it for well over a century.",
+      "The idea was picked up during the French Revolution, when the metric system arrived and the state needed paper formats for stamped legal documents; six sizes were published in 1798 and went nowhere. What finally made it a system was Walter Porstmann, who added the one thing Lichtenberg's ratio was missing: a size to start from. He gave A0 an area of exactly one square metre. Everything else falls out of that — A1 is half a square metre, A4 is a sixteenth, and the millimetre dimensions are just those areas rounded to the nearest millimetre. Germany published it as DIN 476 on 18 August 1922.",
+      "It spread the way a good standard does, quietly and fast: Belgium in 1924, the Netherlands 1925, Norway 1926, Finland 1927, Switzerland 1929, Sweden 1930, and by 1975 enough of the world had it that it became ISO 216. By 1977 A4 was standard in 88 of 148 countries. North America never took it, which is why an American letter is a different and slightly stumpier shape. And the one-square-metre trick has a payoff you can use at a photocopier: paper is sold by grammage, grams per square metre, so an A4 sheet of 80 gsm paper weighs 80 divided by 16 — five grams. Twenty sheets to a hundred grams, every time."
+    ],
+    "source_url": "https://en.wikipedia.org/wiki/Paper_size"
+  },
+  "ideas": {
+    "prompt": "Ten things you could do with a friend that aren't dinner",
+    "note": "Altucher's drill: ten ideas a day against one prompt. Dinner is the default because it requires no imagination and no planning — which is also why nobody remembers any particular one.",
+    "items": [
+      {
+        "text": "Go to the last day of an exhibition neither of you has heard of, and leave after twenty minutes if it is bad."
+      },
+      {
+        "text": "Take the same bus route to the end, get off, and walk back one stop at a time."
+      },
+      {
+        "text": "Cook one dish each from the other person's childhood, badly, from memory rather than a recipe."
+      },
+      {
+        "text": "Sit in a bookshop for an hour and each pick a book for the other to actually finish."
+      },
+      {
+        "text": "Do the errand neither of you has done for six months — the post office, the tailor, the bank — together, and make it a morning."
+      },
+      {
+        "text": "Watch a sport you don't understand, in person, from the cheapest seats, and work out the rules by arguing."
+      },
+      {
+        "text": "Write down what you each wish you had known four years ago, seal them, and read them to each other in four years.",
+        "why": "Lifted from a thread on r/SomebodyMakeThis this week asking exactly that question; the answers are better when someone is going to hold you to them."
+      },
+      {
+        "text": "Go to a wholesale market at 6am, buy one absurd quantity of one thing, and give most of it away."
+      },
+      {
+        "text": "Teach each other the most useless skill you have, with an exam at the end."
+      },
+      {
+        "text": "Walk a single street end to end and try to date every building on it, then look up whether you were right."
+      }
+    ]
+  }
+}

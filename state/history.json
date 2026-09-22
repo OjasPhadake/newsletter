@@ -3156,6 +3156,172 @@
         "sci.news",
         "techcrunch.com"
       ]
+    },
+    {
+      "date": "2026-09-23",
+      "issue": 1,
+      "quote_text": [
+        "We no longer believe because it is absurd: it is absurd because we must believe."
+      ],
+      "quote_author": [
+        "Julio Cortázar"
+      ],
+      "idea_text": [
+        "Go to the last day of an exhibition neither of you has heard of, and leave after twenty minutes if it is bad.",
+        "Take the same bus route to the end, get off, and walk back one stop at a time.",
+        "Cook one dish each from the other person's childhood, badly, from memory rather than a recipe.",
+        "Sit in a bookshop for an hour and each pick a book for the other to actually finish.",
+        "Do the errand neither of you has done for six months — the post office, the tailor, the bank — together, and make it a morning.",
+        "Watch a sport you don't understand, in person, from the cheapest seats, and work out the rules by arguing.",
+        "Write down what you each wish you had known four years ago, seal them, and read them to each other in four years.",
+        "Go to a wholesale market at 6am, buy one absurd quantity of one thing, and give most of it away.",
+        "Teach each other the most useless skill you have, with an exam at the end.",
+        "Walk a single street end to end and try to date every building on it, then look up whether you were right."
+      ],
+      "idea_prompt": [
+        "Ten things you could do with a friend that aren't dinner"
+      ],
+      "tip_text": [
+        "If you have a subagent that does one narrow job — a reviewer, a test-runner, a search agent — put omitClaudeMd in its frontmatter. It then runs without your user, project and local CLAUDE.md files, so the whole house style does not get re-read on every fan-out.",
+        "Type /skills. The dialog now shows every skill's source, its token estimate and whether it is on, and you can switch one off from there — the fastest way to find out what is eating your context before the session starts."
+      ],
+      "hn_id": [
+        "49792730",
+        "49803892",
+        "49787726",
+        "49805509",
+        "49794330"
+      ],
+      "link": [
+        "https://mimo.xiaomi.com/mimo-v2-6",
+        "https://www.anthropic.com/claude-opus-5-5",
+        "https://alicegg.tech/2026/09/21/attention",
+        "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+        "https://blog.colinbreck.com/i-dont-want-to-read-what-you-didnt-write/",
+        "https://www.indialaw.in/blog/consumer/consumer-protection-e-commerce-amendment-rules-2026/",
+        "https://developer.android.com/developer-verification",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC13534509/",
+        "https://playbill.com/article/broadway-will-get-a-1-night-only-industrial-ramp-bill-pay-musical",
+        "https://www.prnewswire.com/news-releases/gap-inc-debuts-first-fashiontainment-partnership-with-emerging-boy-band-jyt-302885360.html",
+        "https://www.pepsico.com/newsroom/press-releases/2026/pepsi-prebiotic-cola-and-drybar-are-giving-your-getting-ready-ritual-a-refresh",
+        "https://www.anthropic.com/research/enabling-independent-research",
+        "https://arxiv.org/abs/2609.19145",
+        "https://www.5paisa.com/blog/post-market-update-nifty-ends-4-day-rally-it-stocks-crude-oil-below-100-september-22-2026",
+        "https://www.indmoney.com/blog/stocks/why-sensex-fell-september-22-2026-recap"
+      ],
+      "subject": [
+        "Consumer Protection (E-Commerce) (Amendment) Rules 2026 notified, banning search-ranking manipulation and mandating sponsored-listing and ranking-parameter disclosure",
+        "Google begins enforcing Android developer verification on 30 September 2026 in Brazil, Indonesia, Singapore and Thailand",
+        "Cable bacteria conduct electricity over centimetres through a biosynthetic nickel-organic framework of intertwined nanoribbons inside their periplasmic fibres",
+        "Ramp is staging Bill Pay The Musical, a one-night original industrial musical about its bill-pay product, at Broadway's Broadhurst Theatre",
+        "Gap launched a Fashiontainment platform with a multi-year partnership with boy band Just Your Type, covering a docuseries, a national mall tour and a co-designed capsule collection",
+        "Pepsi Prebiotic Cola partnered with the Drybar blow-dry chain to hand free cans to guests mid-appointment across 200-plus shops",
+        "Three outside teams studied 250,000 Claude conversations without reading a single one",
+        "Objective vs. Search: Decomposing What Makes a Good Tokeniser",
+        "Origin of the ISO 216 A-series paper sizes: Lichtenberg's 1786 root-two letter, Porstmann's one-square-metre A0, DIN 476 in 1922 and worldwide adoption"
+      ],
+      "brand": [
+        "Ramp",
+        "Billy Porter",
+        "Billy Zane",
+        "Jessica Vosk",
+        "Broadway",
+        "Gap",
+        "JYT",
+        "Just Your Type",
+        "Freddy Wexler",
+        "Pepsi",
+        "Drybar",
+        "WellBiz Brands"
+      ],
+      "brand_mention": [
+        "Bill Pay The Musical",
+        "Broadhurst Theatre",
+        "Tony",
+        "Billy Porter",
+        "Billy Zane",
+        "Jessica Vosk",
+        "Rema Webb",
+        "Kevin Zak",
+        "Jason Michael Snow",
+        "Keaton Wooden",
+        "Antoinette DiPietropolo",
+        "BillPaytheMusical.com",
+        "Eric Glyman",
+        "America's",
+        "Industrial",
+        "Announced 22",
+        "Fashiontainment",
+        "Gap's",
+        "JYT",
+        "Type",
+        "Recker Eans",
+        "Toby Green",
+        "Caden Adamonis",
+        "Bryan Chan",
+        "Tyler George",
+        "Grammy-nominated",
+        "Freddy Wexler",
+        "Wexler Records",
+        "Republic Records",
+        "Pam Kaufman",
+        "Chief Entertainment Officer",
+        "Drybar",
+        "Pepsi Prebiotic Cola",
+        "Original Cola",
+        "Cherry Vanilla",
+        "Pepsi's Sara Garner",
+        "Pepsi Cola",
+        "WellBiz Brands CMO Michelle Devore",
+        "Enjoying",
+        "Note"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "Manipulating your search results is now specifically illegal for an Indian e-commerce platform"
+        ],
+        [
+          "trends",
+          "From next Tuesday, an Android app in four countries has to be traceable to a verified human"
+        ],
+        [
+          "trends",
+          "A bacterium in the seafloor grows a metal wire out of nickel, and it conducts better than most things chemists can make"
+        ],
+        [
+          "wild",
+          "A corporate card company has booked a Broadway theatre for one night to stage a musical about paying invoices"
+        ],
+        [
+          "wild",
+          "Gap has signed a boy band, invented a word for it, and put the docuseries and the mall tour in the same contract"
+        ],
+        [
+          "wild",
+          "Pepsi's new prebiotic cola is being sold from the chair of a blow-dry salon"
+        ],
+        [
+          "research",
+          "Three outside teams studied 250,000 Claude conversations without reading a single one"
+        ],
+        [
+          "research",
+          "Objective vs. Search: Decomposing What Makes a Good Tokeniser"
+        ],
+        [
+          "learn",
+          "A4 is that exact shape because of a joke a German physicist made in a letter in 1786"
+        ]
+      ],
+      "editorial_domains": [
+        "developer.android.com",
+        "indialaw.in",
+        "pepsico.com",
+        "playbill.com",
+        "pmc.ncbi.nlm.nih.gov",
+        "prnewswire.com"
+      ]
     }
   ]
 }
