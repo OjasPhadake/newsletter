@@ -3322,6 +3322,152 @@
         "pmc.ncbi.nlm.nih.gov",
         "prnewswire.com"
       ]
+    },
+    {
+      "date": "2026-09-24",
+      "issue": 1,
+      "quote_text": [
+        "Nowadays most people die of a sort of creeping common sense, and discover when it is too late that the only things one never regrets are one's mistakes."
+      ],
+      "quote_author": [
+        "Oscar Wilde"
+      ],
+      "idea_text": [
+        "The lights in a supermarket aisle you are not standing in.",
+        "The television in a waiting room, with a vote required to turn it back on.",
+        "Automatic reply-all on every email chain older than a week.",
+        "The bit of a phone call where both people say goodbye four times.",
+        "Every notification badge that is an advertisement wearing a notification's clothes.",
+        "The horn on a car, between 10pm and 6am, in residential lanes.",
+        "Background music in restaurants, switchable table by table.",
+        "The mandatory 'how did we do?' survey that arrives before you have finished the thing.",
+        "Autoplay on the next episode, replaced by a ten-second pause with nothing on the screen.",
+        "Your own inner narrator, for one hour a day, sold as a subscription nobody could actually deliver."
+      ],
+      "idea_prompt": [
+        "Ten things in everyday life that should have an off switch"
+      ],
+      "tip_text": [
+        "Keep CLAUDE.md under about 200 lines. It is resent on every single turn, so each extra page you add is a tax you pay for the whole session — and use /clear between unrelated tasks instead of carrying the old context into the new job."
+      ],
+      "hn_id": [
+        "49806430",
+        "49797982",
+        "49805278",
+        "49801939",
+        "49801324"
+      ],
+      "link": [
+        "https://www.bloomberg.com/graphics/2026-iran-school-attack/",
+        "https://dbushell.com/2026/09/22/apple-intelligence/",
+        "https://www.404media.co/we-hacked-the-fbi-hackers-say-they-have-data-on-all-fbi-employees/",
+        "https://www.techradar.com/phones/iphone/i-wish-apple-would-just-stop-that-crap-apple-has-added-persistent-ads-to-ios-and-its-driving-users-crazy",
+        "https://www.cryptocellar.org/bgac/the-mvueh-break.html",
+        "https://www.fxstreet.com/news/india-hsbc-composite-pmi-climbed-from-previous-543-to-565-in-september-202609230503",
+        "https://www.salesforce.com/blog/dreamforce-2026-top-it-announcements/",
+        "https://www.smithsonianmag.com/smart-news/an-amateur-astronomer-using-google-maps-spotted-a-strange-indentation-it-turned-out-to-be-a-meteorite-crater-from-390-million-years-ago-180989158/",
+        "https://news.dunkindonuts.com/news/dunkin-llbean-collab-2026",
+        "https://pinkitem.net/2026/09/09/fashion-forward-seven-eleven-japan-and-and-st-launch-edit-fashion-collection-featuring-hello-kitty/",
+        "https://www.euronews.com/travel/2026/09/22/eurowings-launches-competition-to-name-a-plane-after-someone-special",
+        "https://www.microsoft.com/en-us/research/blog/offloaded-inference-for-real-world-physical-ai-robotics/",
+        "https://arxiv.org/abs/2609.19465",
+        "https://www.tribuneindia.com/news/business/nifty-closes-at-23446-gains-118-points-sensex-ends-at-74828-on-stronger-domestic-growth-momentum"
+      ],
+      "subject": [
+        "HSBC flash India PMI for September 2026 — composite 56.5 from 54.3, manufacturing 55.7 from 52.8, services 55.8 from 54.1",
+        "Dreamforce 2026 announcements — Salesforce launches AIforce agent interface layer, MCP Risk Scores, Security Mesh and Builder Central",
+        "Amateur astronomer Joël Lapointe spotted the Uhackatik impact structure in Quebec's Côte-Nord on Google Maps; shatter cones confirmed a 25 km, 390-million-year-old crater",
+        "Dunkin' and L.L.Bean's first-ever collaboration: a Birdseye sweater, a Boat and Tote, a cup sleeve printed like the sweater, and a Bootmobile tour from Maine to Boston",
+        "Seven-Eleven Japan and apparel group and ST launch EDIT FASHION, a 23-item clothing line sold in konbini, with a Hello Kitty collaboration following",
+        "Eurowings' Name a Plane competition: the public nominates everyday people and four A320 aircraft will carry the winners' first names",
+        "Take the GPU off the robot and the robot gets better — and lasts twice as long",
+        "Compositional Reasoning in Language Models under Reinforcement Learning Post-Training",
+        "Green leaf volatiles: why cut grass smells the way it does, the ZmLOX10 mutant maize experiment on parasitic wasps, and the white stork olfaction study at Lake Constance"
+      ],
+      "brand": [
+        "Dunkin'",
+        "L.L.Bean",
+        "Seven-Eleven Japan",
+        "and ST",
+        "niko and …",
+        "LOWRYS FARM",
+        "Sanrio",
+        "Hello Kitty",
+        "Eurowings",
+        "Airbus",
+        "Airbus A320s"
+      ],
+      "brand_mention": [
+        "Birdseye Sweater",
+        "Dunkin'-inspired",
+        "L.L.Bean Boat",
+        "Tote",
+        "Dunkin",
+        "ET",
+        "L.L.Bean Bootmobile",
+        "Maine",
+        "Boston",
+        "Seaport",
+        "Dunkin CMO Jill Nelson",
+        "England",
+        "Seven-Eleven",
+        "EDIT FASHION",
+        "ST",
+        "LOWRYS FARM",
+        "Hello Kitty",
+        "T-shirts",
+        "Sanrio",
+        "Airbus A320s",
+        "Airlines",
+        "CEO Max Kownatzki",
+        "Often"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "India's private sector had its strongest month of the year in September, and manufacturing did most of the lifting"
+        ],
+        [
+          "trends",
+          "Salesforce's pitch this week is that you stop using the software and let the agent use it for you"
+        ],
+        [
+          "trends",
+          "A man looking for a campsite on satellite maps found a 25-kilometre impact crater, and the rocks agreed with him"
+        ],
+        [
+          "wild",
+          "A coffee chain and an outdoor-clothing company from the same state made a sweater, then put the sweater on a cup"
+        ],
+        [
+          "wild",
+          "A Japanese convenience-store chain has started selling clothes off the rack, with a Hello Kitty range to follow"
+        ],
+        [
+          "wild",
+          "An airline is letting Europe nominate ordinary people to have four Airbus A320s named after them"
+        ],
+        [
+          "research",
+          "Take the GPU off the robot and the robot gets better — and lasts twice as long"
+        ],
+        [
+          "research",
+          "Compositional Reasoning in Language Models under Reinforcement Learning Post-Training"
+        ],
+        [
+          "learn",
+          "The smell of cut grass is the grass shouting for help, and something always comes"
+        ]
+      ],
+      "editorial_domains": [
+        "euronews.com",
+        "fxstreet.com",
+        "news.dunkindonuts.com",
+        "pinkitem.net",
+        "salesforce.com",
+        "smithsonianmag.com"
+      ]
     }
   ]
 }

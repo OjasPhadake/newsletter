@@ -1,0 +1,281 @@
+{
+  "date_line": "Thursday, 24 September 2026",
+  "issue": 1,
+  "preheader": "A Pentagon review blames an AI targeting system for a strike that killed 123 children; a 1941 Enigma message that had resisted solution since 2005 fell in a week; India's flash PMI jumped to 56.5; a camping trip turned up a 25-kilometre impact crater; and the smell of cut grass is the grass calling for help.",
+  "quote": {
+    "text": "Nowadays most people die of a sort of creeping common sense, and discover when it is too late that the only things one never regrets are one's mistakes.",
+    "author": "Oscar Wilde",
+    "source_url": "https://www.goodreads.com/quotes/tag/paradox",
+    "note": "The joke is in the diagnosis: common sense as a terminal condition, contracted slowly. What lands is the second half — regret attaches to the sensible thing you did not do far more reliably than to the daft thing you did."
+  },
+  "agent_craft": {
+    "items": [
+      {
+        "text": "Keep CLAUDE.md under about 200 lines. It is resent on every single turn, so each extra page you add is a tax you pay for the whole session — and use /clear between unrelated tasks instead of carrying the old context into the new job.",
+        "source": "Addy Osmani, \"What a task costs on Opus 5.5\" (Anthropic, 22 September 2026)",
+        "url": "https://claude.com/blog/what-a-task-costs-on-opus-5-5"
+      }
+    ]
+  },
+  "hn": [
+    {
+      "title": "Pentagon says overreliance on AI contributed to missile strike on Iran school",
+      "url": "https://www.bloomberg.com/graphics/2026-iran-school-attack/",
+      "hn_url": "https://news.ycombinator.com/item?id=49806430",
+      "points": 885,
+      "comments": 479,
+      "bullets": [
+        "An unreleased internal Pentagon review of the 28 February 2026 strike on the Shajarah Tayyebeh elementary school in Minab, southern Iran — more than 150 dead, at least 123 of them children — describes a chain of preventable failures rather than a single error.",
+        "At the centre is the Maven Smart System, Palantir's targeting platform, on a Pentagon contract worth up to $1.3 billion. It fuses satellite imagery, drone feeds and signals intelligence into strike recommendations, compressing into minutes work that used to take hours. Personnel relied on it to catch stale intelligence. It does not do that.",
+        "An analyst had flagged changes at the site as early as 2019. The flag went into a system that was not connected to the targeting chain, and never reached anyone making the decision.",
+        "The staffing numbers are the part that is not about AI at all. Civilian-harm mitigation teams across the Department of Defense had shrunk by roughly 90% to fewer than 20 people in total; CENTCOM's team went from ten to one. Nobody from those teams reviewed the Minab site. More than 1,000 Iranian targets were struck in the first 24 hours.",
+        "Palantir's response is that it is \"not responsible for the underlying data or for identifying intelligence deficiencies\". A note on sourcing: the Bloomberg investigation the thread links is paywalled and would not open for us, so the figures above come from IBTimes UK's account of the same review."
+      ]
+    },
+    {
+      "title": "I said no and Apple said yes",
+      "url": "https://dbushell.com/2026/09/22/apple-intelligence/",
+      "hn_url": "https://news.ycombinator.com/item?id=49797982",
+      "points": 854,
+      "comments": 690,
+      "bullets": [
+        "David Bushell's complaint is narrow and documented. On 5 February 2025, macOS 15.3 switched Apple Intelligence on for him without being asked. He turned it off — twice, because the second half of the setting was buried deeper than the first.",
+        "In September 2026 he upgraded to macOS 27. The switch he had used to say no is gone, the feature is back on, and it is occupying 22.28 GB of disk. He posts the screenshots for all three states.",
+        "His argument is not really about Apple's model quality. It is that an opt-out which does not survive an upgrade was never an opt-out: \"AI bros do not take 'no' for an answer.\"",
+        "Why it topped the thread: this is the second-order cost of shipping AI into an OS. The feature can be excellent and the consent still be broken, and only one of those two is being measured internally."
+      ]
+    },
+    {
+      "title": "'We hacked the FBI:' Hackers say they have data on all FBI employees",
+      "url": "https://www.404media.co/we-hacked-the-fbi-hackers-say-they-have-data-on-all-fbi-employees/",
+      "hn_url": "https://news.ycombinator.com/item?id=49805278",
+      "points": 785,
+      "comments": 588,
+      "bullets": [
+        "ShinyHunters told 404 Media, flatly: \"We hacked the FBI. We hold data on all FBI employees and applicants.\" The claimed fields are names, home addresses, phone numbers and information about employees' spouses.",
+        "404 Media reviewed a sample of 5,000 alleged agent records. That is the extent of the verification in the piece — the sample is real enough to publish, the claim of completeness is not tested.",
+        "The article does not identify which system was breached, and carries no statement from the FBI.",
+        "Read it as a claim with partial corroboration, not a confirmed total compromise. The distinction matters because ShinyHunters' business model depends on the number sounding as large as possible."
+      ]
+    },
+    {
+      "title": "Apple has added persistent 'ads' to iOS, and it's driving users crazy",
+      "url": "https://www.techradar.com/phones/iphone/i-wish-apple-would-just-stop-that-crap-apple-has-added-persistent-ads-to-ios-and-its-driving-users-crazy",
+      "hn_url": "https://news.ycombinator.com/item?id=49801939",
+      "points": 782,
+      "comments": 572,
+      "bullets": [
+        "The complaint is about the Settings app in iOS 27 carrying a red notification badge that turns out to be a promotion: paid iCloud+ storage, free trials of Apple Music and Apple TV, AppleCare+.",
+        "The badge is the sore point. Users report there is not always a dismiss button, and that when there is one it does not always stick, so the only reliable ways to clear it are to wait weeks or months for the offer to expire, or to buy the thing.",
+        "Michael Tsai's roundup collects first-hand reports from several users saying the same thing independently, and notes near-identical objections on Reddit dating to 2021. This is a pattern Apple has been iterating on, not a slip.",
+        "Sourcing note: TechRadar's page (by Alex Blake) would not render for us, so the specifics above are taken from Tsai's quoted excerpts and reader reports rather than the original."
+      ]
+    },
+    {
+      "title": "OpenAI GPT-6 Astra breaks Enigma message that has resisted solution since 2005",
+      "url": "https://www.cryptocellar.org/bgac/the-mvueh-break.html",
+      "hn_url": "https://news.ycombinator.com/item?id=49801324",
+      "points": 720,
+      "comments": 436,
+      "bullets": [
+        "The message is 82 letters long, sent on 10 July 1941, and has been sitting unsolved on Frode Weierud's Crypto Cellar site since the challenge was posted in 2005.",
+        "Carter Leffer had GPT-6 Astra write its own tooling — an Enigma simulator and a Bombe, in Python and C++ — then triage the site's unbroken messages and pick the one most likely to fall. It chose MVUEH.",
+        "The way in was a crib: the place name ROSENOW, repeated as ROSENOW ROSENOW, which gave enough constrained plaintext to search against.",
+        "The reason it had held out is now clear. The message was not sent on the day's key: wheel order 253 against the daily 512, with different ring settings and different plug connections. Anyone attacking it with the day's settings was never going to get there.",
+        "Weierud verified the key and the plaintext on 15 September 2026 and said the same work would have taken a human researcher weeks or months. The interesting detail is that the model was not asked to be a cryptanalyst — it was asked to build the machines and then use them."
+      ]
+    }
+  ],
+  "markets": {
+    "indices": [
+      {
+        "name": "Sensex · close, Wed 23 Sep",
+        "value": "74,828.25",
+        "change": "299.17 (0.40%)",
+        "direction": "up"
+      },
+      {
+        "name": "Nifty 50 · close, Wed 23 Sep",
+        "value": "23,446.80",
+        "change": "117.80 (0.50%)",
+        "direction": "up"
+      },
+      {
+        "name": "Nifty Metal · Wed 23 Sep",
+        "value": "—",
+        "change": "2.40% — the day's best sector",
+        "direction": "up"
+      },
+      {
+        "name": "Nifty FMCG · Wed 23 Sep",
+        "value": "—",
+        "change": "1.27%",
+        "direction": "up"
+      },
+      {
+        "name": "Nifty IT · Wed 23 Sep",
+        "value": "—",
+        "change": "over 1% — the day's laggard",
+        "direction": "down"
+      },
+      {
+        "name": "USD/INR · Wed 23 Sep close",
+        "value": "95.74",
+        "change": "rupee 15 paise weaker, ending a four-day run of gains",
+        "direction": "down"
+      }
+    ],
+    "stories": [
+      {
+        "headline": "Metal carried the market, IT dragged it, and the rupee's winning streak ended on the same day the PMI came in strong",
+        "url": "https://www.tribuneindia.com/news/business/nifty-closes-at-23446-gains-118-points-sensex-ends-at-74828-on-stronger-domestic-growth-momentum",
+        "source": "The Tribune and Whalesbook on the Wednesday 23 September 2026 session; flows from NiftyTrader's NSE provisional FII/DII data",
+        "bullets": [
+          "Sensex closed at 74,828.25, up 299.17 points or 0.40%. Nifty 50 closed at 23,446.80, up 117.80 points or 0.50%. Both spent the day volatile and finished modestly ahead.",
+          "Nifty Metal gained 2.40% and was the clear leader; FMCG added 1.27%, with realty and telecom also above 1%. Nifty IT fell more than 1% and Nifty Media 0.63%. Midcaps rose 0.7% and smallcaps 0.9%, and more than 170 stocks hit 52-week highs.",
+          "Institutions were on the same side for once: FIIs bought ₹1,617 crore in the cash segment and DIIs ₹2,341 crore, about ₹3,959 crore of net buying between them — though FIIs simultaneously hold a net short index-futures book of 2,98,613 contracts, which reads more like covered profit-taking than conviction.",
+          "The rupee closed at 95.74 per dollar, 15 paise weaker, snapping four sessions of gains on broad dollar strength and importer demand. Oil fell for a sixth consecutive day, below $100 a barrel. Gold slipped 0.54% to ₹1,52,889 per 10g and silver more than 1% to ₹2,37,341 per kg.",
+          "Vinod Nair of Geojit Investments put the gains down to the morning's flash PMI rather than anything global: markets \"shrugged off an intraday surge in crude and focused on signs of strengthening domestic growth momentum\"."
+        ]
+      }
+    ]
+  },
+  "trends": [
+    {
+      "tag": "India",
+      "headline": "India's private sector had its strongest month of the year in September, and manufacturing did most of the lifting",
+      "url": "https://www.fxstreet.com/news/india-hsbc-composite-pmi-climbed-from-previous-543-to-565-in-september-202609230503",
+      "subject": "HSBC flash India PMI for September 2026 — composite 56.5 from 54.3, manufacturing 55.7 from 52.8, services 55.8 from 54.1",
+      "subtitle": "Released 23 September 2026 · HSBC flash estimates compiled by S&P Global",
+      "bullets": [
+        "The flash composite PMI came in at 56.5, up from August's 54.3 — a 2.2-point jump, and the largest single-month move in the series this year. Anything above 50 means expansion; the size of the move is the news, not the direction.",
+        "Manufacturing did the work: 55.7 against 52.8 in August, nearly three points. Services rose to 55.8 from 54.1, a rebound driven by stronger output and resilient new business.",
+        "The caveat is in the price sub-indices. Cost pressures picked up, mostly fuel, transport and raw materials — which matters because the currency market is already pricing in the possibility of an RBI rate hike.",
+        "The US flash numbers landed the same morning and were stronger still: manufacturing 57.0 from 53.9, its fastest expansion since mid-2022, and services 58.7 from 56.5. Two large economies accelerating at once is the sort of thing that shows up in crude and in shipping rates before it shows up in anything else.",
+        "This is a flash estimate built on roughly 80–85% of the survey responses. The final number lands in early October and usually moves by a few tenths."
+      ]
+    },
+    {
+      "tag": "Platforms",
+      "headline": "Salesforce's pitch this week is that you stop using the software and let the agent use it for you",
+      "url": "https://www.salesforce.com/blog/dreamforce-2026-top-it-announcements/",
+      "subject": "Dreamforce 2026 announcements — Salesforce launches AIforce agent interface layer, MCP Risk Scores, Security Mesh and Builder Central",
+      "subtitle": "Dreamforce 2026 · announcements published 22 September 2026",
+      "bullets": [
+        "AIforce launched as a composable interface layer: every Salesforce capability reachable over API, MCP or CLI, so an agent in Claude, Slack or Teams can update records and trigger workflows without anyone opening the Lightning UI. Marc Benioff's framing is that the interface gets rebuilt around agents rather than the other way round.",
+        "It stands on Headless 360, announced 19 August, which exposes each Salesforce cloud as a capability any authorised agent can discover through open standards. Permissions and business rules are still enforced underneath — that is the whole claim.",
+        "The most useful announcement for anyone wiring agents to tools is the least glamorous: MCP Risk Scores. Register an external MCP server and Salesforce scans it, assigns Low/Medium/High and hands back remediation steps before the connection is authorised. Supply-chain review for tool servers, done at registration time.",
+        "Also shipped: Security Mesh, a single view for spotting compromised accounts and anomalous API activity; Builder Central in beta, with automated testing and deployment controls around natural-language app building; and micro-frontends now generally available for React and Angular.",
+        "Worth keeping the scepticism handy. Salesforce Ben's read is that this year's reveal felt \"more piecemeal\" than Agentforce two years ago, and no general-availability dates or pricing were attached to the headline pieces."
+      ]
+    },
+    {
+      "tag": "Wildcard",
+      "headline": "A man looking for a campsite on satellite maps found a 25-kilometre impact crater, and the rocks agreed with him",
+      "url": "https://www.smithsonianmag.com/smart-news/an-amateur-astronomer-using-google-maps-spotted-a-strange-indentation-it-turned-out-to-be-a-meteorite-crater-from-390-million-years-ago-180989158/",
+      "subject": "Amateur astronomer Joël Lapointe spotted the Uhackatik impact structure in Quebec's Côte-Nord on Google Maps; shatter cones confirmed a 25 km, 390-million-year-old crater",
+      "subtitle": "Côte-Nord, Quebec · spotted 2024, field expedition October 2025",
+      "bullets": [
+        "Joël Lapointe, an amateur astronomer, was planning a camping trip in Quebec's remote Côte-Nord when he noticed a ring-shaped indentation near Lake Marsal on satellite imagery. He checked the impact-crater databases, found nothing listed, and emailed planetary geologists.",
+        "Gordon Osinski of Western University's Impact Earth programme led a field expedition in October 2025. By the second day they were finding shatter cones — cone-shaped fracture patterns that form only under shock pressures — in outcrop after outcrop, plus large areas of impact melt rock.",
+        "Osinski's line on why that settles it: shatter cones are \"the only unequivocal evidence of an impact event that you can see in the field with the naked eye\". Without them, a big circular structure is just as likely to be volcanic.",
+        "The crater is about 25 km across with a central uplift and cliffs showing columnar jointing, and is roughly 390 million years old. It has been named Uhackatik after consultation with the Innu Council of Ekuanitshit.",
+        "Only about 200 impact structures have been confirmed on Earth, and one or two are added in a typical year. This one had been sitting in public satellite imagery the whole time, waiting for somebody to look at it for a reason that had nothing to do with geology."
+      ]
+    }
+  ],
+  "research": [
+    {
+      "tag": "Industry · Microsoft Research",
+      "title": "Take the GPU off the robot and the robot gets better — and lasts twice as long",
+      "url": "https://www.microsoft.com/en-us/research/blog/offloaded-inference-for-real-world-physical-ai-robotics/",
+      "subtitle": "Microsoft Research · 23 September 2026 · Physical AI Toolchain",
+      "bullets": [
+        "The assumption being attacked is that a robot should carry its own inference hardware. Onboard GPUs draw power, cost money, add weight, cut battery life, and cap you at whatever model fits on the robot.",
+        "The team built a Kubernetes-based toolchain that containerises robotics workloads from declarative specs and places inference across robot, edge and cloud, wiring Azure services to NVIDIA's stack.",
+        "The measurements are the reason to read it. Mapping and planning ran up to 383% slower on a small onboard GPU than on an A100. Navigation lost 30% on obstacle-detection timing. Object-handover success rates rose substantially once inference was offloaded.",
+        "The battery numbers are starker: an onboard GPU cut runtime on a larger robot like the Stretch-3 by up to 160% — a few hours — while replacing it with a Raspberry Pi 5 and offloading the thinking more than doubled battery life.",
+        "The honest limit is the one the paper is really about: this buys you everything as long as the link holds. Every number here is a bet on a network, which is why the interesting part is the placement policy rather than the models."
+      ]
+    },
+    {
+      "tag": "Academia · Stanford",
+      "title": "Compositional Reasoning in Language Models under Reinforcement Learning Post-Training",
+      "url": "https://arxiv.org/abs/2609.19465",
+      "subtitle": "Yu He, Yingxi Li, Yifei Wang, Ellen Vitercik · Stanford University · arXiv, 16 September 2026",
+      "bullets": [
+        "The question: when you post-train a model with RL, does teaching it the parts teach it the whole? The authors formalise compositional reasoning as a dependency graph and get three levels of compositionality out of it, then test on data-structure tasks where the decomposition is unambiguous.",
+        "The result is an asymmetry, and it runs the opposite way to intuition. Training on decomposed skills does not reliably transfer to the composed task. Training on the composed task transfers down to the parts readily.",
+        "They give a theoretical account of why, and probe generalisation along three axes: longer inputs than trained on, shifts in the structure of the problem, and tasks requiring genuinely new combinations of known skills.",
+        "Preliminary results on real tool-calling benchmarks show the same asymmetry outside the controlled setting, which is where it starts to matter for anyone assembling agent training data.",
+        "The practical reading: a curriculum that drills sub-skills first is the obvious design and may be the wrong one. If you have budget for one kind of data, the hard end-to-end task appears to be worth more than its own components."
+      ]
+    }
+  ],
+  "wild": [
+    {
+      "tag": "Food · Retail",
+      "headline": "A coffee chain and an outdoor-clothing company from the same state made a sweater, then put the sweater on a cup",
+      "url": "https://news.dunkindonuts.com/news/dunkin-llbean-collab-2026",
+      "entities": ["Dunkin'", "L.L.Bean"],
+      "subject": "Dunkin' and L.L.Bean's first-ever collaboration: a Birdseye sweater, a Boat and Tote, a cup sleeve printed like the sweater, and a Bootmobile tour from Maine to Boston",
+      "bullets": [
+        "Two New England institutions that had never worked together did it for the first week of autumn. The merchandise is a Birdseye Sweater at $79.95 in a Dunkin'-inspired pattern and the L.L.Bean Boat and Tote at $59.95 in Dunkin' orange and pink, both going on sale 29 September at 10am ET.",
+        "The best bit is the cheapest. On 22 September, the first day of fall, any hot or iced coffee came with a cup sleeve printed to look like the knit of the sweater — a $79.95 garment reproduced as a piece of cardboard you throw away.",
+        "The L.L.Bean Bootmobile — a vehicle shaped like a boot — toured from Maine to Boston from 21 to 29 September handing out gift cards, and the Seaport store in Boston ran a donut wall on 27 September.",
+        "Dunkin' CMO Jill Nelson: \"We love collaborations that feel authentic to the way people actually live.\" The unglamorous version is that both brands sell the same idea of New England to the same customer, and neither had noticed for fifty years."
+      ]
+    },
+    {
+      "tag": "Retail · Japan",
+      "headline": "A Japanese convenience-store chain has started selling clothes off the rack, with a Hello Kitty range to follow",
+      "url": "https://pinkitem.net/2026/09/09/fashion-forward-seven-eleven-japan-and-and-st-launch-edit-fashion-collection-featuring-hello-kitty/",
+      "entities": ["Seven-Eleven Japan", "and ST", "niko and …", "LOWRYS FARM", "Sanrio"],
+      "subject": "Seven-Eleven Japan and apparel group and ST launch EDIT FASHION, a 23-item clothing line sold in konbini, with a Hello Kitty collaboration following",
+      "bullets": [
+        "From 25 September, Seven-Eleven Japan stores carry EDIT FASHION: 23 items made with the apparel group and ST, using its real labels — niko and … and LOWRYS FARM — rather than a store brand.",
+        "Prices run from ¥880 for eco-bags and socks up to ¥3,278 for sweatshirts, which puts a sweatshirt at roughly the price of three bento boxes.",
+        "A Hello Kitty collaboration follows from 23 October, ¥990 to ¥5,390, on T-shirts, sweatshirts, hoodies and socks — Sanrio character goods deliberately styled as clothes people would wear anyway.",
+        "The target is women aged 20 to 40 who want something decent without making a separate trip. Japan already treats the konbini as infrastructure; this is the chain noticing that a shop open at 3am is a clothes shop open at 3am."
+      ]
+    },
+    {
+      "tag": "Aviation",
+      "headline": "An airline is letting Europe nominate ordinary people to have four Airbus A320s named after them",
+      "url": "https://www.euronews.com/travel/2026/09/22/eurowings-launches-competition-to-name-a-plane-after-someone-special",
+      "entities": ["Eurowings", "Airbus"],
+      "subject": "Eurowings' Name a Plane competition: the public nominates everyday people and four A320 aircraft will carry the winners' first names",
+      "bullets": [
+        "Eurowings opened nominations on 21 September and closes them on 11 October. You name someone who makes life easier for the people around them, and explain why in 250 to 400 characters. One entry per person, over-18s resident in Europe.",
+        "A jury picks four. Their first names go on the fuselage of four Airbus A320s, and the stories are published in December.",
+        "Airlines have named aircraft after cities, mountains, footballers and company founders for decades. Naming one after a stranger's aunt, chosen by a panel reading 300-character testimonials, is a different proposition — the plane flies for years with a name nobody can look up.",
+        "CEO Max Kownatzki: \"Often, it is the small, everyday gestures that make the greatest difference.\" It is also, in fairness, a rather cheap thing to paint on an aeroplane."
+      ]
+    }
+  ],
+  "learn": {
+    "title": "The smell of cut grass is the grass shouting for help, and something always comes",
+    "subject": "Green leaf volatiles: why cut grass smells the way it does, the ZmLOX10 mutant maize experiment on parasitic wasps, and the white stork olfaction study at Lake Constance",
+    "body": [
+      "That smell is not the smell of grass. It is the smell of grass being injured. Within seconds of a leaf being torn, the plant releases a small family of six-carbon compounds — the green leaf volatiles, principally cis-3-hexenal, cis-3-hexenol and hexenyl acetate — from the damaged tissue. You cannot mow a lawn without triggering it, which is why the smell arrives the instant the blade does and fades within hours. The nostalgic summer smell of a garden is a wound dressing being applied in public.",
+      "It is also a message, and the recipients are not other plants. Michael Kolomiets's group at Texas A&M AgriLife Research grew mutant maize that cannot produce green leaf volatiles, then let caterpillars eat it. The parasitic wasps that normally arrive to lay eggs inside those caterpillars simply did not turn up. On ordinary plants they came. The volatiles do two jobs at once: inside the plant they switch on production of insecticidal compounds, and outside it they broadcast an SOS that summons something to eat the thing doing the eating. The work was published in The Plant Journal under a title nobody will ever quote at a party.",
+      "The strangest confirmation came from birds. Around Lake Constance in southern Germany, researchers tracked white storks from a Cessna, then sprayed the same three-compound mixture from an ultralight over untreated fields. Nine separate storks or groups came in from half a kilometre to 1.2 kilometres away. The ultralight alone did nothing; water sprayed from the ultralight did nothing. The storks were not watching a field being mown — they were smelling it, and flying towards a chemical announcement that the insects there had just lost their cover."
+    ]
+  },
+  "ideas": {
+    "prompt": "Ten things in everyday life that should have an off switch",
+    "note": "Altucher's drill: ten ideas a day against one prompt. Today's is not about software. Plenty of ordinary things run whether you want them to or not, and the interesting question is which ones you would actually silence if someone handed you the switch.",
+    "items": [
+      {"text": "The lights in a supermarket aisle you are not standing in."},
+      {"text": "The television in a waiting room, with a vote required to turn it back on."},
+      {"text": "Automatic reply-all on every email chain older than a week."},
+      {"text": "The bit of a phone call where both people say goodbye four times."},
+      {"text": "Every notification badge that is an advertisement wearing a notification's clothes.", "why": "A recurring complaint on r/SomebodyMakeThis this month, where half the app requests are really requests to turn something off."},
+      {"text": "The horn on a car, between 10pm and 6am, in residential lanes."},
+      {"text": "Background music in restaurants, switchable table by table."},
+      {"text": "The mandatory 'how did we do?' survey that arrives before you have finished the thing."},
+      {"text": "Autoplay on the next episode, replaced by a ten-second pause with nothing on the screen."},
+      {"text": "Your own inner narrator, for one hour a day, sold as a subscription nobody could actually deliver."}
+    ]
+  }
+}
