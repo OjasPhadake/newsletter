@@ -1,0 +1,316 @@
+{
+  "date_line": "Friday, 25 September 2026",
+  "issue": 1,
+  "preheader": "Italy's Senate voted nuclear back in 81-51, forty years after Chernobyl voted it out; about 950 Claude agents spent 21 hours in DNA databases and came out with an enzyme system nobody had catalogued; IRDAI wants to cut what it costs to sell you a policy; a silicon-carbide chip held entanglement for 240 microseconds at room temperature; and American Airlines beat a cheaper airline by charging more.",
+  "quote": {
+    "text": "Good judgement is the result of experience and experience the result of bad judgement.",
+    "author": "Mark Twain",
+    "source_url": "https://www.goodreads.com/quotes/tag/paradox",
+    "note": "It is a closed loop with only one entrance, and the entrance is the bad decision. Which means the only people with good judgement are people who have already been wrong in public, and anyone who has never been wrong about anything has simply not been given the job yet."
+  },
+  "agent_craft": {
+    "items": [
+      {
+        "text": "If you already keep an AGENTS.md for another tool, stop maintaining a duplicate CLAUDE.md: from version 2.1.277, Claude Code reads AGENTS.md in any folder that has no CLAUDE.md. One file, one place to fix a stale instruction.",
+        "source": "Thariq Shihipar of Anthropic, quoted by Simon Willison, 18 September 2026",
+        "url": "https://simonwillison.net/2026/Sep/18/thariq-shihipar/"
+      }
+    ]
+  },
+  "hn": [
+    {
+      "title": "Italian parliament votes for return to nuclear energy",
+      "url": "https://apnews.com/article/italy-nuclear-chernobyl-4891b6b7c7791ae84db6b0bf0f7cf567",
+      "hn_url": "https://news.ycombinator.com/item?id=49819221",
+      "points": 872,
+      "comments": 757,
+      "bullets": [
+        "The Senate gave final approval on Wednesday 23 September, 81 votes to 51 with seven abstentions. The bill had already cleared the Chamber of Deputies, so this was the last step.",
+        "It does not authorise a single reactor. It creates the legal framework and gives the government twelve months to write the implementing decrees covering reactor licensing, safety standards, waste management and criteria for future sites.",
+        "Italians have rejected nuclear power twice at the ballot box: in 1987 after Chernobyl, which ended a programme of four reactors, and again in 2011 after Fukushima. That is the whole reason this is a story about a procedural vote.",
+        "The technology in view is small modular reactors rather than large plants. Industry estimates put a single 300-megawatt SMR at EUR 3-6 billion before infrastructure and grid connection, which is the number that decides whether any of this happens.",
+        "Giorgia Meloni is driving it, with energy and environment minister Gilberto Pichetto Fratin carrying the bill; ECCO's Michele Governatori is quoted on the other side, and environmental groups called the law an \"empty box filled with false promises\".",
+        "Sourcing note: the AP page the thread links would not open for us, so the figures above come from WSLS's syndication of the same AP report."
+      ]
+    },
+    {
+      "title": "F-Droid 2.0",
+      "url": "https://f-droid.org/2026/09/24/f-droid-2.0-a-new-chapter-for-android-freedom.html",
+      "hn_url": "https://news.ycombinator.com/item?id=49831968",
+      "points": 846,
+      "comments": 239,
+      "bullets": [
+        "It is a rewrite, not a reskin: Kotlin and Jetpack Compose throughout, Material Design, and the app collapsed into three areas - Discover, Search and My Apps. The floor moves up with it, from Android 6 to Android 7.",
+        "Installation is now the same everywhere. Every F-Droid install uses Android's session installer, with the pre-approval API on devices that support it so you confirm before the download finishes rather than after. The Privileged Extension, which used to grant silent installs on rooted or custom builds, is no longer supported.",
+        "Search finally reaches past app names into descriptions, categories and translated text, with dedicated handling for Chinese, Japanese and Korean, recent-query memory, and filters you can stack across category, device compatibility and anti-features. Games split into 17 genres.",
+        "Updates are fetched in the background by default now, and pull-to-refresh is gone - refresh moved into the overflow menu. The panic-trigger feature that wiped apps has been postponed pending feedback, and Tor auto-detection is folded into generic proxy settings.",
+        "Worth noting what the post does not say: no version numbers, and nothing about Google's developer-verification rules, which is what most of the 239 comments are actually arguing about."
+      ]
+    },
+    {
+      "title": "Claude discovers a novel enzyme system with CRISPR-like repeats",
+      "url": "https://www.anthropic.com/news/claude-discovers-novel-enzyme-system",
+      "hn_url": "https://news.ycombinator.com/item?id=49820134",
+      "points": 757,
+      "comments": 780,
+      "bullets": [
+        "The find is a class of array-associated reverse transcriptases in bacteriophages: a reverse transcriptase, a partner gene next to it, and a set of DNA repeats that look structurally like a CRISPR array. Published 23 September.",
+        "The search was agentic and cheap in human time. Roughly 950 agents worked DNA sequence databases for 21 hours on about 210 million tokens, starting from high-level direction rather than a target.",
+        "The funnel: over 200,000 reverse transcriptases gathered, 3,500 new candidate systems identified, the 20 most compelling analysed closely, one taken into the lab.",
+        "What the bench actually confirmed is narrow. Preliminary experiments show the system exists and is expressed as distinct short RNAs. Its function is unknown - the CRISPR comparison is structural and a hypothesis, not a demonstrated capability.",
+        "Feng Zhang of MIT and the Broad reviewed the findings, which is the part that makes it publishable rather than a press release. Read the rest as a claim about search throughput, not about biology settled."
+      ]
+    },
+    {
+      "title": "Jev in 25 Lines of Python",
+      "url": "https://www.nobodywho.ai/posts/jev-in-25-lines/",
+      "hn_url": "https://news.ycombinator.com/item?id=49812769",
+      "points": 671,
+      "comments": 209,
+      "bullets": [
+        "It is a parody, and it says so at the bottom. Duarte O. Carmo's argument is that the thing everyone is calling a \"System One decision model\" is a prompt, a small local model, and one line of arithmetic.",
+        "The trick is the whole post. Load Qwen3-0.6B as GGUF through llama-cpp-python, write the choices as A, B and C, run one forward pass, then read the logits of the final position at exactly the three token ids for A, B and C and softmax over just those.",
+        "On \"Payroll asks for your password on a non-company sign-in page\" it returns Phishing 0.885, Spam 0.084, Legitimate 0.031 - calibrated-looking probabilities over a fixed option set, with no API call and no synthetic data.",
+        "The straight-faced list of what he did not do is the sharp bit: no synthetic dataset, no reinforcement learning for calibrated decisions, no service. He also links OpenJev and two other open implementations, so the post is a swipe at the packaging rather than at the idea.",
+        "Twenty-five lines includes the inline script dependencies. Published 22 September on the NobodyWho blog."
+      ]
+    },
+    {
+      "title": "Meta takes down a critical video about meta AI Glasses after filming at Meta",
+      "url": "https://www.reddit.com/r/facebook/comments/1wotwrk/meta_takes_down_a_critical_video_about_meta_ai/",
+      "hn_url": "https://news.ycombinator.com/item?id=49827794",
+      "points": 591,
+      "comments": 353,
+      "bullets": [
+        "The video is by Dutch satirist Roel Maalderink, made with the privacy organisation Bits of Freedom. He stood outside Meta's Dutch office wearing Meta's own smart glasses and interviewed Meta employees while recording them with the product.",
+        "One employee's line - \"I haven't even had coffee yet\" - is the whole argument in six words, and Maalderink closes by noting that Meta's own staff were not enthusiastic about the glasses.",
+        "It had roughly 500,000 views when it was removed at about 8:30pm on Wednesday. It was still up on Facebook when NL Times went to press.",
+        "Meta told the Dutch paper AD that the video is \"bullying\" and may \"threaten or intimidate people\" - a policy justification that, applied consistently, would also cover the product being demonstrated.",
+        "Bits of Freedom researcher Eva de Goeij: the takedown shows the company's \"extraordinary power\" over public discourse, and removes the space for self-criticism.",
+        "Sourcing note: the Reddit thread itself would not open for us, so the detail above comes from NL Times's report on the same removal."
+      ]
+    }
+  ],
+  "markets": {
+    "indices": [
+      {
+        "name": "Sensex · close, Thu 24 Sep",
+        "value": "73,580.54",
+        "change": "1,247.71 (1.69%)",
+        "direction": "down"
+      },
+      {
+        "name": "Nifty 50 · close, Thu 24 Sep",
+        "value": "23,063.10",
+        "change": "383.70 (1.64%)",
+        "direction": "down"
+      },
+      {
+        "name": "Bank Nifty · Thu 24 Sep",
+        "value": "—",
+        "change": "1.96%",
+        "direction": "down"
+      },
+      {
+        "name": "Nifty Financial Services · Thu 24 Sep",
+        "value": "—",
+        "change": "2.39% — a near four-month low",
+        "direction": "down"
+      },
+      {
+        "name": "Nifty Midcap 100 · Thu 24 Sep",
+        "value": "—",
+        "change": "2.25%",
+        "direction": "down"
+      },
+      {
+        "name": "USD/INR · Thu 24 Sep",
+        "value": "95.9550",
+        "change": "rupee about 0.2% firmer, held above 96",
+        "direction": "up"
+      }
+    ],
+    "stories": [
+      {
+        "headline": "Crude and a 5.11% American bond yield did the damage, and the banks took it worst",
+        "url": "https://www.5paisa.com/blog/post-market-update-sensex-crash-nifty-5-month-low-market-cap-september-24-2026",
+        "source": "5paisa's post-market update for the Thursday 24 September 2026 session, and 5paisa's page for NSE provisional FII/DII cash-market data",
+        "bullets": [
+          "Sensex closed at 73,580.54, down 1,247.71 points or 1.69%. Nifty 50 closed at 23,063.10, down 383.70 points or 1.64%, its lowest in five months. Every major sector index finished red.",
+          "Financials were the epicentre: Nifty Financial Services fell 2.39% to a near four-month low, Bank Nifty 1.96%, and Motilal Oswal Financial Services dropped nearly 10%. Nifty Midcap 100 lost 2.25% and Smallcap 100 1.54%.",
+          "The breadth is the part that tells you it was not stock-specific. 2,587 declines against 943 advances, 99 unchanged, and for the first time in a while more 52-week lows (97) than highs (93). BSE market capitalisation fell Rs 4,05,993.33 crore, from Rs 4,85,01,353.86 crore to Rs 4,80,95,360.53 crore.",
+          "The two imported causes: Brent at $105.40 a barrel, up 2.25% on the day, with WTI at $93.94; and the US 10-year Treasury yield at roughly 5.11%, its highest since 2007 after a 15-16 basis-point jump. India imports most of its crude and all of its global risk appetite.",
+          "Flows were the usual standoff, with the foreigners winning. FIIs sold Rs 18,138.60 crore against Rs 13,111.20 crore of purchases, a net Rs 5,027.40 crore out; DIIs bought Rs 18,196.90 crore against Rs 13,895.70 crore of sales, a net Rs 4,301.20 crore in. Provisional NSE data.",
+          "The rupee was the day's one piece of good news, at 95.9550 to the dollar and about 0.2% firmer, held above 96 partly by dollar selling from state-run banks."
+        ]
+      }
+    ]
+  },
+  "trends": [
+    {
+      "tag": "India",
+      "headline": "The insurance regulator wants to cut what it costs to sell a policy, and has named the tricks it wants stopped",
+      "url": "https://www.goodreturns.in/news/irdai-new-insurance-rules-commission-caps-lower-expense-limits-and-dark-pattern-crackdown-propos-1536917.html",
+      "subject": "IRDAI consultation paper Recalibrating Economics of Insurance Distribution proposes lower expense-of-management ceilings, capped commissions, seller-identity linking, commission clawbacks and a dark-pattern ban",
+      "subtitle": "IRDAI consultation paper released 23 September 2026 · comments open until 25 October",
+      "bullets": [
+        "The paper is called Recalibrating Economics of Insurance Distribution, and the recalibration is downwards. Life insurers' expense of management would be capped at 15% of gross direct premium income within two years and 12.5% within five. General insurers move from a gross-written-premium benchmark to domestic GDPI, and from 30% to 20% over five years.",
+        "Commissions get a grid rather than a ceiling: roughly 5% to 20% for intermediaries on individual non-linked and linked life products depending on premium term, 6.25% to 25% for agents, with pure-term products front-loaded at 25% and 30% in year one and falling to 7.5% and 10% at renewal.",
+        "The anti-mis-selling measures are the interesting half because they are about accountability rather than price. Every policy would carry the identity of the individual who sold it, commissions could be clawed back where mis-selling is established, mis-selling incidents would be published, and volume- or reward-linked incentives for bank and NBFC staff would be prohibited outright.",
+        "There is a named dark-pattern ban too: an insurer or distributor could not force you to hand over personal details just to see a product's features or its price. Anyone who has tried to find out what a term plan costs in India will recognise exactly which wall that removes.",
+        "Compulsory bundling of insurance with a loan is out, with genuine combinations still allowed. Bernstein and Jefferies have flagged earnings pressure on distributors - which is the point: the paper is an argument that the money currently paid to sell the product should be paid to the person buying it. Comments close 25 October."
+      ]
+    },
+    {
+      "tag": "Platforms",
+      "headline": "Amazon will now let an outside AI agent read your seller account and change your prices",
+      "url": "https://www.aboutamazon.com/news/innovation-at-amazon/seller-assistant-plugin-amazon-quick-claude",
+      "subject": "Amazon announces a Selling Partner plugin exposing Seller Central listings, inventory and analytics to outside AI assistants, launching with Amazon Quick and in US beta with Claude, plus persistent memory and always-on workflows in Seller Assistant",
+      "subtitle": "Announced 23 September 2026 at Amazon Accelerate",
+      "bullets": [
+        "The Selling Partner plugin takes what Seller Assistant can see and do inside Seller Central - listing contributions, real-time performance metrics, inventory levels, sales analytics - and hands it to an assistant running somewhere else. Amazon Quick is live; Anthropic's Claude is in beta for US sellers, with international to follow.",
+        "The seller picks which data types the plugin can reach and approves each action before it executes, with audit trails. That consent model is the entire product: the same plumbing without it would be a credential-sharing scandal.",
+        "Seller Assistant itself gains persistent memory of a seller's business and always-on workflows that watch restocking and pricing continuously within seller-defined guardrails. An agent that runs while the shop is closed is a different thing from a chatbot that answers questions during the day.",
+        "One seller, James Oliver of Atlas Bar, in Amazon's own release: \"What took an afternoon now happens instantly.\" Treat vendor testimonials accordingly, but the direction is unmistakable.",
+        "The part worth sitting with: a marketplace is deciding what third-party agents may do to the accounts on it. Whoever writes that permission model writes the interface every seller tool has to live inside. Amazon is also handing every primary account holder a free 12-month Amazon Quick Plus subscription, available through 31 December 2026, which tells you which door it would rather you walked through."
+      ]
+    },
+    {
+      "tag": "Wildcard",
+      "headline": "Entanglement usually needs a cryostat. This one sat in a chip at room temperature for 240 microseconds.",
+      "url": "https://arxiv.org/abs/2609.13744",
+      "subject": "Room-temperature storage of entanglement in a silicon carbide quantum node: electron-nuclear entanglement swapped onto 29Si nuclear spins extends entanglement lifetime 240-fold",
+      "subtitle": "Shuo Ren, Rui-Jian Liang and colleagues, University of Science and Technology of China · arXiv 12 September 2026 · Physical Review Letters, 21 September 2026",
+      "bullets": [
+        "Entangled electron spins in a solid are easy to make and impossible to keep: the environment scrambles them in about a microsecond. Nuclear spins are far better shielded, and the trick here is to move the entanglement off the electron and onto the nuclei before it dies.",
+        "The hardware is a single colour centre in 4H silicon carbide plus two 29Si nuclear spins, run as a three-qubit register. A SWAP-gate protocol in the strong hyperfine-coupling regime does the transfer.",
+        "The numbers: a nuclear-spin Bell state at 94 plus or minus 2% fidelity, a three-qubit GHZ-type state at 89 plus or minus 4%, and the electron-nuclear transfer itself at 92.5 plus or minus 2.5%.",
+        "Entanglement then survived more than 240 microseconds in nuclear memory against just over one microsecond in the electron alone - a 240-fold extension, with no dilution refrigerator anywhere in the setup.",
+        "Silicon carbide is the interesting choice. It is a boring industrial semiconductor already made at scale for power electronics, which is a very different supply chain from the dilution fridges that most quantum hardware is currently married to."
+      ]
+    }
+  ],
+  "research": [
+    {
+      "tag": "Industry · Anthropic",
+      "title": "201 people let an agent barter their books away, and the agent's problem was not negotiating",
+      "url": "https://www.anthropic.com/research/project-swap",
+      "subtitle": "Anthropic · 24 September 2026 · led by Zoë Hitzig",
+      "bullets": [
+        "The experiment is refreshingly physical. 201 Anthropic employees across six offices brought in books they were willing to give away, had a short conversation with Claude about what they like to read, and then sent Claude-powered agents onto a digital trading floor to swap on their behalf.",
+        "Because participants also ranked ten sample books themselves, the outcome can be scored against what they actually wanted rather than against what they said afterwards.",
+        "Claude's guess at a person's preferences from a brief chat agreed with their own ranking 61% of the time, pairwise. Market outcomes averaged 0.55 on a participant's personal ranking - roughly their fifth choice - against an achievable optimum of 0.89.",
+        "The decomposition is the finding. 85% of that shortfall came from misrepresenting what the person wanted; only 15% came from the agents' negotiating. The bottleneck in agent-to-agent commerce is the interview, not the haggling.",
+        "Model strength still mattered: Opus agents scored 0.88 on efficiency against Haiku's 0.75. And people were happier than the numbers deserve - 7.2 out of 10 satisfaction, and willing to delegate about 30% of their yearly book budget to an agent that had just handed them their fifth choice."
+      ]
+    },
+    {
+      "tag": "Academia · Columbia, George Mason and York",
+      "title": "Adversarial Testing of Automated Program Repair Agents for Security Vulnerabilities",
+      "url": "https://arxiv.org/abs/2609.15963",
+      "subtitle": "Fares Trad, Simin Chen, Hung Viet Pham, Gias Uddin, Baishakhi Ray · Columbia University, George Mason University, York University · arXiv, 14 September 2026",
+      "bullets": [
+        "The attack surface is the bug report. If an agent fixes issues automatically, then whoever files the issue is writing part of the prompt - and a benign-looking description can steer the patch towards a fix that works and is also insecure.",
+        "They built SWEADV: 750 adversarial issue descriptions from 150 SWE-bench Verified repair tasks, five per task, one for each of command execution, deserialization, path traversal, denial of service and weak hashing.",
+        "Running mini_swe agents on GPT-5-Mini, MiniMax-M2.5 and DeepSeek-R, adversarial descriptions produced a successful repair that also carried the malicious behaviour in 51.7% of cases on average. The tests pass. The bug is fixed. The hole is new.",
+        "The detection numbers are worse than the attack numbers. LLM-as-judge screening of the issue text before repair caught 62.3%; after the patch exists, static analysis caught 39.4% and LLM-as-judge 55.4%.",
+        "Their conclusion is blunt - autonomous APR agents are not ready for production deployment - and the practical reading for anyone who lets an agent act on a ticket is that the untrusted input is the ticket, and review has to happen on the diff rather than on the description that produced it."
+      ]
+    }
+  ],
+  "wild": [
+    {
+      "tag": "Fashion · Social",
+      "headline": "A clothing-rental service replaced its autumn advert with a twelve-part rom-com filmed in two days",
+      "url": "https://www.glossy.co/fashion/nuuly-aims-to-break-through-the-social-media-noise-with-a-new-branded-rom-com-microdrama/",
+      "entities": [
+        "Nuuly",
+        "Dayna's House"
+      ],
+      "subject": "Nuuly replaces its autumn campaign with Heart On My Sleeve, a 12-episode one-minute-per-episode branded microdrama released daily on TikTok, Instagram and YouTube in August 2026",
+      "bullets": [
+        "Instead of a seasonal campaign, Nuuly made Heart On My Sleeve: twelve episodes of about a minute each, on Instagram, TikTok and YouTube. Teasers from 17 August, premiere on the 19th, then one a day through 25 August. The whole thing runs shorter than one commercial break.",
+        "Wally Baram plays an art teacher in her mid-twenties looking for love and working through outfits that stand for different versions of herself - which is the product placement, and is also the plot.",
+        "It was shot in two days by director Milky Tran with a cast of content creators - Charles Hsu, Chine Ikoro, Tara Raani, Khial Watson, Jean-Luc and Quentin Nguyen-Duy - whose own followings then carried it.",
+        "The agency is Dayna's House, founded by a former Vogue video producer, and Dayna Carney's brief was content that \"feels different - not just like you're being sold something\". Senior director Kirsten Henri's justification is blunter: \"social is where our target customer lives.\" A brand has decided the thirty-second spot is the expensive way to be skipped."
+      ]
+    },
+    {
+      "tag": "Dating · Publishing",
+      "headline": "A dating app hired five novelists to write an audiobook out of other people's awkward conversations",
+      "url": "https://hinge.co/newsroom/No-Ordinary-Love-2026",
+      "entities": [
+        "Hinge"
+      ],
+      "subject": "Hinge releases No Ordinary Love, a free five-story audiobook written and narrated by five authors from real couples' early-dating conversations",
+      "bullets": [
+        "Hinge's No Ordinary Love is a free audiobook of five stories, each written and narrated by an author working from a real couple's account of their first honest conversations: Tembe Denton-Hurst, Nicola Dinan, Curtis Garner, Raven Smith and Rufi Thorpe.",
+        "It went out on 10 August 2026 across Spotify, Libby, Libro.fm, Apple Audiobooks, Barnes & Noble Audiobooks and Substack - distribution as a book, not as an ad.",
+        "The strategic logic is stated plainly: romance is the most popular genre among readers aged 18 to 29, which is also the entire customer base.",
+        "Dazed Studio's Jamie Knowles: they wanted \"something that felt less like a campaign and more like a story people could recognise themselves in\". The unusual move is the direction of travel - a product borrowing the form of the thing its users do instead of interrupting it."
+      ]
+    },
+    {
+      "tag": "India · FMCG",
+      "headline": "Ten mothers were flown to Rajkot to watch a robot wet a nappy",
+      "url": "https://businessnewsthisweek.com/business/little-angel-puts-diaper-quality-under-the-lens-as-moms-from-all-over-india-go-behind-the-scenes-at-pan-healths-manufacturing-facility/",
+      "entities": [
+        "Little Angel",
+        "PAN Health"
+      ],
+      "subject": "Little Angel flies 10-plus mothers from across India to PAN Health's Rajkot diaper factory to watch 34-plus quality checks including a robotic baby leakage test, for the campaign Maa Ne Dekha. Tabhi Toh Bharosa Kiya",
+      "bullets": [
+        "Little Angel, PAN Health's baby-care brand, brought more than ten mothers from different parts of India to its Rajkot plant and walked them through the line: hygiene controls, manufacturing stages, and the 34-plus quality checks a nappy passes.",
+        "The showpiece is a robotic baby leakage test - a mechanical infant used to test absorption and containment under controlled conditions. Somewhere in Gujarat there is a machine whose entire job is to be a baby who has had too much to drink.",
+        "The checks named include absorbency, softness, fit, leakage and no-skin-mark testing, and the mothers handled the Soft & Pure Diaper Pants range afterwards.",
+        "The campaign is called Maa Ne Dekha. Tabhi Toh Bharosa Kiya - mother saw it, that is why she trusted it. CEO and MD Chirag Pan: \"A mother's trust is not something that can be built through a claim alone.\" It is a factory tour as an advertisement, which only works if the factory is worth seeing."
+      ]
+    }
+  ],
+  "learn": {
+    "title": "American Airlines beat a cheaper airline by charging more, and invented the price of your seat",
+    "subject": "Yield management: American Airlines' Ultimate Super Saver fares of 17 January 1985 against People Express, the DINAMO system of 1988, and the $1.4 billion over three years",
+    "body": [
+      "In the early 1980s People Express was the airline that should have won. It flew the same routes for a fraction of the fare, it was profitable from the day it started, and it had costs American Airlines could not come near. Robert Crandall's answer, on 17 January 1985, was not to cut his fares. It was to invent a fare. Ultimate Super Savers matched People Express on a small number of seats per flight - deeply restricted, booked far ahead, non-refundable - while the seats bought by people travelling on Thursday for a Friday meeting stayed expensive. The cheap seat existed, in a quantity American chose. People Express went from profitable to losing $50 million a month. Its founder, Donald Burr, said afterwards: \"We had been profitable from the day we started until American came at us with Ultimate Super Savers.\"",
+      "Doing this by hand is impossible, which is why the interesting machine arrived three years later. In 1988 American installed DINAMO, a system whose only job is to decide how many seats on each flight are available in each fare class, and to keep revising that as bookings arrive and the departure date closes in. Fill the plane too early with cheap tickets and you turn away the business traveller who would have paid five times as much; hold too many expensive seats and you fly with empties. DINAMO guesses, continuously, what is still coming. American's estimate of the benefit was $1.4 billion in additional revenue over three years, and a 30% gain in productivity per analyst - a figure recognised by INFORMS' Edelman Prize committee.",
+      "This is why your seat has no price. The person beside you paid a different amount for an identical experience, because they bought at a different moment, and neither number is the real one. Crandall called yield management \"the single most important technical development in transportation management since we entered deregulation\", and he was being modest about the reach: the same logic now sets what you pay for a hotel room, a concert ticket, a cab in the rain and a hoarding on a website. Every one of them is a perishable seat on a plane that is about to take off."
+    ]
+  },
+  "ideas": {
+    "prompt": "Ten small businesses that would do well just outside a college campus",
+    "note": "Altucher's drill: ten ideas a day against one prompt. Nothing here needs an app. A campus is a dense, predictable, cash-poor market that empties for two months a year, which rules out half of what usually gets suggested and makes the other half obvious once you say it out loud.",
+    "items": [
+      {
+        "text": "A luggage room. Term ends, flights are three days later, nobody has anywhere to put a suitcase."
+      },
+      {
+        "text": "A printing and binding shop that stays open until 2am and closes at noon."
+      },
+      {
+        "text": "Repairs while you wait: laptop chargers, spectacles, bag zips, bicycle brakes, one counter."
+      },
+      {
+        "text": "A tiffin service that lets you pause it for a week without an argument."
+      },
+      {
+        "text": "A furniture library. Rent the desk, the lamp and the mattress by the term and hand them back."
+      },
+      {
+        "text": "Passport photos, attestation, notary, courier, forms - the boring counter every student needs twice a year and cannot find."
+      },
+      {
+        "text": "A quiet paid room with no food, no music and a hard two-hour limit, sold by the seat."
+      },
+      {
+        "text": "A card and board game cafe where the games, not the coffee, are the thing being rented.",
+        "why": "A trading-card vending machine business was one of this week's more concrete asks on r/Business_Ideas, and the underlying want is somewhere to play, not another machine."
+      },
+      {
+        "text": "Haircuts at a fixed price with no appointment and a visible queue number."
+      },
+      {
+        "text": "An end-of-term buyback shop: sell them the fan, the kettle and the bookshelf in April, sell it all back to next year's intake in July."
+      }
+    ]
+  }
+}

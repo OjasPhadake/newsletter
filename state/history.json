@@ -3468,6 +3468,160 @@
         "salesforce.com",
         "smithsonianmag.com"
       ]
+    },
+    {
+      "date": "2026-09-25",
+      "issue": 1,
+      "quote_text": [
+        "Good judgement is the result of experience and experience the result of bad judgement."
+      ],
+      "quote_author": [
+        "Mark Twain"
+      ],
+      "idea_text": [
+        "A luggage room. Term ends, flights are three days later, nobody has anywhere to put a suitcase.",
+        "A printing and binding shop that stays open until 2am and closes at noon.",
+        "Repairs while you wait: laptop chargers, spectacles, bag zips, bicycle brakes, one counter.",
+        "A tiffin service that lets you pause it for a week without an argument.",
+        "A furniture library. Rent the desk, the lamp and the mattress by the term and hand them back.",
+        "Passport photos, attestation, notary, courier, forms - the boring counter every student needs twice a year and cannot find.",
+        "A quiet paid room with no food, no music and a hard two-hour limit, sold by the seat.",
+        "A card and board game cafe where the games, not the coffee, are the thing being rented.",
+        "Haircuts at a fixed price with no appointment and a visible queue number.",
+        "An end-of-term buyback shop: sell them the fan, the kettle and the bookshelf in April, sell it all back to next year's intake in July."
+      ],
+      "idea_prompt": [
+        "Ten small businesses that would do well just outside a college campus"
+      ],
+      "tip_text": [
+        "If you already keep an AGENTS.md for another tool, stop maintaining a duplicate CLAUDE.md: from version 2.1.277, Claude Code reads AGENTS.md in any folder that has no CLAUDE.md. One file, one place to fix a stale instruction."
+      ],
+      "hn_id": [
+        "49819221",
+        "49831968",
+        "49820134",
+        "49812769",
+        "49827794"
+      ],
+      "link": [
+        "https://apnews.com/article/italy-nuclear-chernobyl-4891b6b7c7791ae84db6b0bf0f7cf567",
+        "https://f-droid.org/2026/09/24/f-droid-2.0-a-new-chapter-for-android-freedom.html",
+        "https://www.anthropic.com/news/claude-discovers-novel-enzyme-system",
+        "https://www.nobodywho.ai/posts/jev-in-25-lines/",
+        "https://www.reddit.com/r/facebook/comments/1wotwrk/meta_takes_down_a_critical_video_about_meta_ai/",
+        "https://www.goodreturns.in/news/irdai-new-insurance-rules-commission-caps-lower-expense-limits-and-dark-pattern-crackdown-propos-1536917.html",
+        "https://www.aboutamazon.com/news/innovation-at-amazon/seller-assistant-plugin-amazon-quick-claude",
+        "https://arxiv.org/abs/2609.13744",
+        "https://www.glossy.co/fashion/nuuly-aims-to-break-through-the-social-media-noise-with-a-new-branded-rom-com-microdrama/",
+        "https://hinge.co/newsroom/No-Ordinary-Love-2026",
+        "https://businessnewsthisweek.com/business/little-angel-puts-diaper-quality-under-the-lens-as-moms-from-all-over-india-go-behind-the-scenes-at-pan-healths-manufacturing-facility/",
+        "https://www.anthropic.com/research/project-swap",
+        "https://arxiv.org/abs/2609.15963",
+        "https://www.5paisa.com/blog/post-market-update-sensex-crash-nifty-5-month-low-market-cap-september-24-2026"
+      ],
+      "subject": [
+        "IRDAI consultation paper Recalibrating Economics of Insurance Distribution proposes lower expense-of-management ceilings, capped commissions, seller-identity linking, commission clawbacks and a dark-pattern ban",
+        "Amazon announces a Selling Partner plugin exposing Seller Central listings, inventory and analytics to outside AI assistants, launching with Amazon Quick and in US beta with Claude, plus persistent memory and always-on workflows in Seller Assistant",
+        "Room-temperature storage of entanglement in a silicon carbide quantum node: electron-nuclear entanglement swapped onto 29Si nuclear spins extends entanglement lifetime 240-fold",
+        "Nuuly replaces its autumn campaign with Heart On My Sleeve, a 12-episode one-minute-per-episode branded microdrama released daily on TikTok, Instagram and YouTube in August 2026",
+        "Hinge releases No Ordinary Love, a free five-story audiobook written and narrated by five authors from real couples' early-dating conversations",
+        "Little Angel flies 10-plus mothers from across India to PAN Health's Rajkot diaper factory to watch 34-plus quality checks including a robotic baby leakage test, for the campaign Maa Ne Dekha. Tabhi Toh Bharosa Kiya",
+        "201 people let an agent barter their books away, and the agent's problem was not negotiating",
+        "Adversarial Testing of Automated Program Repair Agents for Security Vulnerabilities",
+        "Yield management: American Airlines' Ultimate Super Saver fares of 17 January 1985 against People Express, the DINAMO system of 1988, and the $1.4 billion over three years"
+      ],
+      "brand": [
+        "Nuuly",
+        "Dayna's House",
+        "Hinge",
+        "Little Angel",
+        "PAN Health",
+        "Rajkot"
+      ],
+      "brand_mention": [
+        "Nuuly",
+        "Heart On My Sleeve",
+        "Teasers",
+        "Wally Baram",
+        "Milky Tran",
+        "Charles Hsu",
+        "Chine Ikoro",
+        "Tara Raani",
+        "Khial Watson",
+        "Jean-Luc",
+        "Quentin Nguyen-Duy",
+        "Dayna's House",
+        "Vogue",
+        "Dayna Carney's",
+        "Kirsten Henri's",
+        "Hinge's No Ordinary Love",
+        "Tembe Denton-Hurst",
+        "Nicola Dinan",
+        "Curtis Garner",
+        "Raven Smith",
+        "Rufi Thorpe",
+        "Libby",
+        "Libro.fm",
+        "Audiobooks",
+        "Barnes",
+        "Noble Audiobooks",
+        "Substack",
+        "Dazed Studio's Jamie Knowles",
+        "Little Angel",
+        "PAN Health's",
+        "Rajkot",
+        "Gujarat",
+        "Soft",
+        "Pure Diaper Pants",
+        "Maa Ne Dekha Tabhi Toh Bharosa Kiya",
+        "MD Chirag Pan"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "The insurance regulator wants to cut what it costs to sell a policy, and has named the tricks it wants stopped"
+        ],
+        [
+          "trends",
+          "Amazon will now let an outside AI agent read your seller account and change your prices"
+        ],
+        [
+          "trends",
+          "Entanglement usually needs a cryostat. This one sat in a chip at room temperature for 240 microseconds."
+        ],
+        [
+          "wild",
+          "A clothing-rental service replaced its autumn advert with a twelve-part rom-com filmed in two days"
+        ],
+        [
+          "wild",
+          "A dating app hired five novelists to write an audiobook out of other people's awkward conversations"
+        ],
+        [
+          "wild",
+          "Ten mothers were flown to Rajkot to watch a robot wet a nappy"
+        ],
+        [
+          "research",
+          "201 people let an agent barter their books away, and the agent's problem was not negotiating"
+        ],
+        [
+          "research",
+          "Adversarial Testing of Automated Program Repair Agents for Security Vulnerabilities"
+        ],
+        [
+          "learn",
+          "American Airlines beat a cheaper airline by charging more, and invented the price of your seat"
+        ]
+      ],
+      "editorial_domains": [
+        "aboutamazon.com",
+        "arxiv.org",
+        "businessnewsthisweek.com",
+        "glossy.co",
+        "goodreturns.in",
+        "hinge.co"
+      ]
     }
   ]
 }
