@@ -1,0 +1,318 @@
+{
+  "date_line": "Saturday, 26 September 2026",
+  "issue": 1,
+  "preheader": "The Netherlands is rebuilding its government desktop on NixOS because the US cut the ICC off from Microsoft; Claude computed a nine-loop scattering amplitude for about $1,500; the liver is the only well-designed organ you own, and cancer is the reason; markets closed Friday with the Sensex up 315 points; and Bell answered the telephone by saying 'Ahoy'.",
+  "quote": {
+    "text": "They have what I call 'thintelligence.' They see the immediate situation. They think narrowly and they call it 'being focused.'",
+    "author": "Michael Crichton",
+    "source_url": "https://www.goodreads.com/quotes/search?q=thintelligence",
+    "note": "Ian Malcolm is describing engineers, and the sting is that the thing being criticised is a virtue everywhere else. Focus is what you are praised for in a standup and what you put on a CV; thintelligence is the same behaviour seen from one step back, where the consequences live."
+  },
+  "agent_craft": {
+    "items": [
+      {
+        "text": "If you have a second Claude Code session grinding on something long, do not keep switching tabs to check on it: subscribe with notify_when_idle and let it tell you. Read the notification as 'that turn ended', not 'that worked' — it says nothing about whether the run succeeded.",
+        "source": "Nathan House, StationX, 'Claude Code Updates: September 2026'",
+        "url": "https://app.stationx.net/articles/claude-code-september-2026"
+      }
+    ]
+  },
+  "hn": [
+    {
+      "title": "Dutch government builds alternative for Microsoft based on NixOS",
+      "url": "https://www.dawo.community/en/",
+      "hn_url": "https://news.ycombinator.com/item?id=49841563",
+      "points": 922,
+      "comments": 538,
+      "bullets": [
+        "DAWO — Digitaal Autonome Werkomgeving Overheid — is not a distro so much as a blueprint: operating system, office suite, collaboration tools, cloud, IT management and what it calls 'open and verifiable AI building blocks', with the workplace configuration written declaratively so a machine can be rebuilt from its description.",
+        "The trigger was not ideology. When the US sanctioned the International Criminal Court in early 2025, the chief prosecutor lost access to Microsoft services including email, and the Dutch government watched an ally's office suite become a lever. It became an official mandate in July 2025.",
+        "NixOS was chosen for who does not own it. openSUSE and Fedora were both disqualified for their corporate parents — SUSE and, through Red Hat, IBM — while NixOS is a Dutch project with no company controlling its development.",
+        "It is being built inside the Ministry of the Interior (BZK) with three state IT providers, SSC-ICT, DICTU and DUO-ICT, doing the work. Eight municipalities are running pilots through the association of Dutch municipalities.",
+        "The economic argument is reuse: roughly 80-90% of a configuration is claimed to carry from one deployment to the next, which is the whole point of declaring the desktop rather than installing it 400,000 times."
+      ]
+    },
+    {
+      "title": "Why is the liver so weirdly regenerative?",
+      "url": "https://dynomight.substack.com/p/liver",
+      "hn_url": "https://news.ycombinator.com/item?id=49832938",
+      "points": 548,
+      "comments": 285,
+      "bullets": [
+        "The framing is the good bit: rather than ask why kidneys, gums, neurons and telomeres are so shoddy, ask why the liver is the exception. Give half of yours away and it regrows to near full size and function in a few months.",
+        "The unifying answer offered is cancer. Telomeres shorten not by accident — the body has telomerase and simply declines to use it outside stem, reproductive and some immune cells — because a cell that has run out of divisions is a tumour that has run out of road.",
+        "So each organ is a setting on one dial. Colon, bone marrow and skin: extreme regeneration, high cancer. Cardiac muscle and neurons: near-zero regeneration, and 'heart cancer' is almost an ungrammatical phrase.",
+        "The theory then collects exceptions. The lungs get the worst of both — low regeneration, high cancer — because cramming ~100 square metres of surface into ~5 litres requires a fractal geometry you cannot rebuild. The pancreas is simply weird.",
+        "The real hero turns out to be the small intestine: extremely high turnover, very low cancer. Protected stem cells in the valleys between villi make transit-amplifying cells that divide 4-6 times, yielding 16-64 mature cells that ride up the villus and are ejected into the gut to die. Mutate all you like; you are already on a conveyor belt."
+      ]
+    },
+    {
+      "title": "Two-tier encryption in the UK",
+      "url": "https://macanorak.com/two-tier-encryption-in-the-uk/",
+      "hn_url": "https://news.ycombinator.com/item?id=49828731",
+      "points": 500,
+      "comments": 458,
+      "bullets": [
+        "Two identical iPhones in the same British living room can now have different security, decided by a date. Advanced Data Protection is still running for UK users who switched it on before February 2025; nobody in the UK has been able to switch it on since.",
+        "The instrument is a Technical Capability Notice under the Investigatory Powers Act 2016 — a secret order. It was reportedly issued in January 2025 and only became public when the Washington Post reported it on 7 February 2025.",
+        "Apple's answer on 21 February 2025 was to withdraw ADP for new UK users rather than build an access path: 'we have never built a backdoor... and we never will.' Because only a user's own device can change the setting, Apple cannot switch it off for the people who already have it.",
+        "What the split actually costs: without ADP, iCloud Backup, Photos, Notes and iCloud Drive revert to standard protection, where Apple holds the keys. Fourteen baseline categories stay end-to-end encrypted either way.",
+        "The notice was reportedly narrowed to UK citizens in late 2025 after American pressure, and in September 2026 Apple moved to lift the secrecy around it — which is how a law designed to be invisible ends up as a news story."
+      ]
+    },
+    {
+      "title": "Meta VR Glasses",
+      "url": "https://www.meta.com/vr-glasses/",
+      "hn_url": "https://news.ycombinator.com/item?id=49824268",
+      "points": 491,
+      "comments": 473,
+      "bullets": [
+        "The product page says almost nothing: $1,299, spring 2027, magnesium alloy, 100 grams, 'as light as they are powerful'. The engineering is in what is missing from your face.",
+        "There is no computer in the glasses. A 300-gram puck on a thin hybrid fibre-optic cable carries a Snapdragon Reality Elite, 12GB of RAM and 128GB of storage with a microSD slot, which is how the headset gets to 100 grams and runs fanless.",
+        "Optics: dual micro-OLED panels at 2,412 x 2,288 per eye, 120Hz, about 37 pixels per degree against Quest 3's 25. The trade is the field of view — roughly 70 degrees horizontal by 66 vertical, where Quest 3 does 110 by 96.",
+        "Input is hands and eyes by default, with four cameras each for hand and eye tracking; controllers are an optional extra rather than the way in. Meta says over 75 games will be playable without them on day one.",
+        "It is also the first headset to carry IMAX Enhanced certification and Dolby Vision, and the debut of Hologram avatars — face-tracked photorealistic video of you, joining ordinary flatscreen WhatsApp calls."
+      ]
+    },
+    {
+      "title": "Opus 5.5 is good at explainer videos",
+      "url": "https://launchvideo.io",
+      "hn_url": "https://news.ycombinator.com/item?id=49836374",
+      "points": 404,
+      "comments": 213,
+      "bullets": [
+        "No video model is involved, which is the point. The model writes HTML and JavaScript for each scene, a headless browser renders the frames and ffmpeg assembles a 1920x1080, 30fps MP4 — so the same code renders the same film every time.",
+        "The agent has exactly three tools: web_fetch to pull a product page's text, colours and fonts; check_scene to validate the JavaScript and confirm something is actually visible; render_video to produce the file.",
+        "The quoted economics: about four minutes end to end, roughly 90k input and 15k output tokens, with about a minute of that spent starting the microVM.",
+        "It was built by the OpenComputer team, who credit the idea to a post by Deedy about Opus 5.5 and instructional video, and they show five worked examples including NVIDIA and Linear."
+      ]
+    }
+  ],
+  "markets": {
+    "indices": [
+      {
+        "name": "Sensex · close, Fri 25 Sep",
+        "value": "73,895.74",
+        "change": "315.20 (0.43%)",
+        "direction": "up"
+      },
+      {
+        "name": "Nifty 50 · close, Fri 25 Sep",
+        "value": "23,140.50",
+        "change": "77.40 (0.34%)",
+        "direction": "up"
+      },
+      {
+        "name": "Nifty Realty · Fri 25 Sep",
+        "value": "—",
+        "change": "0.92%",
+        "direction": "up"
+      },
+      {
+        "name": "Nifty IT · Fri 25 Sep",
+        "value": "—",
+        "change": "0.17%",
+        "direction": "down"
+      },
+      {
+        "name": "Nifty Midcap 100 · Fri 25 Sep",
+        "value": "—",
+        "change": "0.14%",
+        "direction": "down"
+      },
+      {
+        "name": "USD/INR · close, Fri 25 Sep",
+        "value": "95.80",
+        "change": "rupee 19 paise stronger (provisional)",
+        "direction": "up"
+      }
+    ],
+    "stories": [
+      {
+        "headline": "Markets are shut this weekend. Friday bought back a quarter of Thursday's loss, and the rupee did better than the index.",
+        "url": "https://www.kotakneo.com/news/market-news/closing-bell-25-september-2026/",
+        "source": "Kotak Neo's closing bell for the Friday 25 September 2026 session; Equitymaster's market close for the same day; NiftyTrader's NSE provisional FII/DII cash data; HDFC Sky's rupee report",
+        "bullets": [
+          "Indian markets were closed on Saturday 26 September. These are Friday's numbers. Sensex closed at 73,895.74, up 315.20 points or 0.43%; Nifty 50 at 23,140.50, up 77.40 points or 0.34%. That recovers about a quarter of Thursday's 1,247-point fall.",
+          "The recovery was narrow. Nifty Realty rose 0.92% and Nifty IT fell 0.17%; Nifty Midcap 100 lost 0.14% while Smallcap 100 gained 0.15%. Axis Bank, Asian Paints, M&M, Bajaj Finance and HCL Technologies led; Max Healthcare, Infosys, ONGC and Trent lagged.",
+          "The rupee was the better trade. It opened at 95.92, touched 95.94, and closed at 95.80 provisionally, 19 paise up from Thursday's 95.99, with the dollar index down 0.18% at 101.10.",
+          "Oil coming off the boil did most of the work: Brent for November at $105.48 a barrel, down about 1.08%, on hopes of a US-Iran truce. WTI was $92.92.",
+          "Foreigners kept selling into the bounce. FIIs were net sellers of Rs 3,694 crore in the cash market and DIIs net buyers of Rs 2,838 crore, provisional NSE data — a net Rs 856 crore out. September to date: FIIs -18,531 crore, DIIs +52,617 crore.",
+          "Gold and silver ignored all of it. MCX October gold settled at Rs 1,51,657 per 10g, up 0.63%, and December silver at Rs 2,36,114 a kilo, up 1.13%."
+        ]
+      }
+    ]
+  },
+  "trends": [
+    {
+      "tag": "India",
+      "headline": "Twenty-one states have signed up to a scheme where they nominate the airstrip and the centre decides whether it is worth rebuilding",
+      "url": "https://theprint.in/economy/regional-connectivity-push-aviation-ministry-signs-21-agreements-under-udan-next-phase/3050262/",
+      "subject": "Ministry of Civil Aviation signs 21 MoUs with states/UTs and AAI for the next phase of the UDAN regional connectivity scheme, and launches a Challenge Mode portal for aerodrome development",
+      "subtitle": "Ministry of Civil Aviation, Airports Authority of India and 21 states and union territories · 22 September 2026",
+      "bullets": [
+        "The 21 memorandums were signed between the civil aviation ministry, the states and union territories, and the Airports Authority of India as implementing agency.",
+        "The new mechanism is Challenge Mode. Instead of Delhi picking sites, a state nominates airstrips and helipads through a portal and they compete for development or upgrading under the next phase.",
+        "The target for the next decade is 120 new destinations and four crore additional passengers, on four stated pillars: affordability, operational sustainability, transparent selection, and domestic manufacturing.",
+        "For scale, what UDAN has actually done since 2016: 687 routes and 95 aerodromes operationalised, about 3.66 lakh flights and roughly 1.71 crore passengers.",
+        "Minister K Rammohan Naidu's line was 'With these MoUs, Team Bharat is joining hands to take India's regional aviation to greater heights' — which tells you the political framing: the states are being made co-owners of which runways get money."
+      ]
+    },
+    {
+      "tag": "Platforms",
+      "headline": "The three biggest labs are setting up the body that will audit them, and it needs nobody's permission",
+      "url": "https://www.pymnts.com/news/artificial-intelligence/2026/openai-google-and-anthropic-join-forces-to-set-ai-safety-standards/",
+      "subject": "OpenAI, Google and Anthropic plan a joint frontier AI safety standards organisation, reported by The Information on 24 September 2026",
+      "subtitle": "OpenAI, Google and Anthropic · reported by The Information, Thursday 24 September 2026",
+      "bullets": [
+        "The remit, as reported: support third-party organisations that test models before deployment, define how developers report safety and security incidents, codify the labs' voluntary commitments, and set qualifications for independent auditors. It may also test models itself.",
+        "Timing is end of 2026 or early 2027. Because it is a self-regulatory organisation rather than a regulator, it needs no act of Congress and no presidential sign-off.",
+        "It is what is left of something else: the companies first pursued a public-private partnership, and that stalled in the Trump administration.",
+        "The objection already on the record is competitive, not technical — that a standards body written by three incumbents can box out open-source developers and smaller rivals.",
+        "The Frontier Model Forum, which the same three plus Microsoft created in 2023, still exists and could work alongside it. The context that week: Sam Altman and Dario Amodei had just addressed the UN Security Council on AI safety."
+      ]
+    },
+    {
+      "tag": "Wildcard",
+      "headline": "Two graduate students went looking for black holes inside the LHC's old data, did not find any, and that is the result",
+      "url": "https://news.ucsb.edu/2026/022819/physicists-extend-search-quantum-black-holes-lhc",
+      "subject": "CMS search for microscopic quantum black holes and sphalerons in 2016-2018 LHC data excludes production up to about 12 TeV, using a phase-space distance method with a support vector machine",
+      "subtitle": "Tamas Vami and Danyi Zhang with Joe Incandela, UC Santa Barbara, on the CMS experiment · Progress in High Energy Physics, September 2026",
+      "bullets": [
+        "If space has extra dimensions, gravity could be far stronger at short range than it looks, and a hard enough proton collision could make a microscopic black hole that evaporates immediately. The LHC is the only place to check.",
+        "They went through CMS data from 2016 to 2018 looking for quantum black holes and for sphalerons, a predicted unstable configuration of particle fields, and found nothing.",
+        "The exclusion is the product: production is ruled out up to roughly 12 TeV under the models considered, which also constrains how many extra dimensions the theories may have — 'you cannot have more than two', as Vami puts it.",
+        "The method is worth more than the null. They used a 'phase-space distance' approach from theorist Nathaniel Craig with a support vector machine, deliberately choosing a classifier whose mathematics stays inspectable rather than a black box.",
+        "Zhang's framing of why a null result is a result: 'Each search clears out part of that range and says not here, and over time the map of where new physics could still be, shrinks.'"
+      ]
+    }
+  ],
+  "research": [
+    {
+      "tag": "Industry · Anthropic",
+      "title": "A nine-loop amplitude had never been computed. Claude did it overnight for about $1,500.",
+      "url": "https://www.anthropic.com/research/yes-claude-can-do-nine-loops",
+      "subtitle": "Guest post by Matt von Hippel with an addendum by Lance Dixon (SLAC) · work by Liam Fitzpatrick and Siddharth Mishra-Sharma · Anthropic, 25 September 2026",
+      "bullets": [
+        "A scattering amplitude predicts how likely particles are to interact; loops are the order of the approximation. Most real amplitudes stop at two loops, a few reach three, and the most precise prediction in physics — the electron's anomalous magnetic moment — uses five.",
+        "The problem chosen was the six-particle (hexagon) amplitude in planar N=4 super Yang-Mills at nine loops. Lance Dixon's group had reached eight loops, published in 2023, by an indirect route through form factors and antipodal duality. Nine had not been done.",
+        "The prompt was the whole method. Fitzpatrick and Mishra-Sharma stated the problem and left: 'I'm going to sleep and won't be available for another several hours. Keep working on this until I tell you to stop.' Claude ran both the bootstrap and the form-factor route, in Python with SymPy.",
+        "Cost: about $100 for the bootstrap and $1,000-$2,000 in total, roughly 96 CPUs for a week. Dixon, who had spent about two years working towards the nine-loop form factor, verified it: 'It's quite a triumph, in my opinion, for a large language model to execute all of the steps in the complicated recipe we laid out.'",
+        "The honest reading is in von Hippel's own summary — no new physics was invented, known techniques were executed reliably for hours without supervision, and there was more low-hanging fruit than the experts thought. Dixon's worry is dated later: 'The more soul-searching moments will come when large language models start to come up with new physical principles and insights before humans.'"
+      ]
+    },
+    {
+      "tag": "Academia · Columbia",
+      "title": "Do Language Models Know Their Own Constraints",
+      "url": "https://arxiv.org/abs/2609.22151",
+      "subtitle": "Arin Agarwal, Columbia University · arXiv, 19 September 2026",
+      "bullets": [
+        "The question is whether a rule taught in post-training remains something a model knows, or only something it does. Test: fine-tune Llama 3.1 8B Instruct to avoid five banned ingredients when generating recipes.",
+        "Both methods worked behaviourally. Compliance went from 4% at baseline to roughly 90%, by supervised fine-tuning and by GRPO alike, over three seeds.",
+        "Asked to state its own rules, the trained model largely could not: constraint reporting fell from 0.48/5 to 0.16/5 after SFT and 0.07/5 after GRPO, and third-person knowledge of the same facts collapsed from 93% to between 36% and 14%.",
+        "It is not that the information is gone. A probe on hidden states recovers per-ingredient avoidance at 83.8% accuracy at layer 24 — the model's internals still encode the rule its words cannot retrieve.",
+        "Reward-based training was the more destructive of the two, producing context-independent suppression rather than a constraint the model can reason about. Which matters if your safety story depends on asking a model what it has been told not to do."
+      ]
+    }
+  ],
+  "wild": [
+    {
+      "tag": "Sport · Tourism",
+      "headline": "Two retired Buffalo Bills threw a football across an international border from one boat to another",
+      "url": "https://www.niagaraparks.com/media-room/news/buffalo-bills-legends-ryan-fitzpatrick-and-stevie-johnson-complete-cross-border-catch-at-niagara-falls/",
+      "entities": [
+        "Buffalo Bills",
+        "Niagara Parks",
+        "Niagara City Cruises"
+      ],
+      "subject": "Ryan Fitzpatrick throws a pass from a boat on the US side of the Niagara River to Stevie Johnson on a boat on the Canadian side, organised by Niagara Parks, Niagara City Cruises and the Buffalo Bills",
+      "bullets": [
+        "On the morning of 16 September, quarterback Ryan Fitzpatrick and receiver Stevie Johnson were put on two separate Niagara City Cruises vessels at the base of the falls, one in American water and one in Canadian, and completed the catch between them.",
+        "It was organised by Niagara Parks, Niagara City Cruises and the team, and the footage aired the next night during Prime's broadcast of the Bills' first home game at Highmark Stadium.",
+        "The stated reason is a fanbase that does not respect the border: 'The passion and support we feel from our Canadian fans is incredible,' said Bills chief strategy officer Kate Hussmann.",
+        "Niagara Falls was then lit in red, white and blue from 8pm on 17 September to coincide with kickoff, which is the rare case of a natural wonder being used as a team jersey."
+      ]
+    },
+    {
+      "tag": "Gaming · Pets",
+      "headline": "There is now an officially licensed Metal Gear cardboard box, sized for one cat",
+      "url": "https://soranews24.com/2026/09/26/official-metal-gear-car-boxes-are-coming-to-provide-stealthy-style-for-your-pets/",
+      "entities": [
+        "OKS Gear",
+        "Konami",
+        "CatCon"
+      ],
+      "subject": "OKS Gear releases an officially licensed Metal Gear-themed cardboard cat scratcher box based on the Love Box from Metal Gear Solid: Peace Walker",
+      "bullets": [
+        "The box is a cardboard scratcher modelled on the Love Box from Metal Gear Solid: Peace Walker, scaled down from the in-game version, which fits two people, to a version that fits one cat.",
+        "It is made by OKS Gear, a US game-merchandise company, under official licence, and debuts as an event exclusive at CatCon in Pasadena on 10-11 October before going on sale online.",
+        "The joke writes itself and has been writing itself since 1998: the whole point of a cardboard box in Metal Gear is that anything hiding in one becomes invisible to guards. Cats reached the same conclusion independently.",
+        "No price has been announced, which for a cardboard box with a licence attached is the most interesting unknown in the story."
+      ]
+    },
+    {
+      "tag": "Museums · Nightlife",
+      "headline": "A disused subway station in Brooklyn is being turned into a two-level disco for one night, among the trains",
+      "url": "https://www.timeout.com/newyork/news/the-new-york-transit-museum-is-turning-a-decommissioned-subway-station-into-an-underground-disco-for-its-50th-anniversary-090926",
+      "entities": [
+        "New York Transit Museum",
+        "Vinyl Nights",
+        "Fort Hamilton Distillery"
+      ],
+      "subject": "New York Transit Museum marks its 50th anniversary with Vinyl Nights Presents Return to '76, a vinyl-only dance party inside its decommissioned Court Street subway station at 99 Schermerhorn Street",
+      "bullets": [
+        "The museum is a decommissioned station and always has been, which is why this works: on the evening of Saturday 26 September, from 6 to 9pm, 99 Schermerhorn Street becomes a party on two levels.",
+        "Mezzanine: New Style Hustle lessons with Jeff Selby and DJ Miss Gypsy, then a disco set from DJ Misbehaviour among the old subway signage. Platform: Operator Emz playing funk and hip-hop around more than 20 historic cars, including early wooden elevated cars and the Million Dollar Car.",
+        "Everything is spun from vinyl, and the costume contest at 8.30pm runs down a Soul Train line, judged by Vinyl Nights founder Rebecca Lynn, Miss Subways 2026 Abby Fantastic, and subway announcer Bernie Wagenblast.",
+        "Tickets are $50 including two drinks, of which all but $20 is tax-deductible; the bars serve a glittery old fashioned called the MetroGold from Fort Hamilton Distillery. The museum opened in 1976, hence the year being danced to."
+      ]
+    }
+  ],
+  "learn": {
+    "title": "Alexander Graham Bell answered the telephone by saying 'Ahoy', and lost to a man selling a word for being loud",
+    "subject": "Origin of 'hello' as the telephone greeting: Edison's 15 August 1877 letter to T.B.A. David, Bell's preference for 'ahoy', and the spread of the word through telephone operators",
+    "body": [
+      "Bell invented the telephone and then lost the argument about how to answer it. He wanted 'Ahoy, ahoy' — a hail borrowed from ships, which is a reasonable model for shouting at someone you cannot see — and he used it for the rest of his life. There is no evidence anyone else did.",
+      "The winning word was proposed on 15 August 1877 by Thomas Edison, in a letter to T. B. A. David, who ran the Central District and Printing Telegraph Company in Pittsburgh. Edison's argument was not about manners. It was about volume: 'Hello! can be heard 10 to 20 feet away. What you think?' He was trying to get rid of the call bell. If the word is loud enough, the machine does not need a ringer — you just shout into it until someone in the next room notices.",
+      "'Hello' was not new; it is attested in writing from 1826. But it was a shout, used to hail someone at a distance or to register surprise, not a greeting between people in a room. The telephone quietly converted it. Operators — trained to open every call the same way, thousands of times a day — did the rest; by 1889 they were known as 'hello girls', and badges reading Hello may have first appeared in 1880, at the first convention of telephone operators, held at Niagara Falls. Every time you pick up a phone you are following a hardware workaround from 1877."
+    ]
+  },
+  "ideas": {
+    "prompt": "Ten questions worth asking someone you have just met",
+    "note": "Altucher's drill: ten ideas a day against one prompt. Today's is the cheap one — no capital, no app, just better questions than 'so what do you do'. Two of these were lifted from wishes people posted on r/Lightbulb and r/SomebodyMakeThis this week.",
+    "items": [
+      {
+        "text": "What is something you used to believe strongly and quietly stopped believing?"
+      },
+      {
+        "text": "What is the best thing you have bought for under a thousand rupees?"
+      },
+      {
+        "text": "What did you want to be when you were eleven, and what did that person want out of it?"
+      },
+      {
+        "text": "What is a skill you have that has never once been useful?"
+      },
+      {
+        "text": "Which decision, if you had gone the other way, would have produced a completely different life?",
+        "why": "Adapted from an r/Lightbulb post wishing for biographies written with alternate timelines."
+      },
+      {
+        "text": "What is the most interesting thing about the town you grew up in?"
+      },
+      {
+        "text": "What do you know a suspicious amount about?"
+      },
+      {
+        "text": "What is a rule you follow that nobody asked you to follow?"
+      },
+      {
+        "text": "What is something everybody around you seems to enjoy that you have simply never got?"
+      },
+      {
+        "text": "If you had two hours free every day for a year, what would you actually do with them?",
+        "why": "A recurring shape on r/SomebodyMakeThis: people describe the thing they would build if the time existed, then never get the time."
+      }
+    ]
+  }
+}

@@ -3622,6 +3622,158 @@
         "goodreturns.in",
         "hinge.co"
       ]
+    },
+    {
+      "date": "2026-09-26",
+      "issue": 1,
+      "quote_text": [
+        "They have what I call 'thintelligence.' They see the immediate situation. They think narrowly and they call it 'being focused.'"
+      ],
+      "quote_author": [
+        "Michael Crichton"
+      ],
+      "idea_text": [
+        "What is something you used to believe strongly and quietly stopped believing?",
+        "What is the best thing you have bought for under a thousand rupees?",
+        "What did you want to be when you were eleven, and what did that person want out of it?",
+        "What is a skill you have that has never once been useful?",
+        "Which decision, if you had gone the other way, would have produced a completely different life?",
+        "What is the most interesting thing about the town you grew up in?",
+        "What do you know a suspicious amount about?",
+        "What is a rule you follow that nobody asked you to follow?",
+        "What is something everybody around you seems to enjoy that you have simply never got?",
+        "If you had two hours free every day for a year, what would you actually do with them?"
+      ],
+      "idea_prompt": [
+        "Ten questions worth asking someone you have just met"
+      ],
+      "tip_text": [
+        "If you have a second Claude Code session grinding on something long, do not keep switching tabs to check on it: subscribe with notify_when_idle and let it tell you. Read the notification as 'that turn ended', not 'that worked' — it says nothing about whether the run succeeded."
+      ],
+      "hn_id": [
+        "49841563",
+        "49832938",
+        "49828731",
+        "49824268",
+        "49836374"
+      ],
+      "link": [
+        "https://www.dawo.community/en/",
+        "https://dynomight.substack.com/p/liver",
+        "https://macanorak.com/two-tier-encryption-in-the-uk/",
+        "https://www.meta.com/vr-glasses/",
+        "https://launchvideo.io",
+        "https://theprint.in/economy/regional-connectivity-push-aviation-ministry-signs-21-agreements-under-udan-next-phase/3050262/",
+        "https://www.pymnts.com/news/artificial-intelligence/2026/openai-google-and-anthropic-join-forces-to-set-ai-safety-standards/",
+        "https://news.ucsb.edu/2026/022819/physicists-extend-search-quantum-black-holes-lhc",
+        "https://www.niagaraparks.com/media-room/news/buffalo-bills-legends-ryan-fitzpatrick-and-stevie-johnson-complete-cross-border-catch-at-niagara-falls/",
+        "https://soranews24.com/2026/09/26/official-metal-gear-car-boxes-are-coming-to-provide-stealthy-style-for-your-pets/",
+        "https://www.timeout.com/newyork/news/the-new-york-transit-museum-is-turning-a-decommissioned-subway-station-into-an-underground-disco-for-its-50th-anniversary-090926",
+        "https://www.anthropic.com/research/yes-claude-can-do-nine-loops",
+        "https://arxiv.org/abs/2609.22151",
+        "https://www.kotakneo.com/news/market-news/closing-bell-25-september-2026/"
+      ],
+      "subject": [
+        "Ministry of Civil Aviation signs 21 MoUs with states/UTs and AAI for the next phase of the UDAN regional connectivity scheme, and launches a Challenge Mode portal for aerodrome development",
+        "OpenAI, Google and Anthropic plan a joint frontier AI safety standards organisation, reported by The Information on 24 September 2026",
+        "CMS search for microscopic quantum black holes and sphalerons in 2016-2018 LHC data excludes production up to about 12 TeV, using a phase-space distance method with a support vector machine",
+        "Ryan Fitzpatrick throws a pass from a boat on the US side of the Niagara River to Stevie Johnson on a boat on the Canadian side, organised by Niagara Parks, Niagara City Cruises and the Buffalo Bills",
+        "OKS Gear releases an officially licensed Metal Gear-themed cardboard cat scratcher box based on the Love Box from Metal Gear Solid: Peace Walker",
+        "New York Transit Museum marks its 50th anniversary with Vinyl Nights Presents Return to '76, a vinyl-only dance party inside its decommissioned Court Street subway station at 99 Schermerhorn Street",
+        "A nine-loop amplitude had never been computed. Claude did it overnight for about $1,500.",
+        "Do Language Models Know Their Own Constraints",
+        "Origin of 'hello' as the telephone greeting: Edison's 15 August 1877 letter to T.B.A. David, Bell's preference for 'ahoy', and the spread of the word through telephone operators"
+      ],
+      "brand": [
+        "Buffalo Bills",
+        "Niagara Parks",
+        "Niagara City Cruises",
+        "OKS Gear",
+        "Konami",
+        "CatCon",
+        "Metal Gear",
+        "New York Transit Museum",
+        "Vinyl Nights",
+        "Fort Hamilton Distillery"
+      ],
+      "brand_mention": [
+        "Ryan Fitzpatrick",
+        "Stevie Johnson",
+        "Niagara City Cruises",
+        "Canadian",
+        "Niagara Parks",
+        "Prime's",
+        "Bills",
+        "Highmark Stadium",
+        "Kate Hussmann Niagara Falls",
+        "Love Box",
+        "Metal Gear Solid",
+        "Peace Walker",
+        "OKS Gear",
+        "CatCon",
+        "Pasadena",
+        "Metal Gear",
+        "Schermerhorn Street",
+        "Style Hustle",
+        "Jeff Selby",
+        "DJ Miss Gypsy",
+        "DJ Misbehaviour",
+        "Operator Emz",
+        "Million Dollar Car Everything",
+        "Soul Train",
+        "Vinyl Nights",
+        "Rebecca Lynn",
+        "Miss Subways 2026 Abby Fantastic",
+        "Bernie Wagenblast Tickets",
+        "MetroGold",
+        "Fort Hamilton Distillery"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "Twenty-one states have signed up to a scheme where they nominate the airstrip and the centre decides whether it is worth rebuilding"
+        ],
+        [
+          "trends",
+          "The three biggest labs are setting up the body that will audit them, and it needs nobody's permission"
+        ],
+        [
+          "trends",
+          "Two graduate students went looking for black holes inside the LHC's old data, did not find any, and that is the result"
+        ],
+        [
+          "wild",
+          "Two retired Buffalo Bills threw a football across an international border from one boat to another"
+        ],
+        [
+          "wild",
+          "There is now an officially licensed Metal Gear cardboard box, sized for one cat"
+        ],
+        [
+          "wild",
+          "A disused subway station in Brooklyn is being turned into a two-level disco for one night, among the trains"
+        ],
+        [
+          "research",
+          "A nine-loop amplitude had never been computed. Claude did it overnight for about $1,500."
+        ],
+        [
+          "research",
+          "Do Language Models Know Their Own Constraints"
+        ],
+        [
+          "learn",
+          "Alexander Graham Bell answered the telephone by saying 'Ahoy', and lost to a man selling a word for being loud"
+        ]
+      ],
+      "editorial_domains": [
+        "news.ucsb.edu",
+        "niagaraparks.com",
+        "pymnts.com",
+        "soranews24.com",
+        "theprint.in",
+        "timeout.com"
+      ]
     }
   ]
 }
