@@ -3774,6 +3774,154 @@
         "theprint.in",
         "timeout.com"
       ]
+    },
+    {
+      "date": "2026-09-27",
+      "issue": 1,
+      "quote_text": [
+        "Tell people there's an invisible man in the sky who created the universe, and the vast majority will believe you. Tell them the paint is wet, and they have to touch it to be sure."
+      ],
+      "quote_author": [
+        "George Carlin"
+      ],
+      "idea_text": [
+        "A printed screenshot of your phone's home screen, with every app icon labelled in your own handwriting.",
+        "One month of your bank statement, unedited. Nothing dates a decade faster than what things cost and what people bought.",
+        "A supermarket receipt and the shopping list it came from, so the gap between the two is visible.",
+        "A recording of an ordinary phone call with your mother, about nothing.",
+        "The instruction manual for something everybody currently knows how to use without one.",
+        "A map of your city with the route you actually walk drawn on it in pen.",
+        "A list of the ten words you use most that did not exist when your grandparents were twenty.",
+        "One object that is broken, with a note explaining whether fixing it was cheaper than replacing it.",
+        "A photograph of the inside of your fridge, taken on a Wednesday.",
+        "A sealed envelope containing your best guess at what 2126 looks like, marked 'do not open until you have opened everything else'."
+      ],
+      "idea_prompt": [
+        "Ten things you would put in a time capsule to be opened in 2126"
+      ],
+      "tip_text": [
+        "Run `/doctor prompt-audit` on any repo whose CLAUDE.md you have been adding to for months. It reads your CLAUDE.md, skills, agents and commands and flags prompting written for older models — and as of v2.1.282 it leads the report with the things you cannot see yourself: stale paths, stale commands, and instruction files that contradict each other."
+      ],
+      "hn_id": [
+        "49849985",
+        "49855315",
+        "49848269",
+        "49840054",
+        "49845977"
+      ],
+      "link": [
+        "https://swarmtraces.org/",
+        "https://gultsch.de/posts/breaking-up-with-google-play/",
+        "https://ollaya.dev/",
+        "https://www.aymannadeem.com/artificial/intelligence,/developer/tools/2026/09/24/plan-mode-is-dead.html",
+        "https://www.cnbc.com/2026/09/25/pentagon-anthropic-ai-risk-appeals-court.html",
+        "https://www.tribuneindia.com/news/economic-growth/fitch-lifts-india-fy27-growth-forecast-to-6-9-expects-investment-to-rise-over-10",
+        "https://www.cbsnews.com/news/facebook-liable-deceiving-users-cambridge-analytica/",
+        "https://archaeology.org/news/2026/09/24/is-this-ancient-wall-under-central-paris-from-the-citys-earliest-settlement/",
+        "https://eatfishwife.com/products/dieux-x-fishwife-good-taste-forever-eye-masks",
+        "https://www.tokyoweekender.com/art_and_culture/fashion/familymart-new-sock-collection-47-prefectures/",
+        "https://www.universalmusic.ca/2026/09/10/shania-twain-and-zedd-give-youre-still-the-one-a-sweet-reimagining-for-candy-crushs-music-season-2026/",
+        "https://research.google/blog/coherent-long-form-video-generation/",
+        "https://arxiv.org/abs/2609.28820",
+        "https://upstox.com/news/market-news/stocks/weekly-market-wrap-nifty-50-sensex-falls-for-7th-consecutive-week-infosys-bharti-airtel-others-drag-losses/article-200915/"
+      ],
+      "subject": [
+        "Fitch Ratings raises its India FY2026-27 GDP growth forecast to 6.9% from 6.4% in its September 2026 Global Economic Outlook, and forecasts RBI rate hikes to 5.75%",
+        "New Mexico First Judicial District Court jury finds Meta liable under the state's Unfair Practices Act for deceiving users about privacy protections in the Cambridge Analytica case, with 43,899,720 violations found",
+        "Excavation beneath the Hôtel-Dieu hospital on the Île de la Cité uncovers a burnt Gallic stone-and-wood wall carbon-dated to 200-10 BC, possible evidence that Lutetia's centre was on the island rather than at Nanterre",
+        "Dieux and Fishwife release the limited-edition Good Taste Forever Eye Masks, reusable silicone eye patches with sardine artwork in a collectible tin, at $25, plus a $69 bundle with tinned sardines",
+        "FamilyMart marks its 45th anniversary with 47 prefecture-exclusive sock designs at 600 yen and 47 matching sticker designs at 300 yen, each sold only in the prefecture it represents",
+        "Candy Crush's Music Season 2026 pairs Shania Twain and Zedd on a remix of 'You're Still the One' with an interactive Jonas Akerlund-directed music video at candyroadhouse.com hiding codes for prizes",
+        "To get ten coherent minutes of video, Google stopped scaling the model and hired a crew",
+        "AI-Enabled Human Memory Manipulation: Misleading AI-Generated Summaries Distort Human Memory",
+        "The IKEA effect: Norton, Mochon and Ariely's 2011 experiments on why self-assembly raises willingness to pay, including the IKEA Kassett box, origami and Lego studies and the incomplete-build condition"
+      ],
+      "brand": [
+        "Dieux",
+        "Fishwife",
+        "FamilyMart",
+        "Japan's 47",
+        "Candy Crush",
+        "King",
+        "Shania Twain",
+        "Zedd",
+        "EDM"
+      ],
+      "brand_mention": [
+        "Dieux's",
+        "Good Taste Forever Eye Mask",
+        "Fishwife's",
+        "Glowing Skin Bundle",
+        "Somei Yoshino",
+        "Hiroshima",
+        "Aomori",
+        "Iwate",
+        "Sun",
+        "Star",
+        "FamilyMart",
+        "Yubari",
+        "Hokkaido",
+        "Kyoto",
+        "Miyagi",
+        "Momotaro",
+        "Okayama",
+        "Shania Twain",
+        "Zedd",
+        "You're",
+        "Candy Crush's Music Season",
+        "Jonas",
+        "Candy Country",
+        "Western",
+        "Twain",
+        "Bringing",
+        "Candy Crush"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "Fitch now expects India to grow 6.9% next year, and expects the RBI to raise rates twice while it happens"
+        ],
+        [
+          "trends",
+          "A New Mexico jury counted Facebook's privacy promises one by one and found 43,899,720 violations"
+        ],
+        [
+          "trends",
+          "A twenty-metre burnt wall under a Paris hospital courtyard may be the reason Paris is where it is"
+        ],
+        [
+          "wild",
+          "A skincare brand and a tinned-fish brand made reusable eye patches shaped like sardines, in a sardine tin"
+        ],
+        [
+          "wild",
+          "A convenience-store chain turned 45 and released a different pair of socks for each of Japan's 47 prefectures"
+        ],
+        [
+          "wild",
+          "A match-three puzzle game commissioned a country-EDM remix of a 1997 ballad and hid prizes inside the music video"
+        ],
+        [
+          "research",
+          "To get ten coherent minutes of video, Google stopped scaling the model and hired a crew"
+        ],
+        [
+          "research",
+          "AI-Enabled Human Memory Manipulation: Misleading AI-Generated Summaries Distort Human Memory"
+        ],
+        [
+          "learn",
+          "Fold your own origami frog and you will value it five times higher than anyone else will — and exactly as highly as an expert's"
+        ]
+      ],
+      "editorial_domains": [
+        "archaeology.org",
+        "cbsnews.com",
+        "eatfishwife.com",
+        "tokyoweekender.com",
+        "tribuneindia.com",
+        "universalmusic.ca"
+      ]
     }
   ]
 }
