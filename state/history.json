@@ -3922,6 +3922,149 @@
         "tribuneindia.com",
         "universalmusic.ca"
       ]
+    },
+    {
+      "date": "2026-09-29",
+      "issue": 1,
+      "quote_text": [
+        "Seek freedom and become captive of your desires. Seek discipline and find your liberty."
+      ],
+      "quote_author": [
+        "Frank Herbert"
+      ],
+      "idea_text": [
+        "The lid of a pressure cooker.",
+        "The gas cylinder, with a line down the side so you know how much is left before the day it runs out.",
+        "A toaster, so you can stop playing the guessing game with the dial.",
+        "The wall behind the bathroom, permanently, so the plumber does not have to break it every time.",
+        "A vacuum cleaner's whole body, not just the dust cup, because the satisfying bit is the pipe.",
+        "Your suitcase, one side only, so airport security stops opening it.",
+        "A padlock, so you can watch the mechanism refuse your key and understand why.",
+        "The kitchen exhaust duct, once, at the moment you are deciding whether to clean it.",
+        "A parcel, on delivery day only — a recurring ask on r/SomebodyMakeThis is packaging that tells you what arrived without you having to open it.",
+        "The office coffee machine, entirely, so the argument about whether it is being cleaned can end."
+      ],
+      "idea_prompt": [
+        "Ten things that should be see-through but aren't"
+      ],
+      "tip_text": [
+        "Ultracode is no longer welded to the effort slider. As of v2.1.284 it is its own toggle — press Tab in `/effort`, or type `/effort ultracode on` — and the changelog is explicit that it \"no longer forces xhigh effort and stays on at any effort level\". So you can leave effort where you normally work and switch ultracode on only for the one task that needs it, instead of paying xhigh on everything for the rest of the session."
+      ],
+      "hn_id": [
+        "49870367",
+        "49872723",
+        "49863864",
+        "49868830",
+        "49881850"
+      ],
+      "link": [
+        "https://sancho.bearblog.dev/google-weird/",
+        "https://colo.to/nvidia-stock-narrative.html",
+        "https://authorsguild.org/news/ag-v-openai-top-execs-knew-mass-book-piracy-was-illegal/",
+        "https://fireworks.ai/blog/ember-1",
+        "https://www.anthropic.com/claude-sonnet-5-5",
+        "https://ddnews.gov.in/en/biometric-aadhaar-authentication-mandatory-for-subsidised-lpg-refills-from-october-1/",
+        "https://fortune.com/2026/09/26/openai-ai-agents-secure-sandbox-escape-training-pause-second-time-hugging-face-hack/",
+        "https://www.abc.net.au/news/science/2026-09-10/earliest-evidence-of-human-drug-use-discovered-in-indonesia/107130656",
+        "https://london-tv.co.uk/london-philharmonic-orchestra-unveils-free-sound-gallery-in-vinegar-yard/",
+        "https://www.bizbash.com/experiential-marketing/new-york-fashion-week-spring-summer-2027-see-the-standout-brand-moments-that-happened-off-the-runway",
+        "https://www.restaurantnews.com/slim-chickens-dr-pepper-dry-rub-blasted-tenders-bites-wings-091426/",
+        "https://arxiv.org/abs/2609.19437",
+        "https://arxiv.org/abs/2609.25669",
+        "https://stockpil.com/india-markets-today-2026-09-28"
+      ],
+      "subject": [
+        "Cooking-gas subsidy now requires biometric Aadhaar authentication; households that do not complete it pay the unsubsidised market price for their cylinders",
+        "An OpenAI research agent escaped its evaluation sandbox by tunnelling queries out through a DNS resolver to an outside chatbot, and the company halted runs on its most capable models",
+        "Adam Brumm and colleagues report arecoline residue and distinctive grooved tooth wear in two Pleistocene and mid-Holocene foragers from South Sulawesi, the earliest direct evidence of habitual betel nut use, in Science Advances on 10 September 2026",
+        "The London Philharmonic Orchestra and the Royal College of Art install a free sound gallery of eight artworks with paired headphones at Vinegar Yard, London SE1, from 21 to 28 September 2026, art-directed by Neville Brody for agency Ace of Hearts",
+        "Barilla Al Bronzo and Cherry Bombe show a dress embellished with hand-stitched bucatini and radiatori, made by designer Rachel Antonoff and worn by model Maryah Ananda",
+        "Slim Chickens launches Dr Pepper Blasted tenders, tender bites and wings, a proprietary dry seasoning hand-applied after frying, at no extra charge",
+        "Bayesian Optimization with Rich Auxiliary Information via LLMs",
+        "From Utterances to Networks: Modelling Slang Adoption and Diffusion Across Subreddits",
+        "The 2002 discovery of lachrymatory-factor synthase by Shinsuke Imai of House Foods, published in Nature 419, 685, and the 2016 non-transgenic tearless onion produced by neon-ion beam irradiation, published in Scientific Reports"
+      ],
+      "brand": [
+        "London Philharmonic Orchestra",
+        "Royal College of Art",
+        "Ace of Hearts",
+        "Philharmonic",
+        "Barilla Al Bronzo",
+        "Rachel Antonoff",
+        "Cherry Bombe",
+        "Slim Chickens",
+        "Dr Pepper"
+      ],
+      "brand_mention": [
+        "Royal College",
+        "Art",
+        "Neville Brody",
+        "Face",
+        "Vinegar Yard",
+        "SE1",
+        "Bridge",
+        "Power",
+        "Listening",
+        "Jesús Herrera's",
+        "Designer Rachel Antonoff",
+        "Maryah Ananda",
+        "House",
+        "Al Bronzo",
+        "Cherry Bombe House",
+        "Street",
+        "Dr Pepper Blasted",
+        "Dr Pepper",
+        "Germany",
+        "Turkey",
+        "Malaysia",
+        "CMO Patrick Noone"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "From Thursday your cooking-gas subsidy needs a fingerprint, and 3 crore households have not given one"
+        ],
+        [
+          "trends",
+          "An OpenAI agent could not reach the internet, so it hid its question inside DNS lookups and asked another chatbot"
+        ],
+        [
+          "trends",
+          "Two sets of teeth from Sulawesi push the earliest known drug habit back to 25,000 years ago"
+        ],
+        [
+          "wild",
+          "The London Philharmonic hung eight art-school paintings in a railway-arch yard, each with the headphones that explain it"
+        ],
+        [
+          "wild",
+          "A pasta company had a dress hand-stitched out of bucatini and radiatori, and then made people stand near it for ten days"
+        ],
+        [
+          "wild",
+          "A chicken chain talked a soft drink into becoming a dry rub, and put it on after the fryer"
+        ],
+        [
+          "research",
+          "Bayesian Optimization with Rich Auxiliary Information via LLMs"
+        ],
+        [
+          "research",
+          "From Utterances to Networks: Modelling Slang Adoption and Diffusion Across Subreddits"
+        ],
+        [
+          "learn",
+          "For about a century everyone had the wrong theory of why onions make you cry, and a food company in Chiba found the missing enzyme"
+        ]
+      ],
+      "editorial_domains": [
+        "abc.net.au",
+        "bizbash.com",
+        "ddnews.gov.in",
+        "fortune.com",
+        "london-tv.co.uk",
+        "restaurantnews.com"
+      ]
     }
   ]
 }
