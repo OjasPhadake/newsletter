@@ -4065,6 +4065,151 @@
         "london-tv.co.uk",
         "restaurantnews.com"
       ]
+    },
+    {
+      "date": "2026-09-30",
+      "issue": 1,
+      "quote_text": [
+        "Art is solving problems that cannot be formulated before they have been solved."
+      ],
+      "quote_author": [
+        "Piet Hein"
+      ],
+      "idea_text": [
+        "Cancellation Day. Every subscription service has to put the cancel button on its front page for twenty-four hours.",
+        "Repair Day, with hardware shops open late and one hour owed to whatever in your house has been broken for a year.",
+        "A day on which nothing may be launched, released or announced — no keynotes, no version numbers. Everyone catches up instead.",
+        "Old Friend Day. You may only call someone you have not spoken to in over a year.",
+        "A January holiday reserved for people who worked through Diwali, Christmas and Eid: one paid day, taken whenever.",
+        "Inbox Amnesty. Anything unanswered before this date is officially closed and nobody may bring it up.",
+        "Return Day — borrowed books, umbrellas, ladders and steel dabbas go home, no explanation required.",
+        "Wrong Turn Day. Take an unfamiliar route home and find out what has been two streets over all along.",
+        "Building Lunch. One shared meal per apartment block, cooked by whoever happens to be free.",
+        "An unplannable holiday: the date is announced the morning of, and no work may be scheduled around it."
+      ],
+      "idea_prompt": [
+        "Ten new public holidays worth inventing"
+      ],
+      "tip_text": [
+        "Check which permission mode your sessions actually start in. As of v2.1.284 interactive terminal and VS Code sessions start in auto mode on every plan and provider, and the changelog notes that `permissions.defaultMode` \"still overrides it\". If there is a repo where you want to start in plan mode — or want to be asked about everything — set `permissions.defaultMode` once in that project's `.claude/settings.json` instead of remembering to switch at the top of every session."
+      ],
+      "hn_id": [
+        "49879645",
+        "49896586",
+        "49891295",
+        "49880036",
+        "49883471"
+      ],
+      "link": [
+        "https://twitter.com/AliAbunimah/status/2103890594137309425",
+        "https://openai.com/index/introducing-gpt-6-1-sol/",
+        "https://www.derekthompson.org/p/the-death-of-the-american-host",
+        "https://mubi.com/en/notebook/posts/pirating-the-pirates",
+        "https://calnewport.com/its-time-to-investigate-the-ai-labs/",
+        "https://rbi.org.in/scripts/NotificationUser.aspx?Id=13656&Mode=0",
+        "https://www.eff.org/deeplinks/2026/09/draftkings-using-ai-supercharge-harms-online-behavioral-advertising",
+        "https://arxiv.org/abs/2609.16720",
+        "https://roastbrief.us/laughlin-constable-and-quiktrip-turn-baseballs-favorite-snack-into-a-fan-fueled-game-with-home-bun/",
+        "https://www.globenewswire.com/news-release/2026/09/16/3363047/0/en/shock-top-and-spirit-halloween-brew-up-a-scary-good-collaboration.html",
+        "https://ir.rmcf.com/news-events/press-releases/detail/320/rocky-mountain-chocolate-factory-and-miraculous-corp-unveil",
+        "https://research.google/blog/how-diffusion-controller-unifies-and-simplifies-ai-image-generation/",
+        "https://arxiv.org/abs/2609.24657",
+        "https://www.5paisa.com/blog/post-market-update-nifty-falls-crude-oil-bond-yields-september-29-2026"
+      ],
+      "subject": [
+        "Indian banks must publish their bulk fixed-deposit interest rates on their websites by 10:10 am every working day, and pay the same rate at every branch to every depositor, from 1 October; bulk means three crore rupees or more",
+        "A sports-betting app used its own users' wagering history to train software that picks out habitual losers, then sent those users promotions to bring them back to the site",
+        "First direct detection of auroral radio emission from an exoplanet, beta Pictoris b, using the MeerKAT array, giving the first direct measurement of an exoplanet's magnetic field strength",
+        "QuikTrip and agency Laughlin Constable run 'Home Bun', an in-stadium activation with a ten-foot inflatable hot dog and bun started at opposite foul poles for the crowd to bring together, across eight Cardinals and Royals games in 2026",
+        "Shock Top brews a candy-corn-flavoured Belgian-style wheat ale at 5% ABV, while Spirit Halloween sells a jumpsuit of its orange citrus-wedge mascot Wedgehead for $69.99 on its own site",
+        "Rocky Mountain Chocolate Factory makes a miso caramel apple, half of it rolled in salted pretzel, tied to the Miraculous cartoon franchise, with 250 available per shop from 15 September to 31 October",
+        "Diffusion Controller: image generation as a control problem, with the model frozen",
+        "Circuit Hypernetworks for Quantum-Augmented Diffusion Language Models",
+        "How the commercial banana supply chain works: fruit harvested and shipped green at 13C, ripened on arrival in sealed rooms using an ethylene gas mixture over 4-8 days, and ordered by retailers against a seven-point colour stage scale"
+      ],
+      "brand": [
+        "QuikTrip",
+        "Laughlin Constable",
+        "St. Louis Cardinals",
+        "Kansas City Royals",
+        "Shock Top",
+        "Spirit Halloween",
+        "Rocky Mountain Chocolate Factory",
+        "Miraculous Corp",
+        "Mediawan",
+        "ZAG"
+      ],
+      "brand_mention": [
+        "QuikTrip-branded",
+        "Cardinals",
+        "St Louis",
+        "Royals",
+        "Kansas City",
+        "Laughlin Constable",
+        "QuikTrip's",
+        "Dawn Deal",
+        "Belgian-style",
+        "ABV",
+        "Shock Top's",
+        "Wedgehead",
+        "Miraculous Corp",
+        "Mediawan",
+        "ZAG",
+        "Miraculous",
+        "Tales",
+        "Ladybug",
+        "Cat Noir",
+        "Season 7",
+        "David Denker",
+        "COO",
+        "Putting"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "From tomorrow your bank has to publish its bulk-deposit rates by 10:10 am, every business day"
+        ],
+        [
+          "trends",
+          "A betting app trained a model to find the customers who lose, and then advertised to them"
+        ],
+        [
+          "trends",
+          "A planet 63 light-years away has an aurora, and it is loud enough to hear from here"
+        ],
+        [
+          "wild",
+          "A convenience-store chain split a ten-foot inflatable hot dog in two, put the halves at opposite foul poles, and made the crowd reunite them"
+        ],
+        [
+          "wild",
+          "A wheat beer now tastes of candy corn, and the brand's mascot is available as a $69.99 jumpsuit"
+        ],
+        [
+          "wild",
+          "A chocolate chain put miso in its caramel, wrapped half an apple in pretzel, and made exactly 250 per shop"
+        ],
+        [
+          "research",
+          "Diffusion Controller: image generation as a control problem, with the model frozen"
+        ],
+        [
+          "research",
+          "Circuit Hypernetworks for Quantum-Augmented Diffusion Language Models"
+        ],
+        [
+          "learn",
+          "A banana does not ripen on the way to you. It is ripened on a schedule, in a room, on the day someone decided"
+        ]
+      ],
+      "editorial_domains": [
+        "arxiv.org",
+        "eff.org",
+        "globenewswire.com",
+        "ir.rmcf.com",
+        "rbi.org.in",
+        "roastbrief.us"
+      ]
     }
   ]
 }

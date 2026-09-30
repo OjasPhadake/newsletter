@@ -1,0 +1,317 @@
+{
+  "date_line": "Wednesday, 30 September 2026",
+  "issue": 1,
+  "preheader": "Google's updated satellite imagery of Rafah topped Hacker News, and OpenAI put near-frontier coding at $2 per million input tokens; the Nifty closed its September series 5.67% lower on expiry day; from tomorrow every Indian bank has to post its bulk-deposit rates on its website by 10:10 am; and a banana is a scheduling problem solved with 4% ethylene and a seven-point colour card.",
+  "quote": {
+    "text": "Art is solving problems that cannot be formulated before they have been solved.",
+    "author": "Piet Hein",
+    "source_url": "https://www.goodreads.com/quotes/tag/design",
+    "note": "The shape of the claim is what makes it land: the problem statement is an output of the work, not an input to it. Anyone who has written the design doc after the prototype worked, or found that the paper's real question only became sayable once the result existed, has lived the sentence. It is also a quiet warning about any process that demands the specification up front."
+  },
+  "agent_craft": {
+    "items": [
+      {
+        "text": "Check which permission mode your sessions actually start in. As of v2.1.284 interactive terminal and VS Code sessions start in auto mode on every plan and provider, and the changelog notes that `permissions.defaultMode` \"still overrides it\". If there is a repo where you want to start in plan mode — or want to be asked about everything — set `permissions.defaultMode` once in that project's `.claude/settings.json` instead of remembering to switch at the top of every session.",
+        "source": "Claude Code changelog, v2.1.284 (28 September 2026)",
+        "url": "https://code.claude.com/docs/en/changelog"
+      }
+    ]
+  },
+  "hn": [
+    {
+      "title": "Updated Google Maps shows destruction of the city of Rafah",
+      "url": "https://twitter.com/AliAbunimah/status/2103890594137309425",
+      "hn_url": "https://news.ycombinator.com/item?id=49879645",
+      "points": 882,
+      "comments": 841,
+      "bullets": [
+        "The submission itself is a post on X, which is login-walled and cannot be read from here, so the bullets below come from named coverage of the same event rather than from the post.",
+        "What changed is the imagery, not the map. The New Arab reported on 27 September that users had spent the previous day sharing updated satellite views of Gaza, and was careful to add that it \"has not independently established when the images were recently captured or added to the platform.\"",
+        "The figures around it are the UN's, as cited in that report: 1.9 million people displaced and 60% of the population having lost their homes (UN, 24 September); 371,888 housing units damaged or destroyed (UN, EU and World Bank assessment, April); 92% of economic establishments damaged or destroyed since October 2023; and $71.5 billion estimated for recovery (UN Trade and Development, 24 September).",
+        "The thread's own subject is the juxtaposition. Street View on the same coordinates predates the war, so you can toggle between a shopfront and the ground where it stood; commenters worked through specific coordinates and argued at length about how to characterise what the overhead view shows. It ran to 841 comments, more than any other story of the last two days."
+      ]
+    },
+    {
+      "title": "GPT 6.1 Sol: Near-Astra intelligence for a fifth of the price",
+      "url": "https://openai.com/index/introducing-gpt-6-1-sol/",
+      "hn_url": "https://news.ycombinator.com/item?id=49896586",
+      "points": 745,
+      "comments": 683,
+      "bullets": [
+        "OpenAI's own announcement page returns 403 to automated readers, so the numbers here are from The Next Web's report of the launch, published 29 September, which quotes the announcement directly.",
+        "The price is the product. $2 per million input tokens, $10 per million output, $0.10 per million cached input — one-fifth of GPT-6 Astra's standard input and output rates.",
+        "The benchmark claims are all framed as cost per unit of capability rather than capability alone: level with Astra on DeepSWE v1.1 at about a fifth of the cost and 6.4 points above GPT-6 Sol; within 2.1 points of Astra on OSWorld 2.0 computer use at about a seventh of the cost per task; 2.2 points above Claude Opus 5.5 on AutomationBench at about a third of the cost.",
+        "The sharpest figure is Terminal-Bench Science 0.1, where OpenAI puts the average cost at $5.47 a task against $23.21 for Opus 5.5 and $23.80 for Astra. If that holds outside the vendor's own harness, it is a four-fold change in what a long agent run costs to leave running.",
+        "It ships to ChatGPT Work, Codex and the API as `gpt-6.1-sol`, and not yet to consumer ChatGPT — which tells you who the launch is aimed at."
+      ]
+    },
+    {
+      "title": "Everybody's home. No one's coming over",
+      "url": "https://www.derekthompson.org/p/the-death-of-the-american-host",
+      "hn_url": "https://news.ycombinator.com/item?id=49891295",
+      "points": 711,
+      "comments": 651,
+      "bullets": [
+        "Derek Thompson's argument is about hosting specifically, not loneliness in general. In 1975, 42% of Americans hosted friends or family at home at least monthly and about half entertained guests monthly; his 2026 number is 12%.",
+        "The series comes from the DDB Needham Life Style survey, the same data Robert Putnam used in Bowling Alone, replicated this year by Data For Progress. Between 1975 and 1998 monthly dinner-party attendance had already halved and the share who never entertain had tripled — the collapse is not a post-pandemic effect.",
+        "He offers four mechanisms rather than one: dual-earner time pressure (women's labour force participation ran from just over 50% to near 80% while housework did not redistribute), intensive parenting (mothers added roughly 200 minutes a week of child-focused time between 1975 and 1998), thinner friendship networks (39% of the unmarried and less-educated never host), and the home simply getting better — average time spent at home rose by nearly two hours a day between 2003 and 2022.",
+        "The line the thread kept quoting: \"We have built a world in which being alone has never been easier, more comfortable, or more fun.\" The mechanism is not that hosting became unpleasant. It is that the alternative stopped being boring."
+      ]
+    },
+    {
+      "title": "Pirating the Pirates",
+      "url": "https://mubi.com/en/notebook/posts/pirating-the-pirates",
+      "hn_url": "https://news.ycombinator.com/item?id=49880036",
+      "points": 684,
+      "comments": 361,
+      "bullets": [
+        "Devan Scott, a colorist, writes in MUBI's Notebook on 28 September about restoring films illegally and then being hired to do it legally. In 2011 he and the editor Willa Ross tried to reconstruct Leone's The Good, the Bad and the Ugly from ripped copies; they went back to it in 2019 with better material.",
+        "In 2020 the work started turning official. Their reconstruction fed into Kino Lorber's 2021 release of the film, and in 2024 they were brought in as consultants on Arrow Films' forthcoming Dollars trilogy.",
+        "The movement's origin is a grudge against an author. Project 4K77 — Team Negative1 scanning 35mm theatrical prints at home — and Petr \"Harmy\" Harmáček's Despecialized editions both exist to recover the Star Wars that Lucas overwrote. Arrow's James Flower, quoted in the piece: \"For me, he was vandalizing his own work.\"",
+        "Nobody involved thinks the arrangement is stable. Spencer Draper, quoted: \"We're all worried about the crackdown coming at any point. Put your hood on, look over your shoulder, go to the back door video speakeasy.\" The odd position of the piece is that the archive of record for several famous films is currently maintained by people who could be sued for maintaining it."
+      ]
+    },
+    {
+      "title": "It's Time to Investigate the AI Labs",
+      "url": "https://calnewport.com/its-time-to-investigate-the-ai-labs/",
+      "hn_url": "https://news.ycombinator.com/item?id=49883471",
+      "points": 593,
+      "comments": 261,
+      "bullets": [
+        "Cal Newport's post of 28 September expands an op-ed he ran in the New York Times on 24 September. The target is not the technology but the labs' communications: he reads the recent sequence of dramatic capability announcements as a campaign rather than a series of disclosures.",
+        "The specific trigger is Dario Amodei's letter arguing the government should slow the frontier, and Sam Altman's public support for it. Newport's objection is structural — the proposed remedy for the danger a lab describes also happens to raise the cost of competing with it.",
+        "He asks Congress for three things: stop legislating about \"AI\" in general and name the specific systems in question; examine the internal safety procedures around autonomous agents, including OpenAI's own account of unauthorised hacking attempts; and look at how far apocalyptic beliefs inside the labs are setting the research pace.",
+        "The sentence doing the work: \"We need to stop letting a small number of private companies, acting and talking in increasingly erratic ways, dictate how we're supposed to feel about A.I.\" Two of the five stories on this list are lab announcements, which is roughly his point."
+      ]
+    }
+  ],
+  "markets": {
+    "indices": [
+      {
+        "name": "Sensex · close, Tue 29 Sep",
+        "value": "72,529.07",
+        "change": "242.65 (0.33%)",
+        "direction": "down"
+      },
+      {
+        "name": "Nifty 50 · close, Tue 29 Sep",
+        "value": "22,716.20",
+        "change": "64.05 (0.28%)",
+        "direction": "down"
+      },
+      {
+        "name": "Bank Nifty · close, Tue 29 Sep",
+        "value": "—",
+        "change": "0.59%",
+        "direction": "down"
+      },
+      {
+        "name": "Nifty IT · worst sector",
+        "value": "—",
+        "change": "1.48%",
+        "direction": "down"
+      },
+      {
+        "name": "Nifty Metal · best sector",
+        "value": "—",
+        "change": "0.78%",
+        "direction": "up"
+      },
+      {
+        "name": "India VIX",
+        "value": "13.4",
+        "change": "1.7%",
+        "direction": "down"
+      },
+      {
+        "name": "USD/INR",
+        "value": "95.98",
+        "change": "1 paisa (rupee weaker)",
+        "direction": "down"
+      }
+    ],
+    "stories": [
+      {
+        "headline": "The September series ended 5.67% down, and the last session of it barely moved",
+        "url": "https://www.5paisa.com/blog/post-market-update-nifty-falls-crude-oil-bond-yields-september-29-2026",
+        "source": "5paisa's post-market update and indmoney's close report for Tuesday 29 September 2026, the monthly F&O expiry; Business Today for the rupee close; 5paisa's FII/DII page for the flows",
+        "bullets": [
+          "These are Tuesday's closing numbers — 29 September, the monthly derivatives expiry and the most recent completed session. The Sensex finished at 72,529.07, down 242.65 points or 0.33%; the Nifty 50 at 22,716.20, down 64.05 points or 0.28%. It was the second consecutive down day.",
+          "The day is not the story; the series is. Across the September expiry series the Nifty 50 fell 5.67%. India VIX ended at 13.4, down 1.7%, so the fall came without panic attached.",
+          "Under the benchmarks the damage was wider. Nifty Midcap 100 −0.99% and Smallcap 100 −0.81%, against Metal +0.78% and Pharma +0.64%; Nifty IT was the worst large sector at −1.48% and Realty fell 2.00%. On the NSE, 1,529 stocks rose against 2,039 that fell, with 227 hitting 52-week lows against 66 highs.",
+          "Foreigners sold and domestic institutions absorbed it: FIIs net −₹9,980.20 crore in the cash segment, DIIs net +₹6,952.70 crore. That pattern has now run for most of the month.",
+          "The external pressure is unchanged — Brent above $105 a barrel and multi-year-high US yields. The rupee touched 96.1475, a two-month low, before closing at 95.98, one paisa weaker than Monday. When crude is the input, a flat index is a decent outcome."
+        ]
+      }
+    ]
+  },
+  "trends": [
+    {
+      "tag": "India",
+      "headline": "From tomorrow your bank has to publish its bulk-deposit rates by 10:10 am, every business day",
+      "url": "https://rbi.org.in/scripts/NotificationUser.aspx?Id=13656&Mode=0",
+      "subject": "Indian banks must publish their bulk fixed-deposit interest rates on their websites by 10:10 am every working day, and pay the same rate at every branch to every depositor, from 1 October; bulk means three crore rupees or more",
+      "subtitle": "Reserve Bank of India, notification RBI/2026-27/214 dated 30 July 2026, effective 1 October · The Week, 29 September 2026",
+      "bullets": [
+        "The rule is short and unusually specific: \"Interest rates payable on bulk deposits shall be disclosed on the bank's website at 10:00 am with a grace time of 10 minutes, latest by 10:10 am, on each business day.\" A negotiated, phone-call rate becomes a published one.",
+        "The companion clause is the real change. \"Interest rates offered on deposits, including bulk deposits, shall be uniform across all branches and for all customers and there shall be no discrimination.\" The same amount on the same day gets the same rate whichever branch you walk into.",
+        "Bulk means ₹3 crore and above for scheduled commercial banks, so this is a wholesale-funding rule, not a retail one. Existing retail FDs are untouched and nobody's running deposit reprices daily.",
+        "Banks keep one lever: they may still offer a differential rate on bulk deposits \"by considering the differential run-off rate applicable to deposits or unsecured wholesale funding under the LCR framework\" — that is, price by how fast the money is assumed to leave in a stress scenario, not by who is asking.",
+        "It applies to commercial banks, small finance banks, regional rural banks, payment banks, local area banks and urban cooperative banks. The directions were issued on 30 July; tomorrow is when they bite."
+      ]
+    },
+    {
+      "tag": "Platforms",
+      "headline": "A betting app trained a model to find the customers who lose, and then advertised to them",
+      "url": "https://www.eff.org/deeplinks/2026/09/draftkings-using-ai-supercharge-harms-online-behavioral-advertising",
+      "subject": "A sports-betting app used its own users' wagering history to train software that picks out habitual losers, then sent those users promotions to bring them back to the site",
+      "subtitle": "Devanshi Nishar, Electronic Frontier Foundation Deeplinks · 24 September 2026",
+      "bullets": [
+        "The mechanism is dull and that is what makes it work. DraftKings used \"customers' betting records to train a machine learning model to find losing gamblers\", per the New York Times reporting the EFF post is built on, then sent those customers promotions designed to bring them back.",
+        "No data broker is involved. The targeting runs on first-party data only — what the company already observes about its own users — which is precisely the arrangement the last decade of privacy regulation has been steering the ad industry towards.",
+        "The population being optimised for is the one the industry's own harm-reduction language is about: people who keep gambling despite the damage. Finding them is the same modelling problem as finding your best customers, because they are the same people.",
+        "The EFF's line is that machine learning does not invent this failure, it removes the friction that limited it — more data, faster, inside a model nobody can inspect. The policy conclusion they draw is the maximal one: ban behavioural advertising, not just this use of it."
+      ]
+    },
+    {
+      "tag": "Wildcard",
+      "headline": "A planet 63 light-years away has an aurora, and it is loud enough to hear from here",
+      "url": "https://arxiv.org/abs/2609.16720",
+      "subject": "First direct detection of auroral radio emission from an exoplanet, beta Pictoris b, using the MeerKAT array, giving the first direct measurement of an exoplanet's magnetic field strength",
+      "subtitle": "Kevin N. Ortiz Ceballos, Edo Berger and Yvette Cendes · arXiv, 15 September 2026 · covered by BBC Sky at Night, 22 September",
+      "bullets": [
+        "Planetary magnetic fields have never been measured directly outside the Solar System. The paper's opening is blunt about why it matters: they \"shape atmospheric escape, mediate interactions with stellar winds, and encode information about planetary interiors.\"",
+        "Using the MeerKAT array in South Africa, the team found \"rapid, recurring, and highly circularly polarized bursts, as well as persistent emission, at frequencies of 0.85 to 3.5 GHz\" from beta Pictoris b, a gas giant of roughly ten Jupiter masses about 63 light-years away.",
+        "Circular polarisation is the tell. It is the signature of electron cyclotron maser emission — the same process that makes Jupiter's aurorae radio-bright — and it is what let them attribute the signal to the planet rather than to the star, using distant quasars as fixed reference points.",
+        "The payoff is a number where there was none: a magnetic field of at least 1.25 kilogauss at the planet, far stronger than Jupiter's. A field is what keeps a stellar wind from stripping an atmosphere, so this is the first time that particular ingredient of habitability has been measured rather than assumed."
+      ]
+    }
+  ],
+  "research": [
+    {
+      "tag": "Industry · Google Research",
+      "title": "Diffusion Controller: image generation as a control problem, with the model frozen",
+      "url": "https://research.google/blog/how-diffusion-controller-unifies-and-simplifies-ai-image-generation/",
+      "subtitle": "Chih-wei Hsu and Moonkyung Ryu · Google Research blog, 29 September 2026 · paper arXiv 2603.06981",
+      "bullets": [
+        "The complaint the work starts from is that steering a text-to-image model has no unifying principle. You either do something at inference time, like classifier-free guidance, or you fine-tune an adapter such as LoRA — and you trade prompt alignment against image quality with no framework telling you what you are trading.",
+        "Their reframing will be familiar to anyone who has taken a controls course: the denoising process is a plant, the prompt is a reference, and what is missing is a controller. They add a small separate network — a \"steering damper\" — that adjusts the generation trajectory as it runs, leaving the base model frozen.",
+        "Two ways to train it are given: policy gradient with PPO, which steers incrementally and can be given explicit limits, or a reward-weighted loss that optimises the objective directly. Same architecture, different amount of access assumed to the reward.",
+        "The claimed results: the gray-box variant beats LoRA on HPS-v2, the white-box variant reports a \"90% win rate over the baseline model\", and human raters preferred it on complex multi-attribute prompts. Worth reading for the framing even if you never generate an image — it is a clean example of taking something people tune by hand and giving it a controller and a stability story."
+      ]
+    },
+    {
+      "tag": "Academia · Mila, McGill and Université de Montréal",
+      "title": "Circuit Hypernetworks for Quantum-Augmented Diffusion Language Models",
+      "url": "https://arxiv.org/abs/2609.24657",
+      "subtitle": "Xiaoqiang Wang, Mengyang Xiong, Jun Dai and Bang Liu · Mila, McGill University and Université de Montréal · arXiv, 21 September 2026",
+      "bullets": [
+        "The construction, called HyperQ, bolts \"token-conditioned quantum residual branches\" onto a frozen 1.1-billion-parameter masked-diffusion language model. Each branch reads a token's hidden state, emits the coordinates of a circuit for that token, runs it, and adds the measured values back through a residual connection. Only the branches train.",
+        "Inside each branch a small hypernetwork emits that token's rotation angles, coupling strengths and measurement axes over a shared sparse circuit structure. So the circuit is not fixed per layer — it is a function of the token being processed.",
+        "The engineering trick is what makes it runnable at all: the expectation values they need have \"an exact classical expression whose evaluation cost grows linearly with the qubit count\", so 16 to 64 qubits can be trained inside the backbone on ordinary hardware.",
+        "The numbers: average downstream score rises from 47.65 to 54.30 as circuit width increases, and at 64 qubits HyperQ beats the frozen backbone by 4.71 points and a LoRA-adapted version by 3.67. It got there on 20,000 prompt-response pairs against 200,000 for the classical baselines.",
+        "Read \"quantum\" carefully. No quantum hardware is involved and none is needed; what is being claimed is that a classically simulable circuit family is a useful way to parameterise a per-token adapter. The sample-efficiency gap is the interesting result, and the paper is honest that this is an architectural claim, not a quantum-advantage one."
+      ]
+    }
+  ],
+  "wild": [
+    {
+      "tag": "Convenience stores · Baseball",
+      "headline": "A convenience-store chain split a ten-foot inflatable hot dog in two, put the halves at opposite foul poles, and made the crowd reunite them",
+      "url": "https://roastbrief.us/laughlin-constable-and-quiktrip-turn-baseballs-favorite-snack-into-a-fan-fueled-game-with-home-bun/",
+      "entities": [
+        "QuikTrip",
+        "Laughlin Constable",
+        "St. Louis Cardinals",
+        "Kansas City Royals"
+      ],
+      "subject": "QuikTrip and agency Laughlin Constable run 'Home Bun', an in-stadium activation with a ten-foot inflatable hot dog and bun started at opposite foul poles for the crowd to bring together, across eight Cardinals and Royals games in 2026",
+      "bullets": [
+        "The object is a nearly ten-foot QuikTrip-branded inflatable hot dog, in two pieces. The sausage starts at one foul pole and the bun at the other, and the crowd has to bounce them across the stands until they meet in the middle. Do it inside the time limit and the section gets a coupon for a free hot dog.",
+        "It has run at eight games, at the Cardinals in St. Louis and the Royals in Kansas City. The agency is Laughlin Constable, QuikTrip's creative and media agency of record.",
+        "The claimed return is absurd for a pair of inflatables: over 230 million views and more than 5 million social engagements with no paid media behind it, which the agency puts at $8.5 million in earned media value. A single fan video from the Royals game did 29 million views.",
+        "Dawn Deal, QuikTrip's head of marketing: \"We wanted our brand to be part of the ballpark atmosphere, and this felt perfect.\" The mechanic is the insight — it is not a screen asking for engagement, it is a physical object that only works if several thousand strangers cooperate."
+      ]
+    },
+    {
+      "tag": "Beer · Halloween retail",
+      "headline": "A wheat beer now tastes of candy corn, and the brand's mascot is available as a $69.99 jumpsuit",
+      "url": "https://www.globenewswire.com/news-release/2026/09/16/3363047/0/en/shock-top-and-spirit-halloween-brew-up-a-scary-good-collaboration.html",
+      "entities": [
+        "Shock Top",
+        "Spirit Halloween"
+      ],
+      "subject": "Shock Top brews a candy-corn-flavoured Belgian-style wheat ale at 5% ABV, while Spirit Halloween sells a jumpsuit of its orange citrus-wedge mascot Wedgehead for $69.99 on its own site",
+      "bullets": [
+        "The product is a Belgian-style wheat ale at 5% ABV flavoured like candy corn — the confection Americans argue about every October — sold at retailers nationwide as a limited seasonal release.",
+        "The other half of the deal is stranger. Shock Top's mascot is an orange citrus wedge with a face, named Wedgehead, and it is now a jumpsuit costume at $69.99, sold only on spirithalloween.com.",
+        "Read it as a distribution trade rather than a stunt: the beer gets shelf space in the month a temporary-store chain owns, and the costume shop gets a licensed character with an existing audience and no film to tie into.",
+        "The commitment to the bit is total and the window is six weeks. Both halves are explicitly limited-edition, which is the only sane way to sell either."
+      ]
+    },
+    {
+      "tag": "Confectionery · Animation",
+      "headline": "A chocolate chain put miso in its caramel, wrapped half an apple in pretzel, and made exactly 250 per shop",
+      "url": "https://ir.rmcf.com/news-events/press-releases/detail/320/rocky-mountain-chocolate-factory-and-miraculous-corp-unveil",
+      "entities": [
+        "Rocky Mountain Chocolate Factory",
+        "Miraculous Corp",
+        "Mediawan",
+        "ZAG"
+      ],
+      "subject": "Rocky Mountain Chocolate Factory makes a miso caramel apple, half of it rolled in salted pretzel, tied to the Miraculous cartoon franchise, with 250 available per shop from 15 September to 31 October",
+      "bullets": [
+        "It is the chain's first miso caramel, and it is a caramel apple built half-and-half: one side rolled in salted pretzel pieces, the other left smooth so you can see the caramel. The split is meant to read as a transformation — the show it promotes is about a girl who turns into a superhero.",
+        "The partner is Miraculous Corp, the joint venture Mediawan and ZAG set up in 2024 to run the Miraculous: Tales of Ladybug & Cat Noir franchise. Season 7 is in production for late 2026.",
+        "Scarcity is the whole mechanic: 250 apples per participating location, from 15 September to 31 October, while supplies last. Not a national number — a per-shop one, which is how you get a queue rather than a press release.",
+        "David Denker, the chain's COO: \"We wanted this collaboration to feel truly special, not simply like another seasonal product.\" Putting a fermented soybean paste in a children's-cartoon tie-in is at least a defensible reading of that brief."
+      ]
+    }
+  ],
+  "learn": {
+    "title": "A banana does not ripen on the way to you. It is ripened on a schedule, in a room, on the day someone decided",
+    "subject": "How the commercial banana supply chain works: fruit harvested and shipped green at 13C, ripened on arrival in sealed rooms using an ethylene gas mixture over 4-8 days, and ordered by retailers against a seven-point colour stage scale",
+    "body": [
+      "A banana in a shop has almost certainly never ripened by itself. The fruit is cut down hard and green, loaded onto a ship, and held at a constant 13°C for a voyage of about twenty days — cold enough that the ripening machinery simply does not start. Refrigeration is not preserving a ripe banana here; it is holding an unripe one in suspension. That is why the advice in the trade is never to put bananas in your own fridge: below about 13°C the fruit takes chill damage and then cannot ripen properly at all, which is the one thing a supermarket cannot sell.",
+      "Ripening happens at the destination, in a sealed room, on demand. Ethylene — the plant's own ripening hormone — is pumped in from cylinders of roughly 4% ethylene in nitrogen, and the room does the rest over four to eight days. The interesting part is that this makes ripeness a dial rather than an event. Bananas are bought and sold against a seven-point colour scale: 1 is all green, 3 is more green than yellow, 5 is yellow with green tips, 7 is yellow with brown speckles. A buyer orders a stage, not a fruit. Stage 5 is the one most shops order, because it survives a couple of days of handling and arrives at the shelf looking like the picture in your head.",
+      "So the thing that looks like nature taking its course is a scheduling system. Someone decided, days before you reached for it, which day this bunch would turn yellow, and set a gas concentration and a temperature to make that happen. The brown-speckled stage 7 that you feel vaguely guilty about is not a failure of the system — it is the far end of the same scale, ordered on purpose by bakeries, where the sugar is highest. The banana you think of as having gone off is one somebody else specifically asked for."
+    ]
+  },
+  "ideas": {
+    "prompt": "Ten new public holidays worth inventing",
+    "note": "Altucher's drill: ten ideas against one prompt, written fast and not defended. Reddit rate-limited most of the idea feeds again this morning, so these are mine — though the ones about returning things and cancelling subscriptions come straight out of what people on r/SomebodyMakeThis and r/Lightbulb keep asking for, which is less a product than a socially agreed moment to deal with it.",
+    "items": [
+      {
+        "text": "Cancellation Day. Every subscription service has to put the cancel button on its front page for twenty-four hours."
+      },
+      {
+        "text": "Repair Day, with hardware shops open late and one hour owed to whatever in your house has been broken for a year."
+      },
+      {
+        "text": "A day on which nothing may be launched, released or announced — no keynotes, no version numbers. Everyone catches up instead."
+      },
+      {
+        "text": "Old Friend Day. You may only call someone you have not spoken to in over a year."
+      },
+      {
+        "text": "A January holiday reserved for people who worked through Diwali, Christmas and Eid: one paid day, taken whenever."
+      },
+      {
+        "text": "Inbox Amnesty. Anything unanswered before this date is officially closed and nobody may bring it up."
+      },
+      {
+        "text": "Return Day — borrowed books, umbrellas, ladders and steel dabbas go home, no explanation required.",
+        "why": "The recurring wish online is never for a reminder app; it is for a day when asking is not awkward."
+      },
+      {
+        "text": "Wrong Turn Day. Take an unfamiliar route home and find out what has been two streets over all along."
+      },
+      {
+        "text": "Building Lunch. One shared meal per apartment block, cooked by whoever happens to be free."
+      },
+      {
+        "text": "An unplannable holiday: the date is announced the morning of, and no work may be scheduled around it."
+      }
+    ]
+  }
+}
