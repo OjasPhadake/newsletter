@@ -1,0 +1,331 @@
+{
+  "date_line": "Thursday, 1 October 2026",
+  "issue": 1,
+  "preheader": "A pre-registered benchmark is measuring, from day zero, whether Opus 5.5 is quietly getting worse; the Nifty closed its worst September since 2018; the Dutch government is building its own NixOS desktop because US sanctions cut the ICC off from Microsoft; and the treadmill was a prison punishment for eighty years before anyone thought of it as exercise.",
+  "quote": {
+    "text": "The original is unfaithful to the translation.",
+    "author": "Jorge Luis Borges",
+    "source_url": "https://www.goodreads.com/author/quotes/500.Jorge_Luis_Borges",
+    "note": "Everyone knows the cliche it inverts — the translation is always a betrayal of the original. Borges moves the measuring stick: if the translation is the better book, then the fault is the original's. It is a useful blade for anything with a first version. The draft is not automatically the authority just because it came first."
+  },
+  "agent_craft": {
+    "items": [
+      {
+        "text": "For anything visual, stop reviewing the diff and have Claude Code drive a real browser instead. Give it the local file path and describe the outcome you want — Simon Willison asked for a 15-second video of an HTML page, clicks starting at 3s and \"spread around the clickable area\" — and it writes the Playwright script, runs Chromium, and hands back the recording.",
+        "source": "Simon Willison, \"Kākāpō Party\", 26 September 2026",
+        "url": "https://simonwillison.net/2026/Sep/26/kakapo-party/"
+      }
+    ]
+  },
+  "hn": [
+    {
+      "title": "Livenerf: Has Opus 5.5 been nerfed yet?",
+      "url": "https://github.com/ninjahawk/livenerf",
+      "hn_url": "https://news.ycombinator.com/item?id=49901736",
+      "points": 877,
+      "comments": 374,
+      "bullets": [
+        "The usual \"the model got worse\" argument is unfalsifiable because nobody measured the before. This project starts measuring at launch: Opus 5.5 shipped on 22 September 2026, and the panel has been sampled daily since, with a pre-registered decision rule written down in advance.",
+        "The panel is deliberately built out of questions the model is unsure about. 2,336 items from GPQA Diamond, MMLU-Pro, competition maths and AIME 2025–26 were screened down to the 78 where Opus 5.5 scores around 50% — sensitive enough to move if anything changes, not so hard that the signal is noise.",
+        "Design choices that matter: exact-match grading rather than an LLM judge, so the grader cannot drift; output token counts tracked as a secondary metric; and a control arm running Claude Opus 5 to separate a model change from an infrastructure change.",
+        "Roughly 90 samples a day for 30 days. Days 1–10 are the baseline; two later 10-day windows are compared against it using paired-item tests with clustered standard errors. Calling a regression needs a 99% confidence interval, an effect of at least 3 points, and consistency across both windows.",
+        "As of day 7 — 30 September — the baseline is still being collected, no days missed, same harness and CLI version throughout. The validation run showed the setup can see a real drop: a medium-effort variant came in at about −4.2 ± 3.9 points."
+      ]
+    },
+    {
+      "title": "Gemini 4 Argon",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+      "hn_url": "https://news.ycombinator.com/item?id=49913571",
+      "points": 864,
+      "comments": 579,
+      "bullets": [
+        "The headline spec is the output side, not the input: Google claims a one-million-token output limit, up from 64K. That is the number to watch if you have ever had a long refactor or a long document truncated halfway.",
+        "Benchmarks as published: 77.9% on DeepSWE v1.1, 68% on CWE-bench v1 for vulnerability remediation (tied first), 51.3% and first place on AutomationBench, 91.7% on LVBench for long-video understanding, and a lead on the Vals Index across finance, coding, legal and tax.",
+        "Google's internal examples are the more concrete claim: a 40% improvement over published baselines on a quantum optimisation problem, 300-plus TiB of memory freed, and a migration of over 800,000 lines of the Fuchsia kernel.",
+        "It is not generally available. The rollout starts with \"trusted cyber defenders\" through Google's Fairwind Program, with wider access later — the stated reason being that a model which can autonomously find, validate and patch vulnerabilities cuts both ways.",
+        "Introductory pricing is $2 per million input tokens and $10 per million output, going to $4 and $20 when the introductory period ends."
+      ]
+    },
+    {
+      "title": "America.gov",
+      "url": "https://america.gov/",
+      "hn_url": "https://news.ycombinator.com/item?id=49893509",
+      "points": 748,
+      "comments": 698,
+      "bullets": [
+        "One front door for US federal services, with the pitch written on the page: \"Whatever you need from government, start here.\" It claims to fold roughly 29,000 government websites into one.",
+        "The mechanism is a search box, not a directory. The site says it \"uses AI to get simple answers only from official government sources\", restricted to federal, state and local government sites.",
+        "Operated by the General Services Administration; the design and engineering are credited to the National Design Studio in Washington, DC. The page states no ads and no collection or storage of user data.",
+        "It is browser-only — no app — and deliberately read-only for now. Form filling, progress tracking and managing services across several agencies are listed as 2027-and-later features.",
+        "Which is the interesting part for anyone building something similar: the hard problem is not the answers, it is the transactions, and they shipped the answers first."
+      ]
+    },
+    {
+      "title": "Dots: Always-on agents",
+      "url": "https://openai.com/index/introducing-dots/",
+      "hn_url": "https://news.ycombinator.com/item?id=49896604",
+      "points": 748,
+      "comments": 698,
+      "bullets": [
+        "OpenAI's own announcement page returns 403 to this runner, so these bullets come from named coverage of the launch — The Next Web's DevDay report — rather than from the primary page.",
+        "A \"dot\" is a persistent agent with its own cloud computer and its own browser. It can hold several projects at once, and when you are not asking it for anything it goes looking through your connected apps for something to do.",
+        "It runs on GPT-6 Astra and connects to more than 4,000 apps via plugins. You talk to it in ChatGPT on desktop, web and mobile, or in Slack and Teams, by text or voice call; texting is listed as coming.",
+        "The guardrail is the design decision worth noting: during autonomous background work a dot is read-only, so it cannot send messages or change content on its own. Sensitive actions — a password change, anything account-sensitive — need approval, and you can write your own rules for when it may act alone.",
+        "Included at no extra cost for Pro and Business Premium, but not for Pro users in the EEA, Switzerland or the UK. Enterprise, Edu and Healthcare get a beta once an admin enables it. Conversations with a dot do not count against ChatGPT usage limits; tasks it starts in ChatGPT or Codex do."
+      ]
+    },
+    {
+      "title": "You said no MCP",
+      "url": "https://earendil.com/posts/you-said-no-mcp/",
+      "hn_url": "https://news.ycombinator.com/item?id=49906637",
+      "points": 593,
+      "comments": 374,
+      "bullets": [
+        "A public reversal, which is why it got voted up. Earendil had dismissed MCP in its docs and in a post by Mario Zechner; its agent platform Pi now supports it. The stated reason is not that the critics were wrong but that \"the world is not static\" and the protocol has improved.",
+        "The second reason is more interesting than the first: the internal work MCP required turned out to be \"generally useful\" for other features they wanted anyway, so the integration cost less than the argument against it assumed.",
+        "They also want a vote. The post's position is that you shape a protocol by being in the conversation, not by standing outside it.",
+        "The technical piece is Codemode: a JavaScript orchestration layer described as \"a sandbox that allows an agent to issue those tool calls in a way that gives it more flexibility about in which order it should do it\". It runs where the harness runs rather than in the tool sandbox, and keeps its state in the session transcript instead of the filesystem.",
+        "The worked example is the argument. 167 open Linear issues classified for tone by a Cloudflare Workers AI model: 156 neutral, 11 mildly frustrated, in 331 tool calls at roughly 250–756 ms each — with the complaints that surfaced being high CPU use on macOS and missing documentation."
+      ]
+    }
+  ],
+  "markets": {
+    "indices": [
+      {
+        "name": "Sensex · close, Wed 30 Sep",
+        "value": "72,480.29",
+        "change": "48.78 (0.07%)",
+        "direction": "down"
+      },
+      {
+        "name": "Nifty 50 · close, Wed 30 Sep",
+        "value": "22,620.45",
+        "change": "95.75 (0.42%)",
+        "direction": "down"
+      },
+      {
+        "name": "Bank Nifty",
+        "value": "54,633.05",
+        "change": "0.69%",
+        "direction": "up"
+      },
+      {
+        "name": "Nifty Realty",
+        "value": "847.35",
+        "change": "1.62%",
+        "direction": "up"
+      },
+      {
+        "name": "Nifty Auto",
+        "value": "26,293.95",
+        "change": "0.46%",
+        "direction": "up"
+      },
+      {
+        "name": "Nifty IT",
+        "value": "27,704.80",
+        "change": "0.13%",
+        "direction": "up"
+      },
+      {
+        "name": "Nifty Pharma · worst sector",
+        "value": "26,438.00",
+        "change": "1.84%",
+        "direction": "down"
+      },
+      {
+        "name": "USD/INR",
+        "value": "95.83",
+        "change": "0.16% (rupee stronger)",
+        "direction": "up"
+      }
+    ],
+    "stories": [
+      {
+        "headline": "The Nifty's worst September since 2018 ended with the index down another 0.42% and the Sensex barely moving",
+        "url": "https://www.5paisa.com/blog/post-market-update-nifty-worst-september-decline-since-2018-september-30-2026",
+        "source": "5paisa's post-market update for Wednesday 30 September 2026 and stockpil's close report for the same session; 5paisa's FII/DII page for the flows. Today's session had not opened at the time of writing.",
+        "bullets": [
+          "These are Wednesday's closing numbers — 30 September, the last completed session and the last day of the month. The Sensex finished at 72,480.29, down 48.78 points or 0.07%; the Nifty 50 at 22,620.45, down 95.75 points or 0.42%. Third consecutive down day for the Nifty.",
+          "The month is the story. The Nifty 50 fell 5.67% across September, its weakest September since 2018, and Nifty IT fell 11.18% over the month — its worst September in close to two decades.",
+          "Wednesday itself was a day of giving back gains. The Nifty opened at 22,665, ran up to 22,809.35 in the afternoon, then lost the lot in the final hour and closed below 22,700.",
+          "Underneath, it was not ugly. Bank Nifty closed at 54,633.05, up 0.69%; Realty +1.62%, Auto +0.46%, IT +0.13%. Pharma was the worst large sector at −1.84%. Nifty Midcap 100 ended +0.02% and Smallcap 100 +0.27%, so the broader market held while the benchmark slipped.",
+          "The flow pattern of the whole month repeated on the last day of it: FIIs net sellers of ₹10,148.40 crore in the cash segment, DIIs net buyers of ₹11,271.70 crore — domestic money absorbing ₹1,123 crore more than the foreigners sold. The rupee closed at 95.83 to the dollar, 0.16% stronger, recovering 15 paise from Tuesday's 95.98."
+        ]
+      }
+    ]
+  },
+  "trends": [
+    {
+      "tag": "India",
+      "headline": "From today your PPF still pays 7.1%, for the tenth quarter in a row",
+      "url": "https://theprint.in/economy/govt-keeps-interest-rates-on-small-savings-schemes-unchanged-for-oct-dec/3058179/",
+      "subject": "Interest on India's post-office savings schemes was held flat for the quarter beginning 1 October; PPF stays at 7.1 percent, NSC at 7.7 percent and Sukanya Samriddhi at 8.2 percent",
+      "subtitle": "Finance Ministry notification, 30 September 2026 · reported by ThePrint",
+      "bullets": [
+        "The notification is a single sentence of policy: rates for the third quarter of FY 2026-27, starting 1 October, \"shall remain unchanged\" from the second quarter. That makes ten quarters in a row; the last actual change was in Q4 of FY 2023-24.",
+        "The rates as they stand: Sukanya Samriddhi 8.2%, National Savings Certificate 7.7%, Kisan Vikas Patra 7.5% with maturity in 115 months, Monthly Income Scheme 7.4%, Public Provident Fund 7.1%, three-year term deposit 7.1%, and the Post Office savings deposit 4%.",
+        "Worth holding next to the market section. Equity has just had its worst September since 2018 and the risk-free government-backed rate has not moved in two and a half years — which quietly changes the relative case for the boring option without anybody announcing anything.",
+        "These schemes run through post offices and banks and are aimed squarely at retail savers, which is also why they are politically awkward to cut."
+      ]
+    },
+    {
+      "tag": "Platforms",
+      "headline": "US sanctions took Microsoft off the table for the ICC, so the Dutch government started building its own desktop on NixOS",
+      "url": "https://www.theregister.com/os-platforms/2026/09/28/dutch-government-turns-to-nixos-for-a-sovereign-desktop/5299501",
+      "subject": "The Netherlands is building DAWO, a sovereign government work environment on NixOS with the self-hosted MijnBureau suite, after US sanctions on International Criminal Court officials cut the ICC off from Microsoft services; eight municipalities piloting as of September 2026, stable release targeted 2027",
+      "subtitle": "The Register, 28 September 2026",
+      "bullets": [
+        "The trigger was concrete, not theoretical. US sanctions against International Criminal Court officials meant the ICC — which sits in The Hague — lost access to Microsoft services. A procurement question became a sovereignty question overnight.",
+        "The answer is DAWO, Digitaal Autonome Werkomgeving Overheid. The architecture is the point: not one monolithic product but replaceable components for operating system, cloud, AI, communications and collaboration. The Ministry of the Interior and Kingdom Relations wrote the blueprint.",
+        "The client OS is NixOS, chosen after experiments with openSUSE and Fedora — a declarative, reproducible distribution, which is an unusual but defensible choice when your requirement is that any component can be swapped out. The workplace suite is MijnBureau, self-hosted, stitching together Nextcloud, Collabora, Element and OpenProject.",
+        "Three government IT providers were commissioned in July 2026 to build it: DICTU, SSC-ICT and the ICT division of DUO, the education executive agency. Four municipalities began trials in April 2026; by September it was eight — still, as The Register notes, a small fraction of the country's hundreds of municipalities. A stable version is hoped for in 2027.",
+        "It is not happening alone. The effort lines up with France's La Suite and Germany's openDesk, and the ICC itself moved to openDesk after the sanctions. Three governments converging on the same stack is how an alternative stops being a hobby."
+      ]
+    },
+    {
+      "tag": "Wildcard",
+      "headline": "A 2,800-year-old palace in Ethiopia was built out of stacked timber, and the structural analysis says the walls would have carried nineteen floors",
+      "url": "https://www.dainst.org/en/newsroom/antike-wolkenkratzer-in-aethiopien/915",
+      "subject": "Structural analysis of the Grat Be'al Gibri palace at Yeha in Ethiopia, built in the first half of the first millennium BC with walls of horizontally laid timber beams in mortar-bonded masonry, finds the wall system could have supported at least 19 storeys",
+      "subtitle": "German Archaeological Institute (DAI) newsroom, 9 September 2026 · Ethiopian-German project with BTU Cottbus-Senftenberg",
+      "bullets": [
+        "Grat Be'al Gibri at Yeha, in northern Ethiopia, is the largest palace known anywhere in South Arabia or East Africa. It dates to the first half of the first millennium BC.",
+        "Its walls are the unusual part: mortar-bonded masonry with wood built into it, in a system made up exclusively of horizontally laid beams. Timber laid flat inside a stone wall is not decoration — it is doing structural work.",
+        "The new result is not an excavation finding but an engineering one. Martin Drieschner and Mike Schnelle ran a numerical analysis of the walls' load-bearing capacity, and the answer came back that the system \"would have allowed for the construction of at least 19 floors\".",
+        "Nobody is claiming nineteen floors were built. The claim is about headroom: the technique was far better than the building needed, which is the sort of thing that only shows up when a statics department gets involved rather than an archaeologist alone.",
+        "The work is run from the Sanaa branch of the DAI's Department of Oriental Studies with the Department of Statics and Dynamics at BTU Cottbus-Senftenberg, funded by the German Research Foundation as a long-term project."
+      ]
+    }
+  ],
+  "research": [
+    {
+      "tag": "Industry · Microsoft Research",
+      "title": "Thirty to sixty minutes of warning, per substation, that a solar storm is about to push current into your grid",
+      "url": "https://www.microsoft.com/en-us/research/blog/forecasting-space-weather-risks-on-power-grids/",
+      "subtitle": "Rohan Kannan · Microsoft Research blog, 30 September 2026",
+      "bullets": [
+        "Geomagnetic storms damage grids by driving geomagnetically induced currents into long conductors, and the usual forecast is a single global index. This work gives a risk estimate for each of 66,935 individual US substations, 30 to 60 minutes ahead.",
+        "The pipeline has three stages. Solar-wind measurements from the L1 Lagrange point feed models that forecast the Auroral Electrojet and Disturbance Storm Time indices; a gradient-boosting model then combines those forecasts with per-substation features — latitude, local geological conductivity — to estimate the rate of change of the magnetic field at that spot.",
+        "Why the local features matter is the interesting bit of physics: the same storm induces very different currents depending on the conductivity of the rock under the substation. A global index cannot express that.",
+        "Reported accuracy: 410.2 nT RMSE on the AE predictor and 7.2 nT on Dst, beating standard models on 62.2% of peak-activity hours. Event detection rates of 76.5% for major events, 81.2% for severe and 64.1% for extreme.",
+        "It runs in about 333 milliseconds for all 66,935 substations, and every input is public data — NASA OMNI, the Kyoto World Data Center, INTERMAGNET magnetometers, USGS and GridSFM-derived grid information. The author built it during a summer internship."
+      ]
+    },
+    {
+      "tag": "Academia · Georgia Tech",
+      "title": "Post-Training Leaves Behavioral Shadows on Unrelated Decisions",
+      "url": "https://arxiv.org/abs/2609.29233",
+      "subtitle": "Ziyang Zhang, Yubin Jing, Yuanhao Zeng, Yuyao Li, Haofan Wang, Yichen Gong · Georgia Institute of Technology with Peking University, ShanghaiTech and Tsinghua · arXiv, 24 September 2026",
+      "bullets": [
+        "The observation first: when a model is post-trained for one thing, the update leaves traces on decisions that have nothing to do with it. Ask the model to choose between two unremarkable words and its preference has shifted, even though nobody trained it on word choice.",
+        "The method exploits that. Active Taskless Distillation picks prompts where the teacher and the student's shared base model are almost indifferent between two ordinary words, then trains the student on nothing but prompt-and-word pairs.",
+        "What that means in practice is a transfer channel of one word per prompt. No examples of the target task, no access to the teacher's parameters, no logits — just which of two words it leans towards.",
+        "It works, modestly but measurably: 5.34 percentage points on HumanEval+ with Qwen2.5-1.5B against an exact nuisance-matched control. The authors also report transfer in scientific knowledge, commonsense reasoning and reading comprehension, across several model families and sizes.",
+        "Two findings worth more than the headline number: the transferred capabilities compose, and the size of the effect tracks how strongly the teacher was updated. Read sideways, this is a paper about how much a closed model leaks through a channel nobody is watching."
+      ]
+    }
+  ],
+  "wild": [
+    {
+      "tag": "Beer · Horror",
+      "headline": "A beer brand made a 12-pack box you cut up and wear as Jason's hockey mask",
+      "url": "https://thedieline.com/pbr-and-friday-the-13th-team-for-12-pack-boxes-that-turn-into-jasons-hockey-mask/",
+      "entities": [
+        "Pabst Blue Ribbon",
+        "Horror Inc."
+      ],
+      "subject": "Pabst Blue Ribbon and Horror Inc. put Jason Voorhees' hockey mask on a beer 12-pack carton with cut-out eye holes, so the box itself can be worn as a costume",
+      "subtitle": "The Dieline, 25 August 2026",
+      "bullets": [
+        "Pabst Blue Ribbon partnered with Horror Inc., which owns the Friday the 13th franchise, and put Jason Voorhees' hockey mask on the front of a limited-edition 12-pack of 12-ounce cans, eye holes marked and a bloody streak across the background.",
+        "The packaging is the costume. You either cut the mask out or wear the entire carton, which is a rare case of a brand designing the box for what happens after the beer is gone rather than for the shelf.",
+        "The brand name is set in the franchise's own font, which is the small detail that makes it read as a horror artefact rather than a beer with a sticker on it.",
+        "Around it: apparel, glassware, bobbleheads, tap handles, tackers and koozies, venue takeovers near New York Comic Con, six-foot Jason standees in retail, watch parties and a sweepstakes. The run goes from September to Friday 13 November 2026.",
+        "The timing is not an accident — it is pinned to the Crystal Lake prequel series premiering on 15 October. A beer company has effectively bought a release window from a streaming calendar."
+      ]
+    },
+    {
+      "tag": "Confectionery · Experience design",
+      "headline": "Leone has turned its working sweet factory outside Turin into a 2,000-square-metre walk-through, and deliberately left the screens out",
+      "url": "https://www.creativeboom.com/work/design-bridge-and-partners-turns-leones-turin-sweet-factory-into-a-willy-wonka-world/",
+      "entities": [
+        "Leone",
+        "Design Bridge and Partners"
+      ],
+      "subject": "Leone opened the Happiness Factory at Collegno outside Turin, a walk-through of 14 zones wrapped around its working sweet production line, with screens kept to a minimum",
+      "subtitle": "Creative Boom, 30 September 2026",
+      "bullets": [
+        "Leone has been making sweets in Turin since the 1850s. In September it opened the Happiness Factory at Collegno, just outside the city: 2,000 square metres carved into 14 named zones, including the Leone Wonder Ramp and the Leone Piazza.",
+        "The live production line stays visible all the way through. The attraction is not a museum next to the factory; the factory is the attraction, and visitors walk past sweets actually being made.",
+        "The anti-screen decision is the interesting one. There is a theatre screen and some projection mapping, but both are supporting cast — the deputy managing director's description is \"deliberately tactile, playful and human\", in a category that has spent a decade defaulting to LED walls.",
+        "The visual language came from the 2022 rebrand, which built the brand around founder Luigi Leone cast as an eccentric dreamer. The illustrated strawberries, hazelnuts and violets from the packaging are blown up to architectural scale, and the facade runs terracotta roof tiles into candy-striped cladding under a gold script logo.",
+        "Design Bridge and Partners led the creative vision and experiential identity, Studio Paolo Monzeglio did the exhibition design, and Fo.LL.iA handled the interactive, multimedia and graphic elements."
+      ]
+    },
+    {
+      "tag": "Creator economy",
+      "headline": "A 200-pound six-foot twenty-sided die was rolled down a hillside, and it decided what ten creators had to make next",
+      "url": "https://musebyclios.com/culture-creators/patreon-and-tabletop-gamers-roll-big-very-big-with-giant-d20-die/",
+      "entities": [
+        "Patreon"
+      ],
+      "subject": "Patreon built a six-foot, 200-pound foam d20 and had ten tabletop gaming creators roll it down a hillside in an activation called The Big Roll, with the result determining which creative challenges they owed their communities; it landed on 14",
+      "subtitle": "Muse by Clios, 29 September 2026",
+      "bullets": [
+        "Patreon commissioned a Los Angeles prop shop to spend about two months building a twenty-sided die: six feet tall, 200 pounds, dense foam under a hard coating and paint.",
+        "The mechanism is the good part. Ten tabletop gaming creators each pledged a different challenge to their communities, numbered one to twenty, and then rolled the thing down a hillside to find out which one they owed. The pledge was made before the roll.",
+        "It landed on 14. Tales from the Stinky Dragon filmed a theme-park vlog in costume; Legends of Avantris released a new downloadable monster called Hector Mancrab; Ginny Di handed her Patreon over to her character Penelope for a week.",
+        "Also rolling: Worlds Beyond Number, PrintableHeroes and Amy Vorpahl.",
+        "The stated reason is the part worth keeping. CMO Mike McGarry: \"with the growing backlash around AI-driven creative, we knew we wanted to lean into an in-person activation designed to celebrate human creativity\" — a 200-pound object being the most expensive possible way to prove a human was involved."
+      ]
+    }
+  ],
+  "learn": {
+    "title": "The treadmill was invented as a punishment, and stayed one for eighty years",
+    "subject": "Origin of the treadmill: the penal treadwheel introduced by engineer William Cubitt in 1818 at Bury St Edmunds and Brixton, abolished by the Prison Act 1898, and the home treadmill invented by William Staub in the late 1960s after reading Kenneth Cooper's Aerobics",
+    "body": [
+      "In 1818 an English engineer called William Cubitt looked at the idle prisoners in Bury St Edmunds gaol and designed a machine to fix it. A wooden cylinder about six feet across, wrapped in steps seven and a half inches apart, with a handrail to hold. As the prisoner's weight pushed a step down the cylinder turned, which brought the next step up, which had to be climbed. There was no top. Contemporaries called it the everlasting staircase. A prototype was in Bury St Edmunds by 1819 and another went into Brixton House of Correction soon after.",
+      "The numbers are what make it land. Six hours a day, in fifteen-minute shifts with five-minute breaks, and the vertical distance climbed ran from around 6,600 feet a day at Lewes prison to as much as 17,000 feet on long summer days at Warwick — the latter being well over half the height of Everest from sea level, every day, on a staircase that went nowhere. Forty-four English prisons at least connected theirs to a corn mill so the effort ground grain; the rest ran against straps and weights, and the prisoners were said to be grinding the wind. America tried it four times, starting at Bellevue Hospital in New York in 1822 and Old New-Gate Prison in Connecticut in 1823 for $3,000, and three of the four gave up quickly. Oscar Wilde served time on one. The Prison Act 1898 abolished it; there were 39 in English prisons in 1895, 13 by 1901, and none by 1902.",
+      "Then nothing for seventy years, until a mechanical engineer in New Jersey named William Staub read Kenneth Cooper's Aerobics in 1968. Cooper's claim was that running a mile in eight minutes, four or five times a week, put you ahead of everyone who did not. Staub went looking for a machine to do it on indoors, found nothing affordable, and built one in his own workshop — his son Gerald designed the on-off switch. He called it the PaceMaster 600 and posted the prototype to Cooper, who liked it enough to find him his first customers. Staub manufactured them in Clifton, then Little Falls, and sold the business to his sons in the mid-1990s. He died in 2012, aged 96, having spent his life selling people a device the Victorians used to break them."
+    ]
+  },
+  "ideas": {
+    "prompt": "Ten things that would be better if they did less",
+    "note": "Altucher's drill: ten ideas against one prompt, written fast and not defended. Reddit rate-limited most of the feeds again this morning, but the posts that did come through were nearly all the same wish wearing different clothes — somebody asking for the thing, minus everything that has been bolted onto the thing. The first two below are adapted straight from those asks; the rest are mine.",
+    "items": [
+      {
+        "text": "A recipe page that is only the recipe.",
+        "why": "This was almost word for word the top ask on r/SomebodyMakeThis this week, which tells you how long it has gone unfixed."
+      },
+      {
+        "text": "A slide editor where you can rearrange the workspace instead of the slides.",
+        "why": "Also lifted from r/SomebodyMakeThis — every tool lets you restyle the deck and none let you rebuild the room you make it in."
+      },
+      {
+        "text": "A television remote with four buttons."
+      },
+      {
+        "text": "A washing machine with three programmes, named after the thing you are putting in it."
+      },
+      {
+        "text": "A car dashboard that shows speed and fuel and stays dark until something is actually wrong."
+      },
+      {
+        "text": "A news site that publishes one page a day, and then ends."
+      },
+      {
+        "text": "A fridge with no screen, no camera and no opinions."
+      },
+      {
+        "text": "A hotel room with one switch that turns everything off."
+      },
+      {
+        "text": "An airline booking page where the first price is the last price."
+      },
+      {
+        "text": "A printer that prints."
+      }
+    ]
+  }
+}

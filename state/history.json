@@ -4210,6 +4210,155 @@
         "rbi.org.in",
         "roastbrief.us"
       ]
+    },
+    {
+      "date": "2026-10-01",
+      "issue": 1,
+      "quote_text": [
+        "The original is unfaithful to the translation."
+      ],
+      "quote_author": [
+        "Jorge Luis Borges"
+      ],
+      "idea_text": [
+        "A recipe page that is only the recipe.",
+        "A slide editor where you can rearrange the workspace instead of the slides.",
+        "A television remote with four buttons.",
+        "A washing machine with three programmes, named after the thing you are putting in it.",
+        "A car dashboard that shows speed and fuel and stays dark until something is actually wrong.",
+        "A news site that publishes one page a day, and then ends.",
+        "A fridge with no screen, no camera and no opinions.",
+        "A hotel room with one switch that turns everything off.",
+        "An airline booking page where the first price is the last price.",
+        "A printer that prints."
+      ],
+      "idea_prompt": [
+        "Ten things that would be better if they did less"
+      ],
+      "tip_text": [
+        "For anything visual, stop reviewing the diff and have Claude Code drive a real browser instead. Give it the local file path and describe the outcome you want — Simon Willison asked for a 15-second video of an HTML page, clicks starting at 3s and \"spread around the clickable area\" — and it writes the Playwright script, runs Chromium, and hands back the recording."
+      ],
+      "hn_id": [
+        "49901736",
+        "49913571",
+        "49893509",
+        "49896604",
+        "49906637"
+      ],
+      "link": [
+        "https://github.com/ninjahawk/livenerf",
+        "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+        "https://america.gov/",
+        "https://openai.com/index/introducing-dots/",
+        "https://earendil.com/posts/you-said-no-mcp/",
+        "https://theprint.in/economy/govt-keeps-interest-rates-on-small-savings-schemes-unchanged-for-oct-dec/3058179/",
+        "https://www.theregister.com/os-platforms/2026/09/28/dutch-government-turns-to-nixos-for-a-sovereign-desktop/5299501",
+        "https://www.dainst.org/en/newsroom/antike-wolkenkratzer-in-aethiopien/915",
+        "https://thedieline.com/pbr-and-friday-the-13th-team-for-12-pack-boxes-that-turn-into-jasons-hockey-mask/",
+        "https://www.creativeboom.com/work/design-bridge-and-partners-turns-leones-turin-sweet-factory-into-a-willy-wonka-world/",
+        "https://musebyclios.com/culture-creators/patreon-and-tabletop-gamers-roll-big-very-big-with-giant-d20-die/",
+        "https://www.microsoft.com/en-us/research/blog/forecasting-space-weather-risks-on-power-grids/",
+        "https://arxiv.org/abs/2609.29233",
+        "https://www.5paisa.com/blog/post-market-update-nifty-worst-september-decline-since-2018-september-30-2026"
+      ],
+      "subject": [
+        "Interest on India's post-office savings schemes was held flat for the quarter beginning 1 October; PPF stays at 7.1 percent, NSC at 7.7 percent and Sukanya Samriddhi at 8.2 percent",
+        "The Netherlands is building DAWO, a sovereign government work environment on NixOS with the self-hosted MijnBureau suite, after US sanctions on International Criminal Court officials cut the ICC off from Microsoft services; eight municipalities piloting as of September 2026, stable release targeted 2027",
+        "Structural analysis of the Grat Be'al Gibri palace at Yeha in Ethiopia, built in the first half of the first millennium BC with walls of horizontally laid timber beams in mortar-bonded masonry, finds the wall system could have supported at least 19 storeys",
+        "Pabst Blue Ribbon and Horror Inc. put Jason Voorhees' hockey mask on a beer 12-pack carton with cut-out eye holes, so the box itself can be worn as a costume",
+        "Leone opened the Happiness Factory at Collegno outside Turin, a walk-through of 14 zones wrapped around its working sweet production line, with screens kept to a minimum",
+        "Patreon built a six-foot, 200-pound foam d20 and had ten tabletop gaming creators roll it down a hillside in an activation called The Big Roll, with the result determining which creative challenges they owed their communities; it landed on 14",
+        "Thirty to sixty minutes of warning, per substation, that a solar storm is about to push current into your grid",
+        "Post-Training Leaves Behavioral Shadows on Unrelated Decisions",
+        "Origin of the treadmill: the penal treadwheel introduced by engineer William Cubitt in 1818 at Bury St Edmunds and Brixton, abolished by the Prison Act 1898, and the home treadmill invented by William Staub in the late 1960s after reading Kenneth Cooper's Aerobics"
+      ],
+      "brand": [
+        "Pabst Blue Ribbon",
+        "Horror Inc.",
+        "Jason's",
+        "Leone",
+        "Design Bridge and Partners",
+        "Patreon"
+      ],
+      "brand_mention": [
+        "Pabst Blue Ribbon",
+        "Horror Inc",
+        "Jason Voorhees",
+        "York Comic Con",
+        "Jason",
+        "13 November 2026",
+        "Crystal Lake",
+        "Turin",
+        "Happiness Factory",
+        "Collegno",
+        "Leone Wonder Ramp",
+        "Leone Piazza",
+        "LED",
+        "Luigi Leone",
+        "Design Bridge",
+        "Partners",
+        "Studio Paolo Monzeglio",
+        "Fo.LL.iA",
+        "Los Angeles",
+        "Stinky Dragon",
+        "Legends",
+        "Avantris",
+        "Hector Mancrab",
+        "Ginny Di",
+        "Patreon",
+        "Penelope",
+        "Worlds Beyond Number",
+        "PrintableHeroes",
+        "Amy Vorpahl",
+        "CMO Mike McGarry",
+        "AI-driven"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "From today your PPF still pays 7.1%, for the tenth quarter in a row"
+        ],
+        [
+          "trends",
+          "US sanctions took Microsoft off the table for the ICC, so the Dutch government started building its own desktop on NixOS"
+        ],
+        [
+          "trends",
+          "A 2,800-year-old palace in Ethiopia was built out of stacked timber, and the structural analysis says the walls would have carried nineteen floors"
+        ],
+        [
+          "wild",
+          "A beer brand made a 12-pack box you cut up and wear as Jason's hockey mask"
+        ],
+        [
+          "wild",
+          "Leone has turned its working sweet factory outside Turin into a 2,000-square-metre walk-through, and deliberately left the screens out"
+        ],
+        [
+          "wild",
+          "A 200-pound six-foot twenty-sided die was rolled down a hillside, and it decided what ten creators had to make next"
+        ],
+        [
+          "research",
+          "Thirty to sixty minutes of warning, per substation, that a solar storm is about to push current into your grid"
+        ],
+        [
+          "research",
+          "Post-Training Leaves Behavioral Shadows on Unrelated Decisions"
+        ],
+        [
+          "learn",
+          "The treadmill was invented as a punishment, and stayed one for eighty years"
+        ]
+      ],
+      "editorial_domains": [
+        "creativeboom.com",
+        "dainst.org",
+        "musebyclios.com",
+        "thedieline.com",
+        "theprint.in",
+        "theregister.com"
+      ]
     }
   ]
 }
