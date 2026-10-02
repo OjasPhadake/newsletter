@@ -1,0 +1,338 @@
+{
+ "date_line": "Friday, 2 October 2026",
+ "issue": 1,
+ "preheader": "Earendil's Pi agent harness hit 1.0 and brought MCP with it; Indian markets are shut for Gandhi Jayanti after an eighth straight losing week, the longest run in 25 years; from yesterday you can buy a flat from an NRI without first registering as a tax deductor; DeepMind watermarked a protein and the mark survived the wet lab; and the folk explanation for why hot water sounds different from cold gets the pitch backwards.",
+ "quote": {
+  "text": "Genuine poetry can communicate before it is understood.",
+  "author": "T.S. Eliot",
+  "source_url": "https://www.goodreads.com/quotes/tag/epistemology",
+  "note": "The assumption buried in most writing advice is that comprehension comes first and effect comes after. Eliot reverses the order, and once you see it you see it everywhere outside poetry: the proof you can follow line by line months before you grasp why it is true, the codebase you can use correctly long before you could explain it. Understanding is often the last thing to arrive, not the first."
+ },
+ "agent_craft": {
+  "items": [
+   {
+    "text": "Turn on the side agent that reads over your shoulder: `/plugin enable cc-plugin-you-should-know@builtin`. It is a new built-in mod that watches the session and flags what you or Claude look likely to have missed — the one review pass you cannot run yourself while you are the one driving. It needs a first-party session with telemetry on.",
+    "source": "Anthropic's Claude Code changelog, v2.1.287",
+    "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
+   }
+  ]
+ },
+ "hn": [
+  {
+   "title": "Pi 1.0",
+   "url": "https://earendil.com/posts/pi-1-0/",
+   "hn_url": "https://news.ycombinator.com/item?id=49926069",
+   "points": 655,
+   "comments": 216,
+   "bullets": [
+    "Pi is Earendil's terminal coding agent, described in its own announcement as \"a hardened, minimal, extensible agent harness\" — a substrate you build agentic applications on rather than a product. Yesterday it went 1.0, with the claim that \"hundreds of thousands of people around the world use Pi every week\".",
+    "The headline feature is Codemode, which now carries native MCP support and can drive non-LLM models — Jev and image models — rather than only chat models. That is the other half of the MCP reversal the company published two days earlier.",
+    "The rest of the 1.0 list is harness plumbing, and it is the interesting part if you are building one: virtual model extensions, deferred tool loading, cache warming for Anthropic models, and mid-conversation system messages with transcript-aware prompt and tool changes.",
+    "Shipped alongside it is Pi Durable, an experimental package for long-running agentic applications — the same harness aimed at things that outlive a terminal session. Mario's documentation is the entry point.",
+    "Both are MIT licensed, with install one-liners for macOS, Linux and Windows and npm packages for Durable. No pricing and no benchmarks appear in the post, which for a 1.0 announcement is its own kind of statement."
+   ]
+  },
+  {
+   "title": "September 2026: The world today, as seen by one Polish guy",
+   "url": "https://tomwojcik.com/posts/2026-09-21/september-2026-the-world-today/",
+   "hn_url": "https://news.ycombinator.com/item?id=49905487",
+   "points": 507,
+   "comments": 384,
+   "bullets": [
+    "One thesis, held for several thousand words: \"Thirty years we swapped buffers for dependencies, because a supplier is cheaper than a stockpile\" — and 2026 is the year several bills arrived at once. Poland is the worked example because it has front-line exposure and thin reserves.",
+    "The shock everything else hangs off is the Strait of Hormuz, closed since March. Tanker traffic down more than 90%, Brent at $108 on 24 September after a 19% month, and supertanker day rates at $860,000 on 10 September against under $100,000 before the war. Qatari LNG output is down 17% after drone damage at Ras Laffan, with repairs estimated at three to five years.",
+    "Then it propagates into food. The FAO's warning is that up to 30% of internationally traded fertiliser normally moves through that strait; Belgian processing potatoes went from €10 to €150 a tonne within days after a harvest down 25%; Paris milling wheat moved from €191 in January to €245 in September. Poland is the EU's most food self-sufficient country and it does not help, because Polish grain buyers track the Paris exchange with a three-to-seven-day lag.",
+    "And into money. The Bank of Japan went to 1.25% on 18 September, its highest since 1995; the Japanese 10-year hit 3.1%; the US 10-year reached 5.2% on 25 September, highest in nineteen years. Poland pays 6.4%, against 4.88% in February, and will spend 90 billion zloty servicing debt this year, 19% more than last.",
+    "The two numbers that stay with you are not financial. The Vistula at Warsaw fell to 94 centimetres, the lowest since standardised measurement began in the 1950s, taking about 2,000 MW of coal generation offline in August. And Polish fertility was 1.07 in 2025 — 238,000 births against 406,000 deaths, barely half the 1990 rate and below Japan's."
+   ]
+  },
+  {
+   "title": "StreetComplete on iOS is now in public beta",
+   "url": "https://github.com/streetcomplete/StreetComplete/issues/5421",
+   "hn_url": "https://news.ycombinator.com/item?id=49920160",
+   "points": 506,
+   "comments": 121,
+   "bullets": [
+    "StreetComplete is the app that turns OpenStreetMap's missing data into quests — is this bench still here, does this crossing have a kerb — and it has been Android-only for its whole life. The submitted link is the long-running tracking issue; the actual announcement went up on the OpenStreetMap community forum on 30 September, with a TestFlight link.",
+    "The version numbering tells you how deliberate this is: iOS 64.0.0 lines up with Android v64.0-alpha2. It is the same app at the same version, not a port trailing behind.",
+    "The route taken was Kotlin Multiplatform with Compose Multiplatform for the UI — \"several years of migration to multiplatform\" rather than a rewrite in Dart, which is the path a competing project took. The tracking issue lays out the three phases: strip Android-specific dependencies, move XML layouts to Jetpack Compose, then move Compose to Compose Multiplatform. The original estimate was roughly one person-year, and westnordost worked on it full-time through the first half of 2024.",
+    "Known issues are listed up front: the map does not render on iOS 15.x (fixed for the next alpha), you can only cancel a form with the back gesture rather than by tapping the map, and you cannot open another quest while a form is open.",
+    "The author's framing is the healthy one for a beta: \"I expect many small and big things to be found during the beta. The earlier they are found, the shinier the public release will be.\""
+   ]
+  },
+  {
+   "title": "Singapore govt dating app uses Gale-Shapley stable marriage algorithm",
+   "url": "https://twitter.com/tuakdotsol/status/2105105417760391258",
+   "hn_url": "https://news.ycombinator.com/item?id=49906432",
+   "points": 444,
+   "comments": 413,
+   "bullets": [
+    "The submitted link is an x.com post, which is login-walled and cannot be fetched from here, so these bullets come from named coverage of the launch — Fortune's 1 October report and AsiaOne's write-up — rather than from the post.",
+    "The thing itself is FirstDate, built by GovTech, Singapore's government technology agency, out of an idea from its annual hackathon. It is open to single public officers aged 21 to 35 only, and applications close on 5 October.",
+    "The mechanism is the reason it reached the front page. You fill in a questionnaire on interests, habits, values and preferences, and the matching runs Gale-Shapley — the deferred-acceptance algorithm behind the 2012 Nobel in economics — which returns one match per cycle with a compatibility score. You get 72 hours to decide; profiles and contact details unlock only if both sides say yes. A \"date quest\" feature suggests an icebreaker activity.",
+    "One match at a time is the design decision, not a limitation. Gale-Shapley guarantees stability — no two people would both rather have each other than their assigned match — which is a property of the whole assignment, and it only means anything if nobody is shopping around a feed.",
+    "The context is demographic. Singapore's total fertility rate was 0.87 in 2025, down from 0.97 in 2024, with median marriage ages of 31.1 for grooms and 29.6 for brides. The state has been here before: the Social Development Unit was founded in 1984 and shut its website in 2023. What stability does not optimise for is chemistry."
+   ]
+  },
+  {
+   "title": "The AI Race Just Got Awkward",
+   "url": "https://insufferable.dev/posts/the-ai-race-just-got-awkward/",
+   "hn_url": "https://news.ycombinator.com/item?id=49910553",
+   "points": 407,
+   "comments": 287,
+   "bullets": [
+    "Read this as an argument, not a disclosure. The post's claim is that the KV-cache compression work published by DeepSeek has been quietly adopted by the Western labs, and that nobody has said so.",
+    "The numbers it builds on are DeepSeek's published ones: memory per million tokens of cache going 389.12 GB in V1, 48.07 GB in V3.2, 3.51 GB in V4-Flash and 890 MB in V4.1-Flash. That is roughly 437-fold, or a 99.77% reduction.",
+    "The circumstantial evidence offered is the price of a cache read, which is the line item that compression would move. Anthropic's Opus cache reads went from $0.50 to $0.20 per million tokens, a 60% cut; OpenAI's GPT-6.1 Sol went from $0.50 to $0.10, an 80% cut.",
+    "Worth being precise about what is actually established here: the DeepSeek numbers and the price changes are both public, and the causal link between them is the author's inference. No lab is quoted admitting anything.",
+    "The author's own conclusion is not an accusation but a puzzle — that the sharing made the Western labs profitable, and that it is strange anyone gave away something that valuable for free."
+   ]
+  }
+ ],
+ "markets": {
+  "indices": [
+   {
+    "name": "Sensex · close, Thu 1 Oct",
+    "value": "71,909.70",
+    "change": "570.59 (0.79%)",
+    "direction": "down"
+   },
+   {
+    "name": "Nifty 50 · close, Thu 1 Oct",
+    "value": "22,421.95",
+    "change": "198.50 (0.88%)",
+    "direction": "down"
+   },
+   {
+    "name": "Bank Nifty",
+    "value": "54,450.75",
+    "change": "0.33%",
+    "direction": "down"
+   },
+   {
+    "name": "Nifty IT · best sector",
+    "value": "",
+    "change": "2.17%",
+    "direction": "up"
+   },
+   {
+    "name": "Nifty Auto · worst sector",
+    "value": "",
+    "change": "3.46%",
+    "direction": "down"
+   },
+   {
+    "name": "Nifty Metal",
+    "value": "",
+    "change": "2.35%",
+    "direction": "down"
+   },
+   {
+    "name": "Nifty FMCG",
+    "value": "",
+    "change": "1.61%",
+    "direction": "down"
+   },
+   {
+    "name": "USD/INR",
+    "value": "96.32",
+    "change": "0.35% (rupee weaker)",
+    "direction": "down"
+   },
+   {
+    "name": "India VIX",
+    "value": "14.44",
+    "change": "7.04%",
+    "direction": "up"
+   }
+  ],
+  "stories": [
+   {
+    "headline": "Markets are shut today for Gandhi Jayanti, after an eighth losing week in a row — the longest run in 25 years",
+    "url": "https://hdfcsky.com/news/market-close-report-today-october-1-2026-sensex-nifty-slide-as-oil-yields-weigh",
+    "source": "HDFC Sky's market close report for Thursday 1 October 2026, with stockpil's close data for the same session for sector moves, USD/INR and the FII/DII split. Next session is Monday 5 October.",
+    "bullets": [
+     "No session today: the NSE and BSE are closed for Mahatma Gandhi Jayanti, all segments, no price discovery in the cash market. With the weekend behind it that makes a three-day break, and the week therefore ended a day early. The numbers below are Thursday's close.",
+     "Thursday was ugly. The Sensex finished at 71,909.70, down 570.59 points or 0.79%; the Nifty 50 at 22,421.95, down 198.50 points or 0.88%. Breadth was worse than the indices — 2,916 stocks down against 1,306 up — with Midcap off 1.1% and Smallcap 1.0%.",
+     "The streak is the story. The Nifty lost 3.1% over the shortened week and the Sensex 2.7%, an eighth consecutive weekly fall and the longest such run in 25 years. Across the eight weeks the Nifty is down 8.7% and the Sensex 8.4%.",
+     "The causes are imported. Brent reclaimed $100 a barrel and the US 10-year Treasury yield hit 5.34%, its highest since 2002; the rupee fell to a two-month low, closing at 96.32 to the dollar, 0.35% weaker. India VIX jumped 7.04% to 14.44.",
+     "Underneath, exactly one large sector worked: Nifty IT, up 2.17%, with Infosys the top Nifty gainer at +4.11% and TCS +1.19% — a weak rupee being good news for people paid in dollars. Autos were the mirror image at −3.46%, Bajaj Auto down 7.62% and Maruti Suzuki 4.86%. FIIs sold ₹9,484 crore in the cash segment and DIIs bought ₹10,042 crore, domestic money again absorbing the whole of it."
+    ]
+   }
+  ]
+ },
+ "trends": [
+  {
+   "tag": "India",
+   "headline": "From yesterday, buying a flat from an NRI no longer means registering as a tax deductor first",
+   "url": "https://www.taxscan.in/other-taxations/eligible-persons-can-use-pan-for-tds-compliance-on-buying-property-from-nri-all-about-new-tds-rules-from-oct-1",
+   "subject": "CBDT Notification 121/2026, dated 22 September 2026 and effective 1 October 2026, lets resident individuals and HUFs use their PAN instead of obtaining a TAN for TDS compliance when buying immovable property from a non-resident seller, using a new PAN-based challan-cum-statement Form 141 with a Schedule E",
+   "subtitle": "CBDT Notification No. 121/2026, in force 1 October 2026 · reported by Taxscan",
+   "bullets": [
+    "The old rule caught a lot of ordinary buyers by surprise. Buy a house from a resident and you deduct 1% TDS above ₹50 lakh and file against your PAN. Buy the same house from a non-resident and you were treated as a deductor of tax on payments abroad — which meant applying for a TAN, a separate tax deduction account number, before you could legally pay the seller.",
+    "CBDT Notification No. 121/2026, dated 22 September and in force from 1 October, removes that step for resident individuals and HUFs. Your PAN is now enough.",
+    "The machinery is a new Form 141, a PAN-based challan-cum-statement, with a dedicated Schedule E for property bought from a non-resident — property details, both parties, sale consideration, stamp duty value, payment details, the rate applied and the tax deducted. It is due within 30 days from the end of the month in which the TDS was deducted, with the certificate issued in Form 132.",
+    "The relief is narrow by design: individuals and HUFs only. Companies, firms and everyone else still need a TAN for the same transaction. And the 1%-above-₹50-lakh rule still applies only to resident sellers — non-resident sales are deducted under the non-resident provisions, at rates that depend on the gain.",
+    "Worth knowing before you need it, because the failure mode here is expensive rather than inconvenient. The obligation sits on the buyer, not the seller, and in the NRI case a lot of buyers discovered the TAN requirement only at the point of paying."
+   ]
+  },
+  {
+   "tag": "Platforms",
+   "headline": "Cloudflare has started training its own models, and the first ones are deliberately too small to hold a conversation",
+   "url": "https://blog.cloudflare.com/clef-decision-models/",
+   "subject": "Cloudflare released Clef and Clef-flash, Apache 2.0 open-weight decision models built on Qwen 27B and Qwen 9B that return typed classifications with probabilities for agent routing, with a 64k context window and a vision encoder, plus a reinforcement-learning fine-tuning service on Workers AI",
+   "subtitle": "Cloudflare blog, 1 October 2026",
+   "bullets": [
+    "Clef and Clef-flash are open-weight \"decision models\" — Apache 2.0, built on Qwen 27B and Qwen 9B, hosted on Workers AI. They do not write prose. They return a bounded, strictly typed classification with probabilities attached, which is what an agent actually needs when the only question is what to do next.",
+    "Latency is the product. Median 209.3 ms for Clef and 38.8 ms for Clef-flash, against 524.1 ms for Jev. When a routing decision sits in front of every tool call, a 40-millisecond classifier and a half-second one are different architectures.",
+    "The published accuracy numbers are respectable rather than startling: 98.47% case-exact on BFCL, 91.93% on API-Bank, 94.20% macro-F1 on BANKING77, 97.43% on CLINC150+OOS, and 69.19% nDCG@10 on ToolRet against Jev's 65.28%. A 64k context window and a vision encoder are the two spec-sheet differences it leans on.",
+    "Their own worked example is the honest kind: Cloudflare's threat-intelligence team classifies a website in 2.2 seconds with Clef, where their fastest general model, gpt-oss-120b, took 4.7 seconds and returned fewer classifications.",
+    "The second announcement matters more than the first. Cloudflare is offering reinforcement-learning fine-tuning on its own stack — AI Gateway to harvest a dataset from your traffic, Workers AI for rollouts, Containers as RL sandboxes, a new Trainer for the weight updates, and bring-your-own-model deployment. Hands-on with their engineers first, self-serve later. A CDN is now a place where models are trained, not just served."
+   ]
+  },
+  {
+   "tag": "Wildcard",
+   "headline": "A German lake is slowly sinking into a salt dome, and it has been quietly preserving worked timber from 10,500 years ago",
+   "url": "https://www.labrujulaverde.com/en/2026/09/a-sinking-german-lake-yields-timbers-carved-10500-years-ago-by-stone-age-hunter-gatherers-they-may-have-been-building-with-wood-before-farmers-arrived/",
+   "subject": "Divers recovered worked Mesolithic timber, including a 1.6-metre post with cutting marks and split boards up to 1.3 metres, from about 20 metres down in Lake Arendsee in Saxony-Anhalt, dated to roughly 10,500 years ago and preserved because the lake bed is subsiding into an underlying salt deposit",
+   "subtitle": "State Office for Heritage Management and Archaeology Saxony-Anhalt, reported late September 2026",
+   "bullets": [
+    "Divers in Lake Arendsee, in Saxony-Anhalt, brought up worked wood from about 20 metres down, under a thin layer of sediment: a post standing roughly 1.6 metres with cutting marks on it, and split boards up to 1.3 metres long. The dating is about 10,500 years ago — around 8500 BC.",
+    "The geology is doing the archaeology. Arendsee sits over a salt deposit, and the lake floor subsides as the salt dissolves — with recorded collapses in 822 and 1685. Each time the lake grows, it drowns and seals an older shoreline, and waterlogged timber that would have rotted on land survives instead.",
+    "The reason it matters is the date. These are Mesolithic hunter-fisher-gatherers, about 3,000 years before farming reached central Europe, and the assumption has been that substantial timber building arrived with agriculture. A post with felling marks and split boards is not a campfire's worth of wood.",
+    "The team is from the State Office for Heritage Management and Archaeology Saxony-Anhalt — Marcel Weiß leading the project, state archaeologist Harald Meller, Sven Thomas running the diving — working with Fraunhofer IOSB-AST on underwater sonar to find the targets.",
+    "They are careful about what they do not know, which is most of it: whether these are huts \"or of wooden structures we don't yet know about\", how far the site extends, and whether the pieces belong to one coherent structure at all. The findings came out through the state office rather than a journal."
+   ]
+  }
+ ],
+ "research": [
+  {
+   "tag": "Industry · Google DeepMind",
+   "title": "They watermarked a protein, grew it in a lab, and the mark was still there",
+   "url": "https://deepmind.google/blog/introducing-synthid-bio/",
+   "subtitle": "SynthID Bio · Google DeepMind blog, 30 September 2026, with a methods paper in Nature",
+   "bullets": [
+    "SynthID has been a watermark for text, images and audio. SynthID Bio applies the same idea to biological design — protein sequences and the 3D structures a model predicts for them — so an AI-designed protein carries a detectable signature.",
+    "Two mechanisms, depending on what is being generated. For sequences it steers the choice of amino acid at each position; for structures it nudges the atomic coordinates. For AlphaFold 3 the watermark is pushed further in, by fine-tuning the diffusion network's weights so its outputs are inherently marked.",
+    "The claim that makes it interesting is survival in the physical world. Watermarked binders designed with AlphaProteo and ProteinMPNN were tested in the wet lab against three targets — VEGF-A, the SARS-CoV-2 spike RBD and PD-L1 — and watermarked bacteriophage designs were validated in bacterial culture, with binding affinity, hit rate and sequence diversity reported as preserved.",
+    "Reported robustness is \"near-perfect detectability\" against digital noise and small coordinate changes. The limits are stated plainly: deliberate tampering is not solved, the scope is proteins rather than more complex biological objects, and detection depends on synthesis providers and sequence databases choosing to check.",
+    "Which is the part worth sitting with. The technical problem here looks closer to solved than the institutional one — a watermark only does work if the DNA synthesis company at the other end of the order is looking for it. Authors include Pushmeet Kohli, David Stutz, Alexander Cowen-Rivers and Jeremy Ratcliff, with Brian Hie and Samuel King at Stanford and the Arc Institute; code and data are open-sourced."
+   ]
+  },
+  {
+   "tag": "Academia · Stanford",
+   "title": "Self-Play Pretraining with Zero Data",
+   "url": "https://arxiv.org/abs/2609.30063",
+   "subtitle": "Aditya Cowsik, Kfir Dolev, Michael Y. Li, G. Bruno De Luca, Nourya Cohen, Noah D. Goodman, Yoav Levine · Stanford University with Tel Aviv University · arXiv, 24 September 2026",
+   "bullets": [
+    "The setup is two models and no corpus. A generator writes programs for a universal Turing machine; a learner tries to predict the sequences those programs emit. No human text, no scraped web, nothing curated — the training data is a side effect of running code.",
+    "The generator is trained by reinforcement learning to produce data at the learner's frontier: hard enough to teach, easy enough to learn. That is an adaptive curriculum that nobody has to design, which is the mechanism doing the real work here.",
+    "The result they report is the one that matters for a pretraining claim — \"zero-shot loss exhibits predictable scaling in compute\" on several natural-data sets. Performance on real text improves with compute spent on synthetic self-play, and it improves predictably.",
+    "They also report in-context learning and mathematical sequence behaviour emerging during training, from a process that never saw a worked example of either.",
+    "Hold the obvious caveat: this is a scaling study against existing datasets, not a competitive model. But the direction is interesting precisely because the data wall is the constraint everyone else is negotiating with — and a universal Turing machine is not a resource that runs out."
+   ]
+  }
+ ],
+ "wild": [
+  {
+   "tag": "Appliances",
+   "headline": "Dyson has put a camera in a toothbrush, and it is watching 28 times a second",
+   "url": "https://thenextweb.com/news/dyson-camerajet-toothbrush-camera-jet",
+   "entities": [
+    "Dyson"
+   ],
+   "subject": "Dyson launched the CameraJet, a $499 electric toothbrush with a 100,000-pixel macro camera shooting 28 frames a second and a jet of mouthrinse that targets gaps between teeth, developed over six years",
+   "subtitle": "The Next Web, 1 September 2026",
+   "bullets": [
+    "The CameraJet is Dyson's first toothbrush, six years in development, and it has a 100,000-pixel macro camera in the head shooting 28 images a second. Connect the app and you can watch the inside of your own mouth while you brush.",
+    "The camera is not the gimmick, it is the aiming system. Software Dyson calls Gap Optical Targeting — trained, it says, on 470,000 dental images and 16 million lines of code — spots the gap between two teeth within 100 milliseconds and fires a conical jet of mouthrinse into it from a 12.5 ml tank, refilled from the dock in about three seconds.",
+    "The pitch is a founder's irritation rather than a market study. James Dyson: \"Flossing is an awkward and time-consuming chore.\" The company's answer was to engineer the chore away and charge for it.",
+    "$499, launched on 1 September, initially through Dyson's own stores and website, in two colourways. The brush head carries an RFID tag so the app knows when to tell you to replace it.",
+    "The performance claim comes with its own asterisk: 69% more plaque removed from hard-to-reach areas than premium competitors, from Dyson's internal testing, using a proxy plaque the company developed with the National University of Singapore."
+   ]
+  },
+  {
+   "tag": "Cheese",
+   "headline": "The Laughing Cow stopped laughing, and will not say why",
+   "url": "https://belbrandsusa.com/news/after-more-than-100-years-the-laughing-cow-stops-laughing/",
+   "entities": [
+    "The Laughing Cow",
+    "Bel Brands USA"
+   ],
+   "subject": "Bel Brands USA changed The Laughing Cow's mascot from laughing to serious on nationwide packaging from 22 September 2026, with a QR code and the line we need to talk, and refused to explain the change",
+   "subtitle": "Bel Brands USA newsroom, 22 September 2026",
+   "bullets": [
+    "On 22 September the cherry-red cow that has been grinning on cheese wedges since 1921 stopped grinning. The new face is serious, it is rolling out nationwide across the US, and the brand will not say what happened.",
+    "On pack, next to the unsmiling cow, is a QR code and the words \"we need to talk\". It goes to TheNotLaughingCow.com, which says only that after more than 100 years she has stopped laughing.",
+    "The CMO's statement is a masterclass in saying nothing: \"The Laughing Cow has spent more than 100 years reminding us not to take life too seriously. So when she suddenly gets serious, you pay attention. Whatever finally got to her must be worth talking about. We'll let her explain when she's ready.\"",
+    "This is a brand asset being deliberately broken in public, on a product sold in more than 120 countries, with the promise that it will be restored once the reveal lands. The serious cow has been turning up in diners and parks and across the brand's channels in the meantime.",
+    "The follow-up went out on 30 September, and points at everyday disagreements and finding the funny side of conflict — which, as reveals go, has to clear a very high bar it set itself eight days earlier."
+   ]
+  },
+  {
+   "tag": "Dessert · Oregon",
+   "headline": "A cheesecake maker who renamed her business Little Slice of Hell now sells it out of a vending machine in a bar",
+   "url": "https://bendbulletin.com/2026/09/30/bend-cheesecake-business-launches-vending-machine/",
+   "entities": [
+    "Little Slice of Hell Cheesecakes",
+    "Midtown Yacht Club"
+   ],
+   "subject": "Julie Higgins put a refrigerated cheesecake vending machine into the Midtown Yacht Club bar in Bend, Oregon in mid-September 2026, stocking about a dozen rotating flavours out of 130 she has developed, at $5 to $12 a slice",
+   "subtitle": "The Bulletin, Bend, Oregon, 30 September 2026",
+   "bullets": [
+    "Julie Higgins started selling cheesecake from a cart in Bend, Oregon in 2022, from her mother's recipe, under the name Little Slice of Heaven Cheesecakes. She had been diagnosed with a rare gastrointestinal cancer in 2020, and after coming through it she renamed the business Little Slice of Hell, after the part that was actually hers.",
+    "In mid-September the cheesecake went into a vending machine inside the Midtown Yacht Club, a bar — which is a straightforwardly good read of where demand for cheesecake is at 11pm.",
+    "She has developed 130 flavours. The machine holds about a dozen at a time, rotating, including vegan and gluten-free. $10 a slice, $12 for vegan, $5 for a mini.",
+    "The operational detail is the part most people would get wrong: it is held at 12 °F and she restocks it by hand every day except Saturday. A vending machine for a perishable dessert is a daily job, not a passive income stream.",
+    "Her own reason for it is the oldest one in retail, which is that the cart opens Thursday to Sunday evening and appetite does not: \"It lets people enjoy the cheesecake more on their schedule rather than just ours.\" Each container still has a note at the bottom."
+   ]
+  }
+ ],
+ "learn": {
+  "title": "You can hear whether water is hot or cold, and the explanation everyone repeats has the pitch backwards",
+  "subject": "Why pouring hot and cold water sound different: the viscosity explanation popularised in 2017 versus the 2024 study by Xiaotian Bi, Dike Su and Qianyun Zhou finding that hot water entrains larger bubbles with radii of 5 to 10 millimetres against 1 to 2 millimetres for cold, whose Minnaert resonance is lower in frequency",
+  "body": [
+   "Try it before reading on, because it genuinely works. Pour a glass of cold water from a height, then boiling water from a kettle into the same glass, and listen rather than look. People reliably pick the hot one. It went around the internet in 2017 and the explanation that went with it was viscosity: hot water is thinner, because heat gives the molecules enough energy to shake off some of the hydrogen bonding that makes cold water sticky. Thinner water breaks into finer droplets, so — the argument went — hot water should sound higher.",
+   "In 2024 three researchers, Xiaotian Bi, Dike Su and Qianyun Zhou, actually measured it. They poured water at 10 °C and at 90 °C, recorded it with a measurement microphone chosen for a flat response, and found the opposite of what the folk explanation predicts: hot water has more low-frequency content and less high. It sounds duller. Cold water is the bright, crisp one. Everybody who has ever done the trick already knew this, and the explanation attached to it had the direction of the effect wrong.",
+   "Then they pointed an 800-frames-per-second camera at the pour, and the real mechanism showed up as bubbles. Cold water drags in a crowd of small ones, roughly 1 to 2 millimetres in radius. Hot water makes fewer, fatter ones, 5 to 10 millimetres. A bubble in water rings like a tiny bell when it forms — Minnaert resonance — and its pitch goes down as it gets bigger. So the sound you are identifying is not the water at all. It is a chorus of bubbles, and the hot pour simply has bigger bells in it. Viscosity still matters, but as the thing that sets bubble size, not as the thing you hear. The authors are candid that the bubble measurements are eyeballed from the footage rather than quantified, and suggest the test that would settle it: pour hot sugar water, which is as viscous as cold water, and see which it sounds like."
+  ]
+ },
+ "ideas": {
+  "prompt": "Ten jobs that should exist but don't",
+  "note": "Altucher's drill: ten ideas against one prompt, written fast and not defended. Reddit rate-limited most of the feeds again this morning, but the one that came through was useful in an unexpected way — half of r/SomebodyMakeThis this week was not asking for an app at all. People were asking for a person: someone to choreograph the thing, clear the thing, fit a knob to the thing. Two below are lifted from those asks. The rest are mine.",
+  "items": [
+   {
+    "text": "A choreographer you can hire to set one story you love — a myth, a family argument — as an actual ballet.",
+    "why": "Somebody asked for exactly this on r/SomebodyMakeThis this week, for Arachne and Athena, and there is nobody to send the request to."
+   },
+   {
+    "text": "A knob-fitter: someone who comes round and adds a physical dial to the three things you resent having to use a touchscreen for.",
+    "why": "Also from r/SomebodyMakeThis, where the ask was a focus wheel for a phone camera — the recurring wish is a thing you can turn without looking."
+   },
+   {
+    "text": "A queue-stander for government offices who texts you when you are three people from the counter."
+   },
+   {
+    "text": "A street returns-courier: one van, every Tuesday, every unwanted parcel on the road, nobody printing a label."
+   },
+   {
+    "text": "A fridge auditor who looks inside once a week and tells you what to eat in the order it will go off."
+   },
+   {
+    "text": "A move-in cook who works in your new kitchen for three days so you learn where everything should actually live."
+   },
+   {
+    "text": "A noise negotiator who has the conversation with the neighbour so you never have to."
+   },
+   {
+    "text": "A photo thinner who keeps the one good shot out of every forty identical ones on your phone."
+   },
+   {
+    "text": "A last-day photographer, hired for the final day of a job, a hostel or a rented room, before it stops being yours."
+   },
+   {
+    "text": "A professional unsubscriber who spends one hour a month cancelling things in your name and sends a receipt."
+   }
+  ]
+ }
+}
