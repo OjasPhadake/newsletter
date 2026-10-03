@@ -4630,6 +4630,159 @@
         "retailtimes.co.uk",
         "upstox.com"
       ]
+    },
+    {
+      "date": "2026-10-04",
+      "issue": 1,
+      "quote_text": [
+        "If at first the idea is not absurd, then there is no hope for it."
+      ],
+      "quote_author": [
+        "Albert Einstein"
+      ],
+      "idea_text": [
+        "Turn up on day one in someone's new flat and leave it liveable by evening: curtains up, wifi working, one shelf of groceries, bed made.",
+        "Sit with a parent for two hours and set up their phone properly — contacts, photos backed up, scam calls blocked — and then write down what you did on paper.",
+        "Read someone's insurance policy and tell them in four sentences what it does not cover.",
+        "Go to the government office for them. Queue, form, stamp, photocopy, done.",
+        "Rebuild their presentation template once, properly, so every deck after that takes twenty minutes.",
+        "Cook one enormous batch of something in their kitchen on a Sunday and leave the freezer full of labelled meals.",
+        "Be the person who returns things. Collect the pile by the door, handle every refund, send one message with the total.",
+        "Photograph and list the fifteen things in their house they keep meaning to sell.",
+        "Spend an afternoon making their building less annoying — fix the gate latch, label the meters, put a working torch by the stairs.",
+        "Wait at home for the delivery, the plumber or the gas man, in the four-hour window nobody can afford to lose."
+      ],
+      "idea_prompt": [
+        "Ten things people would happily pay someone else to do for them"
+      ],
+      "tip_text": [
+        "Stop reviewing the diff and make Claude review you instead: \"Grill me on these changes and don't make a PR until I pass your test.\" It flips who is accountable for understanding the code, and it surfaces the three lines you were about to approve without reading."
+      ],
+      "hn_id": [
+        "49937276",
+        "49941114",
+        "49942706",
+        "49940394",
+        "49943034"
+      ],
+      "link": [
+        "https://developer.apple.com/pass-designer/",
+        "https://www.extrabigassintelligence.com/",
+        "https://aleph-alpha.com/en/blog/kolibri-has-landed-a-sovereign-open-weight-model/",
+        "https://www.newgrounds.com/",
+        "https://tej.as/blog/aleph-alpha-kolibri",
+        "https://www.businesstoday.in/india/story/no-more-hiding-budget-packs-heres-what-trais-new-mandate-means-for-telcos-559049-2026-10-01",
+        "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/",
+        "https://www.livescience.com/planet-earth/evolution/animals-may-have-evolved-200-million-years-earlier-than-previously-thought-new-study-suggests",
+        "https://investors.thecloroxcompany.com/news/news-details/2026/HIDDEN-VALLEY-INTRODUCES-SPOOKY-RANCH-THE-ICONIC-DRESSING-TAKES-ON-A-HAUNTING-HUE-FOR-HALLOWEEN/default.aspx",
+        "https://news.pollstar.com/2026/09/18/the-dead-venue-sessions-marshall-launches-video-series-in-support-of-grassroots-venues/",
+        "https://musebyclios.com/musings/dont-build-an-activation-give-visitors-a-reason-to-stick-around/",
+        "https://www.anthropic.com/research/what-work-can-robots-do",
+        "https://arxiv.org/abs/2609.36730",
+        "https://www.goodreturns.in/news/indian-stock-market-outlook-next-week-5-to-9-october-2026-sensex-nifty-may-remain-volatile-fii-crude-1538937.html"
+      ],
+      "subject": [
+        "TRAI directs Jio, Airtel, Vodafone Idea and BSNL to create a dedicated 'TRAI-Mandated Packs' section as the first tab on prepaid recharge screens in apps, websites and exclusive retail outlets, covering 30-day validity plans, date-to-date same-month renewal packs and standalone voice-and-SMS-only special tariff vouchers, with compliance reports due within 30 days",
+        "OpenAI discloses a coordinated adversarial distillation campaign extracting protected chain-of-thought reasoning from 1 July 2026, spiking to 16,000 requests from 4,000 users on 24-25 July across a cluster of over 15,000 users, disrupted by 28 July, attributing a core cluster to individuals associated with Moonshot AI, developer of Kimi",
+        "Science Advances paper by Durbin and Anderson removes the Weng'an Biota as a maximum-age calibration for animal origins, after Kheseen Biota microfossils from Mongolia proved equally well preserved yet still contained no animals; recalibrated molecular clocks push the divergence of the animal kingdom back to roughly 800-700 Ma, into the Cryogenian",
+        "Hidden Valley Spooky Ranch: Original Ranch dressing turned black with fruit juice and cocoa powder, bottled in glow-in-the-dark packaging for Halloween, the first seasonal variant the brand has ever made, $3.97 at Walmart",
+        "Marshall's Dead Venue Sessions sends three emerging bands to perform at the physical sites of three closed US music venues now occupied by other businesses, filmed by documentary photographer Cheryl Dunn in three short episodes released through 2 October 2026",
+        "Cafe Milk O'Clock, a MilkUP pop-up in Toronto over two September weekends, structured as breakfast, lunch, dinner and midnight-snack dairy stations with a gachapon machine, merch on a conveyor belt and a nightly Cereal & Milk Rave, entry free in exchange for a social post",
+        "Robots can already do 74% of America's physical tasks. They are cheaper than a person at 0.3% of them.",
+        "Can Agents Design Libraries for Agents?",
+        "Blood has a shelf life measured in days to weeks, which makes blood banking a forecasting problem rather than a storage one; India's reported discards rose 118% between 2023 and 2025 with expiry the largest single reason, and the fix for platelets was better bacterial testing rather than better fridges"
+      ],
+      "brand": [
+        "Hidden Valley",
+        "Clorox",
+        "Marshall",
+        "Anomaly",
+        "MilkUP",
+        "Academy",
+        "Dairy Farmers of Ontario"
+      ],
+      "brand_mention": [
+        "Spooky Ranch",
+        "Original Ranch",
+        "Halloween",
+        "Hidden Valley's",
+        "Marshall",
+        "Cheryl Dunn",
+        "Anomaly",
+        "York",
+        "Bronx Dominican",
+        "Planta Industrial",
+        "MIA",
+        "Stalag 13",
+        "Philadelphia DIY",
+        "Sweet Pill",
+        "Control",
+        "Los Angeles",
+        "Doors",
+        "Linda Lindas",
+        "Burning Out",
+        "Marshall's VP",
+        "Christine Kennedy Grant",
+        "Hundreds",
+        "Amplify",
+        "Baby's All Right",
+        "Zebulon",
+        "Mohawk",
+        "Cafe Milk O'Clock",
+        "Toronto",
+        "Cereal",
+        "Milk Rave",
+        "Chelsey Burnside",
+        "Academy",
+        "Dairy Farmers",
+        "Ontario"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "Your telco has been hiding the cheap recharges, and from now on they go in the first tab"
+        ],
+        [
+          "trends",
+          "OpenAI says people copied its models' hidden reasoning out through the front door, and names who"
+        ],
+        [
+          "trends",
+          "Nobody has found an animal fossil older than 574 million years, and a paper on Friday argued that proves nothing"
+        ],
+        [
+          "wild",
+          "Hidden Valley made its ranch dressing black and put it in a bottle that glows in the dark"
+        ],
+        [
+          "wild",
+          "Marshall sent three bands to play gigs at venues that no longer exist, in the shops that replaced them"
+        ],
+        [
+          "wild",
+          "MilkUP opened a Toronto cafe that served dairy at four different times of day and ended each night with a cereal rave"
+        ],
+        [
+          "research",
+          "Robots can already do 74% of America's physical tasks. They are cheaper than a person at 0.3% of them."
+        ],
+        [
+          "research",
+          "Can Agents Design Libraries for Agents?"
+        ],
+        [
+          "learn",
+          "India threw away 8 lakh units of donated blood last year by running out of time, not out of demand"
+        ]
+      ],
+      "editorial_domains": [
+        "businesstoday.in",
+        "investors.thecloroxcompany.com",
+        "livescience.com",
+        "musebyclios.com",
+        "news.pollstar.com",
+        "openai.com"
+      ]
     }
   ]
 }
