@@ -4497,6 +4497,139 @@
         "taxscan.in",
         "thenextweb.com"
       ]
+    },
+    {
+      "date": "2026-10-03",
+      "issue": 1,
+      "quote_text": [
+        "And although I have seen nothing but black crows in my life, it doesn't mean that there's no such thing as a white crow."
+      ],
+      "quote_author": [
+        "Jostein Gaarder"
+      ],
+      "idea_text": [
+        "Cook something that takes four hours on purpose, and stand next to it the whole time instead of setting a timer and leaving.",
+        "Point a projector at the ceiling and play a board game on the floor underneath it.",
+        "Write out, by hand, a recipe you actually cook — just the recipe, no story about your grandmother — and stick it inside a kitchen cupboard door.",
+        "Take apart something that already broke. You are not fixing it, you are finding out what was inside it.",
+        "Call the oldest person who would recognise your voice and ask them one specific question about a year, not about their life.",
+        "Read a single long magazine piece on paper, standing up, in one go, without putting it down.",
+        "Reorganise your bookshelf by when you read each book rather than by author, and notice what that says about a few years.",
+        "Learn to fold one genuinely useful thing — a paper boat that floats, a shirt that fits in a drawer, a fitted sheet.",
+        "Draw the floor plan of a house you lived in as a child from memory, then ask someone who lived there to correct it.",
+        "Make a list of the ten rainiest things you own — the umbrella with one broken spoke, the shoes that leak — and fix or bin all ten before the rain stops."
+      ],
+      "idea_prompt": [
+        "Ten things to do on a rainy day that don't involve a screen"
+      ],
+      "tip_text": [
+        "If you clear a long prompt with Ctrl+C and immediately regret it, press Up on the empty prompt — as of v2.1.288 that restores the draft, pasted text and images included. Worth knowing before the next time you mash Ctrl+C to cancel something and take four paragraphs of carefully-built context with it."
+      ],
+      "hn_id": [
+        "49924179",
+        "49928121",
+        "49927760",
+        "49927754",
+        "49920234"
+      ],
+      "link": [
+        "https://blog.gitbutler.com/git-3-sha-256",
+        "https://lwn.net/Articles/1097401/",
+        "https://www.frogandtoad.ai/",
+        "https://www.eff.org/deeplinks/2026/10/court-agrees-eff-utahs-vpn-law-demands-technical-impossibility",
+        "https://arstechnica.com/tech-policy/2026/09/immigration-advocate-sues-border-agents-for-demanding-his-cell-phone/",
+        "https://upstox.com/news/personal-finance/investing/nps-nps-lite-charges-revised-from-october-1-check-new-po-p-fees-and-onboarding-charges/article-199510/",
+        "https://hwbusters.com/news/micron-earnings-hit-54-billion-at-an-87-margin-and-memory-supply-gets-tighter-through-2028/",
+        "https://phys.org/news/2026-09-jwst-early-galaxies-seeding-universe.html",
+        "https://www.midlandco.com/icy-hots-scratch-and-sniff-carton-solves-a-shelf-problem/",
+        "https://retailtimes.co.uk/buzzballz-introduces-ballztentz-crazy-camping-gear-based-on-the-iconic-cocktail/",
+        "https://www.media4growth.com/showcase/campaigns/amul-turns-its-billboard-into-a-human-pyramid-for-janmashtami-86135",
+        "https://research.google/blog/toward-provably-private-learning-from-federated-data/",
+        "https://arxiv.org/abs/2609.28926",
+        "https://finance.yahoo.com/markets/live/stock-market-today-friday-october-2-dow-sp-500-nasdaq-september-jobs-report-080623878.html"
+      ],
+      "subject": [
+        "PFRDA replaces NPS Point of Presence transaction charges with Rs 200 per PRAN plus 0.20% of assets under management annually; e-NPS and dormant subscribers exempt",
+        "Micron reports a record quarter of $54.23 billion at an 86.8% gross margin, DRAM about $39.8 billion and NAND about $14.1 billion, and tells investors memory and storage stay supply constrained through calendar 2027 and 2028 with bit shipment growth in the low-20s for DRAM and mid-20s for NAND; more than 75% of fiscal 2027 shipments are already committed and HBM for 2027 substantially allocated at higher prices",
+        "Blueshifted carbon, oxygen and silicon absorption around three JWST galaxies near the midpoint of cosmic reionization shows metal-enriched outflows already escaping into intergalactic gas",
+        "Opella added scratch-and-sniff to the carton of Icy Hot's new 2-oz roll-on by encapsulating the actual product fragrance oil into a standard spot varnish printed on the paperboard, to stop shoppers opening glued end cartons on shelf to smell the three new fragrances; reported 10 September 2026 as the first use of scratch-and-sniff in OTC topical pain relief packaging",
+        "BuzzBallz gives away five spherical two-person camping tents, each coloured to match one of its canned cocktail flavours, with a branded camping chair and lanterns, through a UK Instagram competition entered by commenting WIN",
+        "Amul mounts a cut-out dahi-handi human pyramid of boys down the support pole of a curd hoarding so the topmost figure reaches up towards a matki painted on the board above, turning the billboard's structure into part of the artwork",
+        "Federated learning's privacy claim was a promise. Google has put it inside hardware an auditor can check.",
+        "Teaching an LLM agent to fit XRR curves with X-Ray Calc 3",
+        "The liking gap: conversation partners underestimate how much they were liked, 5.17 versus an actual 5.82, persisting among Yale suite mates all academic year despite a cash accuracy incentive"
+      ],
+      "brand": [
+        "Icy Hot",
+        "Opella",
+        "Shoppers",
+        "BuzzBallz",
+        "Sazerac",
+        "Amul"
+      ],
+      "brand_mention": [
+        "Icy Hot",
+        "OTC",
+        "BallzTentz",
+        "Strawberry Rita",
+        "Berry Cherry Limeade",
+        "Lime Rita",
+        "PeachBallz",
+        "Pineapple Jalapeño",
+        "SKU",
+        "BuzzBallz",
+        "WIN",
+        "President Jess Scheerhorn's",
+        "Amul Masti",
+        "Maakhanchor Bane Mastikhor",
+        "Flipkart Minutes"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "From 1 October your NPS fee stopped being a flat charge and became a slice of the whole pot"
+        ],
+        [
+          "trends",
+          "Micron just had a $54 billion quarter at an 86.8% gross margin, and says memory gets tighter until 2029"
+        ],
+        [
+          "trends",
+          "Galaxies were already leaking carbon and oxygen into space 500 million years after the Big Bang"
+        ],
+        [
+          "wild",
+          "Shoppers kept tearing open the cartons to smell the ointment, so Icy Hot put the smell on the outside"
+        ],
+        [
+          "wild",
+          "BuzzBallz made five tents shaped like its drinks, one per flavour, and gave them away on Instagram"
+        ],
+        [
+          "wild",
+          "Amul hung a human pyramid down the pole of its own billboard for Janmashtami"
+        ],
+        [
+          "research",
+          "Federated learning's privacy claim was a promise. Google has put it inside hardware an auditor can check."
+        ],
+        [
+          "research",
+          "Teaching an LLM agent to fit XRR curves with X-Ray Calc 3"
+        ],
+        [
+          "learn",
+          "After a conversation you are liked more than you think, and paying people to guess right does not fix it"
+        ]
+      ],
+      "editorial_domains": [
+        "hwbusters.com",
+        "media4growth.com",
+        "midlandco.com",
+        "phys.org",
+        "retailtimes.co.uk",
+        "upstox.com"
+      ]
     }
   ]
 }
