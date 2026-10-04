@@ -1,0 +1,337 @@
+{
+  "date_line": "Monday, 5 October 2026",
+  "issue": 1,
+  "preheader": "Bob Cringely, who taught a generation what Silicon Valley was, died on Saturday and the thread about him is unusually honest; Simon Willison wants a hard spending cap on everything that bills by the hour; India restarts this morning on a four-day-old price with a rate decision on Wednesday; Microsoft ran a cancer screen over a weekend and the cells did something nobody predicted; and a drill you can buy at Lidl turned the London Eye.",
+  "quote": {
+    "text": "Why should things be easy to understand?",
+    "author": "Thomas Pynchon",
+    "source_url": "https://www.goodreads.com/quotes/tag/paradox",
+    "note": "Six words, and they take away a belief most of us never noticed holding: that difficulty is a defect, and the fault lies with whoever wrote the thing. Pynchon's question has no answer, which is the point — nothing ever promised to be legible at first pass. The useful version for a working day is that confusion is information about where you are, not a verdict on the material or on you."
+  },
+  "agent_craft": {
+    "items": [
+      {
+        "text": "Delete \"think carefully\" and \"think step by step\" from your prompts and from your CLAUDE.md. Opus 5.5 already thinks before it replies and decides how much on its own; in the post's own testing, removing a \"think carefully\" line made replies start sooner with no clear drop in quality. You are paying latency for an instruction the model was going to follow anyway.",
+        "source": "Addy Osmani, \"Getting the most out of Opus 5.5 in Claude and Claude Code\", 22 September 2026",
+        "url": "https://claude.dev/blog/getting-the-most-out-of-opus-5-5/"
+      }
+    ]
+  },
+  "hn": [
+    {
+      "title": "Tell HN: Bob Cringely has died",
+      "url": "https://news.ycombinator.com/item?id=49949438",
+      "hn_url": "https://news.ycombinator.com/item?id=49949438",
+      "points": 791,
+      "comments": 168,
+      "bullets": [
+        "Mark Stephens, born 28 January 1953 and known to everyone by the pen name Bob Cringely, died in his sleep early on Saturday 3 October, aged 73. If you are of a certain age you met the industry through him: the 1995 PBS series Triumph of the Nerds, its 1998 sequel Nerds 2.0.1: A Brief History of the Internet, the book Accidental Empires, and the NerdTV interviews.",
+        "The thread is a long argument with itself, and that is what makes it worth reading. Commenter after commenter says Triumph of the Nerds is the reason they have the job they have. Immediately underneath, others link Jeremy Reimer's investigative work documenting claims of his that do not hold up — a house said to have burned down that Street View shows standing, the unverified story of being Apple employee number 12, the disputed claim to have drawn the Lisa's trash-can icon, and a Mineserver Kickstarter that took money and did not deliver.",
+        "Even the name was contested. \"Robert X. Cringely\" was an InfoWorld house pseudonym, and who owned it after he left the magazine went to a fight. He was a storyteller who worked in an industry that keeps receipts, which is roughly the whole of the obituary.",
+        "The last year was bad before it ended. Commenters point to his own blog: his son Cole died in April 2026, and he had a heart attack and a stroke earlier in the year."
+      ]
+    },
+    {
+      "title": "We're going to need default hard budget caps on pretty much everything",
+      "url": "https://simonwillison.net/2026/Oct/3/default-hard-budget-caps/",
+      "hn_url": "https://news.ycombinator.com/item?id=49949235",
+      "points": 581,
+      "comments": 297,
+      "bullets": [
+        "Willison's argument is about the difference between a cap and a warning. A soft cap emails you; you are asleep; the meter keeps running. A hard cap turns the thing off. He wants the second to be the default on every pay-by-usage service, not an advanced setting you have to go and find.",
+        "Two providers have already shipped it, which is the part worth knowing. AWS launched spending limits in September 2026 that pause a project when it hits its monthly figure, and Google Cloud added Spend Caps in July that let you cap a specific service by month.",
+        "His proposed interface is a single opt-out checkbox, worded so you cannot misread what you are agreeing to: \"Remove the budget cap. My application will not be shut down if I exceed the configured budget limit, and I will be responsible for subsequent charges.\"",
+        "The reason this is live now rather than ten years ago is agents. It has never been easier to deploy something you do not fully understand, and he notes he keeps hearing from people who will not use AWS for personal projects at all, because the realistic downside of a mistake is a surprise five-figure bill."
+      ]
+    },
+    {
+      "title": "Run Qwen 3.8 Flash Next (125B) on consumer hardware (RTX 4090) at 100T/s",
+      "url": "https://github.com/Niko1221/Strata",
+      "hn_url": "https://news.ycombinator.com/item?id=49953495",
+      "points": 550,
+      "comments": 268,
+      "bullets": [
+        "The trick is that a 125-billion-parameter mixture-of-experts model is not 125 billion parameters at any one moment. Qwen3.8-Flash-Next has 24,576 experts and uses about ten of them per token, so Strata keeps the hot ones in VRAM and leaves the rest spread across system RAM and SSD. The README's own phrasing is that the rest \"waits in the pantry\".",
+        "On top of that: speculative decoding with a small draft model, claimed at 1.6–1.8x, and prompt processing in 8,192-token chunks at over 1,000 tokens per second.",
+        "The published benchmarks are not on the card in the headline. An RTX 5070 with 12GB and a Ryzen 5 7600 gives 53–94 tokens/sec generation depending on quantisation, and 1,620–2,650 tokens/sec reading a 32K-token document; an RX 9070 XT with 16GB gives 44–60. Read the 4090-at-100T/s claim as the submitter's, not the repo's measured number.",
+        "The costs are honest and worth noting before you try it. You need 12GB+ of VRAM, 32GB of RAM and realistically 64GB, about 80GB of disk, and the first start freezes the machine for one to three minutes while 35–55GB loads into RAM. One request at a time by default."
+      ]
+    },
+    {
+      "title": "Federal judge calls Flock 'indiscriminate mass surveillance'",
+      "url": "https://techcrunch.com/2026/10/03/federal-judge-calls-flock-indiscriminate-mass-surveillance/",
+      "hn_url": "https://news.ycombinator.com/item?id=49948254",
+      "points": 474,
+      "comments": 265,
+      "bullets": [
+        "Judge Sara Hill, of the US District Court for the Northern District of Oklahoma, ruled that a sheriff's deputy violated the Fourth Amendment by searching Flock's licence-plate database without a warrant, and suppressed everything the search led to as \"the fruit of a poisonous tree\".",
+        "The language is the news. Hill wrote that it is \"constitutionally problematic when law enforcement can indiscriminately and passively catalog your whereabouts over an extended period\", and called the system \"a type of indiscriminate mass surveillance\". A district ruling binds nobody else, but this is one of the first times a federal judge has said a Flock lookup is unconstitutional at all.",
+        "It lands on an existing pile rather than starting one. Florida and Texas have both announced they are winding down use of the cameras, and Senator Bernie Sanders has introduced a bill to bar federal agencies from using automated plate readers.",
+        "The mechanism the court objected to is the one that makes the product work: no individual suspicion is required to run a plate, so the search is only ever as narrow as whoever typed it in."
+      ]
+    },
+    {
+      "title": "The work by Valve's Timur Kristóf on improving old AMD GPUs on Linux",
+      "url": "https://www.phoronix.com/news/XDC-2026-Valve-Timur-AMDGPU",
+      "hn_url": "https://news.ycombinator.com/item?id=49946895",
+      "points": 452,
+      "comments": 92,
+      "bullets": [
+        "Kristóf, who works on Valve's Linux team, spent his XDC 2026 talk on something nobody is paid to care about: GCN 1.0 and 1.1 cards and APUs from roughly a decade ago, which were still stuck on the ancient Radeon kernel driver.",
+        "Moving them to the modern AMDGPU driver is what unlocks everything else, because it puts the RADV Vulkan driver within reach. Getting there meant fixing display code, power management and soft reset support on hardware whose vendor stopped investing years ago.",
+        "The payoff is measurable: Linux 6.19 carries an approximately 30% performance uplift for these old Radeon cards as a result.",
+        "The talk is also a career note — he describes moving from userspace Mesa work into the kernel driver, which is the kind of transition people assume is closed to them."
+      ]
+    }
+  ],
+  "markets": {
+    "indices": [
+      {
+        "name": "Sensex · last close, Thu 1 Oct",
+        "value": "71,909.70",
+        "change": "570.59 (0.79%)",
+        "direction": "down"
+      },
+      {
+        "name": "Nifty 50 · last close, Thu 1 Oct",
+        "value": "22,421.95",
+        "change": "198.50 (0.88%)",
+        "direction": "down"
+      },
+      {
+        "name": "Nifty Auto · Thu 1 Oct",
+        "value": "",
+        "change": "3.56%",
+        "direction": "down"
+      },
+      {
+        "name": "Nifty IT · Thu 1 Oct",
+        "value": "",
+        "change": "2.17%",
+        "direction": "up"
+      },
+      {
+        "name": "India VIX · Thu 1 Oct",
+        "value": "14.44",
+        "change": "7.04%",
+        "direction": "up"
+      },
+      {
+        "name": "S&P 500 · Fri 2 Oct close",
+        "value": "7,722.72",
+        "change": "56.27 (0.7%)",
+        "direction": "up"
+      },
+      {
+        "name": "Nasdaq Composite · Fri 2 Oct",
+        "value": "27,190.86",
+        "change": "319.27 (1.2%)",
+        "direction": "up"
+      },
+      {
+        "name": "Dow Jones · Fri 2 Oct",
+        "value": "51,176.96",
+        "change": "250.40 (0.5%)",
+        "direction": "up"
+      }
+    ],
+    "stories": [
+      {
+        "headline": "India restarts this morning on a four-day-old price, and the rate decision is on Wednesday",
+        "url": "https://www.outlookmoney.com/banking/rbi-mpc-october-2026-key-things-to-know-ahead-of-policy-decision",
+        "source": "Outlook Money's MPC preview, 4 October 2026, with the Deccan Chronicle's session and flow report of 2 October. Numbers describe the Thursday 1 October session; the next Indian session is today, Monday 5 October.",
+        "bullets": [
+          "There was no Indian session on Friday — the exchanges were shut for Mahatma Gandhi Jayanti — so Thursday 1 October is still the last print going into this morning. Sensex 71,909.70, down 570.59 points or 0.79%. Nifty 50 22,421.95, down 198.50 points or 0.88%, after touching 22,217.30 intraday. Anything quoting an Indian index move for 2, 3 or 4 October is quoting nothing.",
+          "Thursday was an unusually split tape. Nifty Auto fell 3.56%, metals 2.35%, consumer durables 1.91% and realty 1.46%, while Nifty IT rose 2.17% and BSE Telecom 0.52%. India VIX rose 7.04% to 14.44, and about ₹4.89 lakh crore of market value came off, leaving total market capitalisation at ₹466.96 lakh crore.",
+          "On the day, FPIs sold ₹9,484.22 crore of cash equities and DIIs bought ₹10,041.84 crore — the same standoff that has run for weeks. That close completed an eighth straight losing week, the Nifty down 3.10% over the five sessions.",
+          "The MPC began its three-day meeting today and announces on Wednesday 7 October at 10:00 am IST. The repo rate is 5.25% and was left there in August. In a Reuters poll of 61 economists run between 18 and 28 September, 35 expected a 25 basis point rise to 5.50% — which would be the first hike since February 2023 — and 29 of 53 expected another 25 in December."
+        ]
+      },
+      {
+        "headline": "Wall Street spent Friday celebrating a bad jobs report while India was closed",
+        "url": "https://finance.yahoo.com/markets/world-indices/articles/major-us-stock-indexes-fared-201721712.html",
+        "source": "Associated Press index summary for Friday 2 October 2026, via Yahoo Finance",
+        "bullets": [
+          "S&P 500 7,722.72, up 56.27 points or 0.7%. Nasdaq Composite 27,190.86, up 319.27 or 1.2%. Dow Jones 51,176.96, up 250.40 or 0.5%. Russell 2000 2,832.90, up 26.27 or 0.9%.",
+          "The cause was a September jobs report showing US employers slowed their hiring, which markets read as one fewer reason for the Fed to tighten. Weak labour data lifting equities is the standard late-cycle inversion, and it is worth holding alongside the Indian tape, where the problem is the opposite: inflation and a rate committee that is expected to move the other way this week."
+        ]
+      }
+    ]
+  },
+  "trends": [
+    {
+      "tag": "India",
+      "headline": "India has put ₹23,731 crore behind turning cow dung into pipeline gas, and fixed the price for ten years",
+      "url": "https://opengovasia.com/india-launches-gobardhan-scheme-to-scale-compressed-biogas-production/?c=us",
+      "subject": "Petroleum minister Hardeep Singh Puri formally launched GOBARdhan, the national unified central sector scheme for compressed biogas, on 1 October 2026 with a ₹23,731 crore outlay over FY2026-27 to FY2035-36, an administered CBG price of ₹2,110 per MMBtu, capital assistance up to ₹2 crore per tonne-per-day of capacity, and CBG blending obligations rising from 3% to 5%",
+      "subtitle": "Cabinet approval 6 August 2026; scheme launched 1 October 2026 · OpenGov Asia",
+      "bullets": [
+        "The scheme is a ten-year framework, FY2026-27 to FY2035-36, with ₹23,731 crore behind it. The thing that makes it different from previous biogas pushes is not the money, it is the certainty: an administered compressed-biogas price of ₹2,110 per MMBtu, assured offtake, and capital assistance of up to ₹2 crore per tonne-per-day of installed capacity for greenfield plants.",
+        "That combination is aimed squarely at lenders rather than at farmers. A CBG plant is a twenty-year asset whose feedstock is cattle dung and crop residue and whose buyer has historically been uncertain; fixing the price and the offtake for a decade is what turns it into something a bank will underwrite.",
+        "The demand side is mandated rather than hoped for. Blending obligations run at 3% in FY2026-27, 4% in FY2027-28 and 5% from FY2028-29, applied to CNG transport and piped domestic gas.",
+        "The scale today is small and the target is not. India has more than 217 CBG plants with installed capacity above 1,700 tonnes per day; the target is roughly 5 million metric standard cubic metres per day, close to a tenfold increase. The government's own projected impact over the period is over ₹75,000 crore added to GDP, more than 1.5 lakh jobs, 250 million tonnes of organic fertiliser and over 40 million tonnes of CO₂ avoided."
+      ]
+    },
+    {
+      "tag": "Platforms",
+      "headline": "Google is testing a setting that lets Gemini delete any file on your Mac without asking",
+      "url": "https://www.bleepingcomputer.com/news/google/google-gemini-could-soon-get-full-access-to-your-macs-files-apps-and-the-web/",
+      "subject": "Google is testing a hidden Additional sandbox options setting in Gemini Desktop for macOS that removes per-action permission prompts from its computer-use mode",
+      "subtitle": "BleepingComputer, Mayank Parmar, 3 October 2026",
+      "bullets": [
+        "The setting is called \"Additional sandbox options\" and it is currently hidden in the Gemini Desktop app. Google's own wording, found in the code: \"By enabling additional sandbox options, you will be able to expand what Gemini can do and access on your Mac. Depending on which settings you enable, Gemini may be permitted to take actions without asking for your permission first.\"",
+        "What that covers, specifically: reading, creating, modifying or deleting files anywhere on the machine — not just inside folders you connected — sending and receiving data over the network without per-connection approval, including to services you are already logged into, and driving other applications such as Mail, Safari and Messages on your behalf.",
+        "What it still stops for: buying things, moving money, creating accounts, accepting legal terms, and changing sensitive personal information. Which is a reasonable list, and also a list drawn entirely around transactions rather than around destruction.",
+        "It was found by TestingCatalog in the app's code and Google has not confirmed it. The interesting part is not that an agent wants broad permissions — it is that the industry is converging on one yes/no switch for them, at the moment when the thing behind the switch can act unsupervised for an hour."
+      ]
+    },
+    {
+      "tag": "Archaeology",
+      "headline": "Three red glyphs in a Mexican cave argue that Teotihuacan could actually write",
+      "url": "https://archaeology.org/news/2026/10/01/cave-paintings-may-have-been-part-of-mesoamerican-writing-system/",
+      "subject": "Christophe Helmke of the University of Copenhagen used digital photo enhancement to re-read three red painted glyphs in a shallow cliff cave at Chalcatzingo in south-central Mexico, arguing in Antiquity that their standardised forms and framing conventions show Teotihuacan writing was a genuine script rather than mere emblems",
+      "subtitle": "Published in Antiquity, 2026 · reported by Archaeology Magazine, 1 October 2026",
+      "bullets": [
+        "The glyphs are not new. They were found in the 1980s in a shallow cliff cave at Chalcatzingo, in south-central Mexico, and have sat there since. What is new is that Christophe Helmke of the University of Copenhagen ran digital photo enhancement over them and could finally see what they are.",
+        "There are three. A stylised mountain with speech scrolls coming off it, which may read as \"Singing Mountain\". A warrior figure in a beaded necklace and cloak carrying a pointed dart, which reads as a title rather than a person. And a rectangular frame holding five-pointed stars, painted above a bedrock shelf whose walls are blackened by fire.",
+        "The argument for calling it writing is about repetition, not about pictures. The mountain sign appears in the identical form at Teotihuacan itself; the warrior's components are drawn from a fixed inventory; the rectangular framing matches conventions already known from architecture and pottery. A symbol that means whatever the painter wanted is art. A symbol that must be drawn this way to be read is a script.",
+        "Helmke's conclusion is deliberately blunt: Teotihuacan writing \"can therefore no longer be dismissed\". The city was one of the largest in the ancient world and has long been the awkward case — enormous, literate-looking, and without an agreed writing system."
+      ]
+    }
+  ],
+  "research": [
+    {
+      "tag": "Industry · Microsoft Research",
+      "title": "A cancer screen that normally takes months was run over a weekend, and the cells did something nobody predicted",
+      "url": "https://www.microsoft.com/en-us/research/blog/introducing-quine-an-ai-research-system-designed-for-the-complexity-of-biology/",
+      "subtitle": "Microsoft Research, Nicolo Fusi and Jonathan M. Carlson, 29 September 2026",
+      "bullets": [
+        "Quine is described as two things bolted together: a multimodal world model of biology, and a harness that connects that model to scientific tools, the literature and the people running the experiments. The model is trained to share representations across sequence, structure, function, cellular state and imaging, rather than keeping a separate model per modality.",
+        "The loop it is built around is the part worth copying. A researcher poses a question, Quine produces computational predictions, the proposals go to a wet lab, and the results come back as input to the next question. The system is not asked to be right; it is asked to rank what is worth testing.",
+        "They tried it on pancreatic ductal adenocarcinoma with the Broad Institute, asking whether cell state — rather than genetics — could be a drug target. For classical-to-basal transitions, Quine's top-ranked compounds produced the largest intended shifts across the experimental assays, and the screening took roughly a weekend instead of months.",
+        "The interesting result is the one that did not fit. Cells moved towards an unexpected third phenotype, which means the cell-state landscape in this cancer is more complicated than the two-state picture the experiment was designed around. A system that ranks candidates well is useful; one that makes you redraw the map you were ranking against is a different kind of useful."
+      ]
+    },
+    {
+      "tag": "Academia · MIT",
+      "title": "Optimizer-dependent training dynamics converge to the same one-third optimal data scaling",
+      "url": "https://arxiv.org/abs/2609.37745",
+      "subtitle": "Hyunseok Lee, Mihir Basil, Yizhou Liu and Jeff Gore, MIT · arXiv, 29 September 2026",
+      "bullets": [
+        "The paper separates two exponents that the scaling literature has been quietly conflating: how fast loss falls per training step inside one run, and how fast the best achievable loss falls as you add data. They show the first is a property of your optimizer and the second is not.",
+        "In an online teacher-student model they split the loss into a radial part — the weights growing — and a tangential part — the weights turning towards the teacher. Under SGD both decay with exponents near 1/3. Under Adam they come apart badly: about 0.48 radial against about 0.08 tangential.",
+        "That split is why the optimal learning rate behaves differently for the two. For SGD it does not depend on dataset size; for Adam it falls as the dataset grows. But tune each to its own optimum and the loss returns to D^(-1/3) either way.",
+        "The reason is a single constraint they derive and then measure: 2αr + αt = 1. An optimizer can trade decay speed between the two channels but cannot leave that line, which pins the optimal data exponent at 1/3. They check it across seven optimizers, Muon included, and the envelopes agree.",
+        "The practical reading is deflationary in a useful way. Your optimizer buys you a better constant, not a better rate. Switching optimizers will not change how much data you need to halve your loss."
+      ]
+    }
+  ],
+  "wild": [
+    {
+      "tag": "Hardware",
+      "headline": "A cordless drill you can buy at Lidl turned the London Eye, and Guinness counted it",
+      "url": "https://corporate.lidl.com.cy/en/media-center/pressreleases/2026/parkside-guinness-world-record-the-rotation",
+      "entities": [
+        "Parkside",
+        "Lidl",
+        "London Eye",
+        "Arnold Schwarzenegger",
+        "Technical University of Darmstadt"
+      ],
+      "subject": "Parkside, Lidl's power tool brand, rotated the London Eye with a 20V cordless drill for a Guinness World Record",
+      "subtitle": "Lidl Cyprus corporate newsroom, \"THE ROTATION\", August 2026",
+      "bullets": [
+        "The object being turned is the London Eye: 135 metres tall, 2,100 tonnes, the world's largest cantilevered observation wheel. The thing turning it is a 20V cordless drill driver with a maximum torque of 60 Nm, which is to say a tool rated for putting up a shelf.",
+        "It works because a wheel on good bearings asks almost nothing to keep moving — the drill is fighting friction, not weight — and because nobody specified how fast. That is the whole joke, and the brand is clearly in on it. The Technical University of Darmstadt came along as technical partner, and 45 content creators from 31 countries were there to watch on 19 August.",
+        "The drill is a special edition carrying Arnold Schwarzenegger's signature, which went on sale at Lidl Cyprus from 3 September with an 8Ah battery and an aluminium case. The stunt is the product page.",
+        "It is also a sequel. In 2025 Parkside's \"THE PULL\" had a 12V cordless drill tow an Airbus A380 weighing over 300 tonnes. Lidl's head of marketing, Robin Ruschke, calls the new record \"a spectacular demonstration of PARKSIDE's power\", which is the only sentence in the release that is not doing something funnier than it admits."
+      ]
+    },
+    {
+      "tag": "Retail",
+      "headline": "A Korean convenience store licensed its own snacks to a cosmetics brand, so the brow pencil is a potato stick",
+      "url": "https://www.asiae.co.kr/en/article/2026092808041174930",
+      "entities": [
+        "CU",
+        "BGF Retail",
+        "Peripera",
+        "Clio"
+      ],
+      "subject": "CU, the Korean convenience store chain owned by BGF Retail, licensed its CU Friends character IP and its own-brand snacks to Clio's colour cosmetics brand Peripera for ten beauty products launched on 1 October 2026, modelled on pudding, yogurt, potato sticks, sausages, cookies, ice cups, steamed dumplings and triangular rice balls, sold through Olive Young and 13 overseas markets",
+      "subtitle": "The Asia Business Daily, 28 September 2026",
+      "bullets": [
+        "Ten products, launched 1 October, each shaped as a thing CU already sells. A pudding-shaped tint. A yogurt lip gloss. Brow products modelled on potato sticks and on sausages. A cheek product shaped like a cookie. Highlighters, eyeshadows and cushions done as ice cups, chocolates, steamed dumplings and triangular rice balls.",
+        "The genuinely new bit is the direction of the licence. Convenience stores license characters *in* constantly; this is the first time the industry has handed its own intellectual property out to a beauty brand to turn into product. CU's snacks are the asset being rented.",
+        "The merchandise around it commits harder than the cosmetics do: CU Friends magnets, stickers, pudding-shaped squishies, baked-egg puffs and a pouch shaped like a triangular rice ball. There is also a commemorative Peripera Strawberry Pudding snack, sold in the shops at 3,400 won.",
+        "Distribution is not a novelty run. It goes through Olive Young, Club Clio Mall, Ably, Zigzag, Musinsa and Kakao Gift, plus 13 overseas markets including Japan, Thailand, Canada and China. Byunghak Kang of BGF Retail frames it as connecting \"our brand assets with a variety of sectors\", which is the corporate way of saying the rice ball is now a face."
+      ]
+    },
+    {
+      "tag": "Sport",
+      "headline": "Two actors who played meth cooks now have a permanent bar on the sixth floor of an NFL stadium",
+      "url": "https://www.sofistadium.com/news/detail/dos-hombres-unveils-first-ever-branded-bar-at-sofi-stadium",
+      "entities": [
+        "Dos Hombres",
+        "SoFi Stadium",
+        "Aaron Paul",
+        "Bryan Cranston",
+        "Los Angeles Rams"
+      ],
+      "subject": "Dos Hombres opened its first branded bar, on the sixth floor of SoFi Stadium, during the Rams home opener",
+      "subtitle": "SoFi Stadium newsroom, 22 September 2026",
+      "bullets": [
+        "It opened on 21 September during the Rams' home opener against the Giants, on the sixth floor, and it is open for everything the stadium does — football, concerts, the lot. Not a game-day activation that gets struck on Monday; a bar with a lease.",
+        "It is the first branded bar Dos Hombres has ever had. For a spirits brand that is a meaningful jump: you stop renting shelf space inside someone else's venue and start being a destination inside it, with your name on the signage all year.",
+        "The house drink is the GO FOR DOS! — mezcal, fresh-squeezed lemon, organic agave, cherry, dehydrated lemon. Both founders worked the bar on opening night.",
+        "Bryan Cranston's line for it was \"Los Angeles has always been a big part of our story, so to bring Dos Hombres to such an iconic stadium feels like a real full-circle moment\", which is a sentence that only reads as odd if you remember the show the pair are famous for was about two men running an unlicensed production operation."
+      ]
+    }
+  ],
+  "learn": {
+    "title": "The stethoscope exists because a doctor in 1816 was too embarrassed to put his ear on a woman's chest",
+    "subject": "Origin story of the stethoscope: René Laennec, aged 35, improvised a rolled paper cylinder at the Necker Hospital in Paris in 1816 to avoid direct ear-to-chest auscultation with a young female patient, recalling a children's trick of transmitting sound along a wooden beam; he refined it to a wooden tube, published De l'auscultation médiate in 1819, and died of tuberculosis in 1826 aged 45 after his own nephew diagnosed him with the instrument",
+    "body": [
+      "In 1816 the only way to listen to someone's chest was to put your ear on it. René Laennec, 35 and newly senior at the Necker Hospital in Paris, had a young woman in front of him whose heart he needed to hear, and two reasons not to do that: she was a young woman, and she was heavy enough that pressing an ear to her ribs would have told him very little anyway. The convention of the day and the physics of the day were both against him.",
+      "What he remembered was a children's game. Scratch a pin on one end of a long wooden beam and a child with an ear at the far end hears it clearly — sound travels better through the solid than through the air. So he picked up a sheaf of paper from a table, rolled it into a tight cylinder, put one end on her chest and the other to his ear. It worked better than his ear ever had. He spent the next three years trying materials and settled on a turned wooden tube, named it from the Greek for chest and examine, and published De l'auscultation médiate in 1819.",
+      "The ending is the part that stays with you. The book made him famous — chair at the Collège de France in 1822, professor of medicine in 1823 — and it also described, for the first time, the sounds a tubercular lung makes. Laennec was himself consumptive. In 1826 his own nephew put the instrument on his uncle's chest, heard exactly what the book said it would sound like, and gave him the diagnosis. He died that year, aged 45, ten years after a moment of awkwardness in a Paris ward."
+    ]
+  },
+  "ideas": {
+    "prompt": "Ten things that should be taught in school but aren't",
+    "note": "Altucher's drill: ten ideas against one prompt, written fast and not defended. Reddit rate-limited the script again this morning and only r/SomebodyMakeThis came through; the recurring wish there this week was for the plain version of things — just the recipe without the life story, a real button instead of a menu — so two below are adapted from that, and the other eight are mine.",
+    "items": [
+      {
+        "text": "How to read a rental agreement, a payslip and an insurance policy, using three real ones."
+      },
+      {
+        "text": "How to tell within thirty seconds whether a web page is going to waste your time.",
+        "why": "The most upvoted wish on r/SomebodyMakeThis this week was a recipe app that gives you just the recipe — the skill underneath that wish is detecting padding."
+      },
+      {
+        "text": "How to cook six meals well enough that you would serve them to someone else."
+      },
+      {
+        "text": "How to leave a party, a group chat or a job without anyone being hurt."
+      },
+      {
+        "text": "How to read a bus timetable, a train map and an airport sign in a city you've never been to."
+      },
+      {
+        "text": "What money costs: one term on interest, rent, EMIs and what compounding does over forty years."
+      },
+      {
+        "text": "How to ask a question in a room full of people who already seem to know the answer."
+      },
+      {
+        "text": "Basic repair. A tap, a bicycle, a button, a loose hinge, a tripped fuse.",
+        "why": "Half of what people ask strangers on the internet to invent is a thing they could fix if anyone had ever shown them once."
+      },
+      {
+        "text": "How to sit with someone who has had bad news and not try to fix it."
+      },
+      {
+        "text": "How to be bored on purpose for an hour, with no device, and come back with something."
+      }
+    ]
+  }
+}

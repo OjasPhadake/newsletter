@@ -4783,6 +4783,165 @@
         "news.pollstar.com",
         "openai.com"
       ]
+    },
+    {
+      "date": "2026-10-05",
+      "issue": 1,
+      "quote_text": [
+        "Why should things be easy to understand?"
+      ],
+      "quote_author": [
+        "Thomas Pynchon"
+      ],
+      "idea_text": [
+        "How to read a rental agreement, a payslip and an insurance policy, using three real ones.",
+        "How to tell within thirty seconds whether a web page is going to waste your time.",
+        "How to cook six meals well enough that you would serve them to someone else.",
+        "How to leave a party, a group chat or a job without anyone being hurt.",
+        "How to read a bus timetable, a train map and an airport sign in a city you've never been to.",
+        "What money costs: one term on interest, rent, EMIs and what compounding does over forty years.",
+        "How to ask a question in a room full of people who already seem to know the answer.",
+        "Basic repair. A tap, a bicycle, a button, a loose hinge, a tripped fuse.",
+        "How to sit with someone who has had bad news and not try to fix it.",
+        "How to be bored on purpose for an hour, with no device, and come back with something."
+      ],
+      "idea_prompt": [
+        "Ten things that should be taught in school but aren't"
+      ],
+      "tip_text": [
+        "Delete \"think carefully\" and \"think step by step\" from your prompts and from your CLAUDE.md. Opus 5.5 already thinks before it replies and decides how much on its own; in the post's own testing, removing a \"think carefully\" line made replies start sooner with no clear drop in quality. You are paying latency for an instruction the model was going to follow anyway."
+      ],
+      "hn_id": [
+        "49949438",
+        "49949235",
+        "49953495",
+        "49948254",
+        "49946895"
+      ],
+      "link": [
+        "https://news.ycombinator.com/item?id=49949438",
+        "https://simonwillison.net/2026/Oct/3/default-hard-budget-caps/",
+        "https://github.com/Niko1221/Strata",
+        "https://techcrunch.com/2026/10/03/federal-judge-calls-flock-indiscriminate-mass-surveillance/",
+        "https://www.phoronix.com/news/XDC-2026-Valve-Timur-AMDGPU",
+        "https://opengovasia.com/india-launches-gobardhan-scheme-to-scale-compressed-biogas-production/?c=us",
+        "https://www.bleepingcomputer.com/news/google/google-gemini-could-soon-get-full-access-to-your-macs-files-apps-and-the-web/",
+        "https://archaeology.org/news/2026/10/01/cave-paintings-may-have-been-part-of-mesoamerican-writing-system/",
+        "https://corporate.lidl.com.cy/en/media-center/pressreleases/2026/parkside-guinness-world-record-the-rotation",
+        "https://www.asiae.co.kr/en/article/2026092808041174930",
+        "https://www.sofistadium.com/news/detail/dos-hombres-unveils-first-ever-branded-bar-at-sofi-stadium",
+        "https://www.microsoft.com/en-us/research/blog/introducing-quine-an-ai-research-system-designed-for-the-complexity-of-biology/",
+        "https://arxiv.org/abs/2609.37745",
+        "https://www.outlookmoney.com/banking/rbi-mpc-october-2026-key-things-to-know-ahead-of-policy-decision",
+        "https://finance.yahoo.com/markets/world-indices/articles/major-us-stock-indexes-fared-201721712.html"
+      ],
+      "subject": [
+        "Petroleum minister Hardeep Singh Puri formally launched GOBARdhan, the national unified central sector scheme for compressed biogas, on 1 October 2026 with a ₹23,731 crore outlay over FY2026-27 to FY2035-36, an administered CBG price of ₹2,110 per MMBtu, capital assistance up to ₹2 crore per tonne-per-day of capacity, and CBG blending obligations rising from 3% to 5%",
+        "Google is testing a hidden Additional sandbox options setting in Gemini Desktop for macOS that removes per-action permission prompts from its computer-use mode",
+        "Christophe Helmke of the University of Copenhagen used digital photo enhancement to re-read three red painted glyphs in a shallow cliff cave at Chalcatzingo in south-central Mexico, arguing in Antiquity that their standardised forms and framing conventions show Teotihuacan writing was a genuine script rather than mere emblems",
+        "Parkside, Lidl's power tool brand, rotated the London Eye with a 20V cordless drill for a Guinness World Record",
+        "CU, the Korean convenience store chain owned by BGF Retail, licensed its CU Friends character IP and its own-brand snacks to Clio's colour cosmetics brand Peripera for ten beauty products launched on 1 October 2026, modelled on pudding, yogurt, potato sticks, sausages, cookies, ice cups, steamed dumplings and triangular rice balls, sold through Olive Young and 13 overseas markets",
+        "Dos Hombres opened its first branded bar, on the sixth floor of SoFi Stadium, during the Rams home opener",
+        "A cancer screen that normally takes months was run over a weekend, and the cells did something nobody predicted",
+        "Optimizer-dependent training dynamics converge to the same one-third optimal data scaling",
+        "Origin story of the stethoscope: René Laennec, aged 35, improvised a rolled paper cylinder at the Necker Hospital in Paris in 1816 to avoid direct ear-to-chest auscultation with a young female patient, recalling a children's trick of transmitting sound along a wooden beam; he refined it to a wooden tube, published De l'auscultation médiate in 1819, and died of tuberculosis in 1826 aged 45 after his own nephew diagnosed him with the instrument"
+      ],
+      "brand": [
+        "Parkside",
+        "Lidl",
+        "London Eye",
+        "Arnold Schwarzenegger",
+        "Technical University of Darmstadt",
+        "CU",
+        "BGF Retail",
+        "Peripera",
+        "Clio",
+        "Korean",
+        "Dos Hombres",
+        "SoFi Stadium",
+        "Aaron Paul",
+        "Bryan Cranston",
+        "Los Angeles Rams",
+        "NFL"
+      ],
+      "brand_mention": [
+        "Eye",
+        "V",
+        "Technical University",
+        "Darmstadt",
+        "Arnold Schwarzenegger's",
+        "Lidl Cyprus",
+        "2025 Parkside's",
+        "PULL",
+        "Airbus A380",
+        "Robin Ruschke",
+        "PARKSIDE's",
+        "CU",
+        "CU Friends",
+        "Peripera Strawberry Pudding",
+        "Olive Young",
+        "Club Clio Mall",
+        "Ably",
+        "Zigzag",
+        "Musinsa",
+        "Kakao Gift",
+        "Thailand",
+        "Canada",
+        "Byunghak Kang",
+        "BGF Retail",
+        "Rams",
+        "Giants",
+        "Dos Hombres",
+        "GO FOR DOS",
+        "Bryan Cranston's",
+        "Los Angeles"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "India has put ₹23,731 crore behind turning cow dung into pipeline gas, and fixed the price for ten years"
+        ],
+        [
+          "trends",
+          "Google is testing a setting that lets Gemini delete any file on your Mac without asking"
+        ],
+        [
+          "trends",
+          "Three red glyphs in a Mexican cave argue that Teotihuacan could actually write"
+        ],
+        [
+          "wild",
+          "A cordless drill you can buy at Lidl turned the London Eye, and Guinness counted it"
+        ],
+        [
+          "wild",
+          "A Korean convenience store licensed its own snacks to a cosmetics brand, so the brow pencil is a potato stick"
+        ],
+        [
+          "wild",
+          "Two actors who played meth cooks now have a permanent bar on the sixth floor of an NFL stadium"
+        ],
+        [
+          "research",
+          "A cancer screen that normally takes months was run over a weekend, and the cells did something nobody predicted"
+        ],
+        [
+          "research",
+          "Optimizer-dependent training dynamics converge to the same one-third optimal data scaling"
+        ],
+        [
+          "learn",
+          "The stethoscope exists because a doctor in 1816 was too embarrassed to put his ear on a woman's chest"
+        ]
+      ],
+      "editorial_domains": [
+        "archaeology.org",
+        "asiae.co.kr",
+        "bleepingcomputer.com",
+        "corporate.lidl.com.cy",
+        "opengovasia.com",
+        "sofistadium.com"
+      ]
     }
   ]
 }
