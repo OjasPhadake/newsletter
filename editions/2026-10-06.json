@@ -1,0 +1,334 @@
+{
+  "date_line": "Tuesday, 6 October 2026",
+  "issue": 1,
+  "preheader": "A woman in Florida used Claude as a diary, wrote one sentence about the sheriff's office, and was arrested; Qualcomm has licensed the chip technique Huawei built because it cannot buy EUV machines; the GST Council will consider taking arrest powers away from GST officers on Thursday; four ancient wells were found standing on the seabed off Tamil Nadu; and twenty-two cars on a circular track proved that a traffic jam does not need a cause.",
+  "quote": {
+    "text": "Remember: the time you feel lonely is the time you most need to be by yourself. Life's cruelest irony.",
+    "author": "Douglas Coupland",
+    "work": "Shampoo Planet",
+    "source_url": "https://www.goodreads.com/quotes/tag/irony",
+    "note": "The instinct it contradicts is the strong one: feeling unseen, you go and find people, and then perform for them, and come back emptier. Coupland's claim is that loneliness is usually a signal about your relationship with yourself, and that the only room in which it can be answered is an empty one. Worth holding lightly — it is a line about a particular kind of evening, not a prescription — but it explains why some crowded nights make it worse."
+  },
+  "agent_craft": {
+    "items": [
+      {
+        "text": "Stop running bare `/compact`. Give it the brief: `/compact keep the open TODOs, the files already changed, and the repro steps`. Left to itself the summary is generic and quietly drops the three details you were about to need; one clause tells it what to front-load.",
+        "source": "Hidekazu Konishi, \"Claude Code Compaction and Long-Session Operations Guide\", which calls it \"the single most underused lever in long-session work\"",
+        "url": "https://hidekazu-konishi.com/entry/claude_code_compaction_and_long_session_guide.html"
+      }
+    ]
+  },
+  "hn": [
+    {
+      "title": "Turn off Apple Intelligence on macOS 27 and get its disk space back",
+      "url": "https://github.com/omlahore/RemoveMacAI",
+      "hn_url": "https://news.ycombinator.com/item?id=49957116",
+      "points": 757,
+      "comments": 522,
+      "bullets": [
+        "It is two steps, not a hack. The tool installs a configuration profile that switches off Siri, Writing Tools, Genmoji, Image Playground and the rest, and then calls Apple's own asset service to delete the models those features had already downloaded. System Integrity Protection stays on and nothing under /System is touched.",
+        "What actually leaves the disk: the foundation models, the image-generation and Genmoji models, Spatial Photos, Photos Clean Up and the Xcode code-completion models. Dictation speech models are deliberately left alone. The README's figure is about 12GB, and some assets report their size as unknown because the asset service will not say.",
+        "Two caveats worth reading before you run it. Anything built on the Foundation Models framework stops working, as does Visual Intelligence — so third-party apps that quietly use the on-device model will break. And Storage settings can keep showing Apple Intelligence for a while after, because macOS deletes the files on its own schedule.",
+        "It is reversible and it survives updates, which is the combination people actually wanted. `removemacai revert` puts the settings back and lets macOS re-download the models; absent that, the changes persist through OS upgrades instead of being silently undone by the next one. macOS 27 on Apple silicon only — 26 and earlier are unsupported."
+      ]
+    },
+    {
+      "title": "Anthropic reported diary entry to police, woman faces felony charge",
+      "url": "https://www.techspot.com/news/114091-florida-woman-used-claude-diary-anthropic-reported-shoot.html",
+      "hn_url": "https://news.ycombinator.com/item?id=49961057",
+      "points": 537,
+      "comments": 456,
+      "bullets": [
+        "On 26 September, Carli Michelle Heller of Bonita Springs, Florida was using Claude as a personal diary and wrote that she would \"shoot up\" the sheriff's office. The safety systems flagged it, a human reviewer read it and judged it a credible threat, and Anthropic reported it to police. Deputies came to her home and detained her without incident.",
+        "The charge is the part that makes it a story rather than a moderation anecdote. Florida Statute 836.10 makes it a second-degree felony to transmit an electronic record threatening to kill or injure, carry out a mass shooting or commit an act of terrorism. The statute turns on transmission — and the question the thread cannot settle is whether typing into a private journal that happens to run on someone else's servers is transmitting.",
+        "Anthropic's policy says it may share user information in limited emergencies where it believes disclosure is necessary to prevent death or serious physical injury. The policy is not new and is not unusual; what is new is seeing it produce an arrest from a diary entry nobody else was ever meant to read.",
+        "The comments split along a line worth noticing, because both sides are right about something. Anyone writing to a hosted model is writing to a company, and most people have not internalised that. And the alternative — a provider that reads a stated intent to shoot up a building and files nothing — is not obviously the better policy."
+      ]
+    },
+    {
+      "title": "Improper redaction reveals Google Data Center water and electricity usage",
+      "url": "https://www.1011now.com/2026/09/30/more-questions-than-answers-about-lincolns-google-data-center-water-electricity-usage/",
+      "hn_url": "https://news.ycombinator.com/item?id=49957068",
+      "points": 516,
+      "comments": 672,
+      "bullets": [
+        "The redaction was black boxes drawn over live text. The report, filed with Nebraska's Department of Water, Energy and Environment for the Agate LLC facility in Lincoln, could be read by selecting the hidden text with a cursor and pasting it elsewhere — the oldest failure in the PDF repertoire, and the one that keeps happening because the boxes look right on screen.",
+        "What came out: 52.65 megawatts at peak demand, and 13.299 megagallons of water a year, roughly 13 million gallons. Those are the two numbers data-centre operators fight hardest to keep confidential, because they are what a city needs in order to argue about whether the deal was worth it.",
+        "The same trick exposed a third figure that has nothing to do with utilities. Agate LLC reported expecting $55,822,472 in refunds on its 2025 taxes.",
+        "No official comment from Google, the state department or city officials appears in the piece. 10/11 filed a public records request on 30 September to obtain the redacted material properly, which is the slow version of what anyone could already do with a mouse."
+      ]
+    },
+    {
+      "title": "Web Search API",
+      "url": "https://developers.cloudflare.com/changelog/post/2026-10-02-introducing-web-search-api/",
+      "hn_url": "https://news.ycombinator.com/item?id=49963171",
+      "points": 483,
+      "comments": 221,
+      "bullets": [
+        "Cloudflare has put a single search endpoint in front of three providers — Ceramic.ai, Exa and Linkup — so an agent can call one API and have the choice of back end become configuration rather than code. It runs through AI Gateway, which is where the logging lives.",
+        "The commercial terms are the news. Requests are billed to your AI Gateway credits at each provider's own list price with no markup, or you can supply your own provider key. Cloudflare is taking the integration and the observability, not a cut of the query.",
+        "All three providers offer Zero Data Retention for requests made through Cloudflare and comply with verified-bot standards — which matters because the thing being sold here is a crawler with permission, at a moment when publishers are busy revoking it from everyone else.",
+        "It is in beta. The documented shape is simple enough to be a drop-in: a query, a `limit` (the example uses 5), and ranked results back, aimed at Workers-based agents that currently answer from a training cut-off."
+      ]
+    },
+    {
+      "title": "Denmark data breach exposes 8.8M people's personal data",
+      "url": "https://www.cpr.dk/cpr-nyt/nyhedsarkiv/2026/okt/omfattende-uautoriseret-adgang-til-borgeres-cpr-oplysninger",
+      "hn_url": "https://news.ycombinator.com/item?id=49962012",
+      "points": 464,
+      "comments": 327,
+      "bullets": [
+        "This is the primary source, published by Denmark's CPR administration on 5 October, and it is short. Unauthorised parties misused a legitimate Danish company's authorised access to the Central Person Register and pulled out data on roughly 8.8 million registered people — more than the country's population, because the register includes people who have left or died.",
+        "The fields named are names, addresses, CPR numbers \"mv.\" — and similar. The CPR number is Denmark's single national identifier, used as both username and shared secret across a great deal of Danish administration, which is why a list of them matters more than the same list would elsewhere.",
+        "One group was spared, and it tells you how the register is built: people with name-and-address protection on file were excluded from what was extracted. The protection flag worked. The credential did not.",
+        "The company's access has been cut off, the Data Protection Authority has been notified, and police are investigating. No company name, no technical detail and no discovery date in the notice — the gaps are what the HN thread spent most of its 327 comments on."
+      ]
+    }
+  ],
+  "markets": {
+    "indices": [
+      {
+        "name": "Sensex · Mon 5 Oct close",
+        "value": "72,382.47",
+        "change": "472.77 (0.66%)",
+        "direction": "up"
+      },
+      {
+        "name": "Nifty 50 · Mon 5 Oct close",
+        "value": "22,555.75",
+        "change": "133.80 (0.60%)",
+        "direction": "up"
+      },
+      {
+        "name": "Nifty FMCG · Mon 5 Oct",
+        "value": "44,579.65",
+        "change": "1.80%",
+        "direction": "up"
+      },
+      {
+        "name": "Bank Nifty · Mon 5 Oct",
+        "value": "54,714.10",
+        "change": "0.48%",
+        "direction": "up"
+      },
+      {
+        "name": "Nifty IT · Mon 5 Oct",
+        "value": "28,301.65",
+        "change": "0.01%",
+        "direction": "down"
+      },
+      {
+        "name": "Nifty Healthcare · Mon 5 Oct",
+        "value": "",
+        "change": "1.00%",
+        "direction": "down"
+      },
+      {
+        "name": "USD/INR · Mon 5 Oct",
+        "value": "96.29",
+        "change": "0.02%",
+        "direction": "down"
+      },
+      {
+        "name": "Nasdaq Composite · Mon 5 Oct",
+        "value": "",
+        "change": "1% (record close)",
+        "direction": "up"
+      },
+      {
+        "name": "S&P 500 · Mon 5 Oct",
+        "value": "",
+        "change": "0.7%",
+        "direction": "up"
+      },
+      {
+        "name": "US 10-year yield · Mon 5 Oct",
+        "value": "5.31%",
+        "change": "3 bps",
+        "direction": "up"
+      }
+    ],
+    "stories": [
+      {
+        "headline": "Four sessions of selling stopped, and it was cigarettes and soap that did the lifting",
+        "url": "https://stockpil.com/india-markets-today-2026-10-05",
+        "source": "Stockpil's India close for 5 October 2026 (Nifty, sector indices, USD/INR, FII/DII) and Kotak Neo's closing bell for the same session (Sensex, broader indices, commodities). Numbers describe Monday 5 October; Indian markets are open again this morning.",
+        "bullets": [
+          "Sensex closed at 72,382.47, up 472.77 points or 0.66%. Nifty 50 closed at 22,555.75, up 133.80 points or 0.60%, from a previous close of 22,421.95. That ends a four-day losing run.",
+          "The leadership was unusual and worth noting. Nifty FMCG rose 1.80% to 44,579.65 — by a wide margin the best sector on the day, with ITC the single biggest contributor. Nifty PSU Bank added 0.97% to 8,014.85, Bank Nifty 0.48% to 54,714.10 and Nifty Energy 0.57% to 36,594.65. On the other side, Nifty Pharma fell 0.74% to 26,117.10 and Nifty Healthcare 1.00%. Nifty IT finished effectively flat, down 0.01% at 28,301.65. Midcaps rose 0.67% and smallcaps 0.47%, so this was broad rather than a handful of heavyweights.",
+          "The institutional standoff that has run for weeks did not break. FIIs sold ₹20,374 crore and bought ₹15,675 crore in the cash segment for a net −₹4,699 crore; DIIs bought ₹20,493 crore against ₹15,311 crore sold, a net +₹5,182 crore. Domestic money is still absorbing everything foreign money puts down. The rupee was almost unchanged at 96.29 to the dollar, down 0.02%.",
+          "The two prices that explain the mood are not Indian. Brent for December eased to $102.52 a barrel and WTI for November to $90.66 — an oil bill coming off its highs is the single most useful thing that can happen to this market. Gold for October slipped 0.34% to ₹1,49,880 per 10g while silver for December rose 0.93% to ₹2,27,978 a kg.",
+          "Wall Street, for contrast, had a tech day on Monday: the Nasdaq Composite rose about 1% to a record close, the S&P 500 about 0.7% and the Dow about 0.2%, even as the US 10-year yield added 3 basis points to 5.31% — near its highest since 2002 — and Brent stayed above $100. Equities ignoring a 5.3% long bond is the thing to keep an eye on."
+        ]
+      }
+    ]
+  },
+  "trends": [
+    {
+      "tag": "India",
+      "headline": "The GST Council will consider taking away its own officers' power to arrest you",
+      "url": "https://www.businesstoday.in/latest/economy/story/gst-council-meeting-rescheduled-to-october-8-whats-on-the-agenda-559688-2026-10-05",
+      "subject": "The 57th GST Council meeting, moved to Thursday 8 October, will consider removing GST officers' power to arrest taxpayers without judicial authorisation, raising the threshold for criminal proceedings from ₹1 crore to ₹5 crore, softening 24 offences and deleting nine, cutting middle-band maximum sentences from three years to two, withdrawing the IGST exemption on bank imports of gold, silver and platinum, and allowing input tax credit on employee group insurance premiums",
+      "subtitle": "Business Today, 5 October 2026 · meeting rescheduled from 7 to 8 October by the GST Council Secretariat",
+      "bullets": [
+        "The headline item is the arrest power. As the law stands, a GST officer can arrest a taxpayer in cases above ₹1 crore on Commissioner-level approval alone — an administrative signature, not a judicial one. The proposal on the table would require judicial authorisation instead, and raise the threshold for launching criminal proceedings at all from ₹1 crore to ₹5 crore.",
+        "The rest of the prosecution package is a deliberate de-escalation: 24 offences softened, nine removed outright, 11 left as they are, minimum sentences deleted and the middle band's maximum cut from three years to two. Taken together it is the state conceding that it criminalised too much of what is usually a filing error.",
+        "Two items that are not about crime but will move money. The IGST exemption for banks and nominated agencies importing gold, silver and platinum — currently taxed at 3% — would be withdrawn. And businesses would be allowed to claim input tax credit on group insurance premiums for employees, which today carry 18% GST with no credit, making staff cover quietly expensive.",
+        "Also listed: waived late fees for small taxpayers, simplified registration, faster refunds, blocked credit under Section 17(5), inverted duty refunds and modified show-cause procedures. The meeting was due on 7 October and the Secretariat moved it to Thursday 8 October \"on account of unavoidable circumstances\", 11 am at the Summit Room, Bharat Mandapam."
+      ]
+    },
+    {
+      "tag": "Platforms",
+      "headline": "Qualcomm has licensed the chip trick Huawei invented because it cannot buy EUV machines",
+      "url": "https://theedgemalaysia.com/node/820574",
+      "subject": "Qualcomm agreed on 5 October to license the patents behind Huawei's LogicFolding wafer-stacking technique as part of a cross-licence spanning 5G devices, AI services and near- and co-packaged optics and networks; Huawei expects its total patent licensing revenue to exceed US$6.9 billion once the deal closes, which requires Hart-Scott-Rodino antitrust review",
+      "subtitle": "Bloomberg, via The Edge Malaysia, 5 October 2026",
+      "bullets": [
+        "The deal is a multi-year cross-licence spanning 5G devices, AI services and near- and co-packaged optics and networks, with the patents behind LogicFolding as the piece everyone is looking at. Terms are undisclosed, but it is being filed for Hart-Scott-Rodino review, which applies above $133.9 million.",
+        "LogicFolding is what you build when you cannot shrink. Denied ASML's extreme-ultraviolet lithography machines, Huawei went after the other half of the problem — how far a signal has to travel — by stacking silicon face-to-face and shortening the paths instead of making the transistors smaller. It presents the result as narrowing the gap with TSMC.",
+        "Which is why a licence matters more than a payment. For a decade the working assumption has been that export controls left Chinese fabs permanently behind; a US chipmaker paying to use a Chinese process technique is the first commercial statement that one branch of that bet produced something worth buying.",
+        "Huawei says it expects total patent licensing revenue above $6.9 billion once this closes. Note what has inverted: the company that spent the 2000s writing royalty cheques to Qualcomm now has a licensing book big enough to be a business line."
+      ]
+    },
+    {
+      "tag": "Archaeology",
+      "headline": "Four wells built to reach fresh water were found standing on the seabed off Tamil Nadu",
+      "url": "https://www.dtnext.in/news/tamilnadu/submerged-chola-port-city-yields-fresh-secrets-throws-up-torpedo-jar-during-exploration",
+      "subject": "The third phase of deep-sea excavation at Poompuhar (Kaveripoompattinam), run by the Tamil Nadu State Department of Archaeology with Indian Maritime University, wrapped up on 17 September 2026 after 18 days across a two-square-kilometre zone, recovering a West Asian torpedo jar fragment of 30-35 cm estimated diameter, four terracotta ring wells of 60-65 cm diameter resting on the sea floor, and over 250 pieces of pottery including glazed ware",
+      "subtitle": "Daily Thanthi Next, 23 September 2026 · expedition concluded 17 September",
+      "bullets": [
+        "Ring wells are the find, and the reason is simple: you only dig a well on dry land. Four of them, 60 to 65 cm across, are sitting on the sea floor off Poompuhar, 260 km from Chennai. Officials read them as marking a buried palaeochannel — an old riverbed — that coastal erosion and rising water eventually swallowed, taking the wells with it.",
+        "The other object is a fragment of a torpedo jar: a narrow West Asian vessel, estimated at 30 to 35 cm in diameter, of the type used to ship wine and olive oil. Poompuhar was the early Chola kingdom's great port, and this is physical freight rather than a mention in a poem.",
+        "Over 250 pieces of pottery came up in total, including rare glazed ware linked to ancient Iran and paddle-impressed pottery pointing at the Gangetic plains. One sentence, two trade routes, in opposite directions.",
+        "The scale is the sobering bit. The 18-day third phase, run by the Tamil Nadu State Department of Archaeology with Indian Maritime University across a two-square-kilometre zone, represents roughly 10% of the planned exploration. The report goes to the state government in February 2027."
+      ]
+    }
+  ],
+  "research": [
+    {
+      "tag": "Industry · Anthropic",
+      "title": "950 agents read DNA for 21 hours and came back with an enzyme system nobody had named",
+      "url": "https://www.anthropic.com/research/claude-discovers-novel-enzyme-system",
+      "subtitle": "Anthropic life sciences research team, 23 September 2026 · externally validated by Feng Zhang, MIT and the Broad Institute",
+      "bullets": [
+        "The result is a previously undescribed class of enzyme systems: array-associated reverse transcriptases, or ART. Each one pairs a reverse transcriptase with an array of non-coding DNA and an accessory protein of unknown function — an architecture that rhymes with CRISPR without being it. They turn up mostly in bacteriophages.",
+        "The numbers describe the search, not the science. About 950 Claude agents worked a DNA sequence database for 21 hours on 210 million tokens, analysed over 200,000 reverse transcriptases, cut that to 3,500 candidate systems and then to 20 worth a human's attention. Human input was an initial prompt and, later, a wet lab.",
+        "The moment worth isolating: one agent noticed a tandem repeat array next to a reverse transcriptase, recognised the pattern as CRISPR-like, and filed a discovery report nobody had asked it to write. That is a different capability from ranking a list — it is noticing that something is interesting.",
+        "Initial experiments show the array expresses a set of distinct short RNAs, which is what you would need for the system to be programmable the way CRISPR is. Feng Zhang, who did not run the search, confirmed the work shows how AI agents can contribute to biological discovery — and that external line is the part that makes this a result rather than a press release."
+      ]
+    },
+    {
+      "tag": "Academia · UIUC",
+      "title": "RoPE at the End of Its Rope? Theory, Diagnosis, and Mitigation of Long-Context Failures",
+      "url": "https://arxiv.org/abs/2609.39929",
+      "subtitle": "Yuyang Wu, Yufeng Du and Hao Peng, University of Illinois Urbana-Champaign · arXiv, 30 September 2026",
+      "bullets": [
+        "The claim is that long-context failure is not one bug. Rotary position embeddings have to do two incompatible things at once — keep a token's preferences stable as it moves further away, and still tell apart positions that are adjacent. The paper's theory accounts for the unequal query-key scales across frequencies that make the tradeoff bite.",
+        "From that they build RoPE Profiler, which is the useful artefact: it reuses cached activations to tell you whether a given model is failing semantically or positionally, without retraining anything.",
+        "Run across 49 long-context tasks, the two failure modes separate cleanly by task type. Reasoning tasks fail mainly through semantic reversal — the model's preferences invert at distance. Retrieval tasks fail through positional insensitivity — it cannot distinguish nearby positions. Which means the generic advice to \"use a long-context model\" is answering the wrong question.",
+        "The fix is targeted high-frequency rescaling, and the gains are large for something this cheap: up to 20 percentage points of accuracy on Qwen3-8B and up to 25 on Llama-3.1-8B-Instruct. If you have been losing recall past a certain depth, this is worth a diagnosis before an architecture change."
+      ]
+    }
+  ],
+  "wild": [
+    {
+      "tag": "Retail",
+      "headline": "Aldi made a jacket that turns into a shopping bag in ten seconds, because nobody remembers the bag",
+      "url": "https://www.famouscampaigns.com/2026/09/aldi-turns-a-jacket-into-the-shopping-bag/",
+      "entities": [
+        "Aldi",
+        "Taylor Herring"
+      ],
+      "subject": "Aldi UK unveiled the Swag For Life Jacket, a waterproof navy bomber with funnel neck and Aldi branding that folds into a reusable grocery bag in ten seconds, created with PR agency Taylor Herring and given away by email sign-up from 23 September 2026",
+      "subtitle": "Famous Campaigns, 23 September 2026",
+      "bullets": [
+        "It is a waterproof navy bomber jacket — funnel neck, big pockets, Aldi's blue and orange on it — that folds down into a grocery-sized carrier in about ten seconds. You arrive at the checkout wearing the bag.",
+        "The research it is built on is the sort that only sounds trivial until you recognise yourself in it: 46% of British shoppers regularly forget their bags, 85% keep a bag of bags at home, and nearly half buy another reusable one at least once a month after forgetting the ones they own.",
+        "Julie Ashfield, Aldi UK's chief commercial officer: \"Forgetting your bag for life is something we've all done, so our Swag For Life Jacket makes sure you'll never be without one at the checkout again.\" Made with Taylor Herring, given away by email sign-up from 23 September.",
+        "What makes it land is that it is a solution rather than a joke about one. Most supermarket stunts are shaped like a product; this one would genuinely work, which is why the idea survives being described in a sentence."
+      ]
+    },
+    {
+      "tag": "Food",
+      "headline": "Pizza Hut Ecuador redesigned the pizza box so short people could stand on it at concerts",
+      "url": "https://campaignsoftheworld.com/ooh-campaigns/pizza-hut-pizza-platform/",
+      "entities": [
+        "Pizza Hut",
+        "BBA Ecuador"
+      ],
+      "subject": "Pizza Hut in Ecuador, with agency BBA Ecuador, reinforced its pizza box's internal structure so that after the pizza is eaten the box folds into a step rated to hold up to 105 kg, distributed at festivals through concert promoters for attendees under 1.65 m with blocked sightlines",
+      "subtitle": "Campaigns of the World, September 2026 · agency BBA Ecuador",
+      "bullets": [
+        "The brief was sightlines. If you are under about 1.65 m, a standing concert is a view of other people's shoulders, and nothing in the venue is designed to help. Pizza Hut Ecuador's answer was to reinforce the internal structure of its existing box so that, once empty, it folds into a step you stand on.",
+        "The engineering claim is specific enough to be checkable: the redesigned box supports up to 105 kg. That is a cardboard pizza box carrying an adult, which is less absurd than it sounds — corrugated board is strong on edge, and the whole job is getting the folds to load it that way.",
+        "Distribution went through concert promoters during Ecuador's festival season, so the box arrives where it is needed rather than at home. Order pizza, eat pizza, gain fifteen centimetres.",
+        "Credit where it is due: BBA Ecuador, with Bryan Recalde as chief creative officer. The reason this one stays with you is that the packaging does the work — no app, no QR code, no second purchase. The thing the food came in is the thing."
+      ]
+    },
+    {
+      "tag": "Household",
+      "headline": "Ecover made four lucky T-shirts and told everyone not to wash them",
+      "url": "https://www.creativeboom.com/news/why-a-laundry-brand-made-t-shirts-youre-not-supposed-to-wash/",
+      "entities": [
+        "Ecover",
+        "Uncommon Creative Studio"
+      ],
+      "subject": "Ecover, with Uncommon Creative Studio, released The Unwashables, a limited run of four lucky T-shirts dyed with four-leaf clovers, rusted horseshoes, wishing-well water and ground meteorite, each sold or given as a shirt you are told never to wash, timed to Sustainable Fashion Week ending 4 October 2026",
+      "subtitle": "Creative Boom · campaign ran to the close of Sustainable Fashion Week, 4 October 2026",
+      "bullets": [
+        "Four shirts, four superstitions, made out of the superstitions themselves. A green one with four-leaf clovers crushed into dye and pressed into the cotton. An orange one dyed with rusted horseshoes that were wrapped, bound and weighted for 18 hours. A white one dunked in water from a wishing well. And a grey one brushed with a ground-up meteorite.",
+        "The research is the joke's setup. Ecover found 30% of Britons avoid washing lucky clothes for fear of washing the luck out, and 54% believe what they wear can influence their luck outright. So a detergent brand made garments whose entire premise is that you must not use detergent on them.",
+        "That inversion is why it works where most sustainability advertising does not. Creative Boom's note is that it \"doesn't lecture or berate consumers, a trap so many environmentally focused campaigns fall into\" — the message about making clothes last is carried by the object rather than said out loud.",
+        "Made with Uncommon Creative Studio, a limited run, timed to end with Sustainable Fashion Week on 4 October. Somewhere there is a person wearing a meteorite who now cannot go near a washing machine."
+      ]
+    }
+  ],
+  "learn": {
+    "title": "Twenty-two cars on a circular track, no bottleneck, and a traffic jam appeared anyway",
+    "subject": "The 2008 Sugiyama et al. circular-track experiment published in New Journal of Physics: 22 vehicles placed equidistantly on a 230-metre circular road, drivers instructed to preserve fixed distance and fixed velocity, produced a spontaneous stop-and-go wave travelling backwards around the loop with no bottleneck present, the phenomenon modelled as jamitons at MIT",
+    "body": [
+      "You have sat in a jam, crawled for ten minutes, reached the front and found nothing there. No crash, no works, no lane closed. It feels like a failure of explanation — surely something caused it — and the honest answer is that nothing did. The jam was not caused. It grew.",
+      "In 2008 a Japanese team settled this by removing every excuse. They marked out a circular road 230 metres around, put 22 cars on it spaced evenly, and asked the drivers to do the easiest thing imaginable: hold a steady speed and a steady gap. A circle has no merges, no exits, no slip roads and no bottleneck, so if a jam appeared it could only have come from the traffic itself. One did. Somebody drifted a little close and tapped the brake; the driver behind, with worse information and slower reactions, braked a little harder; four cars back, someone stopped. And the stopped clump then travelled slowly backwards around the loop, swallowing cars at one end and releasing them at the other, long after the driver who started it had gone round again.",
+      "Researchers at MIT call these waves jamitons, and the useful detail is that the jam is not the cars. It is a thing moving through them, always slower than they are, with its sharp edge facing the traffic coming in — which is why you hit the back of a jam suddenly and leave the front gently. It also explains the one piece of driving advice that feels wrong and is right: when the gap ahead of you opens, do not rush to close it. Space is what absorbs the wave. Closing it is how you pass the jam back to everyone behind you."
+    ]
+  },
+  "ideas": {
+    "prompt": "Ten ideas for a shop that sells only one thing",
+    "note": "Altucher's drill: ten ideas against one prompt, written fast and not defended. Reddit rate-limited the script again — r/Lightbulb and r/AppIdeas both returned 429 and the rest were skipped — so only r/SomebodyMakeThis came through, and direct RSS was blocked too. What that one feed wanted this week was conspicuously physical: a real camera shutter button on a phone, a focus wheel for a Samsung, a fingerprint USB stick you load money onto, an app that shows you what used to stand where you are. Single-purpose objects, properly made. Two below are adapted from that; the other eight are mine.",
+    "items": [
+      {
+        "text": "Extension cords. Every length, every plug, every number of sockets, and nothing else in the shop."
+      },
+      {
+        "text": "One white shirt, cut well, in every size and nothing else — the whole decision made once, by someone else."
+      },
+      {
+        "text": "Ice. Eight shapes, including the clear ones, sold by the bag to people who are having people over."
+      },
+      {
+        "text": "The missing screw. Bring the broken thing in, walk out with the one part, pay eleven rupees.",
+        "why": "Every hardware shop has this in a drawer and no hardware shop will let you browse it."
+      },
+      {
+        "text": "Bread. Baked twice a day, sold out by five, closed on Mondays, no sandwiches."
+      },
+      {
+        "text": "One umbrella, priced high enough that you will not leave it in an auto."
+      },
+      {
+        "text": "Phone cases, all of them with a real mechanical shutter button on the side.",
+        "why": "Two separate posts on r/SomebodyMakeThis this week asked for physical camera controls on a phone."
+      },
+      {
+        "text": "Maps of this city as it was, one per decade, framed and ready to hang.",
+        "why": "Adapted from the week's most-liked ask there: an app that shows you what used to be where you are standing."
+      },
+      {
+        "text": "Chairs you are allowed to sit in for a full hour before you decide."
+      },
+      {
+        "text": "Envelopes. A hundred sizes, and a person at the counter who knows which one your thing fits in."
+      }
+    ]
+  }
+}
