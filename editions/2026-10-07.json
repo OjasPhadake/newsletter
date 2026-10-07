@@ -1,0 +1,331 @@
+{
+ "date_line": "Wednesday, 7 October 2026",
+ "issue": 1,
+ "preheader": "Mistral shipped a trillion-parameter model it nicknamed Le Chonk; JetBrains grew revenue to CZK 16 billion and still lost money; ChatGPT has been signing fake New Yorker cartoons with real cartoonists' names; the RBI decides at 10 this morning and 35 of 61 economists expect the first hike since 2023; and medieval window glass does not flow, no matter what you were told.",
+ "quote": {
+  "text": "If our brains were simple enough for us to understand them, we'd be so simple that we couldn't.",
+  "author": "Ian Stewart",
+  "work": "The Collapse of Chaos: Discovering Simplicity in a Complex World",
+  "source_url": "https://www.goodreads.com/quotes/tag/complexity",
+  "note": "It is a trap with no door. Any brain capable of modelling itself completely would have to be more complicated than the thing it is modelling, and then it would not be itself. Worth keeping next to every confident claim that consciousness will be explained next decade — and next to the smaller daily version, where you explain your own motives to yourself far too fluently to be believed."
+ },
+ "agent_craft": {
+  "items": [
+   {
+    "text": "Set effort per subagent, not per session. Claude Code 2.1.292 added an `effort` parameter to the Agent tool, so say what you want out loud — \"spawn the file-search agent at low effort and the reviewer at high\" — and stop paying max-effort prices for grep work. The expensive thinking belongs in the agent that has to judge something.",
+    "source": "Claude Code changelog, v2.1.292 (6 October 2026), which lists `effort` on the Agent tool for \"running sub-agents at specified effort level\"",
+    "url": "https://code.claude.com/docs/en/changelog"
+   }
+  ]
+ },
+ "hn": [
+  {
+   "title": "Mistral Large 4",
+   "url": "https://mistral.ai/news/mistral-large-4/",
+   "hn_url": "https://news.ycombinator.com/item?id=49977979",
+   "points": 1552,
+   "comments": 950,
+   "bullets": [
+    "One trillion total parameters, 49 billion active — a hybrid instruct-and-reasoning mixture of experts, natively multimodal, across 160+ languages. Mistral's own nickname for it is \"Le Chonk\", which is the first time a frontier lab has named a model after the joke people were going to make anyway.",
+    "The numbers it leads on: 61.7% on DeepSWE v1.1, 59.4% on SWE-Atlas-QnA and 28.3% on Terminal-Bench 4 for coding; 93% on Cybench and 82% on the AA Cyber Index vulnerability-patching test; 59.9% on AutomationBench and 1,393 Elo on AA-Briefcase for agentic work. On Dense 200 visual grounding it reports 42%, just past GPT-6-Astra's 41%.",
+    "It was trained on 3,800 NVIDIA Grace Blackwell GPUs in Mistral's own European datacentres — the sovereignty argument made in hardware rather than in a press release. API pricing is $1.36 per million input tokens and $4.18 per million output.",
+    "The weights are promised \"by the end of the month\", which is the part worth watching. Today it is a public preview on Mistral Studio; a trillion-parameter open-weight release would be the largest anyone has put out, and the gap between announcement and upload is where these promises usually go to die."
+   ]
+  },
+  {
+   "title": "JetBrains reports revenue growth, net financial loss for 2025",
+   "url": "https://www.helgilibrary.com/companies/jetbrains",
+   "hn_url": "https://news.ycombinator.com/item?id=49977072",
+   "points": 567,
+   "comments": 527,
+   "bullets": [
+    "Revenue of CZK 16,008 million in 2025, up 6.3% on 2024 and a record for the company — and a net loss of CZK 315 million, against net income of CZK 2,479 million the year before. Return on equity is -11.1%. These are the standalone statutory statements JetBrains s.r.o. files with the Czech business register, read off the filings by Helgi Library.",
+    "The slowdown is visible further up the income statement than the loss. Revenue growth has decayed every year — 9,926 → 11,907 → 13,400 → 15,065 → 16,008 million CZK — while gross profit has collapsed from CZK 5,332 million in 2021 to CZK 1,708 million in 2025. Gross profit is now about a tenth of revenue; four years ago it was over half.",
+    "EBITDA fell from CZK 4,853 million in 2021 to CZK 918 million in 2025, a margin of 5.73%. EBIT is still positive at CZK 751 million. What pushed pre-tax income to -CZK 325 million was CZK 1,078 million of net financing costs, having been a CZK 810 million benefit in 2024 — so this is a below-the-line loss sitting on top of a genuinely thinner operating business.",
+    "The company is not in trouble in the way the word \"loss\" suggests. Net cash was CZK 7,584 million at year end and total assets CZK 19,470 million. JetBrains is still the largest of the 15 media companies Helgi tracks in Czechia; it is just no longer the machine it was, in the same years that its market got AI-shaped competitors."
+   ]
+  },
+  {
+   "title": "Beam: Reflection's 501B open-weight model",
+   "url": "https://reflection.ai/blog/introducing-beam",
+   "hn_url": "https://news.ycombinator.com/item?id=49969183",
+   "points": 540,
+   "comments": 167,
+   "bullets": [
+    "501 billion total parameters, 23 billion active, sparse mixture of experts, 1 million token context, Apache 2.0. Pretraining was 23.8 trillion tokens on 6,144 NVIDIA GB300 NVL72 GPUs in under four weeks, at 92.3% goodput — the share of wall-clock time that actually survived into the final model, which is the number infrastructure people will read first.",
+    "The reinforcement-learning run is the more unusual disclosure: 10,500 GB300s for four weeks, over 100 million rollouts, roughly 1.3 billion sandboxes spun up for training and grading, at a maximum RL context of 256K tokens. Very few labs publish a sandbox count.",
+    "Reported results: 80.9 on SWE-Bench Verified, 80.1 on Terminal-Bench v2.1, 97.8 on AIME 2026, 90.5 on GPQA Diamond, 78.7 on MCP Atlas, 65.5 on LongBench v2. The claim Reflection leans on is not peak capability but efficiency — 3–4× less inference compute than GLM-5.2 on advanced reasoning.",
+    "Positioning, in their own words: competitive with larger open models like GLM 5.2 and approaching Qwen 3.8-Max on coding and agentic tasks. Weights, technical report, model card and developer artefacts are due \"later this month\", with early access behind a waitlist — so this is an announcement of an open model, not yet an open model."
+   ]
+  },
+  {
+   "title": "ChatGPT is adding real cartoonists' signatures to fake New Yorker cartoons",
+   "url": "https://www.niemanlab.org/2026/10/chatgpt-is-adding-real-cartoonists-signatures-to-fake-new-yorker-cartoons/",
+   "hn_url": "https://news.ycombinator.com/item?id=49971846",
+   "points": 539,
+   "comments": 399,
+   "bullets": [
+    "A cartoon of Dolly Parton arriving at the pearly gates with Tim Curry went viral after their deaths in late August — one tweet of it got 25,000 likes — signed \"BLOPER\" in the corner. That is New Yorker cartoonist Brendan Loper's pen name. He did not draw it. A Dolly Parton fan had asked ChatGPT for \"a New Yorker-style cartoon\" and posted the result to Facebook. \"I had people writing to me about this cartoon, asking if it was mine,\" Loper told Nieman Lab.",
+    "Nieman's Andrew Deck documented more than 15 New Yorker cartoonists whose signatures the image generator has reproduced, including Harry Bliss, Emily Flake, Joe Dator, Pat Byrnes, Jason Adam Katzenstein, and dead ones — George Booth, Saul Steinberg, Warren Miller. Pat Byrnes has signed with a period after his name since he was a teenager; every one of the dozen-plus fakes bearing his name had the period.",
+    "Condé Nast signed a licensing deal with OpenAI in 2024, but a New Yorker spokesperson says it has never granted any LLM developer permission to train on the cartoons — and could not easily do so, since contributing cartoonists work on spec and keep their own copyright. Some outputs also carried the New Yorker logo, which no deal permits. OpenAI declined to answer how the signatures got in.",
+    "The legal position is awkward in an instructive way. Cornell's James Grimmelmann points out that copyright would have to hang on style, not signature — \"attribution is a very small part of the fair use inquiry\" — and a right-of-publicity claim needs commercial use, which nobody has shown. Meanwhile the Baltimore Sun fired its editorial cartoonist of 30 years and now runs AI-generated cartoons. Joe Dator's line is the one that sticks: \"I've had people hack my credit card... When they hacked my credit card, they didn't dress up like me.\""
+   ]
+  },
+  {
+   "title": "Nobel Prize in Physics 2026: Francis Halzen",
+   "url": "https://www.nobelprize.org/prizes/physics/2026/",
+   "hn_url": "https://news.ycombinator.com/item?id=49976265",
+   "points": 511,
+   "comments": 168,
+   "bullets": [
+    "Announced 6 October: the whole prize, 12 million Swedish kronor, to one person — Francis Halzen of the University of Wisconsin–Madison, \"for decisive contributions to the IceCube Neutrino Observatory and the discovery of high-energy neutrinos of astrophysical origin\". Undivided physics prizes are rare.",
+    "The idea dates to 1988. Halzen's bet was that a cubic kilometre of South Pole glacial ice could be a detector: clear, interference-free, geologically quiet, and already there. When a neutrino hits an atomic nucleus it makes a flash of light, and sensors buried in the ice can track it. IceCube was finished in 2011.",
+    "Why it mattered scientifically: the cosmos contains natural accelerators firing particles at energies up to a million times anything built on Earth, and neutrinos arrive from them without bending or losing energy. They carry information no other particle can. The catch is that they almost never interact, which is why the detector has to be the size of a mountain.",
+    "Mark Pearce, chair of the Nobel Committee for Physics: \"His tenacity and scientific vision has paved the way for a new kind of astronomy.\" Halzen was born in Tienen, Belgium in 1944 and took his PhD at KU Leuven in 1969 — the prize is for an instrument, and for being stubborn about it for twenty-three years."
+   ]
+  }
+ ],
+ "markets": {
+  "indices": [
+   {
+    "name": "Sensex · Tue 6 Oct close",
+    "value": "73,067.81",
+    "change": "685.34 (0.95%)",
+    "direction": "up"
+   },
+   {
+    "name": "Nifty 50 · Tue 6 Oct close",
+    "value": "22,776.10",
+    "change": "220.35 (0.98%)",
+    "direction": "up"
+   },
+   {
+    "name": "Nifty Pharma · Tue 6 Oct",
+    "value": "26,549.60",
+    "change": "1.66%",
+    "direction": "up"
+   },
+   {
+    "name": "Nifty FMCG · Tue 6 Oct",
+    "value": "45,205.35",
+    "change": "1.40%",
+    "direction": "up"
+   },
+   {
+    "name": "Bank Nifty · Tue 6 Oct",
+    "value": "55,128.40",
+    "change": "0.76%",
+    "direction": "up"
+   },
+   {
+    "name": "Nifty IT · Tue 6 Oct",
+    "value": "28,136.05",
+    "change": "0.59%",
+    "direction": "down"
+   },
+   {
+    "name": "Nifty Smallcap 100 · Tue 6 Oct",
+    "value": "19,448.70",
+    "change": "1.56%",
+    "direction": "up"
+   },
+   {
+    "name": "USD/INR · Tue 6 Oct",
+    "value": "96.42",
+    "change": "0.14%",
+    "direction": "up"
+   },
+   {
+    "name": "US 10-year yield · Tue 6 Oct",
+    "value": "5.27%",
+    "change": "off the morning's highs",
+    "direction": "down"
+   }
+  ],
+  "stories": [
+   {
+    "headline": "Two sessions up, and the whole market is waiting for 10 o'clock this morning",
+    "url": "https://stockpil.com/india-markets-today-2026-10-06",
+    "source": "Stockpil's India close for 6 October 2026 (Nifty, sector and broader indices, USD/INR, FII/DII) and Business Standard's closing-bell blog for the same session (Sensex, strategist comment, US yields). The figures describe Tuesday 6 October; Indian markets are open again this morning, and the RBI's decision lands at 10:00 am.",
+    "bullets": [
+     "Sensex closed at 73,067.81, up 685.34 points or 0.95%. Nifty 50 closed at 22,776.10, up 220.35 points or 0.98%, from a previous close of 22,555.75. That is two gaining sessions in a row, extending the rebound off Friday's two-year low.",
+     "It was broad rather than narrow. Nifty Next 50 rose 1.10%, Midcap 100 1.08% to 59,761.20 and Smallcap 100 1.56% to 19,448.70; across the Nifty 500 advances beat declines 359 to 138, and 32 of the 50 index stocks rose. Nifty Pharma led at +1.66% to 26,549.60, with FMCG +1.40%, Financial Services +1.17%, Energy +0.88%, Metal +0.81% and Bank Nifty +0.76%. The laggards were small: PSU Bank -0.08%, Realty -0.27%, IT -0.59% to 28,136.05.",
+     "The single stock that ran was Trent, up 12.64% to ₹2,906 after its quarterly business update; Honasa Consumer, Meesho and Dabur also rose 8%, 6% and 3% on theirs. Coal India was the worst of the index at -3.16%. The rupee went the wrong way, USD/INR up 0.14% to 96.42.",
+     "On flows, Stockpil reports the 5 October cash-segment numbers rather than Tuesday's: FIIs net sellers of ₹4,699 crore (bought ₹15,675 crore, sold ₹20,374 crore) and DIIs net buyers of ₹5,182 crore (bought ₹20,493 crore, sold ₹15,311 crore). Tuesday's provisional flows were not published by a source we could read, so they are left out rather than guessed.",
+     "The reason nobody committed hard yesterday is this morning. The MPC met 5–7 October and Governor Sanjay Malhotra announces at 10:00 am; in a Reuters poll of 61 economists, 35 expected a 25 basis point rise to 5.50% — which would be the first increase since February 2023. Kotak's Shrikant Chouhan put the upside at 22,950–23,000 on the Nifty and 73,300–73,500 on the Sensex, with 22,600/72,500 as the floor."
+    ]
+   }
+  ]
+ },
+ "trends": [
+  {
+   "tag": "India",
+   "headline": "The RBI has not raised rates since February 2023, and most economists think that ends at 10 this morning",
+   "url": "https://www.multibagg.ai/market-pulse/articles/rbi-rate-hike-2026-timing-cmunu3mjq00082spc0bwbgyv2",
+   "subject": "The Reserve Bank's rate-setting committee sat 5 to 7 October 2026 and Governor Sanjay Malhotra speaks at 10 this morning; repo is 5.25% and 35 of 61 economists in a Reuters poll expect a rise to 5.50%, the first such move since February 2023",
+   "subtitle": "Multibagg's rate-hike preview, 30 September 2026 · repo rate 5.25%, held unchanged in August with a neutral stance · the MPC sat 5–7 October and announces at 10:00 am IST today",
+   "bullets": [
+    "The committee sat from 5 to 7 October and Governor Sanjay Malhotra speaks at 10:00 am this morning. Repo is 5.25%, where August left it, stance neutral.",
+    "The Reuters poll split 35 of 61 for a quarter-point rise to 5.50%. Of 53 economists asked about December, 29 expected at least another quarter point on top — so the consensus is not one move but the start of a sequence. The Reuters median then has rates sitting at 5.75% until at least mid-2028, which is a shallow climb by any historical standard.",
+    "The case for going now is that consumer prices have risen for ten months straight; retail inflation was 4.38% in June against a 4% target, and the threshold analysts keep naming is core above 4.5%. HSBC's Pranjul Bhandari told Telangana Today on 27 September: \"We maintain the long-held view of two 25 bp hikes in the October and December meetings\", taking repo to 5.75%. DBS's Radhika Rao notes liquidity has narrowed from a peak of ₹10–11 lakh crore to under ₹5 lakh crore, which makes any hike bite harder.",
+    "What makes this a landmark rather than a tweak: the RBI has not raised the repo rate since February 2023. Everything since has been a hold or a cut. Repo-linked home loans reprice almost immediately, so EMIs or tenures move without anyone signing anything; new fixed deposits get repriced up, existing ones do not."
+   ]
+  },
+  {
+   "tag": "Platforms",
+   "headline": "A moderation model you can argue with in English, and it answers in under 50 milliseconds",
+   "url": "https://techcrunch.com/2026/10/06/how-ai-decision-models-could-change-content-moderation/",
+   "subject": "Musubi's PolicyLM-1.7B reads a moderation rule written in ordinary English and returns a yes-or-no judgement on a message in under 50 milliseconds, with no retraining when the rule changes",
+   "subtitle": "TechCrunch, 6 October 2026 · Musubi, open weights, 1.7 billion parameters",
+   "bullets": [
+    "The shape of the thing is the interesting part. It is a decision model, not a text generator: you hand it a policy written in plain English and a message, and it returns a probability that the message falls in that category. Nothing to read, nothing to parse.",
+    "The economics are what make it a platform shift rather than a paper. It runs at roughly the cost and speed of a traditional classifier — under 50 milliseconds — which is the budget real moderation pipelines actually have. Large-model moderation has never fit inside it.",
+    "And the thing it removes is the retraining cycle. Today, changing a moderation policy means relabelling data and training a new classifier, so the policy is effectively owned by whoever controls the training run. Here the policy is a prompt, and the person who writes the rules can iterate on them directly.",
+    "Filip Jankovic, Musubi's co-founder and chief AI officer, frames the demand as measurement rather than enforcement: \"Product teams just want a better understanding of what's happening on their platform, especially as the amount of content is exponentially increasing.\" The weights are open; TechCrunch reports no accuracy benchmarks, which is the obvious thing to ask for next."
+   ]
+  },
+  {
+   "tag": "Wildcard",
+   "headline": "A form of iron that should only exist above 912°C was sitting in Moon dust at room temperature",
+   "url": "https://www.thebrighterside.news/post/change-6-samples-reveal-a-form-of-magnetic-iron-never-before-found-on-the-moon/",
+   "subject": "A team led from the High Magnetic Field Laboratory of the Chinese Academy of Sciences reported in PNAS on 29 September 2026 the first identification of pure face-centred-cubic gamma-iron preserved at ambient temperature in natural lunar material, found in impact glasses from the Chang'e-6 South Pole-Aitken Basin samples, with off-axis electron holography showing magnetic vortex states in particles above about 100 nanometres",
+   "subtitle": "PNAS, 29 September 2026 · High Magnetic Field Laboratory, Chinese Academy of Sciences · Chang'e-6 samples from the South Pole–Aitken Basin",
+   "bullets": [
+    "Gamma-iron is the face-centred-cubic phase. On Earth it exists between roughly 912°C and 1,394°C at low pressure and turns back into ordinary body-centred-cubic alpha-iron on the way down. Finding it intact, at ambient temperature, in natural material is new.",
+    "It survived because of how fast an impact cools. The particles sit in impact glasses from the far side's South Pole–Aitken Basin, brought back by Chang'e-6, and they range from under 10 nanometres to about 140. The team cut sections with a focused ion beam and read them with transmission electron microscopy and diffraction.",
+    "Off-axis electron holography — which images the magnetic field inside a single particle — showed that above about 100 nanometres both alpha- and gamma-iron grains hold a vortex state, with the magnetic moments curling round inside the grain instead of all pointing one way. Vortex states are stable, which is what makes a grain a usable recording.",
+    "The payoff is a dating argument. Alpha- and gamma-iron freeze under different conditions, so they can record different instants of the same cooling event — which offers a way to tell an ancient core-generated lunar magnetic field from the brief field an impact itself generates for seconds or minutes. That distinction is the whole fight in lunar magnetism."
+   ]
+  }
+ ],
+ "research": [
+  {
+   "tag": "Industry · Google DeepMind",
+   "title": "A 740-million-parameter embedding model that puts text, code, images, audio and video in one space, and runs in 191MB",
+   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/",
+   "subtitle": "Sahil Dua and Henrique Schechter Vera, Google DeepMind · 6 October 2026 · Apache 2.0, built on Gemma 4",
+   "bullets": [
+    "EmbeddingGemma 2 is 740 million parameters built on Gemma 4, and the design is modular rather than monolithic: text-only is 270M, with optional encoders adding vision (170M) and audio (300M). Everything lands in one shared embedding space, so a query can retrieve across modalities without a translation layer.",
+    "The headline gain is code. MTEB code goes to 78.68, up 9.92 points on version 1 — a large jump for an embedding model, and the number that matters if you are building retrieval over a repository. Text performance holds version 1's multilingual level; on MIEB and MAEB it reports beating larger vision and audio specialists.",
+    "The engineering is aimed at running on the device. Native 768 dimensions, truncatable to 512, 256 or 128 by Matryoshka representation learning, for up to 6× less vector storage. Context window 8K tokens, which is about 5.5 minutes of audio. Memory footprint around 191MB for text-only, and about 567MB quantised with the full multimodal stack on a Pixel 11 Pro.",
+    "Apache 2.0, which is the part to take seriously. An open multimodal embedding model small enough to sit on a phone makes privacy-preserving retrieval a default rather than a project — the embeddings never have to leave the handset."
+   ],
+   "subject": "EmbeddingGemma 2 embeds text, code, images, audio and video into one shared space, is Apache 2.0, and fits in about 191MB on a phone"
+  },
+  {
+   "tag": "Academia · NYU, Stanford, UW–Madison",
+   "title": "Sharpening Tax in Post-Training",
+   "url": "https://arxiv.org/abs/2610.01509",
+   "subtitle": "Changdae Oh, Qi Zeng, Qi Qi, Andrey Zhmoginov, Deren Lei and co-authors · arXiv, 1 October 2026 · affiliations resolved to New York University, Stanford and the University of Wisconsin–Madison",
+   "bullets": [
+    "The surprising claim: a plain pre-trained model, given a light inference harness, is already a capable agent — and often beats its own post-trained version on pass@K coverage given enough test-time budget, despite much worse pass@1. The RL step buys consistency, not new ability.",
+    "The mechanism they identify is a push to the extremes. Post-training moves tasks toward always-solved or never-solved, which raises sampling efficiency and single-shot accuracy while quietly destroying the tail of problems the base model could occasionally crack. What you lose is the long shot.",
+    "Sharpening Tax is the metric they propose for it: how much test-time scalability post-training cost you. Measured across 14 base/post-trained pairs from four model families on three agentic benchmarks — 42 cases — the tax shows up in most of them, and can be estimated from only a few rollouts.",
+    "They also ship a fix cheap enough to be adopted: posterior-tempered group sampling, a plug-in Bayesian sampler that sets the sampling temperature per prompt from that prompt's estimated difficulty. Used during RL training in two agentic environments it pays a smaller tax than fixed temperature and improves pass@1 as well — so the tradeoff is apparently not forced."
+   ],
+   "subject": "Base models given a light inference harness beat their own RL-tuned versions on pass@K coverage across agentic benchmarks; the Sharpening Tax metric measures what that tuning costs in test-time scalability, and posterior-tempered group sampling reduces it"
+  }
+ ],
+ "wild": [
+  {
+   "tag": "Food",
+   "headline": "A hip-hop duo and a 24-hour diner made merchandise together, and people queued from 4am for an apron",
+   "url": "https://www.ajc.com/news/2026/10/outkast-waffle-house/",
+   "entities": [
+    "Outkast",
+    "Waffle House"
+   ],
+   "subject": "Outkast and Waffle House sold joint merchandise including branded diner aprons at a pop-up outside the Atlanta restaurant opposite Centennial Olympic Park, with the first person in the queue arriving at about 4am",
+   "subtitle": "The Atlanta Journal-Constitution, 2 October 2026 · Waffle House at 135 Andrew Young International Blvd, Atlanta",
+   "bullets": [
+    "The collection is T-shirts, jerseys, hoodies, hats, socks, mugs — and Outkast-branded Waffle House aprons, which is the item that tells you someone understood the assignment. One shirt reads \"Gator Belts and Patty Melts\", a rewrite of a line from their 2000 hit.",
+    "It ran as a pop-up at the Waffle House across from Centennial Olympic Park, opening at 11am on Friday 2 October — 11:07, in the event. The first person in line, Dedren Snead, arrived at about 4am. By 10 the queue was round the block. One customer spent $250 on a hoodie, two shirts and socks.",
+    "The menu got the treatment too: limited-edition André 3000 and Big Boi meals, and free souvenir menus. John and Melanie Williams turned up at 8:30 in a 1972 Cadillac Coupe DeVille, which is roughly the correct vehicle.",
+    "There is no history between the band and the chain, and that is exactly why it works. Waffle House opened in Avondale Estates in 1955; Outkast's debut was 1994. The collaboration is not a product fit, it is a claim about who owns Atlanta, made by two institutions who can both plausibly make it in the year of ATLiens' thirtieth anniversary."
+   ]
+  },
+  {
+   "tag": "Retail",
+   "headline": "Flipkart noticed that half of Kolkata's buses already shout the name of its sale, and started printing offers on the tickets",
+   "url": "https://www.mediainfoline.com/ooh/flipkart-turns-kolkatas-bbd-bagh-into-a-big-billion-days-moment-through-the-citys-iconic-bus-culture",
+   "entities": [
+    "Flipkart",
+    "Talented",
+    "Calm Kaam"
+   ],
+   "subject": "Flipkart printed Big Billion Days offers and scannable QR codes onto the paper bus tickets of Kolkata buses bound for BBD Bagh, whose initials already match the name of the sale",
+   "subtitle": "MediaInfoline, 22 September 2026 · conceptualised by Talented, produced by Calm Kaam",
+   "bullets": [
+    "BBD Bagh — the colonial Dalhousie Square, renamed for Binoy, Badal and Dinesh — is one of Kolkata's busiest hubs, and so a conductor's shout of \"BBD! BBD!\" is already part of the city's soundtrack. Flipkart's sale is called Big Billion Days. Nobody had to invent anything; they just had to notice.",
+    "The media buy is the ticket. Select buses on BBD Bagh routes carry Flipkart branding, and the paper tickets passengers get handed carry Big Billion Days offers and a QR code to scan. A bus ticket is the rare piece of print that every passenger holds, looks at and keeps for the length of the journey.",
+    "The film built on it follows a conductor who has called that route for years, with the joke that the same two syllables now mean a sale. The campaign name, 'Kothaye Jaabe Dada?' — where are you going, brother? — is what he says all day anyway.",
+    "Conceptualised by Talented with Calm Kaam. What separates it from the usual festive spend is that it costs almost nothing and cannot be scaled: it only works in one city, in one language, on one set of routes, which is the opposite of how national campaigns are normally planned."
+   ]
+  },
+  {
+   "tag": "FMCG",
+   "headline": "India's best-known chocolate-chip biscuit is now an ice cream, and neither company had to build a factory",
+   "url": "https://mediabrief.com/vadilal-and-parle-partnervadilal-parle-launch-hide-and-seek-ice-cream/",
+   "entities": [
+    "Vadilal",
+    "Parle Products",
+    "Hide & Seek"
+   ],
+   "subject": "Vadilal licensed Parle's Hide & Seek biscuit name onto a chocolate-chip ice cream sold in tubs and cones from 25 September, under the line 'Jodi Aisi Ki Nazar Na Lage'",
+   "subtitle": "MediaBrief, 26 September 2026 · available from 25 September in tubs and cones",
+   "bullets": [
+    "It is a trademark licence, not a joint venture. Parle lends the name and the four decades of recall attached to it; Vadilal supplies the manufacturing, the cold chain and the distribution it already owns. Neither side builds anything new, which is why this kind of deal keeps happening.",
+    "The product is the biscuit's logic transplanted: chocolate chips and cookie crunch through ice cream, in tubs and cones, on sale from 25 September through Vadilal parlours, retail, supermarkets, modern trade and quick commerce.",
+    "The campaign is called 'Jodi Aisi Ki Nazar Na Lage' — a pairing so good it needs protection from the evil eye. Using a superstition about envy to advertise a co-branding deal is a better joke than most co-branding deals get.",
+    "Mayank Shah, Parle's chief marketing officer: \"Hide & Seek has always been about the excitement of finding that chocolate chip in every bite.\" Vadilal's CMO Ravi Makhwana went with \"tremendous emotional resonance and an unmistakable taste profile\", which is what you say when the actual answer is that the name sells itself from the freezer."
+   ]
+  }
+ ],
+ "learn": {
+  "title": "Medieval window glass is thicker at the bottom, and it is not because glass flows",
+  "subject": "Medieval cathedral window panes are thicker at the bottom because crown glass was blown and spun into a disk thick at its centre, not because glass slowly flows; Westminster Abbey samples measured at Penn State and Corning flow about one nanometre per billion years",
+  "body": [
+   "You have been told this one, probably by someone standing in a church. The old panes are thicker at the bottom because glass is not really a solid — it is an extremely slow liquid, and over eight hundred years it has quietly sagged. It is a wonderful fact. It is also wrong, and it is wrong in a way that is more interesting than the myth.",
+   "In 2018 John Mauro at Penn State, with three researchers at Corning, took actual 13th-century glass from the windows of Westminster Abbey and did the calculation properly. The earlier numbers, he pointed out, came from measurements made decades ago in the Soviet Union and never included explicit fluid-flow calculations. His team's answer was that medieval glass is far less viscous at room temperature than anyone had thought — by sixteen orders of magnitude, a factor of ten thousand trillion. The glass flows much faster than the old figure said. It flows about one nanometre in a billion years. At that rate the Abbey's windows have moved roughly one millionth of the width of a human hair since they were installed, and the Sun will have expanded before anyone notices.",
+   "So why are they thicker at the bottom? Because of how they were made. Crown glass was blown into a hollow globe, cut open and spun out flat, which leaves a disk thick in the middle and thin at the rim. Panes cut from that disk are wedges, not slabs. The glazier then had to decide which way up to hang each one — and put the heavy edge at the bottom, because it looks like it belongs there. Every cathedral window in Europe is evidence of a workman's instinct about stability, not of physics. The next time someone tells you the glass is flowing, the honest reply is that a person made that choice, by hand, and you can still see which way they turned it."
+  ]
+ },
+ "ideas": {
+  "prompt": "Ten things in your home that should do two jobs instead of one",
+  "note": "Altucher's drill: ten against one prompt, written fast, not defended. Reddit rate-limited the script again — r/AppIdeas and r/Business_Ideas both returned 429 and the rest were skipped — so the raw material was r/SomebodyMakeThis and r/Lightbulb. Both were unusually furniture-shaped this week: a table that converts between coffee table, dining table and seated desk; an apartment building designed so you barely have to think about anything; a universal input that kills hold music. The recurring wish is not for more objects. It is for fewer objects that do more. Two below are adapted from those threads; the other eight are mine.",
+  "items": [
+   {
+    "text": "A dining table whose legs telescope, so it is a coffee table on weekdays and a desk at the height you actually work at.",
+    "why": "The most-upvoted ask on r/SomebodyMakeThis this week was exactly this, as one piece of furniture rather than three."
+   },
+   {
+    "text": "A bathroom mirror cabinet with a shelf that holds a phone at reading height, because that is already what you do."
+   },
+   {
+    "text": "A bedside lamp that is also the charger, with the cable going into the lamp and not across the floor."
+   },
+   {
+    "text": "A clothes-drying rack that folds into the wall and becomes a bench."
+   },
+   {
+    "text": "One button by the front door that silences everything in the house — hold music, notifications, the fridge alarm.",
+    "why": "Someone on r/Lightbulb wanted a universal input to kill hold music; the general version is better."
+   },
+   {
+    "text": "A kitchen chopping board with a hole and a bin bracket, so the peelings never travel."
+   },
+   {
+    "text": "Stair treads that are also drawers. The deepest unused storage in any house is vertical."
+   },
+   {
+    "text": "A ceiling fan with a second, slower setting that is only for pushing warm air down in winter."
+   },
+   {
+    "text": "A door mat that weighs you, silently, and tells nobody."
+   },
+   {
+    "text": "A sofa arm with a flat lid, hinged, holding exactly the remote, the charger and the nail clippers that currently live nowhere."
+   }
+  ]
+ }
+}

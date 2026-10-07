@@ -5078,6 +5078,162 @@
         "famouscampaigns.com",
         "theedgemalaysia.com"
       ]
+    },
+    {
+      "date": "2026-10-07",
+      "issue": 1,
+      "quote_text": [
+        "If our brains were simple enough for us to understand them, we'd be so simple that we couldn't."
+      ],
+      "quote_author": [
+        "Ian Stewart"
+      ],
+      "idea_text": [
+        "A dining table whose legs telescope, so it is a coffee table on weekdays and a desk at the height you actually work at.",
+        "A bathroom mirror cabinet with a shelf that holds a phone at reading height, because that is already what you do.",
+        "A bedside lamp that is also the charger, with the cable going into the lamp and not across the floor.",
+        "A clothes-drying rack that folds into the wall and becomes a bench.",
+        "One button by the front door that silences everything in the house — hold music, notifications, the fridge alarm.",
+        "A kitchen chopping board with a hole and a bin bracket, so the peelings never travel.",
+        "Stair treads that are also drawers. The deepest unused storage in any house is vertical.",
+        "A ceiling fan with a second, slower setting that is only for pushing warm air down in winter.",
+        "A door mat that weighs you, silently, and tells nobody.",
+        "A sofa arm with a flat lid, hinged, holding exactly the remote, the charger and the nail clippers that currently live nowhere."
+      ],
+      "idea_prompt": [
+        "Ten things in your home that should do two jobs instead of one"
+      ],
+      "tip_text": [
+        "Set effort per subagent, not per session. Claude Code 2.1.292 added an `effort` parameter to the Agent tool, so say what you want out loud — \"spawn the file-search agent at low effort and the reviewer at high\" — and stop paying max-effort prices for grep work. The expensive thinking belongs in the agent that has to judge something."
+      ],
+      "hn_id": [
+        "49977979",
+        "49977072",
+        "49969183",
+        "49971846",
+        "49976265"
+      ],
+      "link": [
+        "https://mistral.ai/news/mistral-large-4/",
+        "https://www.helgilibrary.com/companies/jetbrains",
+        "https://reflection.ai/blog/introducing-beam",
+        "https://www.niemanlab.org/2026/10/chatgpt-is-adding-real-cartoonists-signatures-to-fake-new-yorker-cartoons/",
+        "https://www.nobelprize.org/prizes/physics/2026/",
+        "https://www.multibagg.ai/market-pulse/articles/rbi-rate-hike-2026-timing-cmunu3mjq00082spc0bwbgyv2",
+        "https://techcrunch.com/2026/10/06/how-ai-decision-models-could-change-content-moderation/",
+        "https://www.thebrighterside.news/post/change-6-samples-reveal-a-form-of-magnetic-iron-never-before-found-on-the-moon/",
+        "https://www.ajc.com/news/2026/10/outkast-waffle-house/",
+        "https://www.mediainfoline.com/ooh/flipkart-turns-kolkatas-bbd-bagh-into-a-big-billion-days-moment-through-the-citys-iconic-bus-culture",
+        "https://mediabrief.com/vadilal-and-parle-partnervadilal-parle-launch-hide-and-seek-ice-cream/",
+        "https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/",
+        "https://arxiv.org/abs/2610.01509",
+        "https://stockpil.com/india-markets-today-2026-10-06"
+      ],
+      "subject": [
+        "The Reserve Bank's rate-setting committee sat 5 to 7 October 2026 and Governor Sanjay Malhotra speaks at 10 this morning; repo is 5.25% and 35 of 61 economists in a Reuters poll expect a rise to 5.50%, the first such move since February 2023",
+        "Musubi's PolicyLM-1.7B reads a moderation rule written in ordinary English and returns a yes-or-no judgement on a message in under 50 milliseconds, with no retraining when the rule changes",
+        "A team led from the High Magnetic Field Laboratory of the Chinese Academy of Sciences reported in PNAS on 29 September 2026 the first identification of pure face-centred-cubic gamma-iron preserved at ambient temperature in natural lunar material, found in impact glasses from the Chang'e-6 South Pole-Aitken Basin samples, with off-axis electron holography showing magnetic vortex states in particles above about 100 nanometres",
+        "Outkast and Waffle House sold joint merchandise including branded diner aprons at a pop-up outside the Atlanta restaurant opposite Centennial Olympic Park, with the first person in the queue arriving at about 4am",
+        "Flipkart printed Big Billion Days offers and scannable QR codes onto the paper bus tickets of Kolkata buses bound for BBD Bagh, whose initials already match the name of the sale",
+        "Vadilal licensed Parle's Hide & Seek biscuit name onto a chocolate-chip ice cream sold in tubs and cones from 25 September, under the line 'Jodi Aisi Ki Nazar Na Lage'",
+        "EmbeddingGemma 2 embeds text, code, images, audio and video into one shared space, is Apache 2.0, and fits in about 191MB on a phone",
+        "Base models given a light inference harness beat their own RL-tuned versions on pass@K coverage across agentic benchmarks; the Sharpening Tax metric measures what that tuning costs in test-time scalability, and posterior-tempered group sampling reduces it",
+        "Medieval cathedral window panes are thicker at the bottom because crown glass was blown and spun into a disk thick at its centre, not because glass slowly flows; Westminster Abbey samples measured at Penn State and Corning flow about one nanometre per billion years"
+      ],
+      "brand": [
+        "Outkast",
+        "Waffle House",
+        "Flipkart",
+        "Talented",
+        "Calm Kaam",
+        "Vadilal",
+        "Parle Products",
+        "Hide & Seek",
+        "India's"
+      ],
+      "brand_mention": [
+        "T-shirts",
+        "Outkast-branded Waffle House",
+        "Gator Belts",
+        "Patty Melts",
+        "Waffle House",
+        "Centennial Olympic Park",
+        "Dedren Snead",
+        "André 3000",
+        "Big Boi",
+        "Melanie Williams",
+        "Cadillac Coupe DeVille",
+        "Avondale Estates",
+        "Outkast's",
+        "Atlanta",
+        "ATLiens",
+        "BBD Bagh",
+        "Dalhousie Square",
+        "Binoy",
+        "Badal",
+        "Dinesh",
+        "Kolkata's",
+        "BBD",
+        "Big Billion Days",
+        "Flipkart",
+        "QR",
+        "Kothaye Jaabe Dada",
+        "Talented",
+        "Calm Kaam",
+        "Vadilal",
+        "Jodi Aisi Ki Nazar Na Lage",
+        "Mayank Shah",
+        "Parle's",
+        "Hide",
+        "Seek",
+        "Vadilal's CMO Ravi Makhwana"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "The RBI has not raised rates since February 2023, and most economists think that ends at 10 this morning"
+        ],
+        [
+          "trends",
+          "A moderation model you can argue with in English, and it answers in under 50 milliseconds"
+        ],
+        [
+          "trends",
+          "A form of iron that should only exist above 912°C was sitting in Moon dust at room temperature"
+        ],
+        [
+          "wild",
+          "A hip-hop duo and a 24-hour diner made merchandise together, and people queued from 4am for an apron"
+        ],
+        [
+          "wild",
+          "Flipkart noticed that half of Kolkata's buses already shout the name of its sale, and started printing offers on the tickets"
+        ],
+        [
+          "wild",
+          "India's best-known chocolate-chip biscuit is now an ice cream, and neither company had to build a factory"
+        ],
+        [
+          "research",
+          "A 740-million-parameter embedding model that puts text, code, images, audio and video in one space, and runs in 191MB"
+        ],
+        [
+          "research",
+          "Sharpening Tax in Post-Training"
+        ],
+        [
+          "learn",
+          "Medieval window glass is thicker at the bottom, and it is not because glass flows"
+        ]
+      ],
+      "editorial_domains": [
+        "ajc.com",
+        "mediabrief.com",
+        "mediainfoline.com",
+        "multibagg.ai",
+        "techcrunch.com",
+        "thebrighterside.news"
+      ]
     }
   ]
 }
