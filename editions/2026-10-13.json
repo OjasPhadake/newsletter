@@ -1,0 +1,333 @@
+{
+ "date_line": "Tuesday, 13 October 2026",
+ "issue": 1,
+ "preheader": "A Substack post with 1,027 points argues passkeys are a parts catalogue with one word on the box; Ukrainian drones hit three Yandex data centres and its crawler traffic fell to 0.3% of its own peak; the rupee had its best day in more than six months and the Sensex fell 547 points anyway; India's data protection law has been corrected to add a missing \"of\"; and the man who invented the black box was told it was of little immediate use.",
+ "quote": {
+  "text": "I couldn't claim that I was smarter than sixty-five other guys--but the average of sixty-five other guys, certainly!",
+  "author": "Richard P. Feynman",
+  "work": "Surely You're Joking, Mr. Feynman!: Adventures of a Curious Character",
+  "source_url": "https://www.goodreads.com/quotes/tag/statistics",
+  "note": "The joke is modesty; the content is a warning. Being better than the average of a group and being better than the people in it are two different claims, and the second does not follow from the first. Keep it next to every sentence of the form \"the model now outperforms the average human\" — an average is not a person, and nobody has ever lost an argument to one."
+ },
+ "agent_craft": {
+  "items": [
+   {
+    "text": "If you rely on a hook to stop something — a secret scanner, a lint gate, a guard on `rm` — set `onFailure: \"block\"` on it. As of Claude Code 2.1.295 a hook that cannot start, times out, or exits with an unexpected code blocks the action instead of quietly letting it through. A guard that fails open is not a guard.",
+    "source": "Claude Code changelog, v2.1.295 (8 October 2026)",
+    "url": "https://code.claude.com/docs/en/changelog"
+   },
+   {
+    "text": "Give a long-running subagent its own `autoCompactWindow` in its frontmatter (new in 2.1.296) so it compacts earlier than the main conversation. The agent grinding through forty files should tidy up after itself rather than hand you back a context window with no room left in it.",
+    "source": "Claude Code changelog, v2.1.296 (9 October 2026)",
+    "url": "https://code.claude.com/docs/en/changelog"
+   }
+  ]
+ },
+ "hn": [
+  {
+   "title": "Passkeys are a trap",
+   "url": "https://nonfunctional.substack.com/p/passkeys-are-a-trap-do-not-use-them",
+   "hn_url": "https://news.ycombinator.com/item?id=50048312",
+   "points": 1027,
+   "comments": 540,
+   "bullets": [
+    "The objection is not that passkeys are insecure — the author concedes they are better than passwords and are usually domain-bound, which makes them resistant to man-in-the-middle attacks. It is that one word covers many different objects. A passkey can be copyable or not, transferable or not, hardware-backed or a file, user-present or not, user-verified or not: \"since you are given four distinct binary choices, you could call that 16 different kinds of passkey,\" and WebAuthn Level 3 added more in 2022.",
+    "The counterintuitive one: a non-copyable passkey can still be transferable. Send it to a friend and it leaves your device. The author notes we rarely meet digital things that behave like physical objects — and that if you think you made one kind and actually made the other, you find out on the day your laptop dies.",
+    "Your own passkey software can lie about every one of those flags — unless the site demands an *attested* passkey. Remote attestation needs your cryptoprocessor, firmware, operating system and passkey manager to all vouch for each other, so it cannot be faked, and the site chooses which combination it will accept.",
+    "That is the actual argument: attestation is a working lever to refuse software a platform has not approved — Linux, a refurbished phone OS, GrapheneOS, a browser that still runs uBlock Origin (about 40 million users before Chrome dropped it). His recommendation is not passwords but a physical FIDO security key such as a YubiKey: the same cryptography, none of the strings."
+   ]
+  },
+  {
+   "title": "Fingerprints are the new cookies",
+   "url": "https://royfish.dev/fingerprints-are-the-new-cookies",
+   "hn_url": "https://news.ycombinator.com/item?id=50048642",
+   "points": 703,
+   "comments": 344,
+   "bullets": [
+    "The timeline is the argument. Google's 2019 pledge that \"privacy is paramount to us, in everything we do\"; the 2020 promise to deprecate third-party cookies, which Safari and Firefox had already blocked; then January 2025, when Google began allowing device fingerprinting in its own ad products.",
+    "None of the signals need a permission prompt: GPU vendor, driver and rendered pixels, CPU thread count, memory, screen resolution and refresh rate, audio processing, installed fonts and extensions. The author's demo hashes `OfflineAudioContext`, WebGL, canvas text and emoji rendering, `Intl` locale data and `navigator` fields into a nickname for your machine.",
+    "The maths is the part worth keeping. Uniqueness is measured in bits: a trait held by 1 in 128 people is worth 7 bits, and singling out one person in a city of a million takes about 20. You do not need a name — you need twenty good questions nobody asked you.",
+    "The sting: installing a privacy extension can make you *more* identifiable, because almost nobody has it, and trackers can simply ignore the values it alters. His conclusion is that \"no extension can be as effective as engine-level protection\" — Brave adds noise it calls farbling, while Tor and Mullvad try to make every user look identical."
+   ]
+  },
+  {
+   "title": "The gap in shared understanding of LLM capability is widening",
+   "url": "https://twitter.com/karpathy/status/2109361546505966046",
+   "hn_url": "https://news.ycombinator.com/item?id=50047422",
+   "points": 679,
+   "comments": 999,
+   "bullets": [
+    "The post itself is on X, which is login-walled and cannot be fetched, so the quotes below come from write-ups that reproduce it and from the Hacker News thread, not from the post.",
+    "Andrej Karpathy dusted off an April post on 11 October because the gap is \"widening\": it is now \"less 'two groups of people speaking past each other' and more a sharp funnel.\" His napkin math — around 6 billion people (~75%) have barely come into contact with LLMs at all; 1–2 billion (~20%) are casual free-tier users; about 20 million (0.2%) see week-long projects finished by agents from a prompt; and roughly 5,000 people inside the labs run \"swarms of thousands of agents collaborating over weeks on software mega projects.\"",
+    "His explanation for the shape is jaggedness with a cause: reinforcement learning on verifiable rewards, so \"capability peaks in domains that are digital, verifiable and economically valuable.\" The other two axes he names are how much ambition and time horizon a task demands, and which access tier you are on.",
+    "999 comments mostly re-litigated the verifiability claim — strong where a machine can check the answer, weak in legal and compliance work where it cannot — and one commenter disputed the 5,000-insider tier outright. The sharpest practical point: a step that is 90% reliable and one that is 93% reliable are a very different animal once you chain fifty of them."
+   ]
+  },
+  {
+   "title": "Total Annihilation, rebuilt for modern computers",
+   "url": "https://nanolathe.gg",
+   "hn_url": "https://news.ycombinator.com/item?id=50045984",
+   "points": 669,
+   "comments": 252,
+   "bullets": [
+    "Nanolathe is an MIT-licensed 2.5D RTS engine that reimplements Total Annihilation from clean-room research of the game's documented file formats. It is explicitly not affiliated with or endorsed by the owners of TA: the code is the project, the content is not, and you supply your own copy of the game's data files.",
+    "Two renderers ship side by side: a modern GPU path with lighting and glow, which synthesises 64×64 terrain and tree tiles from the originals' 32×32, and a Classic CPU renderer that keeps the original look. The comparison captures on the page were made at 960×640 with engine commit 617540c5 on 4 October 2026.",
+    "There is a browser demo of the original three-mission demo campaign for desktop Chrome, Edge or Safari — Firefox, mobile and tablet are explicitly unverified — plus a native public beta for Windows, macOS and Linux.",
+    "Online play runs skirmish for 2 to 10 players and Survival for 2 or 3, and the host picks which rules everyone plays under: Modern, Community 3.9 or Strict 3.1. Every skirmish and Survival battle is recorded as a replay."
+   ]
+  },
+  {
+   "title": "Bot traffic from Yandex",
+   "url": "https://radar.cloudflare.com/bots/as13238?dateRange=7d",
+   "hn_url": "https://news.ycombinator.com/item?id=50041619",
+   "points": 647,
+   "comments": 256,
+   "bullets": [
+    "The link is a Cloudflare Radar chart of likely-automated HTTP requests from AS13238, Yandex's network. The dashboard sits behind Cloudflare's own bot challenge and could not be fetched this morning, so the figures below come from RFE/RL's report and XenoSpectrum's reading of the same chart.",
+    "Ukrainian drones hit three Yandex data centres in four days: Sasovo, about 315 km southeast of Moscow, on 8 October; the Kaluga region the following day; and a Vladimir facility about 180 km east of Moscow on 11 October, which forced a complete suspension of operations.",
+    "On Cloudflare's normalised scale, where the period maximum between 1 and 11 October is 100, AS13238's automated traffic read about 0.29 at 03:00 UTC on 11 October. It recovered to roughly 19.25 by 15:00 and fell back to about 11.03 by 22:00. These are relative values, not request counts, and Cloudflare only sees what crosses its own network.",
+    "Zelenskyy told the Warsaw Security Forum on 12 October that online \"it suddenly became a little easier to breathe,\" with fewer bots. Researchers quoted by RFE/RL say the chart \"has little to do with malicious propaganda bots on social media\": AS13238 is mostly Yandex's own search crawlers indexing the public web, and troll farms do not run from their employer's address space. Yandex Go's Kazakhstan service apologised on 11 October and resumed the next day."
+   ]
+  }
+ ],
+ "markets": {
+  "indices": [
+   {
+    "name": "Sensex · Mon 12 Oct close",
+    "value": "71,924.68",
+    "change": "547.65 (0.76%)",
+    "direction": "down"
+   },
+   {
+    "name": "Nifty 50 · Mon 12 Oct close",
+    "value": "22,363.35",
+    "change": "157.10 (0.70%)",
+    "direction": "down"
+   },
+   {
+    "name": "USD/INR · Mon 12 Oct close",
+    "value": "95.78",
+    "change": "93 paise stronger",
+    "direction": "down"
+   },
+   {
+    "name": "Nifty Media · Mon 12 Oct",
+    "value": "+4.60%",
+    "change": "best sector of the session",
+    "direction": "up"
+   },
+   {
+    "name": "Nifty Auto · Mon 12 Oct",
+    "value": "+0.90%",
+    "change": "the other sector in the green",
+    "direction": "up"
+   },
+   {
+    "name": "Nifty PSU Bank · Mon 12 Oct",
+    "value": "-1.18%",
+    "change": "worst of the named sectors",
+    "direction": "down"
+   },
+   {
+    "name": "Nifty Smallcap 100 · Mon 12 Oct",
+    "value": "+1.42%",
+    "change": "the small end ignored the fall",
+    "direction": "up"
+   },
+   {
+    "name": "Nifty Midcap 100 · Mon 12 Oct",
+    "value": "+0.08%",
+    "change": "flat",
+    "direction": "up"
+   },
+   {
+    "name": "FII cash net · Mon 12 Oct",
+    "value": "-₹1,708.48 cr",
+    "change": "DIIs bought ₹3,045.02 cr",
+    "direction": "down"
+   }
+  ],
+  "stories": [
+   {
+    "headline": "The rupee had its best day in more than six months and the index fell anyway",
+    "url": "https://theprint.in/economy/rupee-jumps-93-paise-to-close-at-95-78-against-us-dollar/3069693/",
+    "source": "PTI via ThePrint for the rupee and the RBI's weekend measures, Kotak Securities' closing-bell note for the index and sector moves, and Kotak's FII/DII table for the provisional cash-segment flows. All figures describe Monday 12 October 2026; Indian markets are open again this morning.",
+    "bullets": [
+     "The Sensex closed at 71,924.68, down 547.65 points or 0.76%. The Nifty 50 closed at 22,363.35, down 157.10 points or 0.70%. The fall was narrow: Nifty Midcap 100 finished +0.08% and Smallcap 100 +1.42%, so the damage was concentrated in large caps.",
+     "Nifty Media was the standout at +4.60%, with Auto +0.90%; Nifty PSU Bank was the weakest of the named sectors at -1.18%. Dr Reddy's, Bajaj Auto, Tata Motors Passenger Vehicles, Bharat Electronics and BSE Ltd led the index; Apollo Hospitals, ITC, Tech Mahindra, Larsen & Toubro and Max Healthcare lagged. Kotak attributes the decline to persistent FII selling and rising bond yields.",
+     "The currency went the other way hard. The rupee closed at 95.78 per dollar, up 93 paise from Friday's 96.71 — its steepest single-day gain in more than six months — after the RBI spent the weekend making it expensive to bet against: tighter forex derivative rules, a 20% reserve requirement on bank dollar purchases above $2 million, a ban on rebooking cancelled rupee derivative contracts, and a dedicated dollar window for oil marketing companies. The dollar index was 102.38, up 0.17%.",
+     "Flows stayed one-sided. FIIs were net sellers of ₹1,708.48 crore in the cash segment (bought ₹12,583.21 crore, sold ₹14,291.69 crore) while DIIs bought a net ₹3,045.02 crore (bought ₹15,506.73 crore, sold ₹12,461.71 crore). Domestic money absorbed the foreign exit, and then some.",
+     "Commodities cut both ways: Brent December futures were $105.68 a barrel around 15:35 and WTI November $92.68, easing after Trump said Russia and Ukraine had agreed to pause attacks on energy installations; MCX December gold fell 1.09% to ₹1,49,855 per 10 grams and silver 0.78% to ₹2,24,001 per kg. Separately, mutual fund SIP inflows hit an all-time high of ₹32,490 crore in September."
+    ]
+   }
+  ]
+ },
+ "trends": [
+  {
+   "tag": "India",
+   "headline": "India's data protection law was missing the word \"of\", and the government has now put it in",
+   "url": "https://www.india-briefing.com/news/dpdp-removal-of-difficulties-order-2026-consent-data-audit-47274.html",
+   "subject": "MeitY's Digital Personal Data Protection (Removal of Difficulties) Order 2026 inserts a missing preposition into Section 9(1) of the DPDP Act 2023 and changes the word audit to data audit in Section 10(2)(c)(ii)",
+   "subtitle": "India Briefing on MeitY's order, signed 5 October 2026 and gazetted 7 October 2026, issued under Section 43(1) of the DPDP Act",
+   "bullets": [
+    "Section 9(1) is the clause requiring verifiable consent before processing the data of a child or of a person with a lawful guardian. As passed in 2023 it read \"personal data of a child or a person with disability\" — and without that second \"of\", the phrase can be read as one composite subject instead of two separate categories of person. The order adds the preposition.",
+    "The second correction: in Section 10(2)(c)(ii), the periodic \"audit\" a Significant Data Fiduciary must undergo becomes a \"data audit\", tying the obligation to the independent data auditor the rules contemplate rather than to auditing in general.",
+    "Both are described by the commentary as textual and editorial corrections that create no new obligation and no new consent category. The order was made under Section 43(1), the power to remove difficulties in implementing the Act.",
+    "The timetable is the quiet part. Sections 9 and 10 do not take effect until 13 March 2027 under the phased rollout, so the grammar of a clause that is not yet in force has been corrected three years after Parliament passed it. If you are building anything that touches Indian users' data, the lesson is cheaper than the fine: read the operative sentence, not the summary of it."
+   ]
+  },
+  {
+   "tag": "Industry",
+   "headline": "Microsoft's answer to the GPU bill is a 96-chip rack of its own silicon, and the unit it measures in is the megawatt",
+   "url": "https://blogs.microsoft.com/blog/2026/10/12/microsoft-to-expand-azure-maia-system-to-multi-gigawatt-deployments/",
+   "subject": "Microsoft announced the Maia 300 accelerator on 12 October 2026 and said it will scale the Azure Maia system to multi-gigawatt deployments from 2027, claiming 40% more inference tokens per megawatt than leading GPU systems",
+   "subtitle": "Scott Guthrie, EVP Cloud + AI, on the Official Microsoft Blog, 12 October 2026",
+   "bullets": [
+    "Maia 300 is sold as a rack, not a chip: 96 accelerators inside a 167-kilowatt envelope, 27.6 TB of HBM and 1.7 PB/s of aggregate memory bandwidth. Each chip carries eight HBM4 stacks for 18.0 TB/s peak bandwidth at a 950-watt TDP, with compute chiplets on TSMC's N2P node.",
+    "The headline claim is 40% more tokens per megawatt than \"leading GPU-based systems\" — Microsoft does not say which ones — and up to 7x the rack-scale token throughput of Maia 200 in the full 96-accelerator configuration.",
+    "Note the denominator. When a hyperscaler starts quoting tokens per megawatt rather than tokens per dollar or per chip, it is telling you that power, not silicon, is the binding constraint on inference.",
+    "Maia 200 is already in production across the US, Europe and Australia, serving Copilot and the MAI team's model development, with GitHub Copilot and Microsoft Foundry due by year end. Maia 300 begins production deployment in 2027."
+   ]
+  },
+  {
+   "tag": "Wildcard",
+   "headline": "Hubble recorded about 100 chemical signatures in 1999 that nobody could identify. One of them is niobium, and it should not be there.",
+   "url": "https://esahubble.org/news/heic2613/",
+   "subject": "A Nature Astronomy paper led by Jamie Williams of the University of Warwick reports a second-generation planet candidate accreting onto the white dwarf HS 0209+0832, identified by re-analysing 1999 Hubble spectra and finding niobium",
+   "subtitle": "ESA/Hubble release heic2613, 5 October 2026 · Jamie Williams (Warwick), Nicholas Stone (Wisconsin–Madison), Boris Gaensicke (Warwick), in Nature Astronomy",
+   "bullets": [
+    "A doctoral student re-ran a 27-year-old spectrum through an updated chemical database. Hubble's 1999 observations of the white dwarf HS 0209+0832 contained roughly 100 features nobody had ever matched to an element; niobium accounts for many of them, and had not been reported in any other white dwarf analysed to date.",
+    "Niobium is made in dying stars, not in the cores of living ones. So the material falling onto this dead star did not come from the system's original planet-forming disc — the team argues it is coming from a planet that formed afterwards, out of what the star threw off while it died.",
+    "The candidate is a Jupiter-sized gas giant orbiting about 6 million kilometres out, far inside Mercury's orbit, and losing atmosphere fast enough that it may be trailing a comet-like tail and feeding a disc around the star. NASA's retired FUSE mission confirmed the niobium; TESS watched for four months and found the periodic brightness dips.",
+    "It is a candidate, not a photograph. But the method is the quiet point: the planet was in the archive the whole time, and what changed was the lookup table."
+   ]
+  }
+ ],
+ "research": [
+  {
+   "tag": "Industry · Microsoft Research",
+   "title": "Stop reimplementing the agent to train it. Put a proxy between the harness and the model instead.",
+   "url": "https://www.microsoft.com/en-us/research/blog/agent-lightning-v1-0-a-3500-line-lightweight-agentic-rl-framework-for-training-agents-with-real-harnesses/",
+   "subtitle": "Zhiyuan He and Yuqing Yang, Microsoft Research Asia · 7 October 2026 · open source, built on verl, about 3,500 lines",
+   "subject": "Microsoft Research Asia's Agent Lightning v1.0 trains an agent by proxying the model calls of the already-deployed implementation instead of rewriting it inside the trainer, lifting mini-SWE-agent Pass@1 on SWE-bench Verified from 41.8% to 56.4% with Qwen3.5-9B",
+   "bullets": [
+    "The problem is unglamorous and real: to train an agent with reinforcement learning you normally rewrite it inside the training framework, so the thing you trained is not the thing you ship. Agent Lightning puts an OpenAI-compatible proxy between the harness and the model, records every call's prompts, responses and log probabilities, and leaves the harness code untouched.",
+    "Three pieces: an API Gateway that is both the proxy and the store of rollouts and events; a Rollout Controller that runs agents as local processes or ordinary Kubernetes jobs; and a trainer built on verl. The whole thing is about 3,500 lines.",
+    "The numbers: with SWE-smith, mini-SWE-agent and Qwen3.5-9B, Pass@1 on SWE-bench Verified went from 41.8% to 56.4% — 14.6 points — on roughly 6,000 training samples. Their collocated async scheme, where rollout and model updates share GPUs, gave about a 2x end-to-end speedup over synchronous RL on four GPUs rather than eight.",
+    "The four hard parts they name are worth remembering if you ever do this: retokenisation and sample merging, advantage calculation, loss normalisation, and scheduling the training backend. Their ablation found rollout-level advantage with rollout-level normalisation held policy entropy steadiest over 200 steps."
+   ]
+  },
+  {
+   "tag": "Academia · NYU and UBC",
+   "title": "The researcher writes the physics; the agent writes the solver. Agreement with COMSOL: 0.7%.",
+   "url": "https://arxiv.org/abs/2610.10320",
+   "subtitle": "Sebastian Castro, Maya F. Schuchert, Spencer A. McCluskey, Eric W. Lees, Justin C. Bui · Chemical and Biomolecular Engineering, New York University, and Chemical and Biological Engineering, University of British Columbia · arXiv:2610.10320, 7 October 2026",
+   "subject": "An NYU and UBC paper shows LLM agents can build 1D multiphysics models of CO2 electroreduction in Julia from a human-written specification, matching COMSOL to within 0.7% of peak CO partial current density and each other to within 0.04%",
+   "bullets": [
+    "The test case is one a chemical engineer will recognise: one-dimensional electrochemical CO2 reduction to CO in a porous gas diffusion electrode, where the fields that decide performance — local pH, potential, concentration — are the ones you cannot measure.",
+    "The trick is not the prompt, it is the harness. The humans write a machine-readable specification: governing equations, parameters, numerical methods, staged build order, and checkpoints a person can verify. The agent then builds the whole model in open-source Julia, repeatedly, from that spec.",
+    "Independently built models — including fully autonomous agent-built ones — matched an equivalent COMSOL model to within 0.7% of peak CO partial current density, and matched each other to within 0.04%. That second number is the interesting one: reproducibility, not just accuracy.",
+    "They then planted errors in the specification to see what the agent would catch. The claim they land on is the one worth arguing about: that the governing equations, rather than the code, can become the primary input to building a model — and that proprietary multiphysics software is no longer the price of entry."
+   ]
+  }
+ ],
+ "wild": [
+  {
+   "tag": "Travel",
+   "headline": "Sweden has opened a travel agency for people who would rather not talk to anyone, with three pop-ups and no small talk",
+   "url": "https://visitsweden.com/the-introvert-travel-agency/",
+   "entities": [
+    "Visit Sweden"
+   ],
+   "subject": "Visit Sweden built a website for introverted travellers that recommends Swedish trips from a three-question quiz, with pop-up consultation rooms in Berlin, Paris and London from 14 to 31 October 2026",
+   "subtitle": "Visit Sweden's own campaign site for the mechanics and the pop-up addresses, plus Travel Weekly Asia's report of 1 October 2026 for the YouGov survey behind it",
+   "bullets": [
+    "It is a travel agency that does not sell travel. Three quick questions about how introverted you are, and the site matches you to a part of Sweden, six bookable packages held by outside tour operators, and four articles. Visit Sweden's own framing is inspiration, not a catalogue.",
+    "The physical version is the joke landing properly: pop-up consultation rooms designed for introvert comfort, in Berlin at Prinzenstraße 84.2 from 14 to 17 October, Paris at 2 bis rue Commines from 21 to 24 October, and London at 3 Paddington Street from 28 to 31 October.",
+    "The research behind it, a YouGov survey Visit Sweden commissioned in June and July 2026: 67% said they preferred destinations where social interaction felt optional rather than expected, and 53% would pay extra for more peace, privacy or fewer crowds.",
+    "Also from that survey, and the reason it is less niche than it sounds: 41% of respondents called themselves introverts, 45% a mix, and only 14% extroverts. Susanne Andersson, Visit Sweden's chief executive: \"Many travellers are looking for something surprisingly simple: the freedom to decide when they want company and when they don't.\""
+   ]
+  },
+  {
+   "tag": "Sport",
+   "headline": "An arena has been nicknamed the Shark Tank for thirty years, so the team made the ice agree with it",
+   "url": "https://bleacherreport.com/articles/25506442-watch-sharks-swim-ice-epic-video-san-jose-sharks-pre-game-routine",
+   "entities": [
+    "San Jose Sharks",
+    "SAP Center"
+   ],
+   "subject": "The San Jose Sharks debuted a pregame visual effect that makes sharks appear to swim beneath the ice at SAP Center for the 2026-27 season, part of a wider rebuild of the building around the team's nickname",
+   "subtitle": "Bleacher Report, 4 October 2026, on the new pregame routine · the team's own list of what is new at the building, NHL.com, for the rest",
+   "bullets": [
+    "Before the players come out, the playing surface now appears to be water with sharks moving underneath it. Bleacher Report's framing is the team's own: they wanted \"a literal shark tank\" at SAP Center for the 2026-27 season. How the effect is produced is not disclosed.",
+    "Sharks president Jonathan Becher said back in January that the point was to lean further into the shark identity and build a stronger home-ice atmosphere. His line on the building is \"The Shark Tank has always been the convening place for the City of San Jose\" — and the renovation behind all this runs four to five years, with shark and deep-ocean themes covering the arena inside and out.",
+    "The committed part is the concessions. The team's own list of what is new for 2026-27 includes a K-Chomp Corn Dog, a Shark Butter Waffle Sundae, Salchi-Papas, Goalie Mask souvenir cups, Draft Beer Skate souvenir vessels and a team-branded bourbon called Tidal Grit. The staff who run the stands, Tank Patrol, got new uniforms and a new visual identity.",
+    "It arrived with Opening Weekend on 1 and 3 October, and San Jose promptly won two straight home games in overtime. Bleacher Report notes the coincidence and stops short of crediting the fish."
+   ]
+  },
+  {
+   "tag": "Automotive",
+   "headline": "A tyre-fitting chain worked out that it owns a million hours of other people's dead time, and started putting mental-health nudges in the waiting room audio",
+   "url": "https://lbbonline.com/news/kwik-fit-encourages-customers-to-have-a-kwik-chat",
+   "entities": [
+    "Kwik Fit",
+    "VCCP",
+    "ITV"
+   ],
+   "subject": "Kwik Fit and VCCP launched Kwik Chat on 9 October 2026, a campaign using waiting-room audio, posters and a 60-second film to get customers to phone someone while their car is serviced, funded by £1 million of ITV airtime from the Head First award",
+   "subtitle": "Little Black Book, 9 October 2026 · campaign by VCCP, film directed by Mike Upson through MindsEye with Girl&Bear",
+   "bullets": [
+    "The insight is an inventory, not a sentiment: Kwik Fit performs over one million MOTs and services a year across 650 centres, and every one of them is a person sitting in a waiting room with nothing to do. The campaign asks them to call someone they care about while the car is up on the ramp.",
+    "The reason given is that 1 in 3 UK adults prefer not to discuss their mental health, and 40% of men have never spoken to anyone about it.",
+    "The media is where it gets specific: custom audio ads playing in the waiting rooms themselves, plus leaflets, in-centre posters, manager communications and billboards sited near the garages. The 60-second hero film has a technician gliding through the garage on a mechanic's trolley delivering deadpan reminders.",
+    "The TV money came from ITV's Head First award — £1 million of commercial airtime. Tom Gentle, Kwik Fit's head of retail marketing: \"At Kwik Fit we are experts on car maintenance, not mental health specialists — we're simply nudging people to call someone they care about whilst we look after their car.\""
+   ]
+  }
+ ],
+ "learn": {
+  "title": "The man who invented the black box lost his father to a plane crash, and Australia would not approve his demonstration model",
+  "subject": "David Warren, a 28-year-old fuels chemist at Melbourne's Aeronautical Research Laboratories, conceived the cockpit voice and flight data recorder in 1953 after the Comet crashes; his father had died in the 1934 Miss Hobart crash, Australian authorities did not approve his 1957 demonstration model, and Australia became the first country to make cockpit voice recording mandatory in 1960 after the Mackay Fokker Friendship crash",
+  "body": [
+   "In 1934 a de Havilland D.H.86 called Miss Hobart went down over Bass Strait. One of the people on board was Reverend Hubert Warren. His son David was nine. Nineteen years later David Warren was 28, a chemist specialising in aviation fuels at the federal Aeronautical Research Laboratories in Melbourne, and he found himself in a room of experts convened by the Department of Civil Aviation because the world's newest jet airliner, the de Havilland Comet, had started falling out of the sky and nobody could say why. That is the structural problem with an air crash: the only witnesses who know what happened are the ones who did not come back.",
+   "What he contributed was not aeronautical. He had seen a Minifon at a trade fair — a miniature recorder sold to businessmen for dictation — and thought that if one of those had been in a cockpit and survived, you would simply play it and know. The prototype his team built in 1957 used the same steel wire as the Minifon. It held four hours of cockpit sound and eight instrument readings taken four times a second, and it erased itself continuously unless there was a crash. His colleagues on it were Kenneth Fraser, Lane Sear and Walter Boswell.",
+   "Australia's own aviation authorities did not approve the demonstration model. Britain did: a visiting British air vice-marshal, Sir Robert Hardingham, came through the Melbourne laboratory in 1958, saw it, and the Ministry of Aviation went on to announce that recorders should be carried on all planes. Then in 1960 a Fokker Friendship crashed at Mackay in Queensland, killing 29 people, for reasons nobody could establish, and the judge running the inquiry ordered recorders fitted to all future Australian aircraft. Australia became the first country in the world to make cockpit voice recording compulsory — twenty-six years after the crash that gave a nine-year-old boy a reason to think about it."
+  ]
+ },
+ "ideas": {
+  "prompt": "Ten things that should be sold in smaller sizes",
+  "note": "Altucher's drill: ten against one prompt, written fast, not defended. Reddit rate-limited the fetcher on three subreddits this morning, so the raw material is this week's r/SomebodyMakeThis plus the Ask HN idea threads.",
+  "items": [
+   {
+    "text": "Spices in 10-gram sachets, so the one recipe that calls for star anise does not cost you a jar you will throw out in 2029."
+   },
+   {
+    "text": "Streaming by the hour. Buy a bank of hours, spend them across any service, and stop paying four subscriptions for the one show you are actually watching.",
+    "why": "A recurring ask on r/SomebodyMakeThis this week, where someone costed out exactly this."
+   },
+   {
+    "text": "Paint in a 100 ml tin that comes with a brush, for the patch of wall behind the door that has been grey since you moved in."
+   },
+   {
+    "text": "Half a watermelon, sold as half a watermelon, in a city of people who live alone."
+   },
+   {
+    "text": "Single-dose printer ink. Not a cartridge — enough to print the one document you need before the flight."
+   },
+   {
+    "text": "Gym day passes sold in tens, with no expiry and no conversation about membership."
+   },
+   {
+    "text": "Textbooks by the chapter. Nobody reading this has ever needed all of Perry's."
+   },
+   {
+    "text": "Cooking oil in 100 ml bottles for a hostel room, so the bottle runs out before it goes rancid."
+   },
+   {
+    "text": "Insurance by the day for the things you only occasionally have: the borrowed car, the cousin's camera, the one trek."
+   },
+   {
+    "text": "A 50 ml bottle of the expensive olive oil, sold next to the big one, priced so that trying it is not a decision."
+   }
+  ]
+ }
+}

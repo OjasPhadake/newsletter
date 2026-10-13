@@ -5234,6 +5234,154 @@
         "techcrunch.com",
         "thebrighterside.news"
       ]
+    },
+    {
+      "date": "2026-10-13",
+      "issue": 1,
+      "quote_text": [
+        "I couldn't claim that I was smarter than sixty-five other guys--but the average of sixty-five other guys, certainly!"
+      ],
+      "quote_author": [
+        "Richard P. Feynman"
+      ],
+      "idea_text": [
+        "Spices in 10-gram sachets, so the one recipe that calls for star anise does not cost you a jar you will throw out in 2029.",
+        "Streaming by the hour. Buy a bank of hours, spend them across any service, and stop paying four subscriptions for the one show you are actually watching.",
+        "Paint in a 100 ml tin that comes with a brush, for the patch of wall behind the door that has been grey since you moved in.",
+        "Half a watermelon, sold as half a watermelon, in a city of people who live alone.",
+        "Single-dose printer ink. Not a cartridge — enough to print the one document you need before the flight.",
+        "Gym day passes sold in tens, with no expiry and no conversation about membership.",
+        "Textbooks by the chapter. Nobody reading this has ever needed all of Perry's.",
+        "Cooking oil in 100 ml bottles for a hostel room, so the bottle runs out before it goes rancid.",
+        "Insurance by the day for the things you only occasionally have: the borrowed car, the cousin's camera, the one trek.",
+        "A 50 ml bottle of the expensive olive oil, sold next to the big one, priced so that trying it is not a decision."
+      ],
+      "idea_prompt": [
+        "Ten things that should be sold in smaller sizes"
+      ],
+      "tip_text": [
+        "If you rely on a hook to stop something — a secret scanner, a lint gate, a guard on `rm` — set `onFailure: \"block\"` on it. As of Claude Code 2.1.295 a hook that cannot start, times out, or exits with an unexpected code blocks the action instead of quietly letting it through. A guard that fails open is not a guard.",
+        "Give a long-running subagent its own `autoCompactWindow` in its frontmatter (new in 2.1.296) so it compacts earlier than the main conversation. The agent grinding through forty files should tidy up after itself rather than hand you back a context window with no room left in it."
+      ],
+      "hn_id": [
+        "50048312",
+        "50048642",
+        "50047422",
+        "50045984",
+        "50041619"
+      ],
+      "link": [
+        "https://nonfunctional.substack.com/p/passkeys-are-a-trap-do-not-use-them",
+        "https://royfish.dev/fingerprints-are-the-new-cookies",
+        "https://twitter.com/karpathy/status/2109361546505966046",
+        "https://nanolathe.gg",
+        "https://radar.cloudflare.com/bots/as13238?dateRange=7d",
+        "https://www.india-briefing.com/news/dpdp-removal-of-difficulties-order-2026-consent-data-audit-47274.html",
+        "https://blogs.microsoft.com/blog/2026/10/12/microsoft-to-expand-azure-maia-system-to-multi-gigawatt-deployments/",
+        "https://esahubble.org/news/heic2613/",
+        "https://visitsweden.com/the-introvert-travel-agency/",
+        "https://bleacherreport.com/articles/25506442-watch-sharks-swim-ice-epic-video-san-jose-sharks-pre-game-routine",
+        "https://lbbonline.com/news/kwik-fit-encourages-customers-to-have-a-kwik-chat",
+        "https://www.microsoft.com/en-us/research/blog/agent-lightning-v1-0-a-3500-line-lightweight-agentic-rl-framework-for-training-agents-with-real-harnesses/",
+        "https://arxiv.org/abs/2610.10320",
+        "https://theprint.in/economy/rupee-jumps-93-paise-to-close-at-95-78-against-us-dollar/3069693/"
+      ],
+      "subject": [
+        "MeitY's Digital Personal Data Protection (Removal of Difficulties) Order 2026 inserts a missing preposition into Section 9(1) of the DPDP Act 2023 and changes the word audit to data audit in Section 10(2)(c)(ii)",
+        "Microsoft announced the Maia 300 accelerator on 12 October 2026 and said it will scale the Azure Maia system to multi-gigawatt deployments from 2027, claiming 40% more inference tokens per megawatt than leading GPU systems",
+        "A Nature Astronomy paper led by Jamie Williams of the University of Warwick reports a second-generation planet candidate accreting onto the white dwarf HS 0209+0832, identified by re-analysing 1999 Hubble spectra and finding niobium",
+        "Visit Sweden built a website for introverted travellers that recommends Swedish trips from a three-question quiz, with pop-up consultation rooms in Berlin, Paris and London from 14 to 31 October 2026",
+        "The San Jose Sharks debuted a pregame visual effect that makes sharks appear to swim beneath the ice at SAP Center for the 2026-27 season, part of a wider rebuild of the building around the team's nickname",
+        "Kwik Fit and VCCP launched Kwik Chat on 9 October 2026, a campaign using waiting-room audio, posters and a 60-second film to get customers to phone someone while their car is serviced, funded by £1 million of ITV airtime from the Head First award",
+        "Microsoft Research Asia's Agent Lightning v1.0 trains an agent by proxying the model calls of the already-deployed implementation instead of rewriting it inside the trainer, lifting mini-SWE-agent Pass@1 on SWE-bench Verified from 41.8% to 56.4% with Qwen3.5-9B",
+        "An NYU and UBC paper shows LLM agents can build 1D multiphysics models of CO2 electroreduction in Julia from a human-written specification, matching COMSOL to within 0.7% of peak CO partial current density and each other to within 0.04%",
+        "David Warren, a 28-year-old fuels chemist at Melbourne's Aeronautical Research Laboratories, conceived the cockpit voice and flight data recorder in 1953 after the Comet crashes; his father had died in the 1934 Miss Hobart crash, Australian authorities did not approve his 1957 demonstration model, and Australia became the first country to make cockpit voice recording mandatory in 1960 after the Mackay Fokker Friendship crash"
+      ],
+      "brand": [
+        "Visit Sweden",
+        "Sweden",
+        "San Jose Sharks",
+        "SAP Center",
+        "Shark Tank",
+        "Kwik Fit",
+        "VCCP",
+        "ITV"
+      ],
+      "brand_mention": [
+        "Sweden",
+        "Visit Sweden's",
+        "Berlin",
+        "Prinzenstraße 84",
+        "Commines",
+        "Paddington Street",
+        "YouGov",
+        "Susanne Andersson",
+        "Many",
+        "Bleacher Report's",
+        "SAP Center",
+        "Jonathan Becher",
+        "Shark Tank",
+        "City",
+        "San Jose",
+        "K-Chomp Corn Dog",
+        "Shark Butter Waffle Sundae",
+        "Salchi-Papas",
+        "Goalie Mask",
+        "Draft Beer Skate",
+        "Tidal Grit",
+        "Tank Patrol",
+        "Opening Weekend",
+        "Kwik Fit",
+        "MOTs",
+        "ITV's Head",
+        "Tom Gentle"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "India's data protection law was missing the word \"of\", and the government has now put it in"
+        ],
+        [
+          "trends",
+          "Microsoft's answer to the GPU bill is a 96-chip rack of its own silicon, and the unit it measures in is the megawatt"
+        ],
+        [
+          "trends",
+          "Hubble recorded about 100 chemical signatures in 1999 that nobody could identify. One of them is niobium, and it should not be there."
+        ],
+        [
+          "wild",
+          "Sweden has opened a travel agency for people who would rather not talk to anyone, with three pop-ups and no small talk"
+        ],
+        [
+          "wild",
+          "An arena has been nicknamed the Shark Tank for thirty years, so the team made the ice agree with it"
+        ],
+        [
+          "wild",
+          "A tyre-fitting chain worked out that it owns a million hours of other people's dead time, and started putting mental-health nudges in the waiting room audio"
+        ],
+        [
+          "research",
+          "Stop reimplementing the agent to train it. Put a proxy between the harness and the model instead."
+        ],
+        [
+          "research",
+          "The researcher writes the physics; the agent writes the solver. Agreement with COMSOL: 0.7%."
+        ],
+        [
+          "learn",
+          "The man who invented the black box lost his father to a plane crash, and Australia would not approve his demonstration model"
+        ]
+      ],
+      "editorial_domains": [
+        "bleacherreport.com",
+        "blogs.microsoft.com",
+        "esahubble.org",
+        "india-briefing.com",
+        "lbbonline.com",
+        "visitsweden.com"
+      ]
     }
   ]
 }
