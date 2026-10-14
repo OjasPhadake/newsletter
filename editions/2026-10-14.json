@@ -1,0 +1,327 @@
+{
+  "date_line": "Wednesday, 14 October 2026",
+  "issue": 1,
+  "preheader": "Google shipped Gemini 4 Argon and took the top of Hacker News with it; hackers switched on the defrost cycle in hundreds of European supermarket fridges and tens of millions of dollars of food went in the bin; the Sensex gained 1,109 points in the last hour because the finance minister said one sentence about capital gains; every Indian bond sold to a retail investor is about to come with a risk dial on it; and chemists in Chicago have worked out how to pull a carbon atom out of a finished drug and drop a nitrogen into the hole.",
+  "quote": {
+    "text": "A great deal of intelligence can be invested in ignorance when the need for illusion is deep.",
+    "author": "Saul Bellow",
+    "work": "To Jerusalem and Back",
+    "source_url": "https://www.goodreads.com/quotes/tag/self-deception",
+    "note": "The useful word is \"invested\". Bellow is not describing stupidity, which is cheap and passive; he is describing effort — careful, expensive, well-argued effort — spent on not knowing something. It explains the thing you keep noticing and cannot name: that the most elaborate reasoning in a room is often defending the conclusion that was decided first."
+  },
+  "agent_craft": {
+    "items": [
+      {
+        "text": "Audit the `description` lines on your subagents, not their bodies. The description sits in context on every single turn so Claude can decide when to delegate; the body loads only when that subagent actually runs. So one sentence in the description — when to use this — and every checklist, example and output format in the body. Claude Code warns you at startup once your combined descriptions pass 15,000 tokens, which is a long way past where it started costing you.",
+        "source": "Claude Code docs, \"Create custom subagents\"",
+        "url": "https://code.claude.com/docs/en/sub-agents"
+      }
+    ]
+  },
+  "hn": [
+    {
+      "title": "Gemini 4 Argon",
+      "url": "https://deepmind.google/models/gemini/",
+      "hn_url": "https://news.ycombinator.com/item?id=50073879",
+      "points": 910,
+      "comments": 702,
+      "bullets": [
+        "The specification that stands out is not the input window but the output one: 1M output tokens, pitched at long reasoning trajectories and generating a whole repository in one go. The page gives no input context figure and no API price.",
+        "The benchmark table is vendor-reported and does not sweep. Argon leads on Vals Index (68.9% vs 67.0% for Opus 5.5), AutomationBench (51.3% vs 42.5%), LABBench 2 (88.8%), DeepSWE v1.1 (77.9%) and long-context graph traversal — 84.2% BFS F1 between 256k and 1M, against 71.8% for GPT-6 Astra and 66.8% for Opus 5.5. It loses FrontierSWE v2 (55.0% vs Astra's 65.5%), Terminal-bench 4.0 (57.4% vs Opus 5.5's 66.4%), PostTrainBench and Terminal-Bench Science.",
+        "The outlier worth staring at is Harvey's Legal Agent Benchmark: 19.6% for Argon against 5.4%, 6.7% and 3.8% for the other three. When a frontier model scores under 20% and that is four times the field, the benchmark is telling you the task is nowhere near solved.",
+        "Google's own safety framing is specific rather than vague: \"our most resilient model yet against indirect prompt injections\", plus chain-of-thought and action monitoring. Available today to AI Pro and Ultra subscribers; academics can apply for six months of the top Antigravity tier free, and defenders can apply to the Fairwind Program for the cyber variant."
+      ]
+    },
+    {
+      "title": "Hackers activate automatic defrosting in supermarket fridges across Europe",
+      "url": "https://www.tomshardware.com/tech-industry/cyber-security/unprecedented-cyberattack-cripples-supermarket-fridges-across-europe-as-hackers-activate-automatic-defrosting-delivery-and-store-prices-also-impacted-by-incident",
+      "hn_url": "https://news.ycombinator.com/item?id=50055304",
+      "points": 881,
+      "comments": 981,
+      "bullets": [
+        "Tom's Hardware serves its article body only to subscribers and could not be read this morning, so the figures below come from France 24, Euronews and Facilities Dive's report of the Reuters and AFP wires, plus the Hacker News thread.",
+        "Overnight from Sunday 11 to Monday 12 October, someone put refrigeration units into defrost mode and left them there for several hours. Units reached up to 122°F — about 50°C — which is not a fridge failing but a fridge working hard in the wrong direction. Reuters, citing Sekoia's threat research, puts affected equipment in France, Spain, Portugal, Poland, Germany and Belgium.",
+        "France took it worst: 150 to 200 Intermarché stores, nearly 100 Coopérative U outlets, with Carrefour, Monoprix and E.Leclerc branches also hit. Intermarché told affected stores to throw away all fresh and frozen stock and warned that insurance may not cover an in-store incident of this kind. Reported losses run to tens of millions of dollars. The Paris prosecutor has opened an investigation — into food losses and fire alarms — and nobody has claimed responsibility.",
+        "The supply chain is one Danish company's controllers: Danfoss AK-SM 800 and AK-SC 355 system managers. Danfoss told AFP most affected equipment is \"legacy\" and no longer gets software or security updates. Claroty's Team82 published the relevant research in August: a hidden \"code-of-the-day\" authentication path reachable through `xml.cgi` that could be reproduced to mint valid credentials without the admin password, plus a command-injection bug. Firmware fixing it exists. CISA had advised on it. The commenters' point is the one that matters: these boxes were on the public internet, several of them over their own cellular SIMs, because somebody needed to check a freezer from home."
+      ]
+    },
+    {
+      "title": "A Modern Web App in C",
+      "url": "https://prophitt.me/writing/a-modern-web-app-in-c",
+      "hn_url": "https://news.ycombinator.com/item?id=50058528",
+      "points": 689,
+      "comments": 307,
+      "bullets": [
+        "This is a shipping commercial product, not a toy: marketyour.games, with accounts, a creator search dashboard, folders, Stripe payments and Postmark transactional email. The author's own summary of the inside is that it is \"anything but modern\".",
+        "The stack is BCHS — OpenBSD, C, httpd, SQLite — with pledge and unveil for sandboxing and httpd serving a CGI binary from a chroot. Every request forks a new process, reads CGI environment variables, writes the response to stdout and logs to stderr. SQLite is opened through its C API, so there is no database server to configure or upgrade.",
+        "Dependencies: two real ones, libcurl and libsodium, plus two vendored (cJSON and the SQLite amalgamation) and a hand-rolled `cgi.h` for cookies, forms and escaping. Static linking bakes the assets into the binary, so a deploy is replacing one file and new requests pick it up with no restart. A clean build takes a few seconds; incremental rebuilds under half a second.",
+        "His argument for forking-per-request is that the classic objection has quietly expired — modern kernels optimise fork heavily — with FastCGI named as the escape hatch if it ever bites. The honest downside he lists is that CGI gives you nothing: you write your own parsing, validation, cookies and escaping. What he actually wants is a set of stb-style drop-in headers so the next person does not."
+      ]
+    },
+    {
+      "title": "GLM-Legal",
+      "url": "https://z.ai/blog/glm-legal",
+      "hn_url": "https://news.ycombinator.com/item?id=50058507",
+      "points": 664,
+      "comments": 358,
+      "bullets": [
+        "Z.ai's own blog page returns no readable text to a fetcher, so the figures here come from Cellcog's write-up, which checked Z.ai's claims against the Vals AI leaderboard. Treat the architecture numbers as secondary.",
+        "It is a legal-domain model built on GLM-5.3-Flash by legal mid-training on an expanded corpus, then reinforcement learning across \"tens of thousands of realistic legal environments\". Z.ai's framing is that the agent harness and the model were trained in lockstep rather than one being bolted onto the other.",
+        "The headline is 19.2% all-pass on Harvey's Legal Agent Benchmark — a partner-style instruction plus a folder of client documents, where a task passes only if every rubric criterion passes. Vals independently has it at 19.17%, sixth place, behind Muse Spark 1.2 at 25.42% and fractionally behind Gemini 4 Argon at 19.58%. Given roughly 2.5 points of leaderboard error, sixth is a coin toss with third.",
+        "The number that is not a coin toss is the cost: $0.15 per Harvey LAB task, against $10.55 for Gemini 4 Argon and $26.16 for GPT-6 Astra — 70x and 174x. The price of that is latency: 1 hour 12 minutes per average run versus 24 minutes for Muse Spark 1.2. Access is by application only, no published price, and Cellcog notes Z.ai's own chart omits five models that beat it on Vals."
+      ]
+    },
+    {
+      "title": "Muse Wonder",
+      "url": "https://research.meta.ai/blog/muse-wonder",
+      "hn_url": "https://news.ycombinator.com/item?id=50059115",
+      "points": 658,
+      "comments": 371,
+      "bullets": [
+        "Meta's own post names benchmarks and no numbers — Harvey LAB, FocusBench, SWE-Marathon — and points at a model card. The scores below are from DataCamp's tabulation of that card. Two models: Muse Wonder and Muse Wonder Full, trained at Meta's gigawatt-scale Prometheus data centre, and the post dates the ground-up rebuild of Meta's AI stack to fourteen months ago.",
+        "The two branded capabilities are Active Memory (carrying user context between conversations) and Active Focus (staying on a hard goal — trying other routes, getting past blockers, checking in before consequential actions). Both are measured on Meta's own tests, MemoryBench and FocusBench, which nobody outside Meta can re-run.",
+        "On the third-party rows it is a fair fight that Meta does not win: Terminal-Bench 4.0-AA 57.1 for Full against 59.6 for Opus 5.5 and 59.1 for GPT-6 Astra; ProgramBench 59.0 against Opus 5.5's 70.5; AA Intelligence Index v4.3 56 against 58. Where it wins clearly is SWE-Marathon — 57.5 versus 46.3 and 42.5 — but that benchmark has 20 projects in it, so one project moves the score several points, and the rivals ran inside Codex and Claude Code rather than Meta's harness.",
+        "Pricing is the actual news: $4.00 per million input tokens and $20.00 output, exactly matching Opus 5.5 and well under GPT-6 Astra's $10/$50, with a ~1M-token window that accepts text, image, video, audio and PDF. Wonder Full has no per-token price at all — it exists only inside Muse Code's $50 and $200 monthly plans."
+      ]
+    }
+  ],
+  "markets": {
+    "indices": [
+      {
+        "name": "Sensex · Tue 13 Oct close",
+        "value": "73,033.78",
+        "change": "1,109.10 (1.54%)",
+        "direction": "up"
+      },
+      {
+        "name": "Nifty 50 · Tue 13 Oct close",
+        "value": "22,721.95",
+        "change": "358.60 (1.60%)",
+        "direction": "up"
+      },
+      {
+        "name": "Nifty IT · Tue 13 Oct",
+        "value": "+5.22%",
+        "change": "the session, essentially",
+        "direction": "up"
+      },
+      {
+        "name": "Nifty Media · Tue 13 Oct",
+        "value": "+0.42%",
+        "change": "the other named sector",
+        "direction": "up"
+      },
+      {
+        "name": "Nifty Midcap 100 · Tue 13 Oct",
+        "value": "+1.06%",
+        "change": "kept up",
+        "direction": "up"
+      },
+      {
+        "name": "Nifty Smallcap 100 · Tue 13 Oct",
+        "value": "+0.11%",
+        "change": "did not",
+        "direction": "up"
+      },
+      {
+        "name": "USD/INR · Tue 13 Oct close",
+        "value": "95.36",
+        "change": "42 paise stronger",
+        "direction": "down"
+      },
+      {
+        "name": "FII cash net · Tue 13 Oct",
+        "value": "-₹1,305.10 cr",
+        "change": "DIIs bought ₹2,439.20 cr",
+        "direction": "down"
+      },
+      {
+        "name": "Brent · Tue 13 Oct",
+        "value": "$104.59",
+        "change": "1.93% lower",
+        "direction": "down"
+      }
+    ],
+    "stories": [
+      {
+        "headline": "One sentence about capital gains in the last hour, and the Sensex put on 1,109 points",
+        "url": "https://theprint.in/economy/rupee-jumps-42-paise-to-close-at-95-36-against-us-dollar/3070797/",
+        "source": "PTI via ThePrint for the index levels, the rupee and the commodity and dollar-index figures; Kotak Securities' closing-bell note for the sector and broader-market moves; 5paisa's NSE cash table for the provisional FII/DII flows. All figures describe Tuesday 13 October 2026. Indian markets open again this morning.",
+        "bullets": [
+          "The Sensex closed at 73,033.78, up 1,109.10 points or 1.54%, and the Nifty 50 at 22,721.95, up 358.60 points or 1.60%. The indices opened roughly flat on weak global cues and did nearly all of it in the final hour, after Finance Minister Nirmala Sitharaman said she would hear views on long-term capital gains tax. Note what that tells you about positioning: a rally that size on a remark about hearing views means the market was already short of reasons to buy.",
+          "It was an IT session and not much else. Nifty IT finished +5.22% against Nifty Media's +0.42%, with HCL Technologies, TCS, Shriram Finance and Tech Mahindra leading the Nifty 50, and Kotak Mahindra Bank, Eternal, Maruti Suzuki and Max Healthcare on the other side. Breadth did not follow the headline: Midcap 100 +1.06%, Smallcap 100 +0.11%.",
+          "The rupee had its third straight gain, closing at 95.36 per dollar — up 42 paise from Monday's 95.78, and 152 paise over the three sessions. It opened at 95.53 and touched 94.96 intraday. The dollar index was 102.32, down 0.26%, and Brent fell 1.93% to $104.59. PTI credits the RBI's standing measures to drain spot dollar demand: a dedicated dollar window for oil marketing companies, tighter forex derivative rules, and a 20% reserve requirement on bank dollar purchases above $2 million. An analyst quoted in the report puts support at 95.00.",
+          "Flows stayed the same shape as Monday, smaller. FIIs sold a net ₹1,305.10 crore in the cash segment (bought ₹13,465.40 crore, sold ₹14,770.50 crore) while DIIs bought a net ₹2,439.20 crore (bought ₹16,233.00 crore, sold ₹13,793.70 crore). Domestic money is still the bid. These are provisional NSE figures and the depositories' final numbers can differ."
+        ]
+      }
+    ]
+  },
+  "trends": [
+    {
+      "tag": "India",
+      "headline": "Every bond sold to a retail investor in India will soon come with a dial on it, and the word “unsecured” in bold red",
+      "url": "https://taxguru.in/sebi/sebi-mandates-credit-risk-meter-debt-securities.html",
+      "subject": "SEBI Circular HO/17/11/22(1)2026-DDHS-POD1 of 7 October 2026 requires a six-band Credit Risk-o-Meter on offer documents, abridged prospectuses, private placement memorandums, issuer and platform advertisements and online bond platforms, mapping the AAA-to-D long-term rating scale onto six coloured risk levels, in force 45 days after issuance",
+      "subtitle": "TaxGuru on SEBI Circular HO/17/11/22(1)2026-DDHS-POD1 dated 7 October 2026, and Cafemutual for the risk-band mapping",
+      "bullets": [
+        "The mutual-fund industry has had a Riskometer for years; the bond market has had a rating symbol and the assumption you knew what it meant. SEBI is now requiring a Credit Risk-o-Meter on offer documents, abridged prospectuses, private placement memorandums, every issuer and platform advertisement, and the web and mobile apps of online bond platform providers.",
+        "Six bands, green to red, mapped straight off the long-term rating scale: AAA is \"Lowest credit risk\", AA \"Very low\", A+/A/A- \"Low\", BBB+/BBB/BBB- \"Moderate credit risk\", BB+/BB/BB- \"Moderate risk of default\", and B+ down to D \"High to very high risk of default\". Short-term A1+, A1 and A2 get mapped across too.",
+        "Two details do the real work. If the instrument is unsecured, the word \"unsecured\" must appear in bold red below the dial. And where it is an unsecured perpetual bond — AT1 bonds, the instrument that wiped out Yes Bank's retail holders — the required disclaimer says in terms that these \"may carry the risk of total loss of invested capital\" and that the meter \"does not reflect the unique structural risks\" involved.",
+        "Platforms have 24 hours from a depository intimation of a rating revision to update the dial. The circular inserts a new Chapter II-C into the NCS Master Circular under Section 11(1) of the SEBI Act and Regulation 55(1) of the NCS Regulations, and comes into force 45 days after issuance — around 21 November. SEBI's own caveat is the honest one: this is credit risk only, and says nothing about market or liquidity risk."
+      ]
+    },
+    {
+      "tag": "Industry",
+      "headline": "A frontier lab has written \"do not be cruel to the model\" into the contract, and quietly deleted its ban on targeted political ads",
+      "url": "https://www.anthropic.com/news/2026-usage-policy-update",
+      "subject": "Anthropic published its 2026 Usage Policy update on 8 October 2026, effective 12 November, adding a prohibition on sustained abusive behaviour toward Claude, consolidating deception rules into a new section, removing the blanket ban on personalised political targeting, and adding operator-supervision requirements for models connected to hardware",
+      "subtitle": "Anthropic's own announcement, 8 October 2026 · takes effect 12 November",
+      "bullets": [
+        "The clause everyone will quote: sustained, needless abusive or cruel behaviour toward Claude is now prohibited. Anthropic scopes it hard — extreme cases only, explicitly excluding ordinary frustration, pushback, dark creative themes and model testing — and says ending the conversation remains the main enforcement mechanism. Whatever you think of the premise, a terms-of-service clause protecting the vendor's own software from its users is a new category of rule.",
+        "The one that will get less attention and matters more commercially: the elections section is renamed \"Do Not Undermine Democratic Processes\", now aimed at voter deception and election disruption — and the blanket prohibition on personalised vote and campaign targeting is gone. Deception rules scattered across elections, fraud, privacy and disinformation are consolidated into a new section covering fake accounts and obscuring who is behind a message.",
+        "Surveillance was rewritten rather than tightened at the edges. Tracking people without consent is barred, in real time or by analysing already-collected data; so is using Claude to decide who to investigate, arrest or charge, and building or improving surveillance tools. Consented tracking, content moderation, journalism and legal research stay permitted.",
+        "For anyone pointing a model at a motor: the weapons ban now explicitly covers \"the software and components that make weapons work\" and arming drones or autonomous vehicles, and models connected to hardware that can act physically now carry a requirement that \"a qualified operator must be able to observe the equipment and stop it if needed.\" The stated reason for the whole revision is a year in which Claude took on longer and more independent work."
+      ]
+    },
+    {
+      "tag": "Wildcard",
+      "headline": "Chemists have learned to pull one carbon atom out of a finished drug and drop a nitrogen into the hole",
+      "url": "https://phys.org/news/2026-10-carbon-nitrogen-atoms-medicines.html",
+      "subject": "Mark Levin's laboratory at the University of Chicago reports in Science a carbon-to-nitrogen atom swap performed late on complex bicyclic heteroaryl azides, driven by blue light with oxygen and tetramethylthiourea to exploit the triplet nitrene spin state, demonstrated on dronedarone, vinpocetine, yohimbine and catharanthine",
+      "subtitle": "Phys.org, 13 October 2026, on Dong-Il Park et al., \"Embracing triplet nitrenes for C-to-N replacement of complex bicyclic (hetero)aryl azides\", Science (DOI 10.1126/science.aef3511), from Mark D. Levin's group at the University of Chicago",
+      "bullets": [
+        "Medicinal chemists have wanted this for decades. Swapping a ring carbon for a nitrogen usually changes solubility and metabolism for the better, but doing it means going back to the start and building the whole molecule again a different way. This does it to the finished molecule — \"skeletal editing\", late in the sequence.",
+        "The mechanism is three steps on an aryl azide: shine blue light on it in the presence of oxygen and tetramethylthiourea, which opens the ring and rearranges the atoms, then close the ring back up with a nitrogen where the carbon was.",
+        "The clever part is a refusal to fight. Earlier attempts stalled because the reactive nitrene intermediate drops into a spin state from which it can no longer rearrange. Rather than suppress that state, Levin's group added a reagent that gives the stuck intermediate a different route to the same product — in their words, embracing \"this otherwise parasitic spin state.\"",
+        "They ran it across dozens of compounds in several structural families, including dronedarone, vinpocetine, yohimbine and catharanthine. In early tests the nitrogen-swapped vinpocetine was more soluble, had better metabolic properties, and bound less to a cardiac protein — which, if it holds, is the difference between a drug and an arrhythmia risk. No yields in the news report, and nothing demonstrated at manufacturing scale."
+      ]
+    }
+  ],
+  "research": [
+    {
+      "tag": "Industry · Google Research",
+      "title": "Three months of AI assistance made every lawyer better at the job. It made only the senior ones better lawyers.",
+      "url": "https://research.google/blog/does-better-work-always-mean-better-workers/",
+      "subtitle": "Google Research blog, 7 October 2026, on David Autor and Tanya Rodchenko, \"Does AI Assistance Enhance or Erode Expertise? Evidence from a Three-Month Field Experiment in Patent Drafting\", NBER Working Paper w35720",
+      "subject": "A Google Research write-up of an Autor and Rodchenko randomised controlled trial in which 133 patent lawyers at eleven firms were given or denied access to a Google Labs patent-drafting assistant for three months, finding drafting quality gains of 0.38 SD and unassisted redlining gains of 0.45 SD for senior lawyers but no discernible skill gain for juniors",
+      "bullets": [
+        "The design is the reason to read it. 133 lawyers at eleven IP firms; two-thirds randomly given early access to a Google Labs patent-writing assistant, the control group given the training but not the tool. Independent legal experts graded the output on five quality dimensions, blind.",
+        "With the tool, everyone got better. Drafting scores rose 0.34 SD at ten days and 0.38 SD at ninety — roughly a ten to eleven percentile climb. Junior lawyers also finished the ten-day drafting task 18 minutes faster than the control average of 124 minutes.",
+        "The interesting measurement is the one taken with the tool switched off. On a redlining task at ninety days with no AI allowed, treated lawyers scored 0.32 SD higher overall — but that breaks down as +0.45 SD for lawyers with seven or more years' experience and nothing discernible for those under seven. Senior lawyers kept the judgement; juniors kept nothing, and their scores spread out in both directions.",
+        "The authors' conclusion is methodological and deserves to be stolen: do not infer skill from assisted output. The two are now separate variables, and a team whose work has improved may be a team whose people have not. For a student about to enter a profession where the assistant arrives on day one, that asymmetry — seniors compound, juniors diverge — is the finding to sit with."
+      ]
+    },
+    {
+      "tag": "Academia · ETH Zurich",
+      "title": "Feed it a mesh, get back the tool list, the assembly order, the instruction manual and a list of what is wrong with your design",
+      "url": "https://arxiv.org/abs/2610.09781",
+      "subtitle": "Faustin Arion von Arx, Millicent Schlafly, Mark D. Fuge · ETH Zurich · arXiv:2610.09781, 7 October 2026 · code released",
+      "subject": "An ETH Zurich paper generates complete human assembly plans from a bare mesh with no joint or fastener metadata, finding the sequence by disassembling the object in a physics simulator and scoring candidates with a design-for-assembly cost function, cutting simulated assembly time 35% on 136 assemblies of 5 to 30 parts and picking the correct tool for 88.6% of steps",
+      "bullets": [
+        "The input is deliberately impoverished: a mesh. No joint data, no fastener annotations, no CAD metadata — the things that are always missing by the time a design reaches the person who has to build it. The output is four artefacts: a tool list, the assembly sequence and subassemblies, a printable manual, and feedback on what makes the design hard to assemble.",
+        "The sequence is not generated, it is discovered backwards. They disassemble the object inside a physics simulator and score candidate orders with a cost function built from established design-for-assembly principles. Against the usual baseline — always remove the outermost part first — that cut simulated assembly time by 35% on a robot-arm time proxy.",
+        "Measured on 136 assemblies of 5 to 30 parts each, with the correct tool chosen for 88.6% of steps. Multimodal LLMs write the manual, label the tools and produce the design feedback, and a vision-language model acts as judge on which elements of a manual page actually carry information the reader needs — which is a neater use of a VLM-as-judge than most.",
+        "The pairing with today's other paper is accidental and pointed. One study finds AI assistance erodes the apprenticeship that builds judgement; this one automates a task whose judgement was traditionally built by doing it badly a few hundred times. Code is open-sourced, for engineers and for agents."
+      ]
+    }
+  ],
+  "wild": [
+    {
+      "tag": "Automotive",
+      "headline": "Mitsubishi hired a cloud to follow one SUV around Kuala Lumpur and rain on it",
+      "url": "https://www.famouscampaigns.com/2026/10/mitsubishi-gives-an-suv-its-own-personal-raincloud/",
+      "entities": [
+        "Mitsubishi"
+      ],
+      "subject": "Mitsubishi Malaysia's Roving Cloud campaign suspended an artificial rain cloud above a Mitsubishi Xforce and drove it around Kuala Lumpur and the Klang Valley showering the car with water, to demonstrate the model's Wet Mode traction setting",
+      "subtitle": "Famous Campaigns, 13 October 2026, on Mitsubishi Malaysia's Roving Cloud",
+      "bullets": [
+        "An artificial cloud was carried above a Mitsubishi Xforce and rained on it continuously while the car drove through Kuala Lumpur and around the Klang Valley. The point is a feature: Wet Mode, a traction setting Mitsubishi says it developed specifically for Southeast Asian rain.",
+        "The commitment is in the logistics. They published an itinerary of the cloud's stops, so you could go and stand next to a permanently wet car, and ran a competition for anyone who photographed it in the street.",
+        "The brand's line on social: \"Some people check the weather forecast… we just bring our own.\"",
+        "Worth noting what this is not. Most car advertising films rain and hopes you believe the car is unbothered. This one made the rain follow the car in public, in front of people who could check, which is a materially harder promise to make."
+      ]
+    },
+    {
+      "tag": "Food",
+      "headline": "A jewellery brand's brand colour is now a coffee flavour: purple yam, with diamond latte art",
+      "url": "https://www.restaurantindia.in/news/third-wave-coffee-and-caratlane-launch-ube-beverage-range.n17377",
+      "entities": [
+        "Third Wave Coffee",
+        "CaratLane"
+      ],
+      "subject": "Third Wave Coffee and CaratLane ran a 45-day co-branded range of ube beverages from 4 October to 15 November, picking purple yam because purple is what CaratLane uses throughout its jewellery identity, served with diamond-inspired latte art and collectible cards",
+      "subtitle": "Restaurant India, 5 October 2026 · campaign runs 4 October to 15 November 2026",
+      "bullets": [
+        "Three drinks: Ube Diamond Velvet, Ube Matcha Shine and Jasmine Ube Bling. Ube is purple yam. The stated reason for the whole exercise, from CaratLane CMO Shaifali Gautam, is that \"Purple is at the heart of CaratLane's identity\" — so the flavour was selected to match a hex code.",
+        "Third Wave CEO Rajat Luthra's justification runs the other way: ube is \"one of the most distinctive flavour trends globally\", and the tie-up borrows a jewellery brand's visual identity to ride it. Both explanations are true and neither is about coffee.",
+        "The execution is unusually thorough for a flavour stunt: co-branded entrance displays, signage and digital menu takeovers at participating outlets, a postcard with every order, co-branded cups and collectible cards on delivery and takeaway, and beverage discounts for people walking out of a CaratLane store.",
+        "It runs 45 days, from 4 October to 15 November, timed to CaratLane's 18th anniversary. Each cup arrives with handcrafted diamond-inspired latte art, which is a lot of ask for a barista on a Tuesday."
+      ]
+    },
+    {
+      "tag": "Streaming",
+      "headline": "Masked figures in cloaks stood silently around three Telugu cities for a week and refused to explain themselves",
+      "url": "https://creativebrandsmag.com/cloakmen-take-over-cities-ahead-of-the-traitors-telugu-premiere/",
+      "entities": [
+        "Prime Video",
+        "SOL Productions"
+      ],
+      "subject": "Prime Video's Cloakmen activation sent cloaked masked performers to make unannounced choreographed appearances at landmarks in Hyderabad, Vijayawada and Visakhapatnam in the week before The Traitors Telugu premiered on 15 October 2026",
+      "subtitle": "Creative Brands Mag, 13 October 2026, on Prime Video's Cloakmen activation for The Traitors Telugu",
+      "bullets": [
+        "Figures in cloaks and masks turned up unannounced at landmarks across Hyderabad, Vijayawada and Visakhapatnam — Charminar among them — and did nothing. No pitch, no flyer, no explanation. The appearances were choreographed to build tension rather than to inform anyone.",
+        "The show is The Traitors Telugu, an unscripted Prime Video Original hosted by Teja Sajja and produced by SOL Productions: ten episodes, premiering worldwide on 15 October, new episodes every Thursday at noon IST. The format is a game about not knowing who is lying to you.",
+        "The campaign line is \"Mosam Ikkada New Rule\" — deception is the new rule here — which is the only thing connecting the figures to anything, and it was not printed on most of them.",
+        "The reason it works is structural rather than clever: the show is about suspicion, so the advertising that suits it is advertising that makes you suspicious. Nobody standing at Charminar wondering what the hooded people wanted was being sold anything at the time, which is the trick."
+      ]
+    }
+  ],
+  "learn": {
+    "title": "You have changed a lot in ten years and you are certain you are nearly finished. Everyone is certain, at every age.",
+    "subject": "The end-of-history illusion, from Quoidbach, Gilbert and Wilson's 2013 report in Science of six studies with more than 19,000 participants between 18 and 68, in which people at every age recalled large change over the previous decade but forecast little change in the next one, with the gap holding across personality, core values and ordinary preferences such as favourite food, music and best friend",
+    "body": [
+      "In 2013 three psychologists — Jordi Quoidbach, Daniel Gilbert and Timothy Wilson — published six studies in Science covering more than 19,000 people between 18 and 68. The design is the whole trick. Half the participants were made reporters: fill in this personality test as you would have ten years ago. The other half were predictors: fill it in as you expect to in ten years. Then you line up a 30-year-old predictor against a 40-year-old reporter and see whether the prediction matches what actually happened to someone who has already done that decade.",
+      "It does not. At every age, people reported a great deal of change behind them and forecast very little in front of them. Not just personality — core values too, and then the softest and most checkable category of all: favourite food, favourite band, best friend. The researchers used that last set deliberately, because nobody misremembers their favourite band from 2016. If the gap survives in a domain where memory is reliable, then the error is not in the recalling. It is in the predicting.",
+      "The explanation they offer is almost sympathetic. Remembering change is reconstruction — you have the evidence, you just read it off. Predicting change is construction, which is harder work, and when the work is hard the mind quietly returns the easiest available answer: it will be roughly like this. So you walk around believing you have just now, finally, become the finished version of yourself. So did you at 22. So will you at 40. The twenty-year-old whose music taste you find slightly embarrassing was, at the time, as convinced as you are."
+    ]
+  },
+  "ideas": {
+    "prompt": "Ten things you could do with an hour you didn't expect to have",
+    "note": "Altucher's drill: ten against one prompt, written fast, not defended. Reddit rate-limited the fetcher on two subreddits this morning, so the raw material is this week's r/SomebodyMakeThis plus the Ask HN idea threads.",
+    "items": [
+      {
+        "text": "Walk home by a road you have never used, chosen by taking the wrong turn on purpose."
+      },
+      {
+        "text": "Phone the person whose last three messages you answered with a thumbs up."
+      },
+      {
+        "text": "Read a book's first chapter standing up in a shop and then decide."
+      },
+      {
+        "text": "Get everything off your phone and onto something you own — the photos, the notes, the eight years of messages.",
+        "why": "People keep asking for a tool to export their own texts off a phone; nobody waits for one."
+      },
+      {
+        "text": "Record yourself reading one chapter of a book that has no audiobook, and send it to one person.",
+        "why": "Adapted from a recurring r/SomebodyMakeThis ask for crowdsourced audiobook narration."
+      },
+      {
+        "text": "Cook the one dish you have eaten a hundred times and never made."
+      },
+      {
+        "text": "Go to the oldest building within walking distance and find out what it was before."
+      },
+      {
+        "text": "Write down the ten things currently worrying you, then mark the ones that are actually a decision someone else has to make."
+      },
+      {
+        "text": "Sit in the cheap seats at whatever is on at the nearest hall, with no idea what it is."
+      },
+      {
+        "text": "Do nothing, visibly, in a public place, and see how long it takes before it stops feeling like a waste."
+      }
+    ]
+  }
+}

@@ -5382,6 +5382,150 @@
         "lbbonline.com",
         "visitsweden.com"
       ]
+    },
+    {
+      "date": "2026-10-14",
+      "issue": 1,
+      "quote_text": [
+        "A great deal of intelligence can be invested in ignorance when the need for illusion is deep."
+      ],
+      "quote_author": [
+        "Saul Bellow"
+      ],
+      "idea_text": [
+        "Walk home by a road you have never used, chosen by taking the wrong turn on purpose.",
+        "Phone the person whose last three messages you answered with a thumbs up.",
+        "Read a book's first chapter standing up in a shop and then decide.",
+        "Get everything off your phone and onto something you own — the photos, the notes, the eight years of messages.",
+        "Record yourself reading one chapter of a book that has no audiobook, and send it to one person.",
+        "Cook the one dish you have eaten a hundred times and never made.",
+        "Go to the oldest building within walking distance and find out what it was before.",
+        "Write down the ten things currently worrying you, then mark the ones that are actually a decision someone else has to make.",
+        "Sit in the cheap seats at whatever is on at the nearest hall, with no idea what it is.",
+        "Do nothing, visibly, in a public place, and see how long it takes before it stops feeling like a waste."
+      ],
+      "idea_prompt": [
+        "Ten things you could do with an hour you didn't expect to have"
+      ],
+      "tip_text": [
+        "Audit the `description` lines on your subagents, not their bodies. The description sits in context on every single turn so Claude can decide when to delegate; the body loads only when that subagent actually runs. So one sentence in the description — when to use this — and every checklist, example and output format in the body. Claude Code warns you at startup once your combined descriptions pass 15,000 tokens, which is a long way past where it started costing you."
+      ],
+      "hn_id": [
+        "50073879",
+        "50055304",
+        "50058528",
+        "50058507",
+        "50059115"
+      ],
+      "link": [
+        "https://deepmind.google/models/gemini/",
+        "https://www.tomshardware.com/tech-industry/cyber-security/unprecedented-cyberattack-cripples-supermarket-fridges-across-europe-as-hackers-activate-automatic-defrosting-delivery-and-store-prices-also-impacted-by-incident",
+        "https://prophitt.me/writing/a-modern-web-app-in-c",
+        "https://z.ai/blog/glm-legal",
+        "https://research.meta.ai/blog/muse-wonder",
+        "https://taxguru.in/sebi/sebi-mandates-credit-risk-meter-debt-securities.html",
+        "https://www.anthropic.com/news/2026-usage-policy-update",
+        "https://phys.org/news/2026-10-carbon-nitrogen-atoms-medicines.html",
+        "https://www.famouscampaigns.com/2026/10/mitsubishi-gives-an-suv-its-own-personal-raincloud/",
+        "https://www.restaurantindia.in/news/third-wave-coffee-and-caratlane-launch-ube-beverage-range.n17377",
+        "https://creativebrandsmag.com/cloakmen-take-over-cities-ahead-of-the-traitors-telugu-premiere/",
+        "https://research.google/blog/does-better-work-always-mean-better-workers/",
+        "https://arxiv.org/abs/2610.09781",
+        "https://theprint.in/economy/rupee-jumps-42-paise-to-close-at-95-36-against-us-dollar/3070797/"
+      ],
+      "subject": [
+        "SEBI Circular HO/17/11/22(1)2026-DDHS-POD1 of 7 October 2026 requires a six-band Credit Risk-o-Meter on offer documents, abridged prospectuses, private placement memorandums, issuer and platform advertisements and online bond platforms, mapping the AAA-to-D long-term rating scale onto six coloured risk levels, in force 45 days after issuance",
+        "Anthropic published its 2026 Usage Policy update on 8 October 2026, effective 12 November, adding a prohibition on sustained abusive behaviour toward Claude, consolidating deception rules into a new section, removing the blanket ban on personalised political targeting, and adding operator-supervision requirements for models connected to hardware",
+        "Mark Levin's laboratory at the University of Chicago reports in Science a carbon-to-nitrogen atom swap performed late on complex bicyclic heteroaryl azides, driven by blue light with oxygen and tetramethylthiourea to exploit the triplet nitrene spin state, demonstrated on dronedarone, vinpocetine, yohimbine and catharanthine",
+        "Mitsubishi Malaysia's Roving Cloud campaign suspended an artificial rain cloud above a Mitsubishi Xforce and drove it around Kuala Lumpur and the Klang Valley showering the car with water, to demonstrate the model's Wet Mode traction setting",
+        "Third Wave Coffee and CaratLane ran a 45-day co-branded range of ube beverages from 4 October to 15 November, picking purple yam because purple is what CaratLane uses throughout its jewellery identity, served with diamond-inspired latte art and collectible cards",
+        "Prime Video's Cloakmen activation sent cloaked masked performers to make unannounced choreographed appearances at landmarks in Hyderabad, Vijayawada and Visakhapatnam in the week before The Traitors Telugu premiered on 15 October 2026",
+        "A Google Research write-up of an Autor and Rodchenko randomised controlled trial in which 133 patent lawyers at eleven firms were given or denied access to a Google Labs patent-drafting assistant for three months, finding drafting quality gains of 0.38 SD and unassisted redlining gains of 0.45 SD for senior lawyers but no discernible skill gain for juniors",
+        "An ETH Zurich paper generates complete human assembly plans from a bare mesh with no joint or fastener metadata, finding the sequence by disassembling the object in a physics simulator and scoring candidates with a design-for-assembly cost function, cutting simulated assembly time 35% on 136 assemblies of 5 to 30 parts and picking the correct tool for 88.6% of steps",
+        "The end-of-history illusion, from Quoidbach, Gilbert and Wilson's 2013 report in Science of six studies with more than 19,000 participants between 18 and 68, in which people at every age recalled large change over the previous decade but forecast little change in the next one, with the gap holding across personality, core values and ordinary preferences such as favourite food, music and best friend"
+      ],
+      "brand": [
+        "Mitsubishi",
+        "Third Wave Coffee",
+        "CaratLane",
+        "Prime Video",
+        "SOL Productions",
+        "Masked"
+      ],
+      "brand_mention": [
+        "Mitsubishi Xforce",
+        "Kuala Lumpur",
+        "Klang Valley",
+        "Wet Mode",
+        "Mitsubishi",
+        "Southeast Asian",
+        "Some",
+        "Worth",
+        "Ube Diamond Velvet",
+        "Ube Matcha Shine",
+        "Jasmine Ube Bling Ube",
+        "CaratLane CMO Shaifali Gautam",
+        "Purple",
+        "CaratLane's",
+        "Wave CEO Rajat Luthra's",
+        "CaratLane's 18",
+        "Hyderabad",
+        "Vijayawada",
+        "Visakhapatnam",
+        "Charminar",
+        "Traitors Telugu",
+        "Prime Video Original",
+        "Teja Sajja",
+        "SOL Productions",
+        "IST",
+        "Mosam Ikkada New Rule"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "Every bond sold to a retail investor in India will soon come with a dial on it, and the word “unsecured” in bold red"
+        ],
+        [
+          "trends",
+          "A frontier lab has written \"do not be cruel to the model\" into the contract, and quietly deleted its ban on targeted political ads"
+        ],
+        [
+          "trends",
+          "Chemists have learned to pull one carbon atom out of a finished drug and drop a nitrogen into the hole"
+        ],
+        [
+          "wild",
+          "Mitsubishi hired a cloud to follow one SUV around Kuala Lumpur and rain on it"
+        ],
+        [
+          "wild",
+          "A jewellery brand's brand colour is now a coffee flavour: purple yam, with diamond latte art"
+        ],
+        [
+          "wild",
+          "Masked figures in cloaks stood silently around three Telugu cities for a week and refused to explain themselves"
+        ],
+        [
+          "research",
+          "Three months of AI assistance made every lawyer better at the job. It made only the senior ones better lawyers."
+        ],
+        [
+          "research",
+          "Feed it a mesh, get back the tool list, the assembly order, the instruction manual and a list of what is wrong with your design"
+        ],
+        [
+          "learn",
+          "You have changed a lot in ten years and you are certain you are nearly finished. Everyone is certain, at every age."
+        ]
+      ],
+      "editorial_domains": [
+        "anthropic.com",
+        "creativebrandsmag.com",
+        "famouscampaigns.com",
+        "phys.org",
+        "restaurantindia.in",
+        "taxguru.in"
+      ]
     }
   ]
 }
