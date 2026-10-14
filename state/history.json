@@ -5526,6 +5526,157 @@
         "restaurantindia.in",
         "taxguru.in"
       ]
+    },
+    {
+      "date": "2026-10-15",
+      "issue": 1,
+      "quote_text": [
+        "Simplicities are enormously complex. Consider the sentence 'I love you'."
+      ],
+      "quote_author": [
+        "Richard O. Moore"
+      ],
+      "idea_text": [
+        "The handwriting of everyone who has ever written you something. One box, nothing typed.",
+        "Minutes of the local body that decides things near you, printed, in order, for one issue only.",
+        "Every ticket stub, boarding pass and receipt from a single year, then read the year back off them.",
+        "Bad translations off menus, packaging and signs, photographed where you found them.",
+        "The last photograph on every phone you have ever retired.",
+        "Recipes written in someone else's hand — the ones with a stain on them and no oven temperature.",
+        "Sounds that are being quietly discontinued: a dial tone, a ticket punch, a shutter that is actually a shutter.",
+        "One sentence per day that someone said out loud to you and did not know was good.",
+        "The first and last page of every book you abandoned, so you can see what you keep walking away from.",
+        "Hours, not subscriptions: write down the actual hours you spent on each thing you pay monthly for."
+      ],
+      "idea_prompt": [
+        "Ten things worth collecting that nobody collects"
+      ],
+      "tip_text": [
+        "If a long session stops reaching for your skills, the skill list fell out of context at the last compaction — nothing is broken. Run `/reload-skills`: version 2.1.299, shipped yesterday, reworded the command specifically to say what it does, which is re-send the full skill list to the model. Same session, same window, and the skill you wrote is visible again."
+      ],
+      "hn_id": [
+        "50073633",
+        "50091788",
+        "50070302",
+        "50071017",
+        "50069499"
+      ],
+      "link": [
+        "https://www.anthropic.com/engineering/redesigning-source-control",
+        "https://www.csoonline.com/article/4234854/ai-agents-arent-going-rogue-frontier-labs-are-skipping-security-basics.html",
+        "https://www.firefox.com/en-US/enterprise/",
+        "https://www.apple.com/apple-homeview/",
+        "https://github.com/rust-lang/rust/issues/164250",
+        "https://newsonair.gov.in/cabinet-approves-53428-crore-rupees-for-social-security-net/",
+        "https://deepmind.google/blog/on-device-ai-scam-detection-mddi/",
+        "https://www.sciencedaily.com/releases/2026/10/261011211554.htm",
+        "https://www.mediapost.com/publications/article/418543/wet-ones-butts-in-with-sleight-of-hand-campaign.html",
+        "https://ouraring.com/blog/wear-your-best-life-brand-campaign/",
+        "https://shots.net/news/view/oat-cult-gives-us-a-taste-of-horror",
+        "https://research.google/blog/analyzing-technical-documents-with-deep-review/",
+        "https://arxiv.org/abs/2610.11765",
+        "https://theprint.in/economy/rupee-rises-19-paise-to-close-at-95-17-against-us-dollar/3071958/"
+      ],
+      "subject": [
+        "Union Cabinet lowers the disability-pension threshold from 80 per cent to 40 per cent and renames NSAP",
+        "DeepMind and GovTech Singapore ship an on-device Gemma scam detector for Singaporean phones",
+        "A simulated particle is stopped dead by magnetic flux it never crosses, on Oxford's hybrid quantum computer",
+        "Wet Ones advertises hands posed to look like bare bottoms after the subway refuses the creative",
+        "Oura builds a tenth-scale miniature city by hand in Prague rather than generate one",
+        "Oat Cult sells tiramisu overnight oats with a folk-horror film about a hole that eats villagers",
+        "Google Research describes Deep Review, an agentic paper-checking pipeline piloted on 16,000 manuscripts",
+        "Oxford and Stanford measure that LLMs keep reasoning visibly after being told not to reason",
+        "A water tower is tall for pressure, not volume, which lets a utility buy pumps sized for average demand"
+      ],
+      "brand": [
+        "Wet Ones",
+        "Edgewell Personal Care",
+        "BBH USA",
+        "DeuxMoi",
+        "Kyle Cooke",
+        "Oura",
+        "Nice+Frank",
+        "Thirty-five",
+        "Oat Cult",
+        "Thingy & Thingy",
+        "MindsEye",
+        "Mike Upson"
+      ],
+      "brand_mention": [
+        "Wet Ones",
+        "DeuxMoi",
+        "Summer House's Kyle Cooke",
+        "Publicis OnePulse",
+        "LinkNYC",
+        "Times Square",
+        "Take",
+        "Wet",
+        "Veronique Mura",
+        "Edgewell",
+        "Twenty-nine",
+        "Prague",
+        "Israel",
+        "Italy",
+        "France",
+        "Germany",
+        "Greece",
+        "Czech Republic",
+        "Lilach Chen",
+        "Sam Walker",
+        "Nice",
+        "Frank",
+        "Mike Upson",
+        "MindsEye",
+        "Thingy",
+        "Shots",
+        "Oat Cult"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "India's disability pension has only ever been for people assessed at 80% disabled. From now it starts at 40%, and from birth."
+        ],
+        [
+          "trends",
+          "Singapore is putting a scam detector inside the phone, and the design constraint is that the conversation never leaves it"
+        ],
+        [
+          "trends",
+          "A particle was stopped dead by a magnetic field it never went anywhere near"
+        ],
+        [
+          "wild",
+          "A hand-wipe brand photographed hands to look like bare bottoms, and the subway refused to carry it"
+        ],
+        [
+          "wild",
+          "Thirty-five modelmakers built a city at one-tenth scale in Prague in three weeks, so that nobody could accuse it of being AI"
+        ],
+        [
+          "wild",
+          "A village feeds its pets and then its children to a hole in the ground, and the hole sprays back tiramisu oats"
+        ],
+        [
+          "research",
+          "Writing the paper stopped being the bottleneck. Google put 16,000 of them through an agent before anyone submitted."
+        ],
+        [
+          "research",
+          "Thinking Inertia: LLMs Keep Thinking When Told Not To"
+        ],
+        [
+          "learn",
+          "A water tower is not a bucket. It is a battery, and what it stores is pressure."
+        ]
+      ],
+      "editorial_domains": [
+        "deepmind.google",
+        "mediapost.com",
+        "newsonair.gov.in",
+        "ouraring.com",
+        "sciencedaily.com",
+        "shots.net"
+      ]
     }
   ]
 }
