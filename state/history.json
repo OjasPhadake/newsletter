@@ -5677,6 +5677,155 @@
         "sciencedaily.com",
         "shots.net"
       ]
+    },
+    {
+      "date": "2026-10-16",
+      "issue": 1,
+      "quote_text": [
+        "Positive, adj.: Mistaken at the top of one's voice."
+      ],
+      "quote_author": [
+        "Ambrose Bierce"
+      ],
+      "idea_text": [
+        "One van that is the town's entire delivery service — chemist, bakery, hardware, library books — on a fixed loop twice a day.",
+        "A repair counter for exactly four things: phone screens, bicycle wheels, kettles, zips. No appointments.",
+        "A shop that is a café in the morning, a print and photocopy desk in the afternoon and a gallery on Friday nights, because a town only has demand for a third of each.",
+        "Somebody who drives people to hospital appointments in the nearest city and waits for them.",
+        "A freezer library: you pay monthly for a share of one large chest freezer in a shed, because nobody needs a whole one.",
+        "The paperwork desk — forms, affidavits, pension claims, scanning — run by one person who actually knows which queue each one goes in.",
+        "A tool shed that rents the things a household owns once and uses twice: a pressure washer, a tile cutter, a ladder, a tent.",
+        "Weekend photography for the eleven weddings and forty birthdays that happen in a fifteen-kilometre radius, booked a year ahead.",
+        "A bus that is a laundry. One wash cycle per stop, one stop per village, same day every week.",
+        "Somebody who keeps the town's records on purpose: minutes, notices, land disputes, who said what at which meeting, printed and indexed."
+      ],
+      "idea_prompt": [
+        "Ten businesses that would work in a small town but not a big city"
+      ],
+      "tip_text": [
+        "Stop paying for `@file` on big files. Typing `@src/server.ts` pastes the whole file into the prompt; set `CLAUDE_CODE_DISABLE_FILE_MENTIONS` and Claude gets the path instead and reads only the parts it needs with Grep and Read. Same instruction, a fraction of the context, and the difference compounds over a long session."
+      ],
+      "hn_id": [
+        "50093568",
+        "50084757",
+        "50094994",
+        "50084240",
+        "50096142"
+      ],
+      "link": [
+        "https://jjmaxwell4.com/writing/things-to-know-when-you-get-cancer/",
+        "https://www.not-ship.com/how-amazon-pushes-up-prices-all-across-the-internet/",
+        "https://anoma.ly/notes/opencode-2-0/",
+        "https://typeof.net/Iosevka/",
+        "https://tinylittleoffice.com/",
+        "https://www.kotakneo.com/news/regulations/rbi-raises-daily-crr-requirement-to-99-percent-from-16-october/",
+        "https://www.dnjournal.com/archive/lowdown/2026/posts/1008.htm",
+        "https://www.nhm.ac.uk/press-office/press-releases/uk-dinosaur-fossil-identified-as-new-long-clawed-predator.html",
+        "https://www.koreaherald.com/article/10897136",
+        "https://thedieline.com/kraft-pocket-parm-takes-cheese-to-grate-new-places/",
+        "https://creative.salon/articles/work/screwfix-m-c-saatchi-mo-farah-motifications",
+        "https://www.anthropic.com/research/the-missing-map-of-the-sky",
+        "https://arxiv.org/abs/2610.13870",
+        "https://insights.dsij.in/dsijarticledetail/closing-bell-ensex-surges-1534-points-nifty-50-gains-375-points-as-it-and-banking-stocks-rally-60041"
+      ],
+      "subject": [
+        "RBI raises the daily minimum CRR maintenance requirement from 90 per cent to 99 per cent from the fortnight beginning 16 October 2026",
+        "ICANN's 2026 new gTLD Reveal Day publishes 1,615 applications and the contention sets, with .agent the most contested string",
+        "Invictibellatrix amberina described from an Isle of Wight skull fragment acquired by the Natural History Museum in 1924, the first megaraptoran found in Europe",
+        "Posco unveils Panorama Walk, a 27-metre stainless steel sculpture with a 365-metre walking path, on Gubongsan above Gwangyang Bay",
+        "Kraft Natural Cheese launches Pocket Parm, a miniature clip-on version of its grated parmesan shaker sold as a collectible accessory",
+        "Screwfix campaign in which Mo Farah plays a human app notification, bursting out of hedges and vans to deliver loyalty rewards alerts",
+        "Anthropic publishes the first complete ultraviolet map of the sky, assembled by Claude-coordinated agents from GALEX, Swift and FIMS/SPEAR data with inpainting for unobserved regions",
+        "ARIA, a learned meta-controller that decides when a cheap executor model should consult a stronger advisor model in an agentic workflow",
+        "Why bent dry spaghetti fractures into three or more pieces, Audoly and Neukirch's flexural-wave explanation, and the MIT twist result"
+      ],
+      "brand": [
+        "Posco",
+        "Gwangyang",
+        "I&Architects",
+        "Manuel Monteserin",
+        "Kraft Natural Cheese",
+        "Kraft",
+        "Screwfix",
+        "Mo Farah",
+        "M+C Saatchi Group UK"
+      ],
+      "brand_mention": [
+        "Panorama Walk",
+        "Gubongsan",
+        "Gwangyang",
+        "Gwangyang Bay",
+        "Manuel Monteserin",
+        "I&Architects",
+        "Gwangyang Citizens Day",
+        "Posco",
+        "Pocket Parm",
+        "Kraft Natural Cheese's",
+        "DIELINE",
+        "Tomato Basil Parmesan",
+        "Garlic Herb Parmesan",
+        "Grated Cheddar",
+        "I",
+        "Sir Mo Farah",
+        "PING",
+        "TV",
+        "VOD",
+        "CTV",
+        "Screwfix's",
+        "Kelvin Murray",
+        "UI",
+        "Stopping",
+        "Andrew Gaynord",
+        "M",
+        "C Saatchi Group",
+        "Farah"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "From this morning, an Indian bank has to hold 99% of its reserve requirement every single day, not 90%"
+        ],
+        [
+          "trends",
+          "The internet is adding top-level domains for the first time since 2012, and the most fought-over string is .agent"
+        ],
+        [
+          "trends",
+          "A skull fragment sat in a museum drawer from 1924 until last week, when it became Europe's first megaraptoran"
+        ],
+        [
+          "wild",
+          "A steelmaker built a 27-metre stainless-steel flame on a mountain and is giving it to the city"
+        ],
+        [
+          "wild",
+          "Kraft shrank its parmesan shaker until it was a bag charm, and then put cheese in it"
+        ],
+        [
+          "wild",
+          "Screwfix hired a four-time Olympic champion to be a push notification, and he shouts PING"
+        ],
+        [
+          "research",
+          "Two-thirds of the sky had been mapped in ultraviolet. Agents inpainted the rest and the predictions came within 10%."
+        ],
+        [
+          "research",
+          "Ask Your Advisor: Learning When to Consult Stronger Models in Agentic Systems"
+        ],
+        [
+          "learn",
+          "Dry spaghetti refuses to break in half, and the reason is that the first break shouts"
+        ]
+      ],
+      "editorial_domains": [
+        "creative.salon",
+        "dnjournal.com",
+        "koreaherald.com",
+        "kotakneo.com",
+        "nhm.ac.uk",
+        "thedieline.com"
+      ]
     }
   ]
 }

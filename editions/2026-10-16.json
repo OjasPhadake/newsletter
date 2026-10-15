@@ -1,0 +1,341 @@
+{
+ "date_line": "Friday, 16 October 2026",
+ "issue": 1,
+ "preheader": "A man six months into mouth cancer writes down the logistics nobody tells you; the argument that Amazon raises prices everywhere by charging sellers, not shoppers; an office suite where the document is the URL and nothing is stored; the Sensex took back 1,534 points in one session on IT results while breadth went the other way; from this morning Indian banks must hold 99% of their reserve requirement every single day; the most fought-over new top-level domain on the internet is .agent; Anthropic published the first complete ultraviolet map of the sky; a steelmaker put a 27-metre flame on a Korean mountain; and a skull fragment that sat in a museum drawer since 1924 is Europe's first megaraptoran.",
+ "quote": {
+  "text": "Positive, adj.: Mistaken at the top of one's voice.",
+  "author": "Ambrose Bierce",
+  "work": "The Unabridged Devil's Dictionary",
+  "source_url": "https://www.goodreads.com/quotes/tag/certainty",
+  "note": "Bierce has defined confidence as a symptom rather than a signal. We do the opposite all day: we read volume as evidence, and the person who states a thing flatly gets believed over the person who qualifies it. The joke is that the two are not merely unrelated — loudness is what you reach for when the argument will not carry the claim on its own. Worth holding next to anything that answers you in a confident tone and never says it is unsure."
+ },
+ "agent_craft": {
+  "items": [
+   {
+    "text": "Stop paying for `@file` on big files. Typing `@src/server.ts` pastes the whole file into the prompt; set `CLAUDE_CODE_DISABLE_FILE_MENTIONS` and Claude gets the path instead and reads only the parts it needs with Grep and Read. Same instruction, a fraction of the context, and the difference compounds over a long session.",
+    "source": "Claude Code changelog, 2.1.299 (14 October 2026)",
+    "url": "https://code.claude.com/docs/en/changelog"
+   }
+  ]
+ },
+ "hn": [
+  {
+   "title": "Things to know when you get cancer",
+   "url": "https://jjmaxwell4.com/writing/things-to-know-when-you-get-cancer/",
+   "hn_url": "https://news.ycombinator.com/item?id=50093568",
+   "points": 1843,
+   "comments": 442,
+   "bullets": [
+    "JJ Maxwell was diagnosed in May 2026 with squamous cell carcinoma in the mouth, and the post is logistics rather than medicine — the things that turn out to be in your hands. It opens on scheduling: his first ENT appointment was four weeks out; his wife pushed him to call back and he got in that week on somebody else's cancellation.",
+    "The expensive mistake was administrative. Push for comprehensive genetic testing early, and check which tumour it is being run on — his came back from the surgical tumour rather than the biopsy one, and that cost several months.",
+    "Two sources he says to use. The NCCN's standard-of-care flowcharts (free account at nccn.org) give the actual decision tree by cancer type and stage; he prefers the PDFs. And get a second opinion early at a top cancer centre, including a second read of the pathology.",
+    "His case for travelling: if you are within two to three hours of a major cancer centre, go there rather than a community hospital. At MD Anderson a pathology question came back in twenty minutes because his doctor knew the pathologist personally. He reckons the same question elsewhere could have taken days or gone unanswered.",
+    "Two warnings worth repeating. He did not talk to anyone who had had the same operation before having it, and recovery was harder than he expected — ask the surgeon how many of these they do a year and what their complication rate is. And most of the chatbots he consulted leaned towards telling him he did not have cancer."
+   ]
+  },
+  {
+   "title": "How Amazon pushes up prices all across the Internet",
+   "url": "https://www.not-ship.com/how-amazon-pushes-up-prices-all-across-the-internet/",
+   "hn_url": "https://news.ycombinator.com/item?id=50084757",
+   "points": 926,
+   "comments": 728,
+   "bullets": [
+    "Amanda Shendruk's argument is that the mechanism is fees, not prices. Amazon's share of a sale was about 19% in 2014; many sellers now hand over close to half of every sale. The referral commission is 15% in most categories, which is in line with eBay and Walmart — fulfilment, storage, returns and advertising stack on top of it.",
+    "Only the referral fee is formally mandatory. The piece leans on the FTC's own language to argue the rest are not optional either: Prime eligibility is \"a virtual necessity for doing business on Amazon\". And because the referral fee is a percentage, every price rise a seller makes to cover its fees also raises Amazon's cut.",
+    "The part that reaches the rest of the web is the Fair Pricing Policy. Sell the item cheaper anywhere else — including your own website — and Amazon can remove your Buy Box or suspend you. More Perfect Union found a seller suspended over a one-cent gap with Target. In 2024 sellers told CNBC they lost the Buy Box after Target put their products on sale.",
+    "Three live cases: the FTC and 17 states sued in 2023 over punishing sellers who price lower elsewhere, with trial set for next year; California's attorney general alleges Amazon pushed brands to get Walmart, Target and others to raise prices; and in 2026 Germany's competition authority ordered Amazon to stop controlling its sellers' prices, a decision not yet final.",
+    "Why it spreads: Amazon is about 40% of US online retail, so a seller cannot simply leave, and the floor Amazon's fees set under its own prices ends up under everyone's. Disclosure in the piece — Shendruk spent two years at the Washington Post, which Jeff Bezos owns."
+   ]
+  },
+  {
+   "title": "OpenCode 2.0",
+   "url": "https://anoma.ly/notes/opencode-2-0/",
+   "hn_url": "https://news.ycombinator.com/item?id=50094994",
+   "points": 849,
+   "comments": 370,
+   "bullets": [
+    "The architectural change: the server now runs automatically as a single background process, and the terminal UI, the web interface and the desktop app all attach to the same one. In 1.x client/server mode was opt-in and mostly a power-user thing. The service can be exposed to other hosts and paired with `/pair` or `opencode pair`.",
+    "Code Mode is the interesting feature. A minimal JavaScript interpreter in `@opencode/codemode` lets the agent write a script that chains tool calls in a single round trip rather than one call per turn, and it converts MCP servers and OpenAPI endpoints into callable functions. All MCP servers are opted in by default.",
+    "The API was restarted from scratch rather than extended, and OpenCode can now call its own API — the example given is creating a git worktree and moving the current session into it. Subagents and shell commands can run in the background, with Ctrl+B moving foreground work there.",
+    "Nearly every 2.0 feature is implemented as one of 80+ internal plugins, TUI plugins graduated from experimental to stable, and everything hot-reloads. `@opencode/sdk` is the same code that powers the CLI, so it runs on a server or inside something like Durable Objects.",
+    "Breaking changes to plan for: 1.0 plugins do not work, the server API is completely different, and `tui.json` config moves to JSON. The upgrade path is latest 1.x, then `opencode upgrade --major`. The post carries no benchmarks or sizes — the \"148 passed\" on the page is demo output, not a measurement."
+   ]
+  },
+  {
+   "title": "Iosevka is an open-source, sans-serif and slab-serif monospace font",
+   "url": "https://typeof.net/Iosevka/",
+   "hn_url": "https://news.ycombinator.com/item?id=50084240",
+   "points": 738,
+   "comments": 302,
+   "bullets": [
+    "Belleve Invis's typeface, at version 34.9.0, with a 2015–2026 copyright line. The decision that defines it: monospace glyphs are exactly half an em wide by default, so it is narrower than most coding fonts and more columns fit on a screen.",
+    "It is really a family of families. Monospace comes as Iosevka, Iosevka Term (narrower symbols so terminal column counts survive) and Iosevka Fixed (ligatures disabled for compatibility), each with a slab-serif twin; Aile and Etoile are quasi-proportional for prose, widening w and m and narrowing i and l.",
+    "Nine weights from Thin to Heavy, three slopes (upright, italic, oblique), two widths (Normal and Extended), 146 configurable characters and 19 stylistic sets — and the stylistic sets are named after other popular coding fonts, so you can ask for someone else's letterforms inside these metrics.",
+    "Coverage is the other selling point: 248 languages across Latin, Greek and Cyrillic, plus symbols and maths characters, language-specific coding ligature sets, and long ligatures assembled from repeated characters.",
+    "The web customiser is the real artefact. You pick weights, widths, variants and ligation sets and bake a custom build — which makes Iosevka less a font you download than a build system that emits the font you asked for."
+   ]
+  },
+  {
+   "title": "Tiny Little Office",
+   "url": "https://tinylittleoffice.com/",
+   "hn_url": "https://news.ycombinator.com/item?id=50096142",
+   "points": 654,
+   "comments": 187,
+   "bullets": [
+    "Ten apps in a browser with no accounts: word processor, outliner, presentation builder, spreadsheet, calculator, drawing tool, diagram maker, animator, calendar and trip planner. The conceit, in the project's own words, is that the document is the link — copy the URL and you have copied the document.",
+    "Literally so. A document is `https://tinylittleoffice.com/<app>/#doc=<percent-encoded markdown>`, with ten app IDs — write, outline, deck, sheet, calc, draw, diagram, anim, cal, trip — and optional `&title=`, `&by=` and `&lang=`. Every space and line break is preserved because list nesting depends on leading spaces. Keep links under 2,000 characters.",
+    "Storage is the inversion. By default nothing is kept, on your device or on a server. Saving is opt-in and stays local; short links are encrypted with a key the server never sees; the only thing that lives server-side is the social preview card. Your browser history still has the link, which is what incognito is for.",
+    "Made by Aboard, MIT licensed, 10 apps and 21 languages \"mostly the ones we speak in NYC\", 25 sample documents in the repo, Node 24 or later, and around 301 stars on GitHub as of this morning.",
+    "Documents nest: drop a fenced block named after an app ID — ```sheet — inside a `write` document and the spreadsheet renders inside the page. The site also publishes an `llms.txt` and a Claude Code skill so an agent can produce a document by writing a URL, which does mean the homepage is a page that issues instructions to agents. Treat it accordingly."
+   ]
+  }
+ ],
+ "markets": {
+  "indices": [
+   {
+    "name": "Sensex · Thu 15 Oct close",
+    "value": "74,315.61",
+    "change": "1,533.72 (2.11%)",
+    "direction": "up"
+   },
+   {
+    "name": "Nifty 50 · Thu 15 Oct close",
+    "value": "22,997.35",
+    "change": "374.65 (1.66%)",
+    "direction": "up"
+   },
+   {
+    "name": "Nifty IT · Thu 15 Oct",
+    "value": "+1.82%",
+    "change": "the sector that did it",
+    "direction": "up"
+   },
+   {
+    "name": "Nifty PSU Bank · Thu 15 Oct",
+    "value": "−1.55%",
+    "change": "worst of the majors",
+    "direction": "down"
+   },
+   {
+    "name": "Nifty Midcap 100 · Thu 15 Oct",
+    "value": "−0.36%",
+    "change": "fell on an up day",
+    "direction": "down"
+   },
+   {
+    "name": "Nifty Smallcap 100 · Thu 15 Oct",
+    "value": "−1.31%",
+    "change": "fell harder",
+    "direction": "down"
+   },
+   {
+    "name": "USD/INR · Thu 15 Oct close",
+    "value": "95.05",
+    "change": "12 paise stronger, fifth straight",
+    "direction": "down"
+   },
+   {
+    "name": "Brent crude · Thu 15 Oct",
+    "value": "$104.13",
+    "change": "−1.82%",
+    "direction": "down"
+   },
+   {
+    "name": "FII cash net · Thu 15 Oct",
+    "value": "−₹5,285 cr",
+    "change": "DIIs bought ₹3,319 cr",
+    "direction": "down"
+   }
+  ],
+  "stories": [
+   {
+    "headline": "The index gained 1,534 points and most stocks fell. Three heavyweights did almost all of it.",
+    "url": "https://insights.dsij.in/dsijarticledetail/closing-bell-ensex-surges-1534-points-nifty-50-gains-375-points-as-it-and-banking-stocks-rally-60041",
+    "source": "Dalal Street Investment Journal's closing bell for the index levels, sectors, breadth and contributors; Kotak Neo's closing bell for the sector and broader-market percentages; HDFC Sky's PTI-fed rupee note for the currency, the dollar index and Brent; NiftyTrader for the provisional FII/DII cash figures. All numbers describe Thursday 15 October 2026. Indian markets are open again this morning.",
+    "bullets": [
+     "The Sensex closed at 74,315.61, up 1,533.72 points or 2.11%, and the Nifty 50 at 22,997.35, up 374.65 points or 1.66% — taking back Wednesday's 252-point fall roughly six times over and putting the Nifty back above 22,900.",
+     "September-quarter results from HCLTech and TCS did the work. Nifty IT rose about 1.82%, with HCLTech, Infosys and TCS each up more than 2%. Seven of eleven major sectors advanced; Nifty PSU Bank was the laggard at about −1.55%.",
+     "Then look at breadth, which went the other way. The Nifty Midcap 100 fell about 0.36% and the Smallcap 100 about 1.31%, and more stocks declined than advanced on a day the index added over 2%. DSIJ's own description of the session is negative breadth with a heavyweight-driven rally.",
+     "The contribution table makes that literal: ICICI Bank added 79.71 index points, Reliance Industries 59.11 and HDFC Bank 54.20. Nestle India (−16.81), L&T and Shriram Finance were the drags. Tech Mahindra, ICICI Bank, Reliance, Bharti Airtel and BSE led the Nifty; Nestle India, Adani Enterprises, Trent, Shriram Finance and Bharat Electronics trailed it.",
+     "Two macro helps and one caveat. Brent eased 1.82% to $104.13, which matters for a large energy importer, and the rupee closed at 95.05, 12 paise stronger and its fifth straight gain — 183 paise over those five sessions, with the dollar index down 0.57% at 101.96. The caveat: FIIs net sold ₹5,285 crore of cash equities against ₹3,319 crore of DII buying, a net ₹1,966 crore out of the market on the day it rose most."
+    ]
+   }
+  ]
+ },
+ "trends": [
+  {
+   "tag": "India",
+   "headline": "From this morning, an Indian bank has to hold 99% of its reserve requirement every single day, not 90%",
+   "url": "https://www.kotakneo.com/news/regulations/rbi-raises-daily-crr-requirement-to-99-percent-from-16-october/",
+   "subject": "RBI raises the daily minimum CRR maintenance requirement from 90 per cent to 99 per cent from the fortnight beginning 16 October 2026",
+   "subtitle": "Kotak Neo's regulatory note on the RBI's change, effective today; the notification itself is \"Section 42(1) of the Reserve Bank of India Act, 1934 — Change in Daily Minimum Cash Reserve Maintenance Requirement\", dated 9 October 2026 on rbi.org.in",
+   "bullets": [
+    "The headline CRR has not moved. It is still 3% of net demand and time liabilities, and banks still only have to average that across the fortnight. What changed is the floor on any given day: the minimum daily balance rises from 90% of the requirement to 99%, starting with the reporting fortnight that begins today.",
+    "That is a rule about flexibility, not about money. Under a 90% floor a bank can run light on a Tuesday and heavy on a Thursday and still satisfy the fortnightly average. At 99% that slack is gone, so the balance it keeps parked at the RBI has to sit near the full requirement all the time.",
+    "The cost of losing the slack is the point. Kotak Neo's read is that average balances go up 5–10%, absorbing a further ₹40,000–80,000 crore from a system that was carrying a ₹3.88 lakh crore surplus, with funding costs up roughly 1–2 basis points and little visible effect on net interest margins — except at banks running thin liquidity buffers, which is exactly who the rule is aimed at.",
+    "Read it alongside what else the RBI has just done: it raised the policy repo rate and ran a ₹25,000 crore bond sale on 13 October. The CRR change is the third instrument in the same week pointed at the same thing, which is draining surplus liquidity without touching the headline reserve ratio.",
+    "The RBI's stated reason is a review of prevailing liquidity conditions. The 99% floor is not new in Indian banking history — the same requirement was in force from July 2013 — which is a useful reminder of what kind of lever this is: a tightening tool that leaves the advertised numbers untouched."
+   ]
+  },
+  {
+   "tag": "Platforms",
+   "headline": "The internet is adding top-level domains for the first time since 2012, and the most fought-over string is .agent",
+   "url": "https://www.dnjournal.com/archive/lowdown/2026/posts/1008.htm",
+   "subject": "ICANN's 2026 new gTLD Reveal Day publishes 1,615 applications and the contention sets, with .agent the most contested string",
+   "subtitle": "DNJournal's Lowdown on ICANN's Reveal Day, 7 October 2026",
+   "bullets": [
+    "ICANN opened the second round of its new generic top-level domain programme and revealed the applications on 7 October: 1,615 bids to run a new ending for the internet, the first such round since 2012. ICANN separately confirmed 1,616 applications proceeding after fee payment, from 1,663 submitted before the window closed on 12 August.",
+    "The contention sets are the interesting read, because they are a priced vote on what the next decade is about. `.agent` drew 13 applicants — more than any other string. `.bit` drew 11. `.api`, `.brand` and `.hub` drew 10 each. Contested strings go to ICANN's contention resolution process, which in practice usually ends at auction.",
+    "One company dominates the volume. Identity Digital — formerly Donuts, which filed 307 applications in 2012 and already runs over 270 TLDs — filed 216 across 13 categories including AI, web3, finance, commerce and health, and its own list includes .agent, .agnt and .agt. Link Freedom Group filed 158 primary strings plus 158 replacements, XYZ Registry 139, GoDaddy 77, Intercap 71.",
+    "Applying is not winning. ICANN still has to evaluate, resolve contention, contract and delegate, and the company's own page says launch timing follows all of that. The final list of strings lands on String Confirmation Day, 17 November 2026, after which the community input and objections period opens.",
+    "The signal worth keeping is the shape of the bidding, not the outcome. Thirteen organisations paid real money for the chance to own the word \"agent\" at the root of the DNS, and a further ten for \"api\". The infrastructure layer is placing bets on who the web's next readers are."
+   ]
+  },
+  {
+   "tag": "Palaeontology",
+   "headline": "A skull fragment sat in a museum drawer from 1924 until last week, when it became Europe's first megaraptoran",
+   "url": "https://www.nhm.ac.uk/press-office/press-releases/uk-dinosaur-fossil-identified-as-new-long-clawed-predator.html",
+   "subject": "Invictibellatrix amberina described from an Isle of Wight skull fragment acquired by the Natural History Museum in 1924, the first megaraptoran found in Europe",
+   "subtitle": "Natural History Museum press release, 14 October 2026, on a paper in Royal Society Open Science",
+   "bullets": [
+    "The fossil is a piece of the back of a skull, picked up at the foot of a cliff on the south-west coast of the Isle of Wight by the amateur palaeontologist Reginald Walter Hooley. The Natural History Museum acquired it in 1924 after his death, as one of over 1,000 Hooley specimens, and nobody studied it for nearly a century.",
+    "It is now Invictibellatrix amberina — roughly \"unconquered female warrior\", with the species name for the amber in the rock it came from. Early Cretaceous, about 120 million years ago, on a floodplain that swung from wet to dry with the seasons. From its closest relatives the team puts it at 3–4 m long, just over 1.5 m tall, with claws of 10–20 cm, probably feathered, and eating small dinosaurs, lizards and mammals.",
+    "The reason it matters is geography. Megaraptorans were known from the southern supercontinent, Gondwana, where they became huge apex predators. This is the first one found in Europe, which supports the idea that the group spread through Europe on its way south — and the team's modelling suggests they were widespread in the Early Cretaceous but had died out across the northern landmass by the Late Cretaceous. The paper does not say why.",
+    "The paper, in Royal Society Open Science, is led by Dr Cassius Morrison with Charlie Scherer, both of UCL Earth Sciences, and the museum's Professor Paul Barrett as senior author.",
+    "Two lines from the release are worth the space. Barrett: \"Despite over 200 years of collecting, the Isle of Wight continues to surprise us with new dinosaur species.\" And Morrison, on an animal that was not even the apex predator of its own floodplain: \"for humans this dinosaur would have been more dangerous than a T. rex.\""
+   ]
+  }
+ ],
+ "research": [
+  {
+   "tag": "Industry · Anthropic",
+   "title": "Two-thirds of the sky had been mapped in ultraviolet. Agents inpainted the rest and the predictions came within 10%.",
+   "url": "https://www.anthropic.com/research/the-missing-map-of-the-sky",
+   "subject": "Anthropic publishes the first complete ultraviolet map of the sky, assembled by Claude-coordinated agents from GALEX, Swift and FIMS/SPEAR data with inpainting for unobserved regions",
+   "subtitle": "Anthropic, 8 October 2026, by Brice Ménard, astrophysicist at Johns Hopkins and researcher at Anthropic — \"Using Claude Science to produce the first complete map of the sky in UV light\"",
+   "bullets": [
+    "The gap is real and old. Ozone blocks ultraviolet, so you have to observe from space, and NASA's GALEX (2003–2013) imaged about two-thirds of the sky in roughly 38,000 observations while deliberately avoiding the bright bits — including the plane of the Milky Way. Swift and South Korea's FIMS/SPEAR filled in some of the rest. A complete UV map had never existed.",
+    "The pipeline is the paper. Claude coordinated parallel agents to download the public surveys, remove stellar glare so faint nearby UV could be measured, cross-calibrate the surveys onto a common resolution and coordinate system, merge them, and then inpaint the missing third — a model learned how UV brightness relates to visible, infrared and radio observations where all of them exist, and predicted UV plus confidence where it does not.",
+    "The validation is the number that matters. They hid parts of regions where real UV data exists and predicted them; after several rounds of refinement the predictions landed within about 10% of the measurements. The published map carries layers labelling every pixel \"measured\" or \"predicted\", with uncertainties.",
+    "A nice piece of grunt work in the middle: leftover atmospheric glow left circular artefacts in individual GALEX pointings, and all 38,000 observations were corrected in a couple of hours of processing. UV estimates for more than 100 million individual stars were then derived from Gaia's visible-light measurements.",
+    "Ménard is explicit that his own role was guiding the agents rather than doing the work, and that over a dozen successive versions of the map were produced in several days. The claim being made is not about astronomy capability — it is that the bottleneck on a long-deferred project was never the physics."
+   ]
+  },
+  {
+   "tag": "Academia · ETH Zurich",
+   "title": "Ask Your Advisor: Learning When to Consult Stronger Models in Agentic Systems",
+   "url": "https://arxiv.org/abs/2610.13870",
+   "subject": "ARIA, a learned meta-controller that decides when a cheap executor model should consult a stronger advisor model in an agentic workflow",
+   "subtitle": "arXiv:2610.13870, submitted 9 October 2026 — Pascal Sowietzki, Steffen Holter, Yannick Metz, Emil Kasper, Raphael Baur and Mennatallah El-Assady; OpenAlex puts the affiliations at ETH Zurich",
+   "bullets": [
+    "The setup is the obvious cost play: run a cheap model as the executor and let it hand hard steps to a strong advisor. The catch the paper goes after is that the executor is the one deciding when to ask, and language models are bad at noticing their own reasoning failing. Worse, the need for help is not a property of the task — it arrives during execution and differs by workflow phase.",
+    "So they stop asking the model and learn the decision instead. ARIA is a meta-controller that treats consultation as sequential resource allocation: at each contact point it compresses execution evidence into a compact state and chooses to stay silent or consult, learning the value of each choice by Monte Carlo control with the consultation cost folded into the outcome.",
+    "Results, on SWE-bench Verified, Terminal-Bench 2.1 and τ²-bench: it recovers 44–81% of the gap between executor-alone and advisor-alone success, at under half the advisor's cost, and gets the best success-cost trade-off of eleven conditions — including routing, cascading, fixed and prompted consultation, and random placement at matched advice volume.",
+    "Two details that make it usable rather than merely good. The learned policies are compact and inspectable, so you can read what it decided to escalate. And a single consultation-price parameter moves you along the trade-off without retraining either model.",
+    "Why it is worth reading next to the industry item above: that one spends a frontier model freely on a long scientific pipeline. This one is the same architecture with a budget attached, and the finding is that where you spend the strong model matters more than how much of it you buy."
+   ]
+  }
+ ],
+ "wild": [
+  {
+   "tag": "Steel",
+   "headline": "A steelmaker built a 27-metre stainless-steel flame on a mountain and is giving it to the city",
+   "url": "https://www.koreaherald.com/article/10897136",
+   "entities": [
+    "Posco",
+    "Gwangyang",
+    "I&Architects",
+    "Manuel Monteserin"
+   ],
+   "subject": "Posco unveils Panorama Walk, a 27-metre stainless steel sculpture with a 365-metre walking path, on Gubongsan above Gwangyang Bay",
+   "subtitle": "The Korea Herald, 8 October 2026",
+   "bullets": [
+    "Posco put a sculpture called Panorama Walk on top of Gubongsan in Gwangyang, overlooking Gwangyang Bay, on the site of a former beacon station. It is 27 metres high, 13 to 21 metres wide, shaped like a rising flame, and made of corrosion-resistant stainless steel — which is to say the company advertised its product by building something out of it and leaving it on a mountain.",
+    "You walk up through it. The structure carries a 365-metre path with seven turns, so the thing is a viewing platform disguised as an artwork, or the reverse.",
+    "Designed by the artist Manuel Monteserin with I&Architects, unveiled to mark Gwangyang Citizens' Day, and followed the next day by a public open day with photo sessions, busking and calligraphy. It comes out of a 2022 agreement between Posco and Gwangyang to turn Gubongsan into a tourist destination.",
+    "The detail that makes it more than a billboard: Posco will transfer it to the city. The company built the landmark, paid for the landmark, and is handing over the landmark — a corporate activation whose exit plan is becoming municipal property."
+   ]
+  },
+  {
+   "tag": "Groceries",
+   "headline": "Kraft shrank its parmesan shaker until it was a bag charm, and then put cheese in it",
+   "url": "https://thedieline.com/kraft-pocket-parm-takes-cheese-to-grate-new-places/",
+   "entities": [
+    "Kraft Natural Cheese"
+   ],
+   "subject": "Kraft Natural Cheese launches Pocket Parm, a miniature clip-on version of its grated parmesan shaker sold as a collectible accessory",
+   "subtitle": "DIELINE, 14 October 2026, by Chloe Cordover",
+   "bullets": [
+    "Pocket Parm is Kraft Natural Cheese's green grated-parmesan shaker, reproduced small enough to clip onto a bag, with a colourful collectible charm attached. The silhouette is held exactly — you recognise it instantly — and only the proportions change, into what DIELINE calls the playful proportions of a tiny accessory.",
+    "Three flavours: Tomato Basil Parmesan, Garlic Herb Parmesan and Grated Cheddar. So it is not a toy with a logo on it. It is working packaging that happens to be wearable.",
+    "What is actually being borrowed is the miniatures-and-collectibles behaviour from fashion and toys — bag charms, blind boxes, limited drops — applied to the one category that normally sells on shelf-shout and price. Grated cheese is not where you expect a collectible accessory to come from.",
+    "DIELINE's writer gets the strategy right by accident: \"I never knew I wanted a mini parmesan shaker, but now I feel like I absolutely need one.\" That sentence is the entire brief."
+   ]
+  },
+  {
+   "tag": "Retail",
+   "headline": "Screwfix hired a four-time Olympic champion to be a push notification, and he shouts PING",
+   "url": "https://creative.salon/articles/work/screwfix-m-c-saatchi-mo-farah-motifications",
+   "entities": [
+    "Screwfix",
+    "Mo Farah",
+    "M+C Saatchi Group UK"
+   ],
+   "subject": "Screwfix campaign in which Mo Farah plays a human app notification, bursting out of hedges and vans to deliver loyalty rewards alerts",
+   "subtitle": "Creative Salon, 5 October 2026, on Screwfix Rewards: Motifications by M+C Saatchi Group UK",
+   "bullets": [
+    "The premise is a literalisation. Screwfix tells loyalty members about rewards by phone notification, so Sir Mo Farah delivers them in person — appearing on a plumber's van, hiding under the stairs with an electrician, bursting out of a hedge at a gardener, climbing scaffolding — and announcing each one with a loud \"PING!\".",
+    "The joke is built to survive being heard rather than seen. The PING is a sonic device that carries the campaign onto radio and digital audio, where the gag is simply that his alerts get more and more persistent. Running across TV, VOD, CTV, online video, YouTube, out-of-home, social, radio, display and Screwfix's own site.",
+    "Two production details worth noting. The notification itself was fabricated as an illuminated lightbox prop, and the photographer Kelvin Murray shot stills with it in real trade settings — so the on-screen UI element exists as a physical object that casts light on a plumber's face.",
+    "It is the third instalment of Screwfix's \"No Stopping You\" platform, this one about the loyalty scheme, directed by Andrew Gaynord for M+C Saatchi Group UK. The tone is deliberately deadpan: Farah is at maximum energy and the tradespeople barely react, which is the most British possible way to advertise an app."
+   ]
+  }
+ ],
+ "learn": {
+  "title": "Dry spaghetti refuses to break in half, and the reason is that the first break shouts",
+  "subject": "Why bent dry spaghetti fractures into three or more pieces, Audoly and Neukirch's flexural-wave explanation, and the MIT twist result",
+  "body": [
+   "Take a strand of dry spaghetti, hold both ends, and bend it until it snaps. You will almost never get two pieces. You get three, or four. This annoyed Richard Feynman enough that he reportedly spent an evening in a kitchen breaking spaghetti and arguing about it, and he never worked out why. Nobody did, for decades. It is the most trivial unsolved problem imaginable, and it sat there.",
+   "The answer came in 2005, from Basile Audoly and Sébastien Neukirch, in a paper with the wonderfully blunt title \"Fragmentation of rods by cascading cracks: why spaghetti do not break in half\". Here is the mechanism. While you bend the strand, it is curved everywhere and storing energy. The instant it cracks, the two new free ends are suddenly released — and they snap back, violently and faster than you can see. That snapping-back sends a burst of bending waves travelling down the rest of the strand, and a wave arriving somewhere that is already bent adds its own curvature on top. If the sum goes past breaking point, that spot cracks too — which releases two more free ends, which send out more waves. The first break does not just break the spaghetti. It shouts, and the shout breaks it again. An avalanche, from one crack. The work won an Ig Nobel Prize in physics the following year, which is the correct honour for it.",
+   "There is a sequel, and it comes with a trick you can do. In 2018 a group at MIT — Ronald Heisser, Vishal Patil, Norbert Stoop, Emmanuel Villermaux and Jörn Dunkel — published in PNAS a way to defeat the cascade: twist the strand hard before you bend it. Past about 250 degrees of twist, you reliably get two pieces. The reason is a race. Twisting stores energy in a second mode, and twist waves travel faster along the rod than bending waves do, so after the first crack the twist relaxes first and carries off the energy that the bending waves needed to open a second break. They filmed it to be sure, on 1.4 mm rods, with cameras running as fast as a million frames a second. So the next time someone halves a packet of spaghetti into a pot and it explodes across the worktop: it is not them. It is the first break talking. Give it a good twist first."
+  ]
+ },
+ "ideas": {
+  "prompt": "Ten businesses that would work in a small town but not a big city",
+  "note": "Altucher's drill: ten against one prompt, written fast, not defended. Reddit rate-limited the fetcher this morning after r/SomebodyMakeThis and r/Lightbulb, so the raw material is those two plus the Ask HN idea threads.",
+  "items": [
+   {
+    "text": "One van that is the town's entire delivery service — chemist, bakery, hardware, library books — on a fixed loop twice a day."
+   },
+   {
+    "text": "A repair counter for exactly four things: phone screens, bicycle wheels, kettles, zips. No appointments."
+   },
+   {
+    "text": "A shop that is a café in the morning, a print and photocopy desk in the afternoon and a gallery on Friday nights, because a town only has demand for a third of each.",
+    "why": "A recurring r/SomebodyMakeThis pitch: the one-roof neighbourhood café, printshop and gallery."
+   },
+   {
+    "text": "Somebody who drives people to hospital appointments in the nearest city and waits for them."
+   },
+   {
+    "text": "A freezer library: you pay monthly for a share of one large chest freezer in a shed, because nobody needs a whole one."
+   },
+   {
+    "text": "The paperwork desk — forms, affidavits, pension claims, scanning — run by one person who actually knows which queue each one goes in."
+   },
+   {
+    "text": "A tool shed that rents the things a household owns once and uses twice: a pressure washer, a tile cutter, a ladder, a tent."
+   },
+   {
+    "text": "Weekend photography for the eleven weddings and forty birthdays that happen in a fifteen-kilometre radius, booked a year ahead."
+   },
+   {
+    "text": "A bus that is a laundry. One wash cycle per stop, one stop per village, same day every week."
+   },
+   {
+    "text": "Somebody who keeps the town's records on purpose: minutes, notices, land disputes, who said what at which meeting, printed and indexed.",
+    "why": "Straight off a r/SomebodyMakeThis thread asking for meeting minutes turned into a readable history of one local issue."
+   }
+  ]
+ }
+}
