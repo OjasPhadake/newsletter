@@ -1,0 +1,338 @@
+{
+ "date_line": "Saturday, 17 October 2026",
+ "issue": 1,
+ "preheader": "Tesla showed a Roadster that kickflips on cold-gas thrusters and still has no price; Meta open-weighted an 816B-parameter model that fits on two Mac Studios; an interpretability researcher argues the famous polysemantic neuron was always just a V-shape detector; the Nifty IT index rose 3.9% on Tech Mahindra and Wipro results while the midcaps went nowhere; SEBI has untied expiry-day settlement from the closing auction; Citizen Lab found government spyware being delivered through ordinary online ad slots; Claude redesigned a quantum circuit with 17x fewer gates; Activision built a Korean back alley in a Shoreditch car park; and two surviving uranium cubes say Heisenberg's last reactor was nowhere near working.",
+ "quote": {
+  "text": "Technology is anything invented after you were born.",
+  "author": "Alan Kay",
+  "source_url": "https://www.goodreads.com/author/quotes/304595.Alan_Kay",
+  "note": "Kay has moved the word off the object and onto the observer. Nothing about a thing makes it technology; what makes it technology is that it showed up late. Everything that was already here when you arrived — the road, the postal service, the refrigerator humming in the corner, each of them a violent novelty in its day — you simply call the world. Which quietly explains why every generation is convinced that the newest arrival is the one that will ruin everything, and is never suspicious of the ones it inherited."
+ },
+ "agent_craft": {
+  "items": [
+   {
+    "text": "If you walk away from a long session and come back to find it summarised, that is idle compaction doing its job, not a bug: a 200K-token conversation left alone for about 54 minutes gets compacted just before its one-hour prompt cache expires, so your next message does not pay to reprocess the lot. If you would rather keep the full transcript and eat the re-read, there is now an `Idle compaction` row in `/config` — or set `\"idleCompaction\": false` in settings.json, and `CLAUDE_CODE_IDLE_COMPACT_MIN_TOKENS` to move the threshold rather than kill it.",
+    "source": "Claude Code changelog, 2.1.290 (idle compaction) and 2.1.302 (the /config switch)",
+    "url": "https://code.claude.com/docs/en/changelog"
+   }
+  ]
+ },
+ "hn": [
+  {
+   "title": "Tesla Roadster",
+   "url": "https://www.tesla.com/roadster",
+   "hn_url": "https://news.ycombinator.com/item?id=50112657",
+   "points": 1042,
+   "comments": 1881,
+   "bullets": [
+    "Tesla's own Roadster page is behind an edge block that refuses non-browser requests, so these bullets come from Fred Lambert's reporting at Electrek, which read the page and Tesla's post-stream thread on X, plus TechCrunch's coverage of the same 15 October livestream.",
+    "Three trims, and the numbers get faster as the car gets less usable. Performance seats two, has active aero and a \"multi-mode suction system\", and claims 0–60 mph under 1.6 seconds. Thrust seats two, adds rear cold-gas thrusters, and claims under 0.9 seconds. Rocket seats one, has perimeter thrusters, claims under 0.59 seconds and over 230 mph — and is not approved for use on public roads.",
+    "The thrusters are the engineering. Cold-gas units that Tesla says work in atmosphere, fed by carbon-fibre pressure vessels packed into the car's voids, producing four to five times the force the tyres can take. The fans are claimed to pull enough air to hold the car upside down while stationary; Track Mode drops the ride height and deploys wings for what Tesla calls downforce approaching F1 levels. That is what the kickflip in the livestream was for.",
+    "The specs have halved since this car was first promised. In 2017 it was 620 miles of range, a top speed above 250 mph and 2+2 seating. It is now over 300 miles, 230 mph on the single-seat trim only, and two seats at most — while Tesla held deposits of $50,000 to $250,000 against the old numbers.",
+    "Reservations reopened at $5,000 refundable up front, with the remaining $45,000 due inside ten days or the reservation is cancelled. No price was given for any trim. The only production guidance was Musk's \"2028, actually\". Lambert, who holds two Founders Series referral awards and has been waiting since 2017, notes that the stunts will likely void the warranty and that the trims doing them are invite-only or not road-legal."
+   ]
+  },
+  {
+   "title": "Muse Spark Open",
+   "url": "https://research.meta.ai/blog/muse-spark-open",
+   "hn_url": "https://news.ycombinator.com/item?id=50107379",
+   "points": 900,
+   "comments": 465,
+   "bullets": [
+    "Meta released the weights of Muse Spark Open on 15 October and calls it the most capable US open-weight model to date: natively multimodal, 816B total parameters with 42B active, and a 1M-token context window, aimed at coding and long-horizon agentic work.",
+    "The headline claim is not the benchmark, it is the desk. Meta says it is the first model in its class to run on a desktop — two Mac Studios with M5 Ultra, 512 GB of unified memory and 1.2 TB/s of bandwidth each, via MLX. Two machines hold the whole model.",
+    "The speed work is in the kernels. Custom auto-tunable Helion kernels in SGLang give 1.03–3.95x speedups at kernel level across NVIDIA and AMD GPUs, which nets out to about 3% end to end on AMD MI350 — a useful reminder of how little a big kernel win is worth once it is amortised over a whole forward pass.",
+    "Distribution is unusually broad for a weights drop: Hugging Face, SageMaker, Google Cloud Model Garden and Microsoft Foundry for the weights; Baseten, Fireworks, Groq, Modal, Nebius, OpenRouter and Together for hosted APIs; SGLang, vLLM, TensorRT-LLM, Transformers, MLX, llama.cpp and Unsloth for inference; TorchTitan for fine-tuning.",
+    "Two things to read sceptically. The licence is the Muse Model License, with limited commercial terms rather than an open-source one. And the \"Key Benchmarks\" section on the announcement page carries no scores at all — Meta says the model cleared its Superintelligence Scaling Framework thresholds for the most severe risks and that a full evaluation report is coming \"soon\"."
+   ]
+  },
+  {
+   "title": "Neural networks are clean",
+   "url": "https://already-clean.goodfire.com/",
+   "hn_url": "https://news.ycombinator.com/item?id=50105647",
+   "points": 793,
+   "comments": 323,
+   "bullets": [
+    "Nick Cammarata, who co-authored Zoom In and Multimodal Neurons, argues in a long Goodfire essay that the evidence for superposition — the idea that networks cram unrelated concepts into shared neurons — was misread, and that neurons are mostly legible if you just look at them with decent tools.",
+    "He reinterprets his own field's canonical example. The famous cat-and-car neuron 4e:55 in InceptionV1 is, he says, a V-shape detector: its inputs and outputs are flames, fireboat jets and fox faces, all pointed, and its negative pole is round. The Zoom In \"car stored in dog neurons\" circuit becomes shared pose detection, and the feature visualisations misled because gradient descent keeps falling into dog patterns.",
+    "The numbers are the argument. In InceptionV1's last layer he puts 2020-era interpretability at about 5% of neurons explained; better tools take it to about 50%; retraining with modern regularisation to about 70%; and a parameter-matched ConvNeXt of 7.06M parameters to about 99%. He trained ConvNeXts across a 300x size range, 92k to 28.6M parameters, and found small models have coarser neurons rather than superposed ones.",
+    "On language models he reports preliminary audits of Qwen3-32B: about 90% of neuron poles do one main job, about 7% do two related ones, 2–4% unexplained — with similar findings up to trillion-parameter models like Kimi K3. His diagnosis of apparent mess is a motif he calls recursive generalization, where a neuron grows outward from a core concept: an \"iy\" neuron that spreads to \"diy\" and then to \"do it yourself\".",
+    "He is open that the percentages move with thresholds and sample choice, and that \"clean\" is a regime description rather than a metric. The framing he offers is a bitter lesson for interpretability: scaling ordinary investigation may beat inventing cleverer decompositions. Set against the baselines he cites — Anthropic's Towards Monosemanticity scoring the median neuron 0 out of 14, OpenAI's automated interpretability finding about 1.7% interpretable — that is a very large claim resting on an essay with the paper still to come."
+   ]
+  },
+  {
+   "title": "Wayland desktop for Linux with skeuomorphic design",
+   "url": "https://github.com/fyzugx/DEsk",
+   "hn_url": "https://news.ycombinator.com/item?id=50103338",
+   "points": 683,
+   "comments": 278,
+   "bullets": [
+    "DEsk is a Wayland desktop environment whose organising metaphor is a literal desk: windows are sheets of paper on walnut, the dock is a drawer, installed applications are filed in binders on a bookshelf, notifications arrive in a post box, and the system controls sit on a panel at the back of the desk. The room is ray-traced and lit by a desk lamp.",
+    "The interactions follow the metaphor rather than the convention. You fold, unfold or discard a window by its paper corner. The lock screen is a 3D front door. There are desk calendar, memo pad and clock widgets, seven languages, multi-monitor support and X11 apps through Xwayland.",
+    "It is a first release — v0.1.2, beta, MIT-licensed, 1.0k stars and 30 forks at the time of reading. Built with Meson against wlroots 0.18, Wayland, xkbcommon, cairo and PAM. The author states that much of the code was written with AI assistance, specifically Claude.",
+    "The hardware floor is lower than the aesthetic suggests: two x86-64 cores, 4 GB RAM and a 1366x768 screen, no GPU strictly required — though the README warns that a first login without one can take about ten minutes. Recommended is four cores, 8 GB and OpenGL ES 3.0 with GBM.",
+    "Packaged installers exist for Debian 13, Ubuntu 24.04 and 26.04, Arch, and Fedora 43 and 44, needing about 1 GB of disk or 2–2.7 GB for the full set. There is also an \"Experience Index\" hardware rating tool, which is the iOS 6 reference finally completed by a Windows Vista one."
+   ]
+  },
+  {
+   "title": "What I self-host",
+   "url": "https://viceconsole.fyi/blog/2026/10/10/what-i-self-host/",
+   "hn_url": "https://news.ycombinator.com/item?id=50109715",
+   "points": 633,
+   "comments": 414,
+   "bullets": [
+    "The whole list runs on one Beelink S12 Pro mini PC — an Intel N100 with 16 GB of RAM. Twenty-eight services: 17 native, 11 under Podman, all managed by systemd. htop shows about 7.5 GB of memory used and CPUs fluctuating between 30% and 40%.",
+    "Why he started is the interesting part, and it is not privacy. After moving away from India, where streaming is cheap, he was unwilling to pay Western prices — but the real trigger was his son. Limiting a child to specific programming across several services, each of which keeps redesigning its autoplay and \"recommended for you\" settings, was more work than running Jellyfin.",
+    "Two hard rules. Nothing is exposed to the public internet except VPN servers on the router — his ISP's CGNAT makes the house unreachable over IPv4 anyway, and the VPN is IPv6-only, which means it almost never works on public Wi-Fi. And no Docker: he runs single Go binaries natively where he can, and anything that arrives as a compose file wanting MySQL, Redis and three more containers makes him go looking for an alternative.",
+    "The list, with the reasons: Jellyfin for media, Immich for photos (moved last year, after Google kept pushing storage plans at his wife), Vaultwarden for passwords, Home Assistant, Frigate across 8 IP cameras at deliberately low resolution, Forgejo for git, Caddy for LAN HTTPS with Let's Encrypt, Gotify plus Uptime Kuma for \"X isn't working\", Snapcast and two MPD instances for whole-house audio, Gonic twice over for kid music and adult music, Vikunja after Trello's multi-day outage, PocketBase as a CRUD front end over a SQLite file, Readeck, Samba, Syncthing, Cockpit.",
+    "What he refuses is as pointed as what he runs. No *arr stack (\"a resource-intensive mess that's fundamentally prone to frequent breakage\"). No Collabora, because he already has a network drive. No Dawarich, because it wants at least four containers. And no self-hosted email: he cannot risk not receiving mail, and would rather move to a paid provider. His closing note is that hardware has become expensive because of the AI crunch, so he hopes projects keep prioritising simplicity."
+   ]
+  }
+ ],
+ "markets": {
+  "indices": [
+   {
+    "name": "Sensex · Fri 16 Oct close",
+    "value": "74,729.27",
+    "change": "413.66 (0.56%)",
+    "direction": "up"
+   },
+   {
+    "name": "Nifty 50 · Fri 16 Oct close",
+    "value": "23,146.15",
+    "change": "148.80 (0.65%)",
+    "direction": "up"
+   },
+   {
+    "name": "Nifty IT · Fri 16 Oct",
+    "value": "+3.9%",
+    "change": "best sector, and nearly the whole rally",
+    "direction": "up"
+   },
+   {
+    "name": "Nifty Midcap · Fri 16 Oct",
+    "value": "−0.12%",
+    "change": "smallcaps roughly flat",
+    "direction": "down"
+   },
+   {
+    "name": "USD/INR · Fri 16 Oct close",
+    "value": "94.92",
+    "change": "7 paise stronger, sixth straight",
+    "direction": "down"
+   },
+   {
+    "name": "Dollar index · Fri 16 Oct",
+    "value": "101.445",
+    "change": "−0.41%",
+    "direction": "down"
+   },
+   {
+    "name": "Brent crude · Fri 16 Oct",
+    "value": "$105.56",
+    "change": "−0.34%",
+    "direction": "down"
+   },
+   {
+    "name": "FII cash net · Fri 16 Oct",
+    "value": "+₹1,166 cr",
+    "change": "DIIs sold ₹3,661 cr — the flip",
+    "direction": "up"
+   },
+   {
+    "name": "MCX gold (4 Dec) · Fri 16 Oct",
+    "value": "₹1,48,429",
+    "change": "+0.64%; silver ₹2,13,460, +1.33%",
+    "direction": "up"
+   }
+  ],
+  "stories": [
+   {
+    "headline": "One sector did the entire session. Take IT out and Friday was flat.",
+    "url": "https://hdfcsky.com/news/sectoral-snapshot-today-october-16-2026-it-soars-3-9percent-leading-market-rally",
+    "source": "HDFC Sky's sectoral snapshot for the sector and broader-market figures; Kotak Neo's closing bell for the commodity and global numbers; Investing.com for the Tech Mahindra and Wipro closes; PTI via DT Next for the rupee, the dollar index and Brent; NiftyTrader for the provisional FII/DII cash figures. All numbers describe Friday 16 October 2026. Indian markets are shut for the weekend and reopen on Monday.",
+    "bullets": [
+     "The Sensex closed at 74,729.27, up 413.66 points or 0.56%, and the Nifty 50 at 23,146.15, up 148.80 points or 0.65% — a second straight gain, and both recovered from intraday losses to get there.",
+     "Nifty IT rose about 3.9%, the best of the sectors by a wide margin, on September-quarter results. Tech Mahindra closed up 7.97% at ₹1,781.50 and Wipro up 6.12% at ₹184.70. Media, metals and infrastructure also rose; financial services, FMCG, oil and gas and the private banks were the drag.",
+     "Underneath, nothing happened. Nifty Midcap fell 0.12% and the smallcaps were essentially unchanged — the second session this week where the index moved and the broader market did not follow.",
+     "The flow reversed. FIIs were net buyers of ₹1,166 crore in the cash segment after selling ₹5,285 crore on Thursday, while DIIs sold ₹3,661 crore — the opposite of the pattern that has held for most of October, and worth watching rather than concluding anything from.",
+     "The rupee closed at 94.92 provisionally, 7 paise stronger and up for a sixth straight session, with traders crediting RBI intervention; the dollar index was at 101.445 and Brent at $105.56, both softer. Choice Broking's Kaveri More notes the rupee is now approaching a crucial support zone around 94."
+    ]
+   }
+  ]
+ },
+ "trends": [
+  {
+   "tag": "India",
+   "headline": "SEBI has untied expiry-day settlement from the closing auction it introduced in January, after nine months of complaints",
+   "url": "https://www.corplawupdates.in/updates/sebi-closing-auction-session-final-framework-cas-october-2026-2",
+   "subject": "SEBI circular of 15 October 2026 revises the Closing Auction Session to a 3:30–3:40 pm window and moves expiring derivatives settlement to a 30-minute VWAP instead of the CAS closing price",
+   "subtitle": "CorpLawUpdates' summary of SEBI circular HO/47/11/11(3)2025-MRD-POD2/I/23843/2026, dated 15 October 2026 — \"Review of certain aspects of the Closing Auction Session, market timings and settlement methodology for derivatives contracts\" — with HDFC Sky's note on the same circular",
+   "bullets": [
+    "In January SEBI introduced a Closing Auction Session for the cash segment and tied expiry-day derivatives settlement to the price it produced. The objection, raised in the September consultation, was obvious once stated: that concentrates the benchmark for an entire expiry into a short auction, which is exactly where you would go if you wanted to move it.",
+    "So the settlement benchmark has been moved out of the auction entirely. Expiring index derivatives will now settle on an index computed from the VWAPs of its constituent stocks over the last 30 minutes of continuous trading in the cash segment; expiring stock derivatives on the stock's VWAP over the same window, across all exchanges. Exchanges have to compute and disseminate indicative values live through that window.",
+    "The auction itself gets shorter and less predictable. CAS moves from 3:15–3:35 pm to a ten-minute 3:30–3:40 pm window on every trading day: one minute to compute the reference price, five minutes of limit and market orders, then limit orders only, then a random close triggered at some unannounced point in the last two minutes. No new iceberg orders, no stop-losses, and modifying a carried-over order resets its time priority.",
+    "The reference price is the VWAP of the last 15 minutes of continuous trading — a separate window from the 30-minute one used for expiry. Fallbacks are spelled out: last traded price if nothing traded in those 15 minutes, previous close adjusted for corporate actions if nothing traded all day.",
+    "Timings to diarise rather than discover. Expiring index derivatives stop at 3:30 pm on expiry day; non-expiring index derivatives and all stock derivatives run to 3:45 pm; the cash post-close session is 3:50–4:00 pm. Everything above takes effect on 7 December 2026, except the transition rules for unexecuted limit and iceberg orders, which start on 8 February 2027."
+   ]
+  },
+  {
+   "tag": "Platforms",
+   "headline": "Government spyware is being delivered through ordinary ad slots, and the targeting is the ad network's own targeting",
+   "url": "https://techcrunch.com/2026/10/15/citizen-lab-says-governments-are-abusing-online-ads-to-hack-people-with-zero-click-spyware/",
+   "subject": "Citizen Lab and Confiant report that Israeli firm Discover-Tech's Controlium platform bridges the online ad ecosystem and zero-click spyware vendors, with at least 45 Al Jazeera computers hacked via malicious ads",
+   "subtitle": "Zack Whittaker for TechCrunch, 15 October 2026, on research published the same week by the Citizen Lab at the University of Toronto with the ad-quality firm Confiant",
+   "bullets": [
+    "Malvertising is decades old. What Citizen Lab calls the escalation is using it to deliver zero-click spyware — the kind that needs no message opened and no link tapped — which turns the ad industry's selection machinery into a targeting system for government customers.",
+    "The company in the middle is Discover-Tech, an Israeli firm that presents itself as a legitimate ad business. Citizen Lab describes it as a bridge between the ad vendors and the spyware ecosystem; its platform is called Controlium, and the researchers say it lets operators pick specific people or devices, almost anywhere in the world. The spyware makers named are Candiru and Bindecy.",
+    "The confirmed case is Al Jazeera: at least 45 Windows machines reportedly compromised across 2024 and 2025 with Candiru spyware after exposure to ads carrying malicious code. Separately, Confiant found evidence of potentially malicious ads on networks belonging to the International Atomic Energy Agency and the International Criminal Court.",
+    "The exposure data is the part that should worry anyone running a fleet. Billions of ad bidding records were found exposed, with the ads appearing across tens of thousands of mobile apps and websites between March and June 2026, on devices belonging to militaries, governments, critical infrastructure and national cyber agencies. Whether any of those exposures led to compromise is unknown.",
+    "Discover-Tech's own security was how the research happened: source code left on its login pages let the researchers rebuild the Controlium dashboard without logging in, and an unprotected section let them download user login records, some belonging to two Candiru employees and some to Bindecy. Citizen Lab's Bill Marczak says the firm is \"surely just the tip of the iceberg\", and his advice to anyone plausibly targeted is to disable ad tracking or block ads outright, inside apps included."
+   ]
+  },
+  {
+   "tag": "Wildcard",
+   "headline": "Two surviving uranium cubes say Heisenberg's last reactor needed twice the uranium he thought, and Germany never had the heavy water",
+   "url": "https://www.sciencedaily.com/releases/2026/10/261015073218.htm",
+   "subject": "Nuclear archaeology study in PNAS Nexus reassesses the B8 pile, Germany's final wartime reactor experiment, concluding it was far from criticality and that Heisenberg underestimated the material required",
+   "subtitle": "ScienceDaily, 16 October 2026, on \"Nuclear archaeology reassesses Heisenberg's last reactor experiment\", PNAS Nexus vol. 5 issue 9, doi 10.1093/pnasnexus/pgag282 — Patrick J. Park, Brittany Robertson, Miriam E. Hiebert, Jason Zhao, Ciara B. Sivels and Timothy W. Koeth, led by Koeth",
+   "bullets": [
+    "The field is called nuclear archaeology, and the artefacts here are two surviving cubes of natural uranium from the German nuclear project, read alongside wartime technical reports, correspondence and other archival papers. The point of the exercise is to check a claim its own author made about how close he came.",
+    "Heisenberg said the B8 pile, built in 1945, needed only a modest increase in uranium to go critical. The study's reconstruction says it needed roughly twice as much uranium and more than twice as much heavy water as it actually contained. That is not a near miss; it is a different experiment.",
+    "And the heavy water was never going to arrive. Germany's wartime supply came mainly from Norsk Hydro's plant at Vemork in occupied Norway, and the US bombing raid of 16 November 1943 helped end production there. Doubling the inventory was not a procurement problem — there was no source.",
+    "The obvious substitute was closed too, for a reason that is purely a materials story. Graphite can moderate a pile instead of heavy water, which is how the American reactor reached criticality in 1942 — but the graphite available in German-controlled territory carried boron impurities, and boron absorbs neutrons. Same element, wrong purity, no chain reaction.",
+    "The conclusion is that Germany lacked the resources for either route, heavy water or graphite, and that Heisenberg significantly underestimated what he still needed. The B8 pile never went critical; the Americans found it and took it apart in 1945. Eighty-one years later the evidence that settles it is two metal cubes and a filing cabinet."
+   ]
+  }
+ ],
+ "research": [
+  {
+   "tag": "Industry · Anthropic",
+   "title": "Claude designed a quantum circuit with 17x fewer gates than the best published one, and nobody intervened between rounds",
+   "url": "https://www.anthropic.com/research/designing-efficient-quantum-circuits",
+   "subject": "Claude, run in a closed loop against an automated circuit evaluator with no human between rounds, produces quantum circuit designs for elliptic-curve point addition and a decoded quantum interferometry decoder that beat prior constructions on gate count",
+   "subtitle": "\"Designing more efficient quantum circuits with Claude\", Anthropic Science, 16 October 2026 — led by Andi Gu in Anthropic's STEM Fellows Program, mentored by Alek Kemeny, with Susanne Yelin and Mikhail Lukin of Harvard (Lukin also QuEra Computing)",
+   "bullets": [
+    "The loop is the method and it is deliberately dumb. Claude writes a circuit as Python; an automated evaluator checks correctness and scores it on qubits times gates; the score goes back in. No human between rounds. Eight computational primitives were tried, spanning chemistry, optimisation, simulation, number theory and numerical computing.",
+    "Elliptic-curve point addition is the headline. Claude built a reversible version of the divsteps algorithm for modular inversion that avoids storing the full branch history — the standard obstacle to making that routine reversible. After a 53-hour run, the design used 12% more qubits than the smallest prior construction but 17x fewer gates, and it produced a whole family of designs extending the qubit-versus-runtime trade-off rather than a single point on it.",
+    "The second result is a decoder for decoded quantum interferometry. Claude swapped the Reed–Solomon decoder from the extended Euclidean algorithm to Berlekamp–Massey and chose to recompute temporary values instead of storing them, which got the saved-value cost down to 19 qubits. Gate count fell about 12x against Google's previous construction.",
+    "That second one came with an actual error budget, which is the part that makes it checkable: a simulation of 403 million sample decodings put the failure rate at roughly one run in 10,000. A circuit that is smaller and wrong is worthless, so the number matters more than the speedup.",
+    "What is being claimed is narrow and worth keeping narrow. Not that Claude did quantum physics, but that circuit design is a search problem with a cheap automatic scorer, and those are the problems where an unsupervised loop can grind past the published state of the art. Anthropic's framing — fewer gates means fewer quantum resources for a useful application — is the only reason the 17x is interesting."
+   ]
+  },
+  {
+   "tag": "Academia · Cambridge",
+   "title": "Beyond Temporal Proximity: Explanatory World Models for Credit Assignment in Reinforcement Learning",
+   "url": "https://arxiv.org/abs/2610.13504",
+   "subject": "Cambridge paper proposing Explanatory World Models, which use language-model explanations to redistribute delayed reward to earlier causally relevant events while preserving episode return",
+   "subtitle": "arXiv:2610.13504, submitted 9 October 2026 — Oriol Corcoll, Qiyao Wei and Ciarán Mark Gilligan-Lee; OpenAlex resolves the affiliation to the University of Cambridge",
+   "bullets": [
+    "The complaint is about a default nobody chose. Standard RL credits an action roughly in proportion to how close in time it was to the reward, because discounting is the only handle available. When the thing that actually caused the outcome happened two hundred steps earlier, the signal reaching it is almost gone.",
+    "Their substitute for proximity is explanation. A language model is asked which earlier events plausibly contributed to the outcome, and a hierarchical operator redistributes the reward to those events — with the constraint that the episode's total return is preserved. So this is a reshaping of credit inside a fixed budget, not an extra reward signal bolted on, which is what keeps it from being reward hacking by another name.",
+    "Three explanation styles are tried, and the evaluation deliberately mixes toy and real: Crafter and WordCraft for long-horizon games, KuaiRand for recommendation, and an industrial generative recommender. On Crafter and WordCraft they report substantially outperforming PPO and LaRe, with the largest margins where the reward is most delayed — which is the right place for the gains to show up if the mechanism is doing what they say.",
+    "On KuaiRand it beats SFT and LaRe offline and A2C online, and on the industry recommender it improves Recall offline and lifts behavioural proxies. The abstract reports no figures for any of this, so the direction is all that is on offer until the paper is read properly.",
+    "Why it is worth a chemical engineer's attention: this is the credit-assignment problem in its general form, and the proposed fix is to get a causal story from somewhere outside the reward signal and use it as structure. Their own phrasing is that explanations provide structured and reusable credit. The obvious question the abstract does not answer is what happens when the explanation is confidently wrong."
+   ]
+  }
+ ],
+ "wild": [
+  {
+   "tag": "Games",
+   "headline": "Activision rebuilt the game's opening level as an actual Korean back alley in a Shoreditch car park, and resets it every night",
+   "url": "https://www.contentgrip.com/call-of-duty-korean-alley-london-billboard/",
+   "entities": [
+    "Activision",
+    "Call of Duty",
+    "Omnicom Media"
+   ],
+   "subject": "Activision and Omnicom Media build a full-scale physical reproduction of a Call of Duty: Modern Warfare 4 level in a Shoreditch High Street car park ahead of the game's 23 October release",
+   "subtitle": "ContentGrip, October 2026, on an installation first toured by The Drum",
+   "bullets": [
+    "The build is a back alley from the opening level of Call of Duty: Modern Warfare 4, put up at full scale in a car park on Shoreditch High Street — chosen partly because it was the one with room for the whole thing. Shopfronts, illuminated neon, weathered road markings, and a convenience store genuinely stocked with Korean snacks. Also a food stall, a laundromat, a spa and a comic shop.",
+    "It was made by the trades rather than by an agency: set designers, painters, prop buyers and sign makers. Surrounding billboards, part of Omnicom's own outdoor inventory, frame the thing — so the media buy and the installation are the same object seen from different distances.",
+    "Visitors can wander the shops and collect Korean candy, play the game on site, film and stream, open prize lockers of limited-edition merchandise, and take a guided tour from staff in military costume. Every night there is smoke, flames, confetti and helicopter sound, and then the street is reset for the morning.",
+    "The logic is a swap: instead of cutting a trailer of the environment, build the environment and let people stand in it. Whether that sells a game is unknowable and ContentGrip says as much — no uplift figures, no effectiveness claim. The release date is 23 October 2026."
+   ]
+  },
+  {
+   "tag": "Groceries",
+   "headline": "A ten-minute delivery app's first exclusive collectible is a matchbox",
+   "url": "https://indianretailer.com/news/zepto-expands-brand-collabs-exclusive-itc-collectible",
+   "entities": [
+    "Zepto",
+    "ITC"
+   ],
+   "subject": "Zepto sells an ITC-made collectible matchbox series, Dazzle Vibe Matches LIT Parivar, exclusively on its quick-commerce app in select Indian markets from 21 October",
+   "subtitle": "Indian Retailer, 16 October 2026",
+   "bullets": [
+    "Zepto and ITC have made a limited-edition matchbox series — Dazzle Vibe Matches: LIT Parivar Edition — with designs built around Indian family relationships, festive gatherings and the specific interactions that a Diwali produces. It goes on sale on Zepto in select markets from 21 October.",
+    "The object is the joke and the joke is good. A platform whose entire proposition is that nothing need ever be kept in the house has chosen, as its first exclusive collectible, the one household item that was collected for decades precisely because it was disposable and printed.",
+    "Zepto's chief brand officer Chandan Mendiratta calls it \"the first of many unique drops that are planned for our users\" and frames it as reviving matchbox-collecting nostalgia. ITC's matches and agarbatti chief executive Rohit Dogra says the aim is to introduce \"a new generation to the charm of collecting\".",
+    "No prices, no print run and no list of markets, which for a collectible is either an oversight or the entire mechanism."
+   ]
+  },
+  {
+   "tag": "Motorsport",
+   "headline": "Mercedes put an F1 car on the sixth floor of Singapore's fifteen-storey car vending machine",
+   "url": "https://www.motorbiscuit.com/mercedes-put-a-2025-f1-show-car-inside-singapores-giant-vending-machine/",
+   "entities": [
+    "Mercedes-AMG",
+    "Autobahn Motors"
+   ],
+   "subject": "Mercedes installs a W16 show car in 2026 livery inside Autobahn Motors' fifteen-storey vertical car showroom in Singapore during the Singapore Grand Prix weekend",
+   "subtitle": "MotorBiscuit, 16 October 2026, on an activation Mercedes posted on 13 October",
+   "bullets": [
+    "Autobahn Motors' showroom at 20 Jln Kilang is a glass-fronted tower fifteen storeys tall, stacked with Porsches, Ferraris, Lamborghinis, McLarens, Bentleys and Mercedes-Benzes, and known locally as the car vending machine. Its general manager Gary Hong is credited with talking his superiors into building upwards.",
+    "During the Singapore Grand Prix weekend, with the Marina Bay street circuit a short distance away, Mercedes lifted a 2025 W16 show car painted in 2026 colours into the slot on the sixth floor, and filmed the lift. The post went up on 13 October: \"The coolest car vending machine you ever did see!\"",
+    "It is the rare brand activation that required no construction at all. The absurd object already existed, built for ordinary commercial reasons; Mercedes supplied one car and a camera and borrowed the absurdity wholesale.",
+    "The car was only there briefly and MotorBiscuit reports no figures. The questions in the replies are the ones you would ask too, and nobody has answered them: what it would cost, and whether anyone can redeem it."
+   ]
+  }
+ ],
+ "learn": {
+  "title": "Almost nobody gets thrown off an overbooked plane. An economist turned the problem into an auction, and 97% of bumps are now volunteers",
+  "subject": "Why airlines ask for volunteers rather than removing passengers: Julian Simon's 1960s reverse-auction proposal, the 1978 US rule requiring volunteer solicitation, and the Delta bidding system",
+  "body": [
+   "Here is a number that should be more famous. In 2018, across the seventeen largest US airlines, 351,904 passengers were bumped from flights they had tickets for. Of those, 10,938 were bumped involuntarily. Everyone else — about 97% of them — put their hand up. An overbooked flight, the situation everyone imagines as a confrontation at a gate, is in practice a market that clears, hundreds of thousands of times a year, with almost nobody being told to get off.",
+   "It was not always like that. Airlines have always sold more seats than they have, because some ticketed passengers never turn up, and for decades the question of who lost their seat when everybody did turn up was settled by whatever the airline felt like. One account of the old practice has United instructing its staff to bump the elderly and members of the military. Sometime in the 1960s the economist Julian Simon suggested the obvious alternative that nobody had suggested: do not choose, ask. Run a reverse auction at the gate — let passengers name the smallest amount of compensation they would accept to travel later, and buy the cheapest offers until the flight fits. The seat is worth wildly different amounts to different people on it, and the airline has no idea which is which, but every passenger knows their own number exactly.",
+   "It took a long time to become the rule. The US Supreme Court blessed overbooking in 1976 on the condition that compensation was offered; since 1978 American carriers have been required to seek volunteers before removing anyone, with the volunteer price left entirely unregulated, while a separate schedule of minimum compensation for involuntary denied boarding has existed since 1968. Europe did the same in 2005 under Regulation 261/2004. And in 2011 Delta closed the loop on Simon's original design: instead of haggling at the gate, you are asked at check-in what voucher value you would accept, and the lowest bids get taken — which, Delta said, mostly stopped the negotiating and helped flights leave on time. So the next time a gate agent offers vouchers into a microphone, that is not goodwill. It is a price discovery mechanism, and you are the one who knows the price."
+  ]
+ },
+ "ideas": {
+  "prompt": "Ten awards that should exist for everyday life",
+  "note": "Altucher's drill: ten against one prompt, written fast, not defended. Reddit rate-limited the fetcher after r/SomebodyMakeThis, so the raw material is that subreddit's week — including a post asking for badges you earn for things you actually do instead of paying for a blue tick — plus the Ask HN idea threads.",
+  "items": [
+   {
+    "text": "Best Return of a Borrowed Thing: awarded annually, in each building, to whoever gave it back clean and unasked."
+   },
+   {
+    "text": "The Nobody Noticed Prize, for the person who quietly fixed the thing before anyone had to file a complaint about it."
+   },
+   {
+    "text": "A lifetime achievement award for the one friend who has organised every single group trip for fifteen years."
+   },
+   {
+    "text": "Badges you earn for things you have actually done — donated blood nine times, fixed your own bicycle, learned a fourth language — rather than ones you buy.",
+    "why": "A recurring wish on r/SomebodyMakeThis this week: recognition you can't purchase."
+   },
+   {
+    "text": "The Good Loser medal, given at every children's tournament to whoever handled losing best, and worth more than the cup."
+   },
+   {
+    "text": "An award for the shop that has not changed its layout in twenty years."
+   },
+   {
+    "text": "Household Oscars, with the acceptance speeches, for categories like Best Use of Leftovers and Most Improved at Answering the Phone."
+   },
+   {
+    "text": "A prize for the best thing written in a condolence book or a leaving card, judged by the person who received it."
+   },
+   {
+    "text": "The Sat Through It award, for anyone who attended a friend's three-hour amateur production and said something specific about it afterwards."
+   },
+   {
+    "text": "An annual certificate for the neighbour whose tree you have enjoyed all year without ever having to prune it."
+   }
+  ]
+ }
+}

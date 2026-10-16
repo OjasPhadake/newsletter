@@ -5826,6 +5826,154 @@
         "nhm.ac.uk",
         "thedieline.com"
       ]
+    },
+    {
+      "date": "2026-10-17",
+      "issue": 1,
+      "quote_text": [
+        "Technology is anything invented after you were born."
+      ],
+      "quote_author": [
+        "Alan Kay"
+      ],
+      "idea_text": [
+        "Best Return of a Borrowed Thing: awarded annually, in each building, to whoever gave it back clean and unasked.",
+        "The Nobody Noticed Prize, for the person who quietly fixed the thing before anyone had to file a complaint about it.",
+        "A lifetime achievement award for the one friend who has organised every single group trip for fifteen years.",
+        "Badges you earn for things you have actually done — donated blood nine times, fixed your own bicycle, learned a fourth language — rather than ones you buy.",
+        "The Good Loser medal, given at every children's tournament to whoever handled losing best, and worth more than the cup.",
+        "An award for the shop that has not changed its layout in twenty years.",
+        "Household Oscars, with the acceptance speeches, for categories like Best Use of Leftovers and Most Improved at Answering the Phone.",
+        "A prize for the best thing written in a condolence book or a leaving card, judged by the person who received it.",
+        "The Sat Through It award, for anyone who attended a friend's three-hour amateur production and said something specific about it afterwards.",
+        "An annual certificate for the neighbour whose tree you have enjoyed all year without ever having to prune it."
+      ],
+      "idea_prompt": [
+        "Ten awards that should exist for everyday life"
+      ],
+      "tip_text": [
+        "If you walk away from a long session and come back to find it summarised, that is idle compaction doing its job, not a bug: a 200K-token conversation left alone for about 54 minutes gets compacted just before its one-hour prompt cache expires, so your next message does not pay to reprocess the lot. If you would rather keep the full transcript and eat the re-read, there is now an `Idle compaction` row in `/config` — or set `\"idleCompaction\": false` in settings.json, and `CLAUDE_CODE_IDLE_COMPACT_MIN_TOKENS` to move the threshold rather than kill it."
+      ],
+      "hn_id": [
+        "50112657",
+        "50107379",
+        "50105647",
+        "50103338",
+        "50109715"
+      ],
+      "link": [
+        "https://www.tesla.com/roadster",
+        "https://research.meta.ai/blog/muse-spark-open",
+        "https://already-clean.goodfire.com/",
+        "https://github.com/fyzugx/DEsk",
+        "https://viceconsole.fyi/blog/2026/10/10/what-i-self-host/",
+        "https://www.corplawupdates.in/updates/sebi-closing-auction-session-final-framework-cas-october-2026-2",
+        "https://techcrunch.com/2026/10/15/citizen-lab-says-governments-are-abusing-online-ads-to-hack-people-with-zero-click-spyware/",
+        "https://www.sciencedaily.com/releases/2026/10/261015073218.htm",
+        "https://www.contentgrip.com/call-of-duty-korean-alley-london-billboard/",
+        "https://indianretailer.com/news/zepto-expands-brand-collabs-exclusive-itc-collectible",
+        "https://www.motorbiscuit.com/mercedes-put-a-2025-f1-show-car-inside-singapores-giant-vending-machine/",
+        "https://www.anthropic.com/research/designing-efficient-quantum-circuits",
+        "https://arxiv.org/abs/2610.13504",
+        "https://hdfcsky.com/news/sectoral-snapshot-today-october-16-2026-it-soars-3-9percent-leading-market-rally"
+      ],
+      "subject": [
+        "SEBI circular of 15 October 2026 revises the Closing Auction Session to a 3:30–3:40 pm window and moves expiring derivatives settlement to a 30-minute VWAP instead of the CAS closing price",
+        "Citizen Lab and Confiant report that Israeli firm Discover-Tech's Controlium platform bridges the online ad ecosystem and zero-click spyware vendors, with at least 45 Al Jazeera computers hacked via malicious ads",
+        "Nuclear archaeology study in PNAS Nexus reassesses the B8 pile, Germany's final wartime reactor experiment, concluding it was far from criticality and that Heisenberg underestimated the material required",
+        "Activision and Omnicom Media build a full-scale physical reproduction of a Call of Duty: Modern Warfare 4 level in a Shoreditch High Street car park ahead of the game's 23 October release",
+        "Zepto sells an ITC-made collectible matchbox series, Dazzle Vibe Matches LIT Parivar, exclusively on its quick-commerce app in select Indian markets from 21 October",
+        "Mercedes installs a W16 show car in 2026 livery inside Autobahn Motors' fifteen-storey vertical car showroom in Singapore during the Singapore Grand Prix weekend",
+        "Claude, run in a closed loop against an automated circuit evaluator with no human between rounds, produces quantum circuit designs for elliptic-curve point addition and a decoded quantum interferometry decoder that beat prior constructions on gate count",
+        "Cambridge paper proposing Explanatory World Models, which use language-model explanations to redistribute delayed reward to earlier causally relevant events while preserving episode return",
+        "Why airlines ask for volunteers rather than removing passengers: Julian Simon's 1960s reverse-auction proposal, the 1978 US rule requiring volunteer solicitation, and the Delta bidding system"
+      ],
+      "brand": [
+        "Activision",
+        "Call of Duty",
+        "Omnicom Media",
+        "Zepto",
+        "ITC",
+        "Mercedes-AMG",
+        "Autobahn Motors",
+        "Mercedes"
+      ],
+      "brand_mention": [
+        "Call",
+        "Duty",
+        "Modern Warfare 4",
+        "Shoreditch High Street",
+        "Korean",
+        "Omnicom's",
+        "ContentGrip",
+        "ITC",
+        "Dazzle Vibe Matches",
+        "LIT Parivar Edition",
+        "Diwali",
+        "Zepto",
+        "Chandan Mendiratta",
+        "Rohit Dogra",
+        "Autobahn Motors",
+        "Jln Kilang",
+        "Porsches",
+        "Ferraris",
+        "Lamborghinis",
+        "McLarens",
+        "Bentleys",
+        "Mercedes-Benzes",
+        "Gary Hong",
+        "Singapore",
+        "Marina Bay",
+        "Mercedes",
+        "W16",
+        "MotorBiscuit"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "SEBI has untied expiry-day settlement from the closing auction it introduced in January, after nine months of complaints"
+        ],
+        [
+          "trends",
+          "Government spyware is being delivered through ordinary ad slots, and the targeting is the ad network's own targeting"
+        ],
+        [
+          "trends",
+          "Two surviving uranium cubes say Heisenberg's last reactor needed twice the uranium he thought, and Germany never had the heavy water"
+        ],
+        [
+          "wild",
+          "Activision rebuilt the game's opening level as an actual Korean back alley in a Shoreditch car park, and resets it every night"
+        ],
+        [
+          "wild",
+          "A ten-minute delivery app's first exclusive collectible is a matchbox"
+        ],
+        [
+          "wild",
+          "Mercedes put an F1 car on the sixth floor of Singapore's fifteen-storey car vending machine"
+        ],
+        [
+          "research",
+          "Claude designed a quantum circuit with 17x fewer gates than the best published one, and nobody intervened between rounds"
+        ],
+        [
+          "research",
+          "Beyond Temporal Proximity: Explanatory World Models for Credit Assignment in Reinforcement Learning"
+        ],
+        [
+          "learn",
+          "Almost nobody gets thrown off an overbooked plane. An economist turned the problem into an auction, and 97% of bumps are now volunteers"
+        ]
+      ],
+      "editorial_domains": [
+        "contentgrip.com",
+        "corplawupdates.in",
+        "indianretailer.com",
+        "motorbiscuit.com",
+        "sciencedaily.com",
+        "techcrunch.com"
+      ]
     }
   ]
 }
