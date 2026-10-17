@@ -1,0 +1,349 @@
+{
+ "date_line": "Sunday, 18 October 2026",
+ "issue": 1,
+ "preheader": "Anthropic's model worked out where the NIST curve seeds came from in under half an hour, and they were lrand48 output seeded with a 1997 clock; DeepSeek shipped a 763B Flash update with a million-token window under MIT; OpenCode told console users to revoke their provider keys; Mercor mapped 29 AI benchmarks onto 18,797 O*NET tasks and found about 90% of American working hours uncovered; Indian equities had their best week since April while the Nasdaq had its worst since June; the Cabinet sold 60.72% of IDBI Bank to Fairfax; Meta's new commercial terms let it crawl business websites from 30 October; a 4,700-year-old cargo of jars was found off Kekova; and the paper cup was invented to sell water, not to hold coffee.",
+ "quote": {
+  "text": "The three most harmful addictions are heroin, carbohydrates, and a monthly salary.",
+  "author": "Nassim Nicholas Taleb",
+  "source_url": "https://www.goodreads.com/author/quotes/21559.Nassim_Nicholas_Taleb",
+  "note": "The joke is the list, and the list is an argument. Two of those three are things you are warned about; the third is the thing everyone is trying to get. Taleb's point is that a salary does what an addiction does — it arrives on a schedule, it quietly rearranges what you are willing to do, and the withdrawal is bad enough that you will keep taking it long after you stopped wanting it. Put it third in a list with heroin and the familiar thing stops looking neutral."
+ },
+ "agent_craft": {
+  "items": [
+   {
+    "text": "When a subagent needs to know what you already know, fork instead of re-briefing it: `subagent_type: \"fork\"` hands it your whole conversation, and — the part that actually pays — its tool output never comes back into your context, so a fork is the cheap way to run a noisy search or a long file sweep mid-session. As of 2.1.302 forks are on by default in `claude -p`, the Agent SDK, the desktop app and VS Code, not just the terminal; `CLAUDE_CODE_FORK_SUBAGENT=0` turns them off if you want the old behaviour.",
+    "source": "Claude Code changelog, 2.1.302 (16 October 2026)",
+    "url": "https://code.claude.com/docs/en/changelog"
+   }
+  ]
+ },
+ "hn": [
+  {
+   "title": "Claude reveals ECDSA curve origins",
+   "url": "https://www.anthropic.com/research/ecdsa-curve-origins",
+   "hn_url": "https://news.ycombinator.com/item?id=50122800",
+   "points": 1016,
+   "comments": 373,
+   "bullets": [
+    "The NIST curves adopted in FIPS 186-2 in 2000 carry seed values the NSA never explained — P-256's is C49D3608 86E70493 6A6678E1 139D26B7 819F7E90 — and for twenty-six years the unexplained seeds were the main reason to suspect a backdoor. The long-standing folklore that they came from a passphrase of Jerry Solinas' was wrong.",
+    "An Anthropic employee asked an internal model to work it out, withholding the passphrase clue. It had the answer in under half an hour. The approach was to guess the tooling rather than attack the maths: hypothesise a weak 1990s C-library PRNG, write a scanner, and test 34 generator-and-slice combinations against the known seeds.",
+    "The tell was statistical. Four seeds had a zero top bit in all 20 words — probability about 1 in 5,810 — which points at lrand48. For the binary-curve seeds it brute-forced the 17 hidden bits; for the prime curves it used LLL lattice reduction on truncated outputs, then traced the recovered states back to srand48 calls seeded with Unix timestamps.",
+    "So the seeds are clock readings. The prime-curve timestamps land between May 1997 and April 1998; P-256's is 1997-08-16 01:52:34, candidate number 1,842. Six curves' base points came from the FreeLIP generator instead. P-192's base-point seed is 20000, and prime239v1 to v3 use 20420, 20507 and 20509.",
+    "Not a break, and the authors say so plainly: a simple reproducible generator is harder to hide a backdoor in than a hash nobody can reverse. Open questions remain — B-163's seed, most of the base points, and why several valid candidate curves were skipped (P-256 passed over candidate 876). Filippo Valsorda organised the $36,864 bounty; it goes to the Internet Security Research Group."
+   ]
+  },
+  {
+   "title": "DeepSeek-v4.1-Flash-1017",
+   "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+   "hn_url": "https://news.ycombinator.com/item?id=50129045",
+   "points": 633,
+   "comments": 543,
+   "bullets": [
+    "A 763B-parameter model released under MIT — repository and weights both — with a one-million-token context window and image-plus-text input. The card recommends setting max_tokens to at least 256K, temperature 1.0, top_p 1.0.",
+    "DeepSeek calls it a minor update to V4.1-Flash. The benchmark table disagrees with the word minor on the agentic rows: Terminal-Bench 4.0 goes 31.2 to 42.3, ProgramBench 20.3 to 29.1, Apex Bench v1.1 64.6 to 72.1, and Humanity's Last Exam without tools 36.8 to 42.6.",
+    "The claim that matters for cost is not on the leaderboard: the card says the model finishes tasks faster and emits shorter outputs. A cheaper trajectory to the same answer is worth more day to day than two points on a benchmark.",
+    "Against the field it is uneven. Flash-1017 leads the listed models on DeepSWE v1.1 at 77.0; Opus 5 leads most of the other rows. The comparison set is K3, GLM-5.3, GPT-5.6 Sol and Opus 5.",
+    "The citation title points at KV cache compression as the architectural story, and the technical report is linked from the card rather than summarised on it."
+   ]
+  },
+  {
+   "title": "OpenCode Hacked: User credentials leaked",
+   "url": "https://twitter.com/opencode/status/2111516673953935833",
+   "hn_url": "https://news.ycombinator.com/item?id=50133401",
+   "points": 623,
+   "comments": 98,
+   "bullets": [
+    "The submitted link is a post on X, which is login-walled and cannot be fetched, so these bullets come from the Hacker News thread quoting the team's notice and from Notebookcheck's and OfficeChai's write-ups of the same statement. Treat the numbers as the company's own.",
+    "What is affected is the hosted OpenCode Console, not the open-source CLI. Console users could store their own third-party provider keys in a workspace; the team says it found unauthorised access to a legacy system it was in the middle of decommissioning, and that those stored keys may have been exposed.",
+    "OpenAI, Anthropic and Google keys are the ones named. The company put the blast radius at roughly 1.4% of Console users — the ones who had external providers linked — and says it emailed all of them to revoke and reissue.",
+    "Misuse is unconfirmed by the company and anecdotal everywhere else: one user reported about $400 of unauthorised Anthropic charges, another around €200 on Google. Co-founder Dax Raad said his own personal accounts were being attacked.",
+    "The thread's main complaint is the framing. The original post called it a 'large scale distillation attack', and commenters — including the submitter — asked how a distillation attack exposes credentials. No postmortem has been published and no root cause given."
+   ]
+  },
+  {
+   "title": "90% of US working hours are spent on tasks not covered well by AI benchmarks",
+   "url": "https://www.mercor.com/research/labor-index/benchmark-map/",
+   "hn_url": "https://news.ycombinator.com/item?id=50121179",
+   "points": 592,
+   "comments": 536,
+   "bullets": [
+    "Mercor took 29 public agentic benchmarks and mapped every prompt onto the US Department of Labor's O*NET taxonomy — 923 occupations, 18,797 tasks — using an LLM judge, validated against human expert tags. A task counts as covered if at least five prompts map to it.",
+    "The result: 924 of 18,797 tasks are covered, in 208 of 923 occupations. Weighted by the Bureau of Labor Statistics wage bill and by how people actually spend their time, that leaves about 90% of American working hours in tasks with little or no benchmark coverage.",
+    "The coverage is not random, it is self-selecting. Computer and mathematical occupations: 29 of 36 covered. Healthcare practitioners: 12 of 89. Education and library: 9 of 62. AI-exposed tasks are about 6x likelier to be covered than unexposed ones, and the most important tasks in a job 6–10x likelier than the least.",
+    "The honest part is the limitations section. 29 benchmarks is an incomplete list, so coverage is biased downward; the per-family cap understates software engineering; excluding saturated benchmarks understates easy tasks. Citing Dingel and Neiman, the page notes only 37% of US jobs could be done entirely from home at all.",
+    "One concrete case: for financial and investment analysts, 11 tasks and 176 prompts, Claude Opus 5.5 Max scored 73.3% unweighted and 70.2% when weighted by O*NET task importance — close enough that the weighting is not where the error lives. Fewer than a third of that occupation's tasks had enough coverage to score."
+   ]
+  },
+  {
+   "title": "You could have invented transformers from memory",
+   "url": "https://alexwang.ai/posts/associative-memory/",
+   "hn_url": "https://news.ycombinator.com/item?id=50122878",
+   "points": 473,
+   "comments": 108,
+   "bullets": [
+    "Alex Wang's framing, posted 15 October: treat every layer as a memory store holding key-value pairs. Quality is the interference-to-signal ratio; capacity is the number of memories you can hold before interference equals signal. Then derive the architecture by asking for more capacity.",
+    "Start with the crudest store, a sum of outer products W = Σ vᵢkᵢᵀ. With random unit keys, interference grows like √(M/d_k), so capacity is about d_k. Fit the keys by least squares instead and recall is exact up to M = d_k, doubling capacity to roughly 2d_k.",
+    "Nonlinearity is what buys the big jump, because it suppresses low-similarity keys. At d_k = 64: ReLU holds about 128 memories, squared ReLU about 2,700, cubed ReLU about 35,000. Each extra power sharpens the suppression, and each one forces you to pick a power.",
+    "Softmax is the refusal to pick. The exponential is an infinite sum of powers, so f(x) = Vᵀsoftmax(βKx) with β = √d_k gets capacity growing like e^(2β(1−β/d_k)) — about 1.2 million at d_k = 64. And because each context token is one memory, self-attention's store is non-parametric and grows with the context.",
+    "The payoff is that long-context tricks stop being hacks. If recall needs a larger β as M grows, the log-M scaling rules — Su's, Qwen's LogN-Scaling, YaRN — are just keeping the interference ratio flat. Wang is careful that this counts random vectors a single layer can recall and says nothing about training data."
+   ]
+  }
+ ],
+ "markets": {
+  "indices": [
+   {
+    "name": "Sensex · week to Fri 16 Oct",
+    "value": "74,729.27",
+    "change": "+2,256.94 (3.11%) on the week",
+    "direction": "up"
+   },
+   {
+    "name": "Nifty 50 · week to Fri 16 Oct",
+    "value": "23,146.15",
+    "change": "+625.70 (2.78%); best week since early April",
+    "direction": "up"
+   },
+   {
+    "name": "Nifty IT · week",
+    "value": "42,730.85",
+    "change": "+11.72% — biggest weekly gain in ~18 years",
+    "direction": "up"
+   },
+   {
+    "name": "Nifty Midcap 150 · week",
+    "value": "+0.62%",
+    "change": "Smallcap 250 +0.36%; the rally was large-caps",
+    "direction": "up"
+   },
+   {
+    "name": "Nasdaq Composite · Fri 16 Oct",
+    "value": "26,140.03",
+    "change": "−572.99 (2.1%); −4.5% on the week",
+    "direction": "down"
+   },
+   {
+    "name": "S&P 500 · Fri 16 Oct",
+    "value": "7,659.44",
+    "change": "−84.62 (1.1%); −1.9% on the week",
+    "direction": "down"
+   },
+   {
+    "name": "Dow Jones · Fri 16 Oct",
+    "value": "52,002.41",
+    "change": "−175.28 (0.3%); +0.7% on the week",
+    "direction": "down"
+   },
+   {
+    "name": "USD/INR · Fri 16 Oct",
+    "value": "94.96",
+    "change": "about 2% stronger on the week, from near ₹97",
+    "direction": "down"
+   },
+   {
+    "name": "India VIX · week",
+    "value": "14.02",
+    "change": "−4.54%; 10-year G-sec around 6.85%",
+    "direction": "down"
+   },
+   {
+    "name": "FII cash · October to 15 Oct",
+    "value": "−₹49,935 cr",
+    "change": "DIIs +₹51,829 cr over the same ten sessions",
+    "direction": "down"
+   }
+  ],
+  "stories": [
+   {
+    "headline": "India had its best week since April and America had its worst since June, and the same sector caused both",
+    "url": "https://hdfcsky.com/news/weekly-market-review-nifty-its-record-11-5percent-weekly-surge-lifts-sensex-3-11percent-as-rupee-rebounds-jio-ipo-and-rbi-tightening-loom-over-markets",
+    "source": "HDFC Sky's weekly review for the Indian index, sector, currency and flow figures; the Associated Press tally via ABC News for the US closes, weekly and year-to-date numbers; IndiaIPO's week-ahead piece for the weekly FPI and DII net figures. Indian and US markets are shut for the weekend; the numbers describe the week to Friday 16 October 2026, and Indian markets reopen on Monday 19 October.",
+    "bullets": [
+     "The Sensex ended the week at 74,729.27, up 2,256.94 points or 3.11%, and the Nifty 50 at 23,146.15, up 625.70 or 2.78% — the biggest weekly gains since the first week of April. The week was not smooth: Monday lost 547.65 Sensex points and Wednesday another 251.89, and Thursday alone put back 1,533.72.",
+     "Nifty IT did almost all of it, closing at 42,730.85 for a weekly gain of 11.72%, its largest in roughly eighteen years, on September-quarter results. Nothing else moved: Bank Nifty finished about flat near 55,844, FMCG fell 0.4%, healthcare 0.85% and metals 0.45%.",
+     "Breadth stayed poor, which is the thing to watch. Nifty Midcap 150 rose 0.62% and Smallcap 250 0.36% against the Nifty's 2.78% — a week in which the index moved and the market it is meant to represent largely did not.",
+     "New York went the other way on the same sector. The Nasdaq Composite fell 572.99 points or 2.1% on Friday to 26,140.03, finishing down 4.5% for the week, its worst since June; the S&P 500 lost 1.1% on the day to 7,659.44 and 1.9% on the week. The Dow was the exception, down 0.3% on Friday to 52,002.41 but up 0.7% across the week as energy stocks held up. Year to date all three are still green: Dow +8.2%, S&P 500 +11.9%, Nasdaq +12.5%.",
+     "The rupee closed near 94.96 to the dollar, roughly 2% stronger on the week after trading close to ₹97 earlier in it, and India VIX fell 4.54% to 14.02. Foreign selling continued but slowed — FPIs net sold about ₹8,991 crore for the week against DII buying of roughly ₹7,813 crore — while the October-to-date picture through 15 October stays the same standoff it has been all month: FIIs out ₹49,935 crore, DIIs in ₹51,829 crore."
+    ]
+   }
+  ]
+ },
+ "trends": [
+  {
+   "tag": "India",
+   "headline": "Four years after the government invited bids, IDBI Bank has a buyer, and the state is down to 15%",
+   "url": "https://www.businesstoday.in/amp/latest/corporate/story/centre-approves-fairfax-financials-rs52878-crore-bid-for-60-72-stake-in-idbi-bank-561590-2026-10-14",
+   "subject": "The Cabinet Committee on Economic Affairs approves the sale of a 60.72% stake in IDBI Bank to Fairfax Financial's Canadian vehicle for Rs 52,878 crore at Rs 81 a share, with the government falling to 15% and LIC to 19%",
+   "subtitle": "Business Today's report on the CCEA decision of Wednesday 14 October 2026",
+   "bullets": [
+    "The Cabinet Committee on Economic Affairs cleared the sale of 60.72% of IDBI Bank to Canada Inc., the Fairfax Financial Holdings parent entity, for ₹52,878.08 crore. The government is selling 30.48% and LIC 30.24%; afterwards the government holds 15% and LIC 19%, and both give up their board nominees.",
+    "The price was ₹81 a share. The benchmark it had to beat was ₹75.99 — the average of a market-multiple valuation against other public sector banks and an asset valuation — and the market price was deliberately not the benchmark, because the stock had swung between ₹61.01 and ₹118.38.",
+    "None of the money goes into the bank. It goes to the two selling shareholders, which is the distinction worth holding on to whenever a figure this size is described as an investment in a bank.",
+    "The process took four years and ended with two bids. The preliminary information memorandum went out on 7 October 2022; five parties expressed interest, four were eligible, and two submitted techno-financial bids — all of them having first cleared an RBI fit-and-proper test and a Home Ministry security clearance.",
+    "It is not done. The winner still has to present its credentials to the RBI under the fit-and-proper assessment and file a roadmap for regulatory compliance. The government's remaining 15% is already earmarked for sale on the open market under a standard operating procedure."
+   ]
+  },
+  {
+   "tag": "Platform",
+   "headline": "From 30 October, having a Facebook page for your business is consent to let Meta crawl your website",
+   "url": "https://ppc.land/metas-new-terms-let-it-crawl-business-websites-to-train-ai-from-oct-30/",
+   "subject": "Meta's updated Commercial Terms, in force from 30 October 2026, add a clause letting it crawl domains tied to any business account and train on whatever it collects there",
+   "subtitle": "PPC Land's clause-by-clause reading of the revised Meta Commercial Terms, following Nieman Lab's reporting, 16 October 2026",
+   "bullets": [
+    "Section 1 of the new Commercial Terms, which replace the version dated 6 March 2024, says a business authorises Meta 'to use automated software' against domains 'associated with your products or services', to 'create test credentials to access' them, to 'periodically pull updates', and that Meta 'may use any content from such domains, web pages or URLs to provide, develop, improve, research, train'. The March 2024 version had no crawling language at all.",
+    "Three lawyers read it for Nieman Lab. Matt Topic of Loevy & Loevy said publishers should assume it is enforceable. James Grimmelmann of Cornell read it as a training licence and noted the test-credentials clause could let Meta 'sign up as a fake user' past a registration wall. Benjamin Sobel of Wisconsin said conditioning access to business products on scraping permission looks like tying; no claim has been filed.",
+    "There is no partial opt-out. You cannot reject the crawling paragraph and keep the rest, and Section 7 makes continued use after notice count as acceptance — post to a Page on 31 October and you have agreed. Nieman Lab's own observation is the sharp one: essentially every news organisation has at least one Meta business account, its own included.",
+    "Meta disputes the reading rather than the text. A spokesperson said the language consolidates crawling terms previously spread across other documents and that its crawling will not change; Andy Stone called the reports false and said the point is pulling accurate product information from third-party sites for ads and recommendations. The contract itself contains no such product limitation.",
+    "Both Meta statements point to robots.txt. The terms do not mention robots.txt — they neither carve it out nor override it — which is precisely the ambiguity the lawyers flagged: a signed commercial agreement is a stronger instrument than a file in a web root."
+   ]
+  },
+  {
+   "tag": "Wildcard",
+   "headline": "A cargo of jars sank off southern Türkiye 4,700 years ago, and the clay says they were loaded in the Jordan Valley",
+   "url": "https://www.aljazeera.com/news/2026/10/14/worlds-oldest-shipwreck-found-off-coast-of-turkiye",
+   "subject": "Underwater excavation near Kekova Island in Antalya province finds Early Bronze Age ceramic storage jars from a cargo vessel that sank about 4,700 years ago, with clay analysis tracing the jars to Jordan Valley workshops",
+   "subtitle": "Al Jazeera, 14 October 2026, on the announcement by Türkiye's culture minister Mehmet Nuri Ersoy and the excavation led by Hakan Öniz of Akdeniz University",
+   "bullets": [
+    "The site is off Kekova Island in Antalya province. The wooden hull is gone entirely — what survives is the cargo, ceramic storage jars that probably held olive oil or wine, dated to about 4,700 years ago in the Early Bronze Age. Ersoy announced it on 14 October and called it the world's oldest shipwreck.",
+    "The dating came from a publication, not a lab. Öniz told the BBC his team found the wreck four years ago and assumed the jars were a century or two old; they changed their minds on seeing the same amphora forms in a book on Egyptian archaeology. The jars resemble those found at Giza.",
+    "Clay analysis points to workshops in the Jordan Valley, and similar forms turn up in Egypt, Türkiye and Greece. The ship was probably running from the Levantine coast towards Hisarlık in Türkiye or Crete when it went down — a long-distance trade route, operating at a date when one is not usually drawn on the map.",
+    "One jar is the odd one. It carries nine markings and two holes, which the excavators suggest may mean it was used for churning butter or cheese rather than for shipping liquid — a working object that ended up in the hold.",
+    "The 'oldest' claim is a ministry assertion and the article does not set out the criteria behind it, which is worth holding lightly. The cargo and the clay analysis are the part that stands on its own."
+   ]
+  }
+ ],
+ "research": [
+  {
+   "tag": "Industry · Microsoft Research",
+   "title": "A proof that a program ran, checkable in 12 milliseconds, and the security rests on nothing but SHA-256",
+   "url": "https://www.microsoft.com/en-us/research/blog/proof-based-general-purpose-computing-with-magnetar/",
+   "subject": "Microsoft Research releases Magnetar, a zero-knowledge virtual machine that proves RISC-V execution at 7.2-12.8 million cycles per second on a laptop using only hash-based cryptography",
+   "subtitle": "'Proof-based general-purpose computing with Magnetar', Microsoft Research Blog, 15 October 2026 — Srinath Setty, Microsoft Research Redmond",
+   "bullets": [
+    "Magnetar is a zkVM: it runs a program and emits a short proof that the run happened as claimed, which anyone can check without re-running it. It proves RISC-V execution, so you write Rust, Go or C, compile normally, and the thing that gets proved is the program you actually wrote — rather than a hand-translated cryptographic circuit, which is where months of work and the security bugs have historically gone.",
+    "The numbers are the news. 7.2 to 8.7 million processor instructions proved per second on a laptop, 9.5 to 12.8 million in an optimised build. Across 15 benchmarks, from cryptographic hashing to token transfers in a small EVM interpreter, it averages 10 to 39 times faster than the quickest existing zkVMs on the same machine, and more than 300 times faster than two of them on the token-transfer case. A proof verifies in about 12 milliseconds.",
+    "The security assumption is the quiet part. No elliptic curves, no lattices, no trusted setup, no unproven coding-theory conjectures — only standard hash functions such as SHA-256 or SHA-3. That rules out the quantum worry that hangs over curve-based systems, and it rules out the newer assumptions that have had less time under attack.",
+    "It composes with itself. Because checking a Magnetar proof is mostly hash and binary-field work, verification is an efficient workload for Magnetar, so a long computation can be proved in pieces and the pieces folded together.",
+    "The lineage is a decade of Microsoft Research work rather than one trick: Spartan for sum-check without trusted setup, Phalanx for the repetition in a processor's instruction cycle, Nova-style folding for arbitrary sizes, Spice, Lasso, Twist and Shout for memory checking, Brakedown for hash-based commitments, BinarySpartan for binary fields. The blog post gives no limitations section; the speedups are averages on one laptop against a chosen comparison set, and the analysis is in the technical paper."
+   ]
+  },
+  {
+   "tag": "Academic · Carnegie Mellon",
+   "title": "Learning from fracture: Teaching language models to design through physical experience",
+   "url": "https://arxiv.org/abs/2610.17804",
+   "subject": "FracLearn, a three-stage framework in which a language model designs fracture-resistant architectures in a Tetris-inspired game, abstracts conditional principles from simulated fracture responses, and generalises them to beat its own best design by 11.0% without any weight updates",
+   "subtitle": "arXiv:2610.17804, submitted 13 October 2026 — a single-author paper by Bo Ni; OpenAlex resolves the affiliation to Carnegie Mellon. Primary category cond-mat.mtrl-sci, cross-listed to cs.AI and cs.LG",
+   "bullets": [
+    "The setup is deliberately unfamiliar to the model. A Tetris-inspired fracture game: the model places blocks to build an architecture, a simulation cracks it, and the model is scored on how it broke. The point of an invented game is that nothing useful about it can be sitting in the training data.",
+    "Three stages, and the middle one is the paper. Experience: propose architectures and look at the simulated fracture responses. Abstraction: turn those observations into conditional principles about where reinforcement goes, how a crack evolves, how load transfers — each principle carrying its supporting evidence and the conditions under which it fails. Generalisation: recombine the principles into new designs.",
+    "The headline result is a best composite score 11.0% above the best design found during the experience stage — the model beating its own search by reasoning about why the search worked, not by searching harder.",
+    "The fracture analysis names the mechanisms the model found its way to: crack deflection, temporary crack trapping, and higher residual load capacity after first failure. These are the standard toughening mechanisms in materials science, arrived at from scratch in a game that does not mention them.",
+    "No weights were updated. Everything improved lives in externalised knowledge and decisions, which makes the result a claim about the scaffolding rather than about the model — and the honest reading is that it is one 21-page paper, on one invented game, by one author."
+   ]
+  }
+ ],
+ "wild": [
+  {
+   "tag": "Drinks",
+   "headline": "SunnyD is selling a gallon of a flavour it will not name, and seven weeks on it still has not said",
+   "url": "https://www.foodbev.com/news/sunnyd-launches-mystery-flavour-spookyd-for-halloween",
+   "entities": [
+    "SunnyD",
+    "Harvest Hill Beverage Company"
+   ],
+   "subject": "SunnyD's SpookyD, a Halloween drink from Harvest Hill Beverage Company whose taste the maker has never disclosed, is sold in one-gallon jugs while drinkers are asked to guess what is in it and tag the brand",
+   "subtitle": "FoodBev Media on the SpookyD launch announced 26 August 2026, with Brand Eating's September taste test",
+   "bullets": [
+    "The product is a drink with no stated flavour. SunnyD announced SpookyD on 26 August and has never said what is in it; the marketing copy only asks whether it is fruity, candy-inspired, or citrus with a spooky twist, and invites people to guess and tag the brand.",
+    "It is sold in two formats, and the larger one is the funny part: an 18-pack of 6.75-ounce bottles at $6.87, and a one-gallon jug at $3.68 as listed on 5 October. A gallon is a lot of a liquid nobody will identify for you.",
+    "The mechanic works because the answer never arrives. A mystery flavour that gets revealed is a two-week campaign; one that does not is an argument that runs until the stock does, with every guess posted publicly and tagged.",
+    "Independent tasting has got about as far as it is going to. Brand Eating's reviewer, sent a bottle by the company, reported a smell of gum or cotton candy and a taste of raspberry gum with a citrus finish — which is a description, not an ingredient.",
+    "Harvest Hill is not a confectioner doing a novelty; SunnyD is a mainstream juice-drink brand, and the whole proposition here is withheld information. The product is the absence of a label."
+   ]
+  },
+  {
+   "tag": "Telecoms",
+   "headline": "Orange scored a piece of music entirely out of scam calls, and made it as unpleasant as it needed to be",
+   "url": "https://musebyclios.com/music/orange-makes-scam-calls-sound-like-irritating-music-to-your-ears/",
+   "entities": [
+    "Orange",
+    "Publicis Conseil",
+    "Wanda",
+    "Razorfish"
+   ],
+   "subject": "French telco Orange runs a dialogue-free film called Scamcophony for its Cybersecure service, in which the beeps and notification tones of phishing and fake parcel alerts are arranged into a deliberately unbearable avant-garde composition",
+   "subtitle": "Muse by Clio, 13 October 2026, on Orange France's Scamcophony campaign by Publicis Conseil",
+   "bullets": [
+    "No dialogue. The whole film is a piece of music built from the sounds of being scammed: ring tones, notification beeps, bloops, buzzes, fuzz-tones — the fake parcel alert, the phishing ping, the call from a number you do not know, arranged into a composition.",
+    "The brief was to make it worse frame by frame. The creatives, Alexandre Dourday and Alexandre Thiebaut at Publicis Conseil, described the target as music that is 'harmonious, yet almost unbearable at the same time', and the piece is dissonant on purpose. Orange coined the word Scamcophony for the condition.",
+    "The ending is the ad. The noise stops and the Orange logo appears in silence — silence being what the Cybersecure product is actually selling, which is a cleaner statement of a security proposition than any threat statistic would have been.",
+    "Directed by Bradley Bell and Pablo Jones-Soler through Wanda, with social elements by Razorfish. It is running on French TV and video-on-demand through the end of October.",
+    "What it does not do is quote a number. No scam-call statistics anywhere in the campaign — the argument is entirely that you already know the sound, and that having it played back at you for sixty seconds is sufficient."
+   ]
+  },
+  {
+   "tag": "Cookware",
+   "headline": "A pan company's non-stick claim is now the name of a cookie, and this weekend it is being handed out of a hidden oven",
+   "url": "https://sporked.com/article/last-crumb-is-giving-away-cookies-this-weekend-thanks-to-this-collab/",
+   "entities": [
+    "HexClad",
+    "Last Crumb"
+   ],
+   "subject": "HexClad and cookie brand Last Crumb run a two-day pop-up called The Secret Oven in New York and Los Angeles, giving away a sticky-toffee-pudding cookie named Sticky, Not Stuck to launch HexClad's hybrid bakeware line",
+   "subtitle": "Sporked, October 2026, on The Secret Oven pop-up running 17-18 October 2026",
+   "bullets": [
+    "The pop-up is called The Secret Oven and it runs two days only, 17 and 18 October, in two cities: the corner of Bleecker and Mulberry in Manhattan, and 1219 Abbot Kinney Boulevard in Venice. Cookies go out from noon local time in each, free while they last.",
+    "The cookie is a sticky toffee pudding and cookie hybrid from Last Crumb, and it is called Sticky, Not Stuck. That is the entire campaign in three words: the product claim for a non-stick bakeware release, repurposed as a dessert name, with the pun doing the work a spec sheet would otherwise have to.",
+    "What is being launched behind it is a $400 six-piece hybrid bakeware set — a rectangular cake pan, two round ones, a square one, a medium baking sheet and a stainless cooling rack — which is a hard thing to queue for, and a free sticky toffee cookie is not.",
+    "Gordon Ramsay's name is attached through his long association with HexClad. Sporked notes it is not confirmed that he will actually be at either location, which is the normal arrangement.",
+    "The format is a small inversion worth noticing: rather than demonstrate the pan, hide it. Visitors find the oven to get the thing the oven made, and the only evidence of the non-stick surface anyone takes home is that the cookie came off it."
+   ]
+  }
+ ],
+ "learn": {
+  "title": "The paper cup was not invented to hold your coffee. It was invented to sell you a penny of water, and it is named after a doll.",
+  "subject": "Origin of the disposable paper cup: Lawrence Luellen's 1908 penny water vendor, Alvin Davison's 1908 'Death in School Drinking Cups' study, Kansas banning the common drinking cup in 1909, and the Health Kup being renamed the Dixie Cup in 1919 after a neighbouring doll company",
+  "body": [
+   "For most of the nineteenth century, a public drinking fountain meant a barrel of water and a tin cup on a chain, and everybody used the same cup. Railway stations had them. Schools had them. Nobody thought about it until 1908, when Alvin Davison, a biology professor at Lafayette College, swabbed the shared cups in the public schools of Easton, Pennsylvania and published what he found in Technical World Magazine under the title 'Death in School Drinking Cups'. The Massachusetts State Board of Health liked it enough to reprint and circulate it in November 1909. In 1909 Kansas, pushed hard by a state health officer named Samuel Crumbine, became the first state to outlaw the common drinking cup in public places and railroad water coolers. Other states followed within a few years, and an entire category of object was abolished by law.",
+   "Which left a gap, and a Boston inventor named Lawrence Luellen was already standing in it. From 1907 he had been working on cups made from paraffin-treated paper, and in 1908 he finished the thing he actually wanted to sell: the Luellen Cup & Water Vendor, a porcelain machine that gave you a cup of cold water for one cent. The cup was not the product. The cup was the packaging on a glass of water, and the business was a vending machine — which is why the company he and his brother-in-law Hugh Moore set up in February 1909 was called the Public Cup Vendor Company, and why its first real customers were railroads. By 1916 more than a hundred railroads had contracts. The penny machines faded; the cups did not.",
+   "The name came last and came from next door. The cup was sold as the Health Kup from 1912, which is a name that tells you exactly what the company thought it was selling. Then in 1919 it was renamed after the Dixie Doll Company, which made dolls in the same building in New York, because Moore liked the word better than his own. So the brand on a hundred years of paper cups is a doll company's, the object exists because a professor swabbed some school cups, and the thing it was built to deliver — a cent's worth of water from a porcelain box — has been gone for a century."
+  ]
+ },
+ "ideas": {
+  "prompt": "Ten things that should be free but aren't",
+  "note": "Altucher's drill: ten against one prompt, written fast, not defended. Reddit rate-limited the fetcher after r/SomebodyMakeThis, so the raw material today is that subreddit's week — a recurring theme of small shared-infrastructure annoyances — plus the Ask HN idea threads and Y Combinator's Requests for Startups.",
+  "items": [
+   {
+    "text": "Hot water at railway stations. You can buy tea all day on a platform; you cannot fill your own flask."
+   },
+   {
+    "text": "The first fifteen minutes of parking, anywhere, for the errand that takes eleven."
+   },
+   {
+    "text": "A luggage room at every big station, for the five hours between checkout and the train."
+   },
+   {
+    "text": "Clean public toilets — bill the building, never the person who needs one."
+   },
+   {
+    "text": "Reading glasses on a chain at every pharmacy counter, the way banks keep pens."
+   },
+   {
+    "text": "Carrying a musical instrument onto a plane."
+   },
+   {
+    "text": "The second cup of filter coffee. The first one already paid for the chair."
+   },
+   {
+    "text": "A plain-English summary of what a product's reviews actually say, instead of 4.2 stars.",
+    "why": "People keep asking for this on r/SomebodyMakeThis; somebody asked again this week."
+   },
+   {
+    "text": "One button in a shared office kitchen that tells whoever does the buying that something has run out.",
+    "why": "Also straight off r/SomebodyMakeThis — the wish is for a button, not a spreadsheet."
+   },
+   {
+    "text": "Cold drinking water in every public building, signposted from outside, in a country where summer runs most of the year."
+   }
+  ]
+ }
+}

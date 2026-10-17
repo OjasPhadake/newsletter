@@ -5974,6 +5974,151 @@
         "sciencedaily.com",
         "techcrunch.com"
       ]
+    },
+    {
+      "date": "2026-10-18",
+      "issue": 1,
+      "quote_text": [
+        "The three most harmful addictions are heroin, carbohydrates, and a monthly salary."
+      ],
+      "quote_author": [
+        "Nassim Nicholas Taleb"
+      ],
+      "idea_text": [
+        "Hot water at railway stations. You can buy tea all day on a platform; you cannot fill your own flask.",
+        "The first fifteen minutes of parking, anywhere, for the errand that takes eleven.",
+        "A luggage room at every big station, for the five hours between checkout and the train.",
+        "Clean public toilets — bill the building, never the person who needs one.",
+        "Reading glasses on a chain at every pharmacy counter, the way banks keep pens.",
+        "Carrying a musical instrument onto a plane.",
+        "The second cup of filter coffee. The first one already paid for the chair.",
+        "A plain-English summary of what a product's reviews actually say, instead of 4.2 stars.",
+        "One button in a shared office kitchen that tells whoever does the buying that something has run out.",
+        "Cold drinking water in every public building, signposted from outside, in a country where summer runs most of the year."
+      ],
+      "idea_prompt": [
+        "Ten things that should be free but aren't"
+      ],
+      "tip_text": [
+        "When a subagent needs to know what you already know, fork instead of re-briefing it: `subagent_type: \"fork\"` hands it your whole conversation, and — the part that actually pays — its tool output never comes back into your context, so a fork is the cheap way to run a noisy search or a long file sweep mid-session. As of 2.1.302 forks are on by default in `claude -p`, the Agent SDK, the desktop app and VS Code, not just the terminal; `CLAUDE_CODE_FORK_SUBAGENT=0` turns them off if you want the old behaviour."
+      ],
+      "hn_id": [
+        "50122800",
+        "50129045",
+        "50133401",
+        "50121179",
+        "50122878"
+      ],
+      "link": [
+        "https://www.anthropic.com/research/ecdsa-curve-origins",
+        "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+        "https://twitter.com/opencode/status/2111516673953935833",
+        "https://www.mercor.com/research/labor-index/benchmark-map/",
+        "https://alexwang.ai/posts/associative-memory/",
+        "https://www.businesstoday.in/amp/latest/corporate/story/centre-approves-fairfax-financials-rs52878-crore-bid-for-60-72-stake-in-idbi-bank-561590-2026-10-14",
+        "https://ppc.land/metas-new-terms-let-it-crawl-business-websites-to-train-ai-from-oct-30/",
+        "https://www.aljazeera.com/news/2026/10/14/worlds-oldest-shipwreck-found-off-coast-of-turkiye",
+        "https://www.foodbev.com/news/sunnyd-launches-mystery-flavour-spookyd-for-halloween",
+        "https://musebyclios.com/music/orange-makes-scam-calls-sound-like-irritating-music-to-your-ears/",
+        "https://sporked.com/article/last-crumb-is-giving-away-cookies-this-weekend-thanks-to-this-collab/",
+        "https://www.microsoft.com/en-us/research/blog/proof-based-general-purpose-computing-with-magnetar/",
+        "https://arxiv.org/abs/2610.17804",
+        "https://hdfcsky.com/news/weekly-market-review-nifty-its-record-11-5percent-weekly-surge-lifts-sensex-3-11percent-as-rupee-rebounds-jio-ipo-and-rbi-tightening-loom-over-markets"
+      ],
+      "subject": [
+        "The Cabinet Committee on Economic Affairs approves the sale of a 60.72% stake in IDBI Bank to Fairfax Financial's Canadian vehicle for Rs 52,878 crore at Rs 81 a share, with the government falling to 15% and LIC to 19%",
+        "Meta's updated Commercial Terms, in force from 30 October 2026, add a clause letting it crawl domains tied to any business account and train on whatever it collects there",
+        "Underwater excavation near Kekova Island in Antalya province finds Early Bronze Age ceramic storage jars from a cargo vessel that sank about 4,700 years ago, with clay analysis tracing the jars to Jordan Valley workshops",
+        "SunnyD's SpookyD, a Halloween drink from Harvest Hill Beverage Company whose taste the maker has never disclosed, is sold in one-gallon jugs while drinkers are asked to guess what is in it and tag the brand",
+        "French telco Orange runs a dialogue-free film called Scamcophony for its Cybersecure service, in which the beeps and notification tones of phishing and fake parcel alerts are arranged into a deliberately unbearable avant-garde composition",
+        "HexClad and cookie brand Last Crumb run a two-day pop-up called The Secret Oven in New York and Los Angeles, giving away a sticky-toffee-pudding cookie named Sticky, Not Stuck to launch HexClad's hybrid bakeware line",
+        "Microsoft Research releases Magnetar, a zero-knowledge virtual machine that proves RISC-V execution at 7.2-12.8 million cycles per second on a laptop using only hash-based cryptography",
+        "FracLearn, a three-stage framework in which a language model designs fracture-resistant architectures in a Tetris-inspired game, abstracts conditional principles from simulated fracture responses, and generalises them to beat its own best design by 11.0% without any weight updates",
+        "Origin of the disposable paper cup: Lawrence Luellen's 1908 penny water vendor, Alvin Davison's 1908 'Death in School Drinking Cups' study, Kansas banning the common drinking cup in 1909, and the Health Kup being renamed the Dixie Cup in 1919 after a neighbouring doll company"
+      ],
+      "brand": [
+        "SunnyD",
+        "Harvest Hill Beverage Company",
+        "Orange",
+        "Publicis Conseil",
+        "Wanda",
+        "Razorfish",
+        "HexClad",
+        "Last Crumb"
+      ],
+      "brand_mention": [
+        "SpookyD",
+        "Brand Eating's",
+        "Harvest Hill",
+        "SunnyD",
+        "Alexandre Dourday",
+        "Alexandre Thiebaut",
+        "Publicis Conseil",
+        "Scamcophony",
+        "Orange",
+        "Cybersecure",
+        "Bradley Bell",
+        "Pablo Jones-Soler",
+        "Wanda",
+        "Razorfish",
+        "French TV",
+        "Secret Oven",
+        "Bleecker",
+        "Mulberry",
+        "Abbot Kinney",
+        "Venice Cookies",
+        "Crumb",
+        "Sticky",
+        "Stuck",
+        "Gordon Ramsay's",
+        "HexClad Sporked"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "Four years after the government invited bids, IDBI Bank has a buyer, and the state is down to 15%"
+        ],
+        [
+          "trends",
+          "From 30 October, having a Facebook page for your business is consent to let Meta crawl your website"
+        ],
+        [
+          "trends",
+          "A cargo of jars sank off southern Türkiye 4,700 years ago, and the clay says they were loaded in the Jordan Valley"
+        ],
+        [
+          "wild",
+          "SunnyD is selling a gallon of a flavour it will not name, and seven weeks on it still has not said"
+        ],
+        [
+          "wild",
+          "Orange scored a piece of music entirely out of scam calls, and made it as unpleasant as it needed to be"
+        ],
+        [
+          "wild",
+          "A pan company's non-stick claim is now the name of a cookie, and this weekend it is being handed out of a hidden oven"
+        ],
+        [
+          "research",
+          "A proof that a program ran, checkable in 12 milliseconds, and the security rests on nothing but SHA-256"
+        ],
+        [
+          "research",
+          "Learning from fracture: Teaching language models to design through physical experience"
+        ],
+        [
+          "learn",
+          "The paper cup was not invented to hold your coffee. It was invented to sell you a penny of water, and it is named after a doll."
+        ]
+      ],
+      "editorial_domains": [
+        "aljazeera.com",
+        "businesstoday.in",
+        "foodbev.com",
+        "musebyclios.com",
+        "ppc.land",
+        "sporked.com"
+      ]
     }
   ]
 }
