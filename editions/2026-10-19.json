@@ -1,0 +1,346 @@
+{
+  "date_line": "Monday, 19 October 2026",
+  "issue": 1,
+  "preheader": "Solar generated more electricity than nuclear for the first time in 2025; a 230 kB renderer draws Mermaid diagrams in under a third of a millisecond; Meta suspended the No Kings account for about 90 minutes on the day of action and called it an error; a bleached coral touched a healthy clone and the algae walked across; DeepSeek now sells search and fetch at $0.75 per thousand calls; India's goods exports rose 23% in September; Apple wrote a rule against apps that change after approval; a lizard's shed tail turned up in 99-million-year-old amber; a DeepMind agent picked an unnamed antibiotic candidate out of UniProt; and a supermarket sold five times as much French wine by playing an accordion.",
+  "quote": {
+    "text": "I'd kill for a Nobel Peace Prize.",
+    "author": "Steven Wright",
+    "source_url": "https://www.goodreads.com/quotes/tag/irony",
+    "note": "\"I'd kill for\" is a dead phrase — nobody hears the verb any more. Put the Peace Prize at the end of it and the verb wakes up, and the sentence destroys the thing it is reaching for. It is nine words long and it is really a demonstration: idioms are full of content we have agreed to stop noticing, and all it takes to get it back is one badly chosen object."
+  },
+  "agent_craft": {
+    "items": [
+      {
+        "text": "If a subagent keeps re-reading your conventions before it can start, preload them instead: put `skills:` in the subagent's frontmatter and the full text of each listed skill is injected at startup, up to 32 names. It does not restrict what the subagent can reach — without it the agent can still find skills through the Skill tool mid-run; it just stops the discovery round trip. This is the inverse of `context: fork` on a skill, where the skill becomes the prompt.",
+        "source": "Claude Code documentation, Subagents — \"Preload skills into subagents\"",
+        "url": "https://code.claude.com/docs/en/sub-agents"
+      }
+    ]
+  },
+  "hn": [
+    {
+      "title": "Solar surpasses nuclear power globally for first time",
+      "url": "https://www.pv-magazine.com/2026/09/29/solar-surpasses-nuclear-power-globally-for-first-time/",
+      "hn_url": "https://news.ycombinator.com/item?id=50131256",
+      "points": 670,
+      "comments": 431,
+      "bullets": [
+        "The source is the World Nuclear Industry Status Report 2026, overseen by Mycle Schneider, and the crossing happened in 2025. Wind first beat nuclear in a single month in March 2025, solar in April 2025; from March 2025 to June 2026 one or the other beat nuclear every month, and in March, April and May 2026 both did independently.",
+        "Nuclear generation was 2,703 TWh in 2025, up 1.1% — China up 7.6%, everywhere else down 0.2%. Its share of global electricity was 8.8%, the lowest in about four and a half decades, against a 17.5% peak in 1996. Solar generation rose about 30%.",
+        "Capacity is where the gap is embarrassing. Solar added 510 GW to reach 2,383 GW, up 27%; wind added a record 159 GW to 1,291 GW. Nuclear's installed base rose 1.5 GW to 399.5 GW and its operating base fell 0.5 GW to 368.6 GW. Four reactors started in 2025 and seven closed.",
+        "The twenty-year ledger is one country. Between 2006 and 2025, 104 reactors started and 106 closed; China had 53 startups and no closures, so the rest of the world lost a net 55 reactors. Of 16 reactors connected in 2023-25, none was on schedule, and average construction time was 10.9 years. Of 13 due to start in 2025, four did.",
+        "The report calls its own PV numbers conservative — IEA PVPS puts 2025 additions near 690 GW, about 180 GW more than WNISR used — so the gap is probably wider than reported. Schneider's summary: \"It's the growth rates, stupid!\""
+      ]
+    },
+    {
+      "title": "Pele – Mermaid diagrams as themeable SVG",
+      "url": "https://pele.run/",
+      "hn_url": "https://news.ycombinator.com/item?id=50132193",
+      "points": 563,
+      "comments": 58,
+      "bullets": [
+        "A dependency-free renderer that takes Mermaid syntax and returns SVG. You call `render()`, insert the string, and style it with CSS variables — which means a theme change recolours the diagram without re-rendering it. MIT licence, credited to kepano.",
+        "The comparison table is the pitch: 230 kB gzipped against Mermaid.js's 1.6 MB, 0.05-0.3 ms per render against 6-82 ms, and zero direct dependencies against 23. The page rounds that to roughly 6x smaller and \"up to 500x faster\".",
+        "It was written for Obsidian, which explains the design: an app that renders many small diagrams inside a user-chosen theme cares more about startup cost and CSS inheritance than about feature coverage.",
+        "Coverage is claimed at every diagram type built into Mermaid 12.1.0, and the layout adapts on small screens. The page points to a separate Compatibility section for syntax and layout differences rather than asserting parity.",
+        "What it does not publish is its own version number or a list of known limitations, so the Compatibility page is the thing to read before swapping it into anything that already renders Mermaid."
+      ]
+    },
+    {
+      "title": "Zuckerberg's Meta Takes Down No Kings Instagram During Protest Day",
+      "url": "https://meidasnews.com/news/zuckerbergs-meta-takes-down-no-kings-instagram-during-massive-protest-day",
+      "hn_url": "https://news.ycombinator.com/item?id=50136881",
+      "points": 562,
+      "comments": 380,
+      "bullets": [
+        "The submitted page returns 403 and could not be fetched, so these bullets come from Newsweek's report of the same episode and from the Hacker News thread. Treat the duration figures as the organisers' and Meta's own.",
+        "The No Kings coalition's main Instagram account was suspended on Saturday 17 October, during a day of action the organisers put at nearly 3,000 \"No Kings: Vote Early\" events across all 50 states and Washington DC. Newsweek reports the public suspension lasted roughly 90 minutes.",
+        "Meta's explanation is automation. Spokesperson Andy Stone, posting on X: \"When accounts post, share or comment at very high frequencies it can trigger automated systems. That's what happened with the No Kings IG account in the lead up to today's day of action. Unfortunately, that automated action was clearly taken in error.\" He said everything was working and apologised.",
+        "The coalition does not accept that as the whole story. It called the suspension \"unjustified\", said that even after the page became public its team was locked out of the account's backend for roughly four hours, and said it could not post or communicate with its network during that window.",
+        "The thread's centre of gravity is not censorship but rate limits. The top comment is \"My bet is that some sort of auto ban logic kicked in\"; the argument against intent is that a deliberate deplatforming would not have lasted 90 minutes. The open question commenters keep returning to is why the owners still could not sign in after the account was restored."
+      ]
+    },
+    {
+      "title": "Bleached corals thrive within days when touching healthy neighbour",
+      "url": "https://www.nature.com/articles/d41586-026-03266-x",
+      "hn_url": "https://news.ycombinator.com/item?id=50126253",
+      "points": 539,
+      "comments": 115,
+      "bullets": [
+        "Ten pairs of Pocillopora damicornis fragments, every pair cut from the same animal, one piece bleached and one healthy. Five pairs were left touching; five were held a few millimetres apart. The touching bleached fragments recovered within eight weeks. The separated ones died after twenty.",
+        "The mechanism is physical, not chemical. The fragments fused into a tissue bridge, and the photosynthetic symbionts crossed it. By week two the symbiont population in the bleached fragment was doubling roughly every four days — faster than published rates for corals recovering in the wild.",
+        "A week of contact was enough. A bleached branch touched to a healthy one for seven days went on to recover fully after being separated, which turns the finding from a graft into something closer to an inoculation.",
+        "Fusion only happened between fragments of the same genet. Different species, and different individuals of the same species, did not fuse and did not help — which is the limit on the whole idea, since it means every bleached coral would need its own healthy clone.",
+        "The study began as an accident: Stephen Palumbi noticed two fragments touching in a lab tank with colour spreading into the bleached one, and said \"I'd never seen that before.\" Danny Collins designed the experiment; published in Science Advances on 14 October. Fiorenza Micheli puts it at the level of a result that \"can inspire solutions that eventually may be scalable\", not a reef treatment."
+      ]
+    },
+    {
+      "title": "DeepSeek search and fetch – $0.75 per 1000 successful requests",
+      "url": "https://api-docs.deepseek.com/guides/search/",
+      "hn_url": "https://news.ycombinator.com/item?id=50138531",
+      "points": 517,
+      "comments": 250,
+      "bullets": [
+        "Two plain REST endpoints, not a model feature: `POST /v1/tools/search` runs a query against DeepSeek's own search engine and returns structured results; `POST /v1/tools/fetch` takes one URL and returns the page as Markdown. Both cost $0.75 per 1,000 successful requests, and `count` does not change the price.",
+        "\"Successful\" is defined, which is the part worth reading. A billable call is an HTTP 200 that produced something — a non-empty `results` array for search, actual page content for fetch. Empty results, failures and timeouts are not billed.",
+        "Search results carry two scores the docs tell you how to use: `rerank_score` from 0 to 3, where 1.5 and above is called high quality, and `authority` from 0 to 4, with -1 meaning unknown. Each result has both a short `snippet` for display and a longer `summary` meant for the model. Query syntax supports `site:`, `-site:`, `-term`, exact phrases, `lang:`, `after:` and `before:`.",
+        "Rate limits are per account and separate per endpoint: 5 QPS each, with an additional per-domain limit on fetch. Fetch returns 403 when its security policy blocks a target and 404 when there is no usable content.",
+        "Calls made through DeepSeek Harness, Claude Code or Codex are free for now. Per-request billing starts at 00:00 Beijing time on 1 November 2026."
+      ]
+    }
+  ],
+  "markets": {
+    "indices": [
+      {
+        "name": "Sensex · Fri 16 Oct close",
+        "value": "74,729.27",
+        "change": "+413.66 (0.56%); second straight gain",
+        "direction": "up"
+      },
+      {
+        "name": "Nifty 50 · Fri 16 Oct close",
+        "value": "23,146.15",
+        "change": "+148.80 (0.65%); day's low 22,913.80",
+        "direction": "up"
+      },
+      {
+        "name": "Nifty Midcap · Fri",
+        "value": "−0.12%",
+        "change": "Smallcap flat; advances 2,221 to declines 1,791",
+        "direction": "down"
+      },
+      {
+        "name": "USD/INR · Fri 16 Oct",
+        "value": "94.92",
+        "change": "7 paise stronger; sixth gain in a row",
+        "direction": "down"
+      },
+      {
+        "name": "FII cash · Fri 16 Oct",
+        "value": "+₹1,165.92 cr",
+        "change": "DIIs −₹3,661.28 cr the same session",
+        "direction": "up"
+      },
+      {
+        "name": "Nasdaq Composite · Fri 16 Oct",
+        "value": "26,140.03",
+        "change": "−572.99 (2.1%)",
+        "direction": "down"
+      },
+      {
+        "name": "S&P 500 · Fri 16 Oct",
+        "value": "7,659.44",
+        "change": "−84.62 (1.1%); −1.9% on the week",
+        "direction": "down"
+      },
+      {
+        "name": "Dow Jones · Fri 16 Oct",
+        "value": "52,002.41",
+        "change": "−175.28 (0.3%); +347.46 (0.7%) on the week",
+        "direction": "down"
+      },
+      {
+        "name": "Russell 2000 · Fri 16 Oct",
+        "value": "2,721.37",
+        "change": "−45.90 (1.7%)",
+        "direction": "down"
+      },
+      {
+        "name": "Brent crude · Fri",
+        "value": "$105.56",
+        "change": "−0.34%; dollar index −0.41% at 101.445",
+        "direction": "down"
+      }
+    ],
+    "stories": [
+      {
+        "headline": "Five IT stocks did the work on Friday, and today is the last session before Dussehra",
+        "url": "https://hdfcsky.com/news/stock-market-close-report-today-october-16-2026-sensex-nifty-gain-for-second-day-as-it-lifts-sentiment",
+        "source": "HDFC Sky's close report for Friday 16 October 2026 (index, breadth and single-stock figures) and its rupee report for the currency, dollar index and Brent; Kotak Neo's FII/DII tables for the flow figures; the Associated Press tally via ABC News for the US closes; 5paisa's trade setup for Monday's levels; FYERS' and ICICI Direct's holiday calendars for the Dussehra closure. Indian and US markets were shut over the weekend. These are Friday's closes; Indian markets reopen at 09:15 IST today, Monday 19 October, and then shut on Tuesday 20 October for Dussehra.",
+        "bullets": [
+          "Friday was a second straight up day and a narrow one. The Sensex closed at 74,729.27, up 413.66 points or 0.56%, and the Nifty 50 at 23,146.15, up 148.80 or 0.65%, having been as low as 22,913.80 intraday. Breadth was unremarkable — 2,221 advances to 1,791 declines — and the Midcap index actually fell 0.12% while Smallcap finished flat.",
+          "The move was five names. Tech Mahindra rose 8.48% to ₹1,790 on a September-quarter revenue beat and deal wins, TCS 4.89% to ₹2,465, Infosys 4.61% to ₹1,161.20, Bharti Airtel 2.75% and Mahindra & Mahindra 2.07%. FMCG, oil and gas and pharma all fell. On the other side InterGlobe Aviation lost 1.91% and BSE Ltd 1.90%.",
+          "Flows flipped and they flipped the wrong way round. Friday was the one session this month when foreign investors bought — a net ₹1,165.92 crore — and domestic institutions sold ₹3,661.28 crore, for a combined net outflow of ₹2,495.36 crore. Month to date through 16 October the standoff still holds: FIIs out ₹48,769.01 crore, DIIs in ₹48,168.13 crore, a net difference of ₹600.88 crore across the pair.",
+          "The rupee had a better week than the index. It settled at 94.92 to the dollar on Friday, seven paise stronger and a sixth consecutive gain, in a 94.71 to 95.06 range; the dollar index was down 0.41% at 101.445 and Brent down 0.34% at $105.56. HDFC Sky reports the RBI has deployed roughly $75-80 billion in spot sales and dollar-rupee swaps since 8 June.",
+          "New York closed the week the other way. The Nasdaq Composite fell 572.99 points or 2.1% to 26,140.03 on Friday, the S&P 500 1.1% to 7,659.44 and the Russell 2000 1.7% to 2,721.37; the Dow lost 0.3% on the day to 52,002.41 but gained 347.46 points, or 0.7%, across the week. Year to date all four are up: Dow 8.2%, S&P 500 11.9%, Nasdaq 12.5%, Russell 2000 9.6%. For today, 5paisa puts resistance near 23,300 with the daily EMA at 23,313.93 and support at 23,076.90, with the daily RSI at 52.81."
+        ]
+      }
+    ]
+  },
+  "trends": [
+    {
+      "tag": "India",
+      "headline": "India's exports grew 23% in September and the trade deficit got smaller even though imports rose",
+      "url": "https://swarajyamag.com/news-brief/indias-merchandise-exports-surge-23-to-444-billion-in-september-as-trade-deficit-narrows-year-on-year",
+      "subject": "India's September 2026 merchandise exports reach $44.40 billion, up 23.04% year on year, while the goods gap shrinks to $30.21 billion",
+      "subtitle": "Swarajya's report on the commerce ministry's September 2026 trade figures, released 15 October 2026",
+      "bullets": [
+        "Merchandise exports were $44.40 billion in September, up 23.04% from $36.08 billion a year earlier. The growth came from electronic goods, petroleum products, engineering goods, chemicals and agricultural products; the ministry's release does not break out a growth rate per sector.",
+        "The deficit arithmetic is the interesting part. Imports also rose — $74.61 billion against $69.08 billion — and yet the merchandise trade deficit narrowed to $30.21 billion from $33 billion, because exports grew from a much smaller base and grew faster.",
+        "Add services and the picture is flatter. Total exports came to an estimated $80.75 billion against $72.76 billion, growth of close to 11% rather than 23%, and the combined deficit was $13.30 billion against $14.17 billion. Goods are where the surprise is; services carried on being services.",
+        "The quarter was a record. Overall exports grew 15.84% in July-September against 11.84% in April-June, and the July-September total of an estimated $242.6 billion is the highest second quarter India has recorded, against $233.6 billion in the June quarter.",
+        "The half-year numbers are the ones to hold on to, because they are less flattering. April-September merchandise exports rose 18.51% to $259.89 billion while imports rose 16.31% to $437.53 billion — a six-month merchandise gap of about $177 billion that a strong single month does not close. Commerce Secretary Rajesh Agrawal attributed the growth mainly to merchandise shipments."
+      ]
+    },
+    {
+      "tag": "Platform",
+      "headline": "Apple has written a rule against apps that are one thing during review and another thing afterwards",
+      "url": "https://developer.apple.com/news/",
+      "subject": "Apple's App Review Guidelines revision of 16 October 2026 adds guideline 2.5.19 covering hidden, dormant or undocumented features, extends guideline 1.2 to nonconsensual intimate imagery including AI-generated imagery, and adds guideline 2.3.14 on creative assets",
+      "subtitle": "Apple Developer News, \"Updated App Review Guidelines are now available\" and \"Strengthening App Review Guidelines against nonconsensual intimate imagery and bait-and-switch apps\", both 16 October 2026",
+      "bullets": [
+        "Guideline 2.5.19 is new and it is the structural one: Apple's own description is that it \"clarifies long-standing policy on hidden, dormant, or undocumented features, formerly covered in Guideline 2.3.1\". The companion post names the behaviour plainly — apps that misrepresent what they do during review and then change after approval.",
+        "Pulling that out of 2.3.1 matters because 2.3.1 was a metadata-accuracy rule. A dedicated clause makes the dormant-feature case its own enforceable thing rather than a reading of a line about accurate descriptions, which is the difference between arguing about wording and citing a number.",
+        "Guideline 1.2 was rewritten in the same pass. Apple says it \"clarified app content and app types that are subject to this guideline\", and added a \"potential Developer Code of Conduct violation for failing to implement appropriate safeguards or remediating violations after notice\". The second post says 1.2 now explicitly covers nonconsensual intimate imagery, including AI-generated imagery.",
+        "Note where the penalty sits. Routing failure-to-remediate through the Developer Code of Conduct rather than the app rules means the exposure is the account, not the submission — a Code of Conduct violation can cost Developer Program membership.",
+        "Three smaller edits came with it: a new guideline 2.3.14 covering creative assets; a rewrite of 3.1.1(a) folding the Music Streaming Services Entitlements bullet into the StoreKit External Purchase Link Entitlements one and clarifying that links may point to a permitted destination; and a clarification in guideline 5 that apps facilitating human trafficking or child exploitation will be removed from the App Store and blocked from alternative distribution."
+      ]
+    },
+    {
+      "tag": "Wildcard",
+      "headline": "A lizard dropped its tail 99 million years ago, the tail landed in tree resin, and the muscles are still caught mid-flinch",
+      "url": "https://www.sci.news/paleontology/cretaceous-lizard-tail-15135.html",
+      "subject": "A severed lizard tail preserved in 99-million-year-old Burmese amber shows the rosette muscle signature of caudal autotomy, the first fossil of voluntary tail shedding caught after the act",
+      "subtitle": "Sci.News, 16 October 2026, on Fabrikant et al., Palaeontologia Electronica 29(3): a38",
+      "bullets": [
+        "Lizards shedding their tails is so ordinary that it is easy to miss that nobody had ever found it happening in the fossil record. Fracture planes in tail vertebrae show an animal was capable of it; they do not show it did it. This specimen does.",
+        "The evidence is a muscle arrangement. X-ray micro-CT found a ring of muscle tissue around the break, in a rosette or wedge pattern — the shape living lizards' muscles make when they contract to drop a tail. Skin and muscle are both preserved.",
+        "The amber is from a mine in the Hukawng valley in Kachin state, northern Myanmar, about 99 million years old, acquired through commercial channels in 2022 and now at the Steinhardt Museum of Natural History at Tel Aviv University. The tail belonged to a relative either of monitor lizards or of the lacertids; no species name is given.",
+        "There are two stories and the paper will not choose. Either a tree-dwelling lizard got stuck in the resin and bought its freedom with its tail, or a predator had hold of it and the tail came off in the struggle and landed in the resin afterwards.",
+        "The inference that reaches furthest is genetic. In living lizards shedding is usually coupled to regrowing, so if a lizard was dropping tails deliberately 99 million years ago, the genes behind tail regeneration are at least that old. Shedding appears near the root of the squamate tree and survives in at least two-thirds of modern lineages, having been lost repeatedly along the way."
+      ]
+    }
+  ],
+  "research": [
+    {
+      "tag": "Industry · Google DeepMind",
+      "title": "An agent read the unlabelled part of a protein database and came out with an antibiotic candidate nobody had named",
+      "url": "https://deepmind.google/blog/accelerating-antimicrobial-discovery/",
+      "subject": "A Google DeepMind agent running inside Antigravity triages UniProt to surface an uncharacterised 97-residue bacteriocin in Streptococcus pseudopneumoniae and drafts its own wet-lab validation plan",
+      "subtitle": "\"Accelerating the search for antimicrobial peptides with Google Antigravity\", Google DeepMind blog, 15 October 2026 — Pengfei Tian, Maxwell L. Bileschi, Zoi Tsangalidou, Sukhdeep Singh and Lucy J. Colwell, with EMBL-EBI",
+      "bullets": [
+        "The search space is the boring part of UniProt: entries with a sequence and no function. ProtNLM, Google's sequence-to-function model, had already annotated millions of them, and the agent was pointed at that annotated pile to look for bacteriocins — the antimicrobial peptides bacteria use on each other.",
+        "It came back with one entry, A0A0U0D591: a 97-amino-acid bacteriocin of the Lactococcin 972 family from Streptococcus pseudopneumoniae. BLAST against the manually reviewed Swiss-Prot set found no meaningful sequence homolog, which is the part that makes it interesting — it looks like nothing anyone has curated.",
+        "Structure and neighbourhood were then used as corroboration rather than sequence. Foldseek against the AlphaFold prediction matched an experimentally solved bacteriocin fold, and the genomic context put the gene immediately upstream of a tightly coupled operon: an ABC transporter permease, a likely partner ATP-binding protein, a second bacteriocin and an XRE regulator. A peptide with its own export machinery next door is a working system, not an orphan sequence.",
+        "The agent then wrote the experiment: expression, antimicrobial susceptibility testing, target engagement and in vitro toxicity. The interface point the post is actually proud of is smaller and more practical — a 3D structure viewer inside Antigravity that the researcher and the agent both act on, so you can highlight residues and then ask about them.",
+        "Read the caveats as the finding. There are no wet-lab results. The mechanism and the predicted spectrum against drug-resistant pathogens come from a literature review, the analysis covers one species, and the post offers no benchmark against how a human would have done the same triage. What has been compressed is the hours before the bench, not the bench."
+      ]
+    },
+    {
+      "tag": "Academia · CMU & UC Berkeley",
+      "title": "Reinforcement learning pays for guessing, so they made failing safely worth something",
+      "url": "https://arxiv.org/abs/2610.20401",
+      "subject": "GracefulRL from Carnegie Mellon and UC Berkeley reshapes the reinforcement-learning objective so a model chooses a safe fallback over an unreliable attempt, cutting AIME error from 79.1% to 8.9%",
+      "subtitle": "\"Training Language Models to Fail Gracefully\", arXiv:2610.20401, submitted 14 October 2026 — Daman Arora, Xuecheng Liu, Himanshu Gaurav Singh, Fahim Tajwar, Abitha Thankaraj, Ruslan Salakhutdinov, Haiwen Feng, Yuda Song, Andrea Zanette",
+      "bullets": [
+        "The incentive problem in one line: if only success earns reward, a safe fallback always scores worse than a long shot, so RL trains models to try anyway. That is fine on a maths question and expensive when the wrong action drops a table or ships broken code.",
+        "The obvious fix does not work. Hand the policy gradient an intermediate reward for falling back and the optimisation collapses to one corner or the other — on their maze testbed, GRPO and RLOO with a fixed fallback reward of 0.4 went to a 100% fallback rate, and on the 1.7B maths setting RLOO converged to always abstaining. GracefulRL reshapes the landscape instead of adding a term to it.",
+        "On AIME with a 4B model, error fell from 79.1% under standard RL to 8.9% — an 88.8% relative cut — while success dropped 3.1 points. On Minesweeper with Qwen3-4B-Instruct, standard RL gave 67.4% success and 17.0% error; at a fallback weight of 0.5, GracefulRL gave 77.4% success and 6.0% error, so that setting was better at both.",
+        "It generalises off-distribution, which is the claim that would be easiest to fake and is the one they test. Average abstention F1 on AbstentionBench rose from 0.472 to 0.677 as the fallback weight went from 0.2 to 0.8, against 0.590 for the instruction-tuned model they started from.",
+        "The structural point is what the method does not need. No annotations marking where the model should have stopped, no verifier, no extra machinery at inference time — the behaviour comes out of outcome-level rewards alone. It is a knob, though, and the Minesweeper table shows the knob matters: 0.25 was worse than 0.5 on both numbers."
+      ]
+    }
+  ],
+  "wild": [
+    {
+      "tag": "Cars",
+      "headline": "Ford put a billboard on the airport road and let it get dirtier panel by panel",
+      "url": "https://www.vrum.com.br/mercado/2026/09/7507539-ford-celebra-a-lama-como-trofeu-em-nova-campanha-de-seus-suvs.html",
+      "entities": [
+        "Ford",
+        "Wieden+Kennedy São Paulo"
+      ],
+      "subject": "Ford Brazil mounts a sequential roadside panel series on the Guarulhos airport approach in which one Bronco Sport grows steadily muddier, under the line 'not every design comes from the factory'",
+      "subtitle": "Vrum, 26 September 2026, on Ford Brazil's campaign for the Bronco Sport and Ranger",
+      "bullets": [
+        "The medium is the joke. A sequence of outdoor panels along the road to São Paulo's Guarulhos international airport shows the same Bronco Sport getting progressively filthier as you drive past it — so the campaign only works if you are moving, and it works best on the one road where everybody is.",
+        "Car advertising spends its entire budget on the opposite of this. The standard shot is a spotless vehicle on an empty road at golden hour; this one is shot close, on the dirt, with real mud, and deliberately avoids the landscape.",
+        "The lines carry it: \"Nem todo design vem de fábrica\" — not every design comes from the factory — and \"Lama não cobre. Lama revela\", mud does not cover, mud reveals. One panel reads \"Chapada Diamantina esteve aqui\", Chapada Diamantina was here, which turns the dirt into a postcard from somewhere specific.",
+        "Matheus Amaral, Ford's marketing communications manager, put the positioning this way: for the Bronco Sport and the Ranger, mud is not the end of the trip, it is part of the experience.",
+        "The practical reason this is not just a stunt is where it goes next. The same material was built for agribusiness fairs in 2027, with the emphasis moving to the Ranger — an audience that will look at a mud-covered pickup and read it as a specification rather than a mood."
+      ]
+    },
+    {
+      "tag": "Fast food",
+      "headline": "McDonald's Australia noticed people were already carrying the cardboard drinks tray like a handbag, so it made one out of vegan leather",
+      "url": "https://www.mediaweek.com.au/macca-s-turns-the-mccafe-drink-carrier-into-a-fashion-accessory",
+      "entities": [
+        "McDonald's Australia",
+        "Wieden+Kennedy Sydney"
+      ],
+      "subject": "McDonald's Australia reissues its McCafé cardboard drink carrier as a vegan-leather handbag with detachable strap and pocket, revealed via influencers and a microsite drop",
+      "subtitle": "Mediaweek, 12 October 2026, on the McCafé Tray Bag by Wieden+Kennedy Sydney",
+      "bullets": [
+        "The object is the McCafé drinks carrier, the four-hole cardboard tray, rebuilt in vegan leather with a detachable strap and a pocket added. It keeps the drink slots. It is a handbag whose primary compartments are shaped to hold takeaway coffee.",
+        "The brand's own account of where it came from is the honest bit. Macca's says it \"took an idea already created by fan behaviour and made it real\" — people were carrying the tray around like a bag, so the work was swapping the material and selling it back to them.",
+        "It went out as a limited drop on a dedicated microsite seeded by influencers rather than as a product on a menu board, which is a fashion release mechanic applied to a thing that costs nothing when it is made of cardboard.",
+        "Tobi Fukushima, McDonald's Australia's marketing director for menu, says it \"turns an everyday essential into a statement piece\". The Wieden+Kennedy Sydney creatives, Hannah Lawson and Jessica Beal, put it as \"a drink has become more than just a drink\".",
+        "The credit list is the giveaway about how much machinery a cardboard-tray joke now needs: agency Wieden+Kennedy Sydney, production Photoplay, post The Editors, photography Sarah Adamson, media OMD, social Akcelo, PR and influencer Eleven, digital Digitas, and Creata on merchandising and manufacturing."
+      ]
+    },
+    {
+      "tag": "Sportswear",
+      "headline": "ASICS has given human beings a conservation status, and 23% of us are Endangered",
+      "url": "https://corp.asics.com/en/press/article/asics-issues-world's-first-conservation-warning-for-movement-as-new-research-reveals-we're-moving-less-",
+      "entities": [
+        "ASICS"
+      ],
+      "subject": "ASICS borrows the language of wildlife conservation to classify weekly human movement as Active, At Risk or Endangered, alongside a Sigourney Weaver-narrated mock wildlife film about sedentary people",
+      "subtitle": "ASICS' own press release, 30 September 2026, ahead of World Mental Health Day",
+      "bullets": [
+        "The device is a straight lift from wildlife conservation. ASICS built a Movement Conservation Status with Professor Brendon Stubbs, off WHO, Sport England, NHS England and US physical activity guidelines, and it sorts self-reported weekly movement into three bands: Active at 150 minutes or more, At Risk at 30 to 149, Endangered below 30.",
+        "Then it applies the label to people. On its own survey 23% of adults fall into Endangered — a word built for species counts, used here on the respondent reading it.",
+        "The film does the same trick in the other direction. Human Nature is a nature documentary about humans, narrated by Sigourney Weaver, in which the specimens observed in their habitats are office workers and people on sofas. The release does not give a running time.",
+        "The numbers under it are a 34,000-person survey across 31 markets run in July 2026, about 1,000 per market and 2,000 each in the US, UK and China. 53% of adults miss the activity guidelines, projected to 56% by 2035; 86% of the self-reported waking day is spent not moving; 64% say modern life makes it easy to barely move all day.",
+        "The soft spot is that everything is self-reported, including the movement that decides your conservation status, and the company selling the shoes also set the thresholds. The one number with a quotable shape is the gap it is built on: people classed Endangered score 60 out of 100 on its State of Mind index against 71 for the Active."
+      ]
+    }
+  ],
+  "learn": {
+    "title": "Play accordion music in a supermarket and people buy French wine. Ask them why and six in forty-four will admit the music had anything to do with it.",
+    "subject": "North, Hargreaves and McKendrick's in-store music and wine selection field experiment: French and German music played on alternating days beside matched French and German wine displays in a UK supermarket, with sales flipping and shoppers denying any influence",
+    "body": [
+      "In the late 1990s three psychologists at the University of Leicester did something very simple in a suburban British supermarket. They set up a display with French and German wines side by side, matched roughly on price and sweetness, and then for two weeks they played music from the top shelf of the display: stereotypically French accordion music one day, stereotypically German Bierkeller music the next, alternating. Nothing else changed. Same shop, same wines, same prices, same shelf.",
+      "On French-music days the display sold an average of 40 bottles of French wine and 12 of German. On German-music days it sold 22 German and 8 French. The music did not make people buy more wine; it decided which country's wine they bought, and it did so by a factor of about five in one direction and nearly three in the other. The paper ran in the Journal of Applied Psychology in 1999, after a one-page version in Nature in 1997.",
+      "The part that is actually unsettling is the questionnaire. Shoppers at the display were stopped and asked about it, and about half agreed. Most of them said yes, the music made them think of France, or of Germany — they had noticed it and understood it perfectly. Then they were asked whether it had influenced which wine they picked, and six of the forty-four said it had. So the effect was not subliminal in the slightest. Everyone heard the accordion, everyone knew what it meant, and almost nobody connected it to the bottle in their hand. Next time you are standing in a shop wondering why you want the thing you want, it is worth listening to the ceiling."
+    ]
+  },
+  "ideas": {
+    "prompt": "Ten things worth writing down that nobody writes down",
+    "note": "Altucher's drill: ten against one prompt, written fast, not defended. Reddit rate-limited the fetcher after r/SomebodyMakeThis, so today's raw material is that subreddit's week — where the same wish kept surfacing in different clothes, people wanting a record of something ordinary that evaporates — plus the Ask HN idea threads and Y Combinator's Requests for Startups.",
+    "items": [
+      {
+        "text": "The reason you stopped reading a book. Not a rating. The page number and the reason."
+      },
+      {
+        "text": "What you cooked that worked, with the thing you did differently from the recipe."
+      },
+      {
+        "text": "The names of the people who fixed something in your house, and what they fixed."
+      },
+      {
+        "text": "Every piece of advice someone gave you that you ignored, so you can check later who was right."
+      },
+      {
+        "text": "The thought you had while reading, at the moment you had it.",
+        "why": "Asked for again this week on r/SomebodyMakeThis — people want the margin, not the highlight."
+      },
+      {
+        "text": "What one local issue has actually had done about it, meeting by meeting, so there is a history when it comes back.",
+        "why": "Lifted from an r/SomebodyMakeThis post about turning council minutes into something readable."
+      },
+      {
+        "text": "The food you ate on each day of a trip. It outlasts the photographs."
+      },
+      {
+        "text": "What you were wrong about this year, in one line each, dated."
+      },
+      {
+        "text": "The small kindness a stranger did you, before you forget the details that make it a story."
+      },
+      {
+        "text": "The things your grandparents say about people you never met."
+      }
+    ]
+  }
+}

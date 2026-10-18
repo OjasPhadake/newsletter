@@ -6119,6 +6119,158 @@
         "ppc.land",
         "sporked.com"
       ]
+    },
+    {
+      "date": "2026-10-19",
+      "issue": 1,
+      "quote_text": [
+        "I'd kill for a Nobel Peace Prize."
+      ],
+      "quote_author": [
+        "Steven Wright"
+      ],
+      "idea_text": [
+        "The reason you stopped reading a book. Not a rating. The page number and the reason.",
+        "What you cooked that worked, with the thing you did differently from the recipe.",
+        "The names of the people who fixed something in your house, and what they fixed.",
+        "Every piece of advice someone gave you that you ignored, so you can check later who was right.",
+        "The thought you had while reading, at the moment you had it.",
+        "What one local issue has actually had done about it, meeting by meeting, so there is a history when it comes back.",
+        "The food you ate on each day of a trip. It outlasts the photographs.",
+        "What you were wrong about this year, in one line each, dated.",
+        "The small kindness a stranger did you, before you forget the details that make it a story.",
+        "The things your grandparents say about people you never met."
+      ],
+      "idea_prompt": [
+        "Ten things worth writing down that nobody writes down"
+      ],
+      "tip_text": [
+        "If a subagent keeps re-reading your conventions before it can start, preload them instead: put `skills:` in the subagent's frontmatter and the full text of each listed skill is injected at startup, up to 32 names. It does not restrict what the subagent can reach — without it the agent can still find skills through the Skill tool mid-run; it just stops the discovery round trip. This is the inverse of `context: fork` on a skill, where the skill becomes the prompt."
+      ],
+      "hn_id": [
+        "50131256",
+        "50132193",
+        "50136881",
+        "50126253",
+        "50138531"
+      ],
+      "link": [
+        "https://www.pv-magazine.com/2026/09/29/solar-surpasses-nuclear-power-globally-for-first-time/",
+        "https://pele.run/",
+        "https://meidasnews.com/news/zuckerbergs-meta-takes-down-no-kings-instagram-during-massive-protest-day",
+        "https://www.nature.com/articles/d41586-026-03266-x",
+        "https://api-docs.deepseek.com/guides/search/",
+        "https://swarajyamag.com/news-brief/indias-merchandise-exports-surge-23-to-444-billion-in-september-as-trade-deficit-narrows-year-on-year",
+        "https://developer.apple.com/news/",
+        "https://www.sci.news/paleontology/cretaceous-lizard-tail-15135.html",
+        "https://www.vrum.com.br/mercado/2026/09/7507539-ford-celebra-a-lama-como-trofeu-em-nova-campanha-de-seus-suvs.html",
+        "https://www.mediaweek.com.au/macca-s-turns-the-mccafe-drink-carrier-into-a-fashion-accessory",
+        "https://corp.asics.com/en/press/article/asics-issues-world's-first-conservation-warning-for-movement-as-new-research-reveals-we're-moving-less-",
+        "https://deepmind.google/blog/accelerating-antimicrobial-discovery/",
+        "https://arxiv.org/abs/2610.20401",
+        "https://hdfcsky.com/news/stock-market-close-report-today-october-16-2026-sensex-nifty-gain-for-second-day-as-it-lifts-sentiment"
+      ],
+      "subject": [
+        "India's September 2026 merchandise exports reach $44.40 billion, up 23.04% year on year, while the goods gap shrinks to $30.21 billion",
+        "Apple's App Review Guidelines revision of 16 October 2026 adds guideline 2.5.19 covering hidden, dormant or undocumented features, extends guideline 1.2 to nonconsensual intimate imagery including AI-generated imagery, and adds guideline 2.3.14 on creative assets",
+        "A severed lizard tail preserved in 99-million-year-old Burmese amber shows the rosette muscle signature of caudal autotomy, the first fossil of voluntary tail shedding caught after the act",
+        "Ford Brazil mounts a sequential roadside panel series on the Guarulhos airport approach in which one Bronco Sport grows steadily muddier, under the line 'not every design comes from the factory'",
+        "McDonald's Australia reissues its McCafé cardboard drink carrier as a vegan-leather handbag with detachable strap and pocket, revealed via influencers and a microsite drop",
+        "ASICS borrows the language of wildlife conservation to classify weekly human movement as Active, At Risk or Endangered, alongside a Sigourney Weaver-narrated mock wildlife film about sedentary people",
+        "A Google DeepMind agent running inside Antigravity triages UniProt to surface an uncharacterised 97-residue bacteriocin in Streptococcus pseudopneumoniae and drafts its own wet-lab validation plan",
+        "GracefulRL from Carnegie Mellon and UC Berkeley reshapes the reinforcement-learning objective so a model chooses a safe fallback over an unreliable attempt, cutting AIME error from 79.1% to 8.9%",
+        "North, Hargreaves and McKendrick's in-store music and wine selection field experiment: French and German music played on alternating days beside matched French and German wine displays in a UK supermarket, with sales flipping and shoppers denying any influence"
+      ],
+      "brand": [
+        "Ford",
+        "Wieden+Kennedy São Paulo",
+        "McDonald's Australia",
+        "Wieden+Kennedy Sydney",
+        "ASICS"
+      ],
+      "brand_mention": [
+        "São Paulo's Guarulhos",
+        "Bronco Sport",
+        "Nem",
+        "Lama",
+        "Chapada Diamantina",
+        "Matheus Amaral",
+        "Ford's",
+        "Ranger",
+        "McCafé",
+        "Tobi Fukushima",
+        "McDonald's Australia's",
+        "Kennedy Sydney",
+        "Hannah Lawson",
+        "Jessica Beal",
+        "Wieden",
+        "Photoplay",
+        "Editors",
+        "Sarah Adamson",
+        "OMD",
+        "Akcelo",
+        "PR",
+        "Eleven",
+        "Digitas",
+        "Creata",
+        "Movement Conservation Status",
+        "Professor Brendon Stubbs",
+        "Sport England",
+        "NHS England",
+        "Active",
+        "Risk",
+        "Endangered",
+        "Human Nature",
+        "Sigourney Weaver",
+        "State",
+        "Mind"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "India's exports grew 23% in September and the trade deficit got smaller even though imports rose"
+        ],
+        [
+          "trends",
+          "Apple has written a rule against apps that are one thing during review and another thing afterwards"
+        ],
+        [
+          "trends",
+          "A lizard dropped its tail 99 million years ago, the tail landed in tree resin, and the muscles are still caught mid-flinch"
+        ],
+        [
+          "wild",
+          "Ford put a billboard on the airport road and let it get dirtier panel by panel"
+        ],
+        [
+          "wild",
+          "McDonald's Australia noticed people were already carrying the cardboard drinks tray like a handbag, so it made one out of vegan leather"
+        ],
+        [
+          "wild",
+          "ASICS has given human beings a conservation status, and 23% of us are Endangered"
+        ],
+        [
+          "research",
+          "An agent read the unlabelled part of a protein database and came out with an antibiotic candidate nobody had named"
+        ],
+        [
+          "research",
+          "Reinforcement learning pays for guessing, so they made failing safely worth something"
+        ],
+        [
+          "learn",
+          "Play accordion music in a supermarket and people buy French wine. Ask them why and six in forty-four will admit the music had anything to do with it."
+        ]
+      ],
+      "editorial_domains": [
+        "corp.asics.com",
+        "developer.apple.com",
+        "mediaweek.com.au",
+        "sci.news",
+        "swarajyamag.com",
+        "vrum.com.br"
+      ]
     }
   ]
 }
