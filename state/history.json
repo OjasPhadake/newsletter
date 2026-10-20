@@ -6271,6 +6271,148 @@
         "swarajyamag.com",
         "vrum.com.br"
       ]
+    },
+    {
+      "date": "2026-10-20",
+      "issue": 1,
+      "quote_text": [
+        "Of course, if 40% of women need oxytocin to progress normally, then something is wrong with the definition of normal."
+      ],
+      "quote_author": [
+        "Henci Goer"
+      ],
+      "idea_text": [
+        "Become a regular. Same place, same hour, two weeks running. Faces stop being scenery and start being people, and nobody has to be introduced.",
+        "Join the thing with an end date. A six-week course beats an open-ended club, because everyone there started on the same day and nobody is already friends.",
+        "Volunteer for the dull job at an event — registration desk, chairs, clean-up. You meet every single person who walks in, and you are competing with none of them.",
+        "Ask the second question. Most conversations die right after \"so what do you do\"; whatever you ask next is where the friendship actually lives.",
+        "Run an errand together instead of having dinner. Buying vegetables with someone is a lower bar, costs nothing, and tells you more about them than a restaurant will.",
+        "Host badly and host soon. A pot of chai and three mismatched chairs this Sunday beats the dinner party you keep postponing until the flat is ready.",
+        "Get taken along to someone's hobby, as a beginner rather than a guest. People are at their most likeable while explaining the thing nobody asks them about.",
+        "Keep a list of people you liked and never followed up with, then work through it one message a week.",
+        "Send people your actual recommendations — the book, the route, the stall — rather than links.",
+        "Say the slightly awkward sentence out loud: \"I would like to be better friends.\" It lands far more often than the fear of saying it suggests."
+      ],
+      "idea_prompt": [
+        "Ten ways to make a new friend as an adult"
+      ],
+      "tip_text": [
+        "If auto mode keeps second-guessing commands you run twenty times a day, stop hand-editing permissions and run `/auto-mode-setup` once in that repo — new in 2.1.304 yesterday, it is a guided setup that reads the project and your recent sessions to teach auto mode what your environment actually looks like.",
+        "If an MCP server's tools started prompting you again last week, re-read your allow rules: since 2.1.299 they match exactly, so `mcp__a` no longer covers a server called `a__b`. The wildcard you want is `mcp__<server>__*`."
+      ],
+      "hn_id": [
+        "50142866",
+        "50150750",
+        "50149392",
+        "50142573",
+        "50150434"
+      ],
+      "link": [
+        "https://www.reddit.com/r/sysadmin/comments/1x8cycd/namecheap_just_seized_and_disabled_all_my_domains/",
+        "https://www.wjcl.com/article/savannah-police-officer-ice-agent-flock-access/74135816",
+        "https://lwn.net/Articles/1101143/",
+        "https://karrisaarinen.com/posts/someone-behind-the-software/",
+        "https://mistral.ai/news/timestral/",
+        "https://psuwatch.com/newsupdates/mnre-planning-central-scheme-to-offset-25-30-higher-cost-of-agripv-plants",
+        "https://deno.com/blog/cloudflare",
+        "https://english.cas.cn/newsroom/research-news/202610/t20261010_1202178.shtml",
+        "https://dailypioneer.com/news/adani-cement-creates-70-ft-aerial-tribute-to-goddess-durga-in-madhya-pradesh",
+        "https://www.adweek.com/brand-marketing/michelob-ultra-cheers-on-knicks-championship/",
+        "https://www.fooddive.com/news/leftovers-beatbox-cinnabon-topo-chico-canned-water-Bauducco-skippy/832606/",
+        "https://www.microsoft.com/en-us/research/blog/simulating-student-learning-for-better-ai-tutoring/",
+        "https://arxiv.org/abs/2610.21189",
+        "https://hdfcsky.com/news/market-close-report-today-october-19-2026-sensex-nifty-crash-snapping-two-day-winning-streak"
+      ],
+      "subject": [
+        "MNRE plans a subsidy to offset the 25-30% construction premium on agrivoltaic solar, where panels sit three to five metres above a standing crop, with about 5 GW seen as feasible in three to four years if feed-in tariffs are notified",
+        "Ryan Dahl announces the entire Deno team is joining Cloudflare; the Deno runtime gets a year of maintenance releases before development ends, Deno Deploy shuts in six months, and JSR moves to Cloudflare infrastructure",
+        "Yuezhuornis yangyuanensis, a Late Jurassic avialan from the Zhenghe Fauna of Fujian, China, described in Nature as the earliest known case of flight loss in bird evolution",
+        "Adani Cement arranges 15,000 ACC and Ambuja cement bags, about 750 tonnes, into a 70-foot-square aerial image of Maa Durga at its Kymore plant in Madhya Pradesh for Navratri 2026",
+        "Michelob ULTRA cuts hardwood from the Knicks' NBA Finals championship court into bottle openers and has Earl Monroe and John Wallace hand them to New York bartenders",
+        "BeatBox Beverages and Cinnabon launch a limited-edition cinnamon-roll flavoured ready-to-drink alcoholic beverage, three years after BeatBox floated the idea as an April Fools' joke",
+        "Microsoft Research and UIUC build StudentSim, personalised student simulators fitted to de-identified learner records, then use one as the reward signal for an AI chess tutor, with a benchmark spanning chess, second-language English writing and mathematics",
+        "A training-free weight edit from the University of Illinois Urbana-Champaign that suppresses a named behaviour in instruction-following language models, demonstrated on instructed lying and instructed sexism in five open models",
+        "Why sealed honey keeps indefinitely: bees fan nectar from 60-80% water down to almost none, the result sits at pH 3 to 4.5, and glucose oxidase leaves gluconic acid and hydrogen peroxide behind"
+      ],
+      "brand": [
+        "Adani Cement",
+        "ACC",
+        "Ambuja Cements",
+        "Michelob ULTRA",
+        "New York Knicks",
+        "NBA Finals",
+        "BeatBox",
+        "Cinnabon",
+        "Fools"
+      ],
+      "brand_mention": [
+        "Kymore",
+        "Madhya Pradesh",
+        "ACC",
+        "Ambuja",
+        "Maa Durga",
+        "Jahan Vishwas",
+        "Wahan Shakti",
+        "Knicks",
+        "Finals",
+        "Earl Monroe",
+        "John Wallace",
+        "Superior Access",
+        "Madison Square Garden",
+        "Penn Station",
+        "Times Square",
+        "SVP",
+        "Ricardo Marques",
+        "Cinnabon-flavoured",
+        "Fools",
+        "CEO Justin Fenchel"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "Putting solar panels over a standing crop costs a quarter to a third more to build, and Delhi is designing a subsidy for the gap"
+        ],
+        [
+          "trends",
+          "The Deno team is joining Cloudflare, and the Deno runtime has one year left"
+        ],
+        [
+          "trends",
+          "A crow-sized bird stopped flying 150 million years ago, which is long before anyone thought flight was worth giving up"
+        ],
+        [
+          "wild",
+          "A cement company drew a 70-foot goddess out of 15,000 bags of its own product, visible only from the air"
+        ],
+        [
+          "wild",
+          "A beer brand cut up the NBA Finals court and gave the pieces to bartenders as bottle openers"
+        ],
+        [
+          "wild",
+          "An April Fools' joke from 2023 is now a real cinnamon-roll flavoured alcoholic drink"
+        ],
+        [
+          "research",
+          "They stopped asking a model to role-play a student and trained a simulator on one real student's mistakes"
+        ],
+        [
+          "research",
+          "Resisting Harmful Instructions through Training-Free Weight Editing"
+        ],
+        [
+          "learn",
+          "Honey does not spoil, and the reason is that a bee spends its day making nectar too dry and too sour to live in."
+        ]
+      ],
+      "editorial_domains": [
+        "adweek.com",
+        "dailypioneer.com",
+        "deno.com",
+        "english.cas.cn",
+        "fooddive.com",
+        "psuwatch.com"
+      ]
     }
   ]
 }

@@ -1,0 +1,342 @@
+{
+  "date_line": "Tuesday, 20 October 2026",
+  "issue": 1,
+  "preheader": "A registrar switched off a customer's entire domain portfolio after one abuse email; a Savannah officer's Flock login ran 983 plate searches for her ICE-agent husband; Linux 7.3 is the biggest release ever and ships a filesystem that fails everything on purpose; Mistral put a time-series forecaster in 5 million parameters; the Sensex gave back 876 points and the exchanges are shut today for Dussehra; Jio Platforms took 2.5 lakh crore of bids for 8,110 crore of anchor shares; the Deno runtime has a year to live; a crow-sized bird gave up flying 150 million years ago; a tutor trained against a simulated student hit 90.5%; Adani Cement drew a goddess with 15,000 cement bags; and honey keeps for millennia because a bee dried it out.",
+  "quote": {
+    "text": "Of course, if 40% of women need oxytocin to progress normally, then something is wrong with the definition of normal.",
+    "author": "Henci Goer",
+    "work": "Obstetric Myths Versus Research Realities: A Guide to the Medical Literature",
+    "source_url": "https://www.goodreads.com/quotes/tag/statistics",
+    "note": "The word \"normal\" is doing two jobs in one sentence and they contradict each other: a description of what usually happens, and a standard that things are supposed to meet. Once you notice the switch you start seeing it everywhere a benchmark has quietly been set by someone other than the population it describes — and any time the majority needs the intervention, it is the baseline that is wrong, not the majority."
+  },
+  "agent_craft": {
+    "items": [
+      {
+        "text": "If auto mode keeps second-guessing commands you run twenty times a day, stop hand-editing permissions and run `/auto-mode-setup` once in that repo — new in 2.1.304 yesterday, it is a guided setup that reads the project and your recent sessions to teach auto mode what your environment actually looks like.",
+        "source": "Claude Code changelog, 2.1.304 (19 October 2026)",
+        "url": "https://code.claude.com/docs/en/changelog"
+      },
+      {
+        "text": "If an MCP server's tools started prompting you again last week, re-read your allow rules: since 2.1.299 they match exactly, so `mcp__a` no longer covers a server called `a__b`. The wildcard you want is `mcp__<server>__*`.",
+        "source": "Claude Code changelog, 2.1.299 (14 October 2026)",
+        "url": "https://code.claude.com/docs/en/changelog"
+      }
+    ]
+  },
+  "hn": [
+    {
+      "title": "Namecheap just seized and disabled all my domains",
+      "url": "https://www.reddit.com/r/sysadmin/comments/1x8cycd/namecheap_just_seized_and_disabled_all_my_domains/",
+      "hn_url": "https://news.ycombinator.com/item?id=50142866",
+      "points": 668,
+      "comments": 348,
+      "bullets": [
+        "The sequence, as the customer tells it: one abuse email, a 72-hour termination notice sent to a contact address he says he was not watching, and then every domain on the account disabled — not only the one the complaint named. He could not find an appeal route anywhere in the dashboard.",
+        "Reddit is blocked to this newsletter's fetcher, so the account above is as relayed by a secondary write-up that links the thread and read it at 392 points and 145 comments. Namecheap's version lives in a support ticket nobody outside can see, and there is no registrar statement anywhere. Treat the facts as one party's.",
+        "The Hacker News thread is mostly people leaving. Commenters named Porkbun, Cloudflare, Dynadot, Mythic Beasts, DNSimple, joker.com and Internet.bs as destinations, and one reported his own business domain switched off for not answering a phishing email inside 48 hours, with six hours to get it back.",
+        "The useful takeaway is structural and came up repeatedly: keep the registrar, the DNS and the host at three different companies. One suspended account should not be able to take the name, the resolution and the server with it — and the notice will go to whichever address you stopped reading years ago."
+      ]
+    },
+    {
+      "title": "Ousted Savannah police officer gave ICE agent husband access to Flock system",
+      "url": "https://www.wjcl.com/article/savannah-police-officer-ice-agent-flock-access/74135816",
+      "hn_url": "https://news.ycombinator.com/item?id=50150750",
+      "points": 624,
+      "comments": 358,
+      "bullets": [
+        "WJCL's own page would not load for this fetcher, so these figures come from the identical syndicated copy on Fox19. Amber Harpe, a Savannah officer, admitted giving her husband Tyler Harpe, an ICE agent, her login to the department's Flock licence-plate camera system. She was fired in August; the internal investigation covered January to July 2026.",
+        "The account was used for 983 searches across 97 licence plates in six states — Florida, Georgia, New Jersey, Maryland, North Carolina and South Carolina, with 788 of them in South Carolina alone. Most of the vehicles' registered owners were Hispanic.",
+        "He did not dispute the purpose. He said he asked for her login to find people with arrest warrants, that \"target packages\" made them easier to locate on the street, and that \"every name that I ever ran was an ICE target.\"",
+        "The access-control point is the story. Savannah police share Flock data with more than 1,700 agencies and ICE is not one of them; an investigator confirmed ICE has no Flock access. A shared password made the 1,700-agency boundary irrelevant. Six department employees were fired in the same sweep and four were later charged by the Georgia Bureau of Investigation; Harpe was not among them, and she dropped her appeal."
+      ]
+    },
+    {
+      "title": "Linux 7.3",
+      "url": "https://lwn.net/Articles/1101143/",
+      "hn_url": "https://news.ycombinator.com/item?id=50149392",
+      "points": 581,
+      "comments": 275,
+      "bullets": [
+        "Released on schedule on Sunday 18 October, and Torvalds calls it a record-breaker on every front: 18,765 non-merge commits from 3,021 developers, 807 of whom had never had a patch in the kernel before.",
+        "The headline features are unglamorous and load-bearing: a new `fchroot()` system call, group-scheduling work aimed at large machines, global per-CPU data for BPF programs, completion of the sched_ext subscheduler feature, working-set tracking for virtual machines, alternate data streams in the ntfs3 filesystem and a long list of SMB server fixes.",
+        "There is also failfs, a filesystem that fails every operation. It sounds like a joke and is a test fixture: if you want to know how your code behaves when the storage underneath it says no to everything, you now have a mount point that always does.",
+        "Nothing much happened in the final week, so the 7.4 merge window opened the next day — which Torvalds notes will be irregular, since he is on his annual family holiday and expects to spend the day on a boat and underwater."
+      ]
+    },
+    {
+      "title": "Someone behind the software",
+      "url": "https://karrisaarinen.com/posts/someone-behind-the-software/",
+      "hn_url": "https://news.ycombinator.com/item?id=50142573",
+      "points": 541,
+      "comments": 194,
+      "bullets": [
+        "Karri Saarinen of Linear, writing on 15 October, argues that products built as a pipeline of requirements, features and metrics end up as collections of parts: \"A feature can work perfectly well on its own and still make the product worse.\"",
+        "His claim about agents is the reason it is on the front page. When every individual is \"operating a small software factory\" and shipping independently, the output is not more product, it is a patchwork — \"the product becomes an average of all those outputs\", closer to \"Frankenstein's monster rather than a carefully shaped sculpture.\"",
+        "The proposed alternative is specific and unfashionable: someone has to decide what the thing should be, from intuition built out of customer conversations and past mistakes, and then stay close enough to customers to find out whether they were wrong. He is careful to separate that from acting on untested personal taste.",
+        "No numbers, no case study, one anecdote — before launching Linear the team interviewed people across companies and roles, and found the brief was wider than their own irritations. It is an opinion piece, and the line it ends on is the pitch: \"I want to feel the creator behind the software, not the factories.\""
+      ]
+    },
+    {
+      "title": "Timestral: Mistral's time-series foundation models",
+      "url": "https://mistral.ai/news/timestral/",
+      "hn_url": "https://news.ycombinator.com/item?id=50150434",
+      "points": 531,
+      "comments": 98,
+      "bullets": [
+        "Four models — 5M, 28M, 123M and 209M parameters — sharing one architecture and recipe, producing probabilistic multivariate forecasts with support for past-only and known-future covariates. Licence is a modified MIT.",
+        "The small ones are the point. The 28M model beats Chronos-2, roughly four times its size, on GIFT-Eval and TIME; the 209M beats TimesFM-3 and Falcon-2.0 with fewer parameters and ranks first among zero-shot pretrained models on GIFT-Eval, TIME and fev-bench from a single checkpoint with no ensembling. The 123M lands within 0.2% of the 209M at about three-quarters of the latency.",
+        "Latency is quoted on an 8-thread server CPU, not a GPU: forecasting one day ahead from three weeks of 15-minute history takes about 10 ms with the 5M model and 140 ms with the 209M. Context length is 32,768 steps.",
+        "Most of the training data is synthetic — univariate processes composed into multivariate series with nonlinear dependencies — with real data mixed in only for a second stage at 4x the context. The objective is pinball loss over 21 quantiles, a discrete stand-in for CRPS. Charts only on the blog; the technical report with actual metric values is still to come."
+      ]
+    }
+  ],
+  "markets": {
+    "indices": [
+      {
+        "name": "Sensex · Mon 19 Oct close",
+        "value": "73,852.90",
+        "change": "−876.37 (1.17%); two-day run snapped",
+        "direction": "down"
+      },
+      {
+        "name": "Nifty 50 · Mon 19 Oct",
+        "value": "22,888.95",
+        "change": "−257.20 (1.11%)",
+        "direction": "down"
+      },
+      {
+        "name": "Nifty PSU Bank · Mon",
+        "value": "+2.5%",
+        "change": "The only major sector index up; Private Bank −1.9%",
+        "direction": "up"
+      },
+      {
+        "name": "India VIX · Mon",
+        "value": "14.69",
+        "change": "+4.48%, a one-week high",
+        "direction": "up"
+      },
+      {
+        "name": "USD/INR · Mon 19 Oct",
+        "value": "94.92",
+        "change": "3 paise weaker; six-session run ends",
+        "direction": "up"
+      },
+      {
+        "name": "FII cash · Mon 19 Oct",
+        "value": "−₹1,148.64 cr",
+        "change": "DIIs +₹3,201.19 cr the same session",
+        "direction": "down"
+      },
+      {
+        "name": "Nasdaq Composite · Mon 19 Oct",
+        "value": "26,430.89",
+        "change": "+290.85 (1.11%)",
+        "direction": "up"
+      },
+      {
+        "name": "S&P 500 · Mon 19 Oct",
+        "value": "7,690.73",
+        "change": "+31.29 (0.41%)",
+        "direction": "up"
+      },
+      {
+        "name": "Dow Jones · Mon 19 Oct",
+        "value": "51,966.03",
+        "change": "−36.38 (0.07%)",
+        "direction": "down"
+      },
+      {
+        "name": "Brent crude · Mon",
+        "value": "$107.8",
+        "change": "−1.9%; WTI −1.0% at $100.4",
+        "direction": "down"
+      }
+    ],
+    "stories": [
+      {
+        "headline": "Monday handed back a third of last week's rally, and there is no session today",
+        "url": "https://hdfcsky.com/news/market-close-report-today-october-19-2026-sensex-nifty-crash-snapping-two-day-winning-streak",
+        "source": "HDFC Sky's close report for Monday 19 October 2026 (index, sector, breadth and single-stock figures), its rupee report for the currency, dollar index and reserves, and its oil report for Brent and WTI; Groww's FII/DII cash tables for the flows; Yahoo Finance's index quote pages for the three US closes, stamped 19 October; TradingView's and HDFC Sky's holiday notices for the Dussehra closure; India Infoline for the Jio Platforms dates. These are Monday's closes. Indian exchanges are shut today, Tuesday 20 October, for Dussehra, and reopen on Wednesday 21 October.",
+        "bullets": [
+          "The Sensex closed at 73,852.90, down 876.37 points or 1.17%, and the Nifty 50 at 22,888.95, down 257.20 or 1.11%, ending a two-day run that had followed the strongest week in six months. Breadth was ugly — 2,925 declines to 1,163 advances with 181 unchanged — and Midcap fell about 1.1% with Smallcap down 1%.",
+          "One sector finished green. Nifty PSU Bank rose 2.5%, with Union Bank of India up about 5.3%, Punjab National Bank about 4.8% and SBI 1.15%, while Nifty Private Bank fell about 1.9%: Axis Bank −4.19% after a September-quarter profit miss, Bajaj Finance −2.52%, HDFC Bank −2.31%. IT gave back 1.3% of Friday's 3.9%, FMCG lost 1.4%, and India VIX rose 4.48% to 14.69 into the weekly Nifty expiry.",
+          "The flows reversed Friday's reversal. Foreign investors bought ₹11,240.64 crore and sold ₹12,389.28 crore for a net −₹1,148.64 crore; domestic institutions bought ₹14,781.31 crore against ₹11,580.12 crore of sales, a net +₹3,201.19 crore. The pattern of the month — foreigners out, domestic money absorbing it — held.",
+          "The rupee's winning streak ended quietly, settling at a provisional 94.92 against 94.89 on Friday, three paise weaker after six straight gains, with the dollar index up 0.09% at 101.93. Crude helped: Brent fell 1.9% to $107.8 and WTI 1% to $100.4 after Washington put new Russia sanctions on hold. India's foreign exchange reserves fell $8.578 billion to $726.027 billion in the week to 9 October.",
+          "New York went the other way as money went back into chips and AI names: the Nasdaq Composite rose 290.85 points or 1.11% to 26,430.89, the S&P 500 31.29 or 0.41% to 7,690.73, while the Dow slipped 36.38 points or 0.07% to 51,966.03. Nothing trades here today — NSE and BSE are closed for Dussehra, with equity, derivatives, SLB and currency derivatives all shut and Monday's trades settling on Wednesday, which is also the day the Jio Platforms IPO opens."
+        ]
+      }
+    ]
+  },
+  "trends": [
+    {
+      "tag": "India",
+      "headline": "Putting solar panels over a standing crop costs a quarter to a third more to build, and Delhi is designing a subsidy for the gap",
+      "url": "https://psuwatch.com/newsupdates/mnre-planning-central-scheme-to-offset-25-30-higher-cost-of-agripv-plants",
+      "subject": "MNRE plans a subsidy to offset the 25-30% construction premium on agrivoltaic solar, where panels sit three to five metres above a standing crop, with about 5 GW seen as feasible in three to four years if feed-in tariffs are notified",
+      "subtitle": "PSU Watch on MNRE secretary Santosh Kumar Sarangi's briefing in New Delhi, Monday 19 October 2026, before the AgriVoltaics World Conference",
+      "bullets": [
+        "Agrivoltaics means growing a crop underneath a solar array instead of choosing between the two. The panels have to sit three to five metres up on tilted frames so that a person and a tractor can work beneath them, and that is where the money goes: \"In AgriPV, due to the tilted structure, the additional cost is of the civil infrastructure,\" Sarangi said. The premium over ordinary ground-mounted solar is 25 to 30%.",
+        "The premium shows up in the tariff, which is the whole problem. Power from an AgriPV plant is put at ₹3.20 to ₹3.30 a unit against ₹2.80 to ₹3.00 from a decentralised KUSUM installation — so nobody builds one unless somebody closes a gap of about 40 paise. Hence a central sector scheme; the ministry has not decided whether it becomes a new line item or a tier of PM-KUSUM, and is working the numbers out with the finance ministry.",
+        "The target is modest and conditional: about 5 GW over three to four years, and only if states notify feed-in tariffs, because a farmer or a cooperative will not put capital into a twenty-five-year asset without a published price. Odisha, Madhya Pradesh and Maharashtra have shown interest; Sarangi also named Chhattisgarh, West Bengal and Uttar Pradesh as moderate-irradiance states that suit the model better than the sunniest ones.",
+        "Two numbers worth keeping. India's theoretical AgriPV potential is put at 1 to 2 terawatts, which is a potential, not a plan — and the plants need about 16% more land than a conventional array for the same output. Early IARI pilot results suggest vegetables, horticulture and floriculture tolerate the shade; rice, wheat and sugarcane do not. Sarangi called those findings preliminary."
+      ]
+    },
+    {
+      "tag": "Platforms",
+      "headline": "The Deno team is joining Cloudflare, and the Deno runtime has one year left",
+      "url": "https://deno.com/blog/cloudflare",
+      "subject": "Ryan Dahl announces the entire Deno team is joining Cloudflare; the Deno runtime gets a year of maintenance releases before development ends, Deno Deploy shuts in six months, and JSR moves to Cloudflare infrastructure",
+      "subtitle": "Ryan Dahl, \"Deno is joining Cloudflare\", on the Deno blog, 9 October 2026",
+      "bullets": [
+        "The runtime gets monthly bug-fix and security releases for one more year, and then development stops. It stays open source and others are invited to carry it; this is a wind-down with a date on it, not a deprecation notice.",
+        "Deno Deploy runs for six more months, with migration help to Cloudflare Workers for paying customers. JSR, the package registry, keeps going and moves onto Cloudflare infrastructure. The team will keep maintaining `rusty_v8` with the aim of folding it into `workerd`.",
+        "The actual job is self-hosting. Dahl and Bert Belder go to work alongside the Workers and Durable Objects teams to make the Workers programming model the default way to build a server whether it runs on Cloudflare's network or on your own machines — with the ideas from the team's `celld` project going into `workerd`.",
+        "The tell is which primitive he singles out. Dahl calls out Durable Objects as especially useful for AI agent harnesses, which is a reasonable guess at why a runtime company and an edge network decided they were building the same thing. Terms were not disclosed, and the post carries no metrics at all — only the two clocks, twelve months and six."
+      ]
+    },
+    {
+      "tag": "Palaeontology",
+      "headline": "A crow-sized bird stopped flying 150 million years ago, which is long before anyone thought flight was worth giving up",
+      "url": "https://english.cas.cn/newsroom/research-news/202610/t20261010_1202178.shtml",
+      "subject": "Yuezhuornis yangyuanensis, a Late Jurassic avialan from the Zhenghe Fauna of Fujian, China, described in Nature as the earliest known case of flight loss in bird evolution",
+      "subtitle": "Chinese Academy of Sciences newsroom on Wang Min and colleagues' Nature paper, \"Jurassic flightless bird reveals early ecological diversity of avialans\"",
+      "bullets": [
+        "Yuezhuornis yangyuanensis comes out of the Zhenghe Fauna in Fujian, southeastern China, and is 150 to 148 million years old. It is crow-sized, and the skeleton is a mixture: bird-like pelvis and hindlimbs, but closely packed serrated teeth and a hyperextensible second toe tipped with a sickle claw, both features of deinonychosaurs rather than birds.",
+        "The limb proportions are what make the case. They match living ground-dwelling birds and some non-avialan paravians, which points to an animal that ran and hunted rather than one that flew. The phylogenetic analysis puts it inside Avialae, just crownward of Archaeopteryx and as sister taxon to Zhengheornis — so this is flight being abandoned almost as soon as it was acquired.",
+        "That is the significance claimed: the earliest known loss of flight in bird evolution, and an argument that early birds were not on a single escalator towards better flying. Some of them were busy taking ecological jobs on the ground that did not need wings.",
+        "The wider point is about how body plans assemble. The avian build arrives as a mosaic — bird hips above dinosaur feet, bird posture behind serrated teeth — not as a package. The work was led by Wang Min at the Institute of Vertebrate Paleontology and Paleoanthropology in Beijing, with Zhou Zhonghe and the Fujian Institute of Geological Sciences."
+      ]
+    }
+  ],
+  "research": [
+    {
+      "tag": "Industry · Microsoft Research",
+      "title": "They stopped asking a model to role-play a student and trained a simulator on one real student's mistakes",
+      "url": "https://www.microsoft.com/en-us/research/blog/simulating-student-learning-for-better-ai-tutoring/",
+      "subject": "Microsoft Research and UIUC build StudentSim, personalised student simulators fitted to de-identified learner records, then use one as the reward signal for an AI chess tutor, with a benchmark spanning chess, second-language English writing and mathematics",
+      "subtitle": "\"Simulating student learning for better AI tutoring\", Microsoft Research blog, 12 October 2026 — Ke Yang and ChengXiang Zhai (UIUC) with Chenglong Wang, Michel Galley, Chandan Singh, Jeevana Priya Inala and Jianfeng Gao (Microsoft Research)",
+      "bullets": [
+        "The problem is that prompting a model to act like a student produces a student who is too good. Improving a tutor means knowing how a learner actually responds to guidance, and the honest way to find out — human studies — is slow and expensive.",
+        "StudentSim trains in two stages: first on pooled, de-identified records from a domain to learn the shared patterns, then specialised to one individual learner's own history. It is scored on two axes: behavioural fidelity, meaning it reproduces that student's answers on held-out problems, and guidance responsiveness, meaning it updates sensibly when a tutor intervenes.",
+        "On chess it scored 0.5150 fidelity and 0.9067 responsiveness, against 0.2316 and 0.7186 for prompted GPT-5.4 and 0.4535 and 0.2721 for Maia2 — the move-prediction model matches behaviour reasonably and barely responds to teaching at all, which is precisely the gap that matters here.",
+        "Then they used it as a reward source. A chess tutor trained against StudentSim reached 90.5% accuracy, against 75.7% for no reinforcement learning and 71.6% for a tutor trained with GPT-5.4 as the reward — graded by human chess experts blind to condition. Worth keeping in proportion: it is a research system, nothing is deployed in a classroom, and the authors are explicit that this measures tutor quality, not anyone's learning."
+      ]
+    },
+    {
+      "tag": "Academia · UIUC",
+      "title": "Resisting Harmful Instructions through Training-Free Weight Editing",
+      "url": "https://arxiv.org/abs/2610.21189",
+      "subject": "A training-free weight edit from the University of Illinois Urbana-Champaign that suppresses a named behaviour in instruction-following language models, demonstrated on instructed lying and instructed sexism in five open models",
+      "subtitle": "arXiv:2610.21189, submitted 15 October 2026 — Ali Ebrahimpour-Boroojeny, Xiaocong Yang, Samuel Schapiro, Zahra Borhani, Francisco R. Ortega, Yujia Zheng and ChengXiang Zhai",
+      "bullets": [
+        "The target is a specific failure: a model that will do a thing it should not, simply because the prompt told it to. The intervention needs no training run — only forward passes over a small set of prompt pairs for each behaviour you want to suppress — and the result is written into the weights.",
+        "That last part is the design argument. Because the edit lives in the weights rather than in a system prompt or an activation hook at inference time, editing or deleting the instruction from the prompt does not undo it, and it survives being asked the same thing in a different format.",
+        "The numbers are better on the blunter behaviour. On instructed sexism the rate of sexist responses fell from 57.9% to 24.3%, and to 11.9% when a fairness prompt was added on top — so the edit composes with the prompt-based safeguards rather than replacing them.",
+        "On instructed lying the gains are real but modest: honest-response rates up 6.2 and 4.6 percentage points over the strongest alternative on two benchmarks, significant on three of five models and inside the noise on the other two, while holding higher honesty than single-layer activation steering across seven prompt formats. A partial defence that cannot be argued out of is still worth having."
+      ]
+    }
+  ],
+  "wild": [
+    {
+      "tag": "Cement",
+      "headline": "A cement company drew a 70-foot goddess out of 15,000 bags of its own product, visible only from the air",
+      "url": "https://dailypioneer.com/news/adani-cement-creates-70-ft-aerial-tribute-to-goddess-durga-in-madhya-pradesh",
+      "entities": [
+        "Adani Cement",
+        "ACC",
+        "Ambuja Cements"
+      ],
+      "subject": "Adani Cement arranges 15,000 ACC and Ambuja cement bags, about 750 tonnes, into a 70-foot-square aerial image of Maa Durga at its Kymore plant in Madhya Pradesh for Navratri 2026",
+      "subtitle": "The Pioneer on Adani Cement's Navratri and Durga Puja 2026 campaign, \"Jahan Vishwas, Wahan Shakti\"",
+      "bullets": [
+        "The canvas is the plant yard at Kymore in Madhya Pradesh, 70 feet by 70 feet, and the medium is 15,000 bags of ACC and Ambuja cement — about 750 tonnes of it, laid out across roughly 12,600 person-hours of work.",
+        "It is illegible from the ground. At eye level it is a stack of cement bags in a yard; the image of Maa Durga only resolves from directly overhead, which means the whole thing was made for the drone shot and the reveal, and the construction was filmed for the company's own channels.",
+        "The logic is at least honest about the product. A company that sells strength by the bag has made the strength itself into the drawing material for a festival about a goddess of strength, under the line \"Jahan Vishwas, Wahan Shakti\" — where there is trust, there is strength.",
+        "What the bags were for afterwards is not stated, which is the question an engineer asks first. Nor is the headcount or the build time; 12,600 person-hours is the only labour figure given, and the claim to be the first cement firm to attempt this is the company's own."
+      ]
+    },
+    {
+      "tag": "Basketball",
+      "headline": "A beer brand cut up the NBA Finals court and gave the pieces to bartenders as bottle openers",
+      "url": "https://www.adweek.com/brand-marketing/michelob-ultra-cheers-on-knicks-championship/",
+      "entities": [
+        "Michelob ULTRA",
+        "New York Knicks"
+      ],
+      "subject": "Michelob ULTRA cuts hardwood from the Knicks' NBA Finals championship court into bottle openers and has Earl Monroe and John Wallace hand them to New York bartenders",
+      "subtitle": "Adweek on Michelob ULTRA's campaign around the Knicks' season opener, 19 October 2026",
+      "bullets": [
+        "The openers contain pieces of the actual hardwood the Knicks won the 2026 Finals on. They went to selected bartenders across the five boroughs, hand-delivered with season tickets by Earl Monroe and John Wallace, who turned up to thank them for their part in the run.",
+        "The choice of recipient is the whole idea. Everyone else in this story gets commemorated by default — players, coaches, the arena. The people who poured the beer during a 53-year wait get the floor itself, cut into a tool for opening more of it.",
+        "Fans could enter for the openers from 19 October through the brand's Superior Access platform, with the campaign's film breaking during the season opener on 20 October and out-of-home running around Madison Square Garden, Penn Station and Times Square.",
+        "The brand's marketing SVP, Ricardo Marques, says the point was to celebrate \"the people and places\" that made the run memorable. Unstated: how many openers exist, which is the number that decides whether this was a gift or a sweepstake."
+      ]
+    },
+    {
+      "tag": "Drinks",
+      "headline": "An April Fools' joke from 2023 is now a real cinnamon-roll flavoured alcoholic drink",
+      "url": "https://www.fooddive.com/news/leftovers-beatbox-cinnabon-topo-chico-canned-water-Bauducco-skippy/832606/",
+      "entities": [
+        "BeatBox",
+        "Cinnabon"
+      ],
+      "subject": "BeatBox Beverages and Cinnabon launch a limited-edition cinnamon-roll flavoured ready-to-drink alcoholic beverage, three years after BeatBox floated the idea as an April Fools' joke",
+      "subtitle": "Food Dive's Leftovers column, 9 October 2026, and the BeatBox press release of 8 October",
+      "bullets": [
+        "In 2023 the drinks brand posted a Cinnabon-flavoured product as an April Fools' gag. Enough people asked for it that it now exists: spiced cinnamon, brown sugar and cream cheese frosting, out now for a limited time at selected retailers across the US.",
+        "The founder's framing is the interesting part of the story for anyone who runs anything. \"What started as an April Fools' joke quickly became something our fans genuinely wanted us to make,\" says co-founder and CEO Justin Fenchel, who describes the brand's online audience as people who \"keep us on our toes and they inspire some of our best ideas.\"",
+        "Which makes the joke a free product test. A fake launch costs a social post and returns a demand signal with no inventory risk — and this is at least the second time the company has converted one of its own gags into a shipping product.",
+        "What neither the press release nor the trade coverage will tell you is the strength, the format or the price. For a drink whose entire pitch is that it tastes like a pastry, the alcohol content is the one number a buyer would want on the front of the carton."
+      ]
+    }
+  ],
+  "learn": {
+    "title": "Honey does not spoil, and the reason is that a bee spends its day making nectar too dry and too sour to live in.",
+    "subject": "Why sealed honey keeps indefinitely: bees fan nectar from 60-80% water down to almost none, the result sits at pH 3 to 4.5, and glucose oxidase leaves gluconic acid and hydrogen peroxide behind",
+    "body": [
+      "Honey arrives at the hive as nectar, which is 60 to 80 percent water — somewhere between a thin syrup and sugary rain. Bees get rid of nearly all of that. They regurgitate it, pass it along, and then stand over the open comb beating their wings to evaporate the water off, which is one of the odder jobs in nature: a few thousand insects running a drying plant. What is left is so short of free water that, as Amina Harris of UC Davis's Honey and Pollination Center puts it, very few bacteria or microorganisms can survive in it. Nothing rots in a place with nothing to drink.",
+      "Then there is the chemistry the bee adds on the way through. Bees carry an enzyme called glucose oxidase, and when the nectar is brought back up it breaks some of the sugar into gluconic acid and hydrogen peroxide — so the jar is mildly acidic and mildly antiseptic by construction. Honey comes in at pH 3 to 4.5, about as sour as orange juice; molasses, which is also mostly sugar and does eventually spoil, sits around 5.5. This is also why honey on a wound is not folklore: the moisture it pulls out releases a trace of peroxide.",
+      "The good part is that none of this makes honey immortal, and the archaeology is the proof in both directions. Sealed pots from Egyptian tombs have come up thousands of years old and still honey. Leave the same pot open in a humid kitchen and it will pull water out of the air — sugar is hygroscopic, which is exactly how it got dry in the first place — and then it can spoil like anything else. \"As soon as you add water to it, it may go bad,\" says Harris. The eternal food is not stable. It is just winning, slowly, as long as you keep the lid on."
+    ],
+    "source_url": "https://www.smithsonianmag.com/science-nature/the-science-behind-honeys-eternal-shelf-life-1218690/"
+  },
+  "ideas": {
+    "prompt": "Ten ways to make a new friend as an adult",
+    "note": "Altucher's drill: ten against one prompt, written fast, not defended. Reddit rate-limited the fetcher after the first subreddit, so today's raw material is that week of r/SomebodyMakeThis — where the same wish kept coming back in different clothes, people wanting to know what their actual friends like and wanting somewhere to put a thought before it evaporates — plus the Ask HN idea threads and Y Combinator's Requests for Startups. Eight of these are mine; two are lifted off that wish list.",
+    "items": [
+      {
+        "text": "Become a regular. Same place, same hour, two weeks running. Faces stop being scenery and start being people, and nobody has to be introduced."
+      },
+      {
+        "text": "Join the thing with an end date. A six-week course beats an open-ended club, because everyone there started on the same day and nobody is already friends."
+      },
+      {
+        "text": "Volunteer for the dull job at an event — registration desk, chairs, clean-up. You meet every single person who walks in, and you are competing with none of them."
+      },
+      {
+        "text": "Ask the second question. Most conversations die right after \"so what do you do\"; whatever you ask next is where the friendship actually lives."
+      },
+      {
+        "text": "Run an errand together instead of having dinner. Buying vegetables with someone is a lower bar, costs nothing, and tells you more about them than a restaurant will."
+      },
+      {
+        "text": "Host badly and host soon. A pot of chai and three mismatched chairs this Sunday beats the dinner party you keep postponing until the flat is ready."
+      },
+      {
+        "text": "Get taken along to someone's hobby, as a beginner rather than a guest. People are at their most likeable while explaining the thing nobody asks them about."
+      },
+      {
+        "text": "Keep a list of people you liked and never followed up with, then work through it one message a week.",
+        "why": "The most repeated wish on r/SomebodyMakeThis this week was somewhere to park a thought before it evaporates; this is the version you can do in a notes app tonight."
+      },
+      {
+        "text": "Send people your actual recommendations — the book, the route, the stall — rather than links.",
+        "why": "Also straight off that wish list: several posts wanted a way to see what close friends are curating, which is a product idea and also just a thing you can be for someone."
+      },
+      {
+        "text": "Say the slightly awkward sentence out loud: \"I would like to be better friends.\" It lands far more often than the fear of saying it suggests."
+      }
+    ]
+  }
+}
