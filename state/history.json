@@ -6413,6 +6413,175 @@
         "fooddive.com",
         "psuwatch.com"
       ]
+    },
+    {
+      "date": "2026-10-21",
+      "issue": 1,
+      "quote_text": [
+        "We all live inside the terrible engine of authority, and it grinds and shrieks and burns so that no one will say: lines on maps are silly."
+      ],
+      "quote_author": [
+        "Catherynne M. Valente"
+      ],
+      "idea_text": [
+        "A swap shop. Bring one thing you no longer want, take one thing somebody else no longer wants, nothing priced, nobody paid.",
+        "A repair counter. Put four people who can fix things behind a table, let the neighbourhood bring whatever is broken, and charge nothing for a verdict.",
+        "One shelf, ten friends, ten objects each of them genuinely loves, with a handwritten card saying why.",
+        "A room of other people's photographs — ask twenty neighbours for one picture each, print them big, hang them unlabelled.",
+        "A cinema playing one film on a loop from open to close, with the door left unlocked so people drift in halfway and stay.",
+        "A lost property museum for the street: everything found on the pavement in a month, on plinths, with the date and the spot it was found.",
+        "A letter-writing room. Paper, pens, stamps, a postbox, a strict rule against phones, and someone to post the lot on Monday.",
+        "A single-dish restaurant with no menu, no choice and no reservations, run by whoever in the area cooks one thing better than anyone else.",
+        "A night school with a six-slot timetable on the window — anyone can claim a slot and teach the thing they know, forty-five minutes, no qualifications asked for.",
+        "Leave it completely empty, unlock it, put out eighty chairs and a kettle, and see what the street does with a free room for two days."
+      ],
+      "idea_prompt": [
+        "Ten things you could do with an empty shop for one weekend"
+      ],
+      "tip_text": [
+        "Stop reopening yesterday's enormous session to ask one small question. Claude Code 2.1.304 now warns you on Pro and Max when resuming an inactive conversation would eat a noticeable share of your five-hour limit — and the second option it offers is the right one most days: start a new conversation, mention the previous one in passing, and let Claude look it up only if it actually needs the history."
+      ],
+      "hn_id": [
+        "50163277",
+        "50159341",
+        "50150089",
+        "50152307",
+        "50151036"
+      ],
+      "link": [
+        "https://github.com/deepseek-ai/DeepInfer",
+        "https://redact.dev/blog/whatsapp-help-pages-hidden-ai-instructions",
+        "https://www.youtube.com/watch?v=Ndftcft6XhU",
+        "https://marc.info/?l=openbsd-ports&m=179236125692175",
+        "https://news.ycombinator.com/item?id=50151036",
+        "https://english.punjabkesari.com/business/india-new-zealand-fta-comes-into-force-leaders-welcome-expanded-trade-and-investment-opportunities",
+        "https://emudhra.we-have-a-problem.com/",
+        "https://phys.org/news/2026-10-octopus-cuttlefish-suckers-evolved-repurposing.html",
+        "https://www.vice.com/en/article/gta-6-marketing-miami-vice-city/",
+        "https://www.dexerto.com/food/pringles-will-give-you-200-years-of-free-chips-if-you-agree-to-be-buried-in-its-can-3418332/",
+        "https://bevnet.com/pr/2026/08/19/fernetbranca-pays-tribute-to-its-deep-ties-to-tattoo-culture-with-limitededition-bottle-designed-by-austin-england",
+        "https://www.anthropic.com/research/claude-scorpion-toxin-binder-design",
+        "https://arxiv.org/abs/2610.22324",
+        "https://groww.in/blog/jio-platforms-ipo-to-open-on-october-21-2026"
+      ],
+      "subject": [
+        "A bilateral pact in force from 20 October 2026 removes New Zealand's duties on all tariff lines for Indian exporters and phases its own access in slowly, dairy excluded.",
+        "Private keys of eight eMudhra intermediate CA certificates turned out to be recoverable from the certificates themselves.",
+        "Octopus and cuttlefish suckers develop without the appendage-patterning genes that shape the arms.",
+        "Rockstar has covered Miami in Vice City branding a month before GTA 6 launches, including a Goodyear blimp.",
+        "Pringles is giving away a can-shaped burial urn and 200 years of chips.",
+        "Fernet-Branca had tattoo artist Austin England redraw its eagle for a collectible bottle.",
+        "Anthropic's Science team used an internal model to produce 211 candidate proteins that grip scorpion sodium-channel toxins, and 17 of them bound at two independent wet labs.",
+        "A set-level reward teaches a small model to produce ten ideas that differ from one another.",
+        "Mains-synchronised clocks across Europe lost about six minutes in early 2018 when the continental grid ran at 49.996 Hz."
+      ],
+      "brand": [
+        "Rockstar Games",
+        "Goodyear",
+        "Miami Heat",
+        "Wynwood Walls",
+        "West Coast Customs",
+        "Rockstar",
+        "Pringles",
+        "Fernet-Branca",
+        "Branca International",
+        "Austin England"
+      ],
+      "brand_mention": [
+        "Goodyear",
+        "Vice City",
+        "Florida",
+        "Welcome",
+        "Kaseya Center",
+        "Miami Beach",
+        "Beach",
+        "Wynwood Walls",
+        "Rockstar",
+        "Miami-Dade",
+        "I",
+        "Dolphins",
+        "Hard Rock Stadium",
+        "Little Haiti",
+        "Miami Heat",
+        "Coquette",
+        "Cheetah",
+        "Tempesta",
+        "Emerus",
+        "Manana",
+        "Buccaneer",
+        "Lamborghini",
+        "VICE",
+        "Heat",
+        "Los Angeles",
+        "Hollywood",
+        "York",
+        "Colossal Media",
+        "Chicago",
+        "ET",
+        "OnceYouDrop.com",
+        "Pringles",
+        "Dan",
+        "Funeral Man",
+        "Fredric Baur",
+        "Mauricio Jenkins",
+        "Cincinnati",
+        "Leopoldo Metlicovitz's",
+        "Art Nouveau",
+        "Austin England",
+        "Lake",
+        "Echo Park",
+        "Route 66",
+        "Fernet-Branca's",
+        "URL",
+        "England's",
+        "Edoardo Branca"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "Every Indian export now enters New Zealand duty-free, and the agreement started on Dussehra"
+        ],
+        [
+          "trends",
+          "Eight of eMudhra's intermediate CA private keys can be recovered from the certificates themselves"
+        ],
+        [
+          "trends",
+          "An octopus arm is built with the same genes as your arm. Its suckers are not."
+        ],
+        [
+          "wild",
+          "Rockstar has been redecorating Miami as the fictional city it based on Miami, and the blimp is a real Goodyear blimp"
+        ],
+        [
+          "wild",
+          "Pringles will bury one person in a Pringles can, which is what its inventor asked for in 2008"
+        ],
+        [
+          "wild",
+          "A 181-year-old amaro let a tattoo artist redraw its eagle, because drinkers had been tattooing it on themselves for years"
+        ],
+        [
+          "research",
+          "Claude ran a 64-hour protein design campaign against scorpion venom, and 17 of its 211 designs actually bound"
+        ],
+        [
+          "research",
+          "Training Reasoning Models to Generate Diverse Scientific Ideas"
+        ],
+        [
+          "learn",
+          "Europe's clocks ran six minutes slow in 2018, and the reason was an argument about an electricity bill in the Balkans."
+        ]
+      ],
+      "editorial_domains": [
+        "bevnet.com",
+        "dexerto.com",
+        "emudhra.we-have-a-problem.com",
+        "english.punjabkesari.com",
+        "phys.org",
+        "vice.com"
+      ]
     }
   ]
 }
