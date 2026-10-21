@@ -6582,6 +6582,145 @@
         "phys.org",
         "vice.com"
       ]
+    },
+    {
+      "date": "2026-10-22",
+      "issue": 1,
+      "quote_text": [
+        "The sense of tragedy — according to Aristotle — comes, ironically enough, not from the protagonist's weak points but from his good qualities. … People are drawn deeper into tragedy not by their defects but by their virtues."
+      ],
+      "quote_author": [
+        "Haruki Murakami"
+      ],
+      "idea_text": [
+        "A laundry round for one hostel block: collected at 8pm, back folded by 8am, flat monthly rate, no itemised bill.",
+        "Water-tank cleaning. Every building has two, nobody wants to do it, and the pressure washer costs less than a phone.",
+        "A paperwork-and-queues service for older neighbours — bank forms, pension proof, hospital appointments, one fixed fee an errand.",
+        "Photograph other people's second-hand listings properly, for a flat fee per item.",
+        "Buy used textbooks at the end of term and sell them at the start of the next, with a written promise to buy them back.",
+        "One tiffin, no menu, no choice: you cook whatever the morning market was cheapest on, and the subscriber finds out at lunch.",
+        "Rent out a projector, a speaker and a bedsheet for terrace film nights, delivered and collected.",
+        "A weekend repair bay in an apartment basement — a stand, a toolkit, a floor pump and a whiteboard of fixed prices.",
+        "Plant-sitting for the fortnight the whole building is away, charged per pot.",
+        "A 4am flower run: buy at the wholesale market, deliver to forty small offices before anyone arrives, bill monthly."
+      ],
+      "idea_prompt": [
+        "Ten businesses you could start with ₹50,000"
+      ],
+      "tip_text": [
+        "If any of your code calls the Claude API, run `/claude-api api-version` instead of reading the migration notes — Claude Code 2.1.307 added it specifically to move a codebase onto API version 2026-10-21, which means the diff is the thing you review rather than the changelog."
+      ],
+      "hn_id": [
+        "50172041",
+        "50170593",
+        "50168396",
+        "50177911",
+        "50165208"
+      ],
+      "link": [
+        "https://www.php.net/archive/2026.php#2026-10-21-5",
+        "https://permit.petercai.com/",
+        "https://mistral.ai/news/voxtral-3/",
+        "https://unric.org/en/unep-emissions-gap-report-2026-1-5-degree-overshoot/",
+        "https://teddysvoronos.com/2026-10-19-apple-broke-an-essential-presentation-feature-of-ipads/",
+        "https://www.angelone.in/news/economy/india-crude-oil-import-bill-rises-46-to-90-6-billion-in-april-september-2026",
+        "https://cloud.google.com/blog/products/ai-machine-learning/google-cloud-brings-openai-models-to-customers",
+        "https://arxiv.org/abs/2608.01196",
+        "https://www.happi.com/breaking-news/boka-x-olipop-toothpaste-collaboration-hits-the-market/",
+        "https://marketingreport.nl/capital-sports-ontwikkelt-ooh-activatie-voor-garmin",
+        "https://roastbrief.us/madison-media-takes-ethnix-by-raymonds-wedding-mandap-to-the-streets-with-mandap-on-wheels-campaign",
+        "https://www.microsoft.com/en-us/research/blog/solving-a-31-year-old-grand-challenge-in-mathematics-the-kls-conjecture/",
+        "https://arxiv.org/abs/2610.21091",
+        "https://theprint.in/economy/rupee-closes-at-six-week-high-of-94-38-driven-by-jio-ipo-rbi-intervention/3078122/"
+      ],
+      "subject": [
+        "PPAC data shows India's September 2026 crude import bill at $15.4 billion, up 46.6% year on year on a 6.8% rise in volume, with the April-September total at $90.6 billion.",
+        "Google Cloud is putting OpenAI's GPT-6 Astra, GPT-6.1 Sol and GPT-6 Luna into its model garden in private preview, billed through Google Cloud Marketplace against existing cloud commitments.",
+        "In an atomic-layer indium superconductor grown on a stepped silicon surface, Josephson vortices move with a 1000-fold directional anisotropy, imaged by scanning tunnelling microscopy.",
+        "Boka, which makes toothpaste, and Olipop, which makes probiotic soda, put out a joint tube that tastes of Pomegranate Sparkle, on sale at TikTok Shop from 14 October.",
+        "A Dutch out-of-home activation had a climber abseil from a roadside advertising mast beside the A12 to launch a watch.",
+        "A men's ethnic wear brand staged an actual wedding ceremony on a decorated float that drove through Gurgaon.",
+        "Microsoft Research reports a proof of the Kannan-Lovasz-Simonovits conjecture with no dimension dependence, reached through a human-directed agentic search over roughly a hundred candidate proof routes.",
+        "MemComposer picks which past experiences an agent is shown, how many of them, and in what order, and is trained by scoring whole agent runs on task success.",
+        "The original 1949 barcode was concentric circles; the linear design won in the 1970s because ink spread ruins a circle's geometry but only makes a bar taller."
+      ],
+      "brand": [
+        "Boka",
+        "Olipop",
+        "Garmin",
+        "Capital Sports",
+        "Ethnix by Raymond",
+        "Raymond Lifestyle",
+        "Madison Media",
+        "MOMS Outdoor",
+        "Ethnix"
+      ],
+      "brand_mention": [
+        "Boka",
+        "Olipop Pomegranate Sparkle Probiotic Toothpaste",
+        "Olipop's",
+        "Pomegranate Sparkle",
+        "Spanish",
+        "Shop",
+        "Dutch",
+        "A12",
+        "Utrecht",
+        "Garmin's",
+        "Play Harder",
+        "Capital Sports",
+        "Gurgaon",
+        "Raymond Lifestyle's CMO Kalpana Singh",
+        "CMO's",
+        "Meta",
+        "Madison Media",
+        "MOMS Outdoor"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "India bought 6.8% more crude in September and paid 46.6% more for it"
+        ],
+        [
+          "trends",
+          "Google Cloud has started selling OpenAI's models, and the interesting part is the invoice"
+        ],
+        [
+          "trends",
+          "A step one atom high works as a rail, and quantum vortices run along it a thousand times more easily than across it"
+        ],
+        [
+          "wild",
+          "Boka and Olipop have made a toothpaste that tastes of a soda, sold first on TikTok Shop"
+        ],
+        [
+          "wild",
+          "Garmin had a mountaineer rope down a motorway advertising mast, because adventure is meant to be nearby"
+        ],
+        [
+          "wild",
+          "Ethnix by Raymond put a mandap on a moving float in Gurgaon and married a real couple on it"
+        ],
+        [
+          "research",
+          "A conjecture from 1995 fell on 4 October, and what the AI contributed was a hundred dead ends run in parallel"
+        ],
+        [
+          "research",
+          "MemComposer: Learning to Assemble Memories for LLM Agents via Reinforcement Learning"
+        ],
+        [
+          "learn",
+          "Barcodes are stripes instead of circles because printers smudge, and a smudged stripe just gets taller."
+        ]
+      ],
+      "editorial_domains": [
+        "angelone.in",
+        "arxiv.org",
+        "cloud.google.com",
+        "happi.com",
+        "marketingreport.nl",
+        "roastbrief.us"
+      ]
     }
   ]
 }

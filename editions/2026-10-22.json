@@ -1,0 +1,337 @@
+{
+ "date_line": "Thursday, 22 October 2026",
+ "issue": 1,
+ "preheader": "Four bugs in PHP under two CVEs give unauthenticated remote code execution on roughly 70% of the web, and the researchers say frontier models turned months of specialist work into about a week; a browser city builder where a 12-storey proposal is cut to six at month 7 and is still unresolved at month 42; Mistral's Voxtral 3 transcribes 50+ languages at $0.0035 a minute; UNEP says 1.5°C is gone and the only option left is under 2°C then back down; iPadOS 27 broke presenting from an iPad; India's crude import bill rose 46.6% on 6.8% more oil; GPT-6 is now sold on Google Cloud's invoice; atomic steps one atom high steer quantum vortices a thousand times more easily one way than the other; a 31-year-old conjecture fell after about a hundred dead ends; a toothpaste that tastes of soda; a mountaineer abseiling down a motorway advertising mast; and the reason barcodes are stripes and not circles is that a smudged stripe just gets taller.",
+ "quote": {
+  "text": "The sense of tragedy — according to Aristotle — comes, ironically enough, not from the protagonist's weak points but from his good qualities. … People are drawn deeper into tragedy not by their defects but by their virtues.",
+  "author": "Haruki Murakami",
+  "work": "Kafka on the Shore",
+  "source_url": "https://www.goodreads.com/quotes/tag/irony",
+  "note": "The comforting story is that things go wrong because of a flaw you could fix. Aristotle's version is worse and truer: the thing that takes you down is usually the thing you are good at, applied once too often. The careful engineer who cannot ship, the fast one who cannot stop, the team whose great strength is that it never throws anything away. Nobody audits their strengths."
+ },
+ "agent_craft": {
+  "items": [
+   {
+    "text": "If any of your code calls the Claude API, run `/claude-api api-version` instead of reading the migration notes — Claude Code 2.1.307 added it specifically to move a codebase onto API version 2026-10-21, which means the diff is the thing you review rather than the changelog.",
+    "source": "Claude Code changelog, 2.1.307",
+    "url": "https://code.claude.com/docs/en/changelog"
+   }
+  ]
+ },
+ "hn": [
+  {
+   "title": "Security advisory: Critical remote code execution vulnerabilities, update now",
+   "url": "https://www.php.net/archive/2026.php#2026-10-21-5",
+   "hn_url": "https://news.ycombinator.com/item?id=50172041",
+   "points": 1503,
+   "comments": 649,
+   "bullets": [
+    "Two CVEs, both rated CVSS v4.0 9.2, both giving unauthenticated remote code execution before a single line of application code runs. CVE-2026-109618 is an out-of-memory failure that interrupts PHP while request data is only partially initialised, after which cleanup treats the invalid data as valid. CVE-2026-109619 is request-owned internal state surviving after its backing memory is freed, so a later request on the same worker uses the stale state. Fixed in 8.5.12, 8.4.27, 8.3.36 and 8.2.35.",
+    "The PHP team names the risk order: PHP-FPM, mod_php, php-cgi, FrankenPHP and LiteSpeed all qualify, with mod_php highest because of a demonstrated pre-application exploit. PHP 8.1 and older are out of support, but the severity was enough that the security team published minimal source backports for 7.4, 8.0 and 8.1 as named git branches. The advisory also tells anyone relying on the volunteer-maintained rpms.remirepo.net to move off it, because that repo would have no update that day.",
+    "The mitigations are worth reading for what they admit. Setting `memory_limit=-1` via `php_admin_value` removes the controllable failure but not an underlying allocation failure; `post_max_size=8M` narrows the input path; `session.upload_progress.enabled=0` plus a full worker restart blocks the confirmed session route \"but not other variants\"; and on 8.5, `fatal_error_backtraces=0` blocks only the backtrace path. Do not swap in `RLIMIT_AS` or `RLIMIT_DATA` — those can cause the vulnerable allocation failure.",
+    "Wiz Research, who found the bugs, published the mechanism the same day: a Session upload-progress pointer left dangling after an OOM, which PHP then URL-encodes into a `PHPSESSID` cookie, leaking another request's memory even if the application never calls `session_start()`. They demonstrated unauthenticated RCE on current WordPress, Drupal and Joomla images. Their timeline is 19 August discovery, 24 August report, 21 September acknowledgement, 21 October patch — and they credit frontier models with compressing what they call months of top-team effort into about a week for one researcher."
+   ]
+  },
+  {
+   "title": "Show HN: SimCity, but with Permits",
+   "url": "https://permit.petercai.com/",
+   "hn_url": "https://news.ycombinator.com/item?id=50170593",
+   "points": 905,
+   "comments": 408,
+   "bullets": [
+    "Permit Pending casts you as an elected mayor rather than an omniscient city builder. Nothing is placed; everything is proposed. An apartment block, a bus lane or a factory has to survive hearings, reviews, objections, lawsuits and appeals, and you negotiate the concessions in public.",
+    "The example on the page is the entire design thesis: a 12-storey proposal is cut to six storeys at a hearing in month 7, which makes it unprofitable; it is appealed in month 11; it is still unresolved in month 42; and the election lands at month 48. Some cases simply outlive the mayor who filed them.",
+    "The simulation underneath is residents with ages, incomes and homes, businesses that hire and leave, and land values, rents, jobs, taxes and services wired to each other. You spend political capital on a seven-seat council, you face reelection every four years, and the game tells you which voter groups actually turn out. Every improvement manufactures its own opposition: housing lowers rents and angers owners, industry brings jobs and smog.",
+    "Four scenarios, sized by population: Blank Slate at 200 residents, Small Town at 2,000, Booming Suburb at 25,000, and The Unaffordable Metropolis at 300,000. There is no win screen and no campaign. It runs in the browser with no account or download, saves locally, and works offline after the first load. Built by Peter Cai."
+   ]
+  },
+  {
+   "title": "Voxtral 3",
+   "url": "https://mistral.ai/news/voxtral-3/",
+   "hn_url": "https://news.ycombinator.com/item?id=50168396",
+   "points": 757,
+   "comments": 195,
+   "bullets": [
+    "Four models and an SDK, not one release. Voxtral Small Transcribe 3 is the accuracy flagship; Voxtral Mini Transcribe 3 is a 4B batch model; Voxtral Mini Transcribe Realtime 3 streams; and Voxtral Mini TTS 3 does speech out. The SDK wires listening, reasoning, tool calling and speaking into a single streaming pipeline, EU-hosted or self-deployed.",
+    "The prices are the part worth copying down: $0.0035 per minute for Mini Transcribe batch, $0.0040 for Small Transcribe, $0.008 for Mini Transcribe Realtime, $13 per million characters for TTS, and $0.04 per minute for the voice agent API with Mistral Small 4 doing the reasoning, $0.08 with a larger model.",
+    "Coverage is asymmetric and the page is honest about it in places and inconsistent in others: 50+ languages for batch transcription including all 24 official EU languages, 35+ for realtime (the model card says 40+), 35+ languages and 50+ dialects for TTS, but voice presets for only 18. Realtime transcription is quoted at sub-500ms latency, with a full agent turn under a second.",
+    "Mistral claims state-of-the-art multilingual transcription and diarization and says Small beats Whisper, Scribe v2 and Gemini 3.5 Transcribe — but the charts report WER and cpWER as bars whose labels cannot be matched to models, so there is no number to quote. The genuinely useful features are context biasing (feed it key terms or free text to lift recall on domain vocabulary, no fine-tuning), diarization, end-of-turn prediction, phoneme pronunciation hints, and voice cloning from 30+ minutes of audio."
+   ]
+  },
+  {
+   "title": "The 1.5°C goal of the Paris Agreement is no longer viable",
+   "url": "https://unric.org/en/unep-emissions-gap-report-2026-1-5-degree-overshoot/",
+   "hn_url": "https://news.ycombinator.com/item?id=50177911",
+   "points": 609,
+   "comments": 745,
+   "bullets": [
+    "UNEP's Emissions Gap Report 2026 is titled \"The Point of Return\", and its finding is that the chance of holding 1.5°C with no or limited overshoot has been lost. Exceeding it is described as imminent and inevitable. The goal it proposes instead is to stay under 2°C and then bring warming back to 1.5°C by 2100.",
+    "The gap is arithmetic, not rhetoric. Against 2025 levels, emissions need to fall 18% by 2030, 45% by 2035 and 69% by 2040. Full delivery of every national pledge now on the table gets 5–8% by 2030 and 11–15% by 2035. The UN Secretary-General's framing of the required rate is close to 6% every single year to 2035, and his summary of the cause is that \"the emissions gap is now a leadership gap\".",
+    "Fuel by fuel, by 2035: coal down 55%, oil down 15%, gas down 5%. By 2040 the required cuts are at least 75%, 30% and 35%. Renewable capacity has to triple by 2035 relative to 2025. And the return path needs 320 gigatonnes of CO2 removed from the atmosphere by the end of the century — roughly eight times everything emitted in 2024 — via reforestation plus compression, mineralisation and underground storage.",
+    "The one line of good news is in UNEP chief Inger Andersen's own quote: \"Since the adoption of the Paris Agreement, global renewable electricity capacity has grown three times faster than anticipated\", with solar PV build-out running seven times faster. The report's point is that this has happened and the gap is still this wide."
+   ]
+  },
+  {
+   "title": "Apple broke an essential presentation feature of iPads",
+   "url": "https://teddysvoronos.com/2026-10-19-apple-broke-an-essential-presentation-feature-of-ipads/",
+   "hn_url": "https://news.ycombinator.com/item?id=50165208",
+   "points": 597,
+   "comments": 293,
+   "bullets": [
+    "The behaviour that is gone: on iPadOS 26 you could keep a presentation on the external display while using other apps on the iPad itself. On iPadOS 27 the most recently tapped app takes the external display, so touching anything else mirrors your whole iPad to the room — with or without Stage Manager.",
+    "The failure is different per app, which is what makes it a mess rather than a change. GoodNotes recovers its presenter view when you tap back in. Keynote exits the presentation outright. PowerPoint lands in a state where you have to restart the presentation to carry on.",
+    "The author is Teddy Svoronos, who teaches: he annotates handouts in GoodNotes projected over AirPlay, drives a PowerPoint deck running on a Mac, keeps private notes on which student to call on next, and checks poll results before showing them. Every one of those is now a tap that reveals the iPad to the class.",
+    "His proposed rule is a single sentence — the presenting app should hold the external display until the presentation stops, the document closes or the app quits. He has filed FB23615646 with Apple, says the behaviour persists in the latest betas, and will not recommend iPadOS 27 to anyone who teaches or presents from an iPad."
+   ]
+  }
+ ],
+ "markets": {
+  "indices": [
+   {
+    "name": "Sensex · Wed 21 Oct close",
+    "value": "73,709.69",
+    "change": "−143.21 (0.19%); second straight fall",
+    "direction": "down"
+   },
+   {
+    "name": "Nifty 50 · Wed 21 Oct",
+    "value": "22,811.35",
+    "change": "−77.60 (0.34%)",
+    "direction": "down"
+   },
+   {
+    "name": "Nifty IT · Wed",
+    "value": "+2.9%",
+    "change": "The one sector green; Infosys +3.30%, HCLTech +3.21%",
+    "direction": "up"
+   },
+   {
+    "name": "Nifty MidCap 100 · Wed",
+    "value": "−1.58%",
+    "change": "SmallCap 100 −2.37%",
+    "direction": "down"
+   },
+   {
+    "name": "NSE breadth · Wed",
+    "value": "884 up / 3,361 down",
+    "change": "157 unchanged; Bajaj Finance −3.27% worst in the Nifty",
+    "direction": "down"
+   },
+   {
+    "name": "USD/INR · Wed 21 Oct",
+    "value": "94.38",
+    "change": "Rupee +53 paise to a six-week high; prev close 94.91 (Mon 19 Oct)",
+    "direction": "down"
+   },
+   {
+    "name": "Dollar index · Wed",
+    "value": "101.59",
+    "change": "+0.07%",
+    "direction": "up"
+   },
+   {
+    "name": "Brent crude · Wed",
+    "value": "$110.96",
+    "change": "+1.99% in futures trading",
+    "direction": "up"
+   },
+   {
+    "name": "FII cash · Wed 21 Oct",
+    "value": "+₹1,022.32 cr",
+    "change": "DIIs +₹1,614.32 cr; both provisional",
+    "direction": "up"
+   },
+   {
+    "name": "Jio Platforms IPO",
+    "value": "₹30,213 cr",
+    "change": "Band ₹1,065–1,119; fully subscribed in 100 minutes; closes 23 Oct",
+    "direction": "up"
+   }
+  ],
+  "stories": [
+   {
+    "headline": "The rupee had its best day in six weeks and the market still fell, because the two were being moved by different things",
+    "url": "https://theprint.in/economy/rupee-closes-at-six-week-high-of-94-38-driven-by-jio-ipo-rbi-intervention/3078122/",
+    "source": "PTI via ThePrint for the rupee, dollar index, Brent, FII cash and the Jio Platforms IPO terms; HDFC Sky's close report for Wednesday 21 October for the index closes, Nifty IT, breadth and single-stock moves; IANS via Telangana Today for the MidCap 100 and SmallCap 100 percentages; NiftyTrader's provisional cash table for the DII figure",
+    "bullets": [
+     "This is the Wednesday 21 October session — the first full day back after Tuesday's Dussehra holiday, and the second consecutive down day. Sensex 73,709.69, −143.21 (0.19%). Nifty 50 22,811.35, −77.60 (0.34%). The headline numbers understate it: 3,361 stocks fell on the NSE against 884 that rose, the MidCap 100 lost 1.58% and the SmallCap 100 2.37%.",
+     "Nifty IT rose 2.9% and nothing else major did. Infosys +3.30%, HCL Technologies +3.21%, Tech Mahindra +3.13%, TCS +2.77% — which is what a weaker rupee against a softer dollar does to exporters' earnings arithmetic. On the other side, Bajaj Finance −3.27%, BSE −2.63%, Eternal −2.45%, Eicher Motors −2.43%.",
+     "The rupee went the other way: 94.38 to the dollar, up 53 paise from Monday's 94.91 and the strongest in six weeks, which PTI attributes to Jio Platforms IPO inflows and RBI intervention. Gaurav Garg of Lemonn gives the mechanism plainly — foreign investors subscribing to a large IPO sell dollars to buy rupees. Anuj Choudhary of Mirae Asset Sharekhan expects 94.20–94.80 from here.",
+     "The thing threatening both is Brent at $110.96, up 1.99%. The Jio Platforms issue is ₹30,213 crore in a band of ₹1,065–1,119, was fully subscribed inside 100 minutes, and closes on 23 October. Provisional cash flows were positive on both sides — FIIs +₹1,022.32 crore, DIIs +₹1,614.32 crore — which is the clearest sign that Wednesday's selling was in the broader market, not the index."
+    ]
+   }
+  ]
+ },
+ "trends": [
+  {
+   "tag": "India",
+   "headline": "India bought 6.8% more crude in September and paid 46.6% more for it",
+   "url": "https://www.angelone.in/news/economy/india-crude-oil-import-bill-rises-46-to-90-6-billion-in-april-september-2026",
+   "subject": "PPAC data shows India's September 2026 crude import bill at $15.4 billion, up 46.6% year on year on a 6.8% rise in volume, with the April-September total at $90.6 billion.",
+   "subtitle": "Angel One's report on Petroleum Planning and Analysis Cell data, published 21 October 2026",
+   "bullets": [
+    "The two percentages are the whole story. Volume imported in September 2026: 21.7 million tonnes, up 6.8% year on year. Bill for it: $15.4 billion, up 46.6%. India did not start drinking much more oil; the oil got much more expensive.",
+    "Over the first half of the financial year the pattern is starker. April to September volumes were 122.7 million tonnes against 121.8 million tonnes a year earlier — call it flat. The bill over the same six months was $90.6 billion, up 46.3%. Essentially all of a $28-billion-odd increase is price.",
+    "The sensitivity is worth memorising because it comes up every time crude moves: India imports roughly 1.8–2 billion barrels a year, so each $1 on the barrel adds about $2 billion to the annual import bill. Import dependence is above 85%, which is the reason this is a macro story and not an energy-sector story.",
+    "Brent was near $110 on the day the figures were reported, and closed the Indian session at $110.96. That is the number that decides whether the current-account arithmetic for the second half looks like the first half or worse. The September figures are provisional."
+   ]
+  },
+  {
+   "tag": "Cloud",
+   "headline": "Google Cloud has started selling OpenAI's models, and the interesting part is the invoice",
+   "url": "https://cloud.google.com/blog/products/ai-machine-learning/google-cloud-brings-openai-models-to-customers",
+   "subject": "Google Cloud is putting OpenAI's GPT-6 Astra, GPT-6.1 Sol and GPT-6 Luna into its model garden in private preview, billed through Google Cloud Marketplace against existing cloud commitments.",
+   "subtitle": "\"Google Cloud expands model choice and flexibility, bringing OpenAI models to customers\", Michael Gerstenhaber, VP Product Management for Gemini at Google Cloud, 21 October 2026",
+   "bullets": [
+    "Three models, named: GPT-6 Astra for demanding coding, computer use, professional and scientific work; GPT-6.1 Sol for what Google calls \"near-Astra intelligence at lower cost\"; and GPT-6 Luna as \"a fast, cost-efficient model for everyday work at scale\". They are \"rolling out now in private preview to select enterprise customers\", with an interest form rather than a signup button.",
+    "The commercial mechanism matters more than the model list. Purchases go through Google Cloud Marketplace, land on one Google Cloud invoice, draw down existing cloud spend commitments and count towards Flexible Savings Plans across providers. Google's pitch is switching models without \"architectural lock-in or separate vendor contracts\" — which is a pitch aimed at procurement, not engineering.",
+    "From yesterday you can also point a local Codex CLI or Codex Desktop at Google's Gemini platform for inference. Google says prompts, context and outputs stay inside the customer's data perimeter and are never used to train foundation models, that the models run on dedicated infrastructure with VPC Service Controls and unified audit logging, and that Zero Data Retention and Confidential Compute are \"coming soon\" — i.e. not yet.",
+    "The claim Google actually wants read is the positional one: it says it is the only hyperscale provider offering Gemini, Claude and GPT together, alongside more than 200 first-party, third-party and open models. The only customer quote is from Box's VP of AI Products, Yashodha Bhavnani, which tells you who the private preview is for."
+   ]
+  },
+  {
+   "tag": "Physics",
+   "headline": "A step one atom high works as a rail, and quantum vortices run along it a thousand times more easily than across it",
+   "url": "https://arxiv.org/abs/2608.01196",
+   "subject": "In an atomic-layer indium superconductor grown on a stepped silicon surface, Josephson vortices move with a 1000-fold directional anisotropy, imaged by scanning tunnelling microscopy.",
+   "subtitle": "Qian, Chauhan, Nemoto, Sagisaka, Yoshizawa and Uchihashi, \"Anisotropic transport of Josephson vortices in atomic-layer superconductors on vicinal surfaces\", Phys. Rev. B 114, 055422 (2026); NIMS/MANA coverage via ScienceDaily, 16 October 2026",
+   "bullets": [
+    "Vortices are why superconductors stop being perfectly resistanceless in a magnetic field: a vortex that moves dissipates energy. So the practical question in this field is not how to remove them but where to make them go. The answer here is a surface feature a single atom tall.",
+    "The material is Si(111)-(√7×√3)-In, an indium layer two atoms thick on silicon, grown on a vicinal surface — a wafer cut slightly off-axis so it terraces into regular parallel atomic steps. Scanning tunnelling microscopy imaged Josephson vortices sitting along those steps. Four-terminal resistance then showed sheet resistance differing by about a factor of 1,000 depending on whether current pushed vortices along the steps or across them.",
+    "Between roughly 0.10 and 0.20 tesla the flow is one-dimensional and pinning-free — the vortices slide along the steps instead of getting caught on defects. At higher temperature and low field they creep thermally with a direction-dependent activation energy; raising the field drives that energy towards zero, anisotropically. At the lowest temperatures the motion is quantum tunnelling.",
+    "Lead author Takashi Uchihashi's point in the NIMS write-up is that the guiding is tunable by temperature and field alone, with no lithography involved. The honest caveat, which the coverage makes, is that low-power superconducting electronics is a long way downstream of a 2D indium film on a miscut wafer."
+   ]
+  }
+ ],
+ "research": [
+  {
+   "tag": "Industry · Microsoft Research",
+   "title": "A conjecture from 1995 fell on 4 October, and what the AI contributed was a hundred dead ends run in parallel",
+   "url": "https://www.microsoft.com/en-us/research/blog/solving-a-31-year-old-grand-challenge-in-mathematics-the-kls-conjecture/",
+   "subject": "Microsoft Research reports a proof of the Kannan-Lovasz-Simonovits conjecture with no dimension dependence, reached through a human-directed agentic search over roughly a hundred candidate proof routes.",
+   "subtitle": "\"Solving a 31-year-old grand challenge in mathematics – the KLS conjecture\", Xinzhi Zhang, Microsoft Research blog, 21 October 2026",
+   "bullets": [
+    "The conjecture, posed by Kannan, Lovász and Simonovits in 1995, asks whether the best flat cut through a high-dimensional distribution is always within a universal constant of the best cut of any shape, however many dimensions you have. It is not an idle question: the geometry of those cuts controls how fast a random walk explores a distribution, which is the engine under high-dimensional sampling and a great many randomised algorithms.",
+    "The best previous bound, from July 2026, still grew slowly with dimension. The proof arrives in three moves: a new criterion that improves that bound, applied recursively (the 1 October version got the dependence down to an iterated logarithm, which still grows), and then the recursion applied again with a proof that the accumulated error stays inside a universal constant. The 4 October version is the complete one.",
+    "The AI's role is described precisely enough to be useful. Multiple agents explored variations in parallel; the researcher pruned the dead ends and fed the survivors forward. More than a hundred candidate approaches were tried. Models also helped with derivations, manuscript preparation and internal proof checks. The authors state that the recursive method, its repeated application and the error bound are their own, and that the same leading models given a similar token budget and no human direction fell short.",
+    "Two things make this more than a press release. Two independent proofs appeared the same day — arXiv 2610.05474, which calls the Microsoft criterion \"the crucial step in the proof\", and arXiv 2610.07728 using a closely related idea. And a Lean 4 formalisation has since been released, with the authors verifying a streamlined argument in Lean. Results that previously had to say \"assuming KLS\" no longer have to."
+   ]
+  },
+  {
+   "tag": "Academia · UIUC",
+   "title": "MemComposer: Learning to Assemble Memories for LLM Agents via Reinforcement Learning",
+   "url": "https://arxiv.org/abs/2610.21091",
+   "subject": "MemComposer picks which past experiences an agent is shown, how many of them, and in what order, and is trained by scoring whole agent runs on task success.",
+   "subtitle": "Yixuan Xie, Xueqiang Xu, Xinyi Fan and nine co-authors, including Jiawei Han, at UIUC and collaborators; arXiv 2610.21091, 15 October 2026",
+   "bullets": [
+    "The premise is a complaint anyone who has built an agent memory will recognise: retrieval is done by semantic similarity, and \"semantic similarity alone does not guarantee memory usefulness\". The nearest neighbour to your query is often the least informative thing you could have shown the model.",
+    "So instead of retrieving and stuffing, they put a composer in between. It looks at the query and the whole candidate set together and decides three things: which experiences go in, how many go in, and what order they appear in. Order is the one most systems never treat as a decision at all.",
+    "It is trained by Experience Policy Optimization, a GRPO-based scheme whose reward is not retrieval relevance but whether the complete agent interaction succeeded. That is the right loop and an expensive one — every gradient signal costs a full rollout — which is presumably why nobody does this by default.",
+    "Across three τ²-bench domains and two frozen executors it beats the strongest baseline for each executor while using 16.9% and 4.9% fewer memory tokens respectively — better answers on a smaller prompt. The learned policy also transfers to unseen domains, unseen executors and unseen memory banks, and gets better when the memories were written by a stronger model, without retraining."
+   ]
+  }
+ ],
+ "wild": [
+  {
+   "tag": "Oral care",
+   "headline": "Boka and Olipop have made a toothpaste that tastes of a soda, sold first on TikTok Shop",
+   "url": "https://www.happi.com/breaking-news/boka-x-olipop-toothpaste-collaboration-hits-the-market/",
+   "entities": [
+    "Boka",
+    "Olipop"
+   ],
+   "subject": "Boka, which makes toothpaste, and Olipop, which makes probiotic soda, put out a joint tube that tastes of Pomegranate Sparkle, on sale at TikTok Shop from 14 October.",
+   "subtitle": "Christine Esposito for Happi, 14 October 2026",
+   "bullets": [
+    "The product is Boka x Olipop Pomegranate Sparkle Probiotic Toothpaste, limited edition, built to taste like Olipop's new Pomegranate Sparkle soda. The flavour is not actually pomegranate-flavoured sugar water: the notes listed are yuzu oil, Spanish lemon and vanilla, which Boka describes as \"bold, luminous, and delightfully fresh\".",
+    "Two formats, and the second one is the giveaway as to who this is for: a 3.4oz tube and a 1.3oz stocking-stuffer duo kit. It debuted on 14 October on TikTok Shop and Boka's own site, with supermarket distribution following later in October and again in November.",
+    "The logic is less silly than it sounds. Toothpaste flavour is one of the few things people can describe an opinion about without being taught anything, and a soda brand already owns a flavour vocabulary that an oral-care brand has to build from scratch. Borrowing it is cheaper than inventing it.",
+    "The discipline here is that neither brand pretended the other's category was involved. It is not a soda with fluoride in it, and it is not a toothpaste that claims to be a drink. It is one brand lending another its taste, for about six weeks, in a tube."
+   ]
+  },
+  {
+   "tag": "Outdoor",
+   "headline": "Garmin had a mountaineer rope down a motorway advertising mast, because adventure is meant to be nearby",
+   "url": "https://marketingreport.nl/capital-sports-ontwikkelt-ooh-activatie-voor-garmin",
+   "entities": [
+    "Garmin",
+    "Capital Sports"
+   ],
+   "subject": "A Dutch out-of-home activation had a climber abseil from a roadside advertising mast beside the A12 to launch a watch.",
+   "subtitle": "Marketing Report (Netherlands), 29 September 2026",
+   "bullets": [
+    "The object is a reclamemast — one of the tall single-pole advertising towers that stand beside Dutch motorways — on the A12 near Utrecht. A mountaineer went down it on a rope, in full view of commuter traffic, with the watch on the board above him.",
+    "The English-language trade press has been reporting this as climbers scaling the billboard. The Dutch report, which is the one nearest the agency, says he abseiled: the mast was the thing descended, not ascended. Worth noting because the difference is the entire joke.",
+    "The film built from it opens looking like a mountain face and then pulls back to reveal a motorway, a mast and a hard shoulder. The line being argued is that you do not need a distant destination, which is a more honest pitch for a sports watch than most — the people who buy them mostly use them within ten kilometres of home.",
+    "It is the Dutch adaptation of Garmin's global \"Play Harder\" campaign, launching the fēnix 9 series, with strategy and creative by the sports marketing agency Capital Sports. No budget figure and no named spokesperson, which for a stunt whose main cost is a rope and a permit is probably the right amount of disclosure."
+   ]
+  },
+  {
+   "tag": "Weddings",
+   "headline": "Ethnix by Raymond put a mandap on a moving float in Gurgaon and married a real couple on it",
+   "url": "https://roastbrief.us/madison-media-takes-ethnix-by-raymonds-wedding-mandap-to-the-streets-with-mandap-on-wheels-campaign",
+   "entities": [
+    "Ethnix by Raymond",
+    "Raymond Lifestyle",
+    "Madison Media",
+    "MOMS Outdoor"
+   ],
+   "subject": "A men's ethnic wear brand staged an actual wedding ceremony on a decorated float that drove through Gurgaon.",
+   "subtitle": "Roastbrief US on the Madison Media activation for Ethnix by Raymond, 15 October 2026",
+   "bullets": [
+    "A decorated wedding mandap was built on a moving float, with a live band, and driven through Gurgaon. A couple were actually married on it while it moved. The branding was on every surface — float, mandap, band, cast — which Raymond Lifestyle's CMO Kalpana Singh sums up as \"every surface carries the brand\".",
+    "The route was not chosen for spectacle. It was chosen for footfall and it finishes within reach of the brand's Gurgaon stores, which is an unusually blunt admission that an out-of-home stunt is a funnel and not an artwork.",
+    "Duration, in the CMO's words, was \"a few hours of street-level noise\" — and then the footage went to work on Meta, meme pages and the advertising community, which is the part the budget was actually for. Conceived and executed by Madison Media, with MOMS Outdoor on the street side.",
+    "The reason it lands in India rather than anywhere else: a baraat already blocks traffic, already has a band, already stops strangers to look. The stunt is not an intrusion into the street, it is a format the street recognises, with a logo on it."
+   ]
+  }
+ ],
+ "learn": {
+  "title": "Barcodes are stripes instead of circles because printers smudge, and a smudged stripe just gets taller.",
+  "subject": "The original 1949 barcode was concentric circles; the linear design won in the 1970s because ink spread ruins a circle's geometry but only makes a bar taller.",
+  "body": [
+   "In 1949 a man called Norman Joseph Woodland was sitting on a Florida beach, thinking about a problem a supermarket manager had put to his friend Bernard Silver: how do you get a checkout to know what an item is. He was running his fingers through the sand, and he had learned Morse code as a Boy Scout. In his own words: \"I just extended the dots and dashes downwards and made narrow lines and wide lines out of them.\" Four lines in the sand. He and Silver filed the patent on 20 October 1949, and it was granted on 7 October 1952 as US 2,612,994, \"Classifying Apparatus and Method\".",
+   "Except what they patented was not the barcode you know. It was a bull's-eye: concentric circles, so that the reader would work no matter which way round the tin was sitting. Twenty years of nothing followed, mostly because reading it needed a 500-watt bulb. Then in 1972 the American grocery industry ran a real contest, and RCA put the bull's-eye into a Kroger store in Cincinnati for eighteen months of live trial. It failed for a reason nobody designing on paper would have predicted: printing presses smear.",
+   "Here is the whole insight. Put extra ink on a printed circle and the circle's geometry is wrong — the rings bleed into each other and the code becomes unreadable from most angles. Put extra ink on a vertical bar and the bar gets taller. The scanner is reading a thin horizontal slice through the middle, and a taller bar has exactly the same slice. IBM's Paul McEnroe made the point that round codes also take more space, because the lines have to go all the way around. IBM's linear design won, and on 26 June 1974 a checkout worker at a Marsh supermarket in Troy, Ohio, scanned a ten-pack of Wrigley's Juicy Fruit gum — chosen, legend has it, because people doubted anything that small could carry a code. The thing on the side of nearly every object you own is shaped the way it is because of how badly a cheap press lays down ink."
+  ],
+  "source_url": "https://www.history.com/articles/upc-barcode-invention-ibm-laurer"
+ },
+ "ideas": {
+  "prompt": "Ten businesses you could start with ₹50,000",
+  "note": "Altucher's drill: ten against one prompt, written fast, not defended. Reddit rate-limited the fetcher after r/SomebodyMakeThis, so the raw material is that week of it plus the Ask HN idea threads and Y Combinator's current Requests for Startups. The two recurring wishes that shaped this list were somebody to handle the admin an older relative cannot face, and the fact that second-hand things are unsellable mostly because nobody photographs them. Eight of these are mine; two are marked.",
+  "items": [
+   {
+    "text": "A laundry round for one hostel block: collected at 8pm, back folded by 8am, flat monthly rate, no itemised bill."
+   },
+   {
+    "text": "Water-tank cleaning. Every building has two, nobody wants to do it, and the pressure washer costs less than a phone."
+   },
+   {
+    "text": "A paperwork-and-queues service for older neighbours — bank forms, pension proof, hospital appointments, one fixed fee an errand.",
+    "why": "Y Combinator's current RFS asks for caregiver coordination tools for an ageing population; the version that works on ₹50,000 is a person with a scooter and a folder."
+   },
+   {
+    "text": "Photograph other people's second-hand listings properly, for a flat fee per item.",
+    "why": "The recurring complaint on r/SomebodyMakeThis is that resale stock is impossible to browse — which is a photography problem, not a software one."
+   },
+   {
+    "text": "Buy used textbooks at the end of term and sell them at the start of the next, with a written promise to buy them back."
+   },
+   {
+    "text": "One tiffin, no menu, no choice: you cook whatever the morning market was cheapest on, and the subscriber finds out at lunch."
+   },
+   {
+    "text": "Rent out a projector, a speaker and a bedsheet for terrace film nights, delivered and collected."
+   },
+   {
+    "text": "A weekend repair bay in an apartment basement — a stand, a toolkit, a floor pump and a whiteboard of fixed prices."
+   },
+   {
+    "text": "Plant-sitting for the fortnight the whole building is away, charged per pot."
+   },
+   {
+    "text": "A 4am flower run: buy at the wholesale market, deliver to forty small offices before anyone arrives, bill monthly."
+   }
+  ]
+ }
+}
