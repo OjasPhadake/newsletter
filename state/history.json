@@ -6721,6 +6721,168 @@
         "marketingreport.nl",
         "roastbrief.us"
       ]
+    },
+    {
+      "date": "2026-10-23",
+      "issue": 1,
+      "quote_text": [
+        "I am standing puzzled, unable to decide whether the veil is really being lifted, or lowered more firmly in place; whether I am witnessing a revelation or a more efficient blinding."
+      ],
+      "quote_author": [
+        "Ralph Ellison"
+      ],
+      "idea_text": [
+        "A reading club where nobody reads the same book — everyone brings whatever they are halfway through and gets four minutes to say why.",
+        "A repair club: one evening a month, bring the broken thing and the person who can fix that category sits at a labelled table.",
+        "A walking club with no fitness angle, which walks one bus route end to end each month and stops wherever looks interesting.",
+        "A club for people learning an instrument badly, where the entry requirement is that you are worse than you want to be.",
+        "A cooking club that only makes dishes someone's grandmother made, with the grandmother on speakerphone.",
+        "A club that meets at 6am to do nothing in particular, and disbands by 7.",
+        "A letter-writing club: two hours, paper, stamps bought in bulk, and a rule that nothing you write is about work.",
+        "A club for the second half of hobbies people quit — unfinished sketchbooks, half-built kits, abandoned languages.",
+        "A club that takes one local question a month and tries to answer it properly, then publishes the answer on a noticeboard.",
+        "A club where members swap one thing they own and genuinely like, with the condition that you must give it back if asked."
+      ],
+      "idea_prompt": [
+        "Ten clubs worth starting in your city"
+      ],
+      "tip_text": [
+        "Stop reaching for `sed -i` on files you might want back. Since Claude Code 2.1.309 it runs as a plain Bash command rather than a simulated file edit, which means `/rewind` no longer restores what it changed — use Edit when a checkpoint matters, and keep `sed -i` for things you would not mind redoing by hand.",
+        "Put the rules at the top of a nested `CLAUDE.md`, not the bottom: 2.1.309 fixed sessions that compacted over and over on a very large nested file by loading only its start once it passes the size limit. If your module-level file has grown, the end of it may simply not be in context."
+      ],
+      "hn_id": [
+        "50180873",
+        "50177916",
+        "50195959",
+        "50195110",
+        "50182987"
+      ],
+      "link": [
+        "https://github.com/php/php-src/releases/tag/php-8.2.35",
+        "https://scotthelme.co.uk/eight-bits-of-trust-emudhras-ca-keys-cracked-in-milliseconds/",
+        "https://quad9.net/news/blog/au-revoir-france/",
+        "https://emudhra.com/en/press-release/emudhra-to-exit-global-ssl-tls-certificate-business",
+        "https://thephp.foundation/blog/2026/10/21/todays-php-security-release-and-how-were-strengthening-php-security/",
+        "https://www.sebi.gov.in/legal/circulars/oct-2026/margin-waiver-on-subsequent-buy-sell-transactions-post-early-pay-in-epi-in-cash-segment_105364.html",
+        "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation",
+        "https://www.medievalists.net/2026/10/archaeologists-uncover-10th-century-building-at-lost-medieval-royal-palace-in-germany/",
+        "https://www.creativemoment.co/specsavers-becomes-the-latest-brand-to-reference-the-bayeux-tapestry",
+        "https://indiantelevision.com/mam/cipla-takes-asthma-awareness-to-kolkatas-durga-puja-pandals/",
+        "https://mediashotz.co.uk/sheba-helps-cat-owners-win-feline-affection-in-new-amv-bbdo-campaign/",
+        "https://www.anthropic.com/research/formal-verification",
+        "https://arxiv.org/abs/2610.23036",
+        "https://www.indiainfoline.com/news/markets/stock-market-today-sensex-falls-460-points-nifty-closes-below-22700-media-fmcg-and-it-stocks-drag"
+      ],
+      "subject": [
+        "Shares a seller hands over up front will count as margin against the same day's next cash-market trade, and if the seller then backs out of the sale the broker's own collateral absorbs the gap. Announced 22 October 2026, live from 22 February 2027.",
+        "Anthropic handed over the Agent Skills format — a folder with a SKILL.md file in it — together with its name, logo, GitHub home and agentskills.io domain, a year after inventing it and a million published skills later.",
+        "Excavations at Helfta near Lutherstadt Eisleben, Saxony-Anhalt, uncovered a 10th-century stone building with a cellar at a royal palace site associated with Otto the Great.",
+        "Specsavers ran outdoor advertising reworking the Bayeux Tapestry scene of King Harold struck in the eye by an arrow, with the line \"Something in your eye? Should've goneth to Specsavers\", timed to the tapestry's London loan.",
+        "Cipla's Berok Zindagi campaign installed walk-through giant inhalers as the entry points to three Kolkata Durga Puja pandals from 14 to 20 October 2026, with a free digital lung-health assessment reached by QR code.",
+        "Sheba launched \"Ignored to Adored\", an AMV BBDO programme promising to help cat owners win over aloof cats in days, backed by a money-back guarantee and built on the Waltham Petcare Science Institute's SHINE framework.",
+        "Claude produced Rocq-checked proofs that 239 entry points across 123 open-source libraries cannot crash on inputs under 64 MB, working at the level of the compiled RISC-V binary, and turned up hundreds of real bugs while trying.",
+        "A CMU and USC study isolates three design choices in looped transformers and reports that a prelude-recurrent-coda sandwich with input injection beats the Ouro design, and at matched FLOPs uses 75% fewer resident parameters than a 112-layer feedforward MoE.",
+        "In Wilson et al.'s 2014 Science paper, college students disliked 6 to 15 minutes alone with their own thoughts so much that many pressed a button to self-administer a shock they had rated as unpleasant."
+      ],
+      "brand": [
+        "Specsavers",
+        "Cipla",
+        "Sheba"
+      ],
+      "brand_mention": [
+        "King Harold",
+        "Something",
+        "Specsavers",
+        "Bayeux Tapestry",
+        "Talon",
+        "Omnicom Media",
+        "Tube",
+        "Ta-Pastry",
+        "Design Museum",
+        "Hawthorne",
+        "Heaney",
+        "Mastercard",
+        "Mia Hansson",
+        "Santosh Mitra Square",
+        "Sree Bhumi Sporting Club",
+        "Shibmandir Sarbojanin Durgotsab Samiti",
+        "QR",
+        "Breathefree",
+        "Cipla's",
+        "Swaasa",
+        "Asthma",
+        "InhalersHainSahi",
+        "Kolkata",
+        "Ignored",
+        "Adored",
+        "Sheba",
+        "France",
+        "Waltham Petcare Science Institute's SHINE",
+        "AMV BBDO",
+        "Weber Shandwick",
+        "Germany",
+        "Spain",
+        "Poland",
+        "Thailand",
+        "Australia",
+        "Anna Szpot",
+        "Dr Tammie King",
+        "Waltham",
+        "Haley Lu Richardson",
+        "Darbin",
+        "Cat Burns",
+        "Ollie",
+        "Olympic",
+        "Ilia Malinin",
+        "Mysti",
+        "Sharvari"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "From February, shares you deliver early will pay the margin on your next trade the same day — and your broker's own money is the backstop"
+        ],
+        [
+          "trends",
+          "Anthropic has given away the Agent Skills standard, a million skills after inventing it"
+        ],
+        [
+          "trends",
+          "A 9-by-5-metre stone house from the 900s has turned up at a German royal palace, and almost nobody built in stone then"
+        ],
+        [
+          "wild",
+          "Specsavers has waited 900 years to put an arrow in King Harold's eye"
+        ],
+        [
+          "wild",
+          "Cipla made the entrance to three Durga Puja pandals a giant inhaler you walk through"
+        ],
+        [
+          "wild",
+          "Sheba will refund you if your cat does not become more affectionate"
+        ],
+        [
+          "research",
+          "Claude wrote 180 million lines of machine-checked proof, and found hundreds of bugs on the way"
+        ],
+        [
+          "research",
+          "Towards Looped Models Done Right, Part I: Topology, Input Injection, Recurrent-State Design"
+        ],
+        [
+          "learn",
+          "Left alone in a room for fifteen minutes, 67% of the men gave themselves an electric shock they had just said they would pay to avoid"
+        ]
+      ],
+      "editorial_domains": [
+        "anthropic.com",
+        "creativemoment.co",
+        "indiantelevision.com",
+        "mediashotz.co.uk",
+        "medievalists.net",
+        "sebi.gov.in"
+      ]
     }
   ]
 }

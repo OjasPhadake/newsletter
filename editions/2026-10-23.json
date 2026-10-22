@@ -1,0 +1,341 @@
+{
+ "date_line": "Friday, 23 October 2026",
+ "issue": 1,
+ "preheader": "A PHP release page got 1,075 points because there is no mitigation left but updating; eight eMudhra CA private keys turn out to be the numbers 4 to 237, and a forged api.stripe.com certificate is accepted by curl, Python and Node; eMudhra is leaving the TLS business it says was 1% of revenue; Quad9 leaves France on 24 November rather than block domains for a Qatari broadcaster; the PHP Foundation calls its own delay a structural failure; Sensex fell 460 points as Brent jumped 3.23% to $112.33 and the rupee gave back eight days of gains; SEBI will let early-delivered shares pay the margin on your next trade from February, with the broker's own collateral as the backstop; Anthropic has given away the Agent Skills standard a million skills after inventing it; a 9-by-5-metre stone house from the 900s turns up at a lost German royal palace; Claude wrote 180 million lines of machine-checked proof that 239 entry points cannot crash, and found hundreds of bugs doing it; a looped model carries 75% fewer resident parameters at the same FLOPs; Specsavers puts an arrow in King Harold's eye; and 67% of men left alone in a room for fifteen minutes gave themselves an electric shock they had just said they would pay to avoid.",
+ "quote": {
+  "text": "I am standing puzzled, unable to decide whether the veil is really being lifted, or lowered more firmly in place; whether I am witnessing a revelation or a more efficient blinding.",
+  "author": "Ralph Ellison",
+  "work": "Invisible Man",
+  "source_url": "https://www.goodreads.com/quotes/tag/absurdity",
+  "note": "The useful half is \"a more efficient blinding\". We test explanations for whether they feel like understanding, and a good explanation and a well-made excuse feel identical from the inside. Anything that reliably produces the sensation of clarity is therefore also the best available tool for hiding something — which is worth remembering the next time a dashboard, a summary or a confident answer makes a hard thing feel settled."
+ },
+ "agent_craft": {
+  "items": [
+   {
+    "text": "Stop reaching for `sed -i` on files you might want back. Since Claude Code 2.1.309 it runs as a plain Bash command rather than a simulated file edit, which means `/rewind` no longer restores what it changed — use Edit when a checkpoint matters, and keep `sed -i` for things you would not mind redoing by hand.",
+    "source": "Claude Code changelog, 2.1.309 (22 October 2026)",
+    "url": "https://code.claude.com/docs/en/changelog"
+   },
+   {
+    "text": "Put the rules at the top of a nested `CLAUDE.md`, not the bottom: 2.1.309 fixed sessions that compacted over and over on a very large nested file by loading only its start once it passes the size limit. If your module-level file has grown, the end of it may simply not be in context.",
+    "source": "Claude Code changelog, 2.1.309 (22 October 2026)",
+    "url": "https://code.claude.com/docs/en/changelog"
+   }
+  ]
+ },
+ "hn": [
+  {
+   "title": "PHP 8.2.35",
+   "url": "https://github.com/php/php-src/releases/tag/php-8.2.35",
+   "hn_url": "https://news.ycombinator.com/item?id=50180873",
+   "points": 1075,
+   "comments": 558,
+   "bullets": [
+    "A GitHub release page, with no prose on it, took 1,075 points. The announcement is four lines: 8.2.35 is \"a security release fixing two critical vulnerabilities (CVE-2026-109618, CVE-2026-109619)\" that \"allow unauthenticated remote code execution\", and then the sentence doing the work — \"There are no complete mitigations, updating is the only safe choice.\"",
+    "The changelog entry is one line long. Under 8.2.35, dated 22 Oct 2026: Core, GHSA-w8hw-w9fx-j79w and GHSA-6wmf-4rv5-p3rp, \"Avoid state corruption via bailout\". For contrast, 8.2.34 on 24 Sep shipped eleven advisories spread across Filter, FPM, MySQLnd, OpenSSL, Phar, SOAP, Standard and Windows. Two bugs in one subsystem beat eleven in eight.",
+    "Patching 8.2 today buys about ten weeks. PHP 8.2 reaches end of life on 31 December 2026 and receives no security fixes after that date, which is stated on the release page itself. Anyone still on 8.2 in January is in the position 8.1 users were in this week, when the security team had to publish minimal source backports for unsupported branches.",
+    "One oddity on the page: the release tag and commit signatures both report \"The key has expired\", so GitHub's verification badge means nothing here. Check the tarball against php.net rather than the green tick."
+   ]
+  },
+  {
+   "title": "Eight Bits of Trust: eMudhra's CA keys cracked in milliseconds",
+   "url": "https://scotthelme.co.uk/eight-bits-of-trust-emudhras-ca-keys-cracked-in-milliseconds/",
+   "hn_url": "https://news.ycombinator.com/item?id=50177916",
+   "points": 923,
+   "comments": 454,
+   "bullets": [
+    "Eight eMudhra intermediate CA private keys were generated almost entirely out of zeros. These are P-384 keys, where the private key should be a random 384-bit number out of roughly 10^115 possibilities; each of these was 47 bytes of zeros followed by one byte, leaving at most 255 values to try. The recovered private keys are the numbers 4, 56, 66, 115, 155, 156, 230 and 237. Helme recovered all eight in under a second on a laptop.",
+    "Six were TLS issuing CAs (DV, OV and EV, two generations each) and two were code-signing CAs. All eight were created in April 2025 and cross-signed by Sectigo's AAA Certificate Services root in May 2025, so the exposure window is about 17 months. Nothing had to be stolen: a public key is published with every certificate, so these keys were effectively public from the day they were issued, and there is no way to know who else noticed.",
+    "Browsers are mostly fine and everything else is not. Chrome pushed a CRLSet on the evening of 17 October and Firefox blocked via OneCRL hours later; Mozilla shipped an NSS update removing the root on 20 October. But Helme forged a certificate for api.stripe.com and curl reported verification OK, Python completed the handshake, and Node reported `authorized: true` — on every Linux and macOS machine he tried. Windows CryptoAPI accepted the chain unless revocation checking was switched on, and even then only one of two code paths called it revoked.",
+    "The hard part is the devices that will never be updated. Routers, printers, televisions and industrial kit ship a frozen CA bundle, and these certificates do not expire until July 2039. eMudhra's own account, posted to Mozilla's Bugzilla, is that a bug in the key ceremony script created a second weak key pair on the HSM and that similar names led to the wrong key being used for the CSR."
+   ]
+  },
+  {
+   "title": "Quad9 (DNS Resolver) to Exit France",
+   "url": "https://quad9.net/news/blog/au-revoir-france/",
+   "hn_url": "https://news.ycombinator.com/item?id=50195959",
+   "points": 921,
+   "comments": 338,
+   "bullets": [
+    "Quad9, a Swiss non-profit resolver, will stop answering French users on Tuesday 24 November. The French courts ruled against it the day before this post, in a case brought by beIN, a Qatari broadcaster with French offices, which wants DNS resolution blocked for domains it says infringe its sports rights. Quad9 says it has no connection to those domains or their operators.",
+    "The penalty is almost beside the point. The court cut it from €580,000 to €1,000 a day, which by 14 November would total €24,000 excluding legal costs. An appeal is pending, and Quad9 says it has around 20 other DNS-blocking cases open.",
+    "The reason it cannot comply is structural. Quad9 keeps no record of where users are, requires no sign-up, and so cannot reliably tell which queries come from France. Adding the domains globally would apply a French ruling worldwide. Geo-IP blocking it has tried before: in a German case brought by Sony Music it was fined for contempt because users reached blocked content over a VPN, and winning that case eventually cost six figures and years.",
+    "The post lists who loses the service: French government agencies, the research and education network, student networks, regional and local authorities, utilities, hospitals, transport operators, broadcasters and private companies. Quad9's argument is that a resolver is the wrong place to fight piracy — the hosting is — and that blocking machinery built for copyright gets reused for politics. It hopes 30 days is enough notice, and admits some users will never see it."
+   ]
+  },
+  {
+   "title": "eMudhra to exit global SSL/TLS certificate business",
+   "url": "https://emudhra.com/en/press-release/emudhra-to-exit-global-ssl-tls-certificate-business",
+   "hn_url": "https://news.ycombinator.com/item?id=50195110",
+   "points": 896,
+   "comments": 610,
+   "bullets": [
+    "Two days after the keys were published, eMudhra's board voted to \"voluntarily withdraw from the global SSL/TLS certificate business\". The Bengaluru-listed company (BSE: 543533, NSE: EMUDHRA) says that line of business contributed about 1% of global revenue, which is the number that explains the decision.",
+    "The incident account is short: affected CAs revoked \"within 14 hours of discovery\", no end-entity certificates issued from them, infrastructure not compromised and no data breached. Chairman V. Srinivasan's framing of the fallout is unusually candid — \"social media amplification\" brought attention \"out of proportion to SSL/TLS's place in our business\" — alongside rising data-sovereignty and compliance costs and the fact that some large players now issue TLS certificates free.",
+    "Customers are not cut off today. The G1 RSA roots keep serving until the transition is complete, affected customers will be contacted and any certificate replaced free of cost through partners, and revocation and status services run until every issued certificate has expired or been replaced. eMudhra also says it will finish its remaining browser root-programme commitments, including a full root-cause report.",
+    "The rest of the business continues: digital signature certificates, eSign and signing services including in India, enterprise PKI (emCA, CertiNext), emSigner, and SecurePass and emAS for identity and authentication. The press release gives no exit date."
+   ]
+  },
+  {
+   "title": "Today's PHP security release, and how we're strengthening security",
+   "url": "https://thephp.foundation/blog/2026/10/21/todays-php-security-release-and-how-were-strengthening-php-security/",
+   "hn_url": "https://news.ycombinator.com/item?id=50182987",
+   "points": 794,
+   "comments": 392,
+   "bullets": [
+    "The sentence that earned the upvotes is an admission: the delay in fixing the out-of-memory bug \"was a structural failure\", caused by the security team's decision process and its lack of resources. The fix was reported on 11 August by Calif as an unconditional RCE, again by Wiz on 24 August, and a third time by OpenAI on 18 September with further vectors, and it shipped on 21 October.",
+    "The coordinated disclosure collapsed in the last 24 hours. Around 15:00 UTC on 20 October the CVE IDs leaked with the wrong release time and a CVSS of 10.0 rather than the actual 9.2; the pre-announcement was pulled forward to 19:30 UTC and the release moved from 22 to 21 October at 14:00; Calif published a proof-of-concept video by mistake around 20:00; and at 07:41 UTC on 21 October Chainguard broke the embargo by shipping images containing the fix, which the Foundation calls a disregard of weeks of coordinated work.",
+    "What they are changing is mostly headcount and process. An Ecosystem Security Team was created in May 2026; Alexandre Daubois joined in July to triage and fix reports and Daniel Scherzer in September for hardening; Volker Dusch is AI Security Engineer in Residence. The security team is moving to majority decisions, and Foundation leadership will step in earlier when a fix involves hard trade-offs. Once the impact was clear in August, the Foundation paid several people to work on the OOM bug full time, nights and weekends included.",
+    "The tooling and volume numbers are the useful part for anyone running a security inbox. After an early-2026 scan with Alpha-Omega using Anthropic's Claude Mythos, the team added OpenAI's Daybreak Red for validating reports and exploits, plus sanitizer builds and reproduction environments matching CI on every supported platform. Since 1 July 2026 they have published 15 CVEs and handled more than 100 reports that were invalid, duplicates or not reproducible. External audits: Quarkslab in 2024 via OSTIF and the Sovereign Tech Agency, Trail of Bits, and Calif from 30 July 2026 under OpenAI's Patch the Planet programme."
+   ]
+  }
+ ],
+ "markets": {
+  "indices": [
+   {
+    "name": "Sensex · Thu 22 Oct close",
+    "value": "73,249.39",
+    "change": "−460.30 (0.62%); third straight fall",
+    "direction": "down"
+   },
+   {
+    "name": "Nifty 50 · Thu 22 Oct",
+    "value": "22,687.65",
+    "change": "−123.70 (0.54%)",
+    "direction": "down"
+   },
+   {
+    "name": "Nifty Media · Thu",
+    "value": "1,584.75",
+    "change": "−2.34%; worst sector of the session",
+    "direction": "down"
+   },
+   {
+    "name": "Nifty FMCG · Thu",
+    "value": "42,962.00",
+    "change": "−1.74%; Nifty IT 31,996.80, −1.31%",
+    "direction": "down"
+   },
+   {
+    "name": "Nifty Bank · Thu",
+    "value": "54,832.35",
+    "change": "−0.26%; Pharma 25,511.30, −0.21% — the two shallowest falls",
+    "direction": "down"
+   },
+   {
+    "name": "Broader market · Thu",
+    "value": "MidCap 100 −0.87%",
+    "change": "SmallCap 100 −1.14%; 426 stocks at 52-week lows against 21 at highs",
+    "direction": "down"
+   },
+   {
+    "name": "Breadth · Thu",
+    "value": "1,323 up / 2,670 down",
+    "change": "155 unchanged",
+    "direction": "down"
+   },
+   {
+    "name": "USD/INR · Thu 22 Oct",
+    "value": "94.82",
+    "change": "Rupee −44 paise from 94.38; opened 94.47, low 94.94; ends an eight-session gaining run",
+    "direction": "up"
+   },
+   {
+    "name": "Dollar index · Thu",
+    "value": "101.60",
+    "change": "−0.17%",
+    "direction": "down"
+   },
+   {
+    "name": "Brent crude · Thu",
+    "value": "$112.33",
+    "change": "+3.23% in futures trading",
+    "direction": "up"
+   },
+   {
+    "name": "FII cash · Thu 22 Oct",
+    "value": "−₹3,458.70 cr",
+    "change": "DIIs +₹2,891.30 cr; both provisional. Wednesday was FII +₹1,022.30 cr",
+    "direction": "down"
+   }
+  ],
+  "stories": [
+   {
+    "headline": "Oil moved 3% in a session and India's market did the arithmetic: the rupee gave back eight days of gains and foreign money left",
+    "url": "https://www.indiainfoline.com/news/markets/stock-market-today-sensex-falls-460-points-nifty-closes-below-22700-media-fmcg-and-it-stocks-drag",
+    "source": "IndiaInfoline's closing report for Thursday 22 October for the index closes, the sectoral table and breadth; 5paisa's post-market update for the MidCap and SmallCap percentages and the 52-week low count; PTI (via Daily Excelsior) for the rupee, the dollar index, Brent and the analyst quote; 5paisa's FII/DII cash table for the flow figures",
+    "bullets": [
+     "This is the Thursday 22 October session, the third consecutive down day. Sensex 73,249.39, −460.30 (0.62%). Nifty 50 22,687.65, −123.70 (0.54%). The index numbers understate the day: 2,670 stocks fell against 1,323 that rose, and 426 hit 52-week lows against 21 at highs.",
+     "The driver is one number. Brent closed the Indian session at $112.33, up 3.23% in futures trading — SBI Securities' Sunny Aggrawal attributed the jump to attacks on a Saudi Aramco oilfield. Everything that falls when imported oil rises duly fell: Nifty Energy −1.11%, FMCG −1.74%, Media −2.34%. IndiaInfoline's table has Nifty Pharma at −0.21% and Nifty Bank at −0.26%, the two shallowest declines of the twelve sectoral indices it lists.",
+     "The rupee is the cleanest read on the oil bill. It closed at 94.82, down 44 paise from Wednesday's 94.38, having opened at 94.47 and touched 94.94 — and that ends an eight-session gaining run, which is to say the Jio-IPO dollar inflows that drove Wednesday's six-week high were worth less than one day of crude. The dollar index itself was slightly lower, at 101.60, down 0.17%.",
+     "Flows flipped hard. FIIs sold ₹3,458.70 crore net in the cash segment on Thursday after buying ₹1,022.30 crore on Wednesday; DIIs bought ₹2,891.30 crore against ₹1,614.30 crore the day before. Domestic institutions absorbed about five-sixths of the foreign selling, which is why a 3% move in oil produced a 0.5% move in the Nifty rather than a 2% one. All flow figures are provisional.",
+     "Context worth carrying: Wednesday's edition noted India's September crude bill was up 46.6% year on year on 6.8% more volume, and that each $1 on the barrel adds roughly $2 billion to the annual import bill. Thursday's $3.5 move on Brent is, on that arithmetic, about $7 billion a year if it sticks."
+    ]
+   }
+  ]
+ },
+ "trends": [
+  {
+   "tag": "India",
+   "headline": "From February, shares you deliver early will pay the margin on your next trade the same day — and your broker's own money is the backstop",
+   "url": "https://www.sebi.gov.in/legal/circulars/oct-2026/margin-waiver-on-subsequent-buy-sell-transactions-post-early-pay-in-epi-in-cash-segment_105364.html",
+   "subject": "Shares a seller hands over up front will count as margin against the same day's next cash-market trade, and if the seller then backs out of the sale the broker's own collateral absorbs the gap. Announced 22 October 2026, live from 22 February 2027.",
+   "subtitle": "SEBI circular HO/(320)2026-MRD-POD2/I/24141/2026, \"Margin Waiver on Subsequent Buy/Sell Transactions Post Early Pay-In (EPI) in Cash Segment\", 22 October 2026",
+   "bullets": [
+    "The mechanic: if you have a net sell obligation in a settlement and the clearing corporation has accepted your Early Pay-In for the sold securities, the CC must not — \"on a real-time basis\" — collect margin from your broker on your subsequent buy or sell positions, up to the amount of that accepted EPI. Today the EPI value counts towards the peak margin on the sale itself and towards later margin once the sale proceeds are credited to your ledger; from February it works intraday on the next trade.",
+    "The valuation rule is deliberately conservative. On the trade date the CC computes the available EPI value as the lower of the value of the EPI done or the value of the securities sold, and when you take a position on the same trade date in the cash segment, it checks your margin after reducing that available EPI value.",
+    "The interesting clause is the one about changing your mind. If you square off the sale position against which you took the benefit, the EPI value is removed and any resulting margin shortfall at your level is blocked from the proprietary collateral of the trading or clearing member — the broker's own money, not yours. Trade-for-trade securities are excluded, because those settle gross. Brokers are separately directed to let a client square off or open a new position only if the client's required margins are actually with the broker.",
+    "Provenance and timing: the change came from proposals by the Broker Industry Standards Forum and recommendations of SEBI's Risk Management Review Committee, and is issued under Section 11(1) of the SEBI Act 1992 read with Regulation 51 of the SECC Regulations 2018. It comes into force \"four months from the date of issuance\" — so 22 February 2027 — with clearing corporations told to amend bye-laws, make system changes and publish the provisions."
+   ]
+  },
+  {
+   "tag": "Standards",
+   "headline": "Anthropic has given away the Agent Skills standard, a million skills after inventing it",
+   "url": "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation",
+   "subject": "Anthropic handed over the Agent Skills format — a folder with a SKILL.md file in it — together with its name, logo, GitHub home and agentskills.io domain, a year after inventing it and a million published skills later.",
+   "subtitle": "\"Donating Agent Skills to the Agentic AI Foundation\", Anthropic, 22 October 2026",
+   "bullets": [
+    "A skill is almost nothing: a folder with a SKILL.md file and whatever scripts or reference material it needs. That is the whole standard, and it is now owned by the Agentic AI Foundation — a Linux Foundation body Anthropic co-founded with Block and OpenAI last year, and the same place Model Context Protocol was donated. What moved across is the standard, the name and logo, the GitHub organisation and the agentskills.io domain.",
+    "The numbers explain the timing. A million skills have been published and nearly 280 million installed, and more than 70 agent platforms have integrated the format, including ChatGPT, Cursor, GitHub Copilot and VS Code. Skills launched in October 2025 and the open standard was published in December 2025, so this is a one-year-old file format with competitors' products depending on it.",
+    "Maintenance is deliberately depersonalised from the company. Engineers from Anthropic, Google, OpenAI and others will maintain the standard as individuals rather than as corporate representatives, with David Soria Parra and Mahesh Murag as lead maintainers. Using or contributing to the standard does not require joining the foundation.",
+    "What is proposed next tells you what a year of unmanaged growth costs: versioned releases, a formal proposal process, and security guidance for people who write skills and for people who install them. A million folders of instructions and executable scripts, installed 280 million times, is a supply chain whether anyone called it one or not."
+   ]
+  },
+  {
+   "tag": "Wildcard",
+   "headline": "A 9-by-5-metre stone house from the 900s has turned up at a German royal palace, and almost nobody built in stone then",
+   "url": "https://www.medievalists.net/2026/10/archaeologists-uncover-10th-century-building-at-lost-medieval-royal-palace-in-germany/",
+   "subject": "Excavations at Helfta near Lutherstadt Eisleben, Saxony-Anhalt, uncovered a 10th-century stone building with a cellar at a royal palace site associated with Otto the Great.",
+   "subtitle": "Medievalists.net on the Saxony-Anhalt State Office for Heritage Management and Archaeology dig at Helfta, 22 October 2026",
+   "bullets": [
+    "The building is about 9 by 5 metres, with a cellar and a well-preserved entrance staircase, and it is one of the earliest known secular stone buildings in Saxony-Anhalt. What it was for is unknown; the suggestions are housing for nobles of the ruler's entourage, or for the burgrave who ran the place when the king was elsewhere. The site is a hill called Kleine Klaus at Helfta, near Lutherstadt Eisleben, and the dig is directed by Felix Biermann with around 20 volunteers.",
+    "Next to it is a stone-paved terrace on the palace's east side, inside a courtyard bounded by the palace and the church, which may have been where outdoor assemblies were held. The church of St Radegund was founded by Otto the Great before 969; a ninth-century document names the fortified settlement Helphideburc; and Otto the Great, Otto II and the chronicler Thietmar of Merseburg are all recorded as having visited.",
+    "The ordinary end of the site is better evidence than the grand end. In the south-eastern outer bailey are numerous sunken-featured buildings 3 to 5 metres across with wattle-and-daub walls and wood or thatch roofs, and with them clay loom weights, casting crucibles and a lime kiln — textiles, metalwork and lime production, which is the labour that a court on tour actually ran on.",
+    "The small finds date the whole range: silver coins from the 10th to the 15th centuries, earrings, enamelled brooches, iron arrowheads, pottery with Slavic wave patterns, an almost playable bone flute, and a fragment of an antler casket from around AD 1000 decorated with circles and dots. A 12th-century castle of the von Hackeborn family sits on top of it, an oval enclosure about 50 metres across. The current season began on 31 August and was to run to 24 October; in August the state announced about €8.5 million to build a visitor centre and observation tower."
+   ]
+  }
+ ],
+ "research": [
+  {
+   "tag": "Industry · Anthropic",
+   "title": "Claude wrote 180 million lines of machine-checked proof, and found hundreds of bugs on the way",
+   "url": "https://www.anthropic.com/research/formal-verification",
+   "subject": "Claude produced Rocq-checked proofs that 239 entry points across 123 open-source libraries cannot crash on inputs under 64 MB, working at the level of the compiled RISC-V binary, and turned up hundreds of real bugs while trying.",
+   "subtitle": "“LLMs are making formal software verification feasible at a much larger scale”, Anthropic Frontier Red Team with Theorem, 22 October 2026",
+   "bullets": [
+    "The setup is the clever part, because it removes the hardest human step. Existing fuzz tests from Google's OSS-Fuzz were converted into formal specifications that say, roughly, this test never crashes — and those specifications were stated over the compiled RISC-V binary, using Theorem's RISC-V and Linux process semantics, rather than over the source. Claude writes the proof; the Rocq proof checker decides whether it holds. Result: 123 open-source libraries and 239 entry points proved crash-free for inputs under 64 MB, in a few weeks.",
+    "The volume is the headline. About 180 million lines of Rocq in total, with a typical proof running to roughly 600,000 lines for a binary with a median of 18,000 RISC-V instructions. The comparison that makes this land: seL4, the canonical verified microkernel, took about 2 person-years to implement and about 20 person-years to verify. Formal verification has always been affordable only for the thing you care about most.",
+    "Writing proofs turned out to be a bug-finding method. Hundreds surfaced during proof attempts, including a counter underflow that needs about 20 MB of input to trigger, an image-decoder overread needing 64 MB of input and more than 2 GB of memory, and a rediscovery of CVE-2026-56132 in libexpat. When Claude found a bug it patched the code, regenerated the specification and reproved it — with patches penalised and audited, to stop the obvious cheat of making the theorem true by making the program do nothing. A PDF reader yielded as many security bugs in a week as it normally sees reported in a year. Separately they proved the Linux kernel's zlib correctly implements RFC 1950 at the x86 binary level, and that a Rust reimplementation of Python matched CPython on 99.95% of 1.7 million random programs.",
+    "Read the assumptions before you read the claim. The trusted base is the RISC-V and Linux models, the theorem statements and the Rocq checker; programs are treated as single-threaded static binaries with a fixed memory budget, linked against musl libc, with inputs bounded under 64 MB — so none of this covers an x86 glibc deployment, and nothing here says anything about a caller misusing the library. Two economics notes for anyone running agents: on 36 small verification tasks Opus 5.5 proved half of them using about 40% fewer tokens than Opus 5, and agents sharing one proof workspace used 17% fewer tokens than agents working alone, with the solo run more expensive in 30 of 34 completed proofs and unable to finish two of them at all."
+   ]
+  },
+  {
+   "tag": "Academic · CMU and USC",
+   "title": "Towards Looped Models Done Right, Part I: Topology, Input Injection, Recurrent-State Design",
+   "url": "https://arxiv.org/abs/2610.23036",
+   "subject": "A CMU and USC study isolates three design choices in looped transformers and reports that a prelude-recurrent-coda sandwich with input injection beats the Ouro design, and at matched FLOPs uses 75% fewer resident parameters than a 112-layer feedforward MoE.",
+   "subtitle": "Benhao Huang, Chufan Shi, Junlin Chen, Shicheng Wen, Zhengzhong Liu, Eric Xing and Xuezhe Ma, Carnegie Mellon University and the University of Southern California; arXiv:2610.23036, submitted 16 October 2026",
+   "bullets": [
+    "A looped model reuses the same physical transformer blocks several times over, so it gets more computation at the same parameter count. The literature has several incompatible ways of doing it, and this paper's contribution is to stop comparing whole architectures and vary one choice at a time: where the recurrence sits, whether the original input is re-injected at each step, and how the recurrent state is organised.",
+    "The findings separate cleanly, which is the useful part. Putting the loop in the middle — a prelude, then the recurrent block, then a coda — consistently helps context extraction and reasoning-heavy tasks. Input injection mainly helps knowledge retrieval and context use, a different job. Random initialisation of the recurrent state and keeping separate high- and low-level states gave mixed or negative returns.",
+    "At 730M parameters trained on 336B tokens, the resulting Huginn-style design beat the Ouro looped design on all ten benchmarks, and the advantage survived the move to a mixture of experts: at 8BA0.8B, which unrolls to 32BA3B, trained on 500B tokens, it won on nearly all knowledge, reasoning and coding benchmarks and routed tokens to experts more evenly.",
+    "The number worth remembering is the parameter one. Under matched training and inference FLOPs, the looped MoE carries 75% fewer resident parameters than a 112-layer feedforward MoE baseline, while beating it on DROP and GSM8K and matching it on MATH500. Resident parameters are what you pay for in memory, so a model that trades depth-in-weights for depth-in-time is cheaper to hold than to run. Code and checkpoints are published; the title promises a Part II."
+   ]
+  }
+ ],
+ "wild": [
+  {
+   "tag": "Opticians",
+   "headline": "Specsavers has waited 900 years to put an arrow in King Harold's eye",
+   "url": "https://www.creativemoment.co/specsavers-becomes-the-latest-brand-to-reference-the-bayeux-tapestry",
+   "entities": [
+    "Specsavers"
+   ],
+   "subject": "Specsavers ran outdoor advertising reworking the Bayeux Tapestry scene of King Harold struck in the eye by an arrow, with the line \"Something in your eye? Should've goneth to Specsavers\", timed to the tapestry's London loan.",
+   "subtitle": "Creative Moment, 1 October 2026; media credited to Talon and Omnicom Media",
+   "bullets": [
+    "The execution is one borrowed image and one changed verb. The tapestry's most famous panel, the figure traditionally read as King Harold taking an arrow in the eye, carries the line \"Something in your eye? Should've goneth to Specsavers\". The brand has been refining the same joke for about 24 years and has finally found the piece of source material it was always for.",
+    "The timing is the whole trick. The Bayeux Tapestry is on loan in London from 10 September 2026 to 11 July 2027, so an eleventh-century embroidery is briefly a news event, and a sight-test retailer can rent the attention without renting the artwork. Media is credited to Talon and Omnicom Media; the prints have been running across Tube stations, escalators and streets.",
+    "It is also a reminder that brands queue for a cultural moment. Greggs commissioned an eight-metre hand-embroidered \"Ta-Pastry\", made with the Design Museum and Hawthorne & Heaney and shown there; Mastercard had a ten-metre woven \"history of money\" made, fifteen scenes each drawn by a different child and woven under the direction of the textile artist Mia Hansson. Two brands spent months on needlework. Specsavers changed one word."
+   ]
+  },
+  {
+   "tag": "Pharma",
+   "headline": "Cipla made the entrance to three Durga Puja pandals a giant inhaler you walk through",
+   "url": "https://indiantelevision.com/mam/cipla-takes-asthma-awareness-to-kolkatas-durga-puja-pandals/",
+   "entities": [
+    "Cipla"
+   ],
+   "subject": "Cipla's Berok Zindagi campaign installed walk-through giant inhalers as the entry points to three Kolkata Durga Puja pandals from 14 to 20 October 2026, with a free digital lung-health assessment reached by QR code.",
+   "subtitle": "Indiantelevision.com, 21 October 2026",
+   "bullets": [
+    "Three pandals — Santosh Mitra Square, Sree Bhumi Sporting Club and Shibmandir Sarbojanin Durgotsab Samiti — had larger-than-life inhaler installations from 14 to 20 October, built as the entry experience, so visitors walked through an oversized inhaler on the way in rather than past a poster of one.",
+    "The payload was a QR code. Scanning it took visitors to Breathefree, Cipla's patient-support programme, for a free digital lung-health assessment using its Swaasa tool, which returns a lung health score. The campaign line is \"Asthma ke liye #InhalersHainSahi\", and the stated target is not asthma itself but the myths about inhalation therapy, which is what stops people using it.",
+    "The reason this is cleverer than a hoarding: pandal-hopping in Kolkata is a queue that moves slowly through a structure you have already agreed to walk into. Putting a health check at the entrance costs the visitor nothing they were not already spending, and the thing being demystified is the very object they just stepped through."
+   ]
+  },
+  {
+   "tag": "Pet food",
+   "headline": "Sheba will refund you if your cat does not become more affectionate",
+   "url": "https://mediashotz.co.uk/sheba-helps-cat-owners-win-feline-affection-in-new-amv-bbdo-campaign/",
+   "entities": [
+    "Sheba"
+   ],
+   "subject": "Sheba launched \"Ignored to Adored\", an AMV BBDO programme promising to help cat owners win over aloof cats in days, backed by a money-back guarantee and built on the Waltham Petcare Science Institute's SHINE framework.",
+   "subtitle": "Mediashotz, 20 October 2026",
+   "bullets": [
+    "The promise is \"Ignored to Adored\": feed a cat premium Sheba and it will warm to you \"in just days\", backed by a money-back guarantee. It is a refund offer written against someone else's emotional state — and that someone is a cat, which cannot be deposed. No terms or time limits were published with the launch.",
+    "The research it rests on is the real find: more than half of cat owners in the UK, France and the US have questioned whether their cat loves them. The programme is built on the Waltham Petcare Science Institute's SHINE framework, which is partly about teaching owners to notice signs of affection they were already receiving — so part of the deliverable is recalibrating the human.",
+    "Commercially it is a frequency play dressed as a love story: the stated aim is to turn occasional buyers into regular ones, which is what \"feed this every day for a few days\" actually asks for. AMV BBDO built it, Weber Shandwick has the social and earned launch, and it runs across the US, UK, Germany, France, Spain, Poland, India, Thailand and Australia, with Anna Szpot as global campaign lead and Dr Tammie King of Waltham as the scientific voice. The talent includes the actress Haley Lu Richardson with her cat Darbin, the singer Cat Burns with her cat Ollie, the Olympic champion Ilia Malinin with his rescue cat Mysti, and the actress Sharvari."
+   ]
+  }
+ ],
+ "learn": {
+  "title": "Left alone in a room for fifteen minutes, 67% of the men gave themselves an electric shock they had just said they would pay to avoid",
+  "subject": "In Wilson et al.'s 2014 Science paper, college students disliked 6 to 15 minutes alone with their own thoughts so much that many pressed a button to self-administer a shock they had rated as unpleasant.",
+  "body": [
+   "Timothy Wilson and seven colleagues ran eleven studies with a deliberately thin design. A student hands over their phone, their bag and anything to write with, sits in an unadorned room for somewhere between 6 and 15 minutes, and is asked to entertain themselves with their thoughts. The only rules are to stay seated and stay awake. Afterwards they rate the experience. Across the six lab studies, 57.5% said it had been difficult to concentrate, 89.0% said their minds had wandered — with nothing whatsoever competing for their attention — and 49.3% rated their enjoyment at or below the midpoint of the scale.",
+   "The obvious objections were all tested and all failed. Maybe the laboratory was the problem: in study 7 they sent people home to do it alone in their own rooms, and enjoyment went down rather than up, while 32% admitted cheating by reaching for music or a phone or getting out of the chair. Maybe it was a student thing: study 9 recruited people aged 18 to 77 at a farmers' market and a church, and found the same, with no relationship to age, education, income or how much anyone used a smartphone. Maybe people just needed a plan: participants given a few minutes to decide in advance what they would think about enjoyed it no more than the others, 4.97 against 4.94 on a nine-point scale.",
+   "Then study 10, which is the one people remember. Participants first rated various stimuli, including an electric shock, and said how much of a $5 endowment they would pay to avoid experiencing each again. Then they sat for the usual fifteen minutes, having been told they could press a button to shock themselves if they wanted, and that the point of the exercise was still to entertain themselves with their thoughts. Among those who had said they would pay money not to be shocked again, 67% of the men — 12 of 18 — shocked themselves at least once, as did 25% of the women, 6 of 24. The authors mention, in a parenthesis, one man excluded from the average because he administered 190 shocks to himself in a quarter of an hour. Doing something unpleasant beat doing nothing, by a margin nobody had priced in."
+  ],
+  "source_url": "https://dtg.sites.fas.harvard.edu/WILSON%20ET%20AL%202014.pdf"
+ },
+ "ideas": {
+  "prompt": "Ten clubs worth starting in your city",
+  "note": "Altucher's drill: ten against one prompt, written fast, not defended. Reddit rate-limited the fetcher after r/SomebodyMakeThis and r/Lightbulb, so the raw material is that week of both, plus the Ask HN idea threads and Y Combinator's current Requests for Startups. The recurring wish there was oddly social for a pile of app requests — people wanting to see what their friends are actually into, wanting one shared conversation instead of six feeds, wanting someone to hold their half-finished thoughts. The non-technical version of all of that is a room with a time and a name. Eight are mine; two are marked.",
+  "items": [
+   {
+    "text": "A reading club where nobody reads the same book — everyone brings whatever they are halfway through and gets four minutes to say why."
+   },
+   {
+    "text": "A repair club: one evening a month, bring the broken thing and the person who can fix that category sits at a labelled table."
+   },
+   {
+    "text": "A walking club with no fitness angle, which walks one bus route end to end each month and stops wherever looks interesting."
+   },
+   {
+    "text": "A club for people learning an instrument badly, where the entry requirement is that you are worse than you want to be.",
+    "why": "A recurring complaint across r/SomebodyMakeThis is that practice apps track progress but nobody to practise badly in front of."
+   },
+   {
+    "text": "A cooking club that only makes dishes someone's grandmother made, with the grandmother on speakerphone."
+   },
+   {
+    "text": "A club that meets at 6am to do nothing in particular, and disbands by 7."
+   },
+   {
+    "text": "A letter-writing club: two hours, paper, stamps bought in bulk, and a rule that nothing you write is about work."
+   },
+   {
+    "text": "A club for the second half of hobbies people quit — unfinished sketchbooks, half-built kits, abandoned languages."
+   },
+   {
+    "text": "A club that takes one local question a month and tries to answer it properly, then publishes the answer on a noticeboard.",
+    "why": "Y Combinator's current Requests for Startups keeps circling civic data; the version that needs no funding is six people and a photocopier."
+   },
+   {
+    "text": "A club where members swap one thing they own and genuinely like, with the condition that you must give it back if asked."
+   }
+  ]
+ }
+}
