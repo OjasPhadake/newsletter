@@ -1,0 +1,338 @@
+{
+ "date_line": "Saturday, 24 October 2026",
+ "issue": 1,
+ "preheader": "Karl Popper calls science the art of systematic oversimplification; a jailbreak of the Switch 2 starts on a Switch 1 because the old console has no pointer authentication; a security firm opened a root SSH session on a rebooted iPhone 18 Pro at Hexacon and has published four slides and no bugs; a woman in Pennsylvania is charged with computer fraud over a CashApp account a scammer opened in her name for $1,000; Wikipedia, cropped to a half-hour walk; Sensex fell only 125.56 points on Friday while 3,011 of 3,724 stocks declined and 655 hit 52-week lows; 125 bps of RBI rate cuts have become 93 bps off the lending rate; Moonshot stripped cyber data out of K3.1 Pro before open-weighting it, and published the 9.5-point gap that removal cost; Troy has yielded a musical instrument for the first time in 160 years of digging; 40 one-word answers identify which of 94 models is behind an API, 92.5% of the time; Heineken built a streaming service whose point is that you leave the sofa; and the line painted on a ship's hull exists because owners used to paint it on the funnel.",
+ "quote": {
+  "text": "Science may be described as the art of systematic oversimplification.",
+  "author": "Karl Popper",
+  "source_url": "https://www.goodreads.com/author/quotes/349707.Karl_Popper",
+  "note": "The word carrying the weight is \"systematic\". The popular picture of science is addition — more detail, more terms, a fuller picture. Popper's is subtraction done on purpose: a model earns its keep by how much it dares leave out, which is also what makes it possible to be wrong about. A description that throws nothing away cannot be tested, only admired."
+ },
+ "agent_craft": {
+  "items": [
+   {
+    "text": "If you have ever fanned out several `subagent_type: \"fork\"` agents in one message and watched them pick up each other's task, try it again. Claude Code 2.1.307 now tells each fork which of the simultaneous launches is its own, so a parallel fan-out of forks stops colliding with itself.",
+    "source": "Claude Code changelog, 2.1.307 (21 October 2026)",
+    "url": "https://code.claude.com/docs/en/changelog"
+   }
+  ]
+ },
+ "hn": [
+  {
+   "title": "Local Wikipedia: Wikipedia, but only for things a half hour walk from you",
+   "url": "https://edjefferson.com/localwiki/",
+   "hn_url": "https://news.ycombinator.com/item?id=50202285",
+   "points": 1178,
+   "comments": 223,
+   "bullets": [
+    "The whole idea is a filter, not a dataset. It serves ordinary Wikipedia articles, restricted to the geocoded ones — pages that carry map coordinates — and ranked by how far they are from wherever you say you are. You give it a town, a landmark or a postcode, or let the browser hand over your location; it answers with a front page made of your surroundings. It bills itself as \"The Encyclopedia For Local People\" and states plainly that it has no affiliation with Wikipedia.",
+    "\"Nearby\" is defined as roughly a half-hour walk, with two fallbacks that stop the page being empty or useless. Fewer than 25 geocoded articles inside the walk and it widens to the closest 25 within about six miles; more than 500 and it keeps only the closest 500. Everything else — main page, random article, A–Z index, sort by distance — is the familiar furniture, rebuilt around a radius.",
+    "The privacy design is one line long: your location is stored in your browser, and links you share do not contain it. Nothing to opt out of because nothing left.",
+    "It is by Ed Jefferson, who describes his output as \"internet-powered interactive things\" alongside writing for The Guardian, Time Out and the New Statesman. Local Wikipedia sits in a list with Letterle, London's Busiest Bus Stops and Play Your Tubes Right, which tells you roughly what register to read it in — and it still took 1,178 points, more than any security story this week."
+   ]
+  },
+  {
+   "title": "Jailbreaking the Switch 2",
+   "url": "https://pepsipu.com/blog/2026-10-switch2-jailbreak-ns2jb/",
+   "hn_url": "https://news.ycombinator.com/item?id=50192536",
+   "points": 814,
+   "comments": 296,
+   "bullets": [
+    "The chain starts on the wrong console on purpose. Sammy Hajhamid's ns2jb, dated 18 October 2026 and targeting firmware 23.0.1, begins inside SmileBASIC on a Switch 1, because the older machine has no pointer authentication and its root of trust is already owned — meaning its code can be decrypted and read. The bug there is a 32-bit integer overflow in the array `REMOVE` command: overflow `position + count` past the check and a `memmove` copies bytes from before the array, exposing a pointer to the array itself. Out-of-bounds read/write, then ROP.",
+    "Step two is a buffer overflow in `Path::Normalize`. A path containing a `/..\\` component overflows a 0x301-byte heap buffer and corrupts a `BufferedStorage` cache entry, which converts into arbitrary read/write inside the `fs` sysmodule. He then sets SmileBASIC's saved process ID to 1, which the filesystem reads as \"FullPermission\", and dumps internal storage and sysmodule code.",
+    "Step three exploits a split of responsibilities. The `ldr` loader verifies the developer signature over the NCA header hash, but `fs` is the component that actually serves the contents that hash is supposed to describe. With arbitrary read/write he swaps the ExeFS object behind the loader's handle for a temporary filesystem holding a valid `main.npdm` and an arbitrary `main`, using an event handle to control exactly when `fs` processes the loader's messages. Copying `ro`'s NPDM then buys kernel syscalls such as `MapProcessMemory`, and `ro` maps a writable view of `fs`'s own code and patches it.",
+    "The write-up is unusually frank about method and limits. Codex agents did much of the exploit work, driven through a rig of JetKVMs for USB controller input and HDMI capture plus a Bluetooth switch to flick the power button; the whole jailbreak took about two weeks, and the Mario Kart World character mod was vibecoded in a day. A WebKit route via an n-day and a captive portal was tried and abandoned — execute-only memory, PAC and CFI made it hard to generalise. No CVEs are cited, the jailbreak is tethered (re-run it after every power cycle), and every built-in sysmodule other than `fs` is still unexploited."
+   ]
+  },
+  {
+   "title": "Docker is weird",
+   "url": "https://codeandcake.dev/posts/2026-10-22-docker-is-weird",
+   "hn_url": "https://news.ycombinator.com/item?id=50202681",
+   "points": 813,
+   "comments": 342,
+   "bullets": [
+    "The author is writing their own container runtime, which is the only reason the post has anything in it. The first surprise is that a container is an ordinary process. Not a machine, not a guest — a process the host kernel is running with restrictions bolted on, which is why you can see it in `/proc` from outside.",
+    "\"Container\" is not a Linux feature. It is roughly five of them stacked: namespaces decide what a process is allowed to see, cgroups cap what it is allowed to consume, and separate networking machinery isolates its stack. Nothing in the kernel is called a container.",
+    "Images are folders. `docker run -it --rm ubuntu /bin/bash` pulls the image, extracts it to a directory on disk, and then uses `chroot` or `pivot_root` to make that directory the root of the new process. The magic is a change of what `/` points at.",
+    "The best section is why Go was a poor choice for the job. Some of the syscalls involved must run in a single-threaded context, and Go is multi-threaded from the start — so `runc` carries a C module that executes before the Go runtime does. Go also has no real `fork`, so `runc` imitates one by re-executing `/proc/self/exe` with a special argument. And the daemon has traditionally needed root because the kernel APIs did; rootless runtimes are closing that gap everywhere except networking, which they have to reimplement in userspace."
+   ]
+  },
+  {
+   "title": "Today, we hacked what we'd set out to hack: the iPhone",
+   "url": "https://blog.calif.io/p/iphone",
+   "hn_url": "https://news.ycombinator.com/item?id=50211474",
+   "points": 685,
+   "comments": 453,
+   "bullets": [
+    "The post itself is four slides and one sentence. Dated 16 October 2026, Calif says it hacked the iPhone and showed the demos at Hexacon in Paris that day: a Signal one-click, a note that iMessage is the more widely used target, a \"Can your iPhone do this?\" prompt, and a joke that APT stands for \"Apple Persistent Threat\". Then: \"Everything will be released in due time.\" No vulnerabilities, no versions, no tool, no date.",
+    "What was actually demonstrated on stage is better documented elsewhere. Decrypt reports an untethered jailbreak of an iPhone 18 Pro running iOS 27.0.1 at Hexacon on 16 October — the team rebooted the phone, unlocked it with the ordinary passcode and opened an SSH session as root, with the terminal showing about two minutes of uptime. Untethered is the load-bearing word: root survived the restart with no computer attached. Video came from jailbreak researcher Billy Ellis, not from Calif.",
+    "The AI thread runs through the whole thing and is on the record. Apple's iOS 27 security notes credit Calif.io \"in collaboration with Claude and Anthropic Research\" for two bugs causing denial of service or crashes — Apple does not link either to this jailbreak. Calif said in May that Claude Mythos Preview \"helped identify the bugs and assisted throughout exploit development\" for a macOS kernel exploit against Apple's M5 protections, and Calif's Thai Duong wrote in April that Claude helped him analyse an iOS Safari exploit.",
+    "Note what is missing: there is no public proof-of-concept, no CVE and no patch to assess, and Apple had not commented as of the Friday, consistent with its policy of not confirming security issues before fixes ship. Two of the four slides — the Signal one-click and the iMessage line — rest on the newsletter alone and were not shown on stage."
+   ]
+  },
+  {
+   "title": "Woman charged with computer fraud due to scam CashApp account being in her name",
+   "url": "https://www.404media.co/amanda-smith-opened-a-cashapp-in-her-name-she-faces-years-in-prison-cashapp-fraud/",
+   "hn_url": "https://news.ycombinator.com/item?id=50194833",
+   "points": 658,
+   "comments": 703,
+   "bullets": [
+    "Amanda Smith, of upstate Pennsylvania, was arrested in April on a warrant from Arkansas — a state she says she has never been to — and spent three nights in her local jail. The charge is computer fraud. She says she has never used CashApp.",
+    "The underlying crime is $1,000. A scammer induced someone on Facebook Marketplace to send that amount to a CashApp account, and the account had been opened in Smith's name using her Social Security number and date of birth. The scammer controlled it; the name on it was hers, and the name on it is what the warrant followed.",
+    "The loop that makes this a story rather than a mix-up: she cannot get information about the account from CashApp, because she cannot prove she owns the account she is being prosecuted over. Six months in, 404 Media reports her position as being asked to prove her innocence while the evidence that would do it is held by a company that will not hand it to a stranger.",
+    "The piece is paywalled after its opening section, so the prosecution's own account of its evidence, the statute and the possible sentence are not in the part that is readable — the headline's \"years in prison\" is not substantiated in the free text. 703 comments, the most of anything on the front page this week, which is its own finding about which risk developers think is nearest."
+   ]
+  }
+ ],
+ "markets": {
+  "indices": [
+   {
+    "name": "Sensex · Fri 23 Oct close",
+    "value": "73,123.83",
+    "change": "−125.56 (0.17%); fourth straight fall",
+    "direction": "down"
+   },
+   {
+    "name": "Nifty 50 · Fri 23 Oct",
+    "value": "22,600.00",
+    "change": "−87.65 (0.39%); closed exactly on the round number",
+    "direction": "down"
+   },
+   {
+    "name": "Bank Nifty · Fri",
+    "value": "54,287.35",
+    "change": "−638.35 (1.16%)",
+    "direction": "down"
+   },
+   {
+    "name": "Worst sectors · Fri",
+    "value": "Metal −2.71%",
+    "change": "Consumer Durables −2.63%, Realty −2.38%, Energy −1.66%",
+    "direction": "down"
+   },
+   {
+    "name": "Shallowest falls · Fri",
+    "value": "Nifty IT −0.27%",
+    "change": "Auto −0.60%, FMCG −0.99%, Financial Services −1.03%, Pharma −1.04%",
+    "direction": "down"
+   },
+   {
+    "name": "Broader market · Fri",
+    "value": "MidCap 100 −2.21%",
+    "change": "SmallCap 100 −2.94% — both far worse than either benchmark",
+    "direction": "down"
+   },
+   {
+    "name": "Breadth · Fri (NSE)",
+    "value": "624 up / 3,011 down",
+    "change": "89 unchanged of 3,724 traded; 655 at 52-week lows against 23 highs; 311 hit a lower circuit",
+    "direction": "down"
+   },
+   {
+    "name": "USD/INR · Fri 23 Oct",
+    "value": "94.93",
+    "change": "Rupee −12 paise from 94.81; opened 94.78, low 94.98; second straight fall",
+    "direction": "up"
+   },
+   {
+    "name": "Dollar index · Fri",
+    "value": "101.73",
+    "change": "+0.12%",
+    "direction": "up"
+   },
+   {
+    "name": "Brent crude · Fri",
+    "value": "$114.31",
+    "change": "+1.01% in futures trade, a second session above $112",
+    "direction": "up"
+   },
+   {
+    "name": "FII cash · Fri 23 Oct",
+    "value": "+₹887.60 cr",
+    "change": "DIIs +₹3,235.40 cr; both provisional. FIIs had sold ₹3,458.70 cr on Thursday",
+    "direction": "up"
+   }
+  ],
+  "stories": [
+   {
+    "headline": "The benchmarks lost a tenth of a per cent and the market underneath lost three — 3,011 of 3,724 stocks fell, and foreign money was buying",
+    "url": "https://insights.dsij.in/dsijarticledetail/closing-bell-sensex-nifty-fall-for-4th-session-as-brent-crude-nears-114-smallcap-stocks-tumble-60142",
+    "source": "DSIJ's closing bell for Friday 23 October for the index closes and the NSE breadth table; Liquide's share-market wrap for the sectoral percentages, Bank Nifty and the movers; PTI (via The Federal) for the rupee, the dollar index and Brent; 5paisa's FII/DII cash table for the flows",
+    "bullets": [
+     "This is the Friday 23 October session; Indian markets are shut today, Saturday. Sensex 73,123.83, −125.56 (0.17%). Nifty 50 22,600.00, −87.65 (0.39%), closing precisely on the round number. That is the fourth consecutive down day, and on the headline numbers it looks like the mildest of the four.",
+     "It was not. Of 3,724 stocks traded on the NSE, 3,011 fell and 624 rose — about 81% down. 655 touched a 52-week low against 23 at a high, and 311 hit a lower circuit against 51 upper. Nifty MidCap 100 fell 2.21% and SmallCap 100 fell 2.94%, roughly seven times the Nifty's loss. A fall concentrated this far down the market capitalisation table is a liquidity event, not a view on earnings.",
+     "The sector table says oil. Brent was at $114.31 in futures trade, up 1.01%, and the sectors that pay for it led the fall: Metal −2.71%, Consumer Durables −2.63%, Realty −2.38%, Energy −1.66%. Nifty IT, which earns in dollars, lost 0.27%. Bank Nifty's 1.16% fall did most of the damage to the headline, and Shriram Finance (−3.98%, ₹865.00) was the worst Nifty stock; Adani Enterprises (−2.86%, ₹2,477.00) and JSW Steel (−2.83%, ₹1,185.50) followed. Eternal rose 4.25% to ₹317.40.",
+     "The flows are the part that does not fit. FIIs bought ₹887.60 crore net in the cash segment (₹14,445.50 crore purchased against ₹13,557.90 crore sold) after selling ₹3,458.70 crore on Thursday, and DIIs bought ₹3,235.40 crore. Both sides of the institutional market were net buyers on a day the median stock fell hard — which means the selling came from somewhere else, and the rupee agreed: 94.93, down 12 paise, with Mirae Asset Sharekhan's Anuj Choudhary citing crude and West Asian tension rather than outflows."
+    ]
+   }
+  ]
+ },
+ "trends": [
+  {
+   "tag": "India",
+   "headline": "The RBI has cut 125 basis points since February 2025. What actually reached new borrowers is 93 of them.",
+   "url": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=63859",
+   "subject": "The RBI's October 2026 Bulletin, released 23 October, decomposes monetary transmission: a cumulative 125 bps repo cut from February 2025 to March 2026 lowered the weighted average lending rate on fresh loans by 93 bps, of which 80 bps was the interest rate effect and 13 bps the composition effect.",
+   "subtitle": "Reserve Bank of India press release 2026-2027/1381, \"RBI Bulletin – October 2026\", 23 October 2026",
+   "bullets": [
+    "The headline figure of monetary policy is the repo rate. The figure that reaches a borrower is the weighted average lending rate, and the Bulletin's second article — by Yuvraj Kashyap, Kamal Gupta and Arvind Jha — separates the two. Between February 2025 and March 2026 the policy repo rate was cut by a cumulative 125 bps. The WALR on fresh lending by scheduled commercial banks fell 93 bps. About three-quarters of a cut arrives.",
+    "The useful part is the split inside that 93. Eighty basis points is the interest rate effect: banks genuinely repricing loans downward. Thirteen is the composition effect — the WALR moving because the mix of what banks lent changed, not because any individual rate did. A headline lending rate can fall simply because banks wrote more cheap loans and fewer expensive ones, and thirteen points of this cycle's apparent transmission is exactly that.",
+    "The same issue carries a quieter methodological item: Bipul Ghosh, Narendra Singh and Sandhya Kuruganti nowcast quarterly state-level GSVA growth for Maharashtra, Karnataka and Gujarat out of night-time satellite light and Google Trends. India publishes state output annually and late; this is an attempt to read it off brightness and search queries in the meantime. A fourth article text-mines NBFC disclosures for AI adoption, and reports the sector still growing credit at double digits year-on-year at end-December 2025.",
+    "The State of the Economy article blames the inflation picture on West Asia and supply chains, notes double-digit merchandise export growth across the first six months of 2026-27, and says the FCNR(B) swap window has added to reserves. Standard disclaimer applies and the Bulletin prints it: the views are the authors', not the Reserve Bank's."
+   ]
+  },
+  {
+   "tag": "AI",
+   "headline": "Moonshot removed the cyber data from its new open-weight model, and published exactly what the removal cost",
+   "url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+   "subject": "Moonshot AI launched Kimi K3.1 Pro, a 3T-class language model whose full parameters it promises to publish by 4 November, taking 1M tokens of input, stating that cyber-capability training data was taken out before that publication, and publishing the resulting capability gap, 81.0% for the public build against 90.5% unmitigated.",
+   "subtitle": "Moonshot AI, \"Kimi K3.1 Pro and K3.1 Pro Highspeed\", published this week; full weights promised by 4 November 2026",
+   "bullets": [
+    "The release itself is the ordinary kind of large. K3.1 Pro is billed as Moonshot's \"most capable 3T-class open-weight model to date\", a post-trained K3 with substantially more post-training compute and a 1 million token context; a Highspeed variant claims 2–3× the throughput. Terminal-Bench 4.0 is 65.7% against Claude Opus 5.5 at 66.4% and GPT-6 Astra at 58.2%; BenchCAD with tools is 92.7% against 96.2% and 95.9%. Full weights are promised by 4 November.",
+    "The genuinely new behaviour is at the bottom of the post. Moonshot says cyber-related data was removed from training specifically because the weights are going out, and then prints the price of that decision: 81.0% pass@3 on xdev-bench-hard for the shipped model, 90.5% for the version without the risk-reduction measures, 33.3% for K3. A lab publishing the capability it deliberately gave up — with the number — is not something frontier proprietary labs do, because they do not have to: they can withhold the weights instead.",
+    "The reason it matters is that open weights are a one-way door. A closed model's safety mitigations can be revised after release; an open-weight model's training data cannot be unshipped. Moonshot's answer is to move the mitigation upstream into the corpus, and the 9.5-point gap is the honest measure of how much capability that costs — before anyone tries to fine-tune it back.",
+    "Treat the rest of the table with the usual caution the footnotes invite. Several competitor scores are lifted from other sources rather than re-run, and the strongest numbers — Internal Business Operation at 37 against K3's 8.9, Financial Research 70.4 against 58.8 — are on internal benchmarks nobody outside Moonshot can reproduce. The claim-level hallucination rate on Kimi Hallu Bench Hard falling from 23.4% to 8.3% is in the same category."
+   ]
+  },
+  {
+   "tag": "Archaeology",
+   "headline": "Troy has been dug for 160 years and has just produced its first musical instrument",
+   "url": "https://www.heritagedaily.com/2026/10/2800-year-old-bone-flute-unearthed-in-troy/159750",
+   "subject": "A 2,800-year-old bone flute was announced at Troy in Çanakkale, Türkiye, recovered from an eighth-century BC Archaic layer and the first musical instrument the site has produced in 160 seasons of digging; an anthropomorphic idol head came out of a fire-damaged deposit by the entrance to the Troy II settlement phase.",
+   "subtitle": "HeritageDaily, 22 October 2026, reporting the Turkish Ministry of Culture and Tourism; excavation directed by Prof. Dr Rüstem Aslan for Çanakkale Onsekiz Mart University",
+   "bullets": [
+    "Bone flutes are not rare and not old news — Palaeolithic examples exist in Europe, tens of thousands of years older than this one. What is remarkable is the address. Troy has been excavated more or less continuously since the 1860s, and in that time it has yielded walls, hoards, pottery and tombs, and not one instrument. Aslan's line is simply that it \"is a first in the 160-year history of Troy excavations\".",
+    "The fragment comes from an eighth-century BC Archaic layer, which is roughly where most scholars put the composition of the Iliad and the Odyssey. The excavation team says so and then immediately declines the obvious headline: it cannot be tied to Homer, to any performance described in the poems, or to any particular use. What it is evidence of is that music happened here, which the site had never before shown directly.",
+    "The second find is arguably the better one for dating. An anthropomorphic idol head, about 4,500 years old and thought to be ritual, came out of a fire-damaged layer near the entrance to Troy II, the Early Bronze Age phase. Aslan says only three to five comparable objects have surfaced in 160 years — and unlike most of them this one is stratified, so it can help date the burnt deposit rather than merely sit in a case.",
+    "One footnote on coincidence, flagged by the team rather than hidden: the Sirens music in the recent film The Odyssey was produced experimentally using a reconstruction of an eighth-century BC flute. Aslan stated there is no connection between the artefact and the film, which is the sort of thing an excavation director only has to say once the internet has already made it up."
+   ]
+  }
+ ],
+ "research": [
+  {
+   "tag": "Industry · Google Research",
+   "title": "A tuberculosis X-ray reader that started as a research model is now a CE-marked device running four kilometres underground",
+   "url": "https://research.google/blog/bringing-foundational-models-to-the-front-lines-of-tb-screening/",
+   "subject": "A Google Research post traces its chest X-ray tuberculosis screening work from a 2019 Radiology benchmark through open foundation models — CXR embeddings, MedSigLIP, MedGemma, HeAR — to a CE MDR Class IIb certified device now running in about 40 facilities in six countries.",
+   "subtitle": "Preeti Singh and Shravya Shetty, Google Research, 23 October 2026",
+   "bullets": [
+    "The spine of the post is an unusually long evaluation trail for a deep learning model, which is the only reason the deployment is legible. A 2019 Radiology benchmark put the chest X-ray algorithm on a par with experienced radiologists; a 2021 Stop TB Partnership evaluation in The Lancet Digital Health ranked it among the top-performing TB screening algorithms; a 2024 prospective multi-site validation in NEJM AI reported high sensitivity across diverse populations. Over 25,000 chest radiographs were read by more than 90 clinicians along the way. The post gives no headline accuracy figure, which is itself a choice.",
+    "What Google shipped is not the product. It open-sourced the pieces — CXR embeddings, MedSigLIP, and MedGemma at 4B and 27B open weights, plus HeAR, an acoustic model trained on over 300 million audio segments to classify cough sounds. A partner, Nexus AI, built the regulated device on top: CE MDR Class IIb, ISO 13485, a WHO Prequalification pathway with FIND and an open path toward FDA clearance. The split is worth noting — the lab publishes weights, somebody else carries the certification.",
+    "Deployment reads like a logistics problem rather than a model problem. About 40 facilities across six countries — South Africa, Sierra Leone, Côte d'Ivoire, with expansions in DR Congo, Zambia and Cameroon — and at Mponeng Gold Mine in South Africa the screening runs offline about four kilometres underground, which rules out anything that needs a round trip to a datacentre. Over 3,000 free screenings so far, against a target of 10,000 sponsored screenings a year.",
+    "The number that scales it is Indonesia's. Its Ministry of Health is fine-tuning MedGemma and MedSigLIP on domestic X-rays for a national programme aiming at 50 million citizens screened annually. TB kills more than 1.23 million people a year, and the binding constraint has never been the radiologist's judgement; it is that most people who need a chest X-ray read are nowhere near one."
+   ]
+  },
+  {
+   "tag": "Academia · Cornell",
+   "title": "Forty Questions: Identifying a Language Model from One-Word Answers",
+   "url": "https://arxiv.org/abs/2610.28281",
+   "subject": "An arXiv preprint fingerprints a language model from its one-word replies to ordinary prompts: 40 such replies pick the exact model out of 94 at 92.5% accuracy against 1.1% by chance, costing a few cents per endpoint — and several API endpoints prove to be serving something other than what they advertise.",
+   "subtitle": "Tapan Parikh, arXiv:2610.28281, submitted 20 October 2026; affiliation resolved to Cornell by OpenAlex",
+   "bullets": [
+    "The method is almost embarrassingly cheap. Ask a model to name a sound, or a poet, or any of a set of questions drawn from a public census of model defaults, and keep only the one-word reply. Repeat, and each model develops a measurable profile of which word it tends to reach for. A new set of answers is then assigned to whichever model's profile makes it most likely. Forty questions, 94 candidate models, 92.5% exact identification. Chance is 1.1%.",
+    "Then the paper points the tool at a marketplace. Run against open models served on OpenRouter, most endpoints identified as the model they claimed to be — but not all. Some endpoints are serving something other than what they advertise, which is a quality-control instrument the buyer side of the inference market has not previously had for a few cents a test.",
+    "The second finding is subtler and arguably worse. Billing records suggest some providers are injecting hidden context into requests — tokens you pay for and did not write, altering a model's behaviour before your prompt reaches it. The fingerprint also degrades when a system prompt is present, which is the expected direction and a limit on the method: it reads the model's defaults, so anything that overwrites the defaults blurs it.",
+    "The practical reading for anyone routing traffic through an aggregator: model identity has been taken on trust, and it is now cheaply checkable. The practical reading for anyone selling inference is that the trick works in both directions, and a profile that identifies a model is also a profile that can be imitated."
+   ]
+  }
+ ],
+ "wild": [
+  {
+   "tag": "Beer",
+   "headline": "Heineken has built a streaming service whose entire purpose is to get you off the sofa",
+   "url": "https://www.dexerto.com/entertainment/heineken-launches-netflix-style-streaming-service-to-find-pubs-3420278/",
+   "entities": [
+    "Heineken"
+   ],
+   "subject": "Heineken launched Pubscription, a free streaming-style service on the web and TV apps where users browse participating English pubs grouped by vibe, each with a thumbnail, and claim one free pint per week.",
+   "subtitle": "Dexerto, reporting Heineken's UK launch; live from 15 October 2026 until 6 January 2027, or until 15,000 vouchers are redeemed",
+   "bullets": [
+    "The joke is structural, not written. It is a streaming interface — browse, thumbnails, categories, pick one — except the catalogue is pubs, grouped by atmosphere rather than genre, and selecting one does not start playback. It tells you to leave the house. A television product whose success condition is that you stop using it.",
+    "The mechanics are a loyalty scheme in costume. Free to join for UK residents over 18; four vouchers every four weeks, redeemable one per week at participating pubs in England; each buys a pint of Heineken Original, a draught Heineken 0.0 or a bottle of the alcohol-free version. You can search manually or let it find pubs near you.",
+    "There is a 30-minute fuse on each voucher: it has to be activated at the pub and shown to bar staff within half an hour. Which is the detail that gives away what is actually being bought — not awareness, but a verified person physically standing at a specific bar, with the timestamp to prove it.",
+    "It runs from 15 October to 6 January 2027, or until 15,000 vouchers are redeemed, whichever comes first. Fifteen thousand pints is a modest budget for a national campaign, and the cap is doing double duty as scarcity."
+   ]
+  },
+  {
+   "tag": "Fashion",
+   "headline": "Aritzia wedged a building-scale puffer jacket into a Lower East Side alleyway, to advertise down",
+   "url": "https://www.bandt.com.au/feeling-frosty-fashion-label-aritzia-blows-up-giant-puffer-jacket-in-nyc/",
+   "entities": [
+    "Aritzia"
+   ],
+   "subject": "Aritzia installed a building-scale pink Super Puff jacket, strapped over an alleyway at 159 Ludlow Street on New York's Lower East Side, to promote the jacket's upgrade to 800+ fill-power down.",
+   "subtitle": "B&T, 2 October 2026; the installation ran through 1 October, created by Aritzia's in-house teams with no outside agency credited",
+   "bullets": [
+    "The siting is the idea. Rather than buy a billboard, Aritzia put a building-scale pink Super Puff into the narrow gap between two buildings at 159 Ludlow Street, pressed and strapped across the alleyway so it reads as a jacket stuffed into a space slightly too small for it. A puffer's entire selling proposition is loft under compression, which is precisely the state the installation holds it in.",
+    "What it is advertising is a specification, which is the unusual part. The news is that the Super Puff now uses 800+ fill-power down — more warmth per unit of weight. Fill power is a number almost no clothing advertisement has ever tried to make anyone feel, and this one converts it into a physical demonstration of volume.",
+    "No agency is credited; B&T attributes it to Aritzia's in-house marketing and creative teams, and the image came off the brand's own Instagram. The run ended on 1 October, which is early in a season a down jacket is sold into — the installation was the announcement, not the campaign."
+   ]
+  },
+  {
+   "tag": "Cars",
+   "headline": "Tesla made its Roadster hover. Volvo replied with a photograph of a car on the ground and the year 1927.",
+   "url": "https://marketing-interactive.com/from-flying-mice-to-grounded-volvos-brands-react-to-tesla-s-flying-car",
+   "entities": [
+    "Volvo",
+    "Tesla",
+    "MINI",
+    "Toblerone"
+   ],
+   "subject": "Tesla unveiled the second-generation Roadster and posted a clip of thrusters briefly lifting and spinning it; Volvo responded on social media with an image captioned 'Down to Earth. Since 1927' and 'Since 1927, we've kept all four wheels on the ground', one of a wave of brand replies.",
+   "subtitle": "Marketing-Interactive, 19 October 2026",
+   "bullets": [
+    "Tesla showed the long-delayed second-generation Roadster and, in the clip it put on Instagram, thrusters lifted the car off the ground and spun it. Every car company on social media then had the same twenty minutes to decide what its position on flying cars was.",
+    "Volvo's answer is the one worth keeping, because it is a counter-flex rather than a joke. A photograph of a car firmly on the tarmac: \"Down to Earth. Since 1927\", with the caption \"Since 1927, we've kept all four wheels on the ground.\" A brand whose single asset is the belief that it is not reckless, declining an invitation to be exciting — and getting more out of the restraint than most of the brands who played along.",
+    "The ones who played along mostly flew their own product. MINI posted a black-and-white shot of an old model mid-air — \"Flying solo since 1959. Nice to have company.\" Toblerone asked whether flying cars stop at duty free. An airline posted a plane with thrusters bolted underneath and the line that admin had forgotten it could already fly, but theirs has toilets.",
+    "Reactive social is usually the cheapest and worst thing a brand does. The reason this round reads better than most is that the stunt handed everyone the same one-word brief — up — so the only available differentiation was what each brand did with the opposite."
+   ]
+  }
+ ],
+ "learn": {
+  "title": "Rubber is the colour of milk. A tyre is black because roughly half its weight is soot — and the soot is the only reason it survives a road.",
+  "subject": "Carbon black as a reinforcing filler in tyres: unfilled styrene-butadiene vulcanizate manages no more than 2 MPa tensile strength and negligible abrasion resistance, while a carbon-black-loaded compound reaches 25.2 MPa; 70% of all carbon black produced goes into tyres; Edwin Binney of Crayola proposed the idea.",
+  "body": [
+   "Latex comes out of a rubber tree the colour of thin milk, and vulcanising it gets you something amber or grey. Nothing in the chemistry of a tyre wants to be black. The black is carbon black — soot, made on purpose by burning hydrocarbons in a controlled shortage of air — and it is not a pigment in any meaningful sense. It is structure. About 70% of all the carbon black made in the world goes into car tyres, and it goes in by the shovel: a tread compound can be something like half carbon black by weight of the rubber.",
+   "The reason is the gap between the two numbers. A vulcanised styrene-butadiene rubber with nothing in it manages a tensile strength of no more than about 2 megapascals and, in the phrase the literature actually uses, negligible abrasion resistance — you could wear it away on a road in an afternoon. Load it with carbon black and the best grade, SAF, comes out at 25.2 MPa with roadwear abrasion rated above the industry baseline. The particles key into the polymer chains and stop them sliding past each other. They also conduct heat out of the tread and belt, which matters more than it sounds: a rolling tyre is a machine for cooking itself, and the filler is the radiator.",
+   "The nicest part of the story is who suggested it. Edwin Binney and his cousin C. Harold Smith ran a chemical firm that made, among other things, a wax crayon for marking crates in 1902 and the first box of Crayola crayons in 1903 — and it was Binney who put forward the idea of the black tyre, made with the carbon black his company already produced. The crayon people are why your car is not riding on something the colour of chewing gum. The coda is that carbon black may be on its way out: silica fillers have improved far enough to match its abrasion performance while giving better fuel economy and wet grip, which leaves carbon black with one property nothing else offers and nobody ever chose it for — the colour everyone assumes was the point."
+  ]
+ },
+ "ideas": {
+  "prompt": "Ten things you could teach someone in ten minutes",
+  "note": "Altucher's drill: ten against one prompt, written fast, not defended. Reddit rate-limited the fetcher after r/SomebodyMakeThis, so the raw material is that week's posts plus the Ask HN idea threads and Y Combinator's Requests for Startups. Reading them, almost every request was for something to remember or notice on the reader's behalf — hold my thought while I read, show me what my friends are into, wake me to the right song. The analogue version of a tool that notices for you is a person who shows you the trick once. Eight are mine; two are marked.",
+  "items": [
+   {
+    "text": "How to carry a full mug down stairs without spilling it — look at the stairs, not the mug."
+   },
+   {
+    "text": "How to tell, from across a room, whether a stranger's accent is a first language or a second one."
+   },
+   {
+    "text": "How to fold a fitted sheet. Ten minutes is generous; the resentment it dissolves lasts decades."
+   },
+   {
+    "text": "How to read a train departure board backwards, so you find the platform before the destination."
+   },
+   {
+    "text": "How to sharpen a kitchen knife on the unglazed ring at the bottom of a ceramic mug."
+   },
+   {
+    "text": "How to ask a follow-up question that is not 'and then what happened'.",
+    "why": "A recurring wish on r/SomebodyMakeThis is for software that remembers what friends are actually into; the unautomated version is one better question."
+   },
+   {
+    "text": "How to find your way back out of an unfamiliar building without a map."
+   },
+   {
+    "text": "How to say one sentence in a language you do not speak so that a native speaker does not switch to English."
+   },
+   {
+    "text": "How to spot which supermarket queue is actually fastest, which is never the shortest one."
+   },
+   {
+    "text": "How to save the thought you had while reading without losing your place on the page.",
+    "why": "Straight off the top post on r/SomebodyMakeThis this week, which wanted an app for it; the ten-minute version is a system and a pencil."
+   }
+  ]
+ }
+}

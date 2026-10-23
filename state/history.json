@@ -6883,6 +6883,135 @@
         "medievalists.net",
         "sebi.gov.in"
       ]
+    },
+    {
+      "date": "2026-10-24",
+      "issue": 1,
+      "quote_text": [
+        "Science may be described as the art of systematic oversimplification."
+      ],
+      "quote_author": [
+        "Karl Popper"
+      ],
+      "idea_text": [
+        "How to carry a full mug down stairs without spilling it — look at the stairs, not the mug.",
+        "How to tell, from across a room, whether a stranger's accent is a first language or a second one.",
+        "How to fold a fitted sheet. Ten minutes is generous; the resentment it dissolves lasts decades.",
+        "How to read a train departure board backwards, so you find the platform before the destination.",
+        "How to sharpen a kitchen knife on the unglazed ring at the bottom of a ceramic mug.",
+        "How to ask a follow-up question that is not 'and then what happened'.",
+        "How to find your way back out of an unfamiliar building without a map.",
+        "How to say one sentence in a language you do not speak so that a native speaker does not switch to English.",
+        "How to spot which supermarket queue is actually fastest, which is never the shortest one.",
+        "How to save the thought you had while reading without losing your place on the page."
+      ],
+      "idea_prompt": [
+        "Ten things you could teach someone in ten minutes"
+      ],
+      "tip_text": [
+        "If you have ever fanned out several `subagent_type: \"fork\"` agents in one message and watched them pick up each other's task, try it again. Claude Code 2.1.307 now tells each fork which of the simultaneous launches is its own, so a parallel fan-out of forks stops colliding with itself."
+      ],
+      "hn_id": [
+        "50202285",
+        "50192536",
+        "50202681",
+        "50211474",
+        "50194833"
+      ],
+      "link": [
+        "https://edjefferson.com/localwiki/",
+        "https://pepsipu.com/blog/2026-10-switch2-jailbreak-ns2jb/",
+        "https://codeandcake.dev/posts/2026-10-22-docker-is-weird",
+        "https://blog.calif.io/p/iphone",
+        "https://www.404media.co/amanda-smith-opened-a-cashapp-in-her-name-she-faces-years-in-prison-cashapp-fraud/",
+        "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=63859",
+        "https://www.kimi.ai/blog/kimi-k3-1-pro",
+        "https://www.heritagedaily.com/2026/10/2800-year-old-bone-flute-unearthed-in-troy/159750",
+        "https://www.dexerto.com/entertainment/heineken-launches-netflix-style-streaming-service-to-find-pubs-3420278/",
+        "https://www.bandt.com.au/feeling-frosty-fashion-label-aritzia-blows-up-giant-puffer-jacket-in-nyc/",
+        "https://marketing-interactive.com/from-flying-mice-to-grounded-volvos-brands-react-to-tesla-s-flying-car",
+        "https://research.google/blog/bringing-foundational-models-to-the-front-lines-of-tb-screening/",
+        "https://arxiv.org/abs/2610.28281",
+        "https://insights.dsij.in/dsijarticledetail/closing-bell-sensex-nifty-fall-for-4th-session-as-brent-crude-nears-114-smallcap-stocks-tumble-60142"
+      ],
+      "subject": [
+        "The RBI's October 2026 Bulletin, released 23 October, decomposes monetary transmission: a cumulative 125 bps repo cut from February 2025 to March 2026 lowered the weighted average lending rate on fresh loans by 93 bps, of which 80 bps was the interest rate effect and 13 bps the composition effect.",
+        "Moonshot AI launched Kimi K3.1 Pro, a 3T-class language model whose full parameters it promises to publish by 4 November, taking 1M tokens of input, stating that cyber-capability training data was taken out before that publication, and publishing the resulting capability gap, 81.0% for the public build against 90.5% unmitigated.",
+        "A 2,800-year-old bone flute was announced at Troy in Çanakkale, Türkiye, recovered from an eighth-century BC Archaic layer and the first musical instrument the site has produced in 160 seasons of digging; an anthropomorphic idol head came out of a fire-damaged deposit by the entrance to the Troy II settlement phase.",
+        "Heineken launched Pubscription, a free streaming-style service on the web and TV apps where users browse participating English pubs grouped by vibe, each with a thumbnail, and claim one free pint per week.",
+        "Aritzia installed a building-scale pink Super Puff jacket, strapped over an alleyway at 159 Ludlow Street on New York's Lower East Side, to promote the jacket's upgrade to 800+ fill-power down.",
+        "Tesla unveiled the second-generation Roadster and posted a clip of thrusters briefly lifting and spinning it; Volvo responded on social media with an image captioned 'Down to Earth. Since 1927' and 'Since 1927, we've kept all four wheels on the ground', one of a wave of brand replies.",
+        "A Google Research post traces its chest X-ray tuberculosis screening work from a 2019 Radiology benchmark through open foundation models — CXR embeddings, MedSigLIP, MedGemma, HeAR — to a CE MDR Class IIb certified device now running in about 40 facilities in six countries.",
+        "An arXiv preprint fingerprints a language model from its one-word replies to ordinary prompts: 40 such replies pick the exact model out of 94 at 92.5% accuracy against 1.1% by chance, costing a few cents per endpoint — and several API endpoints prove to be serving something other than what they advertise.",
+        "Carbon black as a reinforcing filler in tyres: unfilled styrene-butadiene vulcanizate manages no more than 2 MPa tensile strength and negligible abrasion resistance, while a carbon-black-loaded compound reaches 25.2 MPa; 70% of all carbon black produced goes into tyres; Edwin Binney of Crayola proposed the idea."
+      ],
+      "brand": [
+        "Heineken",
+        "Aritzia",
+        "Volvo",
+        "Tesla",
+        "MINI",
+        "Toblerone"
+      ],
+      "brand_mention": [
+        "England",
+        "Heineken Original",
+        "Heineken 0",
+        "Aritzia",
+        "Super Puff",
+        "Ludlow Street",
+        "B&T",
+        "Roadster",
+        "Down",
+        "Flying",
+        "Toblerone"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "The RBI has cut 125 basis points since February 2025. What actually reached new borrowers is 93 of them."
+        ],
+        [
+          "trends",
+          "Moonshot removed the cyber data from its new open-weight model, and published exactly what the removal cost"
+        ],
+        [
+          "trends",
+          "Troy has been dug for 160 years and has just produced its first musical instrument"
+        ],
+        [
+          "wild",
+          "Heineken has built a streaming service whose entire purpose is to get you off the sofa"
+        ],
+        [
+          "wild",
+          "Aritzia wedged a building-scale puffer jacket into a Lower East Side alleyway, to advertise down"
+        ],
+        [
+          "wild",
+          "Tesla made its Roadster hover. Volvo replied with a photograph of a car on the ground and the year 1927."
+        ],
+        [
+          "research",
+          "A tuberculosis X-ray reader that started as a research model is now a CE-marked device running four kilometres underground"
+        ],
+        [
+          "research",
+          "Forty Questions: Identifying a Language Model from One-Word Answers"
+        ],
+        [
+          "learn",
+          "Rubber is the colour of milk. A tyre is black because roughly half its weight is soot — and the soot is the only reason it survives a road."
+        ]
+      ],
+      "editorial_domains": [
+        "bandt.com.au",
+        "dexerto.com",
+        "heritagedaily.com",
+        "kimi.ai",
+        "marketing-interactive.com",
+        "rbi.org.in"
+      ]
     }
   ]
 }
