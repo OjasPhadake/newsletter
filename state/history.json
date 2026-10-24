@@ -7012,6 +7012,150 @@
         "marketing-interactive.com",
         "rbi.org.in"
       ]
+    },
+    {
+      "date": "2026-10-25",
+      "issue": 1,
+      "quote_text": [
+        "No, no, you're not thinking; you're just being logical."
+      ],
+      "quote_author": [
+        "Niels Bohr"
+      ],
+      "idea_text": [
+        "On every free trial: \"Signing up takes one screen. Cancelling takes four.\"",
+        "On a sofa in a showroom: \"Measure the stairwell, not the room.\"",
+        "On a second coffee after four o'clock: \"This is a loan, not a gift.\"",
+        "On a reply-all button: \"Contains 340 people who did not ask.\"",
+        "On a hobby's starter kit: \"For most buyers, the kit is the hobby.\"",
+        "On a 6am flight: \"Add the taxi to the airport, then compare the fares again.\"",
+        "On a kitchen gadget: \"Hand wash only — which is the job you bought this to avoid.\"",
+        "On a houseplant: \"Needs light. Will not mention when it stops getting any.\"",
+        "On a note-taking app: \"You will move out of here within two years. Nothing here is built for leaving.\"",
+        "On an AI chat window: \"Everything you type here is stored somewhere you cannot open.\""
+      ],
+      "idea_prompt": [
+        "Ten warning labels that should exist"
+      ],
+      "tip_text": [
+        "If anything in your CI pipeline calls `claude ultrareview`, go and look at it today: since 2.1.309 the command requires workspace trust, which means it asks on a terminal and simply refuses anywhere else. Scripts pass `--trust-workspace`, which takes no value and goes *after* the PR number or base branch, or you set `CLAUDE_CODE_DISABLE_ULTRAREVIEW_TRUST_CHECK=1`."
+      ],
+      "hn_id": [
+        "50207910",
+        "50217495",
+        "50208837",
+        "50208558",
+        "50213925"
+      ],
+      "link": [
+        "https://music.apple.com/this-url-doesnt-exist",
+        "https://grapheneos.social/@GrapheneOS/117492375462459244",
+        "https://www.kadoa.com/energy-prices/insights/investor-owned-utilities",
+        "https://keepandroidopen.org/",
+        "https://block.xyz/dessa",
+        "https://dailypioneer.com/amp/story/business/indias-forex-reserves-decline-5-billion-to-721-billion",
+        "https://www.eff.org/deeplinks/2026/10/canadians-are-running-out-time-oppose-dangerous-c-22-surveillance-bill",
+        "https://www.ancient-origins.net/news-history-archaeology/maltese-cart-ruts-00103286",
+        "https://www.thetakeout.com/2293583/wingstop-sour-patch-kids-review/",
+        "https://www.advertimes.com/?p=561179",
+        "https://www.prnewswire.com/news-releases/the-haunting-debuts-from-the-creators-of-miracle-302848655.html",
+        "https://deepmind.google/blog/beyond-tree-cover-mapping-the-worlds-forest-types/",
+        "https://arxiv.org/abs/2610.28441",
+        "https://blog.liquide.life/weekly-review-indian-stock-market-prediction-oct-26th-oct-30th-2026/"
+      ],
+      "subject": [
+        "India's forex reserves at $721.016 bn, down $5.011 bn in the week to 16 October, a sixth straight fall from the 4 September peak of $785.706 bn.",
+        "Canada's Bill C-22, the Lawful Access Act, has passed the Commons and sits with the Senate: ministerial backdoor orders plus metadata retention for up to a year.",
+        "Malta's 2,628 cart ruts redated to the Classical era rather than the Neolithic, by Joel Grima across 228 sites on Malta and Gozo.",
+        "Wingstop put a redberry sour-sweet glaze topped with pulverised candy on wings, tenders and boneless, 23 October to 5 November.",
+        "Yakiniku Like opened a filming-and-streaming seat, Studio Like, at its Shinjuku South store, free in 60-minute slots for two.",
+        "Miracle Cocktails licensed The Haunting, a Halloween pop-up, to bars worldwide after twelve Christmas-only years.",
+        "Google's ForTy map sorts the world's land into six FAO forest types at 10 metres, 90% right on type and 95% on forest versus not.",
+        "Stratified Sparse Attention recovers 94% of dense accuracy on RULER-HARD at 32K with 50× sparsity, and 2.96× faster decode at a million tokens.",
+        "A hydrant's bonnet colour encodes rated flow at 20 psi: light blue above 1,500 gpm, green 1,000, orange 500, red under 500."
+      ],
+      "brand": [
+        "Wingstop",
+        "Sour Patch Kids",
+        "Yakiniku Like",
+        "Miracle Cocktails"
+      ],
+      "brand_mention": [
+        "Sour Patch Kids",
+        "Club Wingstop",
+        "Halloween",
+        "Florida",
+        "Yes",
+        "Days",
+        "Mischief",
+        "Yakiniku Like",
+        "Studio Like",
+        "Iwata Mari's Room",
+        "Shinjuku",
+        "Iwata Mari",
+        "LINE",
+        "Iwata Mari Aaa Ra Hotpot-Style Yakiniku Set",
+        "Miracle Cocktails",
+        "Christmas",
+        "Miracle",
+        "Sippin Santa",
+        "Franchised Christmas",
+        "Cabinet Mezcal Bar",
+        "York Founder Greg Boehm's",
+        "Cocktail Kingdom",
+        "Widow's Whisper",
+        "Scream-sicle",
+        "Poison",
+        "Liquid Lobotomy",
+        "Clown Pear-anoia",
+        "VP Joann Spiegel"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "India's reserves have now fallen six weeks running, and $64.7 billion of September's record has gone"
+        ],
+        [
+          "trends",
+          "Canada's surveillance bill has cleared the Commons, and it lets a minister order a backdoor so long as it is not “systemically” insecure"
+        ],
+        [
+          "trends",
+          "Malta's stone 'railways' have been read as prehistoric for two centuries. Someone counted all 2,628 of them and found no evidence for it."
+        ],
+        [
+          "wild",
+          "Wingstop has glazed chicken wings in sour sweets, and the crew who tried them called it good but weird"
+        ],
+        [
+          "wild",
+          "Yakiniku Like has built a seat whose whole purpose is filming, and will not charge you to use it"
+        ],
+        [
+          "wild",
+          "Miracle Cocktails spent twelve years licensing Christmas to other people's bars. It has finally done Halloween."
+        ],
+        [
+          "research",
+          "A tree-cover map cannot tell a rainforest from a palm plantation. Google has mapped six kinds of forest at ten metres, and got it right 90% of the time."
+        ],
+        [
+          "research",
+          "Stratified Sparse Attention: Reducing the Sparse-to-Dense Gap at Extreme Sparsity"
+        ],
+        [
+          "learn",
+          "The colour of a fire hydrant is a number. The bonnet tells a firefighter how many gallons a minute they can expect before the hose is off the truck."
+        ]
+      ],
+      "editorial_domains": [
+        "advertimes.com",
+        "ancient-origins.net",
+        "dailypioneer.com",
+        "eff.org",
+        "prnewswire.com",
+        "thetakeout.com"
+      ]
     }
   ]
 }
