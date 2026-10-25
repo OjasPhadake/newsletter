@@ -1,0 +1,334 @@
+{
+  "date_line": "Monday, 26 October 2026",
+  "issue": 1,
+  "preheader": "George Eliot on why the ignorant see more possibilities; a 2025 Samsung TV gives up a root shell and the open-source tool that follows names the port and the bug; Dan Luu argues the cost model for ambitious software is three years out of date; Apollo's chief economist says AI's payoff stops at the edge of the tech sector; $500 of bitcoin left on a PHP box, and the author put the wrong key on it; Goose claims 3.5x C++ with no heap and no lifetimes; Brent settled at $116.72, the highest since April, and markets are shut until this morning; from Sunday every Indian broker's landing page carries SEBI's warning; a Brotli bug rated 9.2 reaches fetch() in Node and requests in Python; a single positron has sat in a trap for months at 0.3 kelvin; Google's lab agents raised an aptamer hit rate from 0% to 42.1%; Oxford finds LLMs break Bayes' rule until you give them a Python interpreter; Australia's Strongest Man will carry your sofa; and the load line on a ship's hull is why your gym shoes are called plimsolls.",
+  "quote": {
+    "text": "Ignorance gives one a large range of probabilities.",
+    "author": "George Eliot",
+    "source": "Daniel Deronda",
+    "source_url": "https://www.goodreads.com/quotes/tag/probability",
+    "note": "The feeling that anything could happen is almost never a fact about the world; it is a reading off your own instruments. Knowing more does not open possibilities, it closes them — which is why a wide distribution is not humility but a confession, and why the person in the room with the most vivid sense of what might happen next is usually the one who has looked into it least."
+  },
+  "agent_craft": {
+    "items": [
+      {
+        "text": "Keep base64 blobs and large SVGs out of the conversation — write them to a file and hand Claude the path instead. Dense text compacts badly: before 2.1.310, a session that hit \"Prompt is too long\" could compact and still keep enough of the blob to fail the very next request, which is the loop that eats an afternoon.",
+        "source": "Claude Code changelog, 2.1.310 (23 October 2026)",
+        "url": "https://code.claude.com/docs/en/changelog"
+      }
+    ]
+  },
+  "hn": [
+    {
+      "title": "Root shell on Samsung TV",
+      "url": "https://twitter.com/log4j/status/2113014142600953868?s=46",
+      "hn_url": "https://news.ycombinator.com/item?id=50218633",
+      "points": 736,
+      "comments": 561,
+      "bullets": [
+        "The submission is a post on x.com, which is login-walled and cannot be fetched, so this is written from the Hacker News thread and from the code that has appeared since. The claim, per the researcher posting as log4j: a brand-new 2025 Samsung set was rooted after its owner noticed absurdly targeted advertising, the firmware was AES-encrypted with no keys available, and zero-days were used to get a shell. None of that part is independently verified.",
+        "What is verifiable is the tooling that followed, and it is specific. `samshush` roots a Frame Pro QN65LS03FWFXZA on firmware 1301.0 over the local network — no flashing — by reaching Samsung's Smart Development Bridge on TCP 26101, exploiting a command-injection flaw there, then chaining bugs in the TV's .NET runtime and Samsung's archive launcher for temporary root. The author says it was built with GPT-6 Astra; the HN thread is full of people reporting the same workflow with coding agents, which is the part that made this a 736-point story rather than a firmware note.",
+        "The disable list reads as a specification of what the television was doing: Bixby, Alexa and voice recognition, always-on listening, virtual microphones, Bluetooth HFP and soundbar voice passthrough, SmartThings sound sensing, ambient-sound presence detection, Wi-Fi presence, screen-based game and app recognition, the ad agent and targeted-ads components. It also strips four eMudhra/emSign trust roots out of eleven certificate files. Apps are disabled, not removed, and the README is explicit that it does not catch every microphone input or telemetry source.",
+        "The thread's most useful contribution is the pushback. Commenters point out that dog-barking and baby-crying detection are advertised SmartThings features, so the telemetry counters for them may be documented rather than covert, and that a set without its own microphone looking for a connected one is what a voice assistant does. Read the whole thing as two separate findings: a television that ships a great deal of sensing switched on, and a rooting pipeline that a determined owner can now follow with an agent. Firmware updates can undo both."
+      ]
+    },
+    {
+      "title": "We should be more ambitious with the software we build",
+      "url": "https://danluu.com/ambitious/",
+      "hn_url": "https://news.ycombinator.com/item?id=50225695",
+      "points": 731,
+      "comments": 672,
+      "bullets": [
+        "Luu's claim is narrower than the headline and better for it: this is about *can*, not *should*. Most people are still pricing projects with a cost model from before agents, so they rule out work that is now cheap — and the gains do not come from doing the same job faster. Amdahl's law caps that. They come from attempting the thing that was previously uneconomical.",
+        "The examples are specific enough to argue with. Michael Malis's `pgrust`, a Postgres rewrite, turned up real Postgres bugs — an SP-GiST numerical bug, a JSONPath format-cache bug, a pgcrypto bug, memory-safety bugs in the dictionary loader, a money overflow — with parts verified in Kani and later Lean, while Malis himself warns it is not ready to be anyone's primary database. A seven-person Anthropic team built the Scion and Antique tools and migrated onto them in five months. GPT-6 Astra passed over 99% of registered zstd tests at roughly $1 per implementation, then failed to handle the IMAP RFC and Pandoc as cleanly.",
+        "His own list is the part that generalises: a regex engine tuned to his workloads, a ripgrep fork built on its compiler, a Rust toolchain change that cut cold build times. A few hours each, against a year or more before. The board-game thread is the cleanest measurement in the piece — about 5 hours to superhuman Azul at matched time controls, about 20 to the strongest program he knew of, and then someone else beat it in less time with newer models.",
+        "The strongest objection is in the post. Yossi Kreinin argues most people should be *less* ambitious, because agentic loops need clean pass/fail criteria and humans reason badly about large black-box codebases. Luu's answer is not a rebuttal so much as a selection rule: the projects that work are the ones that can check themselves — fuzzing, property tests, differential comparison against the thing you are replacing. He also says plainly that he wrote the post fast, without benchmarks, and that much of it is anecdote."
+      ]
+    },
+    {
+      "title": "No signs of AI payoff outside the tech sector",
+      "url": "https://www.apollo.com/wealth/insights-news/insights/daily-spark/no-signs-of-ai-payoff-outside-the-tech-sector",
+      "hn_url": "https://news.ycombinator.com/item?id=50224463",
+      "points": 608,
+      "comments": 645,
+      "bullets": [
+        "Torsten Sløk, Apollo's chief economist, published this in The Daily Spark on 24 October. The sentence doing the work: AI has \"delivered zero financial payoff to corporate America outside of tech\". His framing is that the question gets settled in the S&P 493, not the Magnificent Seven — and that in the 493 there is still no visible revenue or margin gain.",
+        "Worth knowing before you quote it: the text carries no numbers. Everything is in five chart images, and the honest summary is their titles and sources. Revenue per worker, inflation-adjusted to 2019 Q4, rising for the Mag 7 and flat for the 493 (Bloomberg, Macrobond). Profit margins, same split. Total factor productivity on the San Francisco Fed's utilisation-adjusted series. AI spending concentration and token-spend circularity, both built on Ramp's AI Index.",
+        "The mechanism he proposes is the interesting half, because it inverts the usual story. Mainstream firms are starting to treat token spend as a cost line that weighs on margins rather than a growth input. If that is what is happening, adoption and payoff move in opposite directions for a while, and an adoption survey tells you nothing about the second one.",
+        "It is a note from a firm with a position, and the thread says so repeatedly: Apollo is a private-credit manager, this is a two-year-old technology being measured against quarterly margins, and productivity statistics have historically lagged general-purpose technologies by a decade or more. The argument that survives all of that is the narrow one — that the evidence does not yet exist, which is different from the claim that it will not."
+      ]
+    },
+    {
+      "title": "Show HN: Steal My Bitcoin",
+      "url": "https://stealmybitcoin.com/",
+      "hn_url": "https://news.ycombinator.com/item?id=50224916",
+      "points": 580,
+      "comments": 416,
+      "bullets": [
+        "The site refused connections when fetched, which is most of the story; this is from the author's own Show HN comments and the thread. The setup: a Bitcoin wallet key sitting on a deliberately unpatched PHP box, readable through a `print-flag` binary that the PHP user can execute. The PHP version was picked from before the PHP2Shell CVEs landed. Break the RCE, run the binary, keep the coins.",
+        "The prize grew while people watched, which was not the plan. It started at about $500 — the page showed 0.00625104 BTC, roughly $502.35 — and visitors kept sending money, so later commenters report 0.02500416 BTC, about $2,018.29. The author's framing was the clearest thing in the thread: leave $500 on a street corner with a sign on it and see how long it lasts.",
+        "The methodology got picked apart in public, usefully. The first configuration served only a static `index.html` through PHP's own web server, which several commenters argued could not be exploited at all; the author then added `php-version.php` and `/ping.php` to prove PHP was running. Others noted an essentially default nginx in front, including the 1 MiB request-body cap, which makes the attack materially harder. The site also kept falling over, and a fair number of people pointed out that the traffic was itself the denial of service.",
+        "Then the author reported a solve, and the reason is the best detail here: the wrong key was on the server. \"I put a wallet-branch WIF on the server, rather than the WIF for the funded address inside that wallet.\" Someone who knows the key's value got in touch. Unverified, like most of this. The thread's split verdict is the honest one — either a working exploit is worth far more than $500, or the difficulty of exploitation *was* the result."
+      ]
+    },
+    {
+      "title": "The Goose Programming Language",
+      "url": "https://aardappel.github.io/goose/",
+      "hn_url": "https://news.ycombinator.com/item?id=50224100",
+      "points": 561,
+      "comments": 347,
+      "bullets": [
+        "Goose is Wouter van Oortmerssen's attempt at a memory-safe systems language with \"no heap allocator, garbage collector, or lifetime annotations\" — three things usually treated as the complete menu. There is no heap at all. Dynamic values live inline on compiler-managed data stacks, growth advances a bump pointer, and memory is released when its scope ends.",
+        "The consequence most C programmers will notice first: memory never moves, so a reference into an array stays valid while that array grows. Safety needs no annotations because the compiler infers each reference's root, and there is no `unsafe` keyword to reach for. The cost is paid in the type system — arrays come in five kinds depending on how they may change (`T[k]` fixed, `T[]` frozen, `T[..k]` capacity-bounded, `T[>..]` grow-only, `T[>..<]` grow-shrink), and errors use `return E from f` to unwind to an ancestor frame, checked statically, with no `Result` type and no `?`.",
+        "The numbers on the page, across 16 benchmarks: geometric mean about 3.5x the speed of idiomatic C++ on the MSVC backend, about 1.1x the best safe Rust, and about 1.9x less memory than idiomatic C++. It compiles to a single C file, calls C through `extern fn`, and bundles TinyCC so it can run in-process. Threads share no memory and pass flat values through typed queues. Apache-2.0.",
+        "Read the limitations before the benchmarks. A recursive function cannot hold growable data across the recursive call, variable-size arrays can be iterated but not indexed, and there are no closures and no function pointers. The compiler is about 30,000 lines of C++ with a spec, 14 standard-library modules, 31 samples and CI on three platforms — and the author says it was produced almost entirely with AI from a human-written language design, which is what half the thread is actually about."
+      ]
+    }
+  ],
+  "markets": {
+    "indices": [
+      {
+        "name": "Sensex · Fri 23 Oct close",
+        "value": "73,123.83",
+        "change": "−125.56 (0.17%); a fourth straight losing session. Markets shut Sat and Sun; Monday opens after this email",
+        "direction": "down"
+      },
+      {
+        "name": "Nifty 50 · Fri 23 Oct",
+        "value": "22,600.00",
+        "change": "−87.65 (0.39%); finished on the round number",
+        "direction": "down"
+      },
+      {
+        "name": "Bank Nifty · Fri",
+        "value": "−1.16%",
+        "change": "Nifty Financial Services −1.03% to 24,403.00",
+        "direction": "down"
+      },
+      {
+        "name": "Broader market · Fri",
+        "value": "Midcap 100 −2.21%",
+        "change": "Smallcap 100 −2.94% — roughly seven times the Nifty's fall on the day",
+        "direction": "down"
+      },
+      {
+        "name": "Sectors · Fri",
+        "value": "Metal −2.71% to 11,478.20",
+        "change": "Realty −2.38% to 784.35; Energy −1.66% to 34,520.05; Pharma −1.04% to 25,329.45; IT −0.27% to 31,995.50, the shallowest",
+        "direction": "down"
+      },
+      {
+        "name": "Brent crude · Fri settle",
+        "value": "$116.72",
+        "change": "+$3.55 (3.14%), highest since 29 April and +6% on the week; WTI $103.27, +$3.80 (3.8%)",
+        "direction": "up"
+      },
+      {
+        "name": "USD/INR · Fri 23 Oct",
+        "value": "94.89",
+        "change": "Rupee lower for a second straight session on crude and a firmer dollar",
+        "direction": "up"
+      },
+      {
+        "name": "FII cash · Fri",
+        "value": "+₹887.65 cr",
+        "change": "DIIs +₹3,235.36 cr; across the four sessions of the week FIIs were net sellers of ₹2,697.37 cr against DII buying of ₹10,942.19 cr",
+        "direction": "up"
+      }
+    ],
+    "stories": [
+      {
+        "headline": "Oil settled at its highest since April on Friday, and the attacks driving it are now on Saudi soil rather than at sea",
+        "url": "https://www.marketscreener.com/news/brent-crude-hits-more-than-five-month-high-on-concern-over-middle-east-escalation-ce785cded18bf321",
+        "source": "Reuters via MarketScreener, 23 October 2026, for the settlements and the attack detail; Baker Hughes for the rig count",
+        "bullets": [
+          "Brent settled Friday at $116.72, up $3.55 or 3.14%, the highest close since 29 April and a 6% week. WTI settled at $103.27, up $3.80 or 3.8%, up 2.3% on the week. This is the number that matters most to an Indian reader, because almost none of it is produced here.",
+          "The escalation changed shape. Houthi forces claimed strikes inside Saudi Arabia — an Aramco facility at Yanbu, the Shaybah oilfield, King Khalid International Airport in Riyadh, Abha airport — and Aramco ordered its Dhahran headquarters evacuated on Thursday. Shipping is still being hit too: the supertanker Gem No. 2 took an unidentified projectile off the UAE on 9 October, a spill from an unnamed tanker was reported off Umm Al Quwain, and a Washington think tank counts October as the worst month on record for attacks around the Strait of Hormuz.",
+          "The supply response tells you how tight the market reads. The US Department of Energy authorised an emergency exchange of up to 400,000 barrels from a Strategic Petroleum Reserve already at its lowest level since 1982, to cover a disruption at Phillips 66's Lake Charles refinery. Germany's EBV tendered diesel, heating oil and crude from strategic stocks — its first release since the G7 agreed to coordinate in early October. A Libyan pipeline valve closure cut output at the Hamada and Tahara fields.",
+          "What is not responding is American drilling: Baker Hughes put the combined oil and gas rig count at 603 for a second straight week. Andrew Lipow of Lipow Oil Associates framed the bid plainly — \"The market is concerned about these continued Iranian attacks on tankers.\" A risk premium that nobody is adding barrels against is the version of this that lasts."
+        ]
+      },
+      {
+        "headline": "A fourth down day that looks almost flat on the benchmarks and is not: the Sensex lost 125 points, the smallcaps 2.94%",
+        "url": "https://www.indiatvnews.com/business/news/markets-extend-losing-streak-sensex-falls-125-points-nifty-ends-at-22-600-2026-10-23-1057733",
+        "source": "India TV News for the index closes and point changes; Trade Brains' 23 October live blog for the sector index levels and USD/INR; Upstox's FII/DII cash table for the flows",
+        "bullets": [
+          "Indian markets were closed Saturday and Sunday and open this morning after this email, so these are Friday 23 October's closes. Sensex 73,123.83, down 125.56 points or 0.17%; Nifty 50 exactly 22,600.00, down 87.65 or 0.39%. Fourth consecutive losing session. On the headline numbers it reads as a quiet Friday.",
+          "It was not quiet one level down. Nifty Midcap 100 fell 2.21% and Smallcap 100 2.94% — on a day the Nifty lost 0.39%. Bank Nifty gave up 1.16%. Among sectors: Metal −2.71% to 11,478.20, Realty −2.38% to 784.35, Energy −1.66% to 34,520.05, Pharma −1.04% to 25,329.45, Financial Services −1.03% to 24,403.00, and Nifty IT the least hurt at −0.27% to 31,995.50.",
+          "Both causes were imported. Brent above $116 is a direct hit on an economy that buys most of its crude, and the rupee fell for a second straight session, quoted at 94.89 to the dollar late in the day, on crude plus a firmer dollar. Energy and metals leading the fall is the same story told twice.",
+          "The flows are the part that keeps being counterintuitive. On Friday foreigners were net *buyers* of ₹887.65 crore and domestic institutions bought ₹3,235.36 crore. Over the week's four sessions FIIs sold a net ₹2,697.37 crore while DIIs bought ₹10,942.19 crore — four rupees in for every rupee out, and the market still fell. Whatever is moving the smallcaps is not foreign money leaving."
+        ]
+      }
+    ]
+  },
+  "trends": [
+    {
+      "tag": "India",
+      "headline": "From Sunday, every Indian broker's landing page has to carry SEBI's warning, and the trading app has to alternate between two of them",
+      "url": "https://zeenews.india.com/economy/sebi-directs-stock-brokers-to-display-investor-awareness-messages-under-project-jagrook-3074280.html",
+      "subject": "Project Jagrook: SEBI mandates investor-awareness messages on broker website landing pages from 1 November, alternating with risk disclosures inside trading apps.",
+      "subtitle": "IANS via Zee News on SEBI's circular; the voluntary phase ran 5–31 October, the mandate starts 1 November 2026",
+      "bullets": [
+        "The sequencing is the whole design. From 5 to 31 October, brokers had to show SEBI's investor awareness messages and the prescribed risk disclosures on their websites, while showing them inside the trading app was optional — and on any day a broker did show them in the app, the risk disclosures became optional that day. A month of practice with an opt-out.",
+        "From 1 November both halves harden. Websites must carry the specified messages on the landing page, not somewhere reachable from it. Trading apps must display the awareness messages and the risk disclosures on alternate days — an unusual instrument, and a revealing one: the regulator is rationing its own attention budget rather than stacking both notices and watching users learn to scroll past the block.",
+        "This sits under Project Jagrook, launched on 5 October at Panjab University in Chandigarh as the \"Samajh Se Investing Simple\" campaign, running to March 2027 with the exchanges, depositories, AMFI and NISM, plus a SEBI WhatsApp channel on 1800 22 7575. The named targets are finfluencers, anonymous tips and promised returns. The risk disclosures themselves are not new — a May 2023 circular already required brokers to show them to every client.",
+        "Exchanges and depositories have to notify their members, host the circular, display the messages in the prescribed format and ensure compliance. Two things the reporting does not pin down, and that matter if you are implementing it: the exact wording of the messages, and which calendar days count as which under the alternate-day rule. Both live in the circular rather than the coverage."
+      ]
+    },
+    {
+      "tag": "Security",
+      "headline": "A bug in Brotli rated 9.2 reaches anything that decompresses a response it did not choose — which is `fetch()` in Node and `requests` in Python",
+      "url": "https://broccoli2shell.com/",
+      "subject": "CVE-2026-111497, an out-of-bounds write in Google's Brotli C decoder, rated 9.2 critical; patched in Node 26.12.1/24.22.1/22.23.4 and Brotli 1.2.1.",
+      "subtitle": "Broccoli2Shell disclosure site, last updated 26 October 2026; reported by OpenAI Codex Security, exploitation research by Imperva's Red Team",
+      "bullets": [
+        "CVE-2026-111497 is an out-of-bounds write in Google's Brotli C decoder, affecting 1.0.3 through 1.2.0. GitHub rates it 9.2 critical on CVSS 4.0; Node.js rates it high. Fixed in Brotli 1.0.10, 1.1.1 and 1.2.1; in Node 26.12.1, 24.22.1 and 22.23.4 — and nowhere in Node 25, 23 or 20, which are end of life. Python's `Brotli` is fixed at 1.2.1, `brotlicffi` at 1.2.1.0.",
+        "The bug is a missing distinction, which is the most ordinary kind. `DecodeBlockTypeAndLength()` in `c/dec/decode.c` returned a bare boolean, so it could not tell malformed input apart from input that merely needed more bytes — and the fast path ignored the return value entirely. A stream requesting an impossible block switch was read as \"need more data\", and the decoder kept writing attacker bytes past an eight-byte internal buffer into its own state. The fix returns a hard error, `BROTLI_DECODER_ERROR_FORMAT_BLOCK_SWITCH` (−17). CWE-252 and CWE-787: ignoring a return value, and writing past the end.",
+        "Work out your exposure from the data flow, not the dependency list. Anything that decompresses Brotli from a party you do not control is in scope: HTTP clients that auto-decompress, which means `fetch()`, `requests`/`urllib3` and `aiohttp`, request-body parsers, and direct decoder calls. Express and body-parser do not contain the bug — they are routes to it. The uncomfortable detail is the timeline: the fix landed in Brotli's source in February 2026, and the advisories came out on 22 October.",
+        "What it actually gets you is contested and the page is good about saying so. Imperva ran attacker code on the official unmodified Node 24.22.0 Linux arm64 image, delivered both as a fetched response and an Express body, over several attempts, and has not released the exploit. The public proof of concept reportedly reaches execution only on a deliberately weakened build and otherwise crashes with a limited read. No attacks reported in the wild as of 22 October. Several projects still shipped unpatched copies as of yesterday — the .NET runtime on 1.1.0, DuckDB, Apache Arrow's bundled build, 7-Zip-zstd, p7zip, EDK II. Upgrading is the only complete fix; there is no Node workaround."
+      ]
+    },
+    {
+      "tag": "Physics",
+      "headline": "A single positron has been sitting in a trap for months, cooled into its quantum ground state, waiting to be weighed against an electron",
+      "url": "https://news.northwestern.edu/stories/2026/10/scientists-trap-and-tame-a-single-particle-of-antimatter-for-months",
+      "subject": "Northwestern's one-positron quantum cyclotron: an antiparticle kept months at 300 millikelvins in its ground state, for a magnetic-moment comparison against the electron.",
+      "subtitle": "Northwestern University, 21 October 2026, on Myers et al. in Physical Review Letters; Gerald Gabrielse's group, funded by the NSF",
+      "bullets": [
+        "Antimatter is hard to keep because it annihilates on contact with anything. The trick is to never let it touch: combined electric and magnetic fields suspend a single positron in a near-perfect vacuum, with the trap's interior cooled to about 300 millikelvins — three tenths of a degree above absolute zero. It has stayed there for months. Gabrielse's description is the one worth keeping: \"We actually coaxed this very fast positron to sit there and behave for months at a time.\"",
+        "Trapping is not the result. The result is that the positron is in a controlled quantum state — a \"one-positron quantum cyclotron\", behaving like an artificial atom with energy levels the group can drive and read out using precisely tuned microwaves that add tiny amounts of energy and reveal the transitions. \"We cool it down so much that it's in its quantum ground state.\" The positrons come from sodium-22 decay and arrive fast; slowing them down enough to catch was most of the work. Thomas Myers, a PhD student in the lab, is first author.",
+        "The point is a comparison. Gabrielse's group measured the electron's magnetic moment to about one part in 10 trillion; doing the same for its antiparticle and finding a difference would break the Standard Model's requirement that the two be near-perfect mirror images. \"If it turns out they are not equal, that would be the biggest discovery in physics in the last century.\"",
+        "And the expected answer is that they are equal. \"Current theories suggest that there will be no difference in the two measurements.\" Which is the honest shape of the experiment: a decade-scale measurement whose most likely outcome is a null result, built because the alternative would explain why a universe that should have annihilated itself is instead full of matter. Nothing has been measured yet — this is the apparatus working."
+      ]
+    }
+  ],
+  "research": [
+    {
+      "tag": "Industry · Google Research",
+      "title": "An agent designing molecules got 0% hits in its first round, read its own failure, and reached 42.1% by the third",
+      "url": "https://research.google/blog/grounding-ai-agents-in-biological-reality-building-blocks-for-autonomous-wet-labs/",
+      "subject": "VERID, a semantic digital twin of a lab workcell; agent-designed aptamer binders go 0% to 42.1% against alpha-thrombin over three bench cycles.",
+      "subtitle": "Pooja Rao, Petar Sirkovic and Annalisa Pawlosky, Google Research blog, 16 October 2026",
+      "bullets": [
+        "The gap this is aimed at is the one between a model that proposes molecules and a bench that tests them. Google's answer is VERID, a semantic digital twin of a lab workcell — built on the open-source PyLabRobot framework — that tracks robot-arm geometry, well volumes, reagent identities and pipette-tip inventory, runs fast virtual dry runs, checks hardware safety and logs synchronised video alongside actions. Agents cannot send unverified code to a robot: every protocol is dry-run against the twin first.",
+        "The diagnostics it produced are better than the pitch. Video and traces showed uneven dye stratification caused by dispensing too close to the well floor. The simulator rejected an 8-channel aspiration that physically would not fit a narrow trough. The agent recovered from a plate-reader failure mid-run without re-pipetting, and then designed a factorial experiment that located a tip-wall carryover bias. In a self-play campaign it reconstructed blinded dye mixtures from overhead camera images, improving accuracy more than fivefold.",
+        "The aptamer work is where the numbers land, and the failures are the interesting part. Three design-test-iterate rounds, 7–10 days each, against myoglobin and α-thrombin. For α-thrombin: round one returned 0% binders, because fixed primer overhangs disrupted folding in 48% of sequences; rounds two and three hit 26.0% and 42.1% at 98.5% specificity. Myoglobin went backwards first — G-quadruplex motifs grew to 63% of designs, specificity collapsed from 75.0% to 19.1% and the bead-corrected hit rate from 10.2% to 3.7% — and only recovered when the agents rewrote their own design rules, returning specificity to 72.4% and raising the on-target hit rate about ninefold to 33.5%.",
+        "The third strand is the one to steal methodologically. Designing de novo binders against fibroblast activation protein alpha, excising just the local binding pocket during structure re-folding sped each cycle up 8.6x with no loss of structural accuracy, and the top designs came out as single-digit nanomolar binders screened by yeast surface display with FACS. At equal compute, human–agent collaboration roughly doubled the in-silico hit rate over a scientist working alone — which is the claim in the post that is hardest to transfer and easiest to misread, since \"equal compute\" is doing a lot of work. All testbeds were non-infectious and non-gain-of-function, with biosecurity screening on every sequence and a human authorising it."
+      ]
+    },
+    {
+      "tag": "Academia · University of Oxford",
+      "title": "From Prompts to Posteriors: Can LLM Agents Perform Bayesian Inference in Context?",
+      "url": "https://arxiv.org/abs/2610.29331",
+      "subject": "Dutch-book and sequential-update tests show in-context belief revision breaks Bayes' rule unless the model may run code.",
+      "subtitle": "Linus Filbry, Luckeciano C. Melo and Yarin Gal, OATML, University of Oxford; arXiv:2610.29331, submitted 21 October 2026",
+      "bullets": [
+        "The setting is not a trivia test. If a model is going to help run a scientific loop — read the literature, propose a hypothesis, design the next experiment — it has to update beliefs as results arrive, and a wrong update compounds across the loop rather than scoring one question wrong. So the paper asks the narrow version: does belief updating inside a context window obey Bayes' rule?",
+        "Mostly no. On probabilistic coherence — Dutch-book constructions built on ForecastBench, three violation types, 10 scenarios each — violation rates exceeded 50% of the 30 scenarios for almost every model-constraint pair when the questions were posed in separate conversations. Keep the whole thing inside one dialogue and it collapses to 10% for Gemini-2.5-Pro and a single scenario out of 30 for Gemma-4-31B-it. The incoherence is substantially a failure to carry context, not a failure of arithmetic.",
+        "The sequential tests cost more. Across 20 Questions (40 target animals, 20 questions) and ProteinWorld (5 generated worlds, 8 classes, 6 experiments), non-reasoning models' updates cut final success rates by at least 30% against an active oracle in every model and environment; the weaker ones collapsed to near 0% on 20Q. Turn reasoning on and the gap largely closes — on ProteinWorld-simple, Gemma-4-31B-it matched the oracle across the whole discovery process and reasoning models reached KL divergence near zero. Their single worked example: a posterior of 0.643/0.357 without reasoning, 0.967/0.033 with it, against an oracle of exactly 0.967/0.033.",
+        "The finding worth carrying is on the hard variant. On ProteinWorld-hard, reasoning alone still left Gemini-2.5-Pro with high KL divergence and a large gap; reasoning *plus code execution* brought both to approximately zero and matched the oracle. Analytically intractable posteriors stop being a reasoning problem the moment the model can run a sampler — so \"can LLMs do Bayes\" is the wrong question, and \"does this agent have an interpreter\" is the one that predicts the answer. The paper is honest that most results are KL curves rather than tables, so the figures above are the exact ones it states."
+      ]
+    }
+  ],
+  "wild": [
+    {
+      "tag": "Moving house",
+      "headline": "Thrifty sent Australia's Strongest Man and a Tetris champion to carry your sofa, because moving is two skills nobody teaches",
+      "url": "https://www.bandt.com.au/thrifty-pairs-australias-strongest-man-with-tetris-champion-in-latest-work-via-campaignlab/",
+      "entities": [
+        "Thrifty",
+        "CampaignLab"
+      ],
+      "subject": "Moving Champs: Thrifty put Australia's Strongest Man and a Tetris champion on free household removals in Sydney, 16-18 October.",
+      "subtitle": "B&T, 14 October 2026, on Moving Champs by CampaignLab for Thrifty",
+      "bullets": [
+        "The casting is the idea, and it is unusually tight. A truck-hire company worked out that moving day is exactly two competences — lifting heavy things, and fitting shapes into a box — so it hired the national champion of each. Bradman Houston, Australia's Strongest Man 2026, for the first. Fura, an Australian Tetris champion, for the second.",
+        "This was a service rather than a film. Sydney residents could request a free removal — truck hire plus a professional moving crew — for a move between 16 and 18 October through a Moving Champs site, with Houston and Fura joining selected jobs and handing out technique as they went. Everyone who did not get a booking got the same lifting and packing advice on the site, which is the part that keeps working after the trucks have gone.",
+        "Thrifty's own research is why the campaign exists and it is bleaker than the tone: 62% of recent movers could not fit everything into the vehicle, 37% injured themselves, and half reported a moving-day argument that caused lasting tension. The product being sold is not a truck, it is the day not going wrong.",
+        "The two quotes make the strategy visible from both ends. Andy Scales of CampaignLab: \"Moving comes down to two skills most of us have never been taught, lifting and making it all fit.\" And Thrifty APAC's Damien Shaw, undercutting his own celebrity casting on purpose: \"Most people aren't Australia's Strongest Man or a Tetris champion, and they don't need to be.\""
+      ]
+    },
+    {
+      "tag": "Snacks",
+      "headline": "Ocean Spray has built a hoodie for smuggling dried cranberries past a bag check, and you can only win one by telling a radio show where you hide snacks",
+      "url": "https://mumbrella.com.au/ocean-spray-launches-craisins-range-with-promo-hoodie-941353",
+      "entities": [
+        "Ocean Spray",
+        "Social Soup",
+        "The Reactor"
+      ],
+      "subject": "Craisins Secret Snack Stash Hoodie: a garment with concealed pockets for dried-cranberry pouches, won only via a Will and Woody radio segment in Australia.",
+      "subtitle": "Mumbrella, 19 October 2026; creative by The Reactor, media by Media Words, influencers through Social Soup",
+      "bullets": [
+        "The Craisins Secret Snack Stash Hoodie is a garment designed around a specific grievance: paying to check a bag, or queuing to have it searched, in order to bring your own food into a venue. It has an easy-access pocket for the snack packs and a set of hidden ones sized for a phone, charger, wallet, earbuds, an iPad, lip balm, a passport, travel-size toiletries and a spare pair of socks. The pitch is concerts, festivals and arenas.",
+        "It is not for sale, which is the detail that makes it a stunt rather than merchandise. The only route to one is a two-week radio segment on Will and Woody — \"Australia's Easiest Quiz\", whose question is \"Where do you stash your snacks?\" — with a daily $1,000 cash prize, a host checking live whether the caller's answer physically fits in the hoodie alongside the snacks, and a single top caller across the fortnight winning the hoodie and a case of packs.",
+        "The product underneath is ordinary and the numbers explain the spend: 35-gram single-serve pouches in Cinnamon Churros, Chocolate Orange and Apple Crumble, dried fruit with no artificial flavours, colours, sweeteners or preservatives. Craisins sales across Australia and New Zealand were up 13.2% in value and 12% in volume year on year in Nielsen scan data for the 52 weeks to 8 September 2026. A line that is already growing is the cheapest place to try something odd.",
+        "The media plan is the least glamorous and most informative part: radio from 19 October on the KIIS network in Melbourne, Sydney, Brisbane and Adelaide plus Gold96 in Perth and selected regional stations, 15- and 30-second spots, social from the Will and Woody team, and 50 micro-influencers through Social Soup. Media Words' Elise Hedley-Dale supplied the insight the whole thing rests on, which is either obvious or excellent depending on your mood: \"Everyone has a snack hiding spot.\""
+      ]
+    },
+    {
+      "tag": "Gaming",
+      "headline": "Clevo built the hardest farming game on Roblox on purpose, and every in-game purchase buys a real Indonesian farmer real equipment",
+      "url": "https://marketech-apac.com/clevo-publicis-indonesia-turn-roblox-gaming-into-real-world-support-for-indonesian-farmers/",
+      "entities": [
+        "Clevo",
+        "GarudaFood"
+      ],
+      "subject": "The Hardest Farming Game, a deliberately punishing Roblox farming sim whose virtual-currency spend buys equipment for Indonesian farmers.",
+      "subtitle": "Julian Bartolome, MARKETECH APAC, Jakarta, 1 October 2026; developed by KARIS Studio with Publicis Indonesia",
+      "bullets": [
+        "Farming games are a comfort genre — you plant, you wait, nothing kills you. The Hardest Farming Game inverts the entire proposition: pests, shifting seasons and storms, crops that wither and die if they are not fertilised and watered at the right moment, and a self-declared difficulty of 100 out of 10. A flavoured-milk brand made a game designed to be annoying, which is a strange thing to put your logo on.",
+        "The economy is the twist and it rhymes with the subject. Roblox farming games run on pay-to-win progression; here the virtual currency you spend to get ahead funds actual farming equipment and tools donated to Indonesian farmers. Ravi Shanker, chief creative officer at Publicis Groupe Indonesia, states the mechanism without decorating it: \"Instead of making farming cozy and effortless, we turned players' appetite for challenge into empathy for farmers.\"",
+        "The reason it is on Roblox at all is a single number: roughly 45 million Roblox users in Indonesia. Kristanto Kosasih, senior brand manager at GarudaFood, puts it as reach rather than innovation — \"We wanted to create an experience that could bring CLEVO into a space where young people already spend their time.\" The game was built by KARIS Studio and has picked up streamers, international players and national broadcast coverage.",
+        "What is missing is the accounting, and it is the thing worth watching. The announcement gives no conversion rate between Robux and a hoe, no running total, and no count of equipment delivered — so the difference between this and a donation with a game attached is a disclosure nobody has published yet. The idea is good enough to deserve the receipt."
+      ]
+    }
+  ],
+  "learn": {
+    "title": "A sailor who refused to board an unseaworthy ship went to prison for twelve weeks. The fix was a circle with a line through it, painted on the hull — and it is why your gym shoes are called plimsolls.",
+    "subject": "The Plimsoll load line: Samuel Plimsoll's campaign, the 1876 Unseaworthy Ships Bill, owners painting the mark on the funnel, and the canvas shoe that took its name.",
+    "body": [
+      "Start with the detail that makes the rest make sense. In mid-nineteenth-century Britain, a merchant sailor who looked at a ship, decided it would sink and declined to sail was not making a safety complaint — he was deserting. Royal Museums Greenwich records that in the jails of south-west England, nine of twelve prisoners were sailors serving twelve-week sentences for exactly that. In 1855 a group of them wrote to Queen Victoria after being convicted. The ships they were refusing had a name already: coffin ships, overloaded and under-repaired, kept in service long past the point of scrapping. Lloyd's Register had published freeboard loading tables since 1835, but they bound only the ships it classed.",
+      "Samuel Plimsoll — Bristol-born in 1824, one of thirteen children, bankrupted by a coal venture in 1853, Liberal MP from 1868 — started working on it in 1870. His proposal was deliberately crude: paint a mark on the hull showing how deep the ship may legally sit, and the sea itself becomes the inspector. Anyone on the dock can see a violation. His first bill failed at second reading in 1871; a Royal Commission on Unseaworthy Ships followed in 1872; his book *Our Seamen* shocked the public and brought lawsuits from shipowners; his own bill was dropped in 1875. The Unseaworthy Ships Bill finally passed in 1876, and the circle with a horizontal line through it became compulsory.",
+      "Then comes the part that should be taught alongside every regulation. The 1876 Act required the line but left it to the shipowner to decide where to paint it. Some obliged by painting it on the funnel. The Victorian Web's account is blunt: it was not until 1890 that Board of Trade officials applied the regulations as Plimsoll had intended them, and the line's position was fixed in law in 1894, with foreign ships in British ports required to carry one from 1906 — thirty years after the victory. The afterlife is better than the law. Canvas shoes with a rubber band joining the upper to the sole picked up the name because the band looked like a ship's load line: cross it and you get wet. Etymonline dates the shoe sense to 1907; Wikipedia, citing Nicholette Jones, puts the nickname in the 1870s, which would mean the joke started while Plimsoll was still arguing in Parliament."
+    ]
+  },
+  "ideas": {
+    "prompt": "Ten things worth doing badly",
+    "note": "Altucher's drill: ten against one prompt, written fast, not defended. Reddit rate-limited the fetcher after two subreddits, so the raw material is this week's r/SomebodyMakeThis, four Ask HN idea threads and Y Combinator's Requests for Startups. What struck me reading them is how many posts are waiting for a tool before starting — the perfect app for the notes, the right system for the bills, one shared place for the conversation. Doing a thing badly is the version that does not need the tool. Eight are mine; two are marked.",
+    "items": [
+      {
+        "text": "Cooking for people. A bad dinner you made beats a good one you ordered, and everyone knows it."
+      },
+      {
+        "text": "Speaking a language. The first few hundred wrong sentences are the tuition fee, and there is no way to pay it early."
+      },
+      {
+        "text": "Drawing. Not to make pictures — to find out that you have never actually looked at a chair."
+      },
+      {
+        "text": "Repairing something cheap. A puncture, a dripping tap, a loose hinge. The worst case is that you buy the thing you were going to buy anyway."
+      },
+      {
+        "text": "Giving a toast. Thirty badly-chosen seconds that mean it beat a polished silence."
+      },
+      {
+        "text": "Dancing at a wedding, on the grounds that the people who look worse are having the better evening."
+      },
+      {
+        "text": "Keeping a diary at three words a day. The point is the date stamp, not the prose."
+      },
+      {
+        "text": "Running the group chat that organises the thing. Badly organised picnics happen; well-planned ones get discussed.",
+        "why": "Several of this week's r/SomebodyMakeThis posts wanted one shared place for a conversation; nobody wanted to be the one keeping it going."
+      },
+      {
+        "text": "Keeping your own records in a plain folder of files, rather than waiting to choose the right app.",
+        "why": "Adapted from the top r/SomebodyMakeThis ask this week, which wanted local storage for its own chat and AI data."
+      },
+      {
+        "text": "Playing an instrument for twenty minutes a day with no intention of ever performing on it."
+      }
+    ]
+  }
+}

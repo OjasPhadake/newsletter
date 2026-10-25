@@ -7156,6 +7156,168 @@
         "prnewswire.com",
         "thetakeout.com"
       ]
+    },
+    {
+      "date": "2026-10-26",
+      "issue": 1,
+      "quote_text": [
+        "Ignorance gives one a large range of probabilities."
+      ],
+      "quote_author": [
+        "George Eliot"
+      ],
+      "idea_text": [
+        "Cooking for people. A bad dinner you made beats a good one you ordered, and everyone knows it.",
+        "Speaking a language. The first few hundred wrong sentences are the tuition fee, and there is no way to pay it early.",
+        "Drawing. Not to make pictures — to find out that you have never actually looked at a chair.",
+        "Repairing something cheap. A puncture, a dripping tap, a loose hinge. The worst case is that you buy the thing you were going to buy anyway.",
+        "Giving a toast. Thirty badly-chosen seconds that mean it beat a polished silence.",
+        "Dancing at a wedding, on the grounds that the people who look worse are having the better evening.",
+        "Keeping a diary at three words a day. The point is the date stamp, not the prose.",
+        "Running the group chat that organises the thing. Badly organised picnics happen; well-planned ones get discussed.",
+        "Keeping your own records in a plain folder of files, rather than waiting to choose the right app.",
+        "Playing an instrument for twenty minutes a day with no intention of ever performing on it."
+      ],
+      "idea_prompt": [
+        "Ten things worth doing badly"
+      ],
+      "tip_text": [
+        "Keep base64 blobs and large SVGs out of the conversation — write them to a file and hand Claude the path instead. Dense text compacts badly: before 2.1.310, a session that hit \"Prompt is too long\" could compact and still keep enough of the blob to fail the very next request, which is the loop that eats an afternoon."
+      ],
+      "hn_id": [
+        "50218633",
+        "50225695",
+        "50224463",
+        "50224916",
+        "50224100"
+      ],
+      "link": [
+        "https://twitter.com/log4j/status/2113014142600953868?s=46",
+        "https://danluu.com/ambitious/",
+        "https://www.apollo.com/wealth/insights-news/insights/daily-spark/no-signs-of-ai-payoff-outside-the-tech-sector",
+        "https://stealmybitcoin.com/",
+        "https://aardappel.github.io/goose/",
+        "https://zeenews.india.com/economy/sebi-directs-stock-brokers-to-display-investor-awareness-messages-under-project-jagrook-3074280.html",
+        "https://broccoli2shell.com/",
+        "https://news.northwestern.edu/stories/2026/10/scientists-trap-and-tame-a-single-particle-of-antimatter-for-months",
+        "https://www.bandt.com.au/thrifty-pairs-australias-strongest-man-with-tetris-champion-in-latest-work-via-campaignlab/",
+        "https://mumbrella.com.au/ocean-spray-launches-craisins-range-with-promo-hoodie-941353",
+        "https://marketech-apac.com/clevo-publicis-indonesia-turn-roblox-gaming-into-real-world-support-for-indonesian-farmers/",
+        "https://research.google/blog/grounding-ai-agents-in-biological-reality-building-blocks-for-autonomous-wet-labs/",
+        "https://arxiv.org/abs/2610.29331",
+        "https://www.marketscreener.com/news/brent-crude-hits-more-than-five-month-high-on-concern-over-middle-east-escalation-ce785cded18bf321",
+        "https://www.indiatvnews.com/business/news/markets-extend-losing-streak-sensex-falls-125-points-nifty-ends-at-22-600-2026-10-23-1057733"
+      ],
+      "subject": [
+        "Project Jagrook: SEBI mandates investor-awareness messages on broker website landing pages from 1 November, alternating with risk disclosures inside trading apps.",
+        "CVE-2026-111497, an out-of-bounds write in Google's Brotli C decoder, rated 9.2 critical; patched in Node 26.12.1/24.22.1/22.23.4 and Brotli 1.2.1.",
+        "Northwestern's one-positron quantum cyclotron: an antiparticle kept months at 300 millikelvins in its ground state, for a magnetic-moment comparison against the electron.",
+        "Moving Champs: Thrifty put Australia's Strongest Man and a Tetris champion on free household removals in Sydney, 16-18 October.",
+        "Craisins Secret Snack Stash Hoodie: a garment with concealed pockets for dried-cranberry pouches, won only via a Will and Woody radio segment in Australia.",
+        "The Hardest Farming Game, a deliberately punishing Roblox farming sim whose virtual-currency spend buys equipment for Indonesian farmers.",
+        "VERID, a semantic digital twin of a lab workcell; agent-designed aptamer binders go 0% to 42.1% against alpha-thrombin over three bench cycles.",
+        "Dutch-book and sequential-update tests show in-context belief revision breaks Bayes' rule unless the model may run code.",
+        "The Plimsoll load line: Samuel Plimsoll's campaign, the 1876 Unseaworthy Ships Bill, owners painting the mark on the funnel, and the canvas shoe that took its name."
+      ],
+      "brand": [
+        "Thrifty",
+        "CampaignLab",
+        "Ocean Spray",
+        "Social Soup",
+        "The Reactor",
+        "Clevo",
+        "GarudaFood"
+      ],
+      "brand_mention": [
+        "Bradman Houston",
+        "Australia's Strongest Man 2026",
+        "Australian Tetris",
+        "Moving Champs",
+        "Houston",
+        "Fura",
+        "Andy Scales",
+        "CampaignLab",
+        "Moving",
+        "Thrifty APAC's Damien Shaw",
+        "Australia's Strongest Man",
+        "Tetris",
+        "Craisins Secret Snack Stash Hoodie",
+        "Pad",
+        "Woody",
+        "Australia's Easiest Quiz",
+        "Where",
+        "Cinnamon Churros",
+        "Chocolate Orange",
+        "Crumble",
+        "Australia",
+        "Zealand",
+        "Nielsen",
+        "KIIS",
+        "Melbourne",
+        "Sydney",
+        "Brisbane",
+        "Adelaide",
+        "Gold96",
+        "Perth",
+        "Social Soup Media Words Elise Hedley-Dale",
+        "Hardest Farming Game",
+        "Indonesian",
+        "Ravi Shanker",
+        "Publicis Groupe Indonesia",
+        "Instead",
+        "Roblox",
+        "Indonesia Kristanto Kosasih",
+        "GarudaFood",
+        "CLEVO",
+        "KARIS Studio",
+        "Robux"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "From Sunday, every Indian broker's landing page has to carry SEBI's warning, and the trading app has to alternate between two of them"
+        ],
+        [
+          "trends",
+          "A bug in Brotli rated 9.2 reaches anything that decompresses a response it did not choose — which is `fetch()` in Node and `requests` in Python"
+        ],
+        [
+          "trends",
+          "A single positron has been sitting in a trap for months, cooled into its quantum ground state, waiting to be weighed against an electron"
+        ],
+        [
+          "wild",
+          "Thrifty sent Australia's Strongest Man and a Tetris champion to carry your sofa, because moving is two skills nobody teaches"
+        ],
+        [
+          "wild",
+          "Ocean Spray has built a hoodie for smuggling dried cranberries past a bag check, and you can only win one by telling a radio show where you hide snacks"
+        ],
+        [
+          "wild",
+          "Clevo built the hardest farming game on Roblox on purpose, and every in-game purchase buys a real Indonesian farmer real equipment"
+        ],
+        [
+          "research",
+          "An agent designing molecules got 0% hits in its first round, read its own failure, and reached 42.1% by the third"
+        ],
+        [
+          "research",
+          "From Prompts to Posteriors: Can LLM Agents Perform Bayesian Inference in Context?"
+        ],
+        [
+          "learn",
+          "A sailor who refused to board an unseaworthy ship went to prison for twelve weeks. The fix was a circle with a line through it, painted on the hull — and it is why your gym shoes are called plimsolls."
+        ]
+      ],
+      "editorial_domains": [
+        "bandt.com.au",
+        "broccoli2shell.com",
+        "marketech-apac.com",
+        "mumbrella.com.au",
+        "news.northwestern.edu",
+        "zeenews.india.com"
+      ]
     }
   ]
 }
