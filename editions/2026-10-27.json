@@ -1,0 +1,344 @@
+{
+  "date_line": "Tuesday, 27 October 2026",
+  "issue": 1,
+  "preheader": "Christopher Moore on the one real difference between irony and sarcasm; Anthropic filed an S-1 with $16.3bn of half-year revenue, a $693m operating loss and an $80.7bn net loss that is mostly a mark on its own convertible notes; Microsoft offered buyouts to about 60,000 people and says AI is not the reason; Dolly Parton's book programme has mailed over 332 million books at $2.60 a child a month; a 2015 Inception v3 beat GPT-6 Astra and Claude Fable 5.1 on 200 biopsied skin lesions, 62% to 42%; a FOSDEM devroom for people living behind national allow-lists; Sensex +482.92 to 73,606.75 and the rupee at 95.19; 11 crore farmer IDs landed five months early; Sweden's ministries shut the ChatGPT and Claude websites on Monday and kept Copilot; a 50cm fungus in Yunnan whose family dates to one million years after the dinosaurs; Microsoft's new language so agents can write chart interactions; Toronto, Stanford and Berkeley on how rarely a human has to check an AI's work; Apple Music's new logo was filmed off the surface of a vibrating bath of mineral oil; and the office thermostat was fitted to a 70-kilo man in 1960s clothing.",
+  "quote": {
+    "text": "Irony can be spontaneous, while sarcasm requires volition.",
+    "author": "Christopher Moore",
+    "source": "Lamb: The Gospel According to Biff, Christ's Childhood Pal",
+    "source_url": "https://www.goodreads.com/quotes/tag/irony",
+    "note": "Everyone uses the two words interchangeably and then argues about which one they meant. Moore supplies the actual test, and it is not about tone at all: irony is a property of the situation, which can arrive without anyone arranging it, while sarcasm needs somebody to decide to do it. Which means you can walk into irony by accident and never into sarcasm — and that the next time someone says \"that's ironic\" about a thing they did on purpose, they have told you which one it was."
+  },
+  "agent_craft": {
+    "items": [
+      {
+        "text": "Stop interrupting a long turn just to ask for more thinking. Since 2.1.311, typing `ultrathink` in the interactive terminal runs that turn at xhigh effort on Opus 5.5, Sonnet 5.5, Haiku 5.5 and Fable 5.1 through Anthropic's API — and typed while Claude is already working, it raises the rest of the turn in place.",
+        "source": "Claude Code changelog, 2.1.311 (26 October 2026)",
+        "url": "https://code.claude.com/docs/en/changelog"
+      }
+    ]
+  },
+  "hn": [
+    {
+      "title": "Anthropic S-1",
+      "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+      "hn_url": "https://news.ycombinator.com/item?id=50242939",
+      "points": 1435,
+      "comments": 1399,
+      "bullets": [
+        "Filed with the SEC on 26 October, applying to list Class A stock on the Nasdaq Global Select Market under the symbol \"ANT\". Share count, price range and proceeds are all still blank in this preliminary prospectus, which is normal — the numbers that are filled in are the financial statements. The structure is the unusual part: a Delaware public benefit corporation whose Long-Term Benefit Trust elects, through a non-economic Class T share, a majority of the board, plus a single Class F share issued to a founder LLC immediately before the offering.",
+        "The growth is the headline and it is very large. Revenue: $41m in 2023, $386m in 2024, $4.585bn in 2025, and $16.286bn in the six months to 30 June 2026 — up $15.1bn, or 1,300%, on the $1.163bn of the same half in 2025. Consumption-based revenue contributed $12.1bn of that increase and subscriptions $3.0bn. Customers paying $100,000 or more on a trailing-twelve-month basis went from more than 950 to more than 11,900 between September 2025 and September 2026; the ones above that line were about 74% of revenue in the half.",
+        "Read the loss line carefully, because two very different numbers live there. Operating loss for the half was $693m — against $2.135bn a year earlier, on a fourteenth of the revenue. The net loss was $80.748bn, and $72.388bn of it is the change in fair value of convertible notes, derivative liabilities and SAFEs, a non-cash mark that goes up precisely because the company's own valuation went up. Compute and infrastructure cost $8.945bn in the half, personnel $3.152bn (including $2.2bn of stock compensation) and sales, marketing and partnerships $3.168bn, up from $120m. The 2025 accounts also carry a $1.5bn line for the Bartz settlement.",
+        "The operating metrics are the part to be sceptical of, and the filing says so itself at length. Net Revenue Retention of approximately 900% as of 30 September 2026. Roughly 5,300 employees and trailing-twelve-month revenue per employee over $6.6m. Run-Rate Revenue annualises a 28-day window, and Anthropic warns in the risk factors that it has included — and will keep including — revenue from customers later found to be violating its usage policy. Also disclosed: customers above $100k TTM include every company in the Fortune 10 and over half the Fortune 500; Claude Enterprise users who did not use Claude Code spent under $75 a month, while the top 5% who did spent about twenty times that; and Opus 4.5's November 2025 launch is credited with taking quarterly revenue growth from 48% in the December quarter to 132% in the March one."
+      ]
+    },
+    {
+      "title": "Microsoft offers mass buyouts for roughly a quarter of its workforce",
+      "url": "https://www.seattletimes.com/business/microsoft/microsoft-offers-mass-buyouts-for-roughly-a-quarter-of-its-workforce/",
+      "hn_url": "https://news.ycombinator.com/item?id=50245524",
+      "points": 702,
+      "comments": 604,
+      "bullets": [
+        "The Seattle Times page would not serve to a fetch, so these bullets come from KUOW's 26 October report and the Reuters-sourced wire coverage. The offer went to about 60,000 employees, roughly a quarter of the company: selected staff in the United States, the United Kingdom, Canada and India at level 70 and below, which tops out below vice-president. Each organisation's head decided who inside it was eligible.",
+        "Who is out matters as much as who is in. The sales organisation is excluded, along with some corporate services such as marketing and some engineering teams; Reuters' source adds commercial business and security to the exclusions and names AI experiences, Copilot, finance, HR, Xbox and Windows + Devices among those included. Terms are \"comparable\" to Microsoft's standard package — base pay scaled to tenure, stock vesting over time, healthcare and career planning — which is to say this is a layoff priced as a layoff, offered rather than imposed.",
+        "The number to keep in perspective is that 60,000 is the number asked, not the number leaving. A previous voluntary early-retirement offer, to level 67 and below, was taken by about 30% of eligible staff, and Microsoft reportedly expects a lower rate this time. Wire reports put the decision deadline in early December with exits on 31 December.",
+        "A Microsoft spokesperson said explicitly that AI is not driving the buyouts, and the memo from chief people officer Amy Coleman frames it as giving staff a way out now and organisations a way to adapt to changing needs. That denial is doing most of the work in the thread, against the obvious context: roughly 15,000 cuts last year and another 4,800 in July, while capital spending on data centres runs into the tens of billions. Nobody in the comments believes the two facts are unrelated, and nothing in the memo requires them to be."
+      ]
+    },
+    {
+      "title": "Dolly Parton's Imagination Library",
+      "url": "https://imaginationlibrary.com/",
+      "hn_url": "https://news.ycombinator.com/item?id=50234474",
+      "points": 672,
+      "comments": 107,
+      "bullets": [
+        "Started in 1995 for preschool children in one East Tennessee county, and now marks 31 years. Every enrolled child gets one book a month, mailed to the house, from birth until they turn five — up to 60 books — regardless of family income. It runs in the United States, Canada, the United Kingdom, Australia and the Republic of Ireland. More than 332 million books had gone out by the time Parton died on 25 August 2026, which The Conversation notes would wrap the planet about 1.8 times.",
+        "The operating model is the part worth stealing. The Dollywood Foundation carries overhead, runs the selection committee and handles ordering and fulfilment; a community has to find a local partner — a school, a library, a government agency, a foundation — and that partner pays $2.60 per child per month for books and postage and does the signing up. So the fixed costs are centralised and the marginal cost is local and tiny, which is why it scales to one in seven American under-fives by 2024 and why its failures are funding failures in particular states rather than a programme-wide collapse.",
+        "The curation is unusually fixed for something this size. Nonpartisan committees of educators and librarians pick the list and revise it annually, nearly all of it published by Penguin Random House, and the first and last books are the same for every child everywhere: *The Little Engine That Could* to begin, *Look Out Kindergarten, Here I Come!* to finish. Milestones: a million books in late 2003, 100 million in 2018, 200 million in 2023, 300 million in 2025.",
+        "On whether it works, the honest summary is \"consistently positive, rarely quantified\". Drexel's Alex Poole's review reports that enrolled children are read to more often, ask for books more, gain vocabulary and listening skills, and scored higher than peers on a standard kindergarten entrance reading test in a 2025 Colorado evaluation, with the largest effects expected in lower-income homes where books are scarce. What the literature does not hand you is an effect size, and the mechanism nobody disputes is the simplest one: a book arrives addressed to the child, by name, every month."
+      ]
+    },
+    {
+      "title": "A 10-year-old CNN outperforms frontier LLMs for skin cancer diagnosis",
+      "url": "https://lynchlab.net/llm-skin-cancer",
+      "hn_url": "https://news.ycombinator.com/item?id=50233779",
+      "points": 652,
+      "comments": 268,
+      "bullets": [
+        "Magnus Lynch, a consultant dermatologist at Guy's Hospital, posted this on 25 October; it is not peer reviewed. The contest: Inception v3, a convolutional network Google published in 2015, fine-tuned on 68,011 clinical and dermoscopic images from the ISIC Archive, against GPT-6 Astra and Claude Fable 5.1 at default settings. Test set: 200 biopsy-proven lesions drawn at random from the public MILK10k dataset, each with a clinical photo and a dermoscopic image, six possible diagnoses, scored by script against histopathology. Every test image — and every image of the same patients — was removed from the CNN's training data.",
+        "The CNN won on diagnosis and it was not close. Correct first choice: 125 of 200 for Inception v3, against 84 for GPT-6 Astra and 85 for Claude Fable 5.1. Correct within the first two choices: 173, against 134 and 138. On the 30 melanomas, 13 first-choice correct against 8 and 11. Per-diagnosis, the CNN was strongest on the benign classes — 37 of 50 naevi, 26 of 50 seborrhoeic keratoses — and it actually trailed both models on actinic keratosis.",
+        "Read as a referral decision the picture inverts, and this is the part that will get quoted out of context. Of the 100 lesions that should not be discharged, the LLMs kept 97 and 96; the CNN at its preset threshold kept 77. But of the 100 that were safe to discharge, the CNN released 76 against 32 and 22. The models are safe by being unable to say no: in a patient-framed version using only the clinical photo, they advised seeing a doctor for 99 and 98 of 100 further biopsy-proven melanomas — and for almost every harmless lesion too. Match the CNN's threshold to the models' sensitivity and its melanoma misses fall to 2 or 1, from 18.",
+        "Lynch lists the caveats himself and they are real: 200 lesions and only 30 melanomas, so the intervals are wide; every lesion was biopsied, which selects for hard cases, and the CNN's AUC on ordinary archive images is 0.96 against 0.86 here; MILK10k has been public since 2025, so the models may have trained on it while the CNN provably did not; each model case was run once; and Inception v3 is a deliberately unflattering baseline, well behind current ensembles and transformers. He also notes he designed the test, made the clinical calls, and drafted the analysis with Claude Code — one of the systems under test."
+      ]
+    },
+    {
+      "title": "I refuse to accept a censored Internet. Join Me at FOSDEM 27",
+      "url": "https://talkweb.eu/openweb/4558/",
+      "hn_url": "https://news.ycombinator.com/item?id=50233929",
+      "points": 540,
+      "comments": 268,
+      "bullets": [
+        "This is a call for papers, not a manifesto, and the framing is what carried it. Bogomil Shopov is running a new Digital Dissident devroom at FOSDEM 27, and his argument is that someone living under an authoritarian government depends on a whole chain — reach the network, get past inspection, publish evidence without being identified — and that their safety is set by the weakest link in it. Existing FOSDEM tracks cover the individual tools well and the joins between them not at all.",
+        "The threat list is specific enough to be useful as a checklist: national allow-lists and whitelist-only shutdowns, TLS and QUIC fingerprinting, deep packet inspection with active probing, throttling aimed at particular protocols, mobile internet shutdowns, app-store removal of circumvention tools, mandatory state messengers, and \"sovereign internet\" routing. Russia, Iran and China are the named examples, with Belarus and Myanmar among the others.",
+        "The dates, since this is the actionable part: the call for participation opened 24 October and closes 30 November at 23:59 UTC, speakers hear back on 2 December, confirmations are due 4 December, the schedule publishes 7 December, and FOSDEM 2027 runs 30–31 January at ULB Solbosch in Brussels. Submit through the FOSDEM Pretalx portal, pick the Digital Dissident track, accept the code of conduct.",
+        "Two things are worth noting against the title. The post cites no statistics and names no law or regulation — its evidence is prior FOSDEM talks that drew crowds, including Vitaly Repin's circumvention talk in the Network track, plus NymVPN and Delta Chat in the Decentralized Internet and Privacy devroom, which this room is explicitly meant to complement rather than replace. And Shopov is clear about what he does not want: the room is for people under threat, not for product pitches, and the invitations go to Nym, Delta Chat, SimpleX, the Tor ecosystem and censorship researchers."
+      ]
+    }
+  ],
+  "markets": {
+    "indices": [
+      {
+        "name": "Sensex · Mon 26 Oct close",
+        "value": "73,606.75",
+        "change": "+482.92 (0.66%); snaps a four-session losing streak. Tuesday's session opens after this email",
+        "direction": "up"
+      },
+      {
+        "name": "Nifty 50 · Mon 26 Oct",
+        "value": "22,753.20",
+        "change": "+153.20 (0.68%); the index fell 2.36% last week and the Sensex 2.15%",
+        "direction": "up"
+      },
+      {
+        "name": "Bank Nifty · Mon",
+        "value": "54,366.70",
+        "change": "+79.35 (0.15%) — the laggard of the majors; Nifty Financial Services +0.21%",
+        "direction": "up"
+      },
+      {
+        "name": "Broader market · Mon",
+        "value": "Midcap +1.19%",
+        "change": "Smallcap +1.38%; 2,262 stocks advancing to 1,895 declining, 186 unchanged",
+        "direction": "up"
+      },
+      {
+        "name": "Sectors · Mon",
+        "value": "Metal +2.21%",
+        "change": "Pharma +1.76%; Energy +1.46%; IT +0.87%; Realty +0.68%; Auto +0.44%; FMCG +0.28%; Consumer Durables −0.21%, the only named faller",
+        "direction": "up"
+      },
+      {
+        "name": "Movers · Mon",
+        "value": "Dr Reddy's +6.62% to ₹1,310.90",
+        "change": "JSW Steel +6.28% to ₹1,260.00; BSE +3.97% to ₹3,359.00. Worst: Shriram Finance −4.62% to ₹825.00",
+        "direction": "up"
+      },
+      {
+        "name": "Brent crude · Mon",
+        "value": "$115.24",
+        "change": "−$2.10 (1.79%), back off a near-six-month high; HDFC Sky put it near $114.50 late in the session",
+        "direction": "down"
+      },
+      {
+        "name": "USD/INR · Mon 26 Oct",
+        "value": "95.19",
+        "change": "About 25 paise weaker than the previous close of 94.94, on crude and the Fed meeting",
+        "direction": "up"
+      },
+      {
+        "name": "FII cash · Mon",
+        "value": "−₹1,462 cr",
+        "change": "DIIs +₹2,610 cr, a net institutional inflow of about ₹1,147 cr (NiftyTrader provisional cash data, rounded)",
+        "direction": "down"
+      }
+    ],
+    "stories": [
+      {
+        "headline": "Four days of selling ended on a day when oil fell and the rupee fell anyway — metals and pharma took the index up 483 points",
+        "url": "https://hdfcsky.com/news/market-close-report-today-october-26-2026-sensex-nifty-rise-as-markets-snap-four-day-losing-streak",
+        "source": "HDFC Sky's 26 October market close report for the index closes, breadth, rupee and crude; Liquide's 26 October session note for the Bank Nifty level, sector percentages and the individual stocks; NiftyTrader for the provisional FII/DII cash figures",
+        "bullets": [
+          "Monday 26 October: Sensex 73,606.75, up 482.92 points or 0.66%; Nifty 50 22,753.20, up 153.20 or 0.68%. Fifth session of the sequence, first one up. For scale on what it is recovering from, the Nifty lost 2.36% last week and the Sensex 2.15%, so this takes back under a third of it.",
+          "Breadth was genuinely broad rather than index-led: 2,262 advances against 1,895 declines with 186 unchanged, Midcap up 1.19% and Smallcap 1.38% — both ahead of the Nifty, which is the mirror image of Friday, when the smallcaps fell seven times as hard as the benchmark. Metal led at +2.21%, Pharma +1.76%, Energy +1.46%, IT +0.87%. Consumer Durables, down 0.21%, was the only sector named as falling.",
+          "The two biggest moves tell you what the buying was: Dr Reddy's +6.62% to ₹1,310.90 and JSW Steel +6.28% to ₹1,260.00, with BSE +3.97% to ₹3,359.00. The one conspicuous hole was financials — Bank Nifty managed +0.15% to 54,366.70 and Nifty Financial Services +0.21%, with Shriram Finance down 4.62% to ₹825.00 and Bajaj Finance also lower. An up day led by metals and medicines with the banks sitting it out is not a rally in the index so much as two sectors having a good afternoon.",
+          "Both of the imported pressures eased and only one of them showed up in the price. Brent fell 1.79% to $115.24, off last week's near-six-month high, and the Houthi strikes on Saudi territory stayed in the frame. The rupee still closed at 95.19, about 25 paise weaker than 94.94, with the Fed's upcoming decision and the risk of a hawkish read on emerging-market flows doing the work. Foreigners sold ₹1,462 crore of cash equity and domestic institutions bought ₹2,610 crore, which is the same shape as most of this month: the local money is absorbing the foreign money, and on Monday it absorbed slightly more than all of it."
+        ]
+      },
+      {
+        "headline": "From April 2027 an Indian bank cannot net an asset against a liability to flatter its leverage ratio, and the RBI has said no to both things the banks asked for",
+        "url": "https://taxguru.in/rbi/rbi-revises-bank-leverage-ratio-norms-1st-april-2027.html",
+        "source": "Taxguru's reproduction of RBI circular RBI/2026-27/297 (DOR.CAP.REC. 251/21-02-002/2026-27), 23 October 2026 — the Commercial Banks – Prudential Norms on Capital Adequacy Eleventh Amendment Directions, 2026",
+        "bullets": [
+          "The headline numbers are not the news. The minimum leverage ratio stays 4% for domestic systemically important banks and 3.5% for everyone else — levels India has had since the quarter beginning October 2019. Indian branches of global systemically important banks get 3.5% plus their applicable G-SIB leverage buffer, including anything their home regulator adds. What changes on 1 April 2027 is the denominator, which is where a leverage ratio is actually won or lost.",
+          "The exposure measure gets much less forgiving. Assets and liabilities cannot be netted and collateral received does not reduce the measure; only specific provisions, and general provisions already deducted from Tier 1, come off. Under trade-date accounting, the offsetting of unsettled cash receivables and payables is reversed out unless the assets are fair-valued through income, in the trading book, and settled delivery-versus-payment. Cash pooling only counts as one balance if balances actually move daily, or the specified conditions are met. Written options are in. Securitised exposures leave the measure only if they pass the risk-transfer test — synthetic and non-qualifying traditional ones stay.",
+          "For banks on SA-CCR there is a new paragraph 267A with a formula you can read off: exposure equals 1.4 times replacement cost plus potential future exposure, with the PFE multiplier pinned at one, no cross-product netting, and collateral received barred from reducing replacement cost. Cash variation margin may reduce it, but only under conditions — non-segregation, daily exchange, a single master netting agreement. Securities financing uses gross assets, with cash payables and receivables netted only on identical final settlement dates and enforceable set-off. Off-balance-sheet notionals take the credit conversion factors from the 2026 standardised credit-risk directions, with 100% on unsettled purchase commitments under settlement-date accounting.",
+          "Two things give the rule teeth. Banks must meet the minimum at all times, not at quarter-end, and must disclose quarterly on both standalone and consolidated bases through the Pillar 3 LR1 and LR2 templates — which require saying whether you used the current exposure method or SA-CCR, and reporting mean as well as period-end securities-financing values. And the RBI reserves the right to treat structures built to minimise the ratio as a supervisory matter, up to a Pillar 2 capital charge. Press coverage says banks asked for the G-SIB figure to be cut to the Basel minimum of 3% and for a later start date, and were refused on both; the RBI's own release does not mention either request, so that part rests on the reporting."
+        ]
+      }
+    ]
+  },
+  "trends": [
+    {
+      "tag": "India",
+      "headline": "Eleven crore farmers now have an eleven-digit number, five months before the deadline — and the thing it is meant to replace is the pile of paper",
+      "url": "https://www.businessworld.in/article/govt-completes-11-cr-farmer-ids-under-agristack-ahead-of-march-2027-deadline-630297",
+      "subject": "AgriStack reaches its target of 110 million unique digital farmer identities (Kisan Pehchaan Patra), five months before the March 2027 deadline.",
+      "subtitle": "BW Businessworld, 24 October 2026, and PTI via Daily Excelsior the same day, on Agriculture Minister Shivraj Singh Chouhan's announcement",
+      "bullets": [
+        "The target was 11 crore Farmer IDs by March 2027. Chouhan says it was hit on the night of 23 October 2026 — about five months early — and called it a \"historic day for Indian agriculture\". The instrument is the Kisan Pehchaan Patra, an eleven-digit identity linked to land records, issued under AgriStack within the Digital Agriculture Mission. The trajectory makes the pace visible: 8.47 crore in February 2026, 9.25 crore across 19 states in April, 11 crore now.",
+        "What is being sold is the removal of paperwork rather than a new benefit. The minister's claim is that the ID becomes the only document a farmer needs for bank credit, crop insurance, disaster relief and selling produce: \"There will no longer be a need to repeatedly submit piles of paperwork or provide endless documentation.\" Officials put the composition of the register at 26% women and about 81% in the marginal and small operational-holding categories, and say more than 6 crore farmers have had benefits routed through the system since it launched in 2024.",
+        "The number that is doing the least work is the one in the headline. Neither report explains how an ID is generated and verified from land records, which is the step that decides whether 11 crore means 11 crore distinct people or 11 crore records created. Nor does either give a scheme-by-scheme breakdown of the 6 crore, or say what happens at a bank counter to a farmer whose ID has not been issued.",
+        "The structural gap is named in the coverage and it is the one worth watching. An identity derived from land records is, by construction, an identity for landowners — so tenant farmers and sharecroppers who cultivate land they do not own are the population the next phase has to reach, and they are a large share of the people a credit or relief payment is supposed to find. A registry that is 81% small and marginal holdings is a good sign about who it reaches; it says nothing about who it cannot see."
+      ]
+    },
+    {
+      "tag": "AI policy",
+      "headline": "Sweden's ministries closed the ChatGPT and Claude websites on staff machines from Monday, and the reason is a contract rather than a model",
+      "url": "https://www.notebookcheck.net/Sweden-s-government-blocks-ChatGPT-and-Claude-keeps-Copilot.1433522.0.html",
+      "subject": "Sweden's Government Offices (Regeringskansliet) block the browser versions of ChatGPT and Claude on staff computers from 26 October 2026, directing staff to Microsoft Copilot.",
+      "subtitle": "Notebookcheck, on reporting first broken by Sveriges Radio's Ekot and confirmed by the Government Offices to SVT",
+      "bullets": [
+        "From Monday 26 October, the browser versions of ChatGPT and Claude stopped resolving on computers inside Regeringskansliet — the body that houses the Prime Minister's Office and the ministries. Sveriges Radio's Ekot broke it from internal material; the Government Offices confirmed it to SVT. Mikael Wettercrantz, its director of digitalisation, wrote the intranet notice, citing information security and \"several examples of problematic use of open AI services\".",
+        "The distinction being drawn is contractual, not technical. Using an AI service with no agreement behind it is the problem; Copilot stays because there is a contract and administrative control over its settings, and the Government Offices say they reviewed it and then tightened its security. Staff keep access to OpenAI and Anthropic models through Intric, an internal platform. So this is not a judgement that the models are unsafe — it is a judgement that the consumer front door is, which is a different and more durable claim.",
+        "The irony is structural rather than rhetorical. Copilot can serve Anthropic's models; in the EU they are off by default and an administrator has to switch them on, and the reporting does not say whether Sweden has. The practical effect may therefore be that the same model keeps answering the same civil servant, through a different invoice and a different log.",
+        "Several outlets are calling this a ban and it is not one — nothing is prohibited, a website is unreachable on a work machine. Neither OpenAI nor Anthropic had commented publicly as of 24 October. What is worth tracking is whether this becomes the standard move for public administrations: not a procurement decision about which lab to trust, but a perimeter decision that any unmanaged chat window is shadow IT, and that the managed one wins by default."
+      ]
+    },
+    {
+      "tag": "Mycology",
+      "headline": "A fungus in Yunnan grows half a metre tall and weighs two kilos, and it is the last survivor of a family that appeared a million years after the dinosaurs died",
+      "url": "https://www.sciencedaily.com/releases/2026/10/261025073034.htm",
+      "subject": "Dianjunus rex, nicknamed D-rex: a new genus and family (Dianjunaceae) of Xylariales from Yunnan, with the largest known ascomycete fruiting bodies and a molecular-clock origin about 65 million years ago.",
+      "subtitle": "Frontiers via ScienceDaily, 26 October 2026, on Senanayake et al., Frontiers in Fungal Biology 7, doi 10.3389/ffunb.2026.1940464; Kunming Institute of Botany, Chinese Academy of Sciences",
+      "bullets": [
+        "The find is a size record first. The whitish stromata of *Dianjunus rex* reach 50 cm tall and 2.2 kg — against a previous best of roughly 20 to 30 cm for any fruiting body in the entire phylum Ascomycota, which is most of the fungi you have heard of that are not mushrooms. It grows out of the woody roots of Chinese cork oaks, in the soil around them, and was collected at three Yunnan sites: temperate conifer forest near Damaidi and Yipinglang, and tropical rainforest near Nanbang.",
+        "It is not a large version of something known. Sequencing the genome placed it far enough from everything else that the team erected a new genus and a new family, Dianjunaceae, inside the order Xylariales — its nearest described relative being *Graphostroma platystoma*, the only member of its own family, which lives on dead hardwood across the northern hemisphere. The name comes from the ancient Dian kingdom, and the nickname from the size.",
+        "The date is where it gets interesting. Compared against genomic data from hundreds of fungi with established histories, the Dianjunaceae lineage dates to about 65 million years ago — roughly a million years after the Cretaceous-Paleogene extinction. Corresponding author Indunil C. Senanayake of the Germplasm Bank of Wild Species is careful about what that buys: \"This timing raises an intriguing possibility\", namely that a world suddenly full of dead plant material was a good one for an ancestor that ate wood. A molecular clock gives you a date, not a cause.",
+        "The thing they cannot explain is the size, and the honest version of the hypothesis is a cost-benefit statement. A taller structure may release spores better in a dense forest, and building one is expensive — so, in Senanayake's words, the strategy \"likely evolved only where the ecological benefits outweighed the costs\". Its wood-decomposing enzymes are inferred, not demonstrated. The team's closing note is the one to keep: the subtropical forests of China are substantially unsurveyed for fungi, and a half-metre organism was sitting in them undescribed until 2024."
+      ]
+    }
+  ],
+  "research": [
+    {
+      "tag": "Industry · Microsoft Research",
+      "title": "Agents can draw a chart and routinely fail to make it clickable, so Microsoft built a language where the compiler owns the hard half",
+      "url": "https://www.microsoft.com/en-us/research/blog/flint-interactive-a-language-for-creating-interactive-data-visualizations/",
+      "subject": "Flint-interactive: a high-level language and compiler splitting visual logic from interaction logic so coding agents can specify chart interactions semantically.",
+      "subtitle": "Chenglong Wang, Yuwei Xiao, Alper Sarikaya, Michel Galley, Chris Quirk and Jianfeng Gao; Microsoft Research blog, 22 October 2026",
+      "bullets": [
+        "The problem statement is unusually concrete for a visualisation paper. An agent can emit a static chart in one turn; an *interactive* one it almost never gets right first time, and the retry loop costs tokens and wall-clock while producing broken layouts and dead handlers whose fixes break something else. Their diagnosis is that the language is missing: libraries expose canned interactions that are not expressive enough for a bespoke chart, so the agent drops to renderer-level code, which is where it fails.",
+        "The split is the whole design. Flint Canvas is a state machine tracking interaction and render state. The compiler owns *visual logic* — turning raw clicks, drags and key presses into semantic events that name a chart element and its underlying datum, plus hit testing and low-level redraws. The author, human or agent, writes only *interaction logic*: map a semantic event to an update operator. There are three — set style (highlight), set annotation (label a point), set viewport (pan or zoom) — and for anything else you register a trigger and a handle function that returns a sequence of chart updates, never touching renderer-specific marks.",
+        "It is built for agents end to end rather than retrofitted. In a chat, the agent emits an interaction spec alongside the Flint chart spec and the result renders inline via Flint-MCP and MCP Apps; there is an interaction-author skill you hand to a coding agent so it can add presets to your own app; and event handlers can push semantic events outward to filter a table, update a second chart or change application state, with app widgets sending update operators back to the canvas. Presets cover the common wiring — linked brushing across two scatterplots, a table row highlighting the matching point.",
+        "What is missing is the measurement, and it matters because the claim is quantitative. The post asserts that pushing visual logic into the compiler makes agent-generated interactions more reliable and cheaper, and then offers three illustrations — Gapminder linked brushing, a country table-to-chart dashboard, a climate phase portrait — with no user study, no benchmark, no token or lines-of-code comparison, and no named venue. The architecture is the contribution and it is a good one; treat the reliability claim as a hypothesis the blog has not yet tested."
+      ]
+    },
+    {
+      "tag": "Academia · Toronto, Stanford & UC Berkeley",
+      "title": "Reliable AI-Assisted Decisions via Selective Auditing",
+      "url": "https://arxiv.org/abs/2610.31662",
+      "subject": "An online thresholding algorithm that decides which AI decisions to send to a human auditor, guaranteeing the unaudited error fraction stays under a user-set level with no distributional assumptions.",
+      "subtitle": "Isaac Gibbs (Statistical Sciences, Toronto), Elise L. Han (CS, Stanford), Ryan J. Tibshirani (Statistics, Berkeley) and Tijana Zrnic (Statistics and MS&E, Stanford); arXiv:2610.31662, submitted 22 October 2026",
+      "bullets": [
+        "The question is the one every team deploying a model actually faces and almost nobody formalises: given a stream of AI decisions each carrying a confidence score, which ones do you pay a human to check? The paper casts it as online constrained optimisation — minimise how often you audit, subject to keeping \"the fraction of AI errors that go unaudited\" below a threshold you choose. The guarantee comes with \"no assumptions\" on the data, and the score may come from a different model than the decision, which is exactly the verifier-agent setup.",
+        "The base algorithm is simple enough to implement from the description. Keep a threshold τ and audit anything scoring below it; spot-check everything above it with small fixed probability γ. After each round, move τ by η(1 − πₜ − α)·eₜ·Hₜ/πₜ, where eₜ marks an error and Hₜ marks that you audited. The 1/πₜ is the crux: you only ever observe errors on audited items, so each observed error is inverse-probability weighted, and the threshold settles where the unaudited error rate sits at α. Two refinements follow — recalibrating raw scores by learning weights over a grid of thresholds with exponentiated gradient descent, and a primal-dual version using AdaHedge with a dual variable μe^{λEₜ} that attains the best achievable auditing rate for adversarial and i.i.d. streams, with error control at about T^(−1/3) up to logs.",
+        "The experiments are deliberately unglamorous and span three jobs people are already doing by hand. Safety verification on SORRY-Bench (7,040 instruction-response pairs, base error rate 0.3) and StrongREJECT (1,361 triples, 0.21), with GPT-5.4 as a weak verifier and confidence taken from 8 self-consistency votes. Qualitative annotation of eight UCSB interview transcripts coded sentence by sentence, with Qwen2.5-14B and GPT-4o-mini annotating, GPT-5.2 standing in for the auditor, and an error defined as a quality score at or below 0.8. Data labelling on political-bias and stance classification plus ImageNet and ImageNet-V2.",
+        "The ordering of methods is consistent and the caveats are stated. Against random auditing — check each item with probability 1 − α — and an oracle fixed threshold chosen in hindsight, the primal-dual method saves the most and often comes close to the oracle, the calibrated version next, plain additive thresholding last; realised error rates track α, with the optimal method slightly anti-conservative on ImageNet and the calibrated and optimal methods slightly above α on StrongREJECT. One honest limitation for anyone wanting to quote a headline figure: the audit-rate savings live in the plots, so the paper states no single percentage you can carry away."
+      ]
+    }
+  ],
+  "wild": [
+    {
+      "tag": "Branding",
+      "headline": "Apple Music's new logo was not drawn. It was played through a transducer into a bath of mineral oil and filmed.",
+      "url": "https://www.marketing-interactive.com/apple-music-makes-waves-with-new-identity-built-by-sound",
+      "entities": [
+        "Apple Music",
+        "TBWA\\Media Arts Lab",
+        "Fred again..",
+        "NEST Acoustics"
+      ],
+      "subject": "Apple Music's 'made by sound' identity: a logo mnemonic generated by playing music through a transducer into a shallow bath of mineral oil and filming the resulting ripples.",
+      "subtitle": "Dhanya Vimalan, Marketing-Interactive, 22 October 2026, on the Apple Music identity refresh with TBWA\\Media Arts Lab",
+      "bullets": [
+        "The method is the idea and it is pleasingly physical. Rather than design a mark and then commission a sound to match it, the team inverted the order: frequencies were played through a transducer — a device that turns an audio signal into actual vibration — sitting in a shallow bath of mineral oil, and the waves, ripples and refractions that came off the surface were filmed and worked up into the identity. The platform line is \"made by sound\", which for once is a description rather than a claim.",
+        "The music was not stock. Producer Fred again.. and his collaborator NEST Acoustics broke a composition down into individual notes, and those notes generated the final mnemonic, which in turn generated the visuals. A companion film documents the chain from original composition to finished mark. The design team's framing is that the result is \"a physical record of the music\" — which is literally true of a photograph of a vibrating liquid, and is the rare brand-identity sentence that would survive a fact check.",
+        "What comes out of it: a new expressive musical-note icon whose shape is taken from the movement and refractions captured in the oil, and a wordmark pairing the Apple symbol with a custom bold lowercase cut of SF Pro, tied into Apple's Liquid Glass design language so the sound-wave movement reads with glass-like optics. The wordmark was quietly teased in September, in marketing for Apple Music Hall, the company's new live venue in London, before the full system started appearing across original content and event programming.",
+        "The honest caveat is that nobody is claiming efficiency. There are no named executive quotes in the coverage, no budget, no metrics, and an admission that translating one composition into a visual identity \"took months of experimentation and collaboration\" — for an outcome a designer could have approximated in an afternoon. Which is the point and also the risk: the provenance is the product, and provenance is only worth months if you are going to tell people about it. Hence the film."
+      ]
+    },
+    {
+      "tag": "Public health",
+      "headline": "A breast-check charity worked out that women were already doing it in the shower, so it bought the shower: Taika Waititi directed, and the reminder went on 900ml of body wash",
+      "url": "https://campaignbrief.com/breast-cancer-foundation-nz-launches-new-campaign-save-your-life-rinse-repeat-directed-by-taika-waititi-via-special-new-zealand/",
+      "entities": [
+        "Breast Cancer Foundation NZ",
+        "Special New Zealand",
+        "Glow Lab",
+        "Curious Film"
+      ],
+      "subject": "'Save your life. Rinse. Repeat.' — Breast Cancer Foundation NZ attaches breast self-checking to the shower routine, with reminders printed on Glow Lab body wash and placed in gym showers.",
+      "subtitle": "Campaign Brief, 6 October 2026; created by Special New Zealand, directed by Taika Waititi through Curious Film",
+      "bullets": [
+        "The research is the campaign. A Foundation survey of 1,000 New Zealand women, shaped by Special, found 94% agree regular breast checking is important and 82% say it is easy to forget; only 37% had checked in the past month; nearly seven in ten said nothing in their routine reminds them. And more than half of those who had checked said the last place they did it was the shower. So the gap is not belief and it is not knowledge — it is a trigger.",
+        "The creative answer is to stop asking for a new habit. Rather than another reminder to remember something, the campaign attaches the check to a thing already happening daily: a deliberately steamy, cinematic 60-second film of a slow soapy shower, with the instruction to check while you are in there. Strategy head Bethany Omeri's framing is that women could not find time for another task, so they repurposed an existing moment of \"me time\"; chief creative officer Lisa Fedyszyn's is that nearly every woman has a shower, so you attach to the habit instead of adding one.",
+        "The media plan is where it stops being an ad. Breast-check reminders were added to the entire 900ml body wash range of Glow Lab, which puts the prompt in bathrooms nationwide from launch day, and placed in gym showers, where a woman can act on it within the minute. Everything else is conventional — TV, cinema, BVOD, SVOD, radio, social, OOH and digital — plus a three-tier influencer programme through Special PR using Foundation ambassadors, earned creators and paid talent, and an earned push that ran beyond New Zealand.",
+        "Waititi directed in kind, with production designer Ra Vincent of *Jojo Rabbit* on the set and Xavier Garneau-Roughan leading, through Curious Film. Waititi's stated reason is personal — breast cancer has touched many people in his life, including his mother and mother-in-law — and his brief to himself was to make something entertaining carrying an important message. CEO Vanessa Sorenson called landing him \"a real coup\", which it plainly is; the part that will still be working in six months is printed on a bottle."
+      ]
+    },
+    {
+      "tag": "Gambling harm",
+      "headline": "Asked what gambling harm felt like, people said it was a whirlpool that swallowed everything — so the regulator 3D-printed ten of them and took them to community halls",
+      "url": "https://www.brandinginasia.com/gambleaware-and-think-hq-make-the-unseen-impacts-of-gambling-harm-visible/",
+      "entities": [
+        "GambleAware",
+        "NSW Office of Responsible Gambling",
+        "Think HQ"
+      ],
+      "subject": "GambleAware Week 2026: the NSW Office of Responsible Gambling and Think HQ turn lived-experience descriptions of gambling harm into a 3D-printed object, ten of which tour community events.",
+      "subtitle": "Branding in Asia, 22 October 2026, on the NSW Office of Responsible Gambling's GambleAware Week campaign (19–25 October) via Think HQ",
+      "bullets": [
+        "The brief was to make something invisible visible, and the move was to stop writing about it. People with lived experience of gambling harm were asked to describe it; the descriptions — the article opens on \"It was like a whirlpool. It swallowed everything.\" — were turned into a physical object and 3D-printed. Ten were produced and sent out to GambleAware community events across New South Wales during GambleAware Week, 19 to 25 October.",
+        "Why an object rather than a film is a stigma argument, made by the client. Alison Parkinson of the Office of Responsible Gambling: \"Stigma remains one of the biggest barriers to seeking support for gambling harm.\" An object in a community hall lets a person look at someone else's experience without having to declare their own, which a 30-second spot asking them to identify with a character does not. Think HQ's Wellison D'Assuncao is refreshingly unsure it would work: \"When we set out to create something unique for a category you never know how it will end up.\"",
+        "The supporting plan is built for being handed over rather than broadcast: 30- and 15-second video, social, radio, press and digital display, digital screens, posters and flyers, materials local communities can edit themselves, translated communications for selected culturally and linguistically diverse communities, and messaging written to hold across different forms of gambling rather than just pokies. Four audiences named, and two of them are people who do not gamble and people gambling at lower-risk levels.",
+        "What the coverage will not give you is the object. No dimensions, no materials, no account of how a description of a whirlpool became a printable form — and no statistics anywhere in the piece, in a category that usually leads with them. Ten units is also a deliberately small number: this is a prop for a conversation in a room, not a media buy, and the only measure that would mean anything is how many people in those rooms called 1800 858 858 afterwards."
+      ]
+    }
+  ],
+  "learn": {
+    "title": "Every office you have ever shivered in was set by a formula fitted to one person: a 40-year-old man weighing about 70 kilos, sitting still, in 1960s office clothes. He is still in the thermostat.",
+    "subject": "The thermal comfort model: a 1960s standard built on the resting metabolic rate of an average male overestimates female metabolic rate by up to 35% (Kingma & van Marken Lichtenbelt, Nature Climate Change, 2015).",
+    "body": [
+      "Buildings are not kept at a temperature someone likes. They are kept at a temperature a formula calculates, and the formula is called a thermal comfort model. It takes the heat your body produces, the heat your clothes let out, the air temperature and the humidity, and solves for the setting at which a notional occupant is neither sweating nor shivering. The problem is in the first input. The metabolic-rate figures the model uses were fixed in the 1960s from studies of mostly middle-aged men, and the reference body is a 40-year-old man weighing about 154 pounds — roughly 70 kilos — doing seated work in the clothes a man wore to an office in 1965. He is not a bad model of a person. He is a very specific one, and he has been in the wall ever since.",
+      "In 2015 two researchers at Maastricht University, Boris Kingma and Wouter van Marken Lichtenbelt, measured what happens when the person in the chair is not him. They put 16 women in their twenties in T-shirts and track pants, had them do light seated office work, and measured oxygen consumption, carbon dioxide output, skin temperature and core temperature. The resting metabolic rates came out well below what the standard assumes — the paper, in *Nature Climate Change*, says the model may \"overestimate female metabolic rate by up to 35%\". A formula that thinks you are producing a third more heat than you are will cool the room by a third more than you need. CBS's medical contributor Tara Narula put the gap in the only units anyone argues in: women like it around 77 degrees Fahrenheit, men around 72.",
+      "Two things make this better than a grievance. The first is that the mismatch is not only about sex — the same reference body is wrong for anyone older or thinner than a 40-year-old man of 70 kilos, which is most people in most offices, and it also ignores that office dress codes have never asked the sexes to wear the same amount of fabric. The second is the reason a climate journal published it at all. Residential and office buildings account for about 30% of global carbon dioxide emissions, and roughly 80% of the variation in a building's energy use comes down to how its occupants behave. If your comfort model is wrong about the bodies in the room, your energy model is wrong too — you are paying to cool a building past the point anyone wanted, and then paying again for the cardigans and the desk heaters that fight it. The authors' proposal is almost boringly reasonable: measure the metabolic rates of the people actually in the building, and set the number from them."
+    ]
+  },
+  "ideas": {
+    "prompt": "Ten ways to spend an evening you would still remember next year",
+    "note": "Altucher's drill: ten against one prompt, written fast, not defended. Reddit rate-limited the fetcher after two subreddits, so the raw material is what came through plus four Ask HN idea threads and Y Combinator's Requests for Startups. The pattern in it was unmistakable once I noticed it — a torch-projector game, a site that turns birthday wishes into something you play, a wedge of mirror so poker players can see their own cards — people keep asking for small devices to turn an ordinary evening into an occasion. The devices are not the hard part. Eight are mine; two are marked.",
+    "items": [
+      {
+        "text": "Cook one dish you have never attempted, badly, for people who were told in advance it might not work."
+      },
+      {
+        "text": "Walk a bus route you take every day, end to end, on foot, and stop at the shop you have passed four hundred times."
+      },
+      {
+        "text": "A film night where nobody knows the film: one person picks, tells nobody, and is not allowed to defend it afterwards."
+      },
+      {
+        "text": "Go to a sport you do not follow, live, in the cheapest seats, with someone who can explain the rules as it happens."
+      },
+      {
+        "text": "Spend an evening learning to do one small useless thing — shuffle cards properly, whistle with two fingers, fold a decent paper plane.",
+        "why": "A recurring shape in this week's r/SomebodyMakeThis and r/crazyideas posts: small physical skills people want a gadget for and could just learn."
+      },
+      {
+        "text": "Interview a grandparent on your phone for an hour, with real questions written down beforehand, and keep the recording."
+      },
+      {
+        "text": "Take the last train somewhere two hours away, eat dinner there, come back on the first train."
+      },
+      {
+        "text": "Projector on a bedsheet, on a terrace, playing something nobody has watched since school."
+      },
+      {
+        "text": "Throw an occasion for a thing that is not an occasion — a flatmate's exam result, a bike finally fixed, a Tuesday.",
+        "why": "Adapted from a well-received r/InternetIsBeautiful-adjacent post about turning birthday wishes into an interactive experience; the party is the product, not the website."
+      },
+      {
+        "text": "Give away an evening entirely: ask one friend what they have been meaning to do for months, and do that instead."
+      }
+    ]
+  }
+}
