@@ -7476,6 +7476,165 @@
         "notebookcheck.net",
         "sciencedaily.com"
       ]
+    },
+    {
+      "date": "2026-10-28",
+      "issue": 1,
+      "quote_text": [
+        "Most people use statistics like a drunk man uses a lamppost; more for support than illumination"
+      ],
+      "quote_author": [
+        "Andrew Lang"
+      ],
+      "idea_text": [
+        "Phone chargers by cable type, in hospital waiting rooms, where you will be for six hours and did not plan to be there at all.",
+        "A single dose of everything a cold needs — paracetamol, lozenges, tissues, a sachet of salt — on hostel corridors at 2am.",
+        "Umbrellas at the bottom of station escalators, priced high enough that you only buy one when you actually need it.",
+        "Hot tinned food — rajma, baked beans, soup — heated in the machine, at highway petrol pumps between towns.",
+        "Spare parts for exactly one thing: cycle inner tubes and patch kits, bolted to the wall at the start of a long cycling route.",
+        "Reading glasses in +1.0 through +3.0, outside every pharmacy, restaurant and government office where people squint at forms.",
+        "A machine in the library that dispenses one unfamiliar novel for a fixed price and will not tell you the title until you have paid.",
+        "Fresh flowers at the metro exit nearest the residential side, for the people who remembered on the train.",
+        "Lab consumables on the lab corridor — gloves, nitrile, pipette tips, a marker that works — charged to a department code.",
+        "A machine that sells nothing and only takes things in: dead batteries, old cables, expired medicines, and pays a rupee a piece."
+      ],
+      "idea_prompt": [
+        "Ten things that should be sold in a vending machine"
+      ],
+      "tip_text": [
+        "When Claude keeps ignoring a convention you wrote into CLAUDE.md, stop rewording the prose and put the rule in a pre-commit hook instead: have the hook grep the staged diff for the thing you banned, fail the commit, and print the instruction to use your wrapper. Prose drifts; a failing exit code is read every time."
+      ],
+      "hn_id": [
+        "50251344",
+        "50245138",
+        "50251661",
+        "50259604",
+        "50261998"
+      ],
+      "link": [
+        "https://openai.com/index/building-scientific-understanding-with-academic-communities/",
+        "https://magazine.sebastianraschka.com/p/building-reasoning-models",
+        "https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/paper.pdf",
+        "https://www.wired.com/story/the-us-government-is-hiding-a-secret-court-ruling-about-how-it-spies-on-americans/",
+        "https://ghostty.org/docs/install/release-notes/1-4-0",
+        "https://taxguru.in/goods-and-service-tax/gst-amendments-effective-1-november-2026-discounts-credit-notes-refunds.html",
+        "https://github.com/baidu/Unlimited-OCR",
+        "https://www.eurekalert.org/news-releases/1148710",
+        "https://reelchicago.com/article/herb-light-turns-bad-highs-into-halloween-horror-with-scarebnb/",
+        "https://www.contentgrip.com/speedo-anti-run-club-toronto/",
+        "https://www.timeout.com/newyork/news/dun-dun-a-law-order-themed-diner-will-take-over-this-fan-favorite-burger-joint-for-one-weekend-only-091726",
+        "https://research.google/blog/the-sleep-framework-a-new-way-for-llms-to-retain-knowledge-in-continual-learning/",
+        "https://arxiv.org/abs/2610.30678",
+        "https://theprint.in/economy/sensex-nifty-close-largely-unchanged-amid-selling-in-bank-it-stocks-elevated-crude-oil-prices/3083060/"
+      ],
+      "subject": [
+        "Notification 03/2026-Central Tax brings sections 153-155 of the Finance Act 2026 into force from 1 November 2026, changing CGST sections 15, 34 and 54 on post-supply discounts, 90% provisional refunds for inverted duty structure claims and the ₹1,000 minimum refund threshold on exports.",
+        "Baidu open-sources Unlimited OCR 2 under the MIT licence: a document parser whose per-step decoding cost and memory footprint stay roughly flat as page count grows, released alongside MarathonDocBench for hundred-page parsing.",
+        "Gerrothorax maritimus, a 237-million-year-old armoured stem amphibian from Late Triassic deep-sea sediments in Guizhou, China, whose strontium isotope ratios match Triassic seawater — no living amphibian species lives fully in the ocean.",
+        "Herb Light's 'ScareBnB': entrants submit their worst cannabis experience on Instagram to win a two-night stay at one of two reportedly haunted Illinois houses, stocked with the brand's 1mg THC drink.",
+        "Speedo Canada's 'The Anti-Run Club' at the Toronto Waterfront Marathon on 18 October 2026: swimwear-clad brand representatives lining the race route with signs, plus guerrilla posters and a digital billboard, positioning swimming as lower-impact endurance training.",
+        "NBC's Dun Dun Diner, a two-day Law & Order pop-up at Bill's Bar & Burger in Rockefeller Center on 9-10 October 2026, with exclusive menu items from Ess-a-Bagel, Katz's Delicatessen, Magnolia Bakery and Serendipity3, and a $30 booth tier alongside free grab-and-go entry.",
+        "Google Research's 'sleep' framework for continual learning: a wake phase storing short-term memory in fast parameters, then an offline sleep phase that consolidates into new low-rank MoE blocks via knowledge seeding and generates synthetic 'dreaming' data for self-improvement.",
+        "Scaling laws for linear safety probes on model activations: the achievable error floor follows a power law in model size, and error approaches that floor as labels increase at a rate set by model size, across six new datasets, two probe architectures and 20 base models.",
+        "Self-tickle attenuation as evidence for an internal forward model: 16 subjects rated a robot-delivered foam stroke on the palm, and tickliness rose progressively as delays of 100-300 ms or trajectory rotations of 30-90 degrees were inserted between the moving hand and the stimulus."
+      ],
+      "brand": [
+        "Herb Light",
+        "Quality Meats",
+        "THC",
+        "Speedo",
+        "Pentland Brands",
+        "NBC",
+        "Law & Order",
+        "Bill's Bar & Burger",
+        "Ess-a-Bagel",
+        "Katz's Delicatessen",
+        "Magnolia Bakery",
+        "Serendipity3"
+      ],
+      "brand_mention": [
+        "Herb Light",
+        "THC-per-can",
+        "DM",
+        "DrinkHerbLight",
+        "Illinois",
+        "Roff Home",
+        "Watseka",
+        "Hideaway House",
+        "Lockport",
+        "THC",
+        "B-movies",
+        "Halloween",
+        "Co-founder Brian Siedband's",
+        "Anyone",
+        "Speedo",
+        "Toronto Waterfront Marathon",
+        "Tera Maloney",
+        "Speedo Canada",
+        "Canada's Olympic",
+        "Pentland Brands",
+        "NBC",
+        "Bill's Bar",
+        "Burger",
+        "Rockefeller Center",
+        "Dun Dun Diner",
+        "Law",
+        "Order",
+        "SVU",
+        "Ess-a-Bagel",
+        "Katz's Delicatessen",
+        "Magnolia Bakery",
+        "Serendipity3",
+        "Booth Service Dining",
+        "Grab",
+        "ET"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "From Sunday a supplier can give you a discount it never promised in writing, and an exporter owed ₹300 can finally collect it"
+        ],
+        [
+          "trends",
+          "Baidu's new OCR model costs the same per token on page 400 as on page 4, and the weights are MIT"
+        ],
+        [
+          "trends",
+          "Of 8,000-odd living amphibian species not one lives in the sea. One did, 237 million years ago, and it was wearing armour"
+        ],
+        [
+          "wild",
+          "A THC drink brand asked people for their worst-ever high, and is paying two of them in nights at a genuinely haunted house"
+        ],
+        [
+          "wild",
+          "Speedo turned up at a marathon in swimwear to suggest everyone there try a different sport"
+        ],
+        [
+          "wild",
+          "A television show's two-note sound effect now has a restaurant named after it, and four Manhattan institutions cooked for it"
+        ],
+        [
+          "research",
+          "They gave the model a night's sleep: an offline phase that grows new parameters, moves the day's memories into them, and then dreams up its own training data"
+        ],
+        [
+          "research",
+          "Scaling Laws for Safety Probes"
+        ],
+        [
+          "learn",
+          "Nobody can tickle themselves, and the reason is a timing problem. Put a tenth of a second between your hand and your palm and it starts to work."
+        ]
+      ],
+      "editorial_domains": [
+        "contentgrip.com",
+        "eurekalert.org",
+        "github.com",
+        "reelchicago.com",
+        "taxguru.in",
+        "timeout.com"
+      ]
     }
   ]
 }

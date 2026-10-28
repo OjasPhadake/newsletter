@@ -1,0 +1,324 @@
+{
+  "date_line": "Wednesday, 28 October 2026",
+  "issue": 1,
+  "preheader": "Andrew Lang on what most people actually use statistics for; OpenAI says an unreleased internal model proved local smoothing, refuted the Exponential Time Hypothesis and built a four-dimensional QFT, and has published the first two and withheld the third; the ETH paper's actual claim is a deterministic #k-SAT counter in 2^(n/(log n)^(1/2+o(1))) time and polynomial space; Sebastian Raschka's 11-hour reasoning-model course on a 0.6B Qwen3; the FISA court objected to the FBI's search filters in March and the ruling is still classified while Congress is asked to renew Section 702; Ghostty 1.4 compresses idle scrollback and cuts memory 70-90%; Sensex 73,598.67 (-8.08) and Nifty 22,749.75 (-3.45) while smallcaps rose 2.69% and FIIs bought Rs 4,240 crore; three GST amendments start on 1 November; Baidu's MIT-licensed OCR model holds decoding cost flat no matter how long the document; a 237-million-year-old amphibian that lived in the open sea; Google's 'sleep' framework gives an LLM an offline consolidation phase; scaling laws for safety probes; a THC drink brand paying out two nights in a haunted house; Speedo crashing a marathon in swimwear; a Law & Order diner named after a sound effect; and the robot arm that proves you could tickle yourself with a tenth of a second of lag.",
+  "quote": {
+    "text": "Most people use statistics like a drunk man uses a lamppost; more for support than illumination",
+    "author": "Andrew Lang",
+    "source_url": "https://www.goodreads.com/quotes/tag/statistics",
+    "note": "The joke is usually read as an accusation of dishonesty, which is the less interesting half. The drunk is not lying about the lamppost. He genuinely needs it, he is holding on for real, and from where he is standing it is doing exactly the job he came for. That is the trap: the number you reach for when you are already committed feels just as load-bearing as the number you went looking for in order to find out. Illumination requires looking up, which is the one thing a man holding on to a post cannot do."
+  },
+  "agent_craft": {
+    "items": [
+      {
+        "text": "When Claude keeps ignoring a convention you wrote into CLAUDE.md, stop rewording the prose and put the rule in a pre-commit hook instead: have the hook grep the staged diff for the thing you banned, fail the commit, and print the instruction to use your wrapper. Prose drifts; a failing exit code is read every time.",
+        "source": "Geoffrey Huntley, quoted by Simon Willison",
+        "url": "https://simonwillison.net/2026/Oct/13/geoffrey-huntley/"
+      }
+    ]
+  },
+  "hn": [
+    {
+      "title": "Three new discoveries in mathematics, computer science, and physics",
+      "url": "https://openai.com/index/building-scientific-understanding-with-academic-communities/",
+      "hn_url": "https://news.ycombinator.com/item?id=50251344",
+      "points": 1124,
+      "comments": 655,
+      "bullets": [
+        "openai.com would not serve to a fetch, so these bullets come from the primary material that is fetchable: the README and the 26 October entry of the `openai/math` repository, which is where two of the three results were actually published. The announcement claims three results from an unnamed internal model: local smoothing for the Euclidean wave equation in every spatial dimension at least two (which the repo says also yields the Kakeya maximal and dimension conjectures and Stein's spherical restriction estimates throughout the interior of the conjectured range); a refutation of the Exponential Time Hypothesis; and existence proofs for four-dimensional quantum field theories including QCD.",
+        "The repo is the part worth reading, because it is unusually candid about what this is. It holds 721 manuscripts in 373 families, about 42% of top-line results formalised in Lean, and describes itself as \"raw research data, rather than polished academic papers\". The method: roughly 4,000 problems posed to the model, about three hours of ChatGPT Pro thinking compute per result on average, then aggregation into families. Exceptions are listed by name - a zero-free region for the Riemann zeta function and the Hodge conjecture for CM abelian varieties did not follow the fixed procedure, and the zeta write-up was human-edited for readability.",
+        "The error record is in the repo too, and it is the strongest argument for the shepherding model. On 7 October three manuscripts were withdrawn after a sign error invalidated a stabilisation-trace cancellation argument in \"Algebraicity of Weil classes on split abelian eightfolds\", taking two dependent papers with it; 14 others were revised and 13 more updated to cite the revisions. For the ETH result, a working group led by Russell Impagliazzo, Ramamohan Paturi and Ryan Williams will examine and explain the proof, and the repo says the materials were made public immediately at that group's request.",
+        "The physics claim is the one to hold at arm's length, and the clearest reason is that there is nothing to check. Unlike the other two it has not been released - a group led by David Gross, with Jaffe, Douglas, Klebanov and Nekrasov, has access while everyone else has the press release. Peter Woit, who does mathematical physics at Columbia, calls the secrecy \"outrageous\" and says it is \"hard to know exactly what they're claiming to have proved\"; his specific objection is that the Clay problem requires a mass gap uniform in the volume and the announcement does not mention a mass gap at all, which, if the existence proof is being read as the Millennium problem, he calls \"intentionally deceptive\". The group of mathematicians advising OpenAI has publicly asked for immediate release."
+      ]
+    },
+    {
+      "title": "Sebastian Raschka's from-scratch video course on building reasoning models",
+      "url": "https://magazine.sebastianraschka.com/p/building-reasoning-models",
+      "hn_url": "https://news.ycombinator.com/item?id=50245138",
+      "points": 822,
+      "comments": 109,
+      "bullets": [
+        "Eight videos, over 11 hours of coding, accompanying the book *Build a Reasoning Model (From Scratch)*. The important structural choice is in the title's small print: you do not pretrain anything. The course starts from a small pretrained Qwen3 - the 0.6B variant - and implements the reasoning methods on top of it, which is what makes an 11-hour course on this subject possible at all.",
+        "The four blocks, in order: evaluation; inference-time scaling (sampling, self-consistency, self-refinement); reinforcement learning with verifiable rewards, specifically GRPO; and distillation. All of it in plain Python and PyTorch rather than a training framework, which is the point of the series - the methods are small once the harness is not in the way.",
+        "Hardware is the practical question and the answer is friendlier than expected. Early text generation and evaluation run on a CPU; a GPU is much more practical for the later training experiments, with CUDA and Apple Silicon both supported and setup via uv. Results are measured on MATH-500, so the loop is short enough to actually watch a number move.",
+        "Prerequisites: comfort with Python and PyTorch. The earlier *Build a Large Language Model (From Scratch)* is recommended but not required. The videos are on YouTube and the book is at Manning and Amazon; the page gives no prices, and a separate LinkedIn Learning course is described as free for 24 hours through a link."
+      ]
+    },
+    {
+      "title": "The Exponential Time Hypothesis Is False [pdf]",
+      "url": "https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/paper.pdf",
+      "hn_url": "https://news.ycombinator.com/item?id=50251661",
+      "points": 775,
+      "comments": 280,
+      "bullets": [
+        "67 pages, dated 17 October 2026 and revised 25 October. The claim is narrower and stranger than the title: a deterministic algorithm that *exactly counts* satisfying assignments of an arbitrary k-CNF, for every fixed k at least 2, in (n+m)^O(1) * 2^(O(n log log n / sqrt(log n))) bit operations and polynomial space. Since testing whether the count exceeds zero decides satisfiability, the k=3 case refutes the Exponential Time Hypothesis, which holds that 3-SAT needs 2^(Omega(n)) time in the worst case.",
+        "Note what the exponent is. It is not a smaller constant times n - that would be an improvement, not a refutation. It is n divided by a slowly growing function of n: 2^(n/(log n)^(1/2+o(1))), which is subexponential but still far above polynomial. The paper is explicit that the standard self-reduction then recovers an actual satisfying assignment one variable at a time, and that choosing each bit by the two conditional counts gives a uniformly random satisfying assignment with polynomial expected overhead.",
+        "The paper itself heads off the obvious over-reading. Bounds of the form 2^o(n) do not transfer under general polynomial-time reductions - you would need 2^(n^o(1)) for that - so this does not give subexponential algorithms for NP in general. What it does give: subexponential counting of graph colourings and perfect matchings, and arbitrarily accurate subexponential approximation for Max-k-SAT, matching the semidefinite-programming guarantees of Raghavendra's algorithm up to arbitrarily small error in the ratio.",
+        "Structurally the proof routes #k-SAT through algebra: shared linear summaries, low-degree replacement forms, and counting common zeros of sparse polynomial equations, with the sharper bound in Appendix D proved by tensor contraction. Both bounds in the main theorem are proved there; the rational interpolation argument in Section 6.4 only gives the weaker exponent. No Lean formalisation accompanies it, and the independent working group has not reported."
+      ]
+    },
+    {
+      "title": "US Government is hiding a secret court ruling about how it spies on Americans",
+      "url": "https://www.wired.com/story/the-us-government-is-hiding-a-secret-court-ruling-about-how-it-spies-on-americans/",
+      "hn_url": "https://news.ycombinator.com/item?id=50259604",
+      "points": 744,
+      "comments": 269,
+      "bullets": [
+        "Dell Cameron's 26 October story, built on a demand letter obtained by WIRED. Seven months ago the Foreign Intelligence Surveillance Court objected to search filters that let intelligence analysts pull Americans' messages out of intercepted data without the approvals, written justifications or records the law requires - and then approved another year of surveillance anyway. The ruling has never been published.",
+        "The deadline is the hook. The administration's own public documentation says rulings like this one are reviewed for public release \"within 180 days of issuance\"; that window closed on 13 September. Senators Ron Wyden and Adam Schiff want an explanation and the names of the officials responsible by 6 November, and told DNI Jay Clayton and Attorney General Todd Blanche that \"if this administration won't follow this simple statutory directive, it is unclear why Congress or the American people should trust this administration to follow any of the other legal limits to Section 702.\" In April, Tom Cotton and Mark Warner - the Intelligence Committee's Republican chair and Democratic vice chair - had asked for release within 15 days. In July Blanche was asked in writing whether he would commit to declassifying by the 180-day deadline and answered \"Yes.\"",
+        "What the court actually found is partly known from other reporting. The New York Times reported in April, citing unclassified talking points sent to lawmakers, that the court held tools agencies use to narrow intercepted data down to an American's messages are themselves searches of Americans, subject to the same limits, and ordered them rebuilt. Senator Alex Padilla says the Justice Department \"is appealing portions\" of the ruling. A previously declassified opinion described an FBI \"participants filter\" that selected people in contact with targets; in February 2025 the department told the court it had been running searches no one counted.",
+        "The timing is the story. Section 702 lapsed in June when Congress failed to renew it, though collection continues under the court's March approval, and intelligence officials are pressing for reauthorisation by the end of the year. Demand Progress and 22 other groups - from the ACLU to the conservative-backed Project for Privacy and Surveillance Accountability - asked congressional leaders on Monday to refuse while the information is withheld. Meanwhile seven agency fact sheets from March 2026, one dated the day of the ruling, cite a 98.9 percent compliance rate for FBI searches of Americans and credit Section 702 with stopping a planned attack on a Taylor Swift concert in Vienna. None mentions the court's findings."
+      ]
+    },
+    {
+      "title": "Ghostty 1.4",
+      "url": "https://ghostty.org/docs/install/release-notes/1-4-0",
+      "hn_url": "https://news.ycombinator.com/item?id=50261998",
+      "points": 685,
+      "comments": 210,
+      "bullets": [
+        "About seven months of work: 172 contributors, 2,889 commits. The headline feature is one nobody asks for and everybody benefits from - idle scrollback is now compressed, cutting physical memory use by 70% to 90% for text-heavy history, which let the default scrollback limit rise from 10 MB to 50 MB. Available on macOS and 64-bit Linux.",
+        "The rest of the memory work is in the same direction. An empty terminal now uses about 16 KiB of page memory on macOS, down from 128 KiB. With 20 hidden tabs, GPU memory fell from about 385 MiB to 18 MiB. On throughput: reading the pty concurrently with parsing raised macOS I/O by 25% to 55%, plain ASCII parsing went from 128 MB/s to 725 MB/s, OSC 52 clipboard parsing is about 30x faster, and image parsing is about 16x faster on 64 MiB of data.",
+        "Two protocol items matter if you live in the terminal. Kitty graphics now supports animation and relative placements, which the notes call \"a 100% complete Kitty graphics implementation\". And the Kitty clipboard protocol (OSC 5522) lets programs read and write non-text clipboard data - images, HTML - on macOS and GTK, with a new `clipboard-write-limit-bytes` setting capping a single write at 64 MiB by default.",
+        "Linux and FreeBSD get a new GTK renderer: EGL on its own thread with triple buffering, and text that stays sharp at fractional scaling like 125% or 150%. Splits can be rearranged by dragging a handle onto another split, across tabs and windows. And `ghostty +ssh` now wraps `ssh`, installing Ghostty's terminfo on the remote host and forwarding environment variables, which removes the single most common reason to pretend to be xterm. Ghostty also now runs the esctest conformance suite in CI."
+      ]
+    }
+  ],
+  "markets": {
+    "indices": [
+      {
+        "name": "Sensex · Tue 27 Oct close",
+        "value": "73,598.67",
+        "change": "−8.08 (0.01%) after a 583-point range: high 73,762.98, low 73,179.41",
+        "direction": "down"
+      },
+      {
+        "name": "Nifty 50 · Tue 27 Oct",
+        "value": "22,749.75",
+        "change": "−3.45 (0.02%); opened 22,708.80, high 22,829.75, low 22,636.85",
+        "direction": "down"
+      },
+      {
+        "name": "Bank Nifty · Tue",
+        "value": "53,974.90",
+        "change": "−391.80 (0.72%). Private Bank −0.73%, Financial Services −0.62%, IT −0.26%",
+        "direction": "down"
+      },
+      {
+        "name": "Broader market · Tue",
+        "value": "Smallcap 100 +2.69%",
+        "change": "Midcap 100 +1.00% to 57,029.90; Nifty Next 50 +1.30%. The benchmark did nothing and everything below it went up",
+        "direction": "up"
+      },
+      {
+        "name": "Best sectors · Tue",
+        "value": "Media +3.66%",
+        "change": "Realty +1.94%; Pharma +1.91% to 26,267.25; Auto +1.48%; Consumer Durables +1.19%; FMCG +0.74%",
+        "direction": "up"
+      },
+      {
+        "name": "Worst sector · Tue",
+        "value": "Cement −2.03%",
+        "change": "Then the lenders: Private Bank −0.73%, Bank Nifty −0.72%, Financial Services −0.62%",
+        "direction": "down"
+      },
+      {
+        "name": "India VIX · Tue",
+        "value": "16.53",
+        "change": "−0.63 (3.65%) — a flat index on a calmer day, not a nervous one",
+        "direction": "down"
+      },
+      {
+        "name": "USD/INR · Tue 27 Oct",
+        "value": "95.12",
+        "change": "+3 paise from Monday's 95.15, provisional; traded 95.09–95.24 after opening at 95.17",
+        "direction": "up"
+      },
+      {
+        "name": "FII cash · Tue",
+        "value": "+₹4,240.39 cr",
+        "change": "Bought ₹24,517.65 cr, sold ₹20,277.26 cr. DIIs net −₹1,250.03 cr — the month's usual pattern ran backwards (NSE provisional)",
+        "direction": "up"
+      },
+      {
+        "name": "Brent crude · Tue",
+        "value": "$115.80",
+        "change": "−0.03%, still near a near-six-month high on the Houthi strikes on Saudi oil infrastructure",
+        "direction": "down"
+      }
+    ],
+    "stories": [
+      {
+        "headline": "The benchmark moved eight points and the smallcaps moved 2.69% — Tuesday was a flat index sitting on top of a broad rally, with the banks paying for it",
+        "url": "https://theprint.in/economy/sensex-nifty-close-largely-unchanged-amid-selling-in-bank-it-stocks-elevated-crude-oil-prices/3083060/",
+        "source": "PTI via ThePrint for the 27 October closes, the sector moves and Brent; NSE's own all-indices and FII/DII provisional cash data for the index levels and flows; PTI via Metro Vaartha for the rupee close",
+        "bullets": [
+          "Tuesday 27 October: Sensex 73,598.67, down 8.08 points or 0.01%; Nifty 50 22,749.75, down 3.45 or 0.02%. Calling it flat undersells the day — the Sensex covered 583 points between its low of 73,179.41 and its high of 73,762.98 and came back to where it started. PTI's description is \"highly volatile trade\".",
+          "Underneath, it was not flat at all. Nifty Smallcap 100 rose 2.69%, Midcap 100 1.00%, Next 50 1.30% — all of them well clear of the benchmark. Media led the sectors at +3.66%, then Realty +1.94%, Pharma +1.91% and Auto +1.48%. On the BSE's own cut, PTI has Healthcare +2.28%, Telecom +2.15%, Utilities +1.89%, Hospitals +1.84% and Power +1.82%.",
+          "What held the index down was its heaviest component group. Bank Nifty fell 0.72% to 53,974.90, Private Bank 0.73% and Financial Services 0.62%, with State Bank of India, Axis Bank, HDFC Bank and ICICI Bank among the Sensex laggards alongside TCS and Asian Paints; Bharti Airtel, Trent, Maruti and Power Grid were the winners. Nifty Cement was the worst sector index of the day at −2.03%. An index where the banks are a fifth of the weight cannot rise on a day the banks fall, however green the rest of the board is.",
+          "The flows flipped. Foreign institutions bought ₹24,517.65 crore and sold ₹20,277.26 crore for a net purchase of ₹4,240.39 crore, while domestic institutions were net sellers of ₹1,250.03 crore — the mirror image of Monday, when foreigners sold ₹1,462.49 crore and the domestic money absorbed it. The rupee closed at 95.12, three paise firmer, in a 95.09–95.24 band, with dealers crediting likely RBI intervention against Brent near $115.80 and a stronger dollar ahead of the Fed's decision. India VIX fell 3.65% to 16.53."
+        ]
+      }
+    ]
+  },
+  "trends": [
+    {
+      "tag": "India",
+      "headline": "From Sunday a supplier can give you a discount it never promised in writing, and an exporter owed ₹300 can finally collect it",
+      "url": "https://taxguru.in/goods-and-service-tax/gst-amendments-effective-1-november-2026-discounts-credit-notes-refunds.html",
+      "subject": "Notification 03/2026-Central Tax brings sections 153-155 of the Finance Act 2026 into force from 1 November 2026, changing CGST sections 15, 34 and 54 on post-supply discounts, 90% provisional refunds for inverted duty structure claims and the ₹1,000 minimum refund threshold on exports.",
+      "subtitle": "Taxguru's reading of Notification No. 03/2026–Central Tax dated 26 October 2026, which commences sections 153, 154 and 155 of the Finance Act, 2026",
+      "bullets": [
+        "Three amendments, one commencement date. The notification brings sections 153, 154 and 155 of the Finance Act, 2026 into force on 1 November 2026, amending sections 15, 34 and 54 of the CGST Act. None of this is new policy — it was voted in the Budget session — but until a commencement notification exists, an amendment passed in a Finance Act does nothing at all, which is why a dated notification is the event and the Act was not.",
+        "The post-supply discount change is the one with teeth. Section 15(3)(b) previously allowed a discount to reduce taxable value only if it was agreed at or before the time of supply *and* linked to specific invoices. Both conditions go. What remains is a credit note issued by the supplier and reversal by the recipient of the input tax credit attributable to the discount — which was already required. In practice this is about year-end and volume-based trade schemes, which are negotiated after the fact by their nature and have been generating litigation precisely because the law pretended otherwise.",
+        "The refund changes are cash-flow changes. Section 54(6)'s provisional 90% refund, previously aimed at zero-rated supplies, now extends to unutilised credit accumulated under an inverted duty structure — where your inputs are taxed higher than your output. On ₹1 crore of accumulated credit that is ₹90 lakh early and ₹10 lakh after verification, subject to prescribed conditions. Separately, section 54(14)'s rule that no refund below ₹1,000 is paid at all stops applying to tax refunds on exports of goods made with payment of tax.",
+        "Two gaps worth knowing before you plan around it. The ₹1,000 relief is written for exports of goods *with* payment of tax; whether exports of services, or refunds claimed without payment of tax, are covered is not clear from the text, and until the department says otherwise the floor should be assumed to still apply there. And \"subject to prescribed conditions\" is doing real work on the 90% — a provisional refund that runs through a risk screen is a provisional refund for whoever the screen likes."
+      ]
+    },
+    {
+      "tag": "Open weights",
+      "headline": "Baidu's new OCR model costs the same per token on page 400 as on page 4, and the weights are MIT",
+      "url": "https://github.com/baidu/Unlimited-OCR",
+      "subject": "Baidu open-sources Unlimited OCR 2 under the MIT licence: a document parser whose per-step decoding cost and memory footprint stay roughly flat as page count grows, released alongside MarathonDocBench for hundred-page parsing.",
+      "subtitle": "The baidu/Unlimited-OCR repository, release entries dated 27 October 2026; licence confirmed as MIT via the GitHub API",
+      "bullets": [
+        "Released on 27 October, under the MIT licence, with weights on Hugging Face and the repo already past 29,000 stars. The pitch is not accuracy, it is shape: a document parser whose cost per decoding step stops growing with the document. The successor to June's Unlimited-OCR, which the repo cheerfully describes as an attempt to push DeepSeek-OCR \"one step further\".",
+        "The mechanism has a name and a number. Sparse Reference Sliding Window Attention compresses text-to-visual attention from an ultra-long sequence down to a fixed-size set of working references — the repo's example is 512 tokens — which bounds the computation and keeps per-step latency and memory footprint \"nearly constant regardless of document length\". That is the quadratic attention term and the growing KV cache both taken off the table, inside a finite context window, which is the actual reason hundred-page parsing has not been a single request until now.",
+        "They also shipped the ruler they are measuring against, which cuts both ways. MarathonDocBench, released the same day, is a new benchmark for ultra-long document parsing; the repo claims state of the art on it and on the dozens-of-pages MPDocBench. Every benchmark number here is self-reported by the lab that wrote the benchmark, so treat the leaderboard as a claim and the architecture as the contribution.",
+        "Practicalities: tested on a single NVIDIA A800-80GB, with Transformers for quick tests and SGLang recommended for serving, plus vLLM and ms-swift support contributed by the community. Model mirrors are up on ModelScope and Baidu Cloud and there is a Hugging Face Space. For anyone whose pipeline currently chunks a PDF, overlaps the chunks and stitches the output back together, the interesting question is whether the stitching code can be deleted."
+      ]
+    },
+    {
+      "tag": "Palaeontology",
+      "headline": "Of 8,000-odd living amphibian species not one lives in the sea. One did, 237 million years ago, and it was wearing armour",
+      "url": "https://www.eurekalert.org/news-releases/1148710",
+      "subject": "Gerrothorax maritimus, a 237-million-year-old armoured stem amphibian from Late Triassic deep-sea sediments in Guizhou, China, whose strontium isotope ratios match Triassic seawater — no living amphibian species lives fully in the ocean.",
+      "subtitle": "UC Davis release on \"A fully marine stem amphibian from the Late Triassic of China\", Nature Ecology & Evolution, 26 October 2026; corresponding author Ryosuke Motani, with Peking University and the Geological Museum of Guizhou",
+      "bullets": [
+        "Why this is a gap and not a curiosity: of more than 8,000 living amphibian species, none live fully in the sea and fewer than 2% tolerate any salt at all. The reason is the skin — an amphibian breathes and takes up water through it, which makes seawater an osmotic problem rather than a habitat. Mammals, reptiles and birds all have members that live away from fresh water. Amphibians have none, and until this paper there was no fossil one either.",
+        "The animal is about three feet long, flat and disc-shaped, covered in bony armour, and the researchers read it as a bottom-dwelling suction feeder. The armour is interpreted as defence against the ichthyosaurs sharing the water. Their proposal for the salt problem is that it drank seawater and filtered the salt out, possibly through its gills.",
+        "The evidence is mostly about ruling out the boring explanation, which is that a freshwater animal floated out to sea and sank. Two nearly complete skeletons, found in deep-sea sediments in Guizhou — then open ocean, hundreds of miles from any large landmass — with the fingers still preserved, which argues the animals died near where they lived rather than drifting. Then the independent check: strontium isotope ratios in the fossils match what Late Triassic seawater should give.",
+        "What the release does not give is the sample's limits in the usual places — two individuals, one locality, one horizon, and an inferred physiology (seawater drinking, gill-based salt excretion) that no fossil can show directly. The strontium argument is the load-bearing one, and it establishes the water the bones sat in rather than the water the animal chose."
+      ]
+    }
+  ],
+  "research": [
+    {
+      "tag": "Industry · Google Research",
+      "title": "They gave the model a night's sleep: an offline phase that grows new parameters, moves the day's memories into them, and then dreams up its own training data",
+      "url": "https://research.google/blog/the-sleep-framework-a-new-way-for-llms-to-retain-knowledge-in-continual-learning/",
+      "subject": "Google Research's 'sleep' framework for continual learning: a wake phase storing short-term memory in fast parameters, then an offline sleep phase that consolidates into new low-rank MoE blocks via knowledge seeding and generates synthetic 'dreaming' data for self-improvement.",
+      "subtitle": "Ali Behrouz and Vahab Mirrokni, Google Research blog, 27 October 2026, with Farnoosh Hashemi (Cornell) and Adel Javanmard (Google / USC) on the paper",
+      "bullets": [
+        "The problem is a genuine fork in the road, not a benchmark gap. Update a deployed model's weights on new data and you get catastrophic forgetting; keep everything in context instead and you keep nothing past the session. The framing here is to stop choosing: let the model run on fast, short-term memory while it is working, then take it offline and consolidate, which is roughly what a biological sleep cycle is for.",
+        "Consolidation is the mechanically interesting half. Rather than overwrite existing weights, the sleep phase *adds capacity* — low-rank Mixture-of-Experts blocks on the Hope architecture — and places new knowledge in lower-frequency memory so older parameters are not disturbed. The day's short-term memories are then moved into those new parameters by \"knowledge seeding\": generalised knowledge distillation plus on-policy distillation, with a reward for imitating teacher-generated text built from semantic similarity and Levenshtein distance. The high-frequency temporary parameters are then reset, which is the part that makes it a cycle rather than an accumulation.",
+        "Then it dreams, and the dreaming is a data pipeline. The model generates synthetic training samples using random expert selection to deliberately mix knowledge domains, filters them by gradient-based data selection, fine-tunes on the top-rated ones and checks whether downstream performance actually improved. The theory in the post frames consolidation as low-rank compression and dreaming as diversifying and selecting gradient updates — a reasonable story for why mixing experts at random is a feature.",
+        "The numbers, all self-reported and all from the blog: near-zero drop across stages on continual translation into unseen languages (Manchu, Kalamang) where in-context learning, Cartridges and plain SFT all degraded badly; near-perfect BABILong scaling to 10M tokens; 48.9% on single-task SQuAD factual knowledge and 46.2% on continued pretraining; 79.2% on AIME 24, 69.0% on AIME 25, 46.1% on HMMT 25. The post does not name the base model, and class-incremental results are mentioned without figures — so the shape of the claim is clear and its size is not yet checkable."
+      ]
+    },
+    {
+      "tag": "Academic · University of Washington",
+      "title": "Scaling Laws for Safety Probes",
+      "url": "https://arxiv.org/abs/2610.30678",
+      "subject": "Scaling laws for linear safety probes on model activations: the achievable error floor follows a power law in model size, and error approaches that floor as labels increase at a rate set by model size, across six new datasets, two probe architectures and 20 base models.",
+      "subtitle": "Yuchen Wu and Jerry Wei; arXiv:2610.30678, submitted 22 October 2026, revised 23 October. The arXiv page lists no affiliations; OpenAlex resolves the paper to the University of Washington",
+      "bullets": [
+        "A safety probe is the cheap monitor: a small classifier trained on a model's internal activations to flag something you care about, rather than a second model reading the output. The question asked here is the one you have to answer before building one — can you predict how good the probe will be, from the size of the model it reads and the number of labels you are willing to pay for?",
+        "The setup is unusually wide for a paper this short: six new safety datasets built for the purpose, two probe architectures, 20 base models drawn from five model families. Probe error is defined as 1 minus AUROC, which keeps the thing being fitted threshold-free.",
+        "Two laws come out. The lowest achievable error — the floor you reach with unlimited labels — is a power law in model size. And for a given model, error falls toward that floor as the number of labels grows, at a rate that itself depends on model size. The authors report both holding across tasks, model families and probe architectures.",
+        "Why the second law is the useful one: it turns a procurement question into arithmetic. For a target error you can now ask whether to label more data or read a bigger model, and get a number instead of an argument. The obvious limitation is that six datasets built by the same authors are what the laws are fitted to, so the curve is established more firmly than its coefficients."
+      ]
+    }
+  ],
+  "wild": [
+    {
+      "tag": "Beverages",
+      "headline": "A THC drink brand asked people for their worst-ever high, and is paying two of them in nights at a genuinely haunted house",
+      "url": "https://reelchicago.com/article/herb-light-turns-bad-highs-into-halloween-horror-with-scarebnb/",
+      "entities": ["Herb Light", "Quality Meats"],
+      "subject": "Herb Light's 'ScareBnB': entrants submit their worst cannabis experience on Instagram to win a two-night stay at one of two reportedly haunted Illinois houses, stocked with the brand's 1mg THC drink.",
+      "subtitle": "Reel Chicago, 9 October 2026, on the ScareBnB campaign for Herb Light by Quality Meats",
+      "bullets": [
+        "The call for entries is the product demo. Herb Light is a 1mg-THC-per-can drink, positioned for people who want cannabis without the part where it goes wrong — so the campaign collects the part where it goes wrong, from strangers, in public. Entrants comment on the brand's Instagram contest post or DM @DrinkHerbLight; deadline was midnight on 23 October.",
+        "The prize is specific in a way most prizes are not. Two winners get two nights at reportedly haunted Illinois properties: the Roff Home in Watseka, 29–31 October, or the Hideaway House in Lockport, 30 October–1 November. Both are stocked with Herb Light, which is either thoughtful or the second half of the joke.",
+        "The film is a deliberate genre collision: monsters telling their own bad-high stories — vampires regretting gummies, werewolves overcommitting to a THC pen — shot as a mash-up of 1980s horror B-movies and old-school Halloween beer advertising, which happens to be the brand's existing light-beer look. Retro poster-style social creative carries it on.",
+        "Co-founder Brian Siedband's line is the whole strategy in one sentence: \"Anyone who's dabbled in cannabis has a few horror stories.\" A low-dose product has an awkward pitch, because the benefit is an absence. Making the absence the thing people describe out loud, in their own words, at Halloween, is a neater solve than any amount of milligram messaging."
+      ]
+    },
+    {
+      "tag": "Sportswear",
+      "headline": "Speedo turned up at a marathon in swimwear to suggest everyone there try a different sport",
+      "url": "https://www.contentgrip.com/speedo-anti-run-club-toronto/",
+      "entities": ["Speedo", "Pentland Brands"],
+      "subject": "Speedo Canada's 'The Anti-Run Club' at the Toronto Waterfront Marathon on 18 October 2026: swimwear-clad brand representatives lining the race route with signs, plus guerrilla posters and a digital billboard, positioning swimming as lower-impact endurance training.",
+      "subtitle": "ContentGrip on Speedo Canada's Anti-Run Club at the Toronto Waterfront Marathon, 18 October 2026",
+      "bullets": [
+        "The mechanic is a single good joke executed in the right place: representatives in Speedo swimwear standing along the Toronto Waterfront Marathon route on 18 October, holding signs, as what the coverage calls a \"deliberately misplaced fan club\". Guerrilla posters and a digital billboard carried it past the people who were physically there.",
+        "It is ambush marketing without the ambush. Speedo did not sponsor the race, is not a running brand, and had nothing to sell to anyone in the field — so the only asset it brought was the visual contradiction between swimwear and a road race, which does the arguing without a line of copy.",
+        "The argument underneath is real and slightly rude: swimming as a lower-impact way to train for endurance, framed as a complement to running rather than a criticism of it. Tera Maloney, head of marketing at Speedo Canada and a former member of Canada's Olympic swim team, puts it as \"the best exercise is the one you can do for a lifetime\" — said at an event whose participants are mostly nursing something.",
+        "Honest limits on this one: the coverage names no agency, quotes none of the actual poster or billboard lines, does not say where the billboard was, and reports no results. What it does link to is Pentland Brands' stated purpose of encouraging a lifelong love of swimming, which is the rare case of a brand-purpose line that produced a specific stunt instead of a manifesto."
+      ]
+    },
+    {
+      "tag": "Television",
+      "headline": "A television show's two-note sound effect now has a restaurant named after it, and four Manhattan institutions cooked for it",
+      "url": "https://www.timeout.com/newyork/news/dun-dun-a-law-order-themed-diner-will-take-over-this-fan-favorite-burger-joint-for-one-weekend-only-091726",
+      "entities": ["NBC", "Law & Order", "Bill's Bar & Burger", "Ess-a-Bagel", "Katz's Delicatessen", "Magnolia Bakery", "Serendipity3"],
+      "subject": "NBC's Dun Dun Diner, a two-day Law & Order pop-up at Bill's Bar & Burger in Rockefeller Center on 9-10 October 2026, with exclusive menu items from Ess-a-Bagel, Katz's Delicatessen, Magnolia Bakery and Serendipity3, and a $30 booth tier alongside free grab-and-go entry.",
+      "subtitle": "Time Out New York, 17 September 2026, on NBC's Dun Dun Diner at Bill's Bar & Burger, which ran 9–10 October 2026",
+      "bullets": [
+        "The name is the whole conceit: \"dun dun\" is the two-note sting the show has played between scenes since 1990, and it is now a restaurant. For two days, 9 and 10 October, 11am to 9pm, NBC took over Bill's Bar & Burger at Rockefeller Center and ran it as the Dun Dun Diner, timed to the new seasons of *Law & Order* and *SVU*.",
+        "The catering is the part that makes it specific rather than themed. Four New York institutions contributed exclusive items — Ess-a-Bagel, Katz's Delicatessen, Magnolia Bakery and Serendipity3 — covering bagels, deli staples and desserts. Select dishes then turned up at the partner restaurants themselves on 12 and 13 October, which quietly turns a two-day pop-up into a week-long trail across four existing businesses.",
+        "Two tiers, and the cheaper one is free. Booth Service Dining at $30 bought a timed slot, one featured dish, a dessert, branded merchandise and the interactive bits; Grab & Go cost nothing and got you merchandise and a themed photo at any time on your chosen date. Reservations opened at noon ET on 18 September, first come first served.",
+        "Worth noticing what this is not. It is not a licensing deal with a chain — it is a real burger restaurant that handed over its dining room for a weekend, with four delis and bakeries cooking off-menu into it. The only thing NBC supplied was the fiction. The honest gap in the coverage is that the full menu was never published in advance and no attendance figure has been released, so the thing is easier to admire as a structure than to judge as a result."
+      ]
+    }
+  ],
+  "learn": {
+    "title": "Nobody can tickle themselves, and the reason is a timing problem. Put a tenth of a second between your hand and your palm and it starts to work.",
+    "subject": "Self-tickle attenuation as evidence for an internal forward model: 16 subjects rated a robot-delivered foam stroke on the palm, and tickliness rose progressively as delays of 100-300 ms or trajectory rotations of 30-90 degrees were inserted between the moving hand and the stimulus.",
+    "body": [
+      "Tickling yourself does not work, and it is worth noticing how strange that is. The nerves in your palm have no idea whose hand is doing it. The sensation is identical. Something upstream is deciding, before you feel anything, that this particular touch is not worth reacting to — and the discovery is that the something is a prediction. Your brain runs a model of your own body that is constantly forecasting what you are about to feel, from the motor command alone, and then quietly subtracts the forecast from the incoming signal. What you notice is only the difference. It is why you do not feel your own clothes all day, and why you jump when somebody else's hand lands in exactly the same place.",
+      "Sarah-Jayne Blakemore, Daniel Wolpert and Chris Frith built the apparatus that proves it is a forecast rather than a general dulling of the senses, and the trick is lovely. Sixteen people sat with a piece of soft foam on a robot arm stroking the palm of the right hand — the same stroke every time, 1.5 cm, twice a second. In some conditions the robot did it on its own; in the rest, the subject drove the foam by moving their own left hand on a second robot. Identical touch, identical movement; the only thing that changed was whether the touch arrived exactly when the left hand said it should. They then slipped delays of 100, 200 and 300 milliseconds into the link, and separately rotated the direction of the stroke by 30, 60 and 90 degrees. Ticklishness climbed steadily as the delay grew from nothing to 200 ms, and climbed again as the rotation grew — significant in both cases. A tenth of a second of lag and your own hand starts to feel like somebody else's.",
+      "Two footnotes make the story better. In the earlier work this was based on, having the experimenter take hold of your hand and use it to tickle your own foot lands somewhere in the middle: more ticklish than doing it yourself, less than being tickled outright — the movement of your arm still counts for something, but the command you issued counts for more. And the mechanism has a darker use. Frith's proposal is that this same self-monitoring is what tells you a thought or a movement was yours, and that when it misfires you get exactly the symptoms described in schizophrenia: an inner voice that arrives sounding like somebody else's, a hand that picks up a pen while its owner insists they did not. The thing that stops you tickling yourself is, in that reading, also the thing that keeps you convinced you are the one doing the living."
+    ]
+  },
+  "ideas": {
+    "prompt": "Ten things that should be sold in a vending machine",
+    "note": "Altucher's drill: ten against one prompt, written fast, not defended. Reddit rate-limited the fetcher partway through, so the raw material is r/SomebodyMakeThis plus the RSS feeds for r/Lightbulb, four Ask HN idea threads and Y Combinator's Requests for Startups. Two wishes kept recurring in it — canned food in vending machines, and small physical fixes for small physical annoyances — and vending machines are the perfect test case, because the only ideas that survive are the ones where the problem is genuinely 'I need this now, here, and nobody is on duty'. Eight are mine; two are marked.",
+    "items": [
+      {
+        "text": "Phone chargers by cable type, in hospital waiting rooms, where you will be for six hours and did not plan to be there at all."
+      },
+      {
+        "text": "A single dose of everything a cold needs — paracetamol, lozenges, tissues, a sachet of salt — on hostel corridors at 2am.",
+        "why": "The recurring r/SomebodyMakeThis shape: the thing exists in a shop, and the shop is shut at the only hour you want it."
+      },
+      {
+        "text": "Umbrellas at the bottom of station escalators, priced high enough that you only buy one when you actually need it."
+      },
+      {
+        "text": "Hot tinned food — rajma, baked beans, soup — heated in the machine, at highway petrol pumps between towns."
+      },
+      {
+        "text": "Spare parts for exactly one thing: cycle inner tubes and patch kits, bolted to the wall at the start of a long cycling route."
+      },
+      {
+        "text": "Reading glasses in +1.0 through +3.0, outside every pharmacy, restaurant and government office where people squint at forms."
+      },
+      {
+        "text": "A machine in the library that dispenses one unfamiliar novel for a fixed price and will not tell you the title until you have paid."
+      },
+      {
+        "text": "Fresh flowers at the metro exit nearest the residential side, for the people who remembered on the train."
+      },
+      {
+        "text": "Lab consumables on the lab corridor — gloves, nitrile, pipette tips, a marker that works — charged to a department code.",
+        "why": "Adapted from the canned-food-in-vending-machines thread on r/SomebodyMakeThis: the useful version is wherever a stockroom has a keyholder who went home."
+      },
+      {
+        "text": "A machine that sells nothing and only takes things in: dead batteries, old cables, expired medicines, and pays a rupee a piece."
+      }
+    ]
+  }
+}
