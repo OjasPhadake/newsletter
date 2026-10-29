@@ -1,0 +1,313 @@
+{
+  "date_line": "Thursday, 29 October 2026",
+  "issue": 1,
+  "preheader": "Sartre on the woman whose scepticism kept her from being an atheist; change /effort between turns, not mid-turn, because 2.1.312 now tells you a mid-task switch waits for your next message; 119 HSI agents and 11 undercovers on one Minnesota conspiracy case, against 42 CIA officers at the peak of the New Left investigation; macOS git, curl and python3 still trust the compromised eMudhra roots eleven days after Apple was told, and 27.2 reverted the manual fix; Genie 4 generates its own audio and still drifts on object permanence; Gemini 4 Carbon scores 88.2% on SEC-bench Pro and 0.0% attack success on Gray Swan prompt injection; a canvas fingerprinting script padded with fake bioweapon function names to make models refuse to deobfuscate it; Sensex 73,246.03 (-352.64) and Nifty 22,698.85 (-50.90) while Bank Nifty rose 0.54% and both FIIs and DIIs bought; Rs 10,000 crore to make shipping containers in India, where capacity is to rise tenfold to 750,000 TEUs by 2039-40; ONC drops 14 of 60 EHR certification criteria; 83 of 165 skulls in a Chiapas cave were women's, which is not what a tzompantli is supposed to be; experts matched their AI agent's coin-flipped lean 86% of the time and 15% credited it; five agent harnesses turned failed jailbreaks into successful ones; why the bubbles in a pint of stout really do go down; Sharp turning pickleball's kitchen into an actual kitchen; Snuggle borrowing Linus's blanket; and ten businesses you could run out of a bicycle.",
+  "quote": {
+    "text": "She believed in nothing. Only her scepticism kept her from being an atheist.",
+    "author": "Jean-Paul Sartre",
+    "source_url": "https://www.goodreads.com/quotes/tag/skepticism",
+    "note": "Scepticism advertises itself as the absence of a position - the clean floor you stand on once the beliefs are swept away. Sartre's line catches it doing the opposite. Her doubt is not letting her reach the conclusion her doubt points at; it has become the thing she is committed to, and it is load-bearing enough to hold a conclusion out. Worth asking of any view you hold for the stated reason that you are not credulous."
+  },
+  "agent_craft": {
+    "items": [
+      {
+        "text": "Change /effort between turns, not in the middle of one. Claude Code 2.1.312 finally says this out loud - the prompt's effort indicator now warns that a mid-task change may wait for your next message, and the spinner and transcript show the level actually in force rather than the one you just picked. If a turn is going badly at low effort, interrupt it and re-ask; bumping the dial while it works buys you nothing until you speak again.",
+        "source": "Anthropic's Claude Code changelog, 2.1.312",
+        "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
+      }
+    ]
+  },
+  "hn": [
+    {
+      "title": "Evidence of a spying operation by ICE against left-wing social movements",
+      "url": "https://www.wired.com/story/ice-is-running-one-of-the-largest-anti-left-surveillance-operations-in-us-history/",
+      "hn_url": "https://news.ycombinator.com/item?id=50272749",
+      "points": 1086,
+      "comments": 898,
+      "bullets": [
+        "wired.com will not serve to a fetch, so these bullets come from Common Dreams' account of Ali Winston's 28 October story rather than the original, and are limited to what that account states. The reporting is built on court records in the federal conspiracy case against the 'Minnesota 15' - members of Direct Action Minnesota and Black Cat Workers charged with impeding DHS's Operation Metro Surge in the Twin Cities. Two Homeland Security Investigations probes are named: Operation Puppet Master and Project Whipple Shield.",
+        "The number that makes it a story rather than a complaint is the headcount. Court records show 119 HSI agents worked the Minnesota 15 case alone, with more than 120 assigned across the Minnesota campaigns, and at least 11 undercover operatives inside activist meetings, marches, training sessions and encrypted Signal chats. For scale, Winston cites former CIA officer Frank Rafalko's 2011 book: the CIA's investigation of the New Left and the anti-Vietnam War movement had 42 officers at its peak.",
+        "The toolkit, as listed: undercover infiltration, surveillance of gatherings in other states, photographing vehicles, unarmed Reaper drones, and examination of activists' digital records and financial transactions. The authority cited is National Security Presidential Memorandum 7, signed after Charlie Kirk's assassination. Mike German, a retired FBI agent, said broad monitoring of social media, communications and financial transactions is used to link more people into an investigation, and called these 'exactly the kind of intelligence activities J. Edgar Hoover adopted'.",
+        "Two caveats the coverage itself flags. The 'largest since COINTELPRO' framing is attributed to 'some experts', not established; and prosecutors' position is that the activity charged was a conspiracy to obstruct immigration enforcement, stalk federal agents and commit assaults, which is a different account of the same facts rather than a denial of the surveillance. A White House spokeswoman said the administration would use a 'whole-of-government approach' to end any illegal activities."
+      ]
+    },
+    {
+      "title": "Apple's git still trusts the compromised eMudhra certificates",
+      "url": "https://emudhra.we-have-a-problem.com/apple.html",
+      "hn_url": "https://news.ycombinator.com/item?id=50271640",
+      "points": 1025,
+      "comments": 375,
+      "bullets": [
+        "The claim, dated 28 October: Apple has protected Safari and anything built on its networking framework, but the developer tools it ships with macOS - git, curl, python3 - read a different trust store, /etc/ssl/cert.pem, and that file still trusts the compromised eMudhra roots. Apple was notified on 17 October. macOS 27.2, released 26 October, did not fix it, and reverted the manual removals people had already done.",
+        "The attack is the ordinary one, which is the point. An attacker on the network path presents a certificate for github.com chaining to a compromised eMudhra intermediate; git accepts it. From there: malicious code delivered through a clone or pull, altered pushes, and captured credentials including GitHub tokens. The page notes that dozens of other projects, many volunteer-run, shipped fixes days earlier.",
+        "It is checkable in a terminal rather than taken on faith, which is unusual for a page like this. It gives a `git ls-remote` against a test repository and two curl test hostnames - a certificate error means you are protected, a successful response means you are not - plus a demo clone against a server impersonating GitHub that writes 'INTERCEPTED' into the README if it works.",
+        "The advice splits by audience: developers remove the affected roots by hand and re-run the checks after every macOS update, because an update may undo them; Apple should pull the roots from the system trust file; security teams should go and look at their macOS CI runners and build machines, which are the boxes that clone repositories unattended all day. One site's account, and the specific roots and intermediates are not named on this page."
+      ]
+    },
+    {
+      "title": "Genie 4",
+      "url": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+      "hn_url": "https://news.ycombinator.com/item?id=50261319",
+      "points": 1019,
+      "comments": 576,
+      "bullets": [
+        "A real-time world model: you steer it with ordinary keyboard controls for movement and camera, and type at it to change the world - the weather, the camera, a person or object added to the scene. Some examples use a reference image as the first frame. The new thing DeepMind claims is audio: music, ambient noise and interactive dialogue generated natively, which it says makes Genie 4 the first real-time world model to do so.",
+        "It is a stack rather than one model. Gemini Omni anchors how things look and behave against the real world, other Gemini models hold the scene together, and Gemini 3.8 Flash acts as a guiding agent that watches the scene and adjusts its plan. Everything generated carries SynthID watermarking.",
+        "The limitations section is the honest part and worth reading as the spec. Visual details and object permanence drift over time - worse in long sessions, after several prompt edits, or while you are moving - and complex physical interactions, real-time audio accuracy, legible text, spatial accuracy and long-term consistency are all listed as open research. A world that forgets what was behind you is a demo, not an environment.",
+        "Availability: research preview for trusted testers, with a waitlist. Coming to Google AI Ultra subscribers through Project Genie, and to early-access partners via the Gemini API and AI Studio. Note what the post does not give - no resolution, no frame rate, no session length, no benchmark, and no direct comparison with Genie 3."
+      ]
+    },
+    {
+      "title": "Gemini 4 Carbon",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+      "hn_url": "https://news.ycombinator.com/item?id=50276792",
+      "points": 768,
+      "comments": 627,
+      "bullets": [
+        "A frontier model aimed at cybersecurity and long-horizon agentic engineering, launched two weeks after Gemini 4 Argon. Google puts it first on the Artificial Analysis Intelligence Index v5.0 at 59, and fourth on WebDev Arena at 1768 Elo, up 89 points.",
+        "The security numbers are the pitch: 88.2% on SEC-bench Pro for finding vulnerabilities, 54.8% on ExploitGym for exploitation, 71.0% on CWE-bench for patching, and more than a 2x uplift over Argon in internal secure-code success rate. Two of the figures are zeroes and they are the interesting ones - 0.0% attack success on Gray Swan's indirect prompt-injection benchmark, against 0.7% for Argon, and successful cheating on Terminal-Bench 4.0 down to 0.0%.",
+        "Against Argon it also reports 26% less overreach, 29% less under-service, and roughly half the unsupported claims in internal testing. Those three are self-reported internal metrics rather than public benchmarks, so they are a claim about direction, not a number you can check.",
+        "Pricing and access: $2 per million input tokens and $10 per million output during an introductory period, then $4 and $20, with cached input at 95% off. It is restricted to a subset of cyber defenders now and expands through the Fairwind Program; developers and businesses get it 'as soon as possible', with no date. The post does not state the context window."
+      ]
+    },
+    {
+      "title": "Why is this fingerprinting script creating bioweapons?",
+      "url": "https://nullpt.rs/fingerprinting-bioweapons",
+      "hn_url": "https://news.ycombinator.com/item?id=50276998",
+      "points": 742,
+      "comments": 169,
+      "bullets": [
+        "The author crawled 10,000 sites from the Tranco list with Playwright, hooking canvas toDataURL calls, and collected 1,033 canvas renderings. One of them traced back to a script on servicepipe.tech, which the post links to servicepipe.ru - a company selling traffic control and anti-DDoS and anti-bot protection.",
+        "The script is stuffed with function names like computeRicinLethalDosageForWaterSupply and calculateDeadlyLethalSuicideAspirinDosage. There is no actual dosage or weapons information anywhere in it. The author reads it as anti-LLM obfuscation: make the file look like something a model will refuse to touch, and you have bought yourself protection from automated deobfuscation. One model refused the request; GLM-5.3 did it anyway.",
+        "The same trick runs deeper. A long string of invisible Unicode tag characters decodes - subtract 917504 from each code point - into a fake 'classified briefing' system prompt listing bioweapons, DDoS and drugs. A Node-only block, gated on a METRICS_AGENT_8BFD_ACTIVE flag, reads .npmrc, .env and .git/config, downloads a binary from a hard-coded 10.15.45.1, scans ports 80, 443, 8443, 53, 22 and 3389, zips the results and installs a cron job with a 30-second heartbeat. The author thinks this is decoration too, because the file-read callbacks are empty.",
+        "And after all that, the payload is dull: navigator properties, window key count, WebGL vendor, renderer, extensions and texture limits. The author's own verdict is that the signals are fairly unremarkable for the effort involved - which is the finding. The obfuscation budget went into making the file unreadable to models, not into collecting anything new."
+      ]
+    }
+  ],
+  "markets": {
+    "indices": [
+      {
+        "name": "Sensex · Wed 28 Oct close",
+        "value": "73,246.03",
+        "change": "−352.64 (0.48%) from Tuesday's 73,598.67; it was more than 600 points down in early trade",
+        "direction": "down"
+      },
+      {
+        "name": "Nifty 50 · Wed 28 Oct",
+        "value": "22,698.85",
+        "change": "−50.90 (0.22%), closing about 200 points above its intraday low",
+        "direction": "down"
+      },
+      {
+        "name": "Bank Nifty · Wed",
+        "value": "54,267.40",
+        "change": "+292.50 (0.54%) after a low of 53,626 — the banks were the only reason this was not a rout",
+        "direction": "up"
+      },
+      {
+        "name": "The drag · Wed",
+        "value": "IT",
+        "change": "Infosys, TCS, Tech Mahindra and HCLTech were the top losers; SBI, Trent and Axis Bank the gainers. No closing level for the Nifty IT index could be verified, so none is given",
+        "direction": "down"
+      },
+      {
+        "name": "FII cash · Wed",
+        "value": "+₹871.83 cr",
+        "change": "Bought ₹16,834.53 cr, sold ₹15,962.70 cr. DIIs also bought, +₹643.35 cr on ₹17,240.90 cr against ₹16,597.55 cr — ₹1,515.18 cr of net institutional buying on a day the index fell (NSE provisional)",
+        "direction": "up"
+      },
+      {
+        "name": "USD/INR · Tue 27 Oct",
+        "value": "95.12",
+        "change": "+3 paise from Monday's 95.15, provisional, on likely RBI intervention. No Wednesday close could be verified from a named source, so Tuesday's is what is reported here",
+        "direction": "up"
+      },
+      {
+        "name": "US Fed",
+        "value": "3.75–4.00%",
+        "change": "Held at its October meeting. Wednesday's caution in Mumbai was about the guidance, not the decision",
+        "direction": "flat"
+      }
+    ],
+    "stories": [
+      {
+        "headline": "Both the foreigners and the domestics were net buyers and the index still fell — Wednesday was four IT stocks outvoting everything else",
+        "url": "https://www.multibagg.ai/market-pulse/articles/sensex-nifty-oil-fed-wrap-cmvs06mu2006f2lpuvlvww04n",
+        "source": "Multibagg's 28 October wrap for the Sensex close and the gainers and losers; Whalesbook for the Nifty 50 and Bank Nifty closes; Kotak Neo's NSE provisional table for the FII and DII cash flows; Goodreturns for the Bank Nifty intraday low and the Fed; PTI via The Pioneer for the 27 October rupee close",
+        "bullets": [
+          "Wednesday 28 October: Sensex 73,246.03, down 352.64 points or 0.48%; Nifty 50 22,698.85, down 50.90 or 0.22%. The recovery is the shape of the day — the Sensex was more than 600 points down early and the Nifty finished roughly 200 points off its low, with buying in auto and banking narrowing the damage.",
+          "Bank Nifty closed at 54,267.40, up 292.50 points or 0.54%, after falling to 53,626 intraday. On an index where the lenders carry about a fifth of the weight, a day the banks rise and the benchmark falls has to be explained by something heavier, and it was: Infosys, TCS, Tech Mahindra and HCLTech were the four biggest drags, against SBI, Trent and Axis Bank at the top.",
+          "The flows argue against reading this as selling. Foreign institutions bought ₹16,834.53 crore and sold ₹15,962.70 crore for a net ₹871.83 crore; domestic institutions bought ₹17,240.90 crore against ₹16,597.55 crore for a net ₹643.35 crore. Both sides net buyers, ₹1,515.18 crore in, and the index down anyway — which is what a fall concentrated in four heavyweight names looks like in the flow data.",
+          "Two figures are deliberately missing. Reports put Brent anywhere from above $110 to above $115 on the day, so no crude number is given here; and no named source published a Wednesday rupee close, so the 95.12 above is Tuesday's, three paise firmer on likely RBI intervention. The Fed held at 3.75–4.00% in October, and the Mumbai caution was about what it said next rather than what it did."
+        ]
+      }
+    ]
+  },
+  "trends": [
+    {
+      "tag": "India",
+      "headline": "India wants to make its own shipping containers again, and has put ₹10,000 crore behind a tenfold rise in capacity",
+      "url": "https://www.business-standard.com/economy/news/cabinet-approves-10-000-crore-scheme-to-boost-container-manufacturing-126102801586_1.html",
+      "subject": "India funds domestic shipping-container making: a fourteen-year programme to 2039-40 lifting annual box capacity tenfold to 750,000 TEUs, part of it as subvention on eligible term borrowing.",
+      "subtitle": "Business Standard's report on the 28 October 2026 Cabinet decision, with the capacity target as reported by Pulse of Noida",
+      "bullets": [
+        "The Cabinet cleared the Container Manufacturing Promotion Scheme on Wednesday: ₹10,000 crore, running all the way to 2039-40, which is a fourteen-year horizon rather than a five-year one. ₹859 crore of that is earmarked for a single instrument — a 3% interest subvention on eligible term loans — which tells you the government thinks the binding constraint is the cost of the capital, not the willingness to build.",
+        "The target is a tenfold increase in annual capacity, to 750,000 TEUs. A TEU is one twenty-foot box, the unit every port statistic in the world is quoted in, so the number is directly comparable to the throughput figures you see for JNPT or Mundra. The scheme was announced in this year's Budget; Wednesday was the approval, which is the step that releases money.",
+        "Why a government cares who makes a steel box: containers are the one piece of shipping infrastructure a country can be short of without anything visibly breaking. You lease them instead, in dollars, from a market where supply is concentrated and prices move with freight cycles. A box shortage does not sink a ship, it quietly raises the cost of every export for a quarter.",
+        "It was one of three Cabinet approvals the same day, and the other two are a useful read on priorities: ₹7,395 crore to make gram panchayats more financially self-reliant, largely through training elected representatives and better use of Finance Commission grants, and ₹1,856.67 crore for the Khelo India Sports Goods Manufacturing Scheme covering 2026 to 2033-34."
+      ]
+    },
+    {
+      "tag": "Health IT",
+      "headline": "The US has just removed 14 of the 60 criteria an electronic health record has to meet to be certified",
+      "url": "https://www.federalregister.gov/documents/2026/10/28/2026-21943/health-data-technology-and-interoperability-onc-deregulatory-actions-to-unleash-prosperity",
+      "subject": "ONC strips fourteen of the sixty certification criteria an electronic health record must meet in the United States, substantially revising seven more, taking hold 28 December.",
+      "subtitle": "The Federal Register entry for the ONC final rule, published 28 October 2026; the 14-of-60 and 7-revised counts from STAT's 26 October report",
+      "bullets": [
+        "A final rule, not a proposal: published in the Federal Register on 28 October, effective 28 December 2026, with three amendatory instructions held back to 1 January 2027. The Office of the National Coordinator for Health IT removes 14 of the 60 criteria used to certify electronic health record systems and substantially revises 7 more. The stated aims are reducing burden, adding flexibility for developers and providers, and encouraging innovation.",
+        "Certification is the lever here, which is why this matters more than a typical deregulatory notice. In US health IT, a vendor's product is certified against a published list of criteria, and federal incentive and participation programmes are tied to using certified technology. The list is therefore the de facto product specification for the whole category — Epic, Oracle and everyone smaller. Shortening the list by just under a quarter is a change to what a hospital system is guaranteed to be able to do.",
+        "The contested part is what came off. STAT reports that many of the eliminated or revised requirements drew objections from commenters warning about weaker protection of sensitive health information, along with concerns about the safety of AI-based products. A separate account counts 14 security, privacy and transparency requirements dropped. The rule's own abstract does not characterise them that way, and the specific criteria are not identified in either the abstract or the coverage available outside STAT's paywall.",
+        "The title is doing some of the arguing, and it is fair to notice that — 'Deregulatory Actions To Unleash Prosperity' is a position, not a description. The checkable facts are the counts and the dates; whether removing a certification criterion removes a burden or removes a protection depends entirely on which fourteen, and that is the part still behind a paywall and a long rule text."
+      ]
+    },
+    {
+      "tag": "Archaeology",
+      "headline": "A skull rack is supposed to be warriors and captives. In a Chiapas cave, 83 of the 165 skulls are women's",
+      "url": "https://www.heritagedaily.com/2026/10/tzompantli-skull-rack-reveals-unexpected-female-majority-and-mysterious-rituals/",
+      "subject": "Skull rack of at least 165 people at Frontera Comalapa in Chiapas: 83 female, 79 male, 15 infants, set inside a cavern instead of a public ceremonial precinct, and earlier than the Tenochtitlan examples.",
+      "subtitle": "HeritageDaily, 28 October 2026, on analysis by Mexico's National Institute of Anthropology and History; Josuhé Lozada Toledo quoted, building on earlier work by Javier Montes de Paz",
+      "bullets": [
+        "The assemblage was found in 2012 in a cave near Frontera Comalapa, Chiapas, and the count is now at least 165 individuals: 83 female, 79 male, 3 undetermined because the remains were too fragmented, and 15 infants. The sexing had to be done from skull features — the mandible and the brow ridge — because no pelvic bones were available, which is the weaker method and worth knowing before leaning on the near-even split.",
+        "What makes it awkward is the popular picture of a tzompantli, which is warriors, captives and sacrifice, and therefore men. A slight female majority does not fit that, and neither does the setting. The famous examples — the Huei Tzompantli at Tenochtitlan — stood in public ceremonial centres where they were meant to be seen. This one is inside a cave, which in Mesoamerican belief is a sacred place rather than a stage, and it predates the Late Postclassic central Mexican racks.",
+        "The bones show handling rather than just display: most lack their lower jaws, the upper-jaw teeth were deliberately removed, and three individuals have cut marks. INAH's reading is that the remains were repeatedly manipulated over the course of ritual activity, which is a different kind of object from a trophy mounted once and left.",
+        "The demography is the quiet surprise. Most of the adults died between roughly 25 and 35, which is in line with adult lifespans in the Maya region in the Early Postclassic, about AD 900 to 1200 — but at least two lived to somewhere between 55 and 70. No specific date for the skulls is given, and no journal publication is named, so this is the institute's analysis as reported rather than a peer-reviewed result."
+      ]
+    }
+  ],
+  "research": [
+    {
+      "tag": "Industry · Anthropic",
+      "title": "Four decisions, each settled by a secret coin flip inside the agent. The analysts agreed with the coin 86% of the time, and 15% of them mentioned the agent",
+      "url": "https://www.anthropic.com/research/agents-judgment-calls",
+      "subject": "Fifty causal-inference analysts advised a fictional farming cooperative using Claude Code; hidden instructions gave the agent a coin-flipped lean on each of four method choices, and the analysts matched that lean 86 percent of the time.",
+      "subtitle": "Anthropic research, 27 October 2026 — 'How AI agents shape experts' judgment calls'",
+      "bullets": [
+        "The design is the clever bit. 61 professional analysts with causal-inference experience were asked to advise a fictional farming cooperative on whether to expand or shut an advisory programme, using Claude Code with Claude Opus 4.8. Four analytical decisions each had two defensible options — outcome measure, comparison method, which farms the assessment covered, how to weight them — and a secret coin flip set, through hidden instructions, which option the agent would argue for. The agent was told to make the strongest honest case for its assigned lean. 11 declined to use the agent, leaving 50.",
+        "Analysts matched the agent's coin-flipped lean 86% of the time across the four decisions, against a chance rate of about 50% — 92% on the outcome measure, 90% on weighting, 82% on comparison method, 81% on which farms were covered. Downstream, 54% recommended rollout when the agent leaned that way against 36% when it leaned the other, a 17-point gap. A model using only the four leans predicted 82% of final recommendations, against 61% for always guessing the most common answer.",
+        "Then the part worth sitting with: 77% of analysts repeated the agent's arguments in their written explanations, and 15% credited the agent. 52% rated the final recommendation as more theirs than the agent's, and average confidence was 71 for those who followed the lean on all four decisions against 73 for everyone else — so deferring did not feel like deferring, and did not dent confidence. Experience and expertise did not predict deferral at all.",
+        "The honest counterweight is in the paper. Analysts who worked without the agent made serious methodological errors far more often — 6 of 11, 55%, against 3 of 50, 6% — and took longer, a median 90 minutes against 65. Anthropic flags that those groups differed in experience, so the comparison is not clean. Also flagged: the leans were deliberately strengthened, and this is one task, one field, one model. The switching figure (60% when the agent disagreed with a stated preference, 6% when it agreed) rests on 38 cases with a confidence interval 24 to 82 points wide."
+      ]
+    },
+    {
+      "tag": "Academia · UC Berkeley",
+      "title": "Do AI-for-Science Agents Preserve Model Safety?",
+      "url": "https://arxiv.org/abs/2610.32045",
+      "subject": "Five science-agent harnesses on fifty harmful chemistry prompts: wrapping four recent GPT variants in a harness raises harmful compliance, and adaptive jailbreaks that fail on the bare LLM succeed inside it.",
+      "subtitle": "Michael Yew Chuan Lee, Manya Sriram and N. Benjamin Erichson, arXiv:2610.32045, 23 October 2026 (cs.AI)",
+      "bullets": [
+        "The question is one almost nobody tests, because safety is evaluated on the model and capability is evaluated on the agent. An AI-for-science agent is a language model dropped into a domain-specific harness — tool access, scaffolding, a scientific workflow — and the harness exists to raise what the model can do. Michael Yew Chuan Lee, Manya Sriram and N. Benjamin Erichson ask whether the model's refusals survive the same move.",
+        "The setup: five agent harnesses, 50 harmful chemistry requests, four recent GPT variants, and four conditions — direct prompting, two simple adversarial strategies, and an adaptive attack. The result in one line is that the harness itself raises harmful compliance even under plain direct prompting, with no adversarial prompting at all.",
+        "The sharper finding is about the adaptive attack. Attacks that largely fail against the bare model become highly successful once the harness is wrapped around it. That is the difference between a model with a safety property and a system with one: whatever the refusal behaviour is anchored to, it does not survive being given tools and a workflow.",
+        "The conclusion the authors draw is that base-model safety is not durable inside a harness, and that these agents need their own domain-specific safety benchmarks and alignment rather than inheriting the model's. The arXiv listing (23 October, cs.AI) gives the counts but not the per-condition success rates, and the figure filenames point to a GPQA capability-versus-safety trade-off that is in the PDF rather than the abstract — so the numbers above are the scope of the study, not its headline percentages."
+      ]
+    }
+  ],
+  "wild": [
+    {
+      "tag": "Sport · Appliances",
+      "headline": "Pickleball players are told to stay out of the kitchen, so a kitchen-appliance company built one there",
+      "url": "https://news.sharpusa.com/2026-09-09-Sharp-Takes-the-Court-as-Official-Kitchen-Appliance-Sponsor-of-Select-Carvana-PPA-Tour-Events",
+      "entities": [
+        "Sharp",
+        "Carvana PPA Tour",
+        "Richard Blais",
+        "Anna Leigh Waters"
+      ],
+      "subject": "Sharp became official kitchen appliance sponsor of select Carvana PPA Tour pickleball events and built a working kitchen in the non-volley zone, which the sport calls 'the kitchen', with chef Richard Blais and player Anna Leigh Waters, at the Rate Las Vegas Open 1-4 October 2026.",
+      "subtitle": "Sharp's own newsroom release, 9 September 2026, with MediaPost's 16 October write-up for the activation dates and Sharp's experiential debut",
+      "bullets": [
+        "Pickleball's non-volley zone — the strip either side of the net you may not stand in to hit a ball out of the air — is universally called 'the kitchen'. Sharp Home Electronics Company of America signed as Official Kitchen Appliance Sponsor of select Carvana PPA Tour events and turned that strip into a functioning Sharp kitchen. Its president, Grace Dolan, said they were 'having a little fun with that rule', and that 'with Sharp, the kitchen is exactly where you want to be'.",
+        "The In the Kitchen activation opened on Thursday 1 October at the Rate Las Vegas Open and ran through the 4th, with the Celerity high-speed oven and the Smart Microwave Drawer oven on court, live cooking demonstrations, games, and player signings. On Saturday the 3rd, chef Richard Blais cooked with the world's number one player, Anna Leigh Waters, who volunteered that she likes to cook.",
+        "The detail that makes it a sponsorship rather than a stunt: Sharp also put a refrigerator courtside for the players to use between games. MediaPost, writing it up on 16 October, called this Sharp's experiential marketing debut — the brand has been selling microwaves in America since the 1970s and had apparently never built an activation before."
+      ]
+    },
+    {
+      "tag": "Licensing",
+      "headline": "The most famous blanket in comics has been licensed by a fabric softener, which washed real ones in its own scent and gave them away",
+      "url": "https://www.happi.com/breaking-news/snuggle-capitalizes-on-comfort-of-linus-iconic-blue-blanket-with-peanuts/",
+      "entities": [
+        "Snuggle",
+        "Henkel",
+        "Peanuts"
+      ],
+      "subject": "Snuggle borrows Linus van Pelt's blue security blanket from Peanuts and hands out blue blankets washed in Blue Sparkle at a Rivington Street pop-up on 17 and 18 October.",
+      "subtitle": "Happi's report on the Snuggle x Peanuts collaboration, with the pop-up details as listed by the event's own NYC listings",
+      "bullets": [
+        "Linus van Pelt's blue blanket is the original security blanket — the phrase entered English partly through the strip. Henkel's Snuggle has licensed it, and the whole campaign, 'Must be the Scent of Snuggle', rests on the observation that the comfort object was always partly a smell.",
+        "The pop-up ran on 17 and 18 October at 2 Rivington Street in Manhattan, free and open to the public: you walked into a space built out of the Peanuts world and were handed a personal blue blanket, freshly washed in Snuggle Blue Sparkle, to cuddle. There was a co-branded blanket to take home, a Snuggle Bear keychain and a Target gift bag with an in-store discount, while supplies lasted.",
+        "The commercial logic is more interesting than the pop-up. A fabric softener's product is a scent with no object attached, which is a hard thing to advertise; borrowing the one blanket everybody can already picture gives the scent something to be the smell of. The campaign runs through autumn across social, digital and retail, using the classic animation."
+      ]
+    },
+    {
+      "tag": "Packaging",
+      "headline": "A supplement brand has given up looking scientific and made its jars look like a Brazilian sweet shop",
+      "url": "https://thedieline.com/drope-turns-the-supplement-aisle-into-a-candy-shop/",
+      "entities": [
+        "Drope",
+        "Hardcuore"
+      ],
+      "subject": "Drope, a Brazilian functional supplement line, launched packaging designed by Hardcuore modelled on traditional Brazilian candy-drop shops - candy-shop stripes, geometric patterns, a chunky wordmark and metallic gold lids - rather than the clinical look standard in the category.",
+      "subtitle": "DIELINE, 28 October 2026, on Hardcuore's identity and packaging for Drope",
+      "bullets": [
+        "Every shelf of functional supplements looks like a pharmacy on purpose: white, sans-serif, a molecule diagram, a number. Drope, from Brazil, has gone the other way. Hardcuore's design puts candy-shop stripes, geometric patterns, a chunky wordmark and metallic gold lids on the jars, borrowing the visual language of the traditional Brazilian candy drops people remember from childhood.",
+        "The bet is that the category's credibility signals have stopped doing any work. If every jar looks like evidence, looking like evidence is not a differentiator, and the clinical styling is just the cost of entry. Looking like a sweet is the only shelf position left.",
+        "Dieline published it on 28 October, filed under beauty and health rather than confectionery, which is the only thing keeping the joke from completing itself."
+      ]
+    }
+  ],
+  "learn": {
+    "title": "The bubbles in a pint of stout really do go down, and the reason is the shape of the glass",
+    "subject": "Why bubbles appear to sink in a settling pint of stout: the tapered pint glass sets up a circulation whose downward flow at the wall outruns a small bubble's buoyancy; Benilov, Cummins and Lee, University of Limerick, 2012, predict an 'anti-pint' would reverse it.",
+    "body": [
+      "Watch a pint of stout settle and the bubbles near the glass appear to be travelling downwards. This is not an optical illusion and it is not an argument you can win at the table by insisting gas goes up. Experiments had already established the bubbles genuinely move down. The puzzle was why, and the answer turned out to have nothing to do with the bubbles.",
+      "It is the beer that is going down, not the bubbles. The liquid in a settling pint circulates: up through the middle, down along the walls. Where that downward flow is faster than a bubble's own buoyant rise, the bubble gets dragged under, pointing stubbornly upwards the whole way. What sets up the circulation is the glass. A traditional pint narrows towards the bottom, so as bubbles rise they drift away from the outward-sloping wall, leaving a bubble-poor layer against the glass and a bubble-rich column in the middle. Bubbly beer is lighter than flat beer. The middle rises, the edges sink, and your bubbles are along for the ride.",
+      "The satisfying part is the prediction that falls out of it. Benilov, Cummins and Lee at the University of Limerick, who published this in 2012, pointed out that a vessel which widens towards the bottom should reverse the whole circulation — and in an 'anti-pint' like that, you would only ever see bubbles rise. The sinking bubbles everyone argues about in pubs are not a property of stout at all. They are a property of the shape somebody chose for the glass."
+    ]
+  },
+  "ideas": {
+    "prompt": "Ten businesses you could run out of a bicycle",
+    "items": [
+      {
+        "text": "A Sunday sharpening round: knives, scissors and kitchen shears, one apartment gate a week, announced the Thursday before."
+      },
+      {
+        "text": "Cold filter coffee out of two insulated urns — gym at six, office gate at nine, sold out and home by ten."
+      },
+      {
+        "text": "A tiffin-washing round for hostels: collect the boxes at noon, return them clean by six."
+      },
+      {
+        "text": "Soup and nothing else, all winter, one route, one flask.",
+        "why": "A soup-only delivery service is a recurring ask on r/SomebodyMakeThis; on a bicycle it becomes a route rather than an app."
+      },
+      {
+        "text": "A travelling library: forty secondhand paperbacks in a pannier, ₹20 a week, same corner every Thursday."
+      },
+      {
+        "text": "Printing, photocopying and lamination parked next to a government-office queue, because nobody standing in that queue can leave it."
+      },
+      {
+        "text": "Cut fruit on the evening walking track — peeled, salted, boxed, and no knife for the customer to own."
+      },
+      {
+        "text": "A plant doctor who turns up at your flat, repots the dying money plant on your own balcony and takes the old soil away with him."
+      },
+      {
+        "text": "Dustbin washing. It is the one thing in every house that nobody has ever cleaned and everybody would rather not."
+      },
+      {
+        "text": "Bicycle repair, by bicycle — the only trade where the shop and the toolkit are the same object."
+      }
+    ]
+  }
+}

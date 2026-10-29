@@ -7635,6 +7635,152 @@
         "taxguru.in",
         "timeout.com"
       ]
+    },
+    {
+      "date": "2026-10-29",
+      "issue": 1,
+      "quote_text": [
+        "She believed in nothing. Only her scepticism kept her from being an atheist."
+      ],
+      "quote_author": [
+        "Jean-Paul Sartre"
+      ],
+      "idea_text": [
+        "A Sunday sharpening round: knives, scissors and kitchen shears, one apartment gate a week, announced the Thursday before.",
+        "Cold filter coffee out of two insulated urns — gym at six, office gate at nine, sold out and home by ten.",
+        "A tiffin-washing round for hostels: collect the boxes at noon, return them clean by six.",
+        "Soup and nothing else, all winter, one route, one flask.",
+        "A travelling library: forty secondhand paperbacks in a pannier, ₹20 a week, same corner every Thursday.",
+        "Printing, photocopying and lamination parked next to a government-office queue, because nobody standing in that queue can leave it.",
+        "Cut fruit on the evening walking track — peeled, salted, boxed, and no knife for the customer to own.",
+        "A plant doctor who turns up at your flat, repots the dying money plant on your own balcony and takes the old soil away with him.",
+        "Dustbin washing. It is the one thing in every house that nobody has ever cleaned and everybody would rather not.",
+        "Bicycle repair, by bicycle — the only trade where the shop and the toolkit are the same object."
+      ],
+      "idea_prompt": [
+        "Ten businesses you could run out of a bicycle"
+      ],
+      "tip_text": [
+        "Change /effort between turns, not in the middle of one. Claude Code 2.1.312 finally says this out loud - the prompt's effort indicator now warns that a mid-task change may wait for your next message, and the spinner and transcript show the level actually in force rather than the one you just picked. If a turn is going badly at low effort, interrupt it and re-ask; bumping the dial while it works buys you nothing until you speak again."
+      ],
+      "hn_id": [
+        "50272749",
+        "50271640",
+        "50261319",
+        "50276792",
+        "50276998"
+      ],
+      "link": [
+        "https://www.wired.com/story/ice-is-running-one-of-the-largest-anti-left-surveillance-operations-in-us-history/",
+        "https://emudhra.we-have-a-problem.com/apple.html",
+        "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+        "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+        "https://nullpt.rs/fingerprinting-bioweapons",
+        "https://www.business-standard.com/economy/news/cabinet-approves-10-000-crore-scheme-to-boost-container-manufacturing-126102801586_1.html",
+        "https://www.federalregister.gov/documents/2026/10/28/2026-21943/health-data-technology-and-interoperability-onc-deregulatory-actions-to-unleash-prosperity",
+        "https://www.heritagedaily.com/2026/10/tzompantli-skull-rack-reveals-unexpected-female-majority-and-mysterious-rituals/",
+        "https://news.sharpusa.com/2026-09-09-Sharp-Takes-the-Court-as-Official-Kitchen-Appliance-Sponsor-of-Select-Carvana-PPA-Tour-Events",
+        "https://www.happi.com/breaking-news/snuggle-capitalizes-on-comfort-of-linus-iconic-blue-blanket-with-peanuts/",
+        "https://thedieline.com/drope-turns-the-supplement-aisle-into-a-candy-shop/",
+        "https://www.anthropic.com/research/agents-judgment-calls",
+        "https://arxiv.org/abs/2610.32045",
+        "https://www.multibagg.ai/market-pulse/articles/sensex-nifty-oil-fed-wrap-cmvs06mu2006f2lpuvlvww04n"
+      ],
+      "subject": [
+        "India funds domestic shipping-container making: a fourteen-year programme to 2039-40 lifting annual box capacity tenfold to 750,000 TEUs, part of it as subvention on eligible term borrowing.",
+        "ONC strips fourteen of the sixty certification criteria an electronic health record must meet in the United States, substantially revising seven more, taking hold 28 December.",
+        "Skull rack of at least 165 people at Frontera Comalapa in Chiapas: 83 female, 79 male, 15 infants, set inside a cavern instead of a public ceremonial precinct, and earlier than the Tenochtitlan examples.",
+        "Sharp became official kitchen appliance sponsor of select Carvana PPA Tour pickleball events and built a working kitchen in the non-volley zone, which the sport calls 'the kitchen', with chef Richard Blais and player Anna Leigh Waters, at the Rate Las Vegas Open 1-4 October 2026.",
+        "Snuggle borrows Linus van Pelt's blue security blanket from Peanuts and hands out blue blankets washed in Blue Sparkle at a Rivington Street pop-up on 17 and 18 October.",
+        "Drope, a Brazilian functional supplement line, launched packaging designed by Hardcuore modelled on traditional Brazilian candy-drop shops - candy-shop stripes, geometric patterns, a chunky wordmark and metallic gold lids - rather than the clinical look standard in the category.",
+        "Fifty causal-inference analysts advised a fictional farming cooperative using Claude Code; hidden instructions gave the agent a coin-flipped lean on each of four method choices, and the analysts matched that lean 86 percent of the time.",
+        "Five science-agent harnesses on fifty harmful chemistry prompts: wrapping four recent GPT variants in a harness raises harmful compliance, and adaptive jailbreaks that fail on the bare LLM succeed inside it.",
+        "Why bubbles appear to sink in a settling pint of stout: the tapered pint glass sets up a circulation whose downward flow at the wall outruns a small bubble's buoyancy; Benilov, Cummins and Lee, University of Limerick, 2012, predict an 'anti-pint' would reverse it."
+      ],
+      "brand": [
+        "Sharp",
+        "Carvana PPA Tour",
+        "Richard Blais",
+        "Anna Leigh Waters",
+        "Pickleball",
+        "Snuggle",
+        "Henkel",
+        "Peanuts",
+        "Drope",
+        "Hardcuore",
+        "Brazilian"
+      ],
+      "brand_mention": [
+        "Sharp Home Electronics Company",
+        "Official Kitchen Appliance Sponsor",
+        "Carvana PPA Tour",
+        "Sharp",
+        "Grace Dolan",
+        "Kitchen",
+        "Rate Las Vegas Open",
+        "Celerity",
+        "Smart Microwave Drawer",
+        "Richard Blais",
+        "Anna Leigh Waters",
+        "Pelt's",
+        "English",
+        "Henkel's Snuggle",
+        "Scent",
+        "Snuggle",
+        "Rivington Street",
+        "Peanuts",
+        "Snuggle Blue Sparkle",
+        "Snuggle Bear",
+        "Target",
+        "Brazil",
+        "Brazilian"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "India wants to make its own shipping containers again, and has put ₹10,000 crore behind a tenfold rise in capacity"
+        ],
+        [
+          "trends",
+          "The US has just removed 14 of the 60 criteria an electronic health record has to meet to be certified"
+        ],
+        [
+          "trends",
+          "A skull rack is supposed to be warriors and captives. In a Chiapas cave, 83 of the 165 skulls are women's"
+        ],
+        [
+          "wild",
+          "Pickleball players are told to stay out of the kitchen, so a kitchen-appliance company built one there"
+        ],
+        [
+          "wild",
+          "The most famous blanket in comics has been licensed by a fabric softener, which washed real ones in its own scent and gave them away"
+        ],
+        [
+          "wild",
+          "A supplement brand has given up looking scientific and made its jars look like a Brazilian sweet shop"
+        ],
+        [
+          "research",
+          "Four decisions, each settled by a secret coin flip inside the agent. The analysts agreed with the coin 86% of the time, and 15% of them mentioned the agent"
+        ],
+        [
+          "research",
+          "Do AI-for-Science Agents Preserve Model Safety?"
+        ],
+        [
+          "learn",
+          "The bubbles in a pint of stout really do go down, and the reason is the shape of the glass"
+        ]
+      ],
+      "editorial_domains": [
+        "business-standard.com",
+        "federalregister.gov",
+        "happi.com",
+        "heritagedaily.com",
+        "news.sharpusa.com",
+        "thedieline.com"
+      ]
     }
   ]
 }
