@@ -1,0 +1,317 @@
+{
+ "date_line": "Friday, 30 October 2026",
+ "issue": 1,
+ "preheader": "Lec on the secret ambition of scarecrows; name a tool you already know as the yardstick when you ask an agent to evaluate an unfamiliar one; Patrick Stewart dead at 86, Alzheimer's and Lewy body dementia, 16 years at the RSC before Picard; Mistral Large 4 is 1T parameters with 52B active, open weights, 19.7% on FrontierCode 2.0; Stack Overflow took 969 questions in September against 207,169 in March 2014; a 32-bit RISC-V CPU compiled into Qwen 3.5's weights ran 18 million instructions without an error; Sensex 74,151.04 (+905.01) and Nifty 22,936.75 (+237.90) with FIIs selling and DIIs buying; GST's new Rule 14B lets an online seller register in a state it has never set foot in; DoorDash is buying Instacart for $17 billion; in 54% of 100,000 simulated bombardments no comet ever delivered enough cyanide to start life; bubble wrap was supposed to be wallpaper.",
+ "quote": {
+  "text": "Every scarecrow has a secret ambition to terrorize.",
+  "author": "Stanisław Jerzy Lec",
+  "work": "Unkempt Thoughts",
+  "source_url": "https://www.goodreads.com/work/quotes/216315505",
+  "note": "A scarecrow is a bluff that works. It frightens nothing — it merely resembles something frightening, well enough, for an audience that cannot check. Lec gives it an inner life and the bluff becomes unbearable: the thing is not content to be effective, it wants to be real. Every placeholder you have ever shipped has this ambition. The mock that quietly became the API, the dummy value that outlived the thing it stood in for, the title you invented for a form that is now your job."
+ },
+ "agent_craft": {
+  "items": [
+   {
+    "text": "When you hand an agent an unfamiliar library, give it a tool you already know as the yardstick. Simon Willison's prompt for evaluating webframe did not ask 'is this any good' — it said explore the repo, run it, build a few exploratory prototypes, then assess it as a sandbox and as a scraper using the same patterns as shot-scraper's JavaScript command, and docs included. The named reference stops the agent grading on vibes, and what comes back is a report with evidence in it rather than a verdict.",
+    "source": "Simon Willison, 'webframe: evaluated as a scraper and a sandbox', 26 October 2026",
+    "url": "https://simonwillison.net/2026/Oct/26/webframe-evaluation/"
+   }
+  ]
+ },
+ "hn": [
+  {
+   "title": "Patrick Stewart has died",
+   "url": "https://www.nytimes.com/2026/10/29/arts/television/patrick-stewart-dead.html",
+   "hn_url": "https://news.ycombinator.com/item?id=50294702",
+   "points": 2174,
+   "comments": 437,
+   "bullets": [
+    "nytimes.com will not serve to a fetch, so these bullets are written from ABC News' 29 October account and are limited to what that account states. Stewart died on Wednesday 28 October at his home in Los Angeles, aged 86. His spokesperson announced it on Thursday. He had Alzheimer's disease and Lewy body dementia.",
+    "The part of the career that the obituaries lead with is the second half of it. He joined the Royal Shakespeare Company in 1966 and was a core member until 1982 — sixteen years of Macbeth, The Merchant of Venice and Henry IV — and only then became Jean-Luc Picard, and later Professor Charles Xavier in a franchise that started in 2000. He was knighted by Queen Elizabeth II at Buckingham Palace on 2 June 2010.",
+    "He had not finished. He is due on screen as Xavier in Avengers: Doomsday on 18 December. Tributes came from the official Star Trek account, Marvel Studios, Kevin Feige, Hugh Jackman, William Shatner, George Takei and Jonathan Frakes, who posted Stewart's own obituary notice and wrote 'Rest in peace my friend'."
+   ]
+  },
+  {
+   "title": "We're releasing the weights of Mistral Large 4",
+   "url": "https://mistral.ai/news/mistral-large-4-oss/",
+   "hn_url": "https://news.ycombinator.com/item?id=50289418",
+   "points": 1140,
+   "comments": 324,
+   "bullets": [
+    "One trillion parameters, about 52 billion active — a mixture-of-experts model, natively multimodal, with reasoning and agentic behaviour in the same checkpoint and three reasoning modes (Low, Medium, High, with High the default). 160-plus languages. Internally it is called Le Chonk. The technical report is 'coming soon', which means the architecture claims are currently vendor-shaped.",
+    "The licence is the interesting half. It is the Mistral Ecosystem Open-Weight Licence, a modified MIT: free to use, modify, fine-tune and commercialise, except that running the model as a Model-as-a-Service offering needs a separate commercial licence. Weights are on Hugging Face; self-hosting is vLLM or SGLang, or NVIDIA's NIM container, NeMo AutoModel and TensorRT LLM.",
+    "Vendor-reported numbers, in their own framing: 19.7% on Cognition's FrontierCode 2.0 and 41% on Terminal-Bench 4.0 (both claimed as leading open weights, the latter up 13 points on the public preview with 30% fewer output tokens); tied with GLM-5.3 at 48% on Artificial Analysis' Coding Agent Index while using 47% fewer tokens per task; 84.5% on BrowseComp; 73.3% on Finch, behind Kimi K3; 51% on the Cyber Index with a 96.6% refusal rate on malicious cyber requests; 97.1% attack resistance on B3, up from 93.3%. On Surge Code's blind human-preference tests it ranked behind only Claude Opus 5.5.",
+    "Pricing on their own API: $0.70 per million input tokens, $0.07 cached, $2.10 output. Also live on Mistral Studio, OpenRouter, NVIDIA-hosted endpoints and Microsoft Foundry."
+   ]
+  },
+  {
+   "title": "StackOverflow now gets fewer than 1000 questions a month",
+   "url": "https://data.stackexchange.com/stackoverflow/query/1926661#graph?t=1",
+   "hn_url": "https://news.ycombinator.com/item?id=50282454",
+   "points": 760,
+   "comments": 682,
+   "bullets": [
+    "The linked page is a Stack Exchange Data Explorer query and will not serve to a fetch, so rather than take the headline on trust these numbers come from running the equivalent count against the Stack Exchange API (/2.3/questions with fromdate and todate, filter=total) this morning. The headline holds: September 2026 took 969 questions on Stack Overflow. August took 1,019. October, with one day left to run, is on 996.",
+    "The slope is the story rather than the threshold. The same query gives 5,072 questions for September 2025 — so the site is down 81% year on year — and 207,169 for March 2014. September 2026 is 0.47% of the March 2014 month. A site that once took two hundred thousand questions in thirty-one days now takes a thousand.",
+    "Worth holding the figures loosely in one respect: a question deleted since it was asked no longer appears in either count, so historical months are undercounted by some unknown amount and the real decline is slightly shallower than the raw ratio. It is not shallower by two orders of magnitude."
+   ]
+  },
+  {
+   "title": "Qwenputer: A functioning, deterministic RISC-V CPU inside Qwen3.5",
+   "url": "https://divagr.com/blog/qwenputer",
+   "hn_url": "https://news.ycombinator.com/item?id=50282838",
+   "points": 679,
+   "comments": 143,
+   "bullets": [
+    "A 32-bit RISC-V CPU — RV32IM plus the Zba extension and a small bignum unit — compiled directly into the weights of a stock Qwen 3.5 4B. No training: a compiler sets the weights, and the CPU occupies 11 layers in front of Qwen's 32. Each instruction is a few generated tokens (an address token, a value token, a STEP token that ends it), so the token trace is the execution.",
+    "The trick that makes it possible is Qwen 3.5's Gated DeltaNet layers, which keep a fixed-size state matrix per head. Set the forget gate to 1, the write strength to 1, and use one-hot keys, and each write overwrites exactly one row and each read returns an exact value. That is RAM. Unlike a KV cache it does not grow with the conversation.",
+    "It was checked properly, which is the reason it is at 679 points. It passes the official riscv-tests and matches qemu. It ran 18 million instructions free-running with no reference machine correcting it and no errors, and about 230,000 output positions replayed against a reference machine with zero mismatches. Ordinary text behaviour stays within noise of base Qwen — KL 6e-4 against a 5e-4 noise floor.",
+    "What it buys: on DeepMind's arithmetic sets, div_big goes from 72.5% to 97.5% and mul_big from 55% to 97.5%; NUPA long-integer arithmetic from 48.6% to 100%, matching a Python tool. What it costs: about 3,200 CPU tokens per second batched on an L4, so a big calculation takes seconds rather than milliseconds, and the checkpoint is 18.8 GB, roughly double base Qwen and mostly zero padding. The author also hid a filesystem in the same state — 1,024 hash slots, up to 512 files — and recalled changed facts across chats 90% of the time against 30% for pasting old chats back in."
+   ]
+  },
+  {
+   "title": "MacBook Pro with PROLED XDR Display and Touch",
+   "url": "https://www.apple.com/macbook-pro/proled-xdr-display/",
+   "hn_url": "https://news.ycombinator.com/item?id=50276940",
+   "points": 614,
+   "comments": 1067,
+   "bullets": [
+    "A tandem OLED panel — two self-illuminating pixel layers — in 14.2-inch and 16.3-inch MacBook Pros. 1,000 nits sustained full-screen below 25°C, 2,000 nits peak for both HDR and SDR, 10,000,000:1 contrast, ProMotion from 10 to 120Hz, P3 and Adobe RGB. Pre-orders are open; it ships from 6 November.",
+    "The headline on Hacker News is the second half: the touch sensor is built into the display panel, with Multi-Touch gestures for scrolling, pinching and drawing. Apple spent fifteen years arguing a laptop should not have a touchscreen, and the argument has now quietly ended.",
+    "Apple's page does not price the PROLED configuration — the only dollar figure on it is a $1,999 lease example for a 14-inch, 16GB MacBook Pro that is not identified as this model — and does not state the resolution. Neither is given here for that reason."
+   ]
+  }
+ ],
+ "markets": {
+  "indices": [
+   {
+    "name": "Sensex · Thu 29 Oct close",
+    "value": "74,151.04",
+    "change": "+905.01 (1.24%) from Wednesday's 73,246.03, with an intraday high of 74,166.16 — it closed about 15 points off its best level of the day",
+    "direction": "up"
+   },
+   {
+    "name": "Nifty 50 · Thu 29 Oct",
+    "value": "22,936.75",
+    "change": "+237.90 (1.05%), recovering the whole of Wednesday's 50.90-point fall and then four times over",
+    "direction": "up"
+   },
+   {
+    "name": "The leaders · Thu",
+    "value": "Realty +2.75%",
+    "change": "Nifty PSU Bank +2.20%, Nifty IT +0.99%, against Nifty Auto −0.24% and Nifty Cement −0.08%. Adani Ports +6.17% and Adani Enterprises +5.69% led the Nifty 50; Trent −1.68% and Maruti Suzuki −1.11% led the losers. No Bank Nifty close could be verified from a named source, so none is given",
+    "direction": "up"
+   },
+   {
+    "name": "Breadth · Thu",
+    "value": "Midcap 100 57,841.65",
+    "change": "+566.95 (0.99%); Smallcap 100 18,811.35, +176.45 (0.95%) — a broad day, but the large caps led it rather than followed",
+    "direction": "up"
+   },
+   {
+    "name": "FII cash · Thu",
+    "value": "−₹943.60 cr",
+    "change": "Bought ₹13,400.29 cr, sold ₹14,343.89 cr. DIIs took the other side: +₹1,924.41 cr on ₹18,458.64 cr against ₹16,534.23 cr. Net institutional buying of ₹980.81 cr on a day the index rose 1.24% — the foreigners sold the rally",
+    "direction": "down"
+   },
+   {
+    "name": "USD/INR · Thu 29 Oct",
+    "value": "95.26",
+    "change": "+2 paise from Wednesday's 95.28. It opened at 95.20, weakened to 95.38 — its worst level of the session — and recovered. PTI's provisional print was 95.25; 95.26 is the final",
+    "direction": "up"
+   },
+   {
+    "name": "Brent · Thu",
+    "value": "$114.13",
+    "change": "−1.03%, which is the other half of the rupee's recovery. Dollar index 102.26, +0.07%",
+    "direction": "down"
+   },
+   {
+    "name": "US Fed",
+    "value": "3.75–4.00%",
+    "change": "Held at the October meeting. Mumbai read the hold as mildly dollar-negative, which is the opposite of how it read Wednesday",
+    "direction": "flat"
+   }
+  ],
+  "stories": [
+   {
+    "headline": "The index gained 905 points and the foreigners were net sellers into it — Thursday was domestic money buying a Fed hold",
+    "url": "https://upstox.com/news/market-news/stocks/top-gainers-and-losers-oct-29-adani-ports-adani-ent-shares-soar-6-power-grid-rises-4-trent-falls-2-check-list/article-202653/",
+    "source": "Upstox's 29 October closing table for the index levels, point and percentage changes and the gainers and losers; Kotak Neo's closing bell for the sector index moves and its NSE FII/DII table for the cash flows; PTI via ThePrint for the rupee close, Brent and the dollar index",
+    "bullets": [
+     "Thursday 29 October: Sensex 74,151.04, up 905.01 points or 1.24%; Nifty 50 22,936.75, up 237.90 or 1.05%. Realty and PSU banks led, IT joined in, autos sat it out. The Nifty has now taken back Wednesday's loss several times over, and it did so on the session after the Fed held at 3.75–4.00%.",
+     "The flow data is the part worth noticing. FIIs were net sellers of ₹943.60 crore in the cash market on a day the benchmark rose 1.24%; DIIs bought ₹1,924.41 crore. Thirty-six hours earlier the pattern was the exact inverse — both sides buying while the index fell. Two sessions, two contradictions, which is roughly what provisional daily cash flows are worth as a signal.",
+     "The rupee closed at 95.26, two paise stronger, having been down to 95.38 intraday. Brent at $114.13 and down 1.03% did more of that work than the Fed did: a crude-importing currency gets most of its good days from the oil price rather than from Washington.",
+     "Adani Ports up 6.17% and Adani Enterprises up 5.69% in the same session, with Power Grid at +4.22% and Kotak Mahindra Bank at +4.09%, is an infrastructure-and-lenders day rather than a consumption one. Trent fell 1.68% and Maruti 1.11%, for the second session running in Trent's case."
+    ]
+   }
+  ]
+ },
+ "trends": [
+  {
+   "tag": "India",
+   "headline": "From Sunday an online seller can register for GST in a state it has never set foot in, by declaring the marketplace's warehouse as its own address",
+   "url": "https://www.india-briefing.com/news/india-cgst-amendment-rules-registration-refunds-itc-47605.html",
+   "subject": "Rule 14B allows a marketplace supplier to obtain a second GST registration with only the platform's warehouse as its declared principal place of business, effective 1 November 2026, subject to a Rs 2,50,000 monthly output-tax ceiling.",
+   "subtitle": "India Briefing's reading of notification 05/2026-Central Tax (G.S.R. 919(E)), dated 26 October 2026",
+   "bullets": [
+    "The constraint Rule 14B removes is a physical one. To hold stock in a state, an online seller has had to have an address there — which in practice meant renting something, or not selling into that state at all. From 1 November a supplier registered in one state or union territory can register in another with no presence of its own, declaring an eligible e-commerce operator's warehouse as its principal place of business. The operator has to consent, it has to be one that collects tax at source under section 52, and the supplier's output tax on specified supplies to registered persons must stay under ₹2,50,000 a month. Application is on the ordinary FORM GST REG-01.",
+    "The same notification tightens the other end. From 1 November a cancellation application must be filed within 30 days of the triggering event (the exception being the death of a sole proprietor), must report stock of inputs, semi-finished goods, finished goods and capital goods with the tax on them, and all returns due to the cancellation date must already be filed. From 1 April 2027 the system can suspend a registration by itself — six consecutive missed monthly returns, two missed quarters, a composition annual return more than three months late — with FORM GST REG-31 and generally 30 days to comply.",
+    "Refunds get faster on paper. The acknowledgment-or-deficiency-memo window drops from 15 days to 10, and silence past 10 days now counts as acknowledgment; the portal is then meant to risk-assess and issue a provisional refund order on FORM GST RFD-04 within three working days, with no revalidation by an officer. The inverted-duty formula's Net ITC now includes eligible input services and ITC on capital goods, with capital-goods credit spread over 60 months.",
+    "And the officer keeps a lever, from April 2027: FORM GST DRC-26 restricts debits from the electronic credit ledger where ITC looks fraudulently availed, for up to a year or until the officer releases it, with objections on DRC-27 and a decision on DRC-28. The staggering — 1 November, 1 December, 1 April 2027 — is the thing to diary. The seller-friendly clause lands first and the enforcement machinery lands eighteen months later."
+   ]
+  },
+  {
+   "tag": "Platforms",
+   "headline": "DoorDash is buying Instacart for $17 billion, and does not expect to close the deal before the end of 2027",
+   "url": "https://about.doordash.com/en-us/news/doordash-to-acquire-instacart",
+   "subject": "DoorDash agrees to acquire Instacart for $65.00 per share, about $17 billion in equity value and a 26% premium to the 22 October close, at least 75% in cash with a JPMorgan bridge facility, closing expected end-2027 or H1 2028.",
+   "subtitle": "DoorDash's own announcement, with the consideration mechanics and the closing conditions as stated in it",
+   "bullets": [
+    "$65.00 a share, about $17 billion of equity value, a 26% premium to Instacart's 22 October closing price, and the Instacart board approved it unanimously. Consideration is at least 75% cash — DoorDash stock cannot be more than 25% of the total. Holders elect all cash, 0.3372 DoorDash shares, or a $48.75-plus-0.0843-shares mix, with oversubscribed stock elections prorated. Funded from cash and debt, with a 364-day senior unsecured bridge from JPMorgan Chase and no financing condition.",
+    "The date in the release is the part worth reading twice. Closing is expected 'at the end of 2027 or in the first half of 2028' — between fourteen months and nearly two years away. Conditions include Instacart shareholder approval, the US HSR waiting period, and regulatory approvals in Canada and Israel. Holders of about 19% of Instacart's shares have already agreed to vote in favour. Until it closes the two companies operate separately, which is a long time to run a competitor you have agreed to buy.",
+    "What each side brings, in their numbers: DoorDash claims over 10 billion consumer orders, over $230 billion in merchant sales and operations in more than 40 countries. Instacart brings relationships with more than 2,200 retail banners covering nearly 100,000 stores, plus its enterprise and advertising platforms. The brand, the app and the enterprise products are expected to survive the acquisition.",
+    "The synergy DoorDash chose to put a figure on is the membership one: DashPass and Instacart+ members would save about $100 million a year between them by paying one fee instead of two. That is the saving to customers, not to DoorDash, and it is the only hard synergy number in the release — which tells you the case being made publicly is about overlap in subscribers rather than overlap in couriers."
+   ]
+  },
+  {
+   "tag": "Wildcard",
+   "headline": "In 54% of a hundred thousand simulated bombardments, no comet ever delivered enough cyanide to start life — and Mars did better than Earth",
+   "url": "https://www.sci.news/biology/comets-life-ingredients-early-earth-15162.html",
+   "subject": "Cambridge simulations of short-period comet impacts find hydrogen cyanide delivery to early Earth at prebiotically useful concentrations failed entirely in 54% of 100,000 simulated bombardment histories, with Mars faring better than Earth or Venus; Anslow et al., Scientific Reports, 28 October 2026.",
+   "subtitle": "Sci.News' 28 October write-up of Anslow et al., Scientific Reports 16, 31688",
+   "bullets": [
+    "Hydrogen cyanide is the molecule most origin-of-life chemistry runs on, and comets are the standard story for how it got here: a frozen delivery van full of carbon and nitrogen, arriving before Earth could make its own. Richard Anslow's group at Cambridge's Institute of Astronomy modelled the delivery rather than assuming it — atmospheric entry, impact velocity, whether the HCN survives the collision at all — across 100,000 simulated bombardment histories of Earth.",
+    "In 54% of those histories, not one impact ever delivered HCN at a concentration useful for prebiotic chemistry. Not a reduced yield: zero qualifying deliveries, in the majority of runs. Anslow's own summary is that cometary delivery was 'at best, a one-off fluke', while allowing that it cannot be ruled out.",
+    "The comparison is the sting. They ran Mars and Venus through the same model, and Mars came out substantially ahead of Earth — weaker gravity and a thinner atmosphere mean a comet arrives slower and in one piece, so more of its chemistry reaches the ground intact. The things that make Earth good at holding onto an atmosphere make it bad at receiving a delicate parcel. If you want the comet story to work, it works better on the planet where nobody has found life."
+   ]
+  }
+ ],
+ "research": [
+  {
+   "tag": "Industry · Google Research",
+   "title": "A nurse with no sonography training, sweeping a $2,000 probe across an abdomen, dated the pregnancy to within 4.18 days — the expert sonographer managed 4.48",
+   "url": "https://research.google/blog/empowering-frontline-maternal-care-with-ai-assisted-ultrasound/",
+   "subject": "Blind-sweep obstetric ultrasound read on a phone by minimally trained operators dated pregnancies to 4.18 days mean absolute error, versus 4.48 days for expert sonographer biometry, across 385 prospective participants in Chicago and Nairobi, with the Nairobi site never used for tuning; JAMA Network Open, 21 October 2026.",
+   "subtitle": "Google Research, 21 October 2026, on 'Generalization of AI-Based Gestational Age Assessment Using Blind Sweep Ultrasonography' in JAMA Network Open",
+   "bullets": [
+    "The input is deliberately dumb. A 'blind sweep' is an untrained operator gliding a low-cost portable probe across the abdomen in a fixed pattern — no attempt to find a plane, measure a femur or identify anything. The model runs on a phone and reads the sweep. Expert biometry, the thing it is being compared against, requires a sonographer who can locate and measure specific fetal structures, which is exactly the skill that is scarce.",
+    "Prospective, two sites, 385 participants between 16 and 36 weeks: 192 at Northwestern Medicine in Chicago, 193 with Jacaranda Health in Nairobi. Combined mean absolute error 4.18 days for the model against 4.48 days for expert sonographer biometry — non-inferior. Chicago 4.10 days, Nairobi 4.27.",
+    "Nairobi is the number that matters. The original model was trained on 1,968 participants in North Carolina and Zambia, then fine-tuned on 120 participants in Chicago — about 6% of the original training set — to handle new probe hardware and extend past 36 weeks. No Nairobi data was used for tuning at all, so Kenya was a genuine external test, and it came in 0.17 days behind Chicago. Multiple-gestation pregnancies were included rather than excluded.",
+    "The deployment notes are the unglamorous half and worth more than the metric: prefer swappable batteries to docking stations, and add a model confidence estimate so a bad sweep can be rejected rather than silently dated. An exploratory finding, flagged as exploratory: the model beat traditional biometry formulas for fetal weights above the 90th percentile, where those formulas are known to drift."
+   ]
+  },
+  {
+   "tag": "Academia · UC Berkeley",
+   "title": "Can Test-Time Memory Evolution Outperform Test-Time Training for Scientific Discovery?",
+   "url": "https://arxiv.org/abs/2610.32046",
+   "subject": "Test-Time Memory Evolution keeps weights frozen and distils run-time experience into an external memory, outperforming test-time weight updates on five mathematical discovery benchmarks at roughly a sixth of the compute; Berkeley and UC Santa Barbara, arXiv 2610.32046.",
+   "subtitle": "Yepeng Liu, Shengmai Chen, Xuandong Zhao, Chengzhi Liu, Dawn Song, Xin Eric Wang and Yuheng Bu — University of California, Berkeley and UC Santa Barbara, submitted 23 October 2026",
+   "bullets": [
+    "The result they are arguing against is a real one: on scientific-discovery tasks, an open-weight model that updates its own weights during the run — test-time training — has been beating inference-only scaffolds built on frontier models. The cost is that you are doing online gradient updates in the middle of a search, every time.",
+    "Their alternative keeps the weights frozen and writes the experience down instead. Test-Time Memory Evolution distils what the run has learned into an external memory that guides the later steps. It is plug-and-play, and the comparison is set up honestly: same discovery framework, same tasks, only the adaptation method swapped.",
+    "Across five mathematical tasks, memory beat weight updates on all five — while using 82.8% to 84.6% fewer FLOPs and running 47.7% to 58.4% faster. Beating a method on its own benchmark while costing a fifth as much is the rare kind of result that does not need a caveat about the trade-off, because there is not one.",
+    "What the abstract does not give is task-level accuracy, so the size of the win on any individual task is not public yet; and five mathematical tasks is a narrow floor to stand a general claim on. The direction is the interesting part. If the thing test-time training actually buys is a place to put what you just learned, a notebook is cheaper than retraining."
+   ]
+  }
+ ],
+ "wild": [
+  {
+   "tag": "Crypto · Sydney",
+   "headline": "A crypto exchange had a helicopter tow its banner over a $450,000 Porsche across Sydney, and hired a second helicopter to film the first one",
+   "url": "https://www.bandt.com.au/pepperstone-crypto-flies-over-a-porsche-across-sydney/",
+   "entities": [
+    "Pepperstone Crypto",
+    "Match & Wood",
+    "Boss Hunting",
+    "McCarroll's"
+   ],
+   "subject": "Pepperstone Crypto drove a Porsche 911 GTS from Sydney's Northern Beaches through Bondi into the CBD on 25 October 2026 with a banner-towing helicopter overhead and a second helicopter filming, to launch a giveaway of the car.",
+   "subtitle": "B&T's write-up of the 25 October activation, with the giveaway dates and the agency as stated there",
+   "bullets": [
+    "Sunday 25 October: a Porsche 911 GTS, valued at about $450,000 and supplied by the dealer McCarroll's, was driven from the Northern Beaches south along the coast past Bondi and across the harbour into the CBD. A helicopter towing a Pepperstone Crypto banner followed it the whole way. A second helicopter flew alongside to film the car and the banner in the same frame.",
+    "The second helicopter is the actual point. The stunt was not aimed at the people of Sydney looking up; it was a shoot. The footage is being rolled out by the men's lifestyle publisher Boss Hunting as a series — advertorial, reels, Instagram and TikTok carousels — with the first instalment live on 27 October. The city was the set.",
+    "The mechanic underneath it is a giveaway of the car: entries close 1 December, winner announced 10 December. Pepperstone Crypto launched in Australia in February 2026 as 'the local crypto alternative', and the agency, independent shop Match & Wood, says the helicopter gave it 'real cut-through'. Its own marketing manager put the thinking more plainly: it had to look like 'something a local brand would do rather than an international company entering the market'."
+   ]
+  },
+  {
+   "tag": "Food · London",
+   "headline": "A butter brand built a vault in Shoreditch, let 125 people eat their way through four eras of British cooking, and gave 500 cupcakes to everyone who missed out",
+   "url": "https://www.ianvisits.co.uk/articles/free-immersive-dining-experience-coming-to-shoreditch-92636/",
+   "entities": [
+    "Lurpak",
+    "Kachette",
+    "ZEAL Creative"
+   ],
+   "subject": "Lurpak marked its 125th anniversary with the Good Food Vault at Kachette in Shoreditch, 7-9 October 2026: 125 free ballot-allocated tickets to a two-hour tasting menu through the 1900s, 1960s, 1980s and 2010s, preceded by 500 free cupcakes on 6 October.",
+   "subtitle": "IanVisits' listing for the format, ballot and cupcake drop, with Event Marketer's account of what was inside the room",
+   "bullets": [
+    "Lurpak turned 125 and marked it by building a vault. The Good Food Vault ran at Kachette on Old Street, opposite Shoreditch Town Hall, from Wednesday 7 to Friday 9 October. There were exactly 125 free tickets, allocated by ballot — you registered, named up to three sittings you could make, and shared a 'good food moment'. Registration closed at 5pm on 27 September. Losers went into a draw for one of three anniversary hampers.",
+    "A sitting ran about two hours and moved through British cooking by decade — the plainness of the 1900s, the 1960s, the 1980s, the 2010s — anchored on what the organisers called a time machine: ovens and an interactive conveyor belt. Diners smashed and messed with ingredients to finish their own courses rather than being served them.",
+    "The detail that gives the whole thing away as a numbers joke: the day before it opened, Lurpak gave away 500 cupcakes at the same address, and the drop started at 12.25pm. The agency was ZEAL Creative. A hundred and twenty-five people got dinner; everyone else got a cupcake and a timestamp."
+   ]
+  },
+  {
+   "tag": "Pets · India",
+   "headline": "Supertails made a festive film in which a whole human family celebrates crammed under the dining table, because that is where the dog is",
+   "url": "https://openthemagazine.com/branding-marketing-and-advertising/supertails-diwali-ad-finds-the-family-under-the-table",
+   "entities": [
+    "Supertails"
+   ],
+   "subject": "Supertails' 2026 festive film shows a human family crouched under a dining table with sweets, a card game and a ring light before revealing the household dog and cat sheltering under furniture, and asking why a pet should celebrate that way.",
+   "subtitle": "Open's 24 October account of the Supertails Diwali film",
+   "bullets": [
+    "The whole film is one swap. A family is celebrating Diwali properly — sweets, make-up, a card game, a ring light, everyone dressed for it — except the ceiling is a dining table and they are all crouched under it, bumping into the furniture. Then it shows you the dog and the cat, in festive clothes, sheltering under furniture, and asks: if you wouldn't celebrate Diwali like this, why should they?",
+    "What it avoids is the reason it works. The standard Indian festive animal-welfare ad is a flinching dog and a guilt trip. This one gives the discomfort to the humans and plays it for laughs, so the viewer arrives at the point themselves rather than being handed it. The film resolves — a delivery arrives, the family comes out from under the table, the pets join them — before the usual service cards for grooming, pharmacy and consultations.",
+    "The cheap part is that the tagline does no work the film has not already done, and the expensive part is that somebody had to light and shoot four adults under a table for ninety seconds without it looking like a sketch. Published around 23 October, two weeks ahead of Diwali on 8 November — early enough to land before anyone buys firecrackers rather than after."
+   ]
+  }
+ ],
+ "learn": {
+  "title": "In a walk-up, the top floor is the cheapest one. The elevator turned it into the penthouse.",
+  "subject": "Why the safety elevator inverted floor premiums: walk-up rents once fell with every flight and garrets held storage, until Equitable Life's 1870 headquarters put two elevators into seven storeys and the upper floors began letting for more; Manhattan now pays roughly 0.5-1% per storey.",
+  "body": [
+   "Elisha Otis did not invent the elevator. Hoists had been lifting goods for centuries; what nobody would do was stand in one. His contribution, demonstrated at the New York Crystal Palace in 1854, was a brake that catches the car when the rope fails — and a piece of theatre to go with it. He had himself hoisted up on an open platform in front of a crowd and the rope cut. The platform stopped. Three years later the first passenger elevator went into the E. V. Haughwout Building in New York, and Otis was dead by 1861, aged 49, before the thing he had made possible happened.",
+   "What happened was that the value of a building turned upside down. In a walk-up, rent falls as you climb: the top floor is the one nobody wants, so it holds the storage, the servants and the junior clerks — Lower East Side rents per room in 1900 still slope downwards with every flight. The space under the roof was called a garret and the word meant cheap. Then the Equitable Life Assurance Society finished its seven-storey headquarters near Wall Street in 1870 with two elevators in it, and someone noticed that the upper floors were now letting for more. The garret became the penthouse, and it took about fifty years for the word to finish changing meaning.",
+   "The premium is still there and it is still not fully explained. In New York it runs at roughly 0.5% to 1% per floor, so the thirtieth floor can go for about 20% more per square foot than the tenth — for the same box of air, in the same building, with the same plumbing. Views, quiet, status, or simply that the people who can pay want to be above the people who cannot: economists have not settled which. What is certain is that height stopped being a cost the moment climbing stopped being the price of it."
+  ],
+  "source_url": "https://buildingtheskyline.org/skyscraper-technology-2/"
+ },
+ "ideas": {
+  "prompt": "Ten ways to make waiting rooms less miserable",
+  "items": [
+   {
+    "text": "A board at the door with one honest number on it: how many people are ahead of you, updated by whoever calls the next name."
+   },
+   {
+    "text": "Charging points at seat height on every wall, so nobody has to choose between a socket and a chair."
+   },
+   {
+    "text": "Two zones, marked: one where you may take a call, one where you may not."
+   },
+   {
+    "text": "A shelf of secondhand paperbacks you are allowed to take away and not bring back."
+   },
+   {
+    "text": "Chairs that are not all in rows facing the same wall. Four facing each other beats forty facing a television."
+   },
+   {
+    "text": "A jug of water and real glasses, placed where you can reach them without asking permission."
+   },
+   {
+    "text": "Tell people the honest wait, not the hopeful one. A forty-minute wait announced as forty minutes is a better experience than a twenty-minute wait that turns into thirty.",
+    "why": "The recurring complaint under every queue thread is not the waiting, it is being lied to about the waiting."
+   },
+   {
+    "text": "A scan-as-you-wait option for the paperwork, so the twenty minutes you are already losing does the form-filling.",
+    "why": "Adapted from a well-upvoted r/Lightbulb wish that shops let you scan items while you shop instead of queueing to do it at the end."
+   },
+   {
+    "text": "Window seats, and a window. Bad light makes thirty minutes feel like an hour before anything else does."
+   },
+   {
+    "text": "A small sign saying what the people behind the door are actually doing. 'Dr Rao is with a patient who came in as an emergency' ends more arguments than any number on a screen."
+   }
+  ]
+ }
+}

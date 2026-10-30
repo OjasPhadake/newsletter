@@ -7781,6 +7781,147 @@
         "news.sharpusa.com",
         "thedieline.com"
       ]
+    },
+    {
+      "date": "2026-10-30",
+      "issue": 1,
+      "quote_text": [
+        "Every scarecrow has a secret ambition to terrorize."
+      ],
+      "quote_author": [
+        "Stanisław Jerzy Lec"
+      ],
+      "idea_text": [
+        "A board at the door with one honest number on it: how many people are ahead of you, updated by whoever calls the next name.",
+        "Charging points at seat height on every wall, so nobody has to choose between a socket and a chair.",
+        "Two zones, marked: one where you may take a call, one where you may not.",
+        "A shelf of secondhand paperbacks you are allowed to take away and not bring back.",
+        "Chairs that are not all in rows facing the same wall. Four facing each other beats forty facing a television.",
+        "A jug of water and real glasses, placed where you can reach them without asking permission.",
+        "Tell people the honest wait, not the hopeful one. A forty-minute wait announced as forty minutes is a better experience than a twenty-minute wait that turns into thirty.",
+        "A scan-as-you-wait option for the paperwork, so the twenty minutes you are already losing does the form-filling.",
+        "Window seats, and a window. Bad light makes thirty minutes feel like an hour before anything else does.",
+        "A small sign saying what the people behind the door are actually doing. 'Dr Rao is with a patient who came in as an emergency' ends more arguments than any number on a screen."
+      ],
+      "idea_prompt": [
+        "Ten ways to make waiting rooms less miserable"
+      ],
+      "tip_text": [
+        "When you hand an agent an unfamiliar library, give it a tool you already know as the yardstick. Simon Willison's prompt for evaluating webframe did not ask 'is this any good' — it said explore the repo, run it, build a few exploratory prototypes, then assess it as a sandbox and as a scraper using the same patterns as shot-scraper's JavaScript command, and docs included. The named reference stops the agent grading on vibes, and what comes back is a report with evidence in it rather than a verdict."
+      ],
+      "hn_id": [
+        "50294702",
+        "50289418",
+        "50282454",
+        "50282838",
+        "50276940"
+      ],
+      "link": [
+        "https://www.nytimes.com/2026/10/29/arts/television/patrick-stewart-dead.html",
+        "https://mistral.ai/news/mistral-large-4-oss/",
+        "https://data.stackexchange.com/stackoverflow/query/1926661#graph?t=1",
+        "https://divagr.com/blog/qwenputer",
+        "https://www.apple.com/macbook-pro/proled-xdr-display/",
+        "https://www.india-briefing.com/news/india-cgst-amendment-rules-registration-refunds-itc-47605.html",
+        "https://about.doordash.com/en-us/news/doordash-to-acquire-instacart",
+        "https://www.sci.news/biology/comets-life-ingredients-early-earth-15162.html",
+        "https://www.bandt.com.au/pepperstone-crypto-flies-over-a-porsche-across-sydney/",
+        "https://www.ianvisits.co.uk/articles/free-immersive-dining-experience-coming-to-shoreditch-92636/",
+        "https://openthemagazine.com/branding-marketing-and-advertising/supertails-diwali-ad-finds-the-family-under-the-table",
+        "https://research.google/blog/empowering-frontline-maternal-care-with-ai-assisted-ultrasound/",
+        "https://arxiv.org/abs/2610.32046",
+        "https://upstox.com/news/market-news/stocks/top-gainers-and-losers-oct-29-adani-ports-adani-ent-shares-soar-6-power-grid-rises-4-trent-falls-2-check-list/article-202653/"
+      ],
+      "subject": [
+        "Rule 14B allows a marketplace supplier to obtain a second GST registration with only the platform's warehouse as its declared principal place of business, effective 1 November 2026, subject to a Rs 2,50,000 monthly output-tax ceiling.",
+        "DoorDash agrees to acquire Instacart for $65.00 per share, about $17 billion in equity value and a 26% premium to the 22 October close, at least 75% in cash with a JPMorgan bridge facility, closing expected end-2027 or H1 2028.",
+        "Cambridge simulations of short-period comet impacts find hydrogen cyanide delivery to early Earth at prebiotically useful concentrations failed entirely in 54% of 100,000 simulated bombardment histories, with Mars faring better than Earth or Venus; Anslow et al., Scientific Reports, 28 October 2026.",
+        "Pepperstone Crypto drove a Porsche 911 GTS from Sydney's Northern Beaches through Bondi into the CBD on 25 October 2026 with a banner-towing helicopter overhead and a second helicopter filming, to launch a giveaway of the car.",
+        "Lurpak marked its 125th anniversary with the Good Food Vault at Kachette in Shoreditch, 7-9 October 2026: 125 free ballot-allocated tickets to a two-hour tasting menu through the 1900s, 1960s, 1980s and 2010s, preceded by 500 free cupcakes on 6 October.",
+        "Supertails' 2026 festive film shows a human family crouched under a dining table with sweets, a card game and a ring light before revealing the household dog and cat sheltering under furniture, and asking why a pet should celebrate that way.",
+        "Blind-sweep obstetric ultrasound read on a phone by minimally trained operators dated pregnancies to 4.18 days mean absolute error, versus 4.48 days for expert sonographer biometry, across 385 prospective participants in Chicago and Nairobi, with the Nairobi site never used for tuning; JAMA Network Open, 21 October 2026.",
+        "Test-Time Memory Evolution keeps weights frozen and distils run-time experience into an external memory, outperforming test-time weight updates on five mathematical discovery benchmarks at roughly a sixth of the compute; Berkeley and UC Santa Barbara, arXiv 2610.32046.",
+        "Why the safety elevator inverted floor premiums: walk-up rents once fell with every flight and garrets held storage, until Equitable Life's 1870 headquarters put two elevators into seven storeys and the upper floors began letting for more; Manhattan now pays roughly 0.5-1% per storey."
+      ],
+      "brand": [
+        "Pepperstone Crypto",
+        "Match & Wood",
+        "Boss Hunting",
+        "McCarroll's",
+        "Porsche",
+        "Lurpak",
+        "Kachette",
+        "ZEAL Creative",
+        "Shoreditch",
+        "Supertails"
+      ],
+      "brand_mention": [
+        "Porsche 911 GTS",
+        "McCarroll's",
+        "Northern Beaches",
+        "Bondi",
+        "CBD",
+        "Pepperstone Crypto",
+        "Sydney",
+        "Boss Hunting",
+        "Australia",
+        "Match",
+        "Wood",
+        "Good Food Vault",
+        "Kachette",
+        "Old Street",
+        "Shoreditch Town Hall",
+        "Losers",
+        "Lurpak",
+        "ZEAL Creative",
+        "Diwali"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "From Sunday an online seller can register for GST in a state it has never set foot in, by declaring the marketplace's warehouse as its own address"
+        ],
+        [
+          "trends",
+          "DoorDash is buying Instacart for $17 billion, and does not expect to close the deal before the end of 2027"
+        ],
+        [
+          "trends",
+          "In 54% of a hundred thousand simulated bombardments, no comet ever delivered enough cyanide to start life — and Mars did better than Earth"
+        ],
+        [
+          "wild",
+          "A crypto exchange had a helicopter tow its banner over a $450,000 Porsche across Sydney, and hired a second helicopter to film the first one"
+        ],
+        [
+          "wild",
+          "A butter brand built a vault in Shoreditch, let 125 people eat their way through four eras of British cooking, and gave 500 cupcakes to everyone who missed out"
+        ],
+        [
+          "wild",
+          "Supertails made a festive film in which a whole human family celebrates crammed under the dining table, because that is where the dog is"
+        ],
+        [
+          "research",
+          "A nurse with no sonography training, sweeping a $2,000 probe across an abdomen, dated the pregnancy to within 4.18 days — the expert sonographer managed 4.48"
+        ],
+        [
+          "research",
+          "Can Test-Time Memory Evolution Outperform Test-Time Training for Scientific Discovery?"
+        ],
+        [
+          "learn",
+          "In a walk-up, the top floor is the cheapest one. The elevator turned it into the penthouse."
+        ]
+      ],
+      "editorial_domains": [
+        "about.doordash.com",
+        "bandt.com.au",
+        "ianvisits.co.uk",
+        "india-briefing.com",
+        "openthemagazine.com",
+        "sci.news"
+      ]
     }
   ]
 }
