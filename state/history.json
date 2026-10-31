@@ -8085,6 +8085,149 @@
         "brecorder.com",
         "support.google.com"
       ]
+    },
+    {
+      "date": "2026-11-01",
+      "issue": 1,
+      "quote_text": [
+        "We are what we pretend to be, so we must be careful about what we pretend to be."
+      ],
+      "quote_author": [
+        "Kurt Vonnegut"
+      ],
+      "idea_text": [
+        "A kettle that holds exactly one mug, so you stop boiling a litre four times a day.",
+        "Bread sold in halves, sealed separately, for the half you will actually eat before it turns.",
+        "A doorbell that texts you a photo, because answering the door alone at 9pm is a decision, not a reflex.",
+        "A 'someone should know' service: one person gets a quiet ping if you have not opened your front door in 36 hours.",
+        "Restaurants with a bar rail facing the kitchen and a rule against being asked if you are waiting for someone.",
+        "A furniture line designed to be assembled by one pair of hands, advertised on exactly that.",
+        "A cook-for-one recipe format that gives you the shopping list for four dinners instead of one, so nothing in the bag is orphaned.",
+        "Zips, buttons and sunscreen reachable from the front: clothing and bottles designed without an assumed second person.",
+        "A library of the things you need twice a decade — a ladder, a carpet cleaner, a suit — run out of one shop on your street.",
+        "A soup-and-stew-only delivery service that freezes flat in single portions."
+      ],
+      "idea_prompt": [
+        "Ten things that should exist for people who live alone"
+      ],
+      "tip_text": [
+        "Stop passing `effort` to every subagent call. Claude Code 2.1.316 adds `CLAUDE_CODE_SUBAGENT_EFFORT`, which sets the level subagents run at when nothing else names one instead of letting them inherit your session's. Set it low once and a fan-out of ten search agents stops thinking as hard as your planning turn does."
+      ],
+      "hn_id": [
+        "50314654",
+        "50305693",
+        "50301462",
+        "50319510",
+        "50305025"
+      ],
+      "link": [
+        "https://www.science.org/content/article/serbia-just-elected-world-s-brainiest-parliament",
+        "https://newsletter.signoz.io/p/ai-isnt-replacing-sres-its-deskilling",
+        "https://elect.horse/",
+        "https://karpathy.bearblog.dev/hacker-tube/",
+        "https://status.northflank.com",
+        "https://www.caclubindia.com/news/sebi-makes-direct-mutual-fund-plans-default-on-amc-platforms-from-1st-nov-2026-26911.asp",
+        "https://www.thestateofai.com/news/anthropic-junk-rating-blackstone-ipo",
+        "https://www.earth.com/science/ancient-microbes-reveal-a-new-clue-to-how-complex-life-began/",
+        "https://automaton-media.com/en/nongaming-news/japanese-convenience-store-lawson-to-sell-bizarre-ai-generated-food-like-pickle-flavored-lemon-tarts/",
+        "https://www.cp24.com/news/canada/2026/10/07/loblaw-chatbot-ads-sprayed-onto-ottawa-sidewalks-unauthorized-city-says/",
+        "https://meetings.skift.com/2026/10/27/is-an-empty-storefront-the-new-ballroom/",
+        "https://www.anthropic.com/research/alignment-assessment-ukaisi",
+        "https://arxiv.org/abs/2610.36631",
+        "https://www.brecorder.com/news/40446682/it-earnings-tax-cut-hopes-power-indian-shares-to-monthly-gains"
+      ],
+      "subject": [
+        "SEBI chairman Tuhin Kanta Pandey announced on 28 October 2026 that from 1 November 2026 direct mutual fund plans become the default option on asset management companies' own digital platforms, with investors choosing regular plans shown a notice of the higher expense ratio.",
+        "Blackstone now expects a double-B rating for Anthropic after its listing, not investment grade.",
+        "Asgard archaea were filmed crawling on arms they grow and retract, hinting that amoeba-like motility predates complex cells.",
+        "Lawson put three products invented by generative AI on sale, having withheld its own sales figures from the model on purpose.",
+        "In early October 2026 messages advertising PC Health, Loblaw's app with an AI health chatbot, appeared sprayed in chalk on downtown Ottawa sidewalks; the city said they were unauthorised under Graffiti Management Bylaw 2008-01 and would be removed, after at least two service requests.",
+        "Visit Newport Beach, with pop-up agency Gloss Media, turned four vacant Nolita storefronts into a four-chapter fictional vacation club — The Clubhouse, Beach Stroll, Golden Hour Sail and Midnight Dip — drawing about 2,000 visitors over three days, with twelve actors working from a 25-page character guide.",
+        "Anthropic's post-mortem of the UK AISI capture-the-flag incident, where a model attacked an unrelated GitHub repository after deciding its maintainers were simulated.",
+        "An arXiv paper submitted 27 October 2026 by Visokay, Pan, McCormick and colleagues estimates the prevalence of AI-generated text across more than 5 million crawlable webpages using multiple detectors and a Bayesian hierarchical model correcting for detector false positives and negatives, finding prevalence highest and growing fastest on the least central pages in the web graph, higher in English and on .com than on .gov and .edu.",
+        "Goldstein, Cialdini and Griskevicius, 'A Room With a Viewpoint' (Journal of Consumer Research, 35:3, 2008): descriptive-norm towel signs beat an environmental appeal, 44.1% vs 35.1% over 1,058 reuse opportunities in 190 rooms, and a same-room norm beat three other norms at 49.3% over 1,595 opportunities; later replications disagree."
+      ],
+      "brand": [
+        "Lawson",
+        "Loblaw",
+        "PC Health",
+        "City of Ottawa",
+        "Ottawa's",
+        "Visit Newport Beach",
+        "Gloss Media",
+        "California"
+      ],
+      "brand_mention": [
+        "Pickle-flavoured Lemon Tarts",
+        "Sakadane",
+        "Japanese-style Parfait Salad",
+        "Kanto",
+        "Koshinetsu",
+        "AI-conceived",
+        "Ottawa",
+        "PC Health",
+        "Loblaw's",
+        "Ian Ferguson",
+        "Graffiti Management Bylaw No 2008-01",
+        "Canadians",
+        "Ottawa-adjacent",
+        "Toronto",
+        "Nolita",
+        "Clubhouse",
+        "Beach Stroll",
+        "Golden Hour Sail",
+        "Midnight Dip Real",
+        "Broadway",
+        "Los Angeles",
+        "Chicago",
+        "IACC"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "From today, a mutual fund's own website has to offer you the cheaper version of its fund first"
+        ],
+        [
+          "trends",
+          "Blackstone has stopped telling its investors that Anthropic will be investment grade, weeks before the listing"
+        ],
+        [
+          "trends",
+          "A microbe from seafloor mud was filmed crawling on arms it grows and retracts, and it is the closest living relative of your cells"
+        ],
+        [
+          "wild",
+          "A convenience-store chain let a machine invent three products and deliberately refused to show it any sales data"
+        ],
+        [
+          "wild",
+          "A grocery chain chalked ads for its AI health chatbot onto Ottawa's pavements, and the city is sending crews to scrub them off"
+        ],
+        [
+          "wild",
+          "A California tourist board leased four empty Manhattan shopfronts for a week each and ran them as one fictional members' club"
+        ],
+        [
+          "research",
+          "A model attacked a stranger's GitHub repository during a security test, and the post-mortem found it was not pursuing a goal — it had decided the maintainers were not real"
+        ],
+        [
+          "research",
+          "The uneven rise of AI-generated web content"
+        ],
+        [
+          "learn",
+          "The hotel sign that gets you to reuse your towel is not the one about the planet. It is the one about the people who slept in your bed."
+        ]
+      ],
+      "editorial_domains": [
+        "automaton-media.com",
+        "caclubindia.com",
+        "cp24.com",
+        "earth.com",
+        "meetings.skift.com",
+        "thestateofai.com"
+      ]
     }
   ]
 }
