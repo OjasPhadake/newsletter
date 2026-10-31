@@ -7922,6 +7922,169 @@
         "openthemagazine.com",
         "sci.news"
       ]
+    },
+    {
+      "date": "2026-10-31",
+      "issue": 1,
+      "quote_text": [
+        "Bureaucracies, I've suggested, are not themselves forms of stupidity so much as they are ways of organizing stupidity"
+      ],
+      "quote_author": [
+        "David Graeber"
+      ],
+      "idea_text": [
+        "A written-down version of a story they have told you about themselves, handed back to them in your words.",
+        "An introduction. Pick two people you know who should know each other, and make the email instead of saying you should.",
+        "A voice note for a child, to be opened in twenty years, describing what they were like this month.",
+        "Your afternoon, spent doing the one errand they have been putting off for six months.",
+        "A photograph you already have, printed on paper and put in a frame you already own.",
+        "Permission. Tell someone plainly that the thing they feel guilty about not doing is fine not to do.",
+        "A recommendation with a reason. Not a list of ten books — one book, and two sentences on why it is for them specifically.",
+        "An hour of silence in a shared flat: go out, deliberately, so the other person gets the place to themselves.",
+        "The thing they lent you, returned. Cleaned.",
+        "A compliment delivered to their boss, or their parent, instead of to them."
+      ],
+      "idea_prompt": [
+        "Ten gifts that cost nothing"
+      ],
+      "tip_text": [
+        "If you run Claude Code unattended — bypass mode, a cron job, a CI step — turn on `permissions.blockWritesOutsideWorkingDirectories`. Since 2.1.314 it makes Write, Edit and NotebookEdit refuse any path outside your working directories in every permission mode, so a session that goes wrong can still only go wrong inside the repo. Bypass mode skips the prompt; this setting is the floor underneath it."
+      ],
+      "hn_id": [
+        "50296470",
+        "50300683",
+        "50302814",
+        "50290177",
+        "50284255"
+      ],
+      "link": [
+        "https://arkm.com/explorer/entity/21a94755-f604-45e5-9501-6542e23005e8",
+        "https://phorion.io/blog/offical-claude-code-vsx-compromise/",
+        "https://progressives.house.gov/2026/10/reps-casar-waters-lead-democratic-resolution-opposing-a-i-bubble-bailout-for-big-tech-commit-to-protecting-american-people-instead",
+        "https://martinfowler.com/bliki/LLM-Voice.html",
+        "https://gist.github.com/flamerix-ai/c3905705cc4205e5de3011fa2e74efce",
+        "https://www.brecorder.com/news/40446684/indias-april-september-fiscal-deficit-at-421-of-202627-target",
+        "https://support.google.com/googleplay/android-developer/answer/18100766?hl=en",
+        "https://archaeology.org/news/2026/10/30/household-cupboard-excavated-in-pompeii/",
+        "https://www.adgully.com/post/23066/zouk-brings-a-playful-festive-twist-to-outdoor-advertising-with-a-3d-channi-billboard",
+        "https://www.bizbash.com/experiential-marketing/halloween-brand-activations-and-experiences-to-die-for-in-2026",
+        "https://www.boston.com/news/local-news/2026/10/28/chicken-finger-king-debuts-world-record-jack-o-lantern-in-salem/",
+        "https://www.anthropic.com/research/early-progress-drug-development",
+        "https://arxiv.org/abs/2610.35793",
+        "https://blog.liquide.life/share-market-today-nifty-reclaims-23-000-sensex-gains-308-points-as-it-and-pharma-stocks-rally/"
+      ],
+      "subject": [
+        "Union deficit for April to September stood at 7.15 trillion rupees against 5.70 trillion a year before, with net tax revenue rising just 4 per cent to 12.8 trillion while spending rose 11 per cent to 25.5 trillion and capex hit 6.5 trillion, so 42.1 per cent of the 16.96 trillion annual ceiling is already used.",
+        "Google Play's 29 October 2026 policy announcement adds an AppFunctions API policy stating apps are strictly prohibited from deceiving or manipulating AI agents, with at least 30 days to comply.",
+        "Excavation of a household cupboard in a house on Via dell'Abbondanza at Pompeii, announced by the Pompeii Archaeological Park on 29 October 2026, containing a necklace of at least 24 crepundia amulets, 38 bronze coins in a woven container, toiletry items and lead trading weights.",
+        "Zouk ran a 40-foot outdoor billboard carrying a 15-foot three-dimensional channi for Karwa Chauth 2026 with Laqshya Media, tagline 'Pati's who gift Zouk, stay sukh'.",
+        "HI-CHEW's Chewbies Mystery Manor Tour converted a 22-foot van into a mobile haunted house containing a wall-mounted Operation-style game, touring Austin, Nashville, Chicago, Philadelphia and Hoboken in late October 2026.",
+        "Raising Cane's founder Todd Graves unveiled a Guinness-certified 3,156-pound jack-o'-lantern at Salem Common on 27 October 2026, grown by Ron Wallace in Green, Rhode Island over 123 days, during Salem's 400th-anniversary year.",
+        "Anthropic life-sciences partnerships with six drug developers: Enveda had Claude review 1,061 pages of manufacturing and regulatory documentation, catching all 11 issues human reviewers found plus seven they missed and cutting human review from over 25 hours to under three; BigHat tested about 1,010 antibody-fragment variants in ten weeks.",
+        "SmoothScore grades each conclusive assertion in an agent-written synthesis against retrieved evidence on a one-to-five scale; across 7 systems and 4 benchmarks no pairing fell below 22 per cent materially overstated assertions, with Gemini Deep Research at 22-35 per cent severe and GPT Luna 5.6 at 1-4 per cent.",
+        "Why graphite pencils are conventionally yellow: Hardtmuth of Ceske Budejovice launched the glossy-yellow Koh-i-Noor at the 1889 Exposition Universelle, named for the Crown Jewels diamond, won a Grand Prix for the Koh-i-Noor 1500 at the 1900 Paris Exposition, and competitors copied the colour."
+      ],
+      "brand": [
+        "Zouk",
+        "Laqshya Media",
+        "Karwa Chauth",
+        "HI-CHEW",
+        "Lime Media",
+        "Inspira Marketing",
+        "Operation",
+        "Raising Cane's",
+        "Todd Graves",
+        "Ron Wallace"
+      ],
+      "brand_mention": [
+        "Karwa Chauth",
+        "Laqshya Media",
+        "Hinglish",
+        "Pati's",
+        "Zouk",
+        "Founder Disha Singh",
+        "Festivals",
+        "Lime Media",
+        "Inspira Marketing",
+        "BizBash",
+        "Operation-style",
+        "Chewbie",
+        "Halloween",
+        "Austin",
+        "Nashville",
+        "Chicago",
+        "Philadelphia",
+        "Hoboken",
+        "Jersey",
+        "Guinness World Records",
+        "Boston.com",
+        "Ron Wallace",
+        "Green",
+        "Rhode Island",
+        "Eric Jones",
+        "Monique Hawk",
+        "William Wilson",
+        "Graves",
+        "Salem-inspired",
+        "Mayor Dominick Pangallo",
+        "Great Pumpkin Day",
+        "Kimberly Brown",
+        "Marnie Piper",
+        "Halloweentown",
+        "Hollywood",
+        "Highland",
+        "Los Angeles",
+        "Night Of The Raising Cane's",
+        "Event Marketer",
+        "Texas",
+        "Louisiana"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "Six months into the year the Centre has already run 42.1% of its full-year deficit, and the gap is a quarter wider than last year's"
+        ],
+        [
+          "trends",
+          "Google Play now forbids an app from deceiving an AI agent, which is a rule written to protect the software rather than the user"
+        ],
+        [
+          "trends",
+          "A cupboard in Pompeii was opened after 1,947 years and the most valuable thing in it was a child's rattle"
+        ],
+        [
+          "wild",
+          "Karwa Chauth is observed by looking at the moon through a sieve, so a bag brand built a fifteen-foot sieve and hung it over the road"
+        ],
+        [
+          "wild",
+          "A candy brand cut a 22-foot van into a haunted house and built the game Operation into its wall"
+        ],
+        [
+          "wild",
+          "A chicken-finger chain's founder grew a 3,156-pound pumpkin, carved witches into it, and held a film premiere for the pumpkin"
+        ],
+        [
+          "research",
+          "Claude read 1,061 pages of manufacturing and regulatory documentation, found all eleven problems the human reviewers found, and seven they had missed"
+        ],
+        [
+          "research",
+          "Quantifying Claim Smoothing by LLM Research Agents"
+        ],
+        [
+          "learn",
+          "Your pencil is yellow because of a stall at the 1889 Paris exposition, and nobody has repainted it since"
+        ]
+      ],
+      "editorial_domains": [
+        "adgully.com",
+        "archaeology.org",
+        "bizbash.com",
+        "boston.com",
+        "brecorder.com",
+        "support.google.com"
+      ]
     }
   ]
 }
