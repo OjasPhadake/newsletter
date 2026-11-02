@@ -8228,6 +8228,170 @@
         "meetings.skift.com",
         "thestateofai.com"
       ]
+    },
+    {
+      "date": "2026-11-02",
+      "issue": 1,
+      "quote_text": [
+        "What you have to understand is that bureaucracy is an organism, and the prime goal of every organism is self-protection."
+      ],
+      "quote_author": [
+        "Emily St. John Mandel"
+      ],
+      "idea_text": [
+        "A labelled, properly bright reading lamp on each side of the bed, with its switch where your hand already is.",
+        "One empty drawer, advertised as empty, so you have somewhere to put the things you unpack.",
+        "A printed card naming the three best places to eat within a ten-minute walk, written by whoever is on the front desk.",
+        "A hook at the height of a hanging shirt in the bathroom, for the steam trick everyone does with the shower on.",
+        "A clothes-drying rail that admits you washed socks in the sink.",
+        "A paper card by the door listing the checkout time, the wifi password and the actual breakfast hours, so you stop hunting for all three at 07:00.",
+        "A kettle you can see the water level in, and two mugs that are not upside down on a tray with a lid on.",
+        "A plug socket on the desk at desk height, plus one on each side of the bed, none of them behind the headboard.",
+        "A door hanger you can set to 'come back after 2pm' rather than choosing between privacy and a made bed.",
+        "An offline card listing what is actually in the minibar and what each thing costs, so opening the fridge is not a wager."
+      ],
+      "idea_prompt": [
+        "Ten things that should be in every hotel room but aren't"
+      ],
+      "tip_text": [
+        "Before you ask an agent to build something you are not sure is possible, spend one turn asking whether it is — and make the question quantitative. Drew Breunig's first prompt for nesformer pointed Opus 5.5 at someone else's write-up and asked \"what size model would you have to build and if you could use smaller faster ones, could you get it to be at the standard clockspeed\"; only the second prompt said \"I think we should build it!\" The sizing answer is what tells you whether the build is worth starting."
+      ],
+      "hn_id": [
+        "50326821",
+        "50320963",
+        "50319143",
+        "50324388",
+        "50319358"
+      ],
+      "link": [
+        "https://hackerbooks.org",
+        "https://www.smithsonianmag.com/science-nature/italian-farmer-found-unknown-seeds-attic-with-nothing-lose-planted-them-result-biblical-180989644/",
+        "https://atlasum.net/blog/cve-2026-98432-linux-ipv4-tcp-uaf",
+        "https://www.visitnorway.com/plan-your-trip/travel-tips-a-z/norwegian-scenic-routes/worlds-best-toilets/",
+        "https://news.ycombinator.com/item?id=50319358",
+        "https://www.adgully.com/post/22364/dot-mandates-telecom-verified-caller-name-display-from-nov-1",
+        "https://www.ietf.org/archive/id/draft-kelley-aipref-training-preference-signal-00.html",
+        "https://www.jpost.com/archaeology/article-913349",
+        "https://www.microsoft.com/en-us/research/blog/from-synthetic-enterprise-data-evaluations-to-real-microsoft-copilot-ai-confidence/",
+        "https://arxiv.org/abs/2610.36679",
+        "https://apacnewsnetwork.com/2026/11/india-gst-collections-october-2026/"
+      ],
+      "subject": [
+        "India's Department of Telecommunications mandated Calling Name Presentation (CNAP) by default on 4G and newer networks from 1 November 2026, under a circular dated 13 October 2026 enforcing Rule 48(1) of the Telecommunications Rules, 2026.",
+        "OpenAI will honour a robots.txt token by which a website says it does not want its pages used for AI training.",
+        "Two Old Kingdom tombs at Saqqara, dug in 1858 and lost under sand, were relocated by a Czech mission using satellite imagery.",
+        "Tower 28 ran a three-day shop in Venice where none of its own products could be bought.",
+        "GIC ran a free walk-through exhibition explaining how it invests the national reserves.",
+        "The Look Company is recutting the panels of its Vancouver building wrap into numbered bags and umbrellas sold for charity.",
+        "Microsoft Research generates whole imaginary companies, with fake org charts and inboxes, to evaluate Copilot without any real customer files.",
+        "Small models trained on one child's speech specialise to that child, and a 5-gram baseline reproduces the effect.",
+        "Runway numbers are magnetic headings rounded to the nearest 10 degrees, so the drift of magnetic north forces airports to renumber: Tampa International closed 18R/36L until 13 January 2011 and reopened it as 19R/1L, and Stansted renamed 23/05 as 22/04 in July 2009."
+      ],
+      "brand": [
+        "Tower 28",
+        "GIC",
+        "BBH Singapore",
+        "The Look Company",
+        "Science World",
+        "Look Company"
+      ],
+      "brand_mention": [
+        "Sensitive Club",
+        "Tower 28",
+        "Venice",
+        "California",
+        "Amy Liu",
+        "Swipe Serum Foundation",
+        "SOS Spray",
+        "Nearly 2",
+        "I'm",
+        "I",
+        "Sephora",
+        "Shop",
+        "Liu",
+        "Beauty Matter",
+        "YipitData",
+        "Jell-o-teria",
+        "Jell-O",
+        "Jell-O-inspired",
+        "Secret Vault",
+        "GIC's",
+        "Bahru's School Hall",
+        "Singapore",
+        "BBH Singapore",
+        "Singaporeans",
+        "Orchard",
+        "Weather Room",
+        "Global Inflation Hypermart",
+        "Steward's Gardens",
+        "Globe",
+        "Reserves",
+        "Tomorrow",
+        "Janson Choo",
+        "Meta",
+        "Beautiful Dome",
+        "Science",
+        "Vancouver",
+        "FIFA World Cup 2026",
+        "Vancouver Host Committee",
+        "Destination Vancouver",
+        "Province",
+        "Columbia",
+        "Vancouver Hotel Destination Association",
+        "Look Company's Seattle",
+        "Beautiful Dome 2026 Collection",
+        "Science World's STEAM",
+        "BC Place",
+        "Museum",
+        "Jacob Burke",
+        "Look Company",
+        "Brian Radburn",
+        "Science World's",
+        "Either"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "From yesterday, an Indian mobile call has to arrive with a name on it that the operator verified"
+        ],
+        [
+          "trends",
+          "OpenAI will honour a robots.txt token for AI training, and the spec for it was written by Anthropic"
+        ],
+        [
+          "trends",
+          "Two tombs dug up in 1858 went back under the sand, and a Czech team found them again with satellite imagery"
+        ],
+        [
+          "wild",
+          "A beauty brand opened its first storefront and refused to sell a single product in it, with the chief executive saying on the record that she expected to lose money"
+        ],
+        [
+          "wild",
+          "The sovereign wealth fund whose entire public character is saying nothing built a six-room walk-through exhibition about itself"
+        ],
+        [
+          "wild",
+          "The Look Company wrapped a science museum as the World Cup match ball, and is now cutting the wrap into tote bags"
+        ],
+        [
+          "research",
+          "To test Copilot without touching a customer's email, Microsoft built three fake companies — complete with org charts, meetings and a timeline"
+        ],
+        [
+          "research",
+          "Train a small language model on one child's speech and it learns that child, not language — and a 5-gram model reproduces the effect at r=.91"
+        ],
+        [
+          "learn",
+          "Every so often an airport closes a runway for a week to repaint a number on it. The reason is that the Earth's magnetic north pole is moving roughly 40 miles a year, towards Russia."
+        ]
+      ],
+      "editorial_domains": [
+        "adgully.com",
+        "ietf.org",
+        "jpost.com"
+      ]
     }
   ]
 }
