@@ -8392,6 +8392,166 @@
         "ietf.org",
         "jpost.com"
       ]
+    },
+    {
+      "date": "2026-11-03",
+      "issue": 1,
+      "quote_text": [
+        "Objection, evasion, joyous distrust, and love of irony are signs of health; everything absolute belongs to pathology."
+      ],
+      "quote_author": [
+        "Friedrich Nietzsche"
+      ],
+      "idea_text": [
+        "The evening you finally finish a thing you have been not-finishing for a year. Guests must bring their own unfinished thing and say one sentence about it.",
+        "The day the clocks change, which nobody marks and everybody feels.",
+        "A sock-pairing party: everyone brings the orphan socks, the odds get matched badly on purpose, and the worst pair wins.",
+        "The anniversary of the day you moved into the flat, celebrated in the flat, with a tour.",
+        "A re-reading party: six people, one book everyone read at school, and an argument.",
+        "The last warm evening of the year, declared by you, on about four hours' notice.",
+        "A rotation party for a game nobody can organise — badminton, carrom, doubles anything — with the running order written on a board on the wall so the group chat stays out of it.",
+        "A party to use up the thing in the freezer that has been there since you bought the freezer.",
+        "The halfway point of a long project, which is the moment people actually need feeding.",
+        "A party for someone else's good news, thrown before they get round to it."
+      ],
+      "idea_prompt": [
+        "Ten excuses to throw a party"
+      ],
+      "tip_text": [
+        "When AI-assisted pull requests pile up on your repo, stop reviewing them as code and have a model triage them as bug reports. Simon Willison, whose llm project is the one most hit by the flood, says the burden turned out small because \"I have Opus 5.5 or GPT-6 Astra help me with triage to spot the most useful fixes\" — he reads each contribution for the problem and the example it carries, then either lands the patch or writes his own fix."
+      ],
+      "hn_id": [
+        "50341174",
+        "50328896",
+        "50340088",
+        "50326099",
+        "50331402"
+      ],
+      "link": [
+        "https://rikiyat.github.io/blog/weight-space-programming/",
+        "https://news.ycombinator.com/item?id=50328896",
+        "https://news.ycombinator.com/item?id=50340088",
+        "https://hackingpassion.com/lenovo-thinkplus-encrypted-usb-sd-card/",
+        "https://occupysaas.com/",
+        "https://www.corplawupdates.in/updates/sebi-settlement-regulations-2026",
+        "https://developer.apple.com/news/?id=2kb4hhnl",
+        "https://phys.org/news/2026-10-year-mystery-identity-extinct-giant.html",
+        "https://research.google/blog/open-and-emergent-problems-in-agentic-privacy-and-security-a-contextual-angle/",
+        "https://arxiv.org/abs/2610.40382",
+        "https://www.maritimegateway.com/indias-manufacturing-pmi-eases-to-54-7-in-october-but-export-orders-hit-a-six-month-high/"
+      ],
+      "subject": [
+        "The SEBI (Settlement Proceedings) Regulations, 2026, notified 6 October and gazetted 7 October 2026, come into force on 7 November 2026, replacing the 2018 regulations with a published formula, a fast-track route and a list of parties who may no longer settle at all.",
+        "The age-rating questionnaire gains Shared Location and Dating and Relationships descriptors; declaring the second forces a minimum 18+ rating, and it covers virtual romantic companions.",
+        "Ancient DNA from 18 crane bones shows that Grus primigenia, described as an extinct species in 1871 from bone size, was a larger form of the living common crane, raising the possibility that past extinction counts are inflated.",
+        "Godrej Properties revealed the Godrej Bandra Bay logo as a 30,000 sq ft floating formation in the sea off Bandra Reclamation, visible 26–27 October 2026.",
+        "Museum Rembrandthuis in Amsterdam opened a pop-up tattoo studio from 26 October to 7 November 2026 as the second edition of The Poor Man's Rembrandt Project.",
+        "Rivian shipped Halloween Mode inside its 2026.36 software update on 7 October 2026 and activated it fleet-wide on 9 October at 4am local time, switching it off again on 2 November.",
+        "A workshop report proposes judging an autonomous agent's information flows by contextual integrity and appropriateness rather than by static permissions.",
+        "Beyond Selected Breakthroughs: a dataset of conjectures randomly sampled from recent arXiv mathematics papers, used to measure what language models actually produce when nobody chooses the problem.",
+        "L'Auto founded the Tour de France in 1903 as a circulation weapon against Le Vélo, the rivalry having begun with the Dreyfus affair; L'Auto's yellow newsprint is the official reason for the maillot jaune, first worn by Eugène Christophe in 1919, though Chris Sidwells argues the supplier simply had 15 jerseys in yellow."
+      ],
+      "brand": [
+        "Godrej Properties",
+        "OAP Mediatech",
+        "Arabian Sea",
+        "Rembrandt House Museum",
+        "Schiffmacher & Veldhoen",
+        "St. Catherina",
+        "Rivian",
+        "Ghostbusters"
+      ],
+      "brand_mention": [
+        "Bandra Reclamation",
+        "Bandra",
+        "Worli Sea Link",
+        "CAD",
+        "Abhijit Sengupta",
+        "OAP Mediatech",
+        "Imagine",
+        "Airbus A320",
+        "Godrej Properties Subhasish Pattanaik",
+        "Rather",
+        "RC Group",
+        "Museum Rembrandthuis",
+        "Schiffmacher",
+        "Veldhoen",
+        "Amsterdam",
+        "St Catherina",
+        "Antwerp",
+        "Rembrandt-derived",
+        "Poor Man's Rembrandt Project",
+        "Rembrandt's 1633",
+        "Descent",
+        "Cross",
+        "Bo Kwakernaak",
+        "Director Milou Halbesma",
+        "Rembrandt",
+        "Henk Schiffmacher's",
+        "Rembrandt's Amsterdam",
+        "Nothing",
+        "Rivian",
+        "Halloween Mode",
+        "Adventure Network",
+        "Ghostbusters",
+        "Trick",
+        "Treat",
+        "Gear Guard",
+        "R1s",
+        "Ecto-1",
+        "R2s",
+        "Proton Pack",
+        "Whac-A-Mole",
+        "ECUs",
+        "R1 Gen 1",
+        "R1 Gen 2",
+        "R2",
+        "RivianOS 2",
+        "Bill Murray"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "From Saturday, settling a case with SEBI is arithmetic: a base number times a stage multiplier, and asking at the Supreme Court costs five times what asking voluntarily does"
+        ],
+        [
+          "trends",
+          "Apple is adding two boxes to the age-rating questionnaire, and one of them puts every AI companion app at 18+"
+        ],
+        [
+          "trends",
+          "A giant crane has been extinct since the Ice Age for 155 years, on the evidence of bone size alone. Its DNA says it is the bird standing in a European field this morning"
+        ],
+        [
+          "wild",
+          "A developer unveiled a project logo by floating it on the Arabian Sea at 600 feet across, on 2,500 pontoons, for two nights"
+        ],
+        [
+          "wild",
+          "The Rembrandt House Museum has put a working tattoo studio inside itself, and is giving one man a full back piece of a 1633 etching for free"
+        ],
+        [
+          "wild",
+          "A carmaker turned every vehicle it has ever sold into a Ghostbusters car at 4am, without sending an update to a single one of them"
+        ],
+        [
+          "research",
+          "Permissions were designed for software that does what you asked. Google's argument is that agent privacy has to be judged on whether a flow of information was appropriate, not whether it was allowed"
+        ],
+        [
+          "research",
+          "Every headline about a model solving a famous conjecture is a selected sample. Somebody finally ran 200 conjectures picked at random"
+        ],
+        [
+          "learn",
+          "The Tour de France was invented to kill a newspaper, and the leader's jersey is yellow because the newspaper that invented it was printed on yellow paper — which may itself be a cover story."
+        ]
+      ],
+      "editorial_domains": [
+        "corplawupdates.in",
+        "developer.apple.com",
+        "phys.org"
+      ]
     }
   ]
 }

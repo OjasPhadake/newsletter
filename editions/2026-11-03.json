@@ -1,0 +1,329 @@
+{
+ "date_line": "Tuesday, 3 November 2026",
+ "issue": 1,
+ "preheader": "Nietzsche on why certainty is the symptom; triage AI-written pull requests instead of reviewing them; a frontier model edits 0.016% of Qwen's weights and quadruples its maths score; how to buy a television that cannot talk; glasses that read words you only mouth; Lenovo's AES-256 fingerprint stick was an SD card in epoxy; laid-off engineers cloning Auth0 with an agent; Monday's third straight rally, Sensex 75,692.78; October factory prices the softest in four years; SEBI turns settlement into a formula from Saturday; OpenAI starts vetting the gateways that resell it; a crane that was never extinct; Anthropic audits its own evaluations and finds a tip filed with the Philadelphia police; 200 conjectures picked at random; a 600-foot logo floated off Bandra; a tattoo studio inside the Rembrandt House; a fleet of cars turned into Ghostbusters at 4am; and the newspaper war that produced the Tour de France.",
+ "quote": {
+  "text": "Objection, evasion, joyous distrust, and love of irony are signs of health; everything absolute belongs to pathology.",
+  "author": "Friedrich Nietzsche",
+  "work": "Beyond Good and Evil",
+  "source_url": "https://www.goodreads.com/quotes/tag/irony?page=2",
+  "note": "The ordinary reading of doubt is that it is a cost — a tax you pay on the way to a settled view, and the sooner you stop paying it the better. Nietzsche inverts the ledger. Objection, evasion and irony are not the friction in the machine, they are the machine running properly; the symptom to worry about is the absence of them. It is a useful diagnostic to point at your own work. If a plan, a model or an argument has stopped generating objections, that is not a sign it has converged. It is a sign nobody is still looking."
+ },
+ "agent_craft": {
+  "items": [
+   {
+    "text": "When AI-assisted pull requests pile up on your repo, stop reviewing them as code and have a model triage them as bug reports. Simon Willison, whose llm project is the one most hit by the flood, says the burden turned out small because \"I have Opus 5.5 or GPT-6 Astra help me with triage to spot the most useful fixes\" — he reads each contribution for the problem and the example it carries, then either lands the patch or writes his own fix.",
+    "source": "Simon Willison, llm 0.37 release notes, 2 November 2026",
+    "url": "https://simonwillison.net/2026/Nov/2/llm/"
+   }
+  ]
+ },
+ "hn": [
+  {
+   "title": "Astra can read and write weights to improve Qwen",
+   "url": "https://rikiyat.github.io/blog/weight-space-programming/",
+   "hn_url": "https://news.ycombinator.com/item?id=50341174",
+   "points": 2003,
+   "comments": 648,
+   "bullets": [
+    "The claim is that a frontier model can edit another model's weights directly, with no gradient descent and no training loop. The authors call it weight-space programming. Given Qwen3.5-0.8B's weights in a Python sandbox, practice problems from GSM8K and MATH, and a budget of 50 forward passes, GPT-6 Astra diagnosed the small model's failure as a looping behaviour, traced the loop to a single direction written by the MLPs of layers 15 and 19, and subtracted that direction from 64 output columns in each. That is 131,072 weights changed — 0.016% of the model.",
+    "The jumps are large. MATH-500 went from 7.9% to 48.1%, GSM8K from 13.8% to 67.1%, IFEval from 21.0% to 62.3%. The share of MATH-500 answers that ran into the 32,768-token limit fell from 93% to 33.1%. The forward-pass budget mattered: 10 passes got MATH-500 to 12.3%, 25 passes to 14.1%, and only 50 produced the big move.",
+    "In the other direction, Astra read weights and named what the network did — which Atari game a policy played (Breakout, Pong, Pac-Man, Freeway), what shape a diffusion model drew, what language a small transformer was trained on — and wrote working game-playing networks from scratch. Its Breakout network scored 517.4 against PPO's 15.8 at 100 million steps.",
+    "The caveat is the part worth keeping. On Gemma 3 270M, which rarely loops, the same approach moved MATH-500 by about a point: editing \"could not add an ability the model lacked\". Reading the weights alone also failed to spot the sycophantic model until Astra was handed an attention-pattern tool, and even then on three model pairs under relaxed conditions. Larger networks do not fit in context at all. This is a blog report, not peer-reviewed work, and the authors say they are still building the benchmark."
+   ]
+  },
+  {
+   "title": "Ask HN: Which TV do you recommend for privacy?",
+   "url": "https://news.ycombinator.com/item?id=50328896",
+   "hn_url": "https://news.ycombinator.com/item?id=50328896",
+   "points": 687,
+   "comments": 831,
+   "bullets": [
+    "The consensus answer is not a model, it is a topology: buy whatever panel you like, never give it the wifi password, boot it straight to HDMI1, and put a device you control in front of it. Named repeatedly — Apple TV, Roku, a Kodi box (the Vero V, an Intel NUC), an Nvidia Shield, Jellyfin, or simply an Android phone over HDMI. HDMI-CEC does the input switching so you never touch the TV's own interface.",
+    "The top comment takes the other route. MegaDeKay roots a 77-inch LG C6 using a guide at tv.slada.sk, installs Glasshouse to kill telemetry, and sideloads apps via webosbrew.org, with a factory reset as the undo button. The catch arrived on 10 October: LG closed the exploit, so firmware after that date (43.21.84 and later) reportedly cannot be rooted. People are buying used sets specifically for the older firmware. Samsung rooting is possible but harder — one commenter dumped an S90F and ran into Knox and SMACK.",
+    "The thread is more careful about evidence than the genre usually is. A claim that LG and Samsung sets record and transmit audio was challenged for having no source, and the pushback stood. What survived scrutiny is narrower and odder: a TV with no internet access still scans for nearby wifi and Bluetooth devices for fingerprinting without connecting to them, and one Vizio reportedly joined a neighbour's open network on its own.",
+    "The worry everyone converges on is the one nobody can engineer around. Blocking updates at the router works today, but it also blocks app downloads, and commenters note manufacturers are investigating soldered-in cellular modems — at which point the air gap stops being yours to control."
+   ]
+  },
+  {
+   "title": "Show HN: Subvocal – Talk to your computer without making noise",
+   "url": "https://news.ycombinator.com/item?id=50340088",
+   "hn_url": "https://news.ycombinator.com/item?id=50340088",
+   "points": 567,
+   "comments": 309,
+   "bullets": [
+    "A pair of glasses that reads words you mouth without voicing them. The sensing is the interesting choice: antennas in the frames emit low-power radio, Bluetooth-ish, that passes through the mouth, and movements of tongue, lips and soft palate modulate the returning signal, which a model decodes to text. A new user calibrates with 20 sentences.",
+    "They got there by discarding the obvious options, and say why. Facial EMG electrodes lost to sweat, electrical interference, placement variance and the fact that nobody wants electrodes on their face. IMUs resolved only broad word classes. Camera lipreading sat at roughly 15–20% word error rate, capped by visual ambiguity. 60 GHz mmWave radar penetrated tissue poorly.",
+    "No headline accuracy number is published, which is the thread's main complaint; a commenter eyeballed about 5% error from the demo video. End-to-end latency is \"under 500ms usually\", which the founders call unoptimised and a commenter calls not fast. Inference runs in the cloud at launch, with local inference listed as a future goal. Shipping is targeted at Q1 2027, preorders open for the first 500 units at $200 off a price the page does not state.",
+    "An edit to the post says the system can also be tuned to mouthing with the lips closed, which they concede is harder. Open questions the founders did not answer in the visible thread: whether a subscription is required, prescription and nose-pad fit, and custom-server support. There is no wake word — a trigger key is planned instead."
+   ]
+  },
+  {
+   "title": "Lenovo's 'encrypted' fingerprint USB drive is an unencrypted SD card in a case",
+   "url": "https://hackingpassion.com/lenovo-thinkplus-encrypted-usb-sd-card/",
+   "hn_url": "https://news.ycombinator.com/item?id=50326099",
+   "points": 564,
+   "comments": 176,
+   "bullets": [
+    "The Lenovo ThinkPlus FU100 was sold as hardware-encrypted with AES-256, with a fingerprint sensor and a password. Xusheng Li opened one in 2025 and found a small board carrying an SD card. \"The data on that card was not encrypted in any way.\" The sensor decided only whether the stick presented itself to the computer at all; anyone with the card and a reader has the files.",
+    "The timeline is the uncomfortable part. Li reported it to Lenovo on 2 August 2025. By 27 August a temporary fix was ready: a layer of epoxy over the SD card. A proper fix was planned for December 2025. Lenovo published advisory LEN-210545 on 13 January 2026, rating it high, with CVE-2025-13453 covering affected ThinkPlus drives; Li presented the teardown as his first case at RE//verse in March 2026. Owners in China can call the service line for a free upgrade.",
+    "It is not an isolated vendor failure. In a companion write-up on 22 October, Li used time-travel debugging and an agent driving Binary Ninja to take apart four more products, and the pattern repeats: NetacFileLock encrypts with a fixed 32-byte key baked into the executable, logs the user's password to diagnostics, and in fast mode leaves files over 1,024 bytes only partly encrypted. YutianDun ships hidden accounts — `Buffer` with password `123456`, `System` with `SECZURE.COM` — that unwrap content without the owner's password.",
+    "The timings read like a warning about the economics. KakaSoft's \"256-bit Blowfish\" took the agent roughly two minutes to unpack, seven to break the cryptography across two prompts, and 26 minutes and six prompts to prove passwordless decryption; Nexcopy's triple-DES scheme took about ten minutes and five prompts. Li published without coordinated disclosure, arguing that devices already in people's hands cannot be recalled or patched."
+   ]
+  },
+  {
+   "title": "OccupySaaS",
+   "url": "https://occupysaas.com/",
+   "hn_url": "https://news.ycombinator.com/item?id=50331402",
+   "points": 494,
+   "comments": 308,
+   "bullets": [
+    "A group describing itself as laid-off engineers, organised through GitHub and Discord, is rebuilding commercial SaaS products as Apache-2.0 clones aiming at 1:1 API compatibility. Two exist so far, both admittedly early: ZeroAuthy, an Auth0-compatible identity server in Go, public since 14 October, checked against auth0-spa-js, auth0-react and nextjs-auth0; and SalesCompel, a Salesforce-compatible CRM in Go, PostgreSQL and Vue with basic account and contact CRUD, public since 15 October. Next targets floated: docs, issue tracking, feature flags, observability, support.",
+    "The method is written down as a clean-room procedure, which is the part that makes it more than a gesture: write a spec from public documentation and observed SDK behaviour, keep spec writers separate from builders, have agents implement from the spec, test against the vendors' own public SDKs, release under Apache-2.0. Leaked source, decompiled binaries, former-employer confidential material and copied UI assets are all prohibited.",
+    "The thread's sharpest objection is self-referential. The site reads as machine-written and the GitHub history lists Claude as a contributor — an AI-built protest about engineers being laid off. The second objection is commercial: nobody buys Auth0 for the code, they buy liability transfer, patching and a phone number, and no company moves its authentication to a vibe-coded clone. A third asks why the effort is not going to the mature open identity providers that already exist.",
+    "Commenters kept returning to Bending Spoons as the playbook being imitated rather than resisted — buy the product, rebuild it on your own platform, cut the original staff, with a 15-person team said to replace a company of about 100. Several called the project performance art; one replied that the performance is the point."
+   ]
+  }
+ ],
+ "markets": {
+  "indices": [
+   {
+    "name": "Pre-open · Tue 3 Nov",
+    "value": "Last close: Mon 2 Nov",
+    "change": "Indian markets open at 9:15 IST this morning, so nothing below is today. These are Monday's session — the third straight rising day. No NSE holiday this week.",
+    "direction": "flat"
+   },
+   {
+    "name": "Sensex · Mon 2 Nov close",
+    "value": "75,692.78",
+    "change": "+1,233.25 (+1.66%) — the level and percentage from Kotak's closing bell, the point change from Business Standard's close report",
+    "direction": "up"
+   },
+   {
+    "name": "Nifty 50 · Mon 2 Nov",
+    "value": "23,440.80",
+    "change": "+387.70 (+1.68%), back above 23,400 from Friday's 23,053.10",
+    "direction": "up"
+   },
+   {
+    "name": "Monday's sectors",
+    "value": "Nifty Oil & Gas +5.95%",
+    "change": "Reliance did most of the work, up around 12% after its Q2 numbers. Against it Nifty Pharma −0.07%, essentially flat. Nifty Bank added only about 0.15% — a 1.68% index day that the banks sat out",
+    "direction": "up"
+   },
+   {
+    "name": "Monday's breadth",
+    "value": "Midcap 100 +1.19%",
+    "change": "Smallcap 100 +0.71%; on the 50-stock cuts, Midcap 50 +1.06% and Smallcap 50 +0.40%. The broader market came along, but at roughly half the frontline's pace",
+    "direction": "up"
+   },
+   {
+    "name": "FII cash · Mon 2 Nov",
+    "value": "+₹3,115 cr",
+    "change": "A second straight session of foreign buying, ₹6,713 cr over the two. Against that, FIIs are carrying 2,33,199 contracts net short in index futures — 31,191 long against 2,64,390 short, with longs cut by 3,246 on the day",
+    "direction": "up"
+   },
+   {
+    "name": "DII cash · Mon 2 Nov",
+    "value": "−₹392 cr",
+    "change": "Domestic institutions sold into the rally, the mirror of Friday. Combined net institutional flow +₹2,722 cr. Provisional exchange figures",
+    "direction": "down"
+   },
+   {
+    "name": "USD/INR",
+    "value": "94.90",
+    "change": "Nearly flat from 94.95, per Reuters — early gains given up. PTI put the provisional close at 94.86, down 10 paise, after an open of 94.90 and an intraday low of 95.04; the two do not agree and neither is final. Dollar index down about 0.5% at 101.5",
+    "direction": "flat"
+   },
+   {
+    "name": "What is priced in",
+    "value": "India VIX 15.50",
+    "change": "Up 1.31% from 15.30 even as the index rallied, having traded 14.54 to 15.92. Brent fell more than 4% to $108.30, its lowest since 21 October, on hopes of a deal to end the Iran war. US midterms are today",
+    "direction": "flat"
+   }
+  ],
+  "stories": [
+   {
+    "headline": "Indian factories grew a little slower in October, and the number worth reading is the one on prices: output-price inflation is the weakest in nearly four years",
+    "url": "https://www.maritimegateway.com/indias-manufacturing-pmi-eases-to-54-7-in-october-but-export-orders-hit-a-six-month-high/",
+    "source": "Maritime Gateway on the S&P Global release, 3 November",
+    "subject": "The final HSBC India Manufacturing PMI for October 2026 came in at 54.7, down from 55.1 in September, with new export orders at a six-month high and selling-price inflation the slowest in nearly four years.",
+    "bullets": [
+     "The headline HSBC India Manufacturing PMI, compiled by S&P Global, eased to 54.7 in October from 55.1 in September. Anything above 50 is expansion, so this is a fourteenth-month-style story of growth getting marginally less brisk rather than any turn — output kept rising, just more slowly than in September.",
+     "The split underneath is the interesting part. New export orders grew at their fastest pace in six months while domestic demand slowed. Pranjul Bhandari, HSBC's chief India economist, put it plainly: \"Strong international demand pushed growth of new export orders to a six-month high.\" For a quarter in which the rupee has been near 95 and India has just opened duty-free access to New Zealand, external demand carrying the quarter is a coherent picture.",
+     "Prices are where the release earns a second read. Input cost inflation fell to its lowest since February, and selling-price inflation slowed to its weakest in nearly four years. Manufacturers are not passing on what little cost increase they see — which is good for the headline CPI the RBI watches, and less good for the margins behind the Q2 results now landing.",
+     "The soft spots are confidence and capital goods. Business optimism slipped again and stayed below its long-run average, with only about 18% of firms expecting output to rise over the coming year. Employment rose for a second month but more slowly, and capital goods manufacturers actually cut headcount — the segment that hires when firms expect to build."
+    ]
+   }
+  ]
+ },
+ "trends": [
+  {
+   "tag": "India",
+   "headline": "From Saturday, settling a case with SEBI is arithmetic: a base number times a stage multiplier, and asking at the Supreme Court costs five times what asking voluntarily does",
+   "url": "https://www.corplawupdates.in/updates/sebi-settlement-regulations-2026",
+   "subject": "The SEBI (Settlement Proceedings) Regulations, 2026, notified 6 October and gazetted 7 October 2026, come into force on 7 November 2026, replacing the 2018 regulations with a published formula, a fast-track route and a list of parties who may no longer settle at all.",
+   "subtitle": "Corp Law Updates' reading of notification SEBI/LAD-DOP/2026/318, gazetted 7 October 2026",
+   "bullets": [
+    "The settlement amount is now a stated equation: SA = BA × (S + R + G + A − M), with the bracket floored at 1. The base amount depends on who you are — independent director 2, non-executive director 3, executive director or controlling promoter or KMP 3.5, other natural person 2.5, body corporate or intermediary 4, and a market infrastructure institution 5.5. An exchange pays nearly three times what an independent director does for the same default.",
+    "The stage factor is the behavioural lever, and it is steep. Coming forward voluntarily is 0.20; before a show-cause notice 0.40; after it 0.60; pending before the designated authority 0.80; before the Securities Appellate Tribunal 1.00; before the Supreme Court 1.50. Fighting all the way up and then asking to settle costs 7.5 times the voluntary multiplier. Aggravating and mitigating factors are 0.20 each, capped at five per side, and applying without admitting the violation adds a 0.25 reputation-risk factor — the price of a no-admission settlement is now written down.",
+    "Floors and timers are explicit. Application fee ₹25,000 for a natural person, ₹35,000 otherwise; minimum settlement ₹3 lakh for a first-time applicant, ₹7 lakh otherwise. Ninety days from the show-cause notice to apply, 60 days from a pre-notice settlement notice, demand within 10 days of acceptance, payment within 30. Interest runs at 9% a year, rising to 12% after a final order. Refiling after a rejection or withdrawal costs an extra 20%, and so does carrying an old matter across the commencement date.",
+    "Two structural changes matter more than the arithmetic. A fast-track route handles small and procedural matters — delayed disclosures and filings, generally 30 days to file and pay with a 15-day extension at SEBI's discretion, and anything computed at up to ₹10 lakh with no disgorgement attached. And a list of people can no longer settle at all: wilful defaulters, fraudulent borrowers and fugitive economic offenders, plus matters where an examination or investigation on the same cause of action is still running. Confidentiality-based cooperation, by contrast, can cut up to 90% for the first applicant in the queue, 50% for the second, 25% thereafter."
+   ]
+  },
+  {
+   "tag": "Platforms",
+   "headline": "Apple is adding two boxes to the age-rating questionnaire, and one of them puts every AI companion app at 18+",
+   "url": "https://developer.apple.com/news/?id=2kb4hhnl",
+   "subject": "The age-rating questionnaire gains Shared Location and Dating and Relationships descriptors; declaring the second forces a minimum 18+ rating, and it covers virtual romantic companions.",
+   "subtitle": "Apple Developer news, 2 November 2026",
+   "bullets": [
+    "From 16 November the questionnaire asks two new things. Shared Location covers sharing a real-world location with another person or group. Dating and Relationships covers features that connect real people romantically — and, in the same breath, \"a virtual companion that engages a user in sexual or romantic content\". Declaring the second one sets a minimum age rating of 18+.",
+    "That second clause is the whole story. Apple has not written a new policy about AI companions; it has put them in the same box as dating apps, which already carried the 18+ floor. A chatbot that does romance is now, by classification, an adult product on iOS, and the developer declares it themselves on a form.",
+    "Shared Location is the quieter half and may not move the minimum rating at all in some regions. Brazil is the exception written into the announcement: local regulation requires A16 for Shared Location and A18 for Dating and Relationships, and an app that genuinely deserves lower — Apple's example is location sharing built for parents and children — has to apply to the Ministry of Justice and Public Security for an official rating, which then displays on the Brazilian App Store.",
+    "The timetable is the part to diary. You answer the new declarations from 16 November, and on any update or questionnaire change after that. Every app on the store must have both completed by 12 January 2027. This is separate from the 16 October guidelines revision, which added 2.3.14 on creative assets and 2.5.19 on hidden, dormant or undocumented features, and extended content moderation explicitly to AI-generated nonconsensual intimate imagery."
+   ]
+  },
+  {
+   "tag": "Wildcard",
+   "headline": "A giant crane has been extinct since the Ice Age for 155 years, on the evidence of bone size alone. Its DNA says it is the bird standing in a European field this morning",
+   "url": "https://phys.org/news/2026-10-year-mystery-identity-extinct-giant.html",
+   "subject": "Ancient DNA from 18 crane bones shows that Grus primigenia, described as an extinct species in 1871 from bone size, was a larger form of the living common crane, raising the possibility that past extinction counts are inflated.",
+   "subtitle": "Phys.org, 28 October 2026, on a Royal Society Open Science paper from Bournemouth University and the Centre for Palaeogenetics, Stockholm",
+   "bullets": [
+    "Alphonse Milne-Edwards named Grus primigenia in 1871 from bone fragments in caves in southern France. The bones are more than 20,000 years old, from the end of the last ice age, and they are big — bigger than any crane now living in Europe. For a century and a half that size difference was the species.",
+    "John Stewart of Bournemouth University, working with the Centre for Palaeogenetics in Stockholm, pulled DNA from 18 crane bones found in England, Wales, France, Germany and the Balearics. The genetics come back as common crane, Grus grus, which is not extinct and not rare. The team \"suspected these large cranes were not extinct and instead represented larger, modern European common cranes\", and Stewart says the DNA \"has given us a more accurate picture of what they represent\".",
+    "The likely source of the original error is almost funny: cranes are sexually dimorphic, with large males and smaller females, so a bone assemblage of one species can look like two to anyone measuring rather than sequencing. Every extinct bird named from bone dimensions alone inherits that risk.",
+    "Stewart's conclusion is the uncomfortable one. \"It may be that we have overestimated the number of extinctions in the past.\" The replacement puzzle is harder than the one it solves: if these are common cranes, the species has shrunk substantially since the Ice Age and nobody knows why. Wetland drainage and changing land use are suspected, and unproven."
+   ]
+  }
+ ],
+ "research": [
+  {
+   "tag": "Industry · Google Research",
+   "title": "Permissions were designed for software that does what you asked. Google's argument is that agent privacy has to be judged on whether a flow of information was appropriate, not whether it was allowed",
+   "url": "https://research.google/blog/open-and-emergent-problems-in-agentic-privacy-and-security-a-contextual-angle/",
+   "subject": "A workshop report proposes judging an autonomous agent's information flows by contextual integrity and appropriateness rather than by static permissions.",
+   "subtitle": "Eugene Bagdasarian and Marco Gruteser, Google Research, 5 October 2026, reporting a workshop with more than 50 academic and industry co-authors",
+   "bullets": [
+    "The reframing is the contribution. Instead of asking what an agent is permitted to touch, they take Contextual Integrity — privacy as \"appropriate information flow\", parameterised by actors, types of information and transmission principles — and extend it to \"contextual security\", meaning whether the agent's actions were appropriate. The worked example is deliberately mundane: you will share a gift shopping list with a shopping assistant and not with the family it is for. No permission model expresses that.",
+    "The failure list is specific and reads like a bug report on the whole category. Natural-language and image inputs make \"expected behaviour\" undefinable and leave the door open to prompt injection. Generative planning produces probabilistic control flows that conventional testing cannot cover. Long-running tasks and sub-agent delegation erode oversight and produce confirmation fatigue. And there is a semantic gap: \"protect my data while organising my travel for a conference\" does not decompose into a set of low-level permissions, even though the agent will need to book flights, apply for a visa and email organisers.",
+    "They are blunt about what this kills. \"Traditional methods like manual permissions or expert-written policies cannot scale to a future with AI agents autonomously performing multiple complex, long-running tasks.\" Notice-and-choice consent assumes decisions are foreseeable and fine-grained, which is exactly what probabilistic agent behaviour is not.",
+    "The proposal is a contextual policy engine inside a supervisor layer, generating policy dynamically and checking whether a flow is appropriate before information leaves the user's workspace — including for tools the agent discovers at runtime — backed by sandboxing, model-level reasoning, user controls, multi-agent guardrails and ecosystem governance. Also proposed: Agent Gym, standardised open-source multi-agent environments for simulating cascading interactions and collusion safely. There are no quantitative results here; it is an agenda paper, and worth reading as one."
+   ]
+  },
+  {
+   "tag": "Academia · U. Washington, Penn, UC San Diego & PNNL",
+   "title": "Every headline about a model solving a famous conjecture is a selected sample. Somebody finally ran 200 conjectures picked at random",
+   "url": "https://arxiv.org/abs/2610.40382",
+   "subject": "Beyond Selected Breakthroughs: a dataset of conjectures randomly sampled from recent arXiv mathematics papers, used to measure what language models actually produce when nobody chooses the problem.",
+   "subtitle": "Helen Jenne, Davis Brown, Jesse He and Henry Kvinge; arXiv:2610.40382, 29 October 2026",
+   "bullets": [
+    "The methodological point is simple and overdue. Reports of models resolving long-standing open problems are real, but they are the survivors of an unrecorded selection process — somebody chose the problem, often someone who suspected it was tractable. The authors built OpenConjecture, a dataset of conjectures scraped from mathematics papers posted to arXiv since February 2026, and sampled 200 of them at random, with no problem-specific guidance and three passes each.",
+    "Candidate solutions came back for roughly 60% of the sampled conjectures, and counterexamples were about 1.3 times as common as proofs. That ratio is itself a finding: it is much easier to break a conjecture than to prove one, so an unfiltered sample tilts towards refutation in a way the breakthrough stories do not.",
+    "The failure mode they document is not wrongness, it is misreading. Some resolutions satisfy the literal statement while missing what the author meant — the example given is offering the trivial group as a counterexample. Several proofs follow existing results closely enough that the contribution is attribution rather than mathematics; some do show at least moderate novelty. The team analysed the candidate solutions by type, novelty, citation behaviour and whether the resolution exploits an error or an underspecification in the conjecture, rather than sending them to experts for verification.",
+    "The recommendation follows from the taxonomy. An evaluation that scores only correctness will reward a model for the trivial group and for a restated lemma. The authors argue you also have to score fidelity to the intended statement, attribution of prior work, and the nature of the contribution — which is a harder benchmark to build, and the reason the current numbers read better than they are."
+   ]
+  }
+ ],
+ "wild": [
+  {
+   "tag": "Real estate · Mumbai",
+   "headline": "A developer unveiled a project logo by floating it on the Arabian Sea at 600 feet across, on 2,500 pontoons, for two nights",
+   "entities": [
+    "Godrej Properties",
+    "OAP Mediatech"
+   ],
+   "subject": "Godrej Properties revealed the Godrej Bandra Bay logo as a 30,000 sq ft floating formation in the sea off Bandra Reclamation, visible 26–27 October 2026.",
+   "subtitle": "Media4Growth, 28 October 2026",
+   "bullets": [
+    "The reveal was more than 30,000 square feet of illuminated canvas assembled on over 2,500 pontoons in the water off Bandra Reclamation, facing the Bandra–Worli Sea Link. It was visible from the evening of 26 October until the end of 27 October, then taken apart. Every element was planned in CAD drawings first, which is not a sentence usually required by an advertisement.",
+    "Abhijit Sengupta, chief executive of OAP Mediatech, who conceptualised and built it, reached for the only comparison available: \"Imagine a logo stretching over 600 feet across the water, nearly five Airbus A320 aircraft lined up end to end!\"",
+    "Godrej Properties' Subhasish Pattanaik gave the rationale without much padding: \"Rather than a conventional reveal of our project logo, we imagined a moment that would engage with the city itself.\" The project is being developed with RC Group, and the sea-facing site is the point — the advertisement occupied the view the flats are being sold on.",
+    "It was not a standalone stunt. More than 100 billboards and hoardings went up across Mumbai alongside it, plus influencer and community-page amplification. The floating logo is the thing people photographed; the hoardings are what the money mostly went on."
+   ]
+  },
+  {
+   "tag": "Museums · Amsterdam",
+   "headline": "The Rembrandt House Museum has put a working tattoo studio inside itself, and is giving one man a full back piece of a 1633 etching for free",
+   "entities": [
+    "Rembrandt House Museum",
+    "Schiffmacher & Veldhoen",
+    "St. Catherina"
+   ],
+   "subject": "Museum Rembrandthuis in Amsterdam opened a pop-up tattoo studio from 26 October to 7 November 2026 as the second edition of The Poor Man's Rembrandt Project.",
+   "subtitle": "The Art Newspaper, 26 October 2026",
+   "bullets": [
+    "From 26 October to 7 November, Museum Rembrandthuis is running a tattoo studio on the premises, staffed by Schiffmacher & Veldhoen of Amsterdam and St. Catherina of Antwerp. You can book a session or simply walk in. A smaller Rembrandt-derived tattoo costs €100 to €300. It is the second edition; the first ran in 2023, under the same name, The Poor Man's Rembrandt Project.",
+    "The centrepiece is a full back replica of Rembrandt's 1633 etching The Descent from the Cross, about 20 hours of work, going on Bo Kwakernaak, 28, who answered an Instagram call and is not paying for it. Roughly ten hours are already done. The rest will be finished in public, at a late-night opening on 7 November.",
+    "Director Milou Halbesma declined the obvious reading in advance: the project is not a gimmick, \"This is all about content\", and the museum is one of craftsmanship — the aim being to open up the craft of Rembrandt and his students as widely as possible, with a tattoo from one of the city's leading practitioners as the vehicle.",
+    "Henk Schiffmacher's justification is the better one, because it is art-historical rather than promotional: the etching suits the medium for its dramatic composition, and Rembrandt's Amsterdam was full of tattooed sailors. The museum is not borrowing a modern fashion so much as pointing out that the ink and the etchings were contemporaries."
+   ]
+  },
+  {
+   "tag": "Automotive · software",
+   "headline": "A carmaker turned every vehicle it has ever sold into a Ghostbusters car at 4am, without sending an update to a single one of them",
+   "entities": [
+    "Rivian"
+   ],
+   "subject": "Rivian shipped Halloween Mode inside its 2026.36 software update on 7 October 2026 and activated it fleet-wide on 9 October at 4am local time, switching it off again on 2 November.",
+   "subtitle": "Rivian's own engineering story, 15 October 2026",
+   "bullets": [
+    "The software arrived quietly in the 2026.36 update on 7 October. Nothing happened. Then at 4am local time on 9 October, Rivian switched Halloween Mode on across the whole fleet, the mobile app, the watch app and its Adventure Network chargers — \"without sending a new update to any vehicle\". It switched off again on 2 November the same way. Twenty-four days, no rollout.",
+    "What it does: tap the Ghostbusters icon on the centre screen, ask the assistant, or pick Trick or Treat in the phone app, and the exterior lights become a light show, the speakers run a haunted soundtrack, the displays take over, and Gear Guard joins in. The lock chirp changes — first-generation R1s get the Ecto-1 siren; second-generation R1s and R2s choose between Ecto-1, Proton Pack and a chant. A motion setting makes the car react to someone walking past. There is a scavenger hunt whose clue cards lead to characters hidden in drive-mode and camera submenus, and a Whac-A-Mole variant playable only while parked.",
+    "The reason it is one tap rather than twelve teams is architectural. Three in-house zonal controllers on an ethernet backbone replace dozens of separate ECUs, so lights, audio and screens are addressable together. The R2 carries 2.3 miles less wiring and 60% fewer in-line connectors than the previous generation. R1 Gen 1, R1 Gen 2 and R2 all run RivianOS 2, which is why one feature reaches everything at once.",
+    "The genuinely odd part is the business logic. A company that ships near-monthly software updates spent engineering time on a seasonal costume for a car, and then demonstrated that it could stage, arm and detonate a fleet-wide feature on a schedule. The Ghostbusters licence, with Bill Murray in the advertisement, is the visible half. The remote arming is the capability being shown off."
+   ]
+  }
+ ],
+ "learn": {
+  "title": "The Tour de France was invented to kill a newspaper, and the leader's jersey is yellow because the newspaper that invented it was printed on yellow paper — which may itself be a cover story.",
+  "subject": "L'Auto founded the Tour de France in 1903 as a circulation weapon against Le Vélo, the rivalry having begun with the Dreyfus affair; L'Auto's yellow newsprint is the official reason for the maillot jaune, first worn by Eugène Christophe in 1919, though Chris Sidwells argues the supplier simply had 15 jerseys in yellow.",
+  "tags": [
+   "Origin stories",
+   "Cycling",
+   "Newspapers"
+  ],
+  "body": [
+   "Le Vélo was France's sports daily, 80,000 copies a day, printed on green-tinted paper, and it had done well by inventing bicycle races — Paris–Roubaix in 1896, and the popularising of Bordeaux–Paris. Then came the Dreyfus affair. Its director, Pierre Giffard, was a Dreyfusard. Several of the manufacturers paying for his advertising space were emphatically not, among them Comte Jules-Albert de Dion, who in 1899 hit President Émile Loubet with a walking stick at the Auteuil racecourse and spent fifteen days in jail for it. Giffard covered the incident as the assault it was. De Dion, Adolphe Clément and Édouard Michelin pulled their advertising out.",
+   "In 1900 those advertisers commissioned Henri Desgrange to run a rival paper, L'Auto-Vélo, printed on yellow-tinted stock so that nobody could mistake it on a news-stand for the green one. Le Vélo sued over the name and won on 16 January 1903; the paper became simply L'Auto, and its circulation was not good. The answer, that same year, was to invent a bicycle race around the whole of France and report on it exclusively. It worked. L'Auto's sales climbed at Le Vélo's expense, and Le Vélo stopped publishing in 1904. L'Auto survived until 1944, when it was reorganised into L'Équipe. So the most famous annual sporting event in Europe began as the marketing budget of a newspaper founded by men who were angry about a treason trial.",
+   "The jersey came later. From 1903 to 1919 the race leader wore a green armband, which is not much use to a crowd at the roadside, so in 1919 Desgrange handed Eugène Christophe a yellow jersey on stage 14, from Metz to Dunkirk — yellow, the official history says, for the colour of the paper. Chris Sidwells thinks that is a tidy story told afterwards. Desgrange needed fifteen jerseys in assorted sizes and all one colour, and the supplier had fifteen only in yellow, because yellow was the colour nobody bought. Both accounts end in the same place, which is the nice part: the most recognisable garment in professional sport is yellow either because of a newsprint tint chosen to annoy a competitor, or because it was the shade left on the shelf."
+  ]
+ },
+ "ideas": {
+  "prompt": "Ten excuses to throw a party",
+  "items": [
+   {
+    "text": "The evening you finally finish a thing you have been not-finishing for a year. Guests must bring their own unfinished thing and say one sentence about it."
+   },
+   {
+    "text": "The day the clocks change, which nobody marks and everybody feels."
+   },
+   {
+    "text": "A sock-pairing party: everyone brings the orphan socks, the odds get matched badly on purpose, and the worst pair wins."
+   },
+   {
+    "text": "The anniversary of the day you moved into the flat, celebrated in the flat, with a tour."
+   },
+   {
+    "text": "A re-reading party: six people, one book everyone read at school, and an argument."
+   },
+   {
+    "text": "The last warm evening of the year, declared by you, on about four hours' notice."
+   },
+   {
+    "text": "A rotation party for a game nobody can organise — badminton, carrom, doubles anything — with the running order written on a board on the wall so the group chat stays out of it.",
+    "why": "r/AppIdeas is full of people building doubles-rotation boards for their own friend groups; the real problem is that somebody has to host."
+   },
+   {
+    "text": "A party to use up the thing in the freezer that has been there since you bought the freezer."
+   },
+   {
+    "text": "The halfway point of a long project, which is the moment people actually need feeding."
+   },
+   {
+    "text": "A party for someone else's good news, thrown before they get round to it."
+   }
+  ]
+ }
+}
