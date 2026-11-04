@@ -1,0 +1,319 @@
+{
+  "date_line": "Wednesday, 4 November 2026",
+  "issue": 1,
+  "preheader": "Wigner on why physics takes longer to learn than a career lasts; make a failing Agent SDK hook actually block; a developer pulls his servers off Ubuntu over an unpatched 9.8; Postman installs itself into your coding agent; the Astra weight-editing post gets a careful rebuttal; how to archive a website you love before it becomes a gambling ad; a root shell on a car stereo to move the clock one hour; Tuesday's fourth straight rally, Sensex 76,917.85; October GST up 22.9% on imports, not shoppers; Marvell bets $115 billion on optics and loses 13% doing it; the rarest B-meson decay yet measured, and it is boringly Standard Model; agents do medicinal chemistry in an hour; two JEPAs trained on different senses land on the same representation; a 180-metre moustache carved into the outback for the space station to photograph; a signable GTA VI peace treaty; truffle sauce dispensed through a window; and why rain smells like that.",
+  "quote": {
+    "text": "Physics is becoming so unbelievably complex that it is taking longer and longer to train a physicist. It is taking so long, in fact, to train a physicist to the place where he understands the nature of physical problems that he is already too old to solve them.",
+    "author": "Eugene Paul Wigner",
+    "source_url": "https://www.goodreads.com/quotes/tag/complexity",
+    "note": "The usual complaint about a hard field is that it is hard. Wigner points at something worse and more structural: the training time and the productive window are two curves moving in opposite directions, and at some point they cross. It is not a remark about students being slow. It is a remark about what happens to any body of knowledge that keeps accumulating without ever being compressed — which is why the real work of a textbook, a good abstraction or a well-named library is not explaining the field but shortening it."
+  },
+  "agent_craft": {
+    "items": [
+      {
+        "text": "If you guard anything with an Agent SDK hook, know that a callback which throws used to fail open — the action went ahead anyway. Claude Code 2.1.317 adds `onFailure: \"block\"` for hook callbacks, \"so a callback that fails blocks the action instead of letting it run\". Set it on every hook you wrote as a safety check, not just as a log.",
+        "source": "Anthropic, Claude Code changelog, 2.1.317 (3 November 2026)",
+        "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
+      }
+    ]
+  },
+  "hn": [
+    {
+      "title": "WTF Ubuntu?",
+      "url": "https://chalmovsky.com/posts/wtf-ubuntu",
+      "hn_url": "https://news.ycombinator.com/item?id=50337608",
+      "points": 1602,
+      "comments": 665,
+      "bullets": [
+        "The post is one developer's breakup letter, and the specific grievance is CVE-2026-98432, a remotely exploitable bug in the Linux kernel's TCP code rated CVSS 9.8 and present since 2016. Debian shipped a patch on 16 October. As of the author's check, timestamped 2 November 14:48 UTC, every supported Ubuntu release including the LTS lines was still listed as Vulnerable — more than two weeks later, and six days after a working root exploit existed.",
+        "The volunteer-versus-vendor comparison is what gives it teeth. Debian, Arch and Alpine, none of which sell you anything, had the fix. Canonical, which sells security subscriptions and markets \"timely patches for critical vulnerabilities\", did not. The author quotes that phrase back at the page it appears on.",
+        "His resolution is not a migration plan, which is the honest part: he took his Ubuntu servers offline because he did not have time to move the services and data off them. He notes he never liked Ubuntu on the desktop and only ran it on servers because VPS providers default to it — which is the real distribution mechanism for a default, and the real reason this thread got 665 comments."
+      ]
+    },
+    {
+      "title": "Postman silently auto-installs AI plugins and attempts to share all API data",
+      "url": "https://github.com/postmanlabs/postman-app-support/issues/14370",
+      "hn_url": "https://news.ycombinator.com/item?id=50354960",
+      "points": 993,
+      "comments": 329,
+      "bullets": [
+        "The report, filed on 25 October against Postman desktop 12.33.4 on macOS, is that opening the app wrote itself into the user's coding agents. It added a marketplace entry and an enabled Postman plugin to `~/.codex/config.toml`, enabled a plugin in `~/.claude/settings.json`, installed a CLI at `~/.local/bin/postman`, and registered a remote MCP server at `https://mcp.postman.com/mcp` — which then failed with \"Auth required\". The install log shows a source of `auto-existing-upgrade` and a flag named `autoInstall.plugin.existing-user`, with no opt-in prompt recorded.",
+        "The sharpest detail is the hook. Postman installed a SessionStart hook firing on `startup`, `clear` and `compact` that injects instructions routing API work to Postman's skills, and the reporter says the installer also writes `trusted_hash` records — the component approving its own hook. Investigation in the thread found Codex gates hooks through `[hooks.state]` records, while Claude Code runs settings-file hooks without a trust prompt in `-p` runs.",
+        "On the headline's second half, the reporter is scrupulous: the filing \"does not claim to establish data exfiltration\" and presents no evidence anything was uploaded. The complaint is unconsented integration and silently modified agent instructions.",
+        "Postman replied on 3 November, saying it bundles the CLI and plugins because users struggled to install them separately, that the download page and update flow mention this, and that it will \"make the opt-in clearer, especially for existing users\" while reviewing hook approval and session-start behaviour. The thread's reply, repeatedly, is that opt-in is not a thing you make clearer for existing users."
+      ]
+    },
+    {
+      "title": "The 'Astra can read and write weights to improve Qwen' post is misleading",
+      "url": "https://honnibal.dev/blog/astra-read-write-misleading",
+      "hn_url": "https://news.ycombinator.com/item?id=50351111",
+      "points": 883,
+      "comments": 190,
+      "bullets": [
+        "Matthew Honnibal's objection is narrow and worth the narrowness: he does not dispute the Qwen result, he disputes that one technique produced all of the results. The abstract's claim that a model can tell what a network was trained to do \"just by looking at the raw weights\" holds for experiments 1, 2 and 4 — networks of 17,000 to 172,000 weights, no tools, no running the network. It does not describe the headline experiment.",
+        "Experiment 8, the one that took MATH-500 from 7.9% to 48.1% by editing 0.016% of Qwen3.5-0.8B, used Python and ran the model on up to 50 batches of practice problems. So did experiment 6 (a 9x9 Go network) and 7b and 8b. Reading the weights was not how that worked; it was an engineer-shaped loop of measure, hypothesise, edit, measure.",
+        "He also re-reads the footnotes on the game-playing comparison. Experiment 5 was presented as beating PPO at 100 million steps, but the footnote says it beats PPO-500M on Breakout only (517 against 25) while losing Seaquest 53 to 89 and Asterix 53 to 55. Experiment 5 also started from zero weights — there was nothing to read. Experiment 7a failed; 8b, on Gemma 3, failed.",
+        "His closing position is the generous one: an AI doing what an ML engineer does, with code, on real weights, is a notable capability. Bundling it with the raw-weight experiments is what implies a single faculty that understands networks all the way down, and that part is not in evidence. This is a critique of the write-up, not a reproduction attempt."
+      ]
+    },
+    {
+      "title": "If you love a website, back it up",
+      "url": "https://blog.mistys-internet.website/post/2026/10/29/if-you-love-a-website-back-it-up/",
+      "hn_url": "https://news.ycombinator.com/item?id=50336518",
+      "points": 650,
+      "comments": 151,
+      "bullets": [
+        "The argument is that web preservation is not only the Internet Archive's job, and the author — who works in web archiving — makes it with a confession. teapuppies.com was a fansite for Ochaken, cartoon dogs with tea leaves for ears, online since 2004 and essentially unchanged since 2005. She went back to archive it and the site was gone; the domain was serving online gambling ads.",
+        "The practical content is a tool ladder. The ArchiveWeb.page browser extension or standalone app for a page, a small site or a social media profile: start recording, click the dynamic bits, visit the other pages, stop, then check the capture in the dashboard. Browsertrix, which drives a real browser to crawl, for anything large — scoped to a domain, to a directory like `/episodes/`, or to one page plus what it links to. ReplayWeb.page to play an archive back, embeddable in any page with a little JavaScript and no server.",
+        "The formats matter for the reason you would not guess: WARC stores full request and response data including headers, and WACZ wraps WARC files with metadata, which is what makes a JavaScript-heavy site replay rather than just screenshot. Her last instruction is the archivist's one — keep the WACZ, and give copies to other people, because one copy is not an archive.",
+        "She discloses that the tools are her employer's. Most are free; Browsertrix is the paid one, with a seven-day trial and then pay-per-use, and it is open source if you would rather host it."
+      ]
+    },
+    {
+      "title": "Jailbreaking my car's navigation system just so I can change the time",
+      "url": "https://blog.nns.ee/2026/11/02/renault-hack/",
+      "hn_url": "https://news.ycombinator.com/item?id=50339288",
+      "points": 590,
+      "comments": 237,
+      "bullets": [
+        "Estonia went off summer time, so the clock in a 2014 Renault Latitude was an hour out. The head unit is a TomTom Carminat LIVE, codename `beaumont`, a Samsung S5P6440 running TomTom's Linux on kernel 2.6.28.10. There was no \"Set time\" option, because the menu entry that points at the Settings applet lives on the navigation SD card, and without a valid card the unit cannot reach Settings at all. A genuine card was about 60 EUR shipped; a copied one failed because the system checks the card's CID and CID-based file signatures.",
+        "Everything sensible failed first. The `ttsystem` update image is an ext3 root filesystem with 40 trailing bytes that look like a DSA/SHA-1 signature, and modified images were rejected with no recovery partition to fall back on. A QEMU emulation with a patched 2.6 kernel had to ignore reboot syscalls because the unit rebooted every three seconds. Partitions were read-only or `noexec`. Fuzzing the GIF and BMP decoders with Unicorn produced out-of-bounds reads and no useful writes.",
+        "The way in was the `core_pattern` trick borrowed from kernel exploitation. The unit's `master.script` parser has a `LOG` command that truncates a file and writes one line, and its `LOGFILE` path accepts `../`. So: point `LOGFILE` at `../../proc/sys/kernel/core_pattern`, write `|/bin/sh /media/sdcard/payload.sh` into it, then use `SHEX` to launch `/bin/dbus-monitor`, which aborts when there is no system bus. The kernel handles the coredump by piping it to the named program, as root — and because `/bin/sh` lives on the rootfs, the `noexec` mount on the SD card never applies.",
+        "The payoff, after a full `dd` backup of the eMMC: `/mnt/flash/settings.dat` stores the local offset in minutes, because the unit takes time from GPS. The value was 180. He changed it to 120."
+      ]
+    }
+  ],
+  "markets": {
+    "indices": [
+      {
+        "name": "Pre-open · Wed 4 Nov",
+        "value": "Last close: Tue 3 Nov",
+        "change": "Indian markets open at 9:15 IST this morning, so nothing below is today. These are Tuesday's session — the fourth straight rising day.",
+        "direction": "flat"
+      },
+      {
+        "name": "Sensex · Tue 3 Nov close",
+        "value": "76,917.85",
+        "change": "+1,225.07 (+1.62%), per Upstox's market wrap and Kotak Neo's closing bell",
+        "direction": "up"
+      },
+      {
+        "name": "Nifty 50 · Tue 3 Nov",
+        "value": "23,810.85",
+        "change": "+370.05 (+1.58%), a fourth consecutive gain",
+        "direction": "up"
+      },
+      {
+        "name": "Tuesday's sectors",
+        "value": "Nifty FMCG +3.65%",
+        "change": "The top sectoral gainer by a distance, with Realty +2.33%, Private Bank +1.98%, Auto +1.71% and Consumer Durables +0.95%. Only two sectors fell: PSU Bank −1.27% and Metal −0.14%. Nestlé India +4.47%, Tata Consumer +4.29% and Asian Paints +3.99% led; Power Grid −3.04%, SBI −1.70% and ONGC −1.13% lagged",
+        "direction": "up"
+      },
+      {
+        "name": "Tuesday's breadth",
+        "value": "Midcap 100 +1.06%",
+        "change": "Smallcap 100 +0.31%. The broader market came along but at well under the frontline's pace, which is the shape of a rally led by large-cap consumer names. NSE-listed market capitalisation closed at ₹483.1 lakh crore, up ₹4.71 lakh crore on the day",
+        "direction": "up"
+      },
+      {
+        "name": "FII cash · Tue 3 Nov",
+        "value": "+₹6,837 cr",
+        "change": "Foreign institutions bought for a third straight session, and doubled Monday's figure of +₹3,115 cr. Provisional exchange data",
+        "direction": "up"
+      },
+      {
+        "name": "DII cash · Tue 3 Nov",
+        "value": "−₹3,679 cr",
+        "change": "Domestic institutions sold into the rally again, and harder than Monday's −₹392 cr. Combined net institutional flow +₹3,158 cr. Provisional",
+        "direction": "down"
+      },
+      {
+        "name": "USD/INR",
+        "value": "94.75",
+        "change": "Up 9 paise from Monday's 94.84, a third straight rupee gain. It opened at 94.68 and touched 94.60. The dollar index was at 101.69, up 0.07%, per PTI",
+        "direction": "up"
+      },
+      {
+        "name": "Commodities",
+        "value": "Brent ~$105.5",
+        "change": "PTI put Brent futures at $105.67, up 0.86%; Kotak Neo had the January 2027 contract at $105.46 and WTI December at $97.34 around 15:36 IST, firmer after reports of a US strike on Iran's Qeshm Island. On MCX, December gold closed near ₹1,38,398 per 10g (−1.28%) and December silver near ₹1,77,085 per kg (−3.64%)",
+        "direction": "flat"
+      },
+      {
+        "name": "Due this morning",
+        "value": "October Services PMI",
+        "change": "The final HSBC India Services PMI for October is embargoed to 10:30 IST today, so it is not in this issue. The flash estimate was 56.2 against September's final 55.2; September's release noted input-cost pressure at a ten-month low",
+        "direction": "flat"
+      }
+    ]
+  },
+  "trends": [
+    {
+      "tag": "India",
+      "headline": "India's GST take jumped nearly 23% in October, but domestic revenue grew 15.8% while imports grew 42.2% — the strength is at the port, not the till",
+      "url": "https://taxguru.in/goods-and-service-tax/gst-collections-october-2026-rise-22-9-percent-rs-2-31-lakh-crore.html",
+      "subject": "October 2026 GST gross collections of Rs 2,31,290 crore, up 22.9% year on year, with import IGST up 42.2% to Rs 72,246 crore against domestic growth of only 15.8%, and net customs GST up 56.2%.",
+      "subtitle": "GSTN release of 1 November 2026, data as on 31 October 2026, tabulated by TaxGuru",
+      "bullets": [
+        "₹2,31,290 crore gross, against ₹1,88,125 crore in October 2025. Net ₹2,03,356 crore, up 25.6%. Both are records for the month and both are provisional.",
+        "Inside that: domestic gross up 15.8% to ₹1,59,044 crore; import gross up 42.2% to ₹72,246 crore; net customs GST up 56.2%. Refunds grew 6.5%, far slower than collections, which is part of why the net growth outruns the gross.",
+        "The cumulative numbers remove the single-month noise and keep the shape. April–October 2026-27 gross is ₹14,77,569 crore, up 13.2% on ₹13,05,213 crore. Domestic inside that: +7.4%. Imports: +29.3%. Seven months is long enough that this is a composition story rather than a timing one.",
+        "Maharashtra topped state domestic collections at ₹35,150 crore, up 13%, with Karnataka (₹15,922 crore, +18%), Gujarat (₹13,516 crore, +16%), Tamil Nadu (₹11,661 crore, +3%) and Haryana (₹11,529 crore, +17%) behind it. Tamil Nadu at +3% against Haryana at +17% is the sort of spread that does not show up in the headline at all."
+      ]
+    },
+    {
+      "tag": "Industry",
+      "headline": "Marvell is paying about $115 billion in stock for Lumentum, will not close it until 2028, and both stocks fell on the news",
+      "url": "https://www.sec.gov/Archives/edgar/data/0001633978/000119312526442758/d163169dex991.htm",
+      "subject": "Marvell will pay 4.500 of its own shares for each Lumentum share in an all-stock optical-networking merger implying roughly $115 billion, announced 3 November 2026 and not completing before the first half of 2028.",
+      "subtitle": "Lumentum Holdings Form 8-K, exhibit 99.1, joint announcement of 3 November 2026",
+      "bullets": [
+        "The terms, from the filing: a fixed 4.500 Marvell shares for each Lumentum share, implying roughly $1,132 a share and an enterprise value of about $115 billion. The premium is 23.9% against each company's unaffected close on 28 October 2026, the last trading day before the rumours started. Marvell holders end with about 67% of the combined company fully diluted, Lumentum holders about 33%.",
+        "The thesis is one sentence from Matt Murphy: \"AI infrastructure is undergoing a fundamental architectural shift toward optical connectivity\". The companies put the combined addressable market at $550 billion and claim a line of sight to more than $1 billion in annual run-rate cost synergies. No revenue figures appear in the announcement for either side.",
+        "The thing worth noticing is the clock. Expected close is the first half of calendar 2028 — eighteen months to two years of regulatory review, during which the exchange ratio is fixed and the AI-optics market that justifies the price does whatever it is going to do. The filing notes Marvell narrowed its fiscal Q3 2027 guidance range to plus or minus 2% from plus or minus 5%, which is a small act of reassurance aimed at exactly that gap.",
+        "Both stocks fell sharply on the day. An acquirer dropping double digits on announcement is the market pricing the dilution and the two-year gap rather than the $550 billion."
+      ]
+    },
+    {
+      "tag": "Wildcard",
+      "headline": "A B⁰ meson decaying into two muons has now been seen by one experiment on its own — the rarest B decay yet measured, and its rate is exactly what the Standard Model said",
+      "url": "https://lhcb-outreach.web.cern.ch/2026/11/03/evidence-for-the-decay-b0%E2%86%92%CE%BC%CE%BC-and-improved-measurements-of-bs0%E2%86%92%CE%BC%CE%BC/",
+      "subject": "LHCb reports the first single-experiment evidence for the B0 to mu+mu- decay at 3 sigma, 3.2 sigma once Run 1 and Run 2 are folded in, together with the world's most precise B0s to mu+mu- branching fraction and lifetime; everything agrees with the Standard Model.",
+      "subtitle": "LHCb collaboration, CERN seminar and arXiv:2611.00230, 3 November 2026",
+      "bullets": [
+        "The dataset is 18 fb⁻¹ of proton-proton collisions at 13.6 TeV taken in 2024 and 2025 with the upgraded LHCb detector. The significance is 3σ from Run 3 alone, rising to 3.2σ once Run 1 and Run 2 are folded in. The paper has 1,195 authors.",
+        "Why this decay is hunted: the Standard Model predicts the rate precisely and it is tiny — the Birmingham group, part of the collaboration, puts it at about one in ten billion of these particles. Extensions of the Standard Model involving extra Higgs bosons, Z′ bosons or leptoquarks would shift it noticeably. So the branching fraction is less a measurement than a filter on theories.",
+        "The B⁰ version is harder than the B⁰s one for a double reason the write-up spells out: its Standard Model rate is about 30 times smaller, but B⁰ mesons are produced four times more abundantly, leaving a yield ratio of roughly seven. It has taken from the first B⁰s evidence at 3.5σ in November 2012, through observation at 6.2σ with CMS in May 2015 and a single-experiment observation at 7.8σ in February 2017, to get here.",
+        "The result agrees with the Standard Model — which is the unglamorous outcome and the useful one. An earlier joint LHCb/CMS analysis reported evidence for B⁰→μ⁺μ⁻ that later analyses did not confirm; this time the central value makes it the rarest B decay measured. The effective B⁰s lifetime, 1.60±0.16±0.01 ps, also matches prediction, which closes off a different class of models — ones that leave branching fractions alone and only bend the decay-time behaviour."
+      ]
+    }
+  ],
+  "research": [
+    {
+      "tag": "Industry · Google DeepMind",
+      "title": "Officers in three English councils spent 58% less time on loft conversions and conservatories, and signed off more than 70% of the drafted reports without changing a word",
+      "url": "https://deepmind.google/blog/speeding-up-planning-decisions-with-ai/",
+      "subject": "PlanAssist, a Gemini-based tool for householder planning applications piloted in Barnet, Camden and Dorset since June, cut average officer assessment time by up to 58% and had over 70% of its drafted reports approved unedited; it now enters a 12-month beta expanding to 15 councils.",
+      "subtitle": "Owen Larter and David Thacker, Google DeepMind, 31 October 2026, with the UK government, Google Cloud and Faculty",
+      "bullets": [
+        "The target is deliberately unglamorous. Householder applications — extensions, loft conversions, conservatories — take up as much as 70% of a planning officer's workload, and almost none of it is the judgement the job is for. PlanAssist validates the documents and architectural drawings, checks the application against heritage constraints such as tree preservation orders and against local and national policy, looks for issues and objections already raised, and drafts a cited assessment report the officer edits.",
+        "The pilot numbers, from Barnet, Camden and Dorset since June: average officer time per householder assessment down by up to 58% — more than halved — and more than 70% of the generated reports approved with no edits at all. That second figure is the one that matters, because an unedited report is the only version of this that actually saves anyone time.",
+        "It is a cited-draft design rather than a decision system, and the write-up is careful about it: every assessment is reviewed and approved by a qualified officer, and the decision stays with them. Built with the UK government, Google Cloud and Faculty.",
+        "Next is a 12-month beta on live applications, adding twelve more councils in three cohorts to reach fifteen, metropolitan and rural. If it holds, the government intends to offer it to every council in England in 2027. The caveat is the usual one for pilots: three councils self-selected into it, and 58% measured on a willing cohort is not 58% measured on all of them."
+      ]
+    },
+    {
+      "tag": "Academia · NYU and Brown",
+      "title": "Two networks trained on completely different senses end up with the same representation, up to a rotation — provided you show each of them two views of the same scene",
+      "url": "https://arxiv.org/abs/2610.39302",
+      "subject": "Balestriero and LeCun prove that JEPAs trained separately on different modalities converge to the same representation up to rotation when positive pairs are two views of one scene, argue next-token prediction is a JEPA with bad views, and report a 109M-parameter text JEPA aligning with vision encoders better than language models up to 72B.",
+      "subtitle": "Randall Balestriero and Yann LeCun, 'Proving and Improving the Platonic Representation Hypothesis with JEPAs', arXiv:2610.39302, 29 October 2026",
+      "bullets": [
+        "The Platonic Representation Hypothesis has been an empirical observation: scale models up on different modalities and their internal representations start to look alike. This paper turns the observation into a theorem for one architecture. Joint-Embedding Predictive Architectures trained separately on different modalities provably learn the same representation up to a rotation — with one condition attached, that the positive pairs are two views of the same underlying scene.",
+        "The condition is where the paper gets interesting, because it reframes next-token prediction as a JEPA with bad views. Predicting the next token pairs parts of one document, which is not two views of a scene; on this account that is why language models align with vision only slowly, as a function of scale, rather than directly.",
+        "The experiments span 145,000 captions to 940 million web images, and the reported result is a sample-efficiency gap: good views reach a given level of cross-modal alignment with far fewer training samples than next-token prediction needs. The headline comparison is a 109M-parameter text JEPA aligning with vision encoders better than the language models tested, up to 72B parameters — roughly three orders of magnitude of parameters traded for a choice about pairing.",
+        "The conclusion to argue with is the one they state: positive views, not scale alone, are what build platonic representations. Filed as cs.AI with cs.CV and stat.ML."
+      ]
+    }
+  ],
+  "wild": [
+    {
+      "tag": "Men's health · Broken Hill, NSW",
+      "headline": "A charity carved a 180-metre moustache into an outback airstrip and is asking the International Space Station to be its official photographer",
+      "entities": [
+        "Movember",
+        "Ogilvy Australia"
+      ],
+      "subject": "Movember's 'Big Red Mo', a 180-metre moustache etched into an airstrip at Mt Gipps Station near Broken Hill, unveiled 1-2 November 2026 as an SOS signal for men's mental health, with Australians asked to tag the ISS so its crew photographs it from orbit.",
+      "subtitle": "Mumbrella, 2 November 2026",
+      "bullets": [
+        "The installation is 180 metres wide, etched into an airstrip at Mt Gipps Station near Broken Hill, and shaped as an SOS signal. The scale is the whole mechanism: it is too big to read from the ground, which is the pretext for asking the one available audience that is high enough.",
+        "So Movember has asked the International Space Station crew to be its official photographer, and is asking Australians to tag @iss on Instagram and @Space_Station on X until someone up there takes the shot. Astrophysicist and television personality Matt Agnew has backed the request. Nobody has confirmed a photograph.",
+        "The reason it is in the outback and not in Sydney is in the brief. Movember says suicide rates in regional and remote Australia are twice those in metropolitan areas, and global board director Nathan Appo framed the installation as \"an SOS for men's health, using the vast Australian outback to draw attention to a global crisis\", with particular reference to barriers facing Aboriginal and Torres Strait Islander men. The charity has committed $59.5m globally over seven years to Indigenous men's and boys' wellbeing, $17.5m of it in Australia.",
+        "Movember began on Sunday 1 November with a 'Shavedown' at the site, led by comedian Luke McGregor and the 'Desert Swimmer' Brendan Cullen. Australia's roster of Big Things, which already runs to prawns and bananas, now has a moustache on it."
+      ]
+    },
+    {
+      "tag": "Retail · Finland",
+      "headline": "A Finnish electronics chain noticed couples were writing their own GTA VI ceasefire contracts, so it made an official one you can sign",
+      "entities": [
+        "Gigantti",
+        "SEK"
+      ],
+      "subject": "Gigantti's 'Grand Game Deal', built with agency SEK ahead of the 19 November 2026 GTA VI launch: a signable household gaming agreement with Easy, Normal and Hard difficulty levels, inspired by a UK couple's viral homemade contract.",
+      "subtitle": "Little Black Book, 3 November 2026",
+      "bullets": [
+        "The brief was written by strangers. In July a UK couple's homemade GTA VI contract went viral — unlimited playtime for one party, no interruptions and no saying \"it's just a game\" from the other. Gigantti and SEK made it official: a web generator where you pick a difficulty level from Easy (launch day) to Hard (a full month), negotiate the clauses on chores and banned phrases and what the non-playing party gets, then print it, sign it and put it on the fridge.",
+        "The Finnish numbers are a good argument for reading the internet instead of briefing against it. In two weeks the site drew nearly 35,000 visitors and more than 5,000 deals were drafted in a country of 5.6 million. Nearly nine in ten negotiated a week or more. Forty-four per cent went straight to Hard mode — a month of gaming peace, payable in chores.",
+        "SEK's creative director Samuel Räikkönen on the legal status: \"It's a somewhat legally valid agreement, which turns out to be exactly valid enough.\" Gigantti's Sami Särkelä on why it is not a pre-order ad: \"it's not about getting the game, it's getting permission to play it.\"",
+        "Until 15 November, uploading a signed deal in Finland gets a 10% code on normal-priced gaming accessories and an entry into a PS5-plus-game draw. The deal is only valid in Finland; the PR ran to gaming and news media in Italy, Austria, South Africa and Taiwan."
+      ]
+    },
+    {
+      "tag": "Food · New York",
+      "headline": "A burger chain cut a hole in a wall, and for two days anyone who rang the bell and held up any food at all got truffle sauce drizzled on it",
+      "entities": [
+        "Shake Shack",
+        "Tombras"
+      ],
+      "subject": "Shake Shack ran a two-day Black Truffle Window in New York on 23 and 24 October 2026, a wine-window pastiche where passers-by rang a bell and had truffle sauce drizzled onto any food they happened to be carrying.",
+      "subtitle": "Event Marketer, 'The Brief', 2 November 2026",
+      "bullets": [
+        "The reference is Italy's buchette del vino — the small wine windows cut into Florentine palazzo walls in the 1600s so a household could sell wine without opening the door. Several brands have raided the idea; Shake Shack's version ran in New York on 23 and 24 October to mark the return of its Black Truffle menu.",
+        "The mechanic was deliberately no-fun-withheld: ring the bell, an ambassador appears at the opening, hold up any kind of food, and your food gets truffle sauce on it. Not a Shake Shack item. Any food.",
+        "That is the part that makes it work as sampling rather than advertising. The brand gave away the one ingredient it was promoting, applied to whatever a stranger was already carrying, which turns the queue into a series of small decisions about what you want truffle on — and makes the product the variable rather than the menu. Agency: Tombras.",
+        "Two days, one window, no installation to dismantle. Event Marketer's verdict was a petition to make it permanent."
+      ]
+    }
+  ],
+  "learn": {
+    "title": "The smell of rain is a bacterium advertising. It has a name, a chemical formula, and a customer — and that customer is not you.",
+    "subject": "Geosmin, the compound behind petrichor, is made by Streptomyces soil bacteria; humans detect it at about 100 parts per trillion; MIT's 2015 high-speed imaging showed raindrops trapping and bursting bubbles that fling aerosols; and Becher et al. 2020 in Nature Microbiology showed geosmin attracts springtails that eat the colonies and carry the spores away.",
+    "tags": [
+      "Science of ordinary things",
+      "Smell",
+      "Soil"
+    ],
+    "body": [
+      "The smell has a name. Geosmin — Greek for earth-odour — is a colourless liquid in the terpenoid family, isolated in 1965 by Gerber and Lechevalier and structurally pinned down by Gerber in 1968. In soil it comes from essentially one genus of bacteria, Streptomyces. The John Innes Centre, where the gene for the enzyme that makes it was tracked down, puts the human detection threshold at about 100 parts per trillion. That is roughly a teaspoon dissolved in a few hundred Olympic swimming pools, and you can smell it on a pavement.",
+      "Rain does not create it, it launches it. In January 2015 Cullen Buie and Youngsoo Joung at MIT pointed high-speed cameras at raindrops hitting porous surfaces and found a three-step mechanism: the drop traps a tiny bubble of air at the contact point, the bubble grows, and it bursts, flinging a fine aerosol up out of the soil. Across roughly 600 experiments on 28 surfaces — 12 engineered materials, 16 soils — the amount released depended on impact speed and permeability, and the counterintuitive result is that light rain produces more aerosol than heavy rain. A fast drop does not give the bubble time to form. Which is why a drizzle on warm ground smells, and a downpour mostly just smells wet.",
+      "The twist arrived in 2020. Geosmin had always been treated as a by-product, a thing bacteria happen to leak. Then Becher and colleagues, writing in Nature Microbiology, showed it is a signal: geosmin and 2-methylisoborneol make the antennae of the springtail Folsomia candida fire, and springtails walk towards it. In the field, traps baited with Streptomyces caught springtails and unbaited traps did not. The springtails eat the colonies and leave carrying live spores — stuck to their water-repellent cuticles and inside their droppings. Streptomyces makes geosmin as it sporulates, which is to say the smell is the last step of its life cycle: an advertisement for a courier. You are not the audience. You are just unusually good at reading someone else's mail."
+    ]
+  },
+  "ideas": {
+    "prompt": "Ten subscriptions people would actually be happy to pay for",
+    "items": [
+      {
+        "text": "A lunch that turns up at your desk every weekday at the same price, with no app and no daily ordering — just a note on Sunday saying what the week looks like.",
+        "why": "A recurring ask on r/Business_Ideas, where someone is always proposing the office lunch subscription and someone else is always saying they would buy it today."
+      },
+      {
+        "text": "A tailor who comes to your building on the first Saturday of every month and takes in whatever needs taking in."
+      },
+      {
+        "text": "Clean bedsheets delivered on Friday and the old ones collected, for the large number of people who own three sets and wash none of them."
+      },
+      {
+        "text": "A plant-watering visit twice a month whether you are away or not, so that the plants survive the one month you are."
+      },
+      {
+        "text": "One printed photograph a month, chosen out of your camera roll by a person, posted to your door."
+      },
+      {
+        "text": "A haircut you never have to book: same chair, same barber, same Thursday, cancel by replying no."
+      },
+      {
+        "text": "A bicycle kept alive by the shop down the road, where you never once discuss a part or a price."
+      },
+      {
+        "text": "A box that comes to take things away instead of bringing them — a courier arrives quarterly, you fill it with what you are done with, it goes to a charity shop."
+      },
+      {
+        "text": "A standing table for six at the same restaurant on the same night each month, where the restaurant fills the other five seats."
+      },
+      {
+        "text": "Someone who reads your bank statement and phone bill once a quarter, cancels what you forgot about, and charges a flat fee whatever they find."
+      }
+    ]
+  }
+}

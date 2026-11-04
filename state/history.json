@@ -8552,6 +8552,158 @@
         "developer.apple.com",
         "phys.org"
       ]
+    },
+    {
+      "date": "2026-11-04",
+      "issue": 1,
+      "quote_text": [
+        "Physics is becoming so unbelievably complex that it is taking longer and longer to train a physicist. It is taking so long, in fact, to train a physicist to the place where he understands the nature of physical problems that he is already too old to solve them."
+      ],
+      "quote_author": [
+        "Eugene Paul Wigner"
+      ],
+      "idea_text": [
+        "A lunch that turns up at your desk every weekday at the same price, with no app and no daily ordering — just a note on Sunday saying what the week looks like.",
+        "A tailor who comes to your building on the first Saturday of every month and takes in whatever needs taking in.",
+        "Clean bedsheets delivered on Friday and the old ones collected, for the large number of people who own three sets and wash none of them.",
+        "A plant-watering visit twice a month whether you are away or not, so that the plants survive the one month you are.",
+        "One printed photograph a month, chosen out of your camera roll by a person, posted to your door.",
+        "A haircut you never have to book: same chair, same barber, same Thursday, cancel by replying no.",
+        "A bicycle kept alive by the shop down the road, where you never once discuss a part or a price.",
+        "A box that comes to take things away instead of bringing them — a courier arrives quarterly, you fill it with what you are done with, it goes to a charity shop.",
+        "A standing table for six at the same restaurant on the same night each month, where the restaurant fills the other five seats.",
+        "Someone who reads your bank statement and phone bill once a quarter, cancels what you forgot about, and charges a flat fee whatever they find."
+      ],
+      "idea_prompt": [
+        "Ten subscriptions people would actually be happy to pay for"
+      ],
+      "tip_text": [
+        "If you guard anything with an Agent SDK hook, know that a callback which throws used to fail open — the action went ahead anyway. Claude Code 2.1.317 adds `onFailure: \"block\"` for hook callbacks, \"so a callback that fails blocks the action instead of letting it run\". Set it on every hook you wrote as a safety check, not just as a log."
+      ],
+      "hn_id": [
+        "50337608",
+        "50354960",
+        "50351111",
+        "50336518",
+        "50339288"
+      ],
+      "link": [
+        "https://chalmovsky.com/posts/wtf-ubuntu",
+        "https://github.com/postmanlabs/postman-app-support/issues/14370",
+        "https://honnibal.dev/blog/astra-read-write-misleading",
+        "https://blog.mistys-internet.website/post/2026/10/29/if-you-love-a-website-back-it-up/",
+        "https://blog.nns.ee/2026/11/02/renault-hack/",
+        "https://taxguru.in/goods-and-service-tax/gst-collections-october-2026-rise-22-9-percent-rs-2-31-lakh-crore.html",
+        "https://www.sec.gov/Archives/edgar/data/0001633978/000119312526442758/d163169dex991.htm",
+        "https://lhcb-outreach.web.cern.ch/2026/11/03/evidence-for-the-decay-b0%E2%86%92%CE%BC%CE%BC-and-improved-measurements-of-bs0%E2%86%92%CE%BC%CE%BC/",
+        "https://deepmind.google/blog/speeding-up-planning-decisions-with-ai/",
+        "https://arxiv.org/abs/2610.39302"
+      ],
+      "subject": [
+        "October 2026 GST gross collections of Rs 2,31,290 crore, up 22.9% year on year, with import IGST up 42.2% to Rs 72,246 crore against domestic growth of only 15.8%, and net customs GST up 56.2%.",
+        "Marvell will pay 4.500 of its own shares for each Lumentum share in an all-stock optical-networking merger implying roughly $115 billion, announced 3 November 2026 and not completing before the first half of 2028.",
+        "LHCb reports the first single-experiment evidence for the B0 to mu+mu- decay at 3 sigma, 3.2 sigma once Run 1 and Run 2 are folded in, together with the world's most precise B0s to mu+mu- branching fraction and lifetime; everything agrees with the Standard Model.",
+        "Movember's 'Big Red Mo', a 180-metre moustache etched into an airstrip at Mt Gipps Station near Broken Hill, unveiled 1-2 November 2026 as an SOS signal for men's mental health, with Australians asked to tag the ISS so its crew photographs it from orbit.",
+        "Gigantti's 'Grand Game Deal', built with agency SEK ahead of the 19 November 2026 GTA VI launch: a signable household gaming agreement with Easy, Normal and Hard difficulty levels, inspired by a UK couple's viral homemade contract.",
+        "Shake Shack ran a two-day Black Truffle Window in New York on 23 and 24 October 2026, a wine-window pastiche where passers-by rang a bell and had truffle sauce drizzled onto any food they happened to be carrying.",
+        "PlanAssist, a Gemini-based tool for householder planning applications piloted in Barnet, Camden and Dorset since June, cut average officer assessment time by up to 58% and had over 70% of its drafted reports approved unedited; it now enters a 12-month beta expanding to 15 councils.",
+        "Balestriero and LeCun prove that JEPAs trained separately on different modalities converge to the same representation up to rotation when positive pairs are two views of one scene, argue next-token prediction is a JEPA with bad views, and report a 109M-parameter text JEPA aligning with vision encoders better than language models up to 72B.",
+        "Geosmin, the compound behind petrichor, is made by Streptomyces soil bacteria; humans detect it at about 100 parts per trillion; MIT's 2015 high-speed imaging showed raindrops trapping and bursting bubbles that fling aerosols; and Becher et al. 2020 in Nature Microbiology showed geosmin attracts springtails that eat the colonies and carry the spores away."
+      ],
+      "brand": [
+        "Movember",
+        "Ogilvy Australia",
+        "International Space Station",
+        "Gigantti",
+        "SEK",
+        "Finnish",
+        "Shake Shack",
+        "Tombras"
+      ],
+      "brand_mention": [
+        "Mt Gipps Station",
+        "Broken Hill",
+        "SOS",
+        "International Space Station",
+        "Australians",
+        "Space_Station",
+        "X",
+        "Matt Agnew",
+        "Sydney",
+        "Australia",
+        "Nathan Appo",
+        "Australian",
+        "Aboriginal",
+        "Torres Strait Islander",
+        "Indigenous",
+        "Australia Movember",
+        "Shavedown",
+        "Luke McGregor",
+        "Desert Swimmer Brendan Cullen Australia's",
+        "Big Things",
+        "GTA VI",
+        "SEK",
+        "Easy",
+        "Hard",
+        "Samuel Räikkönen",
+        "Gigantti's Sami Särkelä",
+        "Finland",
+        "PS5-plus-game",
+        "PR",
+        "Italy",
+        "Austria",
+        "Africa",
+        "Taiwan",
+        "Florentine",
+        "Shake Shack's",
+        "York",
+        "Black Truffle",
+        "Tombras",
+        "Event Marketer's"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "India's GST take jumped nearly 23% in October, but domestic revenue grew 15.8% while imports grew 42.2% — the strength is at the port, not the till"
+        ],
+        [
+          "trends",
+          "Marvell is paying about $115 billion in stock for Lumentum, will not close it until 2028, and both stocks fell on the news"
+        ],
+        [
+          "trends",
+          "A B⁰ meson decaying into two muons has now been seen by one experiment on its own — the rarest B decay yet measured, and its rate is exactly what the Standard Model said"
+        ],
+        [
+          "wild",
+          "A charity carved a 180-metre moustache into an outback airstrip and is asking the International Space Station to be its official photographer"
+        ],
+        [
+          "wild",
+          "A Finnish electronics chain noticed couples were writing their own GTA VI ceasefire contracts, so it made an official one you can sign"
+        ],
+        [
+          "wild",
+          "A burger chain cut a hole in a wall, and for two days anyone who rang the bell and held up any food at all got truffle sauce drizzled on it"
+        ],
+        [
+          "research",
+          "Officers in three English councils spent 58% less time on loft conversions and conservatories, and signed off more than 70% of the drafted reports without changing a word"
+        ],
+        [
+          "research",
+          "Two networks trained on completely different senses end up with the same representation, up to a rotation — provided you show each of them two views of the same scene"
+        ],
+        [
+          "learn",
+          "The smell of rain is a bacterium advertising. It has a name, a chemical formula, and a customer — and that customer is not you."
+        ]
+      ],
+      "editorial_domains": [
+        "lhcb-outreach.web.cern.ch",
+        "sec.gov",
+        "taxguru.in"
+      ]
     }
   ]
 }
