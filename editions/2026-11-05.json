@@ -1,0 +1,308 @@
+{
+  "date_line": "Thursday, 5 November 2026",
+  "issue": 1,
+  "preheader": "Levitin on why the average human has one testicle; stop trusting an agent that says it searched and found nothing; a 2024 crash report in PHP turned into remote code execution in two weeks; an $800 robot that hangs from your ceiling corners; a 27B model on a laptop reads neural network weights; Google makes Search opt-in for schools and bundles the AI with it; Gemini trains on paid subscribers' chats; Wednesday's fifth straight rally, Sensex 77,301.40; India will pay 30% of the capex for four lithium and nickel plants and pick the winners by reverse auction; SmartThings starts charging hobbyists for its API; hydrogen photographed in the gaps between metal atoms for the first time; a classifier that hunts for the examples that break your own definition; an agent ran a cryogenic physics experiment and matched the sealed expert answer; a 12-metre vet bill at a dog festival; a horror film that was secretly an electrolyte drink; a Santa bitten by a zombie; and the third option on a price list that exists so you will not pick it.",
+  "quote": {
+    "text": "On average, humans have one testicle.",
+    "author": "Daniel J. Levitin",
+    "work": "A Field Guide to Lies: Critical Thinking in the Information Age",
+    "source_url": "https://www.goodreads.com/quotes/tag/statistics",
+    "note": "The sentence is true, computed correctly, and completely useless — which is the entire lesson in eight words. Levitin's surrounding line is \"Be careful of averages and how they're applied\", and the reason this one lands is that you cannot argue with the arithmetic, only with the decision to do it. Every dashboard you build has a column like this in it somewhere."
+  },
+  "agent_craft": {
+    "items": [
+      {
+        "text": "When an agent tells you a pattern appears nowhere in the repository, ask it for the pattern and the match count rather than accepting the conclusion. Claude Code 2.1.317 fixed Grep and Glob results that hit the search time limit being passed to the model as complete — on a large repository, a timed-out search looked exactly like a clean miss.",
+        "source": "Anthropic, Claude Code changelog, 2.1.317 (3 November 2026)",
+        "url": "https://code.claude.com/docs/en/changelog"
+      }
+    ]
+  },
+  "hn": [
+    {
+      "title": "AI is forcing us to pay off 40 years of technical debt",
+      "url": "https://spectrum.ieee.org/ai-in-cybersecurity-php2shell-vulnerability",
+      "hn_url": "https://news.ycombinator.com/item?id=50364336",
+      "points": 1047,
+      "comments": 626,
+      "bullets": [
+        "The case study is PHP2Shell, disclosed in late October 2026 and patched before anyone exploited it. It started life as an out-of-memory error — too little memory allocated for the data — reported to the PHP Foundation in 2024 and left alone, because an out-of-memory bug normally just crashes the program. Suman Jana of Columbia University notes that this is the ordinary fate of crash reports: nobody takes them seriously.",
+        "What changed is who reads the backlog. Earlier in 2026 the firm Calif offered to audit PHP independently, sponsored by OpenAI. Within two weeks a Calif researcher, working with AI tools, turned the 2024 crash into arbitrary code execution; Wiz confirmed and widened it. The article puts anything running WordPress or Drupal in scope, and names NASA, Wikipedia and the White House. Fixing it took four engineers two months.",
+        "Jana's argument about why this is asymmetric is the part worth keeping. Exploit development is painstaking, highly specific reasoning, which is exactly what current models are good at — so it speeds up the top experts and lets the tier just below them reach working exploits without deep knowledge. Patching is the opposite shape: you have to show every path is closed without breaking anything, which no amount of search speeds up. Matt Suiche of Tolmo puts it plainly: \"it is time for the technical debt to be paid off.\"",
+        "Two proposals and one prediction. Jana wants frontier labs to donate token budgets to security work on projects like PHP, which has no revenue to defend itself with, and is optimistic about formal verification — one model writes the patch, another writes a proof of correctness, and a non-LLM proof checker decides; he notes Anthropic published formal verification research on 22 October. Matthew Green of Johns Hopkins does not expect anything to change until something seriously damaging happens, which he guesses at around early 2027. His advice to the rest of us is the unglamorous one: install the updates."
+      ]
+    },
+    {
+      "title": "Stringman, an $800 open-source room scale gripper robot",
+      "url": "https://neufangled.com/",
+      "hn_url": "https://news.ycombinator.com/item?id=50354358",
+      "points": 807,
+      "comments": 240,
+      "bullets": [
+        "It is a cable robot, $795 from Neufangled Robotics. Four motors anchored in the ceiling corners pay out and reel in lines, and a gripper hangs from them. Rated for rooms of 3 to 10 m across the XY diagonal and 2.3 to 4 m high; payload up to 2.2 kg near the floor and 1.9 kg average in a 7 × 7 × 3 m room, net of the 638 g gripper; about 0.4 m/s traverse. There is no battery — mains power reaches the gripper through a two-conductor twisted pair inside one of the support cables.",
+        "Working from above is the whole argument. Lifting force is shared across all four motors, so payload peaks near the centre of the room, and because nothing has to drive across the floor it can reach floors too cluttered for a wheeled or legged robot. The gripper hangs below the pivot so it can get down beside beds and tables, and swing is cancelled actively rather than with extra motors. Two fingers, a rotating wrist, grip tape. At a 28 N line-tension limit every motor relaxes so you can pull the lines loose by hand.",
+        "The parts list is deliberately boring: 4 DM-H6215 actuators at $66, 2 STS3215 servos at $21, two Raspberry Pi 3A+ boards in the anchors and a Pi Zero 2W on the gripper, with the real compute on an external PC with an NPU or GPU. Two anchor cameras at 1920×1080/30 and a wide-angle gripper camera at 684×384/60. PET-GF for structure, PLA for decoration, mounted to stud-backed drywall, plaster, or strapped to a column. The page claims about 1,000 hours of testing in real homes.",
+        "The comparison it leads with is the one to check: about 147 m³ of work volume from 4 actuators against 0.88 m³ from a 0.75 m serial research arm's 7, and roughly 500× the work-area volume per dollar at comparable payload — the company's own figures. Mechanical CAD, PCBs and control software are published and it says it is OSHWA certified; there is LeRobot support, a Python API and an MCP server, and the page says about 50 training episodes can be enough for some models. It can run air-gapped, with the optional cloud relay switched off."
+      ]
+    },
+    {
+      "title": "Qwen 3.8 27B on my laptop can interpret model weights, too",
+      "url": "https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/",
+      "hn_url": "https://news.ycombinator.com/item?id=50355251",
+      "points": 716,
+      "comments": 208,
+      "bullets": [
+        "Willison took one narrow claim out of the \"Sparks of Weight-Space Programming\" paper and tried to reproduce it: can a model say what a network was trained to do from the raw weights alone, with no tools and nothing executed. The paper's authors had trained four small policy networks to play 10×10 grid versions of Breakout, Pong, Pac-Man and Freeway; the weights are handed to the model as floating-point text and the question is which game.",
+        "Kimi K3.1 Pro, through OpenRouter, got Breakout in 9 minutes 41 seconds and 19,493 reasoning tokens. Then the laptop run: Qwen 3.8 27B, a 17 GB quantised build in LM Studio, needing a long context window and a raised timeout. Pac-Man-style maze game, 72% confidence, 46m 12s and 43,506 reasoning tokens. Pong-like paddle game, 75%, 1h 4m 54s. Arkanoid-like paddle-and-brick, 88%, 52m 25s. Freeway failed — it guessed Pac-Man. Three of four.",
+        "He is unimpressed by the reasoning traces, which are long stretches of raw number-checking that are hard to follow, and notes that a sufficiently patient human with pencil and paper could probably get the same answers. The result he is impressed by is narrower than the headline: a 27B model on consumer hardware can do this at all.",
+        "The conclusion is mostly a refusal to draw one. He deliberately left the weight-editing half of the paper alone, and says the wider commentary overreaches: he is not ready to conclude that source code is obsolete, or that machines will start editing their own weights in ways humans cannot follow."
+      ]
+    },
+    {
+      "title": "Google will turn off search for schools that reject AI",
+      "url": "https://www.nytimes.com/2026/11/03/us/google-search-schools-restrict-ai.html",
+      "hn_url": "https://news.ycombinator.com/item?id=50353192",
+      "points": 662,
+      "comments": 460,
+      "bullets": [
+        "The New York Times piece the thread is built on is paywalled, so the detail here is from CBS News and PPC Land. On Tuesday 3 November, Chris Phillips, Google's vice president and general manager of education, announced in a blog post that Gemini, Gemini Notebook, Gemini in Classroom and Google Search will all be off by default for K-12 student accounts until an administrator turns them on. Phillips told the Times that schools which ban AI \"will not have access to search, and they'll see a message from their school that indicates it's not available.\"",
+        "The contested part is the bundling, not the defaults. Google's follow-up on X says the switches are separate and a school can enable Search while leaving Gemini off — but AI Mode and AI Overviews come with Search, and Phillips's own line to the Times is that \"Search and A.I. are deeply integrated.\" Google has not said whether the AI can be switched off inside Search for schools, which is the question the whole row turns on.",
+        "Scale and timing. About 150 million students and teachers use Google Classroom, per Google. Google says only \"the coming months\"; the Times reports the default-off controls landing in early 2027. Guided Learning — step-by-step working rather than answers — went worldwide in Classroom on 3 November, and a Guided Learning pilot inside Search starts in selected US schools later this month. One detail from the small print: in Workspace for Education's privacy notice, Search is an \"Additional Service\" that can carry ads (contextual, not personalised, for K-12 accounts), while Gemini is a Core Service with none.",
+        "The reaction was immediate and political. New York City mayor Zohran Mamdani accused Google of using monopoly power to force AI into public schools; Lina Khan, FTC chair from 2021 to 2025, said it is exploiting its search dominance; Josh Golin of Fairplay and Randi Weingarten of the American Federation of Teachers also objected, and a Google spokesperson declined to answer Mamdani. For context, New York City schools banned AI until high school in September and delayed generative AI for grades 2-K through 8 by a year."
+      ]
+    },
+    {
+      "title": "Tell HN: Gemini trains on chat history, even for subscribers (personal accounts)",
+      "url": "https://news.ycombinator.com/item?id=50363461",
+      "hn_url": "https://news.ycombinator.com/item?id=50363461",
+      "points": 627,
+      "comments": 163,
+      "bullets": [
+        "The poster, jameslk, is on a personal paid Google AI subscription and reports that Google's own help page says Gemini app activity \"is used to improve Google services for everyone, including by training generative AI models\" while Keep Activity is on. The only exits he can find are turning Keep Activity off — which loses your chats after 72 hours — or using temporary chats. His summary of his own mistake is that he assumed a paid plan meant he would not be the product.",
+        "The retention detail is sharper than the training one. Google says \"a subset of chats are reviewed by human reviewers\", that reviewed chats \"are not deleted when you delete your activity\", and that they are kept \"for up to three years\". \"Subset\" is not defined anywhere. Google's own advice is not to enter confidential information, which the poster reads as the tell.",
+        "The thread divides along a predictable line. Several commenters say every frontier provider does human review and that subsidised subscriptions exist precisely to generate training data — one cites Altman calling it a \"data flywheel\" in 2022. Others point at the asymmetry: one notes that Claude lets you opt out of training without losing history, another that Gemini Enterprise states chats are not used to improve models, and a Pixel user reports Gemini refusing to set a reminder at all with chat history disabled.",
+        "Worth separating what is established from what is argued. A claim that the opt-out covers inputs and outputs but not tool-call content is disputed in the thread. The suggestion that human review and retention exist for legal reasons is offered and contested — the poster's reply is that the help page describes broader uses, including model improvement. The verifiable part is the text of Google's help page; the rest is inference."
+      ]
+    }
+  ],
+  "markets": {
+    "indices": [
+      {
+        "name": "Pre-open · Thu 5 Nov",
+        "value": "Last close: Wed 4 Nov",
+        "change": "Indian markets open at 9:15 IST this morning, so nothing below is today. These are Wednesday's numbers — the fifth straight rising session.",
+        "direction": "flat"
+      },
+      {
+        "name": "Sensex · Wed 4 Nov close",
+        "value": "77,301.40",
+        "change": "+383.55 (+0.50%), a fifth consecutive gain, per Upstox's market wrap. The index had opened lower, down about 241 points, before recovering",
+        "direction": "up"
+      },
+      {
+        "name": "Nifty 50 · Wed 4 Nov",
+        "value": "23,960.60",
+        "change": "+149.75 (+0.63%). It traded below 23,750 earlier in the day",
+        "direction": "up"
+      },
+      {
+        "name": "Wednesday's sectors",
+        "value": "Nifty Media +5.15%",
+        "change": "Realty +2.85%, Metal +2.80%, Consumer Durables +2.04% and Oil & Gas +1.54% followed. Nifty IT was the only sectoral loser, down 1.50%. Bharat Electronics +4.71%, Adani Enterprises +4.47% and Titan +4.22% led the index; TCS −2.52%, HCL Technologies −2.37%, BSE −1.75% and Infosys −1.73% lagged. 36 of the 50 rose",
+        "direction": "up"
+      },
+      {
+        "name": "Wednesday's breadth",
+        "value": "Smallcap 100 +2.00%",
+        "change": "The Smallcap 100 closed at 19,026.40 and the Midcap 100 rose 1.55% to 59,505.50. Both beat the frontline indices, which is the reverse of Tuesday, when large-cap consumer names did the work",
+        "direction": "up"
+      },
+      {
+        "name": "FII cash · Wed 4 Nov",
+        "value": "+₹7,284 cr",
+        "change": "A fourth straight day of foreign buying, and the largest of them: ₹21,607 cr of gross purchases against ₹14,323 cr of sales. Provisional exchange data, tabulated by 5paisa",
+        "direction": "up"
+      },
+      {
+        "name": "DII cash · Wed 4 Nov",
+        "value": "−₹3,712 cr",
+        "change": "Domestic institutions sold into the rally for a fourth session, marginally harder than Tuesday's −₹3,679 cr. Gross purchases ₹16,393 cr against ₹20,105 cr of sales. Combined net institutional flow +₹3,572 cr. Provisional",
+        "direction": "down"
+      },
+      {
+        "name": "USD/INR",
+        "value": "94.64",
+        "change": "The rupee closed 10 paise stronger than Tuesday's 94.74, a fourth straight gain, as the dollar slipped after the US midterms. The dollar index fell 0.4% to 101.3. A trader at a state-run lender told Reuters that selling USD/INR here is risky because \"dips have very limited staying power at these levels\", and a majority of analysts in a Reuters poll expect the rupee to give the gains back over the next few months",
+        "direction": "up"
+      }
+    ]
+  },
+  "trends": [
+    {
+      "tag": "India",
+      "headline": "India will pay 30% of the capital cost for four plants that turn lithium and nickel ore into battery-grade compounds, and will pick the winners by who asks for the least",
+      "url": "https://www.indiablooms.com/finance/cabinet-approves-rs-2814-crore-scheme-to-boost-indias-critical-mineral-industry/details",
+      "subject": "India will reimburse 30% of the capital outlay for four critical-mineral refineries, two for lithium at 30 kilotonnes and two for nickel at 50 kilotonnes, with beneficiaries picked by reverse auction on the subsidy they request.",
+      "subtitle": "Cabinet decision of 4 November 2026, reported by India Blooms",
+      "bullets": [
+        "₹2,814 crore over five years, FY2026-27 to FY2030-31. The instrument is a capital subsidy of 30% of eligible investment, capped at ₹500 crore per lithium beneficiary and ₹900 crore per nickel beneficiary, released in three instalments against project milestones.",
+        "It funds exactly four plants: two lithium, minimum 30 kilotonnes each, and two nickel, minimum 50 kilotonnes each. Inputs are ores and intermediates; outputs are high-purity compounds. Cobalt is expected to come out of the nickel route as a by-product rather than being funded on its own.",
+        "The selection mechanism is the part worth noticing. Applicants first clear technical eligibility, then bid financially, and the two winners per mineral are the ones asking for the least capital support. That makes it a reverse auction on subsidy rather than a grant programme — the ceiling is published and the government is betting someone comes in under it.",
+        "The stated aim is to cut import dependence for electric mobility, battery energy storage, electronics, defence and specialty steel. India has deposits and almost no refining capacity, so this is money aimed at the middle of the chain, not the mine. A second Cabinet decision the same day, a ₹14,500 crore energy storage scheme, was reported only in headline form and is not detailed here."
+      ]
+    },
+    {
+      "tag": "Industry",
+      "headline": "SmartThings has started charging hobbyists for the API that runs their homes, and the switch-off date is 15 December",
+      "url": "https://blog.smartthings.com/smartthings-updates/smartthings-api-additional-details-for-developers-and-business-partners/",
+      "subject": "SmartThings puts its cloud API behind paid developer plans, with app editing blocked from 4 November and API keys deactivated on 15 December.",
+      "subtitle": "SmartThings developer blog, on changes effective 4 November 2026",
+      "bullets": [
+        "Free through 3 November. From 4 November, without a plan you cannot create or edit cloud API apps, though anything already installed keeps running. From 15 December, API keys are deactivated and automated calls are paused at the gateway, including integrations shared with other locations.",
+        "The individual Developer Plan is a flat monthly fee per developer account — the page does not say how much, and it launches in only some countries — capped at 100,000 cloud API calls a month and 10 active app installs. The cap is tied to the account, not the hub, so a multi-location setup shares one allowance. The Business Plan is tiered by volume and negotiated by email.",
+        "What stays free matters as much as what does not: the SmartThings app, automations and local integrations are unaffected. Rules used through OAuth now need a paid plan, as do the CLI commands that create and manage cloud API apps; the rest of the CLI is untouched. Personal Access Tokens survive, but the page is explicit that they are for temporary testing and lightweight scripts, not ongoing integrations.",
+        "Paying subscribers get Server-Sent Events for near real-time updates; webhooks remain for everyone. The shape is familiar — a platform that grew on free API access deciding the enthusiast tier is a cost line — and the thing to diary is 15 December, which is the date someone's self-built integration stops answering."
+      ]
+    },
+    {
+      "tag": "Wildcard",
+      "headline": "Hydrogen has been seen sitting in the gaps between metal atoms, which is where the theory always put it and where nobody had ever imaged it",
+      "url": "https://phys.org/news/2026-11-reveal-hydrogen-dissolved-tiny-gaps.html",
+      "subject": "Cryogenic atom probe tomography with deuterium reveals hydrogen dissolved interstitially in a metal lattice, concentrating inside an ordered L12 precipitate phase.",
+      "subtitle": "Chao Huang et al., \"Towards observing interstitial hydrogen in solution in metal lattices\", Nature, 4 November 2026 (doi 10.1038/s41586-026-11238-4), covered by Phys.org",
+      "bullets": [
+        "Hydrogen embrittlement is why a hydrogen pipeline is not merely a gas pipeline: hydrogen gets into strong metal and the metal cracks without warning. The textbook picture has hydrogen dissolved in the interstices — the gaps between the metal atoms — but the only hydrogen anyone had ever imaged was hydrogen trapped at defects, where it piles up in quantity. The dissolved, interstitial state was theory.",
+        "The method is cryogenic atom probe tomography, which maps atoms in three dimensions, plus one substitution that makes it work: deuterium instead of hydrogen. The heavier isotope can be tracked as something deliberately introduced, and it does not leak out of the sample during preparation the way hydrogen does. Atomic-resolution electron microscopy and theoretical calculations back the reading up.",
+        "What they saw was not uniform, and that is the useful part. In a multi-principal element alloy containing an ordered L12 precipitate phase, deuterium concentrated preferentially inside that phase — so the local arrangement and chemical composition of the metal atoms decides where hydrogen goes. It turns \"where the hydrogen sits\" from a bulk property into a design variable.",
+        "Cairney, of Sydney's School of Aerospace, Mechanical and Mechatronic Engineering, frames it as understanding why hydrogen prefers particular atomic environments, which is \"essential for developing safer and more reliable materials\". Huang says the next step is what hydrogen inside a metal does to deformation and performance under stress, including ultra-high-strength steels. The \"world-first\" framing is the university's own, and the paper itself is more modest: it describes an experimental protocol linking atomistic predictions to direct observation."
+      ]
+    }
+  ],
+  "research": [
+    {
+      "tag": "Industry · Google Research",
+      "title": "They stopped assuming the labeller knows what the label means, and had the model go looking for the examples that break your definition",
+      "url": "https://research.google/blog/agile-deliberation-how-ai-helps-humans-define-the-gray-areas/",
+      "subject": "Agile Deliberation has vision-language models surface borderline images so a user can discover what their own subjective category actually excludes.",
+      "subtitle": "Otilia Stretcu and Leijie Wang with eight collaborators, Google Research blog, 4 November 2026; CVPR 2026 paper, work with Google Ads",
+      "bullets": [
+        "The premise is a criticism of how labelling is normally set up. Standard annotation assumes the annotator turns up holding a fixed definition of the category. For a subjective concept — \"healthy food\", \"inspiring artwork\" — they do not. They find out what they meant only after being shown things that sit on the edge of it.",
+        "So the framework is a conversation in two stages. Concept scoping: the user splits a broad concept into in-scope sub-categories and explicit out-of-scope exclusions. Concept iteration: vision-language models surface semantically borderline images, the user rules on each, and those rulings feed an automatic prompt-optimisation loop that updates the classifier. It is active learning with the selection rule changed — borderline rather than merely uncertain.",
+        "Eighteen live user sessions of about 90 minutes each, with randomised condition order, across two domains: \"Healthy Food\" and \"Pay-to-Play\" (clickbait in entertainment and gaming). Baselines were zero-shot classifiers, the CVPR 2024 Modeling Collaborator approach, and manual deliberation. Agile Deliberation beat all of them, by the widest margin on the hardest images, and participants' own labelling consistency rose over the session.",
+        "Two findings are worth separating from the headline. Manual deliberation often failed to improve accuracy and sometimes degraded it — thinking harder about your own definition, without the borderline cases in front of you, does not help. And participants reported significantly less effort, stress and mental demand than manual prompt engineering, with all of them preferring the structured process. Code is on GitHub, and the work was done with Google Ads, which is where the bill for grey-area classification actually arrives."
+      ]
+    },
+    {
+      "tag": "Academia · Stanford",
+      "title": "An agent ran a cryogenic physics experiment end to end, and matched the expert's sealed answer on both devices",
+      "url": "https://arxiv.org/abs/2610.39074",
+      "subject": "HERA, given a knowledge base curated by its own lab, independently reproduced an expert physicist's sealed conclusion on graphene stacking order.",
+      "subtitle": "Zachary W. Gomez, Nathan Bittner, Jordan T. McCourt, Sandesh S. Kalantre, Aaron Sharpe and colleagues, arXiv:2610.39074, 29 October 2026",
+      "bullets": [
+        "The domain is cryogenic transport measurement: cool a device to near absolute zero and read how charge moves through it. HERA is an autonomous agent that carries out those measurements, and what makes it work is not a bigger model but a knowledge base curated by the lab's own members — measurement protocols, the group's software tools, and literature references. The design bet is on provenance of judgement rather than general capability.",
+        "The evaluation is the part worth copying. A human expert and the agent independently determined the stacking order of two multilayer graphene devices — how the atomic layers sit relative to one another. The expert's conclusions were sealed in advance. HERA's matched them on both devices.",
+        "The ablation is the actual finding. Remove the knowledge base and every model tested designed worse measurements and reasoned less soundly. They also ran hundreds of offline replays in which models designed the trial's central measurement without executing it, which separates the planning from the plumbing. The authors are explicit about why controlled studies like this are needed at all: models are stochastic, and the context they are handed shapes the conclusion they reach.",
+        "On extensibility they report the cost honestly. Pointing HERA at superconductivity in a different material system took a few hours of expert time to write a new protocol, after which it did the work autonomously. The headline validation is two devices and one blinded comparison, and the paper says so rather than implying otherwise."
+      ]
+    }
+  ],
+  "wild": [
+    {
+      "tag": "Pet healthcare · Dubai",
+      "headline": "Paws & Co printed a 12-metre veterinary bill and unrolled it at a dog festival, before its first clinic has even opened",
+      "entities": [
+        "Paws & Co"
+      ],
+      "subject": "Paws & Co unrolls a twelve-metre printed veterinary bill at Woofstock Dubai to pre-sell memberships before its first clinic opens.",
+      "subtitle": "Campaign Middle East, 4 November 2026",
+      "bullets": [
+        "The object is a veterinary bill, printed out line by line, twelve metres long. It was unrolled at Woofstock Dubai on Sunday 1 November. The argument it makes is arithmetic rather than emotional: this is what \"let's wait and see\" costs by the time a small problem has become a complicated one.",
+        "The line is \"Wait and See, Isn't Free\", and what is being sold is preventative care — specifically a Founding Families membership pre-sale, ahead of the company's first clinic opening in Motor City in January 2027.",
+        "Campaign Middle East reports 1,000 sign-ups off the activation, combined with PR and paid social. Take the number as the brand's own; the rest of the piece sits behind a registration wall.",
+        "The reason it works is format. Every other stand at a dog festival is selling you a happier animal. This one brought the receipt, and made you read all twelve metres of it."
+      ]
+    },
+    {
+      "tag": "Rehydration · Sydney",
+      "headline": "Hydralyte spent the last week of October pretending to be a horror film, and the trade press cracked it with anagrams",
+      "entities": [
+        "Hydralyte",
+        "Five by Five Global"
+      ],
+      "subject": "Hydralyte and Five by Five Global disguise a rehydration campaign as a horror film trailer, unmasked by anagrams hidden in credits and station signage.",
+      "subtitle": "Eleanor Dickinson, Mumbrella, 30 October 2026",
+      "bullets": [
+        "It presented itself as a film release. A two-minute trailer, \"Don't Let The Dryness Get You\", hosted at thedrynessmovie.com, in which a woman walks through a railway station resembling Sydney's Museum or St James and gets a jump scare from the entity. Identically dressed actresses turned up on Sydney streets, behind a sizeable out-of-home budget. Five by Five's managing director emailed the trade press pitching it as a Halloween horror project, and Mumbrella first covered it as exactly that.",
+        "Then they went back and pulled the thread. The trailer credits \"a spectacular Chimera production\", a company that does not exist. The domain was registered on 23 September 2026 — an implausibly short lead time for a film — behind GoDaddy privacy protection, so the registration gave nothing away.",
+        "The anagrams are the good part. The song is credited to a singer called \"Emmie Noll\" with no traceable presence anywhere online; rearranged, that is \"lemon lime\". The station signage in the trailer reads \"Tawer Station\" and \"Hartydley Station\": \"Water Station\" and \"Hydralyte\".",
+        "Hydralyte is an electrolyte rehydration product, and Five by Five won the account in 2024 with a brief to move it out of the pharmacy aisle and into everyday drinking. When Mumbrella put the hoax to the agency it was offered a press release embargoed to the following Monday; it declined and published the solution instead. An earlier reader theory had been that the trailer was an advertisement for lubricant."
+      ]
+    },
+    {
+      "tag": "Confectionery · New York",
+      "headline": "Twix has invented a holiday where Halloween and Christmas happen at the same time, and its Santa has been bitten by a zombie",
+      "entities": [
+        "Twix"
+      ],
+      "subject": "Twix runs a second year of its invented Hallowmas holiday, with a zombie-bitten Santa, skull-shaped bars and a 20,000 dollar look-alike contest.",
+      "subtitle": "Adweek, on the 2026 Hallowmas campaign",
+      "bullets": [
+        "Hallowmas is Halloween and Christmas observed simultaneously. Twix invented it in 2025 and has now run it twice, and the logic is the brand platform rather than the calendar: \"Two Is More Than One\" needs two of something, so it took two holidays.",
+        "Zombie Claus is Santa, bitten by a zombie. He was reintroduced not in an advert but as a podcast guest — episode 806 of Subway Takes with Kareem Rahma, where he gave his opinion on first and second impressions, an appearance secured by Publicis Media. The 40-second hero spot has him arrive at a teenager's house, and she asks whether she should feel \"merry or terrified\".",
+        "There is a product and a prize pot. Twix Skulls, skull-shaped, joins the returning Ghoulish Green and Fun Size bars. The competition carries $20,000: $5,000 for the best Zombie Claus look-alike, $5,000 for the best Halloween-Christmas blend, and $10,000 for whoever \"takes Hallowmas to the next level\". Weber Shandwick ran the PR and the competition.",
+        "The finale was deliberately small and physical: on Halloween, Zombie Claus handed out bars in Williamsburg. Inventing a character who only exists in the fortnight where the two seasonal aisles overlap in a supermarket is an efficient way to own a gap nobody is bidding against you for."
+      ]
+    }
+  ],
+  "learn": {
+    "title": "The most useful option on a price list is the one nobody buys. Add a deliberately bad third choice and two-thirds of people switch to the expensive one.",
+    "subject": "The decoy effect: adding a third option nobody picks moves what everybody else picks, demonstrated on 100 students with magazine subscriptions and first described by Huber, Payne and Puto in 1981.",
+    "tags": [
+      "Human behaviour",
+      "Pricing",
+      "Choice"
+    ],
+    "body": [
+      "Dan Ariely put a magazine's subscription page in front of 100 of his students. Version one had two options: web only, or print only at twice the price. Sixty-eight per cent took the cheap web-only deal, which is what you would expect. Version two added a third option — print and web together, priced the same as print alone. Nobody in their right mind buys print-only when print-plus-web costs the same, and nobody did. But the share choosing web-only collapsed from 68% to 16%, and 84% went for the combined deal. A choice that nobody selected moved four in ten people onto a more expensive product.",
+      "The mechanism is that we are very bad at judging value in the abstract and very good at judging it by comparison. On its own, web-only looks like a bargain and print looks like an indulgence. Put print-and-web next to print-only at the same price and the brain stops asking \"what do I want\" and starts answering the much easier question \"which of these is obviously better\" — and the answer is now sitting next to the expensive option rather than the cheap one. The Economist, which was the magazine in question, wrote the whole thing up under the title \"The importance of irrelevant alternatives.\"",
+      "It is not Ariely's finding. Huber, Payne and Puto described it in 1981, running students through choices between beers, cars, restaurants, films, television sets and lottery tickets, and the decoy raised the target's share in every category except the lottery tickets — people buying pure chance apparently do not bother comparing. Once you know the shape of it you cannot stop seeing it: the smoothie chain where small is $6.10, medium is $7.10 and large is $7.50, and the medium exists only so that you buy the large. The next time a price list has three tiers, find the one you would never choose. It is not there by accident, and it is not there for you."
+    ]
+  },
+  "ideas": {
+    "prompt": "Ten board games that should exist",
+    "items": [
+      {
+        "text": "Roadworks: a co-operative game in which every player is a different utility company, and the board is one street that has to be dug up four separate times in a single year."
+      },
+      {
+        "text": "Deposit: one player is a landlord inventing reasons, the other is a tenant who had to photograph everything before the first turn."
+      },
+      {
+        "text": "Group Chat: get six people to agree on a restaurant before it stops taking bookings. Nobody is allowed to say no directly."
+      },
+      {
+        "text": "Petty Grudges: everyone starts with three grudge cards they may never show anyone. The game is about who brings one up first."
+      },
+      {
+        "text": "Pot Odds: a poker-night game where the banking is the game — you play the chips, the pot and the IOUs, and the cards barely matter.",
+        "why": "People on r/SomebodyMakeThis keep asking for a simple app to track real-life poker chips; the accounting is clearly the interesting part, so make it the whole thing."
+      },
+      {
+        "text": "One Bag: a cabin-sized suitcase, an eight-day trip, and a weather forecast that changes every turn.",
+        "why": "The recurring wish on r/SomebodyMakeThis is an offline app that reminds you what you have not packed, which suggests the dread is universal enough to be entertainment."
+      },
+      {
+        "text": "A trivia game where every answer is a number, and you only have to be closer than the person on your left."
+      },
+      {
+        "text": "Tenure: publishing is easy, getting cited is hard, and whoever reviews your paper is sitting at the table."
+      },
+      {
+        "text": "A game built to be played entirely in the gap between ordering and the food arriving, with one hard rule: it has to be finishable."
+      },
+      {
+        "text": "High Street: everyone runs a shop on the same road, and you cannot win unless at least two of the other shops are still open."
+      }
+    ]
+  }
+}

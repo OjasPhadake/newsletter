@@ -8704,6 +8704,152 @@
         "sec.gov",
         "taxguru.in"
       ]
+    },
+    {
+      "date": "2026-11-05",
+      "issue": 1,
+      "quote_text": [
+        "On average, humans have one testicle."
+      ],
+      "quote_author": [
+        "Daniel J. Levitin"
+      ],
+      "idea_text": [
+        "Roadworks: a co-operative game in which every player is a different utility company, and the board is one street that has to be dug up four separate times in a single year.",
+        "Deposit: one player is a landlord inventing reasons, the other is a tenant who had to photograph everything before the first turn.",
+        "Group Chat: get six people to agree on a restaurant before it stops taking bookings. Nobody is allowed to say no directly.",
+        "Petty Grudges: everyone starts with three grudge cards they may never show anyone. The game is about who brings one up first.",
+        "Pot Odds: a poker-night game where the banking is the game — you play the chips, the pot and the IOUs, and the cards barely matter.",
+        "One Bag: a cabin-sized suitcase, an eight-day trip, and a weather forecast that changes every turn.",
+        "A trivia game where every answer is a number, and you only have to be closer than the person on your left.",
+        "Tenure: publishing is easy, getting cited is hard, and whoever reviews your paper is sitting at the table.",
+        "A game built to be played entirely in the gap between ordering and the food arriving, with one hard rule: it has to be finishable.",
+        "High Street: everyone runs a shop on the same road, and you cannot win unless at least two of the other shops are still open."
+      ],
+      "idea_prompt": [
+        "Ten board games that should exist"
+      ],
+      "tip_text": [
+        "When an agent tells you a pattern appears nowhere in the repository, ask it for the pattern and the match count rather than accepting the conclusion. Claude Code 2.1.317 fixed Grep and Glob results that hit the search time limit being passed to the model as complete — on a large repository, a timed-out search looked exactly like a clean miss."
+      ],
+      "hn_id": [
+        "50364336",
+        "50354358",
+        "50355251",
+        "50353192",
+        "50363461"
+      ],
+      "link": [
+        "https://spectrum.ieee.org/ai-in-cybersecurity-php2shell-vulnerability",
+        "https://neufangled.com/",
+        "https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/",
+        "https://www.nytimes.com/2026/11/03/us/google-search-schools-restrict-ai.html",
+        "https://news.ycombinator.com/item?id=50363461",
+        "https://www.indiablooms.com/finance/cabinet-approves-rs-2814-crore-scheme-to-boost-indias-critical-mineral-industry/details",
+        "https://blog.smartthings.com/smartthings-updates/smartthings-api-additional-details-for-developers-and-business-partners/",
+        "https://phys.org/news/2026-11-reveal-hydrogen-dissolved-tiny-gaps.html",
+        "https://research.google/blog/agile-deliberation-how-ai-helps-humans-define-the-gray-areas/",
+        "https://arxiv.org/abs/2610.39074"
+      ],
+      "subject": [
+        "India will reimburse 30% of the capital outlay for four critical-mineral refineries, two for lithium at 30 kilotonnes and two for nickel at 50 kilotonnes, with beneficiaries picked by reverse auction on the subsidy they request.",
+        "SmartThings puts its cloud API behind paid developer plans, with app editing blocked from 4 November and API keys deactivated on 15 December.",
+        "Cryogenic atom probe tomography with deuterium reveals hydrogen dissolved interstitially in a metal lattice, concentrating inside an ordered L12 precipitate phase.",
+        "Paws & Co unrolls a twelve-metre printed veterinary bill at Woofstock Dubai to pre-sell memberships before its first clinic opens.",
+        "Hydralyte and Five by Five Global disguise a rehydration campaign as a horror film trailer, unmasked by anagrams hidden in credits and station signage.",
+        "Twix runs a second year of its invented Hallowmas holiday, with a zombie-bitten Santa, skull-shaped bars and a 20,000 dollar look-alike contest.",
+        "Agile Deliberation has vision-language models surface borderline images so a user can discover what their own subjective category actually excludes.",
+        "HERA, given a knowledge base curated by its own lab, independently reproduced an expert physicist's sealed conclusion on graphene stacking order.",
+        "The decoy effect: adding a third option nobody picks moves what everybody else picks, demonstrated on 100 students with magazine subscriptions and first described by Huber, Payne and Puto in 1981."
+      ],
+      "brand": [
+        "Paws & Co",
+        "Paws",
+        "Hydralyte",
+        "Five by Five Global",
+        "Twix"
+      ],
+      "brand_mention": [
+        "Woofstock Dubai",
+        "Wait",
+        "See",
+        "Isn't Free",
+        "Founding Families",
+        "Motor City",
+        "Campaign Middle",
+        "PR",
+        "Don't Let The Dryness Get",
+        "Sydney's Museum",
+        "St James",
+        "Sydney",
+        "Five's",
+        "Halloween",
+        "Mumbrella",
+        "Chimera",
+        "GoDaddy",
+        "Emmie Noll",
+        "Tawer Station",
+        "Hartydley Station",
+        "Water Station",
+        "Hydralyte",
+        "Christmas",
+        "Than",
+        "Zombie Claus",
+        "Santa",
+        "Subway Takes",
+        "Kareem Rahma",
+        "Publicis Media The 40",
+        "Twix Skulls",
+        "Ghoulish Green",
+        "Fun Size",
+        "Halloween-Christmas",
+        "Hallowmas",
+        "Weber Shandwick",
+        "Williamsburg Inventing"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "India will pay 30% of the capital cost for four plants that turn lithium and nickel ore into battery-grade compounds, and will pick the winners by who asks for the least"
+        ],
+        [
+          "trends",
+          "SmartThings has started charging hobbyists for the API that runs their homes, and the switch-off date is 15 December"
+        ],
+        [
+          "trends",
+          "Hydrogen has been seen sitting in the gaps between metal atoms, which is where the theory always put it and where nobody had ever imaged it"
+        ],
+        [
+          "wild",
+          "Paws & Co printed a 12-metre veterinary bill and unrolled it at a dog festival, before its first clinic has even opened"
+        ],
+        [
+          "wild",
+          "Hydralyte spent the last week of October pretending to be a horror film, and the trade press cracked it with anagrams"
+        ],
+        [
+          "wild",
+          "Twix has invented a holiday where Halloween and Christmas happen at the same time, and its Santa has been bitten by a zombie"
+        ],
+        [
+          "research",
+          "They stopped assuming the labeller knows what the label means, and had the model go looking for the examples that break your definition"
+        ],
+        [
+          "research",
+          "An agent ran a cryogenic physics experiment end to end, and matched the expert's sealed answer on both devices"
+        ],
+        [
+          "learn",
+          "The most useful option on a price list is the one nobody buys. Add a deliberately bad third choice and two-thirds of people switch to the expensive one."
+        ]
+      ],
+      "editorial_domains": [
+        "blog.smartthings.com",
+        "indiablooms.com",
+        "phys.org"
+      ]
     }
   ]
 }
