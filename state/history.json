@@ -8850,6 +8850,144 @@
         "indiablooms.com",
         "phys.org"
       ]
+    },
+    {
+      "date": "2026-11-06",
+      "issue": 1,
+      "quote_text": [
+        "Mysteries that are destroyed by measurement were never truly mysterious; only our ignorance made them seem so."
+      ],
+      "quote_author": [
+        "Jennifer Egan"
+      ],
+      "idea_text": [
+        "Tell you what you have forgotten to pack, by noticing what you took last time you went somewhere for four days.",
+        "Let you resize the subtitles on a video without resizing everything else on the screen.",
+        "Keep a running tally of who owes whom after dinner, without anybody having to open an app or type a number.",
+        "Refuse to ring at full volume in a cinema, because it knows perfectly well where it is.",
+        "Tell you which of your photos are duplicates of the same moment and keep the one where nobody blinked.",
+        "Show you, on one screen, every subscription that is charging the card it holds.",
+        "Read a restaurant menu out loud in your own language while you are looking at it, offline, in a basement with no signal.",
+        "Have a second lock screen that shows an entirely boring, plausible phone when you hand it to someone.",
+        "Know that you are driving and stop asking you to confirm things until you have parked.",
+        "Work as a cheap, long-lasting, e-ink second screen for reading, when it is not being a phone."
+      ],
+      "idea_prompt": [
+        "Ten things a phone should be able to do by now but can't"
+      ],
+      "tip_text": [
+        "When a background agent is heading the wrong way, send it a message rather than stopping it. Claude Code 2.1.317 changed SendMessage so a note to a running background agent \"arrives earlier: its running command moves to the background, without being stopped\" — so the correction lands mid-run and whatever was already executing survives it."
+      ],
+      "hn_id": [
+        "50378228",
+        "50371246",
+        "50365755",
+        "50366999",
+        "50362905"
+      ],
+      "link": [
+        "https://sshhole.com",
+        "https://layer3intel.com/blog/residential-proxies-white-house-network",
+        "https://www.theregister.com/security/2026/11/03/north-korean-fake-job-interview-led-to-63b-binance-heist/5307398",
+        "https://huggingface.co/moonshotai/Kimi-K3.1-Pro",
+        "https://www.mindstudio.ai/blog/linux-nvidia-rtx-spark-laptop",
+        "http://www.pv-magazine-india.com/2026/11/05/cabinet-approves-inr-14500-crore-viability-gap-funding-scheme-for-development-of-92-gwh-grid-scale-energy-storage-systems/",
+        "https://devforum.roblox.com/t/updates-to-the-roblox-terms-of-use-november-2026/4907620",
+        "https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0358468",
+        "https://www.microsoft.com/en-us/research/blog/formally-verifying-agent-written-full-stack-web-apps-with-pdd-kit/",
+        "https://arxiv.org/abs/2610.41254"
+      ],
+      "subject": [
+        "India backs 92 GWh of new grid-scale energy storage with viability gap funding, split 60 GWh pumped hydro, 30 GWh batteries and 2 GWh alternative technologies, allocated by tariff-based bidding with a 40% domestic content floor on batteries.",
+        "Roblox rewrites its Terms of Use so that it is the principal distributor and merchant of record for every purchase, stating that users and creators do not transact directly, and adds a clause making misrepresentation of sign-up country a violation.",
+        "Nuclear and mitochondrial DNA recovered from tanned Early Neolithic goat leather at Cueva de los Murcielagos in Albunol, Spain, identifies a domestic goat with closest affinity to the modern Bermeya breed.",
+        "KFC MENA sells off its own original buckets, neon signs and sauces through classified-ad listings on Dubizzle and Facebook Marketplace as a teaser for a regional rebrand.",
+        "Glenfiddich builds a 15-metre replica of its own bottle containing a full-size replica Aston Martin Formula One car and displays it on the concourse at London King's Cross for three days.",
+        "Traya runs a Dussehra bow-and-arrow activation at Sri Ramlila Ground in Dwarka where targets represent commonly suspected hair-fall causes, paired with free hair tests and scalp scans.",
+        "PDD Kit converts stated developer intent into Verus proof specifications and has the coding tool emit machine-checked proofs plus tests, with a mutation step that plants one bug per clause, so generated Rust can be merged on a proof rather than a human reading the diff.",
+        "Hawkeye introduces BSTRB, a benchmark of 8,398 blurry scene-text samples drawn from 1,699 real videos, and a fine-tuned reader that exceeds much larger systems on text at or below 20 pixels in height.",
+        "The chip log: knots tied 47 feet 3 inches apart on a line paid out behind a ship over a 28-second sandglass gave a reading within 0.02% of the modern nautical mile per hour."
+      ],
+      "brand": [
+        "KFC",
+        "Glenfiddich",
+        "Aston Martin Aramco Formula One Team",
+        "William Grant & Sons",
+        "Traya"
+      ],
+      "brand_mention": [
+        "KFC",
+        "Dubizzle",
+        "Marketplace",
+        "Buyers",
+        "MENA-wide",
+        "Taste",
+        "What's",
+        "TBWA",
+        "RAAD",
+        "Aston Martin Formula",
+        "Glenfiddich's",
+        "King's Cross",
+        "24 October Tastings",
+        "Booking Office 1869",
+        "Dentsu X",
+        "Matthew Smith",
+        "Aston Martin Formula One Team 16-Year-Old Limited Edition Release No.2",
+        "Selfridges",
+        "William Grant",
+        "Sons",
+        "Aston Martin's Adrian Newey",
+        "Ravana",
+        "Sri Ramlila Ground",
+        "Dwarka",
+        "Andhere Mein Teer Mat Chalao",
+        "Traya",
+        "Traya Hair Test",
+        "Co-founder Saloni Anand's"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "India has put ₹14,500 crore behind 92 GWh of grid storage, and two-thirds of it is pumped hydro rather than batteries"
+        ],
+        [
+          "trends",
+          "From last Sunday, Roblox says you are not buying from the creator — you are buying from Roblox"
+        ],
+        [
+          "trends",
+          "Somebody got a goat's genome out of a 7,000-year-old piece of leather, and it is a cousin of a breed still farmed in northern Spain"
+        ],
+        [
+          "wild",
+          "KFC quietly listed its own buckets and restaurant neon signs for sale on Dubizzle, with the line \"A chapter is coming to an end\""
+        ],
+        [
+          "wild",
+          "Glenfiddich put a full-size Formula One car inside a 15-metre whisky bottle and parked it on the King's Cross concourse"
+        ],
+        [
+          "wild",
+          "Traya set up archery at a Ramlila ground and had women shoot at the things they blame for their hair falling out"
+        ],
+        [
+          "research",
+          "If nobody can review 5,000 lines of agent-written Rust, make the agent prove it instead"
+        ],
+        [
+          "research",
+          "Vision models fall apart on text below about 20 pixels, and a small fine-tune beats much larger ones there"
+        ],
+        [
+          "learn",
+          "A ship's speed is measured in knots because sailors counted actual knots, tied in an actual rope, as it ran off the back of the boat."
+        ]
+      ],
+      "editorial_domains": [
+        "devforum.roblox.com",
+        "journals.plos.org",
+        "pv-magazine-india.com"
+      ]
     }
   ]
 }

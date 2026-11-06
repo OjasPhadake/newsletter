@@ -1,0 +1,327 @@
+{
+ "date_line": "Friday, 6 November 2026",
+ "issue": 1,
+ "preheader": "Jennifer Egan on the mysteries that measurement destroys; message a background agent instead of stopping it; any password over 256 characters logs you into a locked Alpine account; residential proxy traffic leaving the White House network 236 times in a month; a fake job interview that ended in a $6.3 billion Binance theft; a 2.8-trillion-parameter open-weight model; an Nvidia laptop that runs five times slower on Linux because the power table is encrypted; Thursday's sixth straight rally, Sensex 79,310.01 and the largest DII outflow on record; India puts Rs 14,500 crore behind 92 GWh of grid storage; Roblox decides it is the shop, not the shopkeeper; DNA out of a 7,000-year-old piece of goat leather; proofs instead of code review for agent-written apps; the pixel height at which vision models stop being able to read; KFC quietly selling its own neon signs on Dubizzle; a full-size F1 car inside a 15-metre whisky bottle; and why a ship's speed is measured in knots tied in a rope.",
+ "quote": {
+  "text": "Mysteries that are destroyed by measurement were never truly mysterious; only our ignorance made them seem so.",
+  "author": "Jennifer Egan",
+  "work": "The Candy House",
+  "source_url": "https://www.goodreads.com/quotes/tag/measurement",
+  "note": "The standard complaint about science is that it drains the wonder out of things. Egan turns the sentence around: if a number can kill it, the wonder was never in the thing, it was in you not knowing. Worth keeping next to every result that turned out to be less interesting than the question — the loss is real, but it is a loss of ignorance, not of mystery."
+ },
+ "agent_craft": {
+  "items": [
+   {
+    "text": "When a background agent is heading the wrong way, send it a message rather than stopping it. Claude Code 2.1.317 changed SendMessage so a note to a running background agent \"arrives earlier: its running command moves to the background, without being stopped\" — so the correction lands mid-run and whatever was already executing survives it.",
+    "source": "Anthropic, Claude Code changelog, 2.1.317 (3 November 2026)",
+    "url": "https://code.claude.com/docs/en/changelog"
+   }
+  ]
+ },
+ "hn": [
+  {
+   "title": "sshole: any password over 256 characters logs you into a locked account on musl Linux",
+   "url": "https://sshhole.com",
+   "hn_url": "https://news.ycombinator.com/item?id=50378228",
+   "points": 2284,
+   "comments": 567,
+   "bullets": [
+    "The bug is an authentication bypass in OpenSSH on musl-based systems — Alpine, OpenWrt, Buildroot, Yocto — where sshd is built without PAM and password logins are on. On those builds, an account that should accept no password at all can be logged into with any password between 257 and 1024 characters. Ozgun Kultekin of Wakefield found it.",
+    "It is a collision between two old decisions, neither wrong on its own. A `*` in the password field of /etc/shadow is not a hash, so nothing can ever match it — that convention goes back to BSD's daemon account in 1980. But a musl commit in 2012 made crypt() return the string `\"*\"` on failure instead of NULL, and a second commit on 29 August 2012 capped its SHA-512 crypt at a KEY_MAX of 256 bytes. Send a longer password, crypt() fails, returns `\"*\"`, and `\"*\"` matches the locked field exactly.",
+    "The third ingredient is the 2016 fix for username enumeration, CVE-2016-6210, which had sshd hash an unknown user's password against another account's salt — which the write-up says also applies to real users carrying a `*`. Alpine moved root from `!` to `*` in 3.16 after CVE-2019-5021 specifically so key logins would keep working. The author tested glibc, musl, PAM and shadow combinations across roughly 17,600 logins; only musl-without-PAM accepted the bad ones.",
+    "The reason it matters beyond hobby boxes: the default `alpine` user on Alpine's own AWS and Azure images has passwordless `doas`, so the account you get into can become root. Fix is OpenSSH 10.6p2 (`apk upgrade openssh`); if you cannot upgrade, put `PasswordAuthentication no` in a file under /etc/ssh/sshd_config.d/ and restart sshd. Detection tooling is at github.com/oz9un/sshole."
+   ]
+  },
+  {
+   "title": "Residential proxy traffic was leaving the White House network 236 times in a month",
+   "url": "https://layer3intel.com/blog/residential-proxies-white-house-network",
+   "hn_url": "https://news.ycombinator.com/item?id=50371246",
+   "points": 1244,
+   "comments": 429,
+   "bullets": [
+    "Layer3 Intel runs an enumeration pipeline that sends requests out through commercial residential proxy services using global rotating access — you buy access and your traffic exits through somebody's home device. Reviewing their new Residential Proxy Observatory, they found that between 5 October and 3 November 2026 their own traffic exited through AS2650, registered to the Executive Office of the President, 236 times: six addresses, 28 different proxy services, on 26 of the 30 days.",
+    "They did not go looking for it and they do not publish the addresses. Confirmation is third-party: Spur and Synthient's public IP-context pages independently label the same addresses as residential proxy exits.",
+    "The timing is the inference. Roughly half the activity falls between 5pm and midnight Eastern with almost none in the early morning, which reads like one person's proxy-infected device on the network rather than a guest Wi-Fi exit. The worry they spell out is the direction of traffic: a badly built proxy SDK can let whoever bought proxy access reach inward. They cite Synthient's Kimwolf botnet report — at least 2 million devices, mostly Android boxes with ADB left exposed — as the precedent.",
+    "The same dataset has a travelogue attached. Saint Helena, Ascension and Tristan da Cunha: 413 addresses and over 32,000 observations, split between Starlink and Sure Saint Helena. The Falklands 388 addresses, the Chagos Islands 43, Tokelau 21, South Georgia 7. Antarctica managed three observations, all through one Cloudflare WARP address pointing at McMurdo Station. Single-vendor data, raw logs offered to agencies on request."
+   ]
+  },
+  {
+   "title": "A North Korean fake job interview ended in a $6.3bn Binance theft",
+   "url": "https://www.theregister.com/security/2026/11/03/north-korean-fake-job-interview-led-to-63b-binance-heist/5307398",
+   "hn_url": "https://news.ycombinator.com/item?id=50365755",
+   "points": 639,
+   "comments": 379,
+   "bullets": [
+    "Binance disclosed the theft on 29 October 2026. The FBI attributes it to TraderTraitor, the North Korean operation linked to Lazarus Group. Binance's own description is \"a sophisticated, multi-stage campaign\" rather than one breach — and the chain it published runs for five months.",
+    "June: an engineer downloaded a malicious Homebrew install. Security caught the malware, swapped the device and rotated credentials — but the incident had already told the attackers who worked on wallet infrastructure. September: a second engineer was approached on a legitimate job-hunting platform by a fake project director. Round one was a video interview with a fake HR representative who shared a personal social media account to build trust. Round two was a purported CEO on a chat app who sent an \"assignment\" — a malware-laced code repository.",
+    "The payload ran on the engineer's work machine during setup. It replaced a legitimate pyenv component under Homebrew with a malicious version, called home to an attacker-controlled server, and hid itself; endpoint security did not catch it. On 20 October the attackers used that machine — and an internal AI tool — to reach two more engineers' computers, one of whom held a container deployment token.",
+    "On 29 October they used the third engineer's computer, deployed a container with the stolen token, and triggered the script. Binance has rebuilt the wallet system and the internal AI tool, replaced devices, decommissioned the tokens, and hired outside reviewers. Note what the supply-chain compromise in June actually leaked: not credentials, which were rotated, but an org chart."
+   ]
+  },
+  {
+   "title": "Kimi K3.1 Pro: 2.8 trillion parameters, open weights, 1M context",
+   "url": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro",
+   "hn_url": "https://news.ycombinator.com/item?id=50366999",
+   "points": 622,
+   "comments": 0,
+   "bullets": [
+    "Moonshot's card calls it \"our most capable 3T-class model to date\": about 2.8T total parameters with 104B activated per token, a mixture-of-experts stack 93 layers deep with 896 experts, 16 chosen per token plus 2 shared, a ~160K vocabulary, and a 401M-parameter MoonViT-V2 vision encoder. Context is 1,048,576 tokens. Text and image in.",
+    "The architectural change from Kimi K3 is narrow and specific: the full-attention Gated MLA layers are replaced with Gated DeepSeek Sparse Attention. Attention is now 69 KDA layers plus 24 Gated DSA layers, which is the part that pays for a million-token window. Weights ship as MXFP4 with MXFP8 activations via quantisation-aware training, so the released artefact is the quantised one rather than a lossy afterthought.",
+    "It was post-trained from K3 with large-scale joint reinforcement learning across hundreds of domains. There is a `reasoning_effort` setting — low, high or max, defaulting to max — and the card points at vLLM, SGLang or TokenSpeed to serve it.",
+    "The benchmark table is self-reported and worth reading for where it loses. Terminal-Bench 4.0 65.7 against Claude Opus 5.5's 66.4; BrowseComp 92.1 against GPT-6 Astra's 91.5; HLE-Full with tools 70.0 against Opus 5.5's 67.7; DeepSWE v1.1 75.5 against 74.2. Then GPQA-Diamond 94.2 against Astra's 96.1, and HLE-Diamond 39.4 against Astra's 65.8 — a gap on the hardest set that the vendor left in its own tables."
+   ]
+  },
+  {
+   "title": "An Nvidia RTX Spark laptop runs five times slower on Linux because the power table is encrypted",
+   "url": "https://www.mindstudio.ai/blog/linux-nvidia-rtx-spark-laptop",
+   "hn_url": "https://news.ycombinator.com/item?id=50362905",
+   "points": 609,
+   "comments": 0,
+   "bullets": [
+    "The machine is an MSI Prestige N16 Flip AI Plus on Nvidia's RTX Spark platform — same GPU design as the DGX Spark desktop, shipped with Windows on ARM, up to 128GB unified memory with 96GB reserved for the GPU by default. Plugged in, the GPU clocks at about 780-790 MHz under Linux against about 2.2 GHz under Windows. Temperatures sat at 40-47°C, so it is not thermal throttling.",
+    "The cause is a Windows-only component called the Nvidia Platform Controllers and Framework, which arbitrates power between CPU and GPU. Firmware hands it an encrypted power-settings table and only the Windows driver has the key. Linux has no equivalent, so the GPU never leaves its low clock while on mains.",
+    "The numbers. GPT-OSS-120B throughput: Windows 65.4 tok/s, WSL 65.1, DGX Spark 61, native Linux 13.9. vLLM with eight concurrent clients: WSL 127 tok/s, native Linux 39.5. A longer benchmark took about 8 minutes on Windows and about 37 on Linux. The giveaway is the inversion — unplugged, Linux managed about 61-67 tok/s in LM Studio; plugged in, about 15.",
+    "The author pinned it down from the other side: disabling the platform controller on Windows dropped throughput from about 83 to about 31 tok/s and the clock to about 786 MHz, and re-enabling it restored both. Workarounds failed, one causing a kernel panic; extracting the key from the Windows driver was floated and dismissed as fragile. No statement from Nvidia. Until the Linux driver gets equivalent power-management logic, the recommendation is WSL, which borrows the Windows driver stack and keeps full boost."
+   ]
+  }
+ ],
+ "markets": {
+  "indices": [
+   {
+    "name": "Pre-open · Fri 6 Nov",
+    "value": "Last close: Thu 5 Nov",
+    "change": "Indian markets open at 9:15 IST this morning, so nothing below is today. These are Thursday's numbers — a sixth consecutive rising session, and the strongest of them.",
+    "direction": "flat"
+   },
+   {
+    "name": "Sensex · Thu 5 Nov close",
+    "value": "79,310.01",
+    "change": "+2,008.61 (+2.60%), a sixth straight gain, per Liquide's post-market report. The rally is credited to the sharp fall in crude, renewed foreign buying and the US midterm result",
+    "direction": "up"
+   },
+   {
+    "name": "Nifty 50 · Thu 5 Nov",
+    "value": "24,536.60",
+    "change": "+576.00 (+2.40%). It closed at the high of the day, per Kotak Neo's wrap",
+    "direction": "up"
+   },
+   {
+    "name": "Bank Nifty",
+    "value": "57,773.65",
+    "change": "+1,860.05 (+3.33%), outpacing both frontline indices",
+    "direction": "up"
+   },
+   {
+    "name": "Thursday's sectors",
+    "value": "Nifty Auto +4.14%",
+    "change": "Financial Services +3.99%, Realty +3.52% and IT +2.42% followed. Energy, down 0.52%, was the only sector in the red. Bajaj Finance +7.65%, Shriram Finance +6.08% and Mahindra & Mahindra +5.59% led; Apollo Hospitals −2.66%, ONGC −2.13% and NTPC −1.63% lagged",
+    "direction": "up"
+   },
+   {
+    "name": "Thursday's breadth",
+    "value": "Midcap 100 +1.87%",
+    "change": "The Smallcap 100 added 0.56%. Both lagged the frontline indices, which is the reverse of Wednesday — this was a large-cap, financials-and-autos day rather than a broad one",
+    "direction": "up"
+   },
+   {
+    "name": "FII cash · Thu 5 Nov",
+    "value": "+₹14,974.68 cr",
+    "change": "A fifth straight day of foreign buying and roughly double Wednesday's ₹7,284 cr: ₹31,797.86 cr of gross purchases against ₹16,823.18 cr of sales. Provisional exchange data, tabulated by Groww",
+    "direction": "up"
+   },
+   {
+    "name": "DII cash · Thu 5 Nov",
+    "value": "−₹10,444.54 cr",
+    "change": "Gross purchases ₹22,168.28 cr against ₹32,612.82 cr of sales. Business Standard calls it the largest-ever single-session net outflow by domestic institutions — nearly three times Wednesday's −₹3,712 cr. Combined net institutional flow +₹4,530.14 cr. Provisional",
+    "direction": "down"
+   },
+   {
+    "name": "USD/INR",
+    "value": "94.41",
+    "change": "The rupee settled 5 paise stronger on Thursday, per PTI, helped by cheaper crude and foreign inflows. It opened at 94.36 and touched 94.57 intraday. The dollar index was 101.50, down 0.06%",
+    "direction": "up"
+   },
+   {
+    "name": "Crude · Brent futures",
+    "value": "$95.93",
+    "change": "Up 1.38% in futures trade at the time of PTI's rupee report, but down from above $105 — Kotak Neo notes Thursday extended the previous session's roughly 9% drop. Cheap oil is the single biggest input to this rally for an importer",
+    "direction": "up"
+   },
+   {
+    "name": "Overnight · world",
+    "value": "Dow +3.03%",
+    "change": "Wall Street rallied on Wednesday 4 November after the US midterms. Hong Kong's Hang Seng gained about 3.2% on Thursday; South Korea's Kospi fell 5.3% on semiconductor selling. Figures per Liquide",
+    "direction": "up"
+   }
+  ]
+ },
+ "trends": [
+  {
+   "tag": "India",
+   "headline": "India has put ₹14,500 crore behind 92 GWh of grid storage, and two-thirds of it is pumped hydro rather than batteries",
+   "url": "http://www.pv-magazine-india.com/2026/11/05/cabinet-approves-inr-14500-crore-viability-gap-funding-scheme-for-development-of-92-gwh-grid-scale-energy-storage-systems/",
+   "subject": "India backs 92 GWh of new grid-scale energy storage with viability gap funding, split 60 GWh pumped hydro, 30 GWh batteries and 2 GWh alternative technologies, allocated by tariff-based bidding with a 40% domestic content floor on batteries.",
+   "subtitle": "Cabinet decision of 4 November 2026, reported by pv magazine India",
+   "bullets": [
+    "₹14,500 crore of viability gap funding across FY2026-27 to FY2030-31, against about ₹97,600 crore of expected total investment. The government's framing is that this adds capacity equal to 170% of India's present grid-scale storage, against a stated requirement of 411 GWh by 2031-32.",
+    "The split is the interesting number: 60 GWh hydro pumped storage, 30 GWh battery storage, 2 GWh alternative technologies. Twice as much pumped hydro as batteries. Pumped storage is older, cheaper per unit of energy and geography-bound; a scheme weighted this way is buying hours of duration rather than fast response, which is what a grid absorbing a lot of midday solar actually runs short of.",
+    "Capacity goes out through tariff-based competitive bidding. Public and private distribution companies are eligible for the battery and pumped-hydro tranches; the alternative-technology tranche is open to public and private entities. Battery projects carry a minimum 40% domestic content requirement.",
+    "Read it next to Wednesday's other Cabinet decision on critical mineral refining and the pattern is clear enough: the money is going to the middle of the chain. The domestic content floor on the battery tranche is the lever, and it is the number to watch if cell prices keep falling faster than Indian factories can be built."
+   ]
+  },
+  {
+   "tag": "Industry",
+   "headline": "From last Sunday, Roblox says you are not buying from the creator — you are buying from Roblox",
+   "url": "https://devforum.roblox.com/t/updates-to-the-roblox-terms-of-use-november-2026/4907620",
+   "subject": "Roblox rewrites its Terms of Use so that it is the principal distributor and merchant of record for every purchase, stating that users and creators do not transact directly, and adds a clause making misrepresentation of sign-up country a violation.",
+   "subtitle": "Announced 1 October 2026 on the Roblox developer forum, in force from 1 November 2026",
+   "bullets": [
+    "The clause that matters: Roblox now \"acts as the principal distributor and merchant of record for purchases made through Roblox\", and \"Users and Creators do not enter into a direct transaction with each other.\" On a platform whose entire pitch is that players buy things other players made, that is a legal reclassification of what the marketplace is. The sections on License to Roblox, Robux, the Roblox Economy, Creator Payments, and Taxes and Withholding were all rewritten alongside it.",
+    "Two other changes are in Roblox's own list. Users in the European Economic Area get a consumer right of withdrawal. And a minor cannot keep using Roblox until a parent or guardian agrees to the new terms — a consent gate retroactively applied to existing accounts.",
+    "The change developers are actually arguing about is not in the announcement. A forum user quotes a new Section 2.3 stating that \"Attempting to misrepresent your sign-up country is a violation of the Roblox Terms\", which has produced a run of questions nobody has answered: does playing on holiday count, does a VPN used for security count, what happens if you emigrate. One developer says they will stay logged out while abroad rather than find out.",
+    "The rollout itself was a small comedy. Users were shown an acceptance popup for documents whose links returned HTTP 429, so they were asked to agree to terms they could not open; staff said a fix was going out on 2 October. The popup also kept reappearing on mobile after people tapped I Agree. The most reasonable request in the thread went unmet: publish a diff."
+   ]
+  },
+  {
+   "tag": "Wildcard",
+   "headline": "Somebody got a goat's genome out of a 7,000-year-old piece of leather, and it is a cousin of a breed still farmed in northern Spain",
+   "url": "https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0358468",
+   "subject": "Nuclear and mitochondrial DNA recovered from tanned Early Neolithic goat leather at Cueva de los Murcielagos in Albunol, Spain, identifies a domestic goat with closest affinity to the modern Bermeya breed.",
+   "subtitle": "Erven, Robinet Guyet, Martinez-Sevilla and colleagues, PLOS ONE 21(11): e0358468, 4 November 2026",
+   "bullets": [
+    "The object is two fragments of tanned goat leather from Cueva de los Murciélagos in Albuñol, Granada — recovered from nineteenth-century miners' waste dumps, probably from the same animal, carrying four deliberate perforations. The authors read it as a wrap, a garment or a grave good. Radiocarbon puts it at 7,246-7,008 cal BP, the earliest phase of the Early Neolithic.",
+    "Ancient DNA is normally a cold-and-dry business; warm climates destroy it. What survived here was heavily fragmented — about 377,825 goat-aligned reads averaging 37 base pairs, with the damage signature you expect. Mitochondrial coverage came out at 36.7×; autosomal coverage at 0.0049×, which is roughly one read for every two hundred positions. The animal was female.",
+    "It is a domestic goat, Capra hircus, not a wild Iberian ibex — which settles something. Neolithic people in southern Iberia were working hides from herded animals, not hunted ones. The closest modern relative is the Bermeya breed of northern Spain, there is no African goat ancestry in it, and the authors take that to mean African introgression into Iberian goats came later.",
+    "The caveats are the authors' own and they are large. At 0.0049× you can identify a species confidently and build a population history only tentatively; several statistics did not reach significance, only four modern Spanish breeds were in the comparison, and the mitochondrial placement inside haplogroup A stays unresolved. They call it an initial framework. The part that needs no hedging is that a tanned hide held onto a readable genome for seven millennia in southern Spain."
+   ]
+  }
+ ],
+ "research": [
+  {
+   "tag": "Industry · Microsoft Research",
+   "title": "If nobody can review 5,000 lines of agent-written Rust, make the agent prove it instead",
+   "url": "https://www.microsoft.com/en-us/research/blog/formally-verifying-agent-written-full-stack-web-apps-with-pdd-kit/",
+   "subject": "PDD Kit converts stated developer intent into Verus proof specifications and has the coding tool emit machine-checked proofs plus tests, with a mutation step that plants one bug per clause, so generated Rust can be merged on a proof rather than a human reading the diff.",
+   "subtitle": "Alex Lavaee and Matthai Philipose, Microsoft Research blog, 5 November 2026",
+   "bullets": [
+    "The problem statement is honest about why review is failing. Agents write far more code than anyone reads; they drift from the agreed plan; and the tests they write tend to confirm what they built rather than what was asked for. PDD Kit — Proof-Driven Development — moves the artefact you check from the diff to the specification.",
+    "Four stages. `pdd-plan` interrogates you first, asks clarifying questions before any code exists, and records the answers as an intent artefact; requirements that can be formalised become specs in Verus, Microsoft's proof language for Rust, and the rest become informal test specs. The trusted boundary — the code the proof simply assumes behaves as described — is made explicit and you sign off on each piece. `pdd-prove` generates proofs and tests, has an LLM reviewer hunt for gaps, and runs a mutation check that plants one bug per spec clause to catch clauses that verify while constraining nothing. `pdd-ship` puts the Verus check in CI so later changes keep proving.",
+    "That mutation step is the part to steal even if you never touch Verus. A specification that passes is not evidence of anything until you have shown it can fail — the standard failure mode of formal specs is a clause that is trivially true.",
+    "The demonstration is deliberately small: the login logic of \"Pet Store\", a roughly 5,000-line Rust full-stack app. Eight `ensures` clauses on the main `login_flow` function, six trusted pieces, seven build tasks. Verus hardened the code, turned up existing bugs, and the developer merged without reading the generated code line by line. No bug counts, no verification times, and Rust only — the authors call it a research prototype, and it runs inside GitHub Next's Chopin planning environment."
+   ]
+  },
+  {
+   "tag": "Academia · University of Michigan",
+   "title": "Vision models fall apart on text below about 20 pixels, and a small fine-tune beats much larger ones there",
+   "url": "https://arxiv.org/abs/2610.41254",
+   "subject": "Hawkeye introduces BSTRB, a benchmark of 8,398 blurry scene-text samples drawn from 1,699 real videos, and a fine-tuned reader that exceeds much larger systems on text at or below 20 pixels in height.",
+   "subtitle": "Brian Tang and Kang G. Shin, University of Michigan, arXiv:2610.41254, 30 October 2026",
+   "bullets": [
+    "The benchmark is the contribution that outlasts the model. BSTRB is 8,398 noisy image samples pulled from 1,699 real-world video sequences — motion blur and low resolution as they actually occur, not synthetic Gaussian smear applied to clean crops. The motivating application is smart glasses, where every frame is a handheld frame.",
+    "Hawkeye is a vision-language model fine-tuned on it, designed to read and reason about degraded text in a single pass using contextual priors and pixel-level alignment. Single-pass matters for the use case: a glasses pipeline cannot afford a super-resolution stage followed by an OCR stage followed by a language model.",
+    "The headline result is a threshold rather than a score. Hawkeye matches much larger VLMs across BSTRB overall and exceeds them on text at or below 20 pixels in height — which is the practically useful finding, because it names the point at which a general-purpose model stops being able to read and a specialist starts earning its place.",
+    "Caveat where the paper is thin: the abstract page gives no accuracy, error-rate or latency figures, so \"matches much larger VLMs\" is a claim to check against the tables rather than a number. The pair are from Michigan's long-running line of work on sensing and systems security — Shin's group — and the framing here is a deployment constraint, not a leaderboard."
+   ]
+  }
+ ],
+ "wild": [
+  {
+   "tag": "Fast food · MENA",
+   "headline": "KFC quietly listed its own buckets and restaurant neon signs for sale on Dubizzle, with the line \"A chapter is coming to an end\"",
+   "entities": [
+    "KFC"
+   ],
+   "subject": "KFC MENA sells off its own original buckets, neon signs and sauces through classified-ad listings on Dubizzle and Facebook Marketplace as a teaser for a regional rebrand.",
+   "subtitle": "Adam Shaw, Campaign Brief Asia, 6 November 2026",
+   "bullets": [
+    "In the weeks before the reveal, KFC posted its own branded objects as second-hand classifieds on Dubizzle and Facebook Marketplace: original buckets, sauces, and neon signs described as coming \"straight from our restaurants\". Each listing carried exactly one line of copy — \"A chapter is coming to an end.\"",
+    "Buyers got the real object delivered. The delivery came with a question attached: what's next for KFC. The whole thing was the run-up to a MENA-wide brand platform called \"A Taste of What's Next\".",
+    "What makes it work is the channel rather than the object. A brand that puts its own signage in a teaser film is advertising; a brand that puts its own signage in the used-goods section of a classifieds site is doing something slightly unsettling, because that is where you go when a business is closing down. The ambiguity was the point, and it was free.",
+    "No prices, no list of markets, no listing dates in the write-up — so treat the mechanics as reported rather than audited. Credit is KFC with TBWA\\RAAD."
+   ]
+  },
+  {
+   "tag": "Whisky · London",
+   "headline": "Glenfiddich put a full-size Formula One car inside a 15-metre whisky bottle and parked it on the King's Cross concourse",
+   "entities": [
+    "Glenfiddich",
+    "Aston Martin Aramco Formula One Team",
+    "William Grant & Sons"
+   ],
+   "subject": "Glenfiddich builds a 15-metre replica of its own bottle containing a full-size replica Aston Martin Formula One car and displays it on the concourse at London King's Cross for three days.",
+   "subtitle": "Joe Rogers, The Spirits Business, 22 October 2026",
+   "bullets": [
+    "A full-size replica Aston Martin Formula One car, inside a 15-metre-long replica of Glenfiddich's bottle, on the station concourse at London King's Cross from Thursday 22 to Saturday 24 October. Tastings ran 11:30am to 8:30pm daily, with the whisky also available by the dram at Booking Office 1869 next door.",
+    "The build is the number worth quoting: agency Dentsu X spent about six months on the concept and 650 hours assembling it. Its Matthew Smith says the hard part was that Glenfiddich's bottle is round — \"To our knowledge, nothing like this has been done before\" — because a round bottle is the one shape that does not want to contain a car.",
+    "What it is selling is the Glenfiddich & Aston Martin Formula One Team 16-Year-Old Limited Edition Release No.2: first-fill bourbon barrels, port pipes, oloroso sherry casks, wine casks and fino sherry butts, 43%, £75 for 700ml, through Selfridges and others. William Grant & Sons has sponsored the team since November 2024.",
+    "The best line in it comes from the engineer, not the marketer. Aston Martin's Adrian Newey on why the whisky needs character: \"It's not a bottle of spring water. It needs personality.\" He said he was surprised how much engineering goes into making Glenfiddich taste the same every year — which is the actual common ground between the two businesses, and the only one that is not a metaphor."
+   ]
+  },
+  {
+   "tag": "Healthcare · Delhi",
+   "headline": "Traya set up archery at a Ramlila ground and had women shoot at the things they blame for their hair falling out",
+   "entities": [
+    "Traya"
+   ],
+   "subject": "Traya runs a Dussehra bow-and-arrow activation at Sri Ramlila Ground in Dwarka where targets represent commonly suspected hair-fall causes, paired with free hair tests and scalp scans.",
+   "subtitle": "M4G Bureau, Media4Growth, 22 October 2026",
+   "bullets": [
+    "The venue chose itself. Dussehra is the festival where you shoot an arrow at Ravana, and Sri Ramlila Ground in Dwarka has the tallest one. Traya, a doctor-led hair-loss brand, set up a bow-and-arrow game there with targets labelled hard water, excessive oiling, pollution, stress and chemical salon treatments.",
+    "The name is the argument: \"Andhere Mein Teer Mat Chalao\" — don't fire arrows in the dark. Working through shampoos, serums and home remedies without knowing which of those five things is actually happening to you is, the campaign says, shooting blind.",
+    "Hit a target and you won a Traya kit matched to your own hair concern. Everyone else could take a free Traya Hair Test, get a scalp scan, and book a one-on-one with a hair coach — so the funnel is a diagnostic, which is unusually consistent with the message for a festival activation.",
+    "Co-founder Saloni Anand's line is that understanding hair fall is \"the first step towards addressing it\", and that women in particular get pushed at quick fixes that never ask what is causing the problem. The clever part is structural: the stunt only makes sense if your product is a diagnosis rather than a bottle, which means a competitor cannot copy the stunt without changing its business."
+   ]
+  }
+ ],
+ "learn": {
+  "title": "A ship's speed is measured in knots because sailors counted actual knots, tied in an actual rope, as it ran off the back of the boat.",
+  "subject": "The chip log: knots tied 47 feet 3 inches apart on a line paid out behind a ship over a 28-second sandglass gave a reading within 0.02% of the modern nautical mile per hour.",
+  "tags": [
+   "Origin stories",
+   "Measurement",
+   "Ships"
+  ],
+  "body": [
+   "Until the middle of the nineteenth century, the way you found out how fast a ship was going was to throw a piece of wood overboard. The chip log was a flat wooden panel on a long line wound on a reel, weighted along one edge so that it floated upright in the water and resisted being dragged. You tossed it off the stern, where it sat more or less still in the water while the ship sailed away from it, and the line ran out through a sailor's fingers. Knots were tied in that line at intervals. He counted them out loud while a second sailor watched a sandglass, and when the sand ran out he shouted stop. The number of knots was the speed. That is the whole etymology.",
+   "The spacing is the part that is quietly impressive. The knots were tied 47 feet 3 inches apart — 14.4018 metres — and the glass ran for 28 seconds. Work that out and one knot per 28 seconds comes to about 20¼ inches per second, or 1.85166 km/h. The modern international knot, defined by treaty as exactly one nautical mile of 1,852 metres per hour, is 1.852 km/h. The rope-and-sand method, with two men counting, lands within 0.02% of it. Nobody designed that agreement; the modern definition was fitted to the old practice, not the other way round. The earlier glasses ran 30 seconds, and on the fast China clippers a 14-second glass was used with the count doubled, because otherwise you ran out of rope.",
+   "The units outlived the ships. Britain kept its own Admiralty nautical mile of 6,080 feet until 1970; the United States had a slightly different one of 1,853.248 metres and gave it up in 1954. Aviation inherited the whole arrangement — US regulations started specifying nautical miles and knots in 1969, ICAO allowed the knot for \"temporary\" use in 1979, and as of 2024 no end date had been agreed. So the next time an airline pilot announces a ground speed, the number is in a unit whose size was set by how far a rope paid out behind a wooden boat while sand fell through a glass."
+  ]
+ },
+ "ideas": {
+  "prompt": "Ten things a phone should be able to do by now but can't",
+  "items": [
+   {
+    "text": "Tell you what you have forgotten to pack, by noticing what you took last time you went somewhere for four days.",
+    "why": "A recurring ask on r/SomebodyMakeThis is an offline packing app that reminds you about the things you haven't packed."
+   },
+   {
+    "text": "Let you resize the subtitles on a video without resizing everything else on the screen."
+   },
+   {
+    "text": "Keep a running tally of who owes whom after dinner, without anybody having to open an app or type a number."
+   },
+   {
+    "text": "Refuse to ring at full volume in a cinema, because it knows perfectly well where it is."
+   },
+   {
+    "text": "Tell you which of your photos are duplicates of the same moment and keep the one where nobody blinked."
+   },
+   {
+    "text": "Show you, on one screen, every subscription that is charging the card it holds."
+   },
+   {
+    "text": "Read a restaurant menu out loud in your own language while you are looking at it, offline, in a basement with no signal."
+   },
+   {
+    "text": "Have a second lock screen that shows an entirely boring, plausible phone when you hand it to someone."
+   },
+   {
+    "text": "Know that you are driving and stop asking you to confirm things until you have parked."
+   },
+   {
+    "text": "Work as a cheap, long-lasting, e-ink second screen for reading, when it is not being a phone.",
+    "why": "The wish for a low-end ARM machine with an e-ink display comes up often enough on r/SomebodyMakeThis that the unmet need is clearly the screen, not the computer."
+   }
+  ]
+ }
+}
