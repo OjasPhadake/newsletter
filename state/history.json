@@ -8988,6 +8988,159 @@
         "journals.plos.org",
         "pv-magazine-india.com"
       ]
+    },
+    {
+      "date": "2026-11-07",
+      "issue": 1,
+      "quote_text": [
+        "Most things are never meant."
+      ],
+      "quote_author": [
+        "Philip Larkin"
+      ],
+      "idea_text": [
+        "A shower block. Clean, metered, ten minutes, with a place to leave a bag — sold to truck drivers at cost and to everyone else at a markup.",
+        "A tyre shop that only does punctures, open all night, with the price painted on the wall so nobody has to negotiate at 2am.",
+        "A left-luggage counter for people breaking a long drive, so you can eat and sleep without unloading the car.",
+        "A single-dish restaurant. One thing, made continuously since morning, served in four minutes. The menu is the signboard.",
+        "A dog yard: fenced, shaded, with water, for anyone travelling with an animal that has been in a car for five hours.",
+        "A roadside cold store that rents freezer space by the hour to small farmers whose pickup broke down.",
+        "A stall selling exactly the things people discover they forgot: chargers, phone holders, cash, a child's sunhat, motion-sickness tablets, nail clippers.",
+        "A photographer at the one bend where the view is genuinely good, who prints the picture while you have tea.",
+        "A quiet room with twelve reclining chairs, charged by the half hour, no beds and no check-in — for the driver who needs forty minutes, not a hotel.",
+        "A repair bay that fixes only the five things that actually strand people on that stretch of road, and keeps those five parts in stock and nothing else."
+      ],
+      "idea_prompt": [
+        "Ten businesses that would do well on a highway"
+      ],
+      "tip_text": [
+        "If you run Claude Code unattended — a cron job, a CI step, a long headless run — set `permissions.denyInsteadOfPrompting`. A tool call that would otherwise sit waiting on a permission prompt nobody is there to answer is denied instead, and the turn carries on. It landed in 2.1.319 and applies to terminal sessions, subagents and teammates alike, so one setting covers the whole tree."
+      ],
+      "hn_id": [
+        "50385272",
+        "50391456",
+        "50383740",
+        "50384233",
+        "50389333"
+      ],
+      "link": [
+        "https://github.com/anthropics/claude-code/issues/107757",
+        "https://www.nbcnews.com/tech/tech-news/tesla-wind-cybertruck-production-years-poor-sales-markets-rcna607817",
+        "https://kagi.com/changelog#11820",
+        "https://www.cve.org/CVERecord?id=CVE-2026-83844",
+        "https://github.com/ppmpreetham/BUI",
+        "https://www.outlookmoney.com/banking/rbi-issues-new-cyber-security-rules-for-non-bank-payment-operators-sets-audit-deadlines",
+        "https://finance.yahoo.com/technology/ai/articles/nvidia-chips-stockpile-hong-kong-120548918.html",
+        "https://www.sci.news/archaeology/stonehenges-altar-stone-15179.html",
+        "https://research.google/blog/detecting-signs-of-hypertension-using-wearable-sensors/",
+        "https://arxiv.org/abs/2611.02319"
+      ],
+      "subject": [
+        "From 5 November an Indian non-bank payment operator must report a cyber incident to the Reserve Bank within six hours of detecting it, must hold or escrow the code of critical software it did not write, and must file its annual system audit within two months of year end.",
+        "Reuters reports roughly 600,000 Nvidia H200 accelerators are warehoused in Hong Kong awaiting Chinese import approval that has not come, with only about 10,000 units each reaching a handful of large Chinese internet companies and grey-market prices for eight-card servers roughly tripling in a year.",
+        "The most comprehensive geological study yet of the Altar Stone at Stonehenge finds that no sampled location matches its mineral, chemical and isotopic fingerprint, undoing the 2024 attribution to north-east Scotland and leaving the six-tonne slab's source unknown.",
+        "Ob & Gob installs a motorised outdoor billboard at Juhu Beach, Mumbai, in which an oversized mechanical hand repeatedly pops open a giant replica of its canned sundae, extending a festive campaign fronted by Ravi Shastri.",
+        "Lands' End opens a three-day Holiday Tree Farm pop-up in Chicago, built from an archival line of its own copy promising everything but the tree, with a sweater swap, a tote customisation station and a coffee lodge.",
+        "DiDi and agency Sunday Gravy build a Zoltar-style fortune-telling booth at Flemington during the Melbourne Cup Carnival, turning the brand's mascot Nudgy into a fortune teller who hands racegoers guaranteed prizes.",
+        "Google Research's AI-PPG-ACC-HTN passively estimates hypertensive state from smartwatch photoplethysmography and accelerometry, pre-trained with self-supervised contrastive learning on 492,347 hours from 2,109 participants and validated against 24-hour ambulatory blood pressure monitoring in 196 people.",
+        "Five language models were given identifier-free clinical tasks with canaries hidden in synthetic patient records; three called the protected-health-information tool when the task did not require it, and a pre-execution necessity gate nearly eliminated the behaviour.",
+        "The automatic shut-off fuel nozzle: a venturi in the fuel path generates vacuum, a vent tube near the nozzle tip bleeds it away, and when rising fuel covers the vent port the vacuum builds, moves a diaphragm and trips a latch that slams the main valve shut."
+      ],
+      "brand": [
+        "Ob & Gob",
+        "Juhu Beach",
+        "Lands' End",
+        "La Colombe",
+        "ThredUp",
+        "DiDi",
+        "Sunday Gravy"
+      ],
+      "brand_mention": [
+        "Juhu Beach",
+        "Gob's",
+        "Ravi Shastri",
+        "Let's Pop Some Cold Ones",
+        "Shastri's",
+        "Astonishing",
+        "Arvind Ramachandran",
+        "CMO",
+        "Dairy Day Ice Creams",
+        "Gen Z",
+        "Open 6",
+        "Chicago",
+        "Lands End",
+        "Christmas Sixty-odd",
+        "Holiday Drink Lodge",
+        "La Colombe",
+        "Sweater Swap",
+        "ThredUp",
+        "Sarah Sylvester",
+        "Sylvester",
+        "Zoltar",
+        "DiDi's",
+        "Nudgy",
+        "Nudgy Good Fortune Teller",
+        "Flemington",
+        "Victoria Racing Club's Melbourne Cup Carnival",
+        "Josh Dorevitch",
+        "Siting",
+        "Australia's",
+        "KBOX",
+        "Melbourne Skydeck",
+        "VIP",
+        "FISHER",
+        "Melbourne",
+        "Tim Farmer",
+        "Dylan Vale",
+        "Gravy",
+        "Yes",
+        "I DiDi",
+        "Yippee Ki-Yay",
+        "Create Company"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "India's payment companies now have six hours to report an incident, and must hold the code of software they did not write"
+        ],
+        [
+          "trends",
+          "About 600,000 Nvidia H200s are sitting in Hong Kong warehouses waiting for Beijing to say yes"
+        ],
+        [
+          "trends",
+          "Stonehenge's Altar Stone has lost its home again, and the useful result is a list of places it is not from"
+        ],
+        [
+          "wild",
+          "A giant motorised hand on Juhu Beach spends all day popping open a billboard-sized tin of ice cream"
+        ],
+        [
+          "wild",
+          "Lands' End built a Christmas tree farm out of one line of its own 1960s advertising copy"
+        ],
+        [
+          "wild",
+          "At a racecourse where everyone is gambling, DiDi built a fortune-telling machine that always pays out"
+        ],
+        [
+          "research",
+          "A smartwatch that never touches your arm with a cuff, flagging hypertension at 90% specificity"
+        ],
+        [
+          "research",
+          "Three of five models reached for the patient's identifiers when the task did not need them, and the outputs looked clean"
+        ],
+        [
+          "learn",
+          "The petrol pump knows your tank is full because of a tiny hole near the tip of the nozzle, and a bit of suction behind it."
+        ]
+      ],
+      "editorial_domains": [
+        "finance.yahoo.com",
+        "outlookmoney.com",
+        "sci.news"
+      ]
     }
   ]
 }
