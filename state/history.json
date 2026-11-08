@@ -9141,6 +9141,151 @@
         "outlookmoney.com",
         "sci.news"
       ]
+    },
+    {
+      "date": "2026-11-08",
+      "issue": 1,
+      "quote_text": [
+        "Bureaucracies force us to practice nonsense. And if you rehearse nonsense, you may one day find yourself the victim of it."
+      ],
+      "quote_author": [
+        "Laurence Gonzales"
+      ],
+      "idea_text": [
+        "A very slow ride. Eleven minutes, one track, nothing happens, and you are not allowed to talk. Longest queue in the park by year three.",
+        "A ride where the car is a sofa and the track goes through other people's living rooms, each one decorated for a different decade.",
+        "The Commute: a carriage that is late, stops in a tunnel for no reason, and plays an announcement nobody can hear. Sold as a comedy.",
+        "A rollercoaster you ride lying on your back, looking straight up, so you never see the drop coming and cannot anticipate anything.",
+        "A dark ride through a working kitchen at dinner service, at kitchen speed, with the heat and the noise left in.",
+        "A ride for two people who have to cooperate to steer it, and a scoreboard at the end rating how well they did.",
+        "A single-seat ride with no photographs allowed and no exit shop, so the only record of it is you telling someone about it.",
+        "The Lost Luggage: you sit inside a suitcase and travel the baggage system of an airport — chutes, scanners, carousels, the lot.",
+        "A ride that is different depending on which door you walk in through, so nobody in your group has been on the same one.",
+        "A ride that ends somewhere other than where it started, two kilometres away, and you have to work out how to get back."
+      ],
+      "idea_prompt": [
+        "Ten rides that should exist in an amusement park"
+      ],
+      "tip_text": [
+        "Stop losing finished subagents. Claude Code 2.1.319 adds an \"Earlier in this session\" row to `/tasks` listing subagents that have already completed — so you can reopen one and send it another message even after it has dropped off the live list or you have restarted the session. Worth knowing before you re-spawn an agent with the same brief because you thought its context was gone."
+      ],
+      "hn_id": [
+        "50399933",
+        "50403052",
+        "50390124",
+        "50389222",
+        "50403097"
+      ],
+      "link": [
+        "https://mitchellh.com/writing/libghostty-1-0",
+        "https://nfsu2.xyz/",
+        "https://github.com/PrivSec-dev/banking-apps-compat-report/issues/105",
+        "https://www.reuters.com/business/world-at-work/britain-make-salary-disclosure-job-ads-mandatory-2026-11-05/",
+        "https://8rank.ai/game/apple-intelligence-personal-knowledge-graph",
+        "https://www.sansalegal.com/post/sebi-makes-call-recording-optional-for-research-analysts-institutional-clients-from-november-8",
+        "https://hunch.net/?p=13764006",
+        "https://www.smithsonianmag.com/smart-news/these-snakes-can-cartwheel-away-from-danger-scientists-just-uncovered-how-the-slithering-creatures-perform-their-acrobatic-rolls-180989720/",
+        "https://www.anthropic.com/research/provable-inference",
+        "https://arxiv.org/abs/2611.07346"
+      ],
+      "subject": [
+        "SEBI removes the call-recording requirement for research analysts' interactions with institutional investor clients from 8 November 2026, under circular HO/38/11/(9)2026-MIRSD-POD/I/24272/2026 of 23 October 2026, while the duty to retain a record of every client interaction is unchanged.",
+        "John Langford's blog post says AI Frontiers, the 50-person group he co-founded at Microsoft Research in 2023, was folded into Microsoft AI in September 2026 and no longer exists; he has left, as have the other founding leaders.",
+        "Yosuke Kojima and colleagues, in Current Biology on 19 October 2026, filmed 13 Pseudorabdion dwarf reed snakes rolling end over end at 3.8 to 8.3 mph, about four times slithering speed, while six Calamaria reed snakes tested alongside never rolled at all.",
+        "Visit Iceland launches AI Knittakers, a free bookable service in which an Icelandic knitter joins a client's video meeting in their place from somewhere in Iceland, listens, and knits a one-word summary of the key point in Icelandic wool, which the booker receives as a photograph and optionally by post.",
+        "Columbia Sportswear launches the Don't Panic Room, a competition giving away a 40-foot off-grid survival bunker — a fitted-out shipping container with kitchen, bunk beds, bathroom and a robotic dog — won by submitting a video of your survival skills, with billboards mocking tech billionaires' private bunkers.",
+        "Johnsonville runs Sausage for Dinner 2026, a parody of midterm political advertising with yard signs, a sausage envoy played by Rob Riggle, a $100,000 pledge to Hunger Free America, and a 2 November giveaway of 1,000 $20 vouchers in Grand Rapids, Michigan.",
+        "FlashProve produces zkSNARK proofs that a given response really came from the committed weights of Llama 4 Maverick, at about 110 tokens a second and 18.78 MB per proof, roughly 70 to 95 times the cost of plain GPU serving, with completeness and soundness proven in Lean.",
+        "Kundan Baliga, Aiden Xie and Aditya Byju prove the first worst-case approximation guarantee for GreedTok, the greedy tokenizer-vocabulary algorithm, showing it always achieves at least 0.2752 of optimal, constructing instances where it does no better than about 0.5256, and proving the underlying objective NP-hard to approximate within 1 − 1/31580.",
+        "Why wet surfaces look darker: a water film has a higher refractive index than air, so light leaving the surface at shallow angles is reflected back down into the material instead of escaping to your eye, giving it extra chances to be absorbed."
+      ],
+      "brand": [
+        "Visit Iceland",
+        "Iceland",
+        "Columbia Sportswear",
+        "Johnsonville",
+        "Drowning"
+      ],
+      "brand_mention": [
+        "Authentic Icelandic",
+        "Icelandic",
+        "Visit Iceland",
+        "Looks Like You Need Iceland",
+        "Stevie Archer",
+        "Sigríður Dögg Guðmundsdóttir",
+        "DC",
+        "Sam",
+        "Jeff",
+        "Peter",
+        "Maybe",
+        "San Francisco Bay Area",
+        "York Times",
+        "Washington Post Chairman",
+        "Tim Boyle",
+        "TBWA",
+        "Benji Weinstein",
+        "Russian",
+        "English-language",
+        "Affordable Protein",
+        "People",
+        "Sausage",
+        "Air Fryer",
+        "Rob Riggle",
+        "Rosa Parks Circle",
+        "Rapids",
+        "Michigan",
+        "Senate",
+        "Harris Poll",
+        "Johnsonville",
+        "Hunger Free",
+        "Ads Brand Innovation Lab",
+        "Grocery",
+        "Fire TV Marketing VP Jamie Schmelzer's",
+        "Groceries"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "From today a research analyst no longer has to record calls with institutional clients — but still has to be able to prove what was said"
+        ],
+        [
+          "trends",
+          "Microsoft Research's AI Frontiers group is over, and the man who co-founded it has written down why"
+        ],
+        [
+          "trends",
+          "A snake that cannot slither fast enough to escape a bird has learned to cartwheel instead, at four times its walking pace"
+        ],
+        [
+          "wild",
+          "Iceland will send a real knitter to sit in your online meeting for you, and post you the result"
+        ],
+        [
+          "wild",
+          "A clothing company is giving away a doomsday bunker to mock the people who already have one"
+        ],
+        [
+          "wild",
+          "Drowning in midterm attack ads, a sausage company ran its own candidate: dinner"
+        ],
+        [
+          "research",
+          "A cryptographic receipt showing your answer came from the model you asked for — for about 70 times the cost of just answering"
+        ],
+        [
+          "research",
+          "Everyone uses a greedy tokeniser. Nobody knew how bad it could get. Now there is a floor."
+        ],
+        [
+          "learn",
+          "Nothing actually gets darker when it gets wet. The light just stops coming back out."
+        ]
+      ],
+      "editorial_domains": [
+        "hunch.net",
+        "sansalegal.com",
+        "smithsonianmag.com"
+      ]
     }
   ]
 }

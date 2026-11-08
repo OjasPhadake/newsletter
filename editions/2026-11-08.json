@@ -1,0 +1,324 @@
+{
+ "date_line": "Sunday, 8 November 2026",
+ "issue": 1,
+ "preheader": "Laurence Gonzales on rehearsing nonsense; reopen a finished subagent from /tasks even after a restart; libghostty 1.0 and the terminal inside JetBrains' IDEs; Need for Speed Underground 2 statically recompiled into the browser; a Dutch ethical bank locks GrapheneOS out of iDEAL | Wero; Britain says employers must publish pay in job ads; 51 plaintext SQLite databases on your Mac scoring whether your contacts are family; the best week on Dalal Street since 2021 — Sensex +8.82%, Brent down 16%; SEBI stops making research analysts record institutional calls from today; Microsoft Research's AI Frontiers group is gone; a snake that cartwheels at four times its slithering speed; a cryptographic receipt for an API answer at 70 times the cost; a worst-case guarantee for a greedy tokeniser; Icelandic knitters who attend your meetings for you; a clothing company giving away a doomsday bunker; and why everything looks darker wet.",
+ "quote": {
+  "text": "Bureaucracies force us to practice nonsense. And if you rehearse nonsense, you may one day find yourself the victim of it.",
+  "author": "Laurence Gonzales",
+  "work": "Everyday Survival: Why Smart People Do Stupid Things",
+  "source_url": "https://www.goodreads.com/quotes/tag/bureaucracy",
+  "note": "The first sentence is the familiar complaint. The second one is the knife. Every pointless form you fill in, every approval you route through somebody who cannot evaluate it, every meeting whose minutes nobody reads — you are not just wasting an afternoon, you are practising. And people become fluent in what they practise. The organisations that fall over in a crisis are usually staffed by people who have spent years getting very good at the wrong thing."
+ },
+ "agent_craft": {
+  "items": [
+   {
+    "text": "Stop losing finished subagents. Claude Code 2.1.319 adds an \"Earlier in this session\" row to `/tasks` listing subagents that have already completed — so you can reopen one and send it another message even after it has dropped off the live list or you have restarted the session. Worth knowing before you re-spawn an agent with the same brief because you thought its context was gone.",
+    "source": "Anthropic, Claude Code changelog, 2.1.319 (6 November 2026)",
+    "url": "https://code.claude.com/docs/en/changelog"
+   }
+  ]
+ },
+ "hn": [
+  {
+   "title": "Libghostty 1.0: the terminal engine in JetBrains' IDEs is now a stable C library",
+   "url": "https://mitchellh.com/writing/libghostty-1-0",
+   "hn_url": "https://news.ycombinator.com/item?id=50399933",
+   "points": 1018,
+   "comments": 176,
+   "bullets": [
+    "Mitchell Hashimoto, writing 6 November, declares both `libghostty-vt` and its C ABI stable. A year ago the Zig module had only just been merged, there was no C API at all, and Ghostty itself was the sole consumer. The library is the terminal emulation core — parsing, state, scrollback, reflow — with no renderer and no GUI.",
+    "The adoption list is the reason this matters more than a point release. The terminal in IntelliJ, PyCharm, GoLand and the rest of JetBrains' IDEs now runs on it, against a reported 12.5 million active users. An approved Neovim pull request replaces libvterm with it, closing a ten-year-old issue about reflowing scrollback on resize. KDE is experimenting with a Konsole replacement; Turborepo uses it for TUI task output; Antithesis fuzzed TUI programs with it and found bugs in btop. Hashimoto's claim is that far more people now use a libghostty-powered terminal than use the Ghostty app.",
+    "The ABI discipline is the engineering content. Every object is an opaque handle, and hundreds of values move through a small set of enum-keyed getters and setters, so new values never need new symbols. Newer headers against an older library return `GHOSTTY_UNSUPPORTED` instead of crashing. Non-opaque structs carry their own size plus reserved padding, enums are pinned to `int`, Linux builds are diffed against a committed libabigail baseline in CI, and ELF symbols are versioned so the loader rejects a mismatch by name.",
+    "MIT licensed, no copyleft anywhere in the dependency tree, and libc is the only runtime requirement — disable SIMD and it is freestanding. CI runs tests on Linux (glibc and musl), macOS 13+, iOS 13+, FreeBSD, Windows, Android and wasm32; bare metal, WASI, Windows arm64 and illumos are built but not tested. The WebAssembly build ships under 1 MB in its size-optimised form. The author ran 10,000 live terminals with real shells on a 4-core, 8 GB Linux box — using `dash`, because `bash` blew the RAM budget."
+   ]
+  },
+  {
+   "title": "Need for Speed Underground 2 now runs in a browser, because someone translated its x86 to C first",
+   "url": "https://nfsu2.xyz/",
+   "hn_url": "https://news.ycombinator.com/item?id=50403052",
+   "points": 775,
+   "comments": 221,
+   "bullets": [
+    "Not an emulator. The project's README (th0mk/nfsu2-web, a fork of Talha Müderrisoğlu's MIT-licensed NFSU2Recomp) describes static recompilation: the 2004 game's x86 machine code is translated to C ahead of time, then compiled to WebAssembly. Direct3D 9 is retargeted onto WebGPU and the audio onto Web Audio. The server that assembles the page and connects players is written in Rust.",
+    "It ships none of the game. You supply your own PC copy, patched to v1.2 North America, and the README demands a `SPEED2.EXE` of exactly 4,800,512 bytes matching a specific SHA-256. Any other build is refused. Reports put the asset download at roughly 1.4–2 GB into the browser.",
+    "The part nobody asked for is the multiplayer. A single-player 2004 racer now has a shared open world: other cars spawn around you in free roam, career mode shows strangers driving past, and commenters recommend ghost mode because Bayview is crowded. One write-up cites a capacity of 6,000 players on one virtual LAN server. Browser requirements are stiff — current Chrome, or Firefox where WebGPU is available; several Linux users had to enable unsafe WebGPU or Vulkan flags, one going from 0.2 fps to smooth.",
+    "Two things the thread keeps circling. The legal exposure is real and the operators seem to know it: the site lists a Discord for help and a legal address for rights holders, EA does not sell the game anywhere, and a comparable browser port of GTA: Vice City was taken down after a Take-Two request. And the licensed soundtrack — the menu music alone — is the reason commenters think an official re-release will never happen. The README also notes the port was \"Built with the help of Claude Code.\""
+   ]
+  },
+  {
+   "title": "A Dutch bank that markets itself on ethics has locked GrapheneOS out of its payment flow",
+   "url": "https://github.com/PrivSec-dev/banking-apps-compat-report/issues/105",
+   "hn_url": "https://news.ycombinator.com/item?id=50390124",
+   "points": 646,
+   "comments": 423,
+   "bullets": [
+    "The issue is four years old — opened in July 2022, when users reported ASN Bank's Android app working fine on a Pixel 6 Pro with no Google Play Services at all, including on GrapheneOS and SailfishOS. It was reopened on 6 November 2026 and closed again the same day. What changed is the new iDEAL | Wero payment flow, which the thread says requires Google Play Integrity as its device-integrity signal.",
+    "The failure is specific, not a general app break. Users on app version 140 report the flow stopping at the Wero step, sometimes on a black screen, with: \"Helaas, je kunt iDEAL | Wero niet gebruiken. Je telefoon of app installatie voldoet niet aan onze beveiligingseisen.\" One user, ThijsRay, had a Tikkie payment to a friend fail on 28 October 2026 for \"security reasons\" and filed a complaint because there was no bug-report channel.",
+    "ASN's written reply, quoted in the thread, leans on European rules on privacy, security and fraud prevention, and on integrity requirements set jointly by the iDEAL | Wero parties: standard security checks assume a regular operating system, alternative systems skip or replace them, so it cannot guarantee transaction safety. \"Op dit moment ondersteunen we de dienst nog niet op alle toestellen en besturingssystemen.\" No workaround, no timeline, and an appeal to its Beroepszaken department is possible within three months — which ASN expects to lose.",
+    "The technical dispute is whether Play Integrity was ever necessary. EPI, which operates Wero, is quoted arguing that hardware key attestation alone cannot verify app or OS integrity. Others in the thread point at GrapheneOS's own attestation documentation and argue a list of trusted signing keys does exactly that. One commenter notes the Google requirement is not in the Wero specification itself. Either way the practical effect is that a payment scheme built for European sovereignty routes its trust decision through Google's verdict."
+   ]
+  },
+  {
+   "title": "Britain will make employers publish pay in job adverts, and is asking them to start before the law exists",
+   "url": "https://www.reuters.com/business/world-at-work/britain-make-salary-disclosure-job-ads-mandatory-2026-11-05/",
+   "hn_url": "https://news.ycombinator.com/item?id=50389222",
+   "points": 612,
+   "comments": 453,
+   "bullets": [
+    "Announced from Downing Street on Thursday 5 November by Prime Minister Andy Burnham, under the label \"say what you pay\". Publishing pay becomes the minimum standard for a job advert; legislation will be brought forward \"as soon as possible\". Reuters is paywalled to us, so these details come from the write-up in The Beaver (7 November), which quotes the GOV.UK release, plus the law-firm analyses of the consultation.",
+    "It follows a 15-week consultation run by the Office for Equality and Opportunity from 14 July to 27 October 2026 — described by the firms covering it as the biggest overhaul of equal pay law since 1970, and covering England, Scotland and Wales. The proposal was that employers publish pay and conditions in the advert, or give them in writing before interview where there is no advert. Early analysis of the responses put support at 94% overall and 93% among the businesses that replied.",
+    "The baseline it is aimed at: CIPD figures cited in the coverage have 41% of employers always publishing a salary range and 18% always publishing a specific figure. Bridget Phillipson, Minister for Women and Equalities, said applying for a job \"shouldn't be a guessing game\"; the TUC's Paul Nowak went after \"competitive salary\" wording. The Fawcett Society and Youth Futures Foundation both backed it.",
+    "What is conspicuously undecided is everything an employer would need to know. No commencement date. No answer yet on whether the duty is a specific salary, a range, or a benchmark rate — and if a range, how wide it may be, which the consultation floated fixing in regulations. No scope rule on small employers, and no enforcement mechanism named, though the consultation also proposed a new equal pay enforcement unit. Several law firms expect the detail to need an Act of Parliament and to land in late 2026 or early 2027."
+   ]
+  },
+  {
+   "title": "Every Mac has been quietly scoring whether your contacts are family, in 51 plaintext databases",
+   "url": "https://8rank.ai/game/apple-intelligence-personal-knowledge-graph",
+   "hn_url": "https://news.ycombinator.com/item?id=50403097",
+   "points": 572,
+   "comments": 329,
+   "bullets": [
+    "Two daemons, `knowledgeconstructiond` and `intelligenceplatformd`, have shipped since macOS 13 in 2022. Apple's entire documentation of them is one man-page sentence: \"A daemon that analyzes content on the device to build a general purpose knowledge graph.\" The authors tested on macOS 26.6.2, build 25G83, in August 2026, and found `~/Library/IntelligencePlatform` holding 51 SQLite databases in plaintext, guarded only by TCC Full Disk Access.",
+    "`graph.db` is a triple store — subject, predicate, object — with 181 entity classes and 278 predicates, each row carrying a confidence, its sources and a timestamp. Fifty-seven of the classes describe activities: sleeping, exercising, commuting, dining. Another 46 exist purely to turn an edge into its own object so it can carry its own confidence. Four class IDs are simply missing and nothing on disk says why.",
+    "The classifier is the headline. Beside the ontology sit `EntityTagging_Family.mlmodelc` and `EntityTagging_FamilyAndFriends.mlmodelc` — binary XGBoost models taking 144 numeric features and returning a class and a probability. The feature list in `metadata.json` splits into 20 identity features (`isVIP`, `sharesHomeAddress`, `sameLastName`, `iCloudFamilyMember`, `photosPersonAge`), 40 communication features (popularity and posterior probabilities by day of week, time of day, home and work) and 84 drawn from who appears in photographs with you, including combinations conditioned on weekend evenings. `entityTagging.db` keeps one row per person with 17 relationship columns, from \"family\" through \"mother\" and \"son\" to \"coworker\", recomputed daily — and only two of those 17 have a shipped model behind them. The authors could not work out what fills the other fifteen.",
+    "Inputs include Contacts, Photos faces, Calendar, Family Sharing member ages, the Medical ID emergency contact, Siri Suggestions from Mail and Messages, installed apps, and a communication log of who and when and via which app but no content. Deletion is partial: retracted rows move to `expired_stable_graph`, which appears to prune after about 48 hours, yet the authors could still read very old records on their own machine, and their own scorecard still scored two people the graph had dropped — both known to it only from calendar invitations. Their complaint is not that the graph exists but that there is no documentation, no inspector and no way to correct a wrong inference about a third party who never consented. They have released a local dashboard, iKnow, to read your own."
+   ]
+  }
+ ],
+ "markets": {
+  "indices": [
+   {
+    "name": "Markets closed · Sun 8 Nov",
+    "value": "Last session: Fri 6 Nov",
+    "change": "Indian equity markets are shut for the weekend. Everything below is Friday's close and the week that ended with it — which, on the figures, was the best week on Dalal Street since 2021.",
+    "direction": "flat"
+   },
+   {
+    "name": "Sensex · week to Fri 6 Nov",
+    "value": "81,028.02",
+    "change": "+6,568.49 (+8.82%) over the week, from a Monday open of 74,459.53. Friday alone added 1,718.01 (+2.17%). Per HDFC Sky's weekly wrap, 7 November; Upstox gives the same point change",
+    "direction": "up"
+   },
+   {
+    "name": "Nifty 50 · week to Fri 6 Nov",
+    "value": "25,030.35",
+    "change": "+1,977.25 (+8.58%), a weekly range of 23,053.10 to 25,030.35, and the highest close since 27 February 2026. Seven consecutive rising sessions — the longest run in three years, per Upstox. (Navia's roundup prints +1,762.55 / +7.58% for the week; treat it as an outlier)",
+    "direction": "up"
+   },
+   {
+    "name": "Market capitalisation",
+    "value": "+₹28.70 lakh crore",
+    "change": "BSE-listed companies went from ₹4,74,37,038.61 crore to ₹5,03,06,833.71 crore over the week, per HDFC Sky",
+    "direction": "up"
+   },
+   {
+    "name": "Sectors · the week",
+    "value": "Realty +10.2%",
+    "change": "Then Consumer Durables +10.1%, Oil & Gas +9.6%, Auto +9.4%, Private Bank +9.1% — every sector index closed the week higher, per Upstox. HDFC Sky's weekly figures for Metal (+7.58% to 12,678.15) and FMCG (+7.28% to 46,785.60) are lower than Upstox's set; Navia puts Fin Nifty at 27,283.95 (+10.13%) and Bank Nifty at 59,086.00 (+7.75%)",
+    "direction": "up"
+   },
+   {
+    "name": "Breadth · the catch",
+    "value": "Midcap 100 +5.8%, Smallcap 100 +2.8%",
+    "change": "Per Upstox — so the broader market gained about a third to two-thirds of what the large caps did. HDFC Sky has the BSE 150 Mid-Cap +5.59% and the BSE 250 Small-Cap +4.06%, and counted 1,037 advances against 1,769 declines on Friday itself. A near-9% index week on Friday breadth like that is a flow story, not a participation story",
+    "direction": "up"
+   },
+   {
+    "name": "FII · cash",
+    "value": "+₹35,781 cr over five sessions",
+    "change": "Including ₹14,974.68 cr on Thursday 5 November alone; November-to-date inflows above ₹32,210 cr, per HDFC Sky. Upstox separately puts month-to-date FII buying at about ₹22,693 cr — the two are measuring different windows. Provisional",
+    "direction": "up"
+   },
+   {
+    "name": "DII · cash",
+    "value": "−₹18,228 cr month-to-date",
+    "change": "Domestic institutions sold ₹10,444.54 cr on 5 November alone, per HDFC Sky. They have been the other side of the foreign bid all week. Provisional",
+    "direction": "down"
+   },
+   {
+    "name": "USD/INR",
+    "value": "93.91",
+    "change": "Friday's close, about 1.2% stronger over the week and the strongest since April, per HDFC Sky",
+    "direction": "up"
+   },
+   {
+    "name": "Brent crude · the actual cause",
+    "value": "$97.75",
+    "change": "Friday's close, after touching $93.22 — down more than 16% on the week, which Upstox, citing Reuters, calls the steepest weekly percentage fall since the start of the pandemic. Navia has it coming off about $113 the previous Friday, and MCX crude ending the week at ₹8,545 (−12.16%). For a net oil importer this is the single biggest line on the page",
+    "direction": "down"
+   },
+   {
+    "name": "India VIX",
+    "value": "17.55",
+    "change": "Up 14.2% on the week, per Upstox — note that volatility rose through a rally, which is unusual. HDFC Sky reports +13.35% on Friday to 17.66, against roughly 15.59 the previous week",
+    "direction": "up"
+   }
+  ]
+ },
+ "trends": [
+  {
+   "tag": "India",
+   "headline": "From today a research analyst no longer has to record calls with institutional clients — but still has to be able to prove what was said",
+   "url": "https://www.sansalegal.com/post/sebi-makes-call-recording-optional-for-research-analysts-institutional-clients-from-november-8",
+   "subject": "SEBI removes the call-recording requirement for research analysts' interactions with institutional investor clients from 8 November 2026, under circular HO/38/11/(9)2026-MIRSD-POD/I/24272/2026 of 23 October 2026, while the duty to retain a record of every client interaction is unchanged.",
+   "subtitle": "SEBI circular HO/38/11/(9)2026-MIRSD-POD/I/24272/2026, dated 23 October 2026, effective today",
+   "bullets": [
+    "The circular amends paragraph 1.13 of Chapter I of the Master Circular for Research Analysts dated 6 February 2026, and the response to point (iii) of paragraph 33 of Annexure I of Chapter VII. The commencement date is 8 November, a fortnight after issue — so the relief starts today, not when it was signed.",
+    "Read the scope narrowly, because it is narrow. Only call recordings. Only institutional investor clients. Everything else survives: the duty under regulation 25(1)(vii) to keep records of interactions with all clients — including prospective clients, before onboarding — wherever the conversation touches research services.",
+    "What counts as a record is a list, not a recording: signed physical records, call recordings where still required, communications from registered email addresses, records of short messages, and other legally verifiable records. Which means the practical replacement for a recorded institutional call is a written confirmation from a registered address afterwards. The compliance work does not disappear; it changes medium.",
+    "The retention arithmetic is the part that will catch people. Five years is only the base. Records run from first interaction until the service is complete, then extend until any dispute is resolved, and extend again indefinitely if SEBI has asked for particular records to be preserved. Deleting on the fifth anniversary without checking both of those is itself a breach."
+   ]
+  },
+  {
+   "tag": "Industry",
+   "headline": "Microsoft Research's AI Frontiers group is over, and the man who co-founded it has written down why",
+   "url": "https://hunch.net/?p=13764006",
+   "subject": "John Langford's blog post says AI Frontiers, the 50-person group he co-founded at Microsoft Research in 2023, was folded into Microsoft AI in September 2026 and no longer exists; he has left, as have the other founding leaders.",
+   "subtitle": "John Langford, Machine Learning (Theory), 6 November 2026",
+   "bullets": [
+    "AI Frontiers was set up in 2023, after ChatGPT, to organise research more tightly inside Microsoft Research. It ran about 50 people. In early September it was folded into Microsoft AI. Langford's summary is that the group is finished, he has left, he has placed his team members as best he could, and he will not be hosting interns next year.",
+    "His stated reason is a clash of purpose, not a budget cut. He describes MAI's ex-Inflection leadership as favouring scaling and \"aggressively not research\", and calls the reorganisation \"non-consensual\". He concedes scaling's returns are more predictable, and argues research's returns are real and significant anyway. He does not want to go back to MSR either, because he sees little path there from research to real use.",
+    "The output list is worth reading as a counterweight to the valuation of pure scaling: Autogen, the agent orchestration framework; Fara, a computer-use agent; and from the New York group, the Next Latent objective for extrapolation, Dion3 (an improved Muon optimiser) and the Full Bandwidth Transformer. They also built a shared monorepo usable across Microsoft Research, including an edge-scale pretraining codebase presented in a COLM keynote.",
+    "One number he cites, second-hand and worth flagging as such: ByteDance experiments suggesting a Full Bandwidth Transformer variant could match a model twice its size. He also notes at least four separate efforts inside Microsoft have tried to build model pipelines, three of them not in repositories visible within MSR. This is one participant's account of a reorganisation, published by him, and Microsoft has not responded in it."
+   ]
+  },
+  {
+   "tag": "Wildcard",
+   "headline": "A snake that cannot slither fast enough to escape a bird has learned to cartwheel instead, at four times its walking pace",
+   "url": "https://www.smithsonianmag.com/smart-news/these-snakes-can-cartwheel-away-from-danger-scientists-just-uncovered-how-the-slithering-creatures-perform-their-acrobatic-rolls-180989720/",
+   "subject": "Yosuke Kojima and colleagues, in Current Biology on 19 October 2026, filmed 13 Pseudorabdion dwarf reed snakes rolling end over end at 3.8 to 8.3 mph, about four times slithering speed, while six Calamaria reed snakes tested alongside never rolled at all.",
+   "subtitle": "Current Biology, 19 October 2026; reported by Smithsonian Magazine",
+   "bullets": [
+    "The mechanics are not a tumble. The snake curls into a tight loop with its head raised and facing the direction of travel. As it rolls like a wheel the body straightens and the contact point travels towards the tail. It pushes off with the tail, goes briefly airborne, twists into an S that arches over its own head, then swings that arch forward and down until one flank strikes the ground — which begins the next cartwheel, on the other side. The sides alternate. The head stays roughly steady throughout, which may be how it keeps its bearings.",
+    "Speeds of 3.8 to 8.3 mph, roughly four times faster than slithering, measured on a snake-sized racetrack with cameras on animals collected from Kubah National Park in Malaysia and tested one at a time after a gentle tap. For scale, the Moroccan flic-flac spider rolls at up to 3.8 mph and cannot sustain it.",
+    "The control group is what makes it a finding rather than an anecdote. All 13 Pseudorabdion snakes rolled: 11 P. saravacense, one P. collaris, one P. longiceps. None of the six Calamaria — also reed snakes, also small — did anything but slither. So this is not something small snakes do; it is something this genus does.",
+    "Kojima first heard about it from a colleague in Malaysia about seven years before the study, and in August 2019 a survey team filmed a startled dwarf reed snake rolling downhill off a road — then, on a flat surface, rolling without gravity's help. That first formal description landed in Biotropica in 2023. Nobody yet knows how it evolved, how long a snake can keep it up, or — as Brown University's Jessica Tingle puts it — \"Do all snakes have the basic equipment, and they just don't use it?\""
+   ]
+  }
+ ],
+ "research": [
+  {
+   "tag": "Industry · Anthropic",
+   "title": "A cryptographic receipt showing your answer came from the model you asked for — for about 70 times the cost of just answering",
+   "url": "https://www.anthropic.com/research/provable-inference",
+   "subject": "FlashProve produces zkSNARK proofs that a given response really came from the committed weights of Llama 4 Maverick, at about 110 tokens a second and 18.78 MB per proof, roughly 70 to 95 times the cost of plain GPU serving, with completeness and soundness proven in Lean.",
+   "subtitle": "Roy Rinberg, Alex Allain and collaborators at EPFL, MIT and StarkWare; Anthropic Frontier Red Team, 2 November 2026",
+   "bullets": [
+    "The question is one nobody can currently answer: when you call an inference API, what evidence do you have that the tokens came from the model you asked for, rather than a cheaper substitute or a tampered copy? The proposal is a zkSNARK. The provider commits to its weights once — a fingerprint that pins them — then issues a short proof per response showing those committed weights generated those tokens. The proof reveals nothing about the weights, and anyone can check it on a CPU.",
+    "The engineering that makes it tractable is choosing what not to prove. Work scales with the roughly 17B parameters active per token, not the full 400B of the mixture-of-experts model. Proofs are generated after the fact, in batches, in a single parallel pass, and weights are streamed layer segment by layer segment so one 80 GB GPU is enough. The protocol is an information-theoretic interactive oracle proof compiled into a hash-based zkSNARK, which gets post-quantum security; completeness, soundness and zero-knowledge are stated and proven in Lean in the random oracle model.",
+    "The measurements, on Llama 4 Maverick at 4-bit weights with one H100 and 24 CPU cores. One-off offline phase: about 39 minutes, and the resulting commitment covers roughly 16 million requests. Online: a batch of 24 requests in about 223 seconds, about 110 tokens a second, 18.78 MB per proof. Verification needs no GPU — a 6.5 MB commitment download, then about 17 seconds on 24 threads. Against vLLM serving the same batch on eight H100s, proving cost about 72 times more per GPU across runs (66–77), rising to about 94 times at the heaviest load. Prior open-source systems ran at 0.02 to 2.9 tokens a second.",
+    "Read the limitations, because they define what this is not yet. Proofs cover an exact integer version of the weights under greedy decoding, so floating-point or sampled outputs can diverge and adversarial prompts are out of scope. Only windows of up to 1,024 tokens are proven — far short of a real conversation — and each proof checks one token. The architecture is assumed to be MoE and is not hidden. The fast C++ verifier carries no formal guarantee that it matches the Lean protocol, though the two agreed on every test. Code, spec, Lean proofs and an audit visualiser are out under Apache 2.0."
+   ]
+  },
+  {
+   "tag": "Academia · Georgia Tech and UIUC",
+   "title": "Everyone uses a greedy tokeniser. Nobody knew how bad it could get. Now there is a floor.",
+   "url": "https://arxiv.org/abs/2611.07346",
+   "subject": "Kundan Baliga, Aiden Xie and Aditya Byju prove the first worst-case approximation guarantee for GreedTok, the greedy tokenizer-vocabulary algorithm, showing it always achieves at least 0.2752 of optimal, constructing instances where it does no better than about 0.5256, and proving the underlying objective NP-hard to approximate within 1 − 1/31580.",
+   "subtitle": "arXiv:2611.07346, submitted 5 November 2026; Georgia Institute of Technology and University of Illinois Urbana-Champaign, per OpenAlex",
+   "bullets": [
+    "The problem. GreedTok (Lim, Tan, Choo and Lauw, NeurIPS 2025) picks a vocabulary of k tokens to maximise how many adjacent character pairs get merged when the corpus is segmented optimally. The objective is neither submodular nor supermodular, so the textbook 1 − 1/e guarantee for greedy algorithms does not apply, and until now the algorithm had no worst-case guarantee at all.",
+    "The result: at least 0.2752 of optimal on every corpus and every budget, and exactly optimal when k = 1. The proof covers both the exact greedy loop and the lazy priority-queue version that the published code actually runs — which matters, because those are not obviously the same algorithm. The key lemma is that when two occurrences of an unchosen token overlap and both remain usable they yield identical gain, so scoring left to right loses nothing on collisions; a per-occurrence charging argument finishes it.",
+    "They bound it from the other side too. With adversarial tie-breaking they construct corpora where GreedTok approaches at most (7 − ln 2)/12 ≈ 0.5256 of optimal, and below 0.5380 even when every greedy choice is unique. So the true worst case sits somewhere in 0.2752 to 0.5256, and the gap is now a concrete open problem rather than a vacuum.",
+    "The inapproximability result is the one with teeth: choosing the optimal vocabulary is NP-hard to approximate within 1 − 1/31580, which the authors believe is the first such result for this objective. Read together: the greedy tokeniser everybody ships is provably never catastrophic, and no efficient algorithm can be made arbitrarily close to optimal, so the search for a better tokeniser is a search for better constants, not a better answer."
+   ]
+  }
+ ],
+ "wild": [
+  {
+   "tag": "Tourism · Iceland",
+   "headline": "Iceland will send a real knitter to sit in your online meeting for you, and post you the result",
+   "entities": [
+    "Visit Iceland"
+   ],
+   "subject": "Visit Iceland launches AI Knittakers, a free bookable service in which an Icelandic knitter joins a client's video meeting in their place from somewhere in Iceland, listens, and knits a one-word summary of the key point in Icelandic wool, which the booker receives as a photograph and optionally by post.",
+   "subtitle": "Ads of the World, campaign published October 2026; launched 29 October",
+   "bullets": [
+    "The joke is in the initials. AI here stands for Authentic Icelandic, and the service is pitched as the human replacement for the AI notetaker that has quietly colonised everybody's calendar. You book a knitter; they attend the meeting instead of you.",
+    "The mechanics are the good part. The knitter joins live from a real Icelandic location — a farmhouse kitchen, a harbour town, a waterfall, a geothermal pool. They listen to the whole conversation. Then they knit a one-word summary of the key point in Icelandic wool. You get back a photograph of the knitter holding that word, plus their name, their story and where they were sitting; bookers in the US and Europe can ask for the knitted word itself in the post, subject to availability.",
+    "It is built on a number rather than a hunch. Visit Iceland surveyed 4,000 office workers and found they spend just under eight hours a month in meetings they consider unnecessary, with 63% saying many could have been an email. Eight hours a month is a working day. The campaign extends the long-running \"Looks Like You Need Iceland\" platform.",
+    "Worth noticing what the format solves. A tourist board's problem is that nobody wants an advert for a country, and the thing it is really selling — being somewhere else, slowly — is hard to show. A one-word summary knitted by a stranger standing next to a waterfall is both the ad and the product demonstration. Credits list Stevie Archer as chief creative officer for North America at the agency, with Sigríður Dögg Guðmundsdóttir speaking for Visit Iceland."
+   ]
+  },
+  {
+   "tag": "Outdoor apparel · Portland",
+   "headline": "A clothing company is giving away a doomsday bunker to mock the people who already have one",
+   "entities": [
+    "Columbia Sportswear"
+   ],
+   "subject": "Columbia Sportswear launches the Don't Panic Room, a competition giving away a 40-foot off-grid survival bunker — a fitted-out shipping container with kitchen, bunk beds, bathroom and a robotic dog — won by submitting a video of your survival skills, with billboards mocking tech billionaires' private bunkers.",
+   "subtitle": "Anthony Effinger, Willamette Week, 30 October 2026",
+   "bullets": [
+    "The prize is real and gets delivered to your house: a 40-foot off-grid bunker — in practice a modified shipping container — with a kitchen, bunk beds, a bathroom, a robotic dog, and stocked with the company's own gear. Entry is a video of you demonstrating actual survival skills. No purchase necessary; entrants must be adult residents of the contiguous US or DC.",
+    "The target is named without being named. Billboards read \"Sam, Jeff and Peter may have their bunkers\", followed by \"Maybe it's time someone useful got one.\" Seven of them went up around the San Francisco Bay Area on 2 November, after print runs in The New York Times and The Washington Post.",
+    "Chairman and chief executive Tim Boyle fronts the two-minute launch film himself, which is unusual for a stunt of this shape. His lines: \"Since the beginning of time, people have predicted the end of the world\", and \"The tech bros may already have their bunkers, but they don't have the skills to survive outdoors.\" The agency is adam&eve\\TBWA, directed by Benji Weinstein.",
+    "The strategic trick is that the mockery and the product claim are the same sentence. Columbia sells kit for being outside in bad weather; the premise that competence beats a concrete box is exactly what it would want you to believe anyway. One trade write-up put the earned reach at 80 million people, and a Russian ad-industry site has the promotion running to 24 November — a date no English-language source confirms."
+   ]
+  },
+  {
+   "tag": "Sausage · Michigan",
+   "headline": "Drowning in midterm attack ads, a sausage company ran its own candidate: dinner",
+   "entities": [
+    "Johnsonville"
+   ],
+   "subject": "Johnsonville runs Sausage for Dinner 2026, a parody of midterm political advertising with yard signs, a sausage envoy played by Rob Riggle, a $100,000 pledge to Hunger Free America, and a 2 November giveaway of 1,000 $20 vouchers in Grand Rapids, Michigan.",
+   "subtitle": "Peter Adams, Marketing Dive, 3 November 2026",
+   "bullets": [
+    "The format is a complete political campaign with nothing to vote for. A TV spot in the grammar of attack advertising. Yard signs of the kind candidates leave on verges. Local billboards reading \"Affordable Protein for the People\" and \"A Sausage in Every Air Fryer.\" And comedian Rob Riggle as a sausage envoy, promising a \"glorious crockpot of freedom that will make your tongue burn red, white and blue.\"",
+    "It was geographically targeted the way a real campaign is. The company set up in Rosa Parks Circle in Grand Rapids, Michigan on 2 November — beside a hotly contested Senate race — handing out free food and 1,000 promotional codes worth $20 each, enough for a sausage dinner.",
+    "The polling is the justification and it is their own. A Harris Poll commissioned by Johnsonville found more than eight in ten agreeing society has become too political, about three-quarters saying they hate political advertising, 84% thinking their community could put the billions spent on this year's political ads to better use, and more than a third saying current events so consumed them in the past year that they forgot to plan dinner. That last one is the insight the whole campaign is built on.",
+    "The money is where it stops being only a joke: $100,000 pledged to Hunger Free America, a swag bag for the first 100 people who joined the cause, and an Amazon Ads Brand Innovation Lab build — a browsable set of 30-minute recipes that drops ingredients into an Amazon Grocery cart, plus $1 to Hunger Free America for every hour of eligible viewing of a curated comedy selection on Fire TV. Marketing VP Jamie Schmelzer's framing: \"This campaign is talking about politics, but it's not saying anything partisan\", because \"Groceries are expensive, and that is not a partisan perspective, either.\" No performance figures published."
+   ]
+  }
+ ],
+ "learn": {
+  "title": "Nothing actually gets darker when it gets wet. The light just stops coming back out.",
+  "subject": "Why wet surfaces look darker: a water film has a higher refractive index than air, so light leaving the surface at shallow angles is reflected back down into the material instead of escaping to your eye, giving it extra chances to be absorbed.",
+  "tags": [
+   "Science of ordinary things",
+   "Optics",
+   "Everyday"
+  ],
+  "body": [
+   "Spill water on grey concrete and it turns charcoal. Sweat through a T-shirt and the patch goes two shades deeper. Walk from a pool across a dry deck and leave black footprints behind you. In every case the obvious explanation — the water is dark — is wrong, because water is not dark. You can see straight through a glass of it.",
+   "The reason is the same trick you have already noticed from the wrong side. Dive into a swimming pool, look up, and the surface above you behaves like a mirror. Light moves more slowly through water than through air — that is what a higher refractive index means — and at a water-to-air boundary the angle decides what happens next. Light arriving nearly straight on mostly escapes into the air. Light arriving at a shallower, more horizontal angle does not: its transmitted power goes nowhere, and effectively all of it is reflected back into the water. That is total internal reflection, and the film of water sitting on your concrete is doing it in exactly the same way the pool surface does. Light that your eye should have received is instead turned around and sent back down into the concrete, where it gets another opportunity to be absorbed. Less of it reaches you. You read \"less light\" as \"darker\", and in a perfectly ordinary sense you are wrong: the concrete is the same concrete.",
+   "NC State's optics group, which wrote this up with Michael Kudenov in its electrical and computer engineering department, points out the useful corollary — this is the physics of not being able to see the road properly in heavy rain, and it is why a damp patch of pavement is visible from a distance long after the puddle has gone. The same principle runs in the other direction too, deliberately: some insects engineer their surfaces so that light which enters almost never gets back out, and end up more than a hundred times blacker than charcoal. Which is a nice thing to know about an ordinary wet pavement — that it is using, slightly badly, the trick that the blackest things in nature use on purpose."
+  ]
+ },
+ "ideas": {
+  "prompt": "Ten rides that should exist in an amusement park",
+  "items": [
+   {
+    "text": "A very slow ride. Eleven minutes, one track, nothing happens, and you are not allowed to talk. Longest queue in the park by year three."
+   },
+   {
+    "text": "A ride where the car is a sofa and the track goes through other people's living rooms, each one decorated for a different decade."
+   },
+   {
+    "text": "The Commute: a carriage that is late, stops in a tunnel for no reason, and plays an announcement nobody can hear. Sold as a comedy."
+   },
+   {
+    "text": "A rollercoaster you ride lying on your back, looking straight up, so you never see the drop coming and cannot anticipate anything."
+   },
+   {
+    "text": "A dark ride through a working kitchen at dinner service, at kitchen speed, with the heat and the noise left in."
+   },
+   {
+    "text": "A ride for two people who have to cooperate to steer it, and a scoreboard at the end rating how well they did."
+   },
+   {
+    "text": "A single-seat ride with no photographs allowed and no exit shop, so the only record of it is you telling someone about it."
+   },
+   {
+    "text": "The Lost Luggage: you sit inside a suitcase and travel the baggage system of an airport — chutes, scanners, carousels, the lot."
+   },
+   {
+    "text": "A ride that is different depending on which door you walk in through, so nobody in your group has been on the same one."
+   },
+   {
+    "text": "A ride that ends somewhere other than where it started, two kilometres away, and you have to work out how to get back.",
+    "why": "The recurring wish on r/crazyideas is for an experience with a real consequence attached — the ideas people upvote are the ones that do not reset when they finish."
+   }
+  ]
+ }
+}
