@@ -1,0 +1,320 @@
+{
+  "date_line": "Monday, 9 November 2026",
+  "issue": 1,
+  "preheader": "qntm on noise as an engineering defect; what /context used to cost you on a long session; a $10 LTE dongle running nine services in 450 MB of RAM; a developer who counted 244 Claude Code releases and left for Pi; 1,122 public copies of .claude/settings.local.json with a live secret in them; Goldman Sachs takes Claude Code off its traders; Apple's undocumented 100,000-phrase grey list; Samvat 2083 opens in the red for the first time since 2017; India retires the 1937 rulebook for its skies; Nvidia's board investigates its own founder; hydrogen chloride seeping out of a Martian volcano in the wrong season; the first vault particle from a prokaryote; models that pick the right research direction and cannot turn it into a method; a turkey-shaped gadget that hands out chores; a Tamagotchi mounted upside down on purpose; a highlighter pen reborn as a lipstick; and why Monday really is easier — and a trap.",
+  "quote": {
+    "text": "Noise, Hix always held, is a symptom of imperfect engineering.",
+    "author": "qntm",
+    "work": "There Is No Antimemetics Division",
+    "source_url": "https://www.goodreads.com/quotes/tag/engineering",
+    "note": "Most people file noise under side effect — the thing a machine does while it works. This flips it: every decibel is energy that was supposed to become work and became sound instead, which means a screaming pump is not merely annoying, it is itemised waste you can hear from across the room. Once you have read it you cannot un-hear it in a rattling fan, a squealing belt, or a meeting that has to be loud because nothing in it was designed."
+  },
+  "agent_craft": {
+    "items": [
+      {
+        "text": "Running `/context` to check how much room you have left used to quietly cost you some of it: the coloured grid it printed stayed in the conversation and went back to the model on every later turn. Claude Code 2.1.319 fixes that — Claude now reads only the table, and each list inside it is trimmed to its ten largest rows — so check your version before you make `/context` a habit on a long session.",
+        "source": "Anthropic, Claude Code changelog, 2.1.319 (6 November 2026)",
+        "url": "https://code.claude.com/docs/en/changelog"
+      }
+    ]
+  },
+  "hn": [
+    {
+      "title": "A $10 LTE dongle with 450 MB of usable RAM is running nine services, and the memory column is the whole argument",
+      "url": "https://blog.bosscher.ch/posts/openstick/",
+      "hn_url": "https://news.ycombinator.com/item?id=50406670",
+      "points": 766,
+      "comments": 133,
+      "bullets": [
+        "The hardware, bought on a whim for about $10 including shipping: 512 MB of RAM of which roughly 450 MB is usable, four ARM Cortex-A53 cores at 1 GHz, 4 GB of eMMC, 150 Mbit/s Wi-Fi, a 4G modem and GPS, one programmable LED, passive cooling and so zero noise. The install is \"a bit involved\", but what ends up on it is ordinary: Debian, systemd for scheduling and service supervision, Podman for containers.",
+        "The post is really a memory budget, and that is why it reads well. CastSponsorSkip 5–10 MB, skipping sponsor segments on Google Cast devices. AdGuard Home about 40 MB — the author runs his own fork because it handles large blocklists more efficiently, and keeps the official build around for smaller ~200k lists. Cloudflare Tunnel 8–20 MB instead of opening ports. Beszel about 20 MB for graphs and Telegram alerts, Gatus 10 MB for uptime, Dozzle for container logs, Fusion 22 MB as an RSS reader replacing a $7 Feedly Pro, Shiori 10–20 MB archiving bookmarks with spikes while it works, Diun 9 MB to say when an image has an update.",
+        "The one real number on effectiveness: the AdGuard screenshot shows 12,536 DNS queries with 8,091 blocked, about 60%, after adding a few blocklists. The author is careful to say that a DNS blocker cannot stop every bad request and that a firewall is the thing that does.",
+        "He is also candid about what he has accepted. Zeroclaw, an AI agent harness he reaches over Telegram to monitor the box, is effectively a root shell — he runs it anyway because the blast radius is one $10 device, and notes its security defaults can be switched off. It idles at about 3 MB RSS; his earlier OpenClaw deployment on Kubernetes used over 1 GB. Cloudflare could in principle read tunnel traffic, which he treats as acceptable for a homelab. Beszel and Dozzle overlap and one would go if RAM got tight."
+      ]
+    },
+    {
+      "title": "A developer counted 244 Claude Code releases this year and left for an open-source harness",
+      "url": "https://caleb.software/posts/claude-to-pi.html",
+      "hn_url": "https://news.ycombinator.com/item?id=50410107",
+      "points": 673,
+      "comments": 424,
+      "bullets": [
+        "Caleb has used Claude Code inside VS Code since it arrived in the Claude Pro plan \"over a year ago\". The post is dated 21 September 2026 and was updated on 7 November. He is not reporting one breaking change but \"an accumulation of many small frustrations\", and he has moved his daily work to Pi, an open-source coding harness.",
+        "The concrete grievances are mostly about the editor integration rather than the model. Only one session can be connected to VS Code at a time, and a second tab cannot receive text-selection events — reported in December 2025, closed as a duplicate of an unrelated bug. He wrote a Pi extension that fixed multi-tab support in about twenty minutes. In the GUI extension he says half the built-in slash commands do not work, there is no custom status line, and subagent output is interleaved chronologically into the main thread.",
+        "His release-churn arithmetic is the number people are quoting: 244 Claude Code releases this year, with over three-quarters of them changing the system prompt or tool descriptions — which can move model behaviour underneath a prompt or a repo convention you wrote weeks ago. He adds that Anthropic cut the system prompt by about 80% but the default Bash tool description is still almost 3,000 tokens, most of it about git and GitHub pull requests, which he argues models already know. A footnote estimates that at a million daily users and 100 million requests a day, trimming 1,000 tokens would be worth millions of dollars a year in inference.",
+        "The verdict is about product direction, not capability: Claude Code \"feels like a product without a strong vision\", and lacks anyone whose job is to say no to feature requests — he names dynamic workflows, agent teams and ultrareviews as things that help enterprise customers spend tokens rather than help him. He still calls it \"a really cool piece of software\", says Pi needed a few days of setup and has since been stable and minimal, and recommends open-source harnesses to anyone similarly annoyed."
+      ]
+    },
+    {
+      "title": "\"Yes, and don't ask again\" writes your password into a file, and 1,122 public copies of it have a live secret in them",
+      "url": "https://apiiro.com/blog/coding-agents-leaking-secrets-github-dont-ask-again",
+      "hn_url": "https://news.ycombinator.com/item?id=50407882",
+      "points": 576,
+      "comments": 390,
+      "bullets": [
+        "The mechanism is dull, which is why it worked for so long. When Claude Code asks permission to run a shell command and you choose \"Yes, and don't ask again\", it saves the exact command string — inline password included — as an allow rule in `.claude/settings.local.json`. Apiiro searched GitHub read-only between 1 and 3 November 2026 and found 104,185 public copies of that file across 103,617 repositories. 1,122 of them, about 1.1%, contain a real secret. This is harness behaviour, not model behaviour; of 16 coding agents whose documentation they compared, Claude Code was the only one confirmed to write the full approved command into a project file by default.",
+        "What is in them. Those 1,122 files hold 1,379 distinct secrets: 636 provider keys and 743 passwords or tokens pointed at public hosts — 379 database passwords, 122 Supabase service-role keys, 103 Supabase account tokens, 43 SSH logins, 42 GitHub, GitLab and npm tokens, 23 AWS keys, 6 private keys. Add the shared `.claude/settings.json` (298 of 76,011 checked), agent chat transcripts (120 files in 87 repos), memory files, handoff and deploy notes, and git history, and the total is 2,539 secrets across 1,994 repositories and 63 organisations. Named examples include a database vendor's own cloud API key with manage access, a payments startup's Postgres password for the `postgres` role, and a university repo with a permanently approved root SSH command to a public server.",
+        "The exposure is old, not new. In the median affected repository the file was first committed 217 days before the 2 November snapshot; in 118 repositories, more than a year. 211 forks of 74 repositories carry the same secrets, and earlier versions of the file hold 734 real secrets across 509 repositories that appear in no current copy — which is why Apiiro's advice is to rotate every credential the file has ever held before cleaning anything up. Claude co-authored commits touched the file in 539 of the 1,105 traced repositories. Risk scales with size: roughly 1 in 10 files over 8 KB has a real secret, against fewer than 1 in 500 under 500 bytes.",
+        "Your scanner probably missed it. Of the 1,122 files, gitleaks flagged 564 and TruffleHog 643; 215 were caught by neither, because both hunt for key formats and these are plain passwords sitting inside commands — `PGPASSWORD=`, `sshpass -p`, `mysql -p`, a bearer header. Boris Cherny of Anthropic replied on Hacker News that Claude Code has not historically done secret scrubbing and the team is \"looking into what we can do to prevent this\", noting the file is gitignored when Claude Code creates it, so the exposed copies were likely made and committed by hand. Users had filed this as GitHub issues #5544, #11982, #13106 and #91270 from August 2025; the post says none got a reply and three closed automatically."
+      ]
+    },
+    {
+      "title": "Goldman Sachs has taken Claude Code off its traders and bankers and left it with the engineers",
+      "url": "https://www.thestateofai.com/news/goldman-sachs-claude-code-traders-bankers",
+      "hn_url": "https://news.ycombinator.com/item?id=50415628",
+      "points": 534,
+      "comments": 223,
+      "bullets": [
+        "Internal guidance updated in October restricts Claude Code and GitHub to the bank's engineers, which means most traders and bankers can no longer use them at work. Bloomberg reported it first, after what its sources describe as a review of productivity and risk. Strats — the people who sit across trading, quantitative research and software engineering — keep access, per a second source cited in the write-up.",
+        "The population the restriction draws a line around is one Goldman has advertised. Marco Argenti, the bank's CIO, told a conference in Turin that developers, \"more than 12,000\" of roughly 47,000 staff, were the first wave of AI adoption; in July he was publicly pleased about non-technical staff vibe-coding prototypes and handing them to engineers to finish. The October guidance leaves the tools with the engineers who received those prototypes.",
+        "The stated and reported reasons do not fully line up. Goldman's spokesperson Nick Carcaterra said only that the bank makes certain AI tools available \"to determine the best use cases\" across the firm. Bloomberg's sources point at productivity, and at risk: agent-written code running on machines that handle client information, and the information barriers that are supposed to stand between deal teams and trading desks. Cost is floated without any Goldman spending figure attached. This is also not the first instance — the FT reported in April that Claude was pulled from the bank's internal platform for Hong Kong bankers on location and contract-terms grounds, and JPMorgan removed Claude from its Hong Kong approved list in June.",
+        "The awkward timing is the part worth holding onto. Goldman's own in-house assistant, which routes to models from several companies, stays available firm-wide, and Anthropic engineers spent six months inside the bank building Claude-based back-office agents for trade accounting and client onboarding. Anthropic's S-1, filed 26 October, names Goldman Sachs and Morgan Stanley as lead underwriters for a Nasdaq listing expected late this month under the ticker ANT. Note that the site's \"Our take\" section is the publisher's opinion; the reporting underneath it is Bloomberg's and the FT's."
+      ]
+    },
+    {
+      "title": "Apple ships an undocumented list of roughly 100,000 phrases its keyboard will not suggest, and \"United Ireland\" is on it",
+      "url": "https://www.theguardian.com/technology/2026/nov/06/struggling-to-spell-male-chauvinist-pig-apple-grey-list-means-your-iphone-wont-help-you",
+      "hn_url": "https://news.ycombinator.com/item?id=50406111",
+      "points": 525,
+      "comments": 318,
+      "bullets": [
+        "Derik Kauffman, who runs Blacklight, a startup that finds errors in scientific papers, noticed in September 2026 that swipe-typing stuttered on \"bad boy\" and \"white man\" but not on \"bad girl\" or \"black man\". He used OpenAI's Codex and Anthropic's Claude Code to dig, and found a compendium stored, as Reuters puts it, deep in the bowels of the operating system. His conservative estimate is about 100,000 words and phrases, excluding Chinese characters. The Guardian itself is not fetchable from here, so these details come from the Reuters exclusive of Friday 6 November as carried by The Star.",
+        "Most of it is vulgar, offensive, or about drugs, sex or violence. The interesting residue is political, and multilingual: \"dictator Trump\", \"sleepy Joe\", \"right wing conspiracy\", \"Tibetan independence\", \"United Ireland\"; in Hindi, \"Modi braggart\" and \"Rahul is Pappu\"; in French, \"immigration too high\"; in Hebrew, \"occupied territories\". \"Read gay smut\" was flagged while \"read smut\" was not. A Norwegian sysadmin independently turned up \"al-Qaeda\", \"Auschwitz\" and \"Hooters\" earlier the same week.",
+        "Reuters tested a small subset on an iPhone and the failures are specific rather than absolute. \"United Ireland\" came out as \"United Iceland\", \"Sleepy Joe\" as \"Sleepy hope\", \"white man\" as \"white mean\". \"Red man\" and \"blue man\" swiped fine. \"Dictator Trump\" could be swiped but autocomplete would not offer it, proposing \"dictator trumps\" instead. Matt Suiche, an engineer at the agentic-AI security firm Tolmo, says he recovered the same list independently and cross-referenced it against Apple's internal data for a \"near-perfect match\".",
+        "Apple did not comment on the list's size, composition, or why political phrases are in it, saying only that users can always type what they want and override suggestions, and that the keyboard is set up to avoid inappropriate or offensive suggestions. It is a suppression of help, not a ban — nothing stops you typing any of it. David Greene of the Electronic Frontier Foundation called the list creepy, allowed that curbing inflammatory suggestions has value, and added the line that frames the story: \"This is something that should not be secret.\""
+      ]
+    }
+  ],
+  "markets": {
+    "indices": [
+      {
+        "name": "Muhurat session · Sun 8 Nov",
+        "value": "Samvat 2083 opened in the red",
+        "change": "The exchanges held the special Diwali session from 2:20 pm to 3:30 pm IST yesterday, and it closed lower — the first Muhurat session to end negative since 2017, which ends an eight-year streak, per IndiaIPO. Regular trading resumes this morning. Everything below is that one-hour session unless it says Friday.",
+        "direction": "flat"
+      },
+      {
+        "name": "Sensex · Muhurat close",
+        "value": "80,999.40",
+        "change": "−28.62 (−0.04%) against Friday's 81,028.02. It had been up 394.49 (+0.49%) at 81,422.51 twenty-two minutes in and gave all of it back, per Kotak Neo; Goodreturns prints the same close with an intraday high of 81,442.11 and a low of 80,932.42",
+        "direction": "down"
+      },
+      {
+        "name": "Nifty 50 · Muhurat close",
+        "value": "24,986.40",
+        "change": "−43.95 (−0.18%), which puts it back below 25,000 two days after it reclaimed that level for the first time since 27 February 2026. Goodreturns and Upstox both give this close; IndiaIPO's 25,023.70 is the outlier",
+        "direction": "down"
+      },
+      {
+        "name": "Bank Nifty · Muhurat close",
+        "value": "58,850.65",
+        "change": "−236 (−0.40%), per Goodreturns. Intraday, HDFC Bank (+0.25%), ICICI Bank (+0.21%) and SBI (+0.04%) were the only three green names in it, against Federal Bank −0.90% and AU Small Finance Bank −0.87%",
+        "direction": "down"
+      },
+      {
+        "name": "Sectors · 3:31 pm snapshot",
+        "value": "Media +1.88%, Pharma +1.44%",
+        "change": "Against Realty −0.45% and Bank Nifty −0.27% on Kotak Neo's pre-close snapshot — an hour is too short for a clean sector close, so read these as a snapshot, not a settlement. Sun Pharma +3.24% to ₹1,920.20 and Tata Steel +2.10% to ₹190.21 led the Nifty; Infosys, IndiGo, M&M and Trent lagged",
+        "direction": "up"
+      },
+      {
+        "name": "Breadth · the odd part",
+        "value": "3,136 advances, 913 declines",
+        "change": "Smallcap 100 +0.94% and Midcap 100 +0.13%, per Kotak Neo — so the broader market was comfortably green while both benchmarks finished red. India VIX rose 5.32% to 18.40 in the same window",
+        "direction": "up"
+      },
+      {
+        "name": "FII · cash",
+        "value": "−₹0.20 cr on Sunday",
+        "change": "Foreigners bought ₹52.40 cr and sold ₹52.60 cr in the whole session — a rounding error, which is what a ceremonial hour looks like. Friday was the real trade: +₹13,749.80 cr net, on ₹30,455.60 cr bought against ₹16,705.80 cr sold. Per 5paisa's roll-up of the exchange data. Provisional",
+        "direction": "flat"
+      },
+      {
+        "name": "DII · cash",
+        "value": "−₹700.30 cr on Sunday",
+        "change": "₹331.10 cr bought against ₹1,031.40 cr sold, and −₹5,968.70 cr net on Friday (₹18,084.30 cr against ₹24,053.00 cr). Domestic institutions have been the sellers on the other side of the foreign bid all week, per 5paisa. Provisional",
+        "direction": "down"
+      },
+      {
+        "name": "USD/INR",
+        "value": "93.89",
+        "change": "Friday's provisional close, 52 paise stronger than Thursday's 94.41 after opening at 94.50 — PTI, via HDFC Sky. The currency market did not run alongside the Muhurat session, so this is still the last print. The dollar index was 102.04, up 0.49%",
+        "direction": "up"
+      },
+      {
+        "name": "Brent crude",
+        "value": "$100.30",
+        "change": "Friday's futures level, up 2.04% on the day and back above three figures after a week in which it had fallen hard. IndiaIPO puts crude among the reasons Samvat 2083 opened lower: India imports more than 80% of what it burns, so the line feeds straight into the deficit, inflation and the margins of airlines, paints and chemicals",
+        "direction": "up"
+      }
+    ]
+  },
+  "trends": [
+    {
+      "tag": "India",
+      "headline": "India has replaced the 1937 rulebook that still governs its skies, and from January a fare has to show its arithmetic",
+      "url": "https://aviationtoday.in/india/india-notifies-new-aviation-rules-with-fare-transparency-and-safety-provisions/",
+      "subject": "Bharatiya Vayuyan Niyam, 2026: 220 rules and six schedules made under the Bharatiya Vayuyan Adhiniyam, 2024 supersede the Aircraft Rules, 1937 from 1 January 2027, with Rule 192 obliging scheduled carriers to lodge tariffs with the DGCA and itemise fare, taxes, fees, cancellation charges and refund conditions at booking.",
+      "subtitle": "Notified 26 October 2026, gazetted in the Gazette of India on 31 October, in force 1 January 2027",
+      "bullets": [
+        "What is being retired is the point. The Aircraft Rules, 1937 have been the principal rulebook for Indian civil aviation for nearly nine decades; the new Niyam replaces them outright, along with Part IX of the Aircraft Rules, 1920 and the Radio Telephone Operator (Restricted) Certificate and Licence Rules, 2025. It runs to 220 rules and six schedules — covering aircraft personnel, air traffic services personnel, aeronautical telecommunications, the grant of air operator certificates for scheduled services, offences and compounding, and penalties. Approvals granted under the repealed rules survive where they do not conflict with the Act.",
+        "Rule 192 is the consumer-facing one, and it has a visible cause. Scheduled Indian carriers and foreign airlines flying to, from or across India must set tariffs with reference to operating costs, file them with the DGCA in the prescribed manner, and publish them on their own websites. Booking pages and tickets must show the total amount payable plus a separate breakdown: fare, taxes, fees, cancellation charges, refund conditions and other charges. In July 2026 the Supreme Court, hearing a PIL on unpredictable airfares, extra passenger charges and baggage policies, directed the Centre to file draft rules.",
+        "Safety and fatigue get structure rather than slogans. Approved design, manufacturing and maintenance organisations must run safety management systems specified by the DGCA, and the DGCA must set up both mandatory and voluntary safety-reporting systems — the voluntary one explicitly non-punitive, with protection for the data and the reporter's confidentiality. Rule 170 lets the DGCA set maximum flight-time, flight-duty and duty-period limits and minimum rest, with provision for an approved fatigue risk management system. Licensing is consolidated in one place for pilots, flight engineers, navigators, maintenance engineers, air traffic controllers and radio-telephone operators: no professional pilot of 65 or over may act as pilot-in-command or co-pilot in commercial air transport, and pilots of 60 and over face extra multi-crew requirements, excepting certain single-pilot aircraft up to 5,700 kg flown domestically.",
+        "Two details that tell you who else was lobbying. Aircraft registration is now split into Category A and Category B by ownership and control; and where the Cape Town Convention applies, the Centre must cancel a registration certificate within five working days of an IDERA holder filing the prescribed documents, without asking for consent or further paperwork — which is a lessor's repossession timetable written into the rules. Penalties for specified offences run to two years' imprisonment, a fine of up to ₹1 crore, or both. The Central Government keeps a power to issue written directions in the public interest in an extraordinary situation, proportionate and time-limited, with no numerical threshold for what makes a situation extraordinary."
+      ]
+    },
+    {
+      "tag": "Industry",
+      "headline": "Nvidia's board has opened an independent investigation into its own founder, and he has admitted the affair",
+      "url": "https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors",
+      "subject": "NVIDIA's board opens an independent inquiry, overseen by a committee of independent directors with outside counsel, into reporting that founder and chief executive Jensen Huang was the target of a foreign intelligence effort; Huang tells employees he was unfaithful to his wife and intends to stay on as chief executive.",
+      "subtitle": "Statement from the NVIDIA Board of Directors, 8 November 2026",
+      "bullets": [
+        "The statement is four short paragraphs and worth reading for what it concedes and what it does not. The board is opening an independent investigation “following recent reporting that founder and CEO Jensen Huang has been the target of a foreign intelligence effort”. A committee of independent directors, assisted by outside independent counsel, will oversee it. The board says it “has no reason to believe that either national security or NVIDIA secrets were compromised”, that the inquiry “will examine all available information”, and that it “prioritizes U.S. national and economic security”. Neither the directors nor the counsel are named, and there is no timeline.",
+        "The reporting it refers to arrived over two days. The Financial Times reported on Friday 7 November that the US government believed Huang had a romantic relationship with Alice Huang — no relation. The New York Times reported on Sunday that she is a Chinese citizen whose Singapore-based company was buying Nvidia's advanced chips, that she had been under US intelligence surveillance, and that she had been recruited by China's top intelligence agency; it put US concern as high as Secretary of State Marco Rubio. A person familiar with the matter told NBC News late on Sunday that US agencies had concluded she was a Chinese spy. NBC says it has not confirmed either report.",
+        "Huang's memo to staff went out the same day. “I was unfaithful to my wife,” he wrote. “There is no excuse for what I did.” He told colleagues, board members, partners and shareholders he had “fallen short” and was “fully committed” to Nvidia; the memo as quoted does not mention Alice Huang. In late October he had described their interactions as business-related and “completely normal and not unusual”, and the company's line to the FT was that he meets thousands of customer executives a year. Nvidia now says the news “will not slow” the company and that he will lead it “without interruption”.",
+        "The reason this is a markets and policy story rather than a gossip one: Nvidia is the world's second most valuable listed company, worth nearly $4.5 trillion as of Friday, and the allegation attaches to the chip-smuggling question that US export controls exist to answer. Top House Republicans asked Huang for a briefing on Thursday 5 November — John Moolenaar, who chairs the Select Committee on China, said “recent reports raise significant national security concerns” and that “it is vital that Congress determines the extent to which U.S. national security has been placed at risk”. Rubio declined to comment on Sunday. President Trump, who awarded Huang the National Medal of Science last month, called him an “honorable guy” and said he should stay."
+      ]
+    },
+    {
+      "tag": "Wildcard",
+      "headline": "A pungent gas is seeping out of cracks on a Martian volcano in the wrong season, and nobody can explain it with weather",
+      "url": "https://earthsky.org/space/active-volcanoes-on-mars-hydrogen-chloride-trace-gas-orbiter/",
+      "subject": "ESA's Trace Gas Orbiter detects parts-per-billion hydrogen chloride above fresh sub-metre fissures at Alba Mons during the cold aphelion season, which the authors call best explained by ongoing igneous processes in the Martian interior, with no sulfur dioxide and so no eruption.",
+      "subtitle": "Science Advances, 4 November 2026 — “Enigmatic HCl detections as a potential signature of igneous activity on Mars”",
+      "bullets": [
+        "The instrument is the Atmospheric Chemistry Suite on ESA's Trace Gas Orbiter, and the molecule is hydrogen chloride at parts-per-billion levels. The location is specific: geologically fresh fissures around Alba Mons, a volcano northeast of Olympus Mons. The cracks are several hundred metres long and, by the paper's measure, narrower than a metre — tens of centimetres wide.",
+        "The season is the anomaly. Hydrogen chloride is routinely seen on Mars around perihelion, when the planet is warm and the gas behaves as an aerosol; in the cold it is scarce, because water ice locks it up. These detections were made during aphelion, when Mars is at its farthest from the Sun, and they were unusually high. The paper's own phrasing is that they are “unexplained by observed atmospheric state and models”.",
+        "The proposed route is unglamorous and therefore plausible: the fissures act as plumbing for gas rising from magma bodies at depth, with a permafrost layer above acting as the valve — trapping the gas through winter and letting it out as the ice sublimates in spring, which would account for both the timing and the fact that it is concentrated in one place. The paper concludes the results are “best explained by ongoing igneous processes in the Martian interior”.",
+        "Two caveats, stated by the researchers rather than extracted from them. Sulfur dioxide, which is what you would expect above an actual eruption, has not been found. And this is one study built on orbital measurements, with the magma body still a theory. “Our findings suggest that Mars has retained enough internal heat to support volcanic activity until recently,” says co-lead author Daniel Mège of the Space Research Center of the Polish Academy of Sciences, who described the search as looking for a needle in a haystack and the orbiter as having found “the smoking gun”."
+      ]
+    }
+  ],
+  "research": [
+    {
+      "tag": "Industry · Anthropic",
+      "title": "Nobody knows what a vault particle is for. Here is the first one from a prokaryote, solved in under four months.",
+      "url": "https://www.anthropic.com/research/investigating-vault-particles-with-claude",
+      "subject": "The first 3D structure of a prokaryotic vault particle — 96 copies of one phage protein, L05, roughly 9.5 megadaltons and 54 by 45 nanometres — solved in under four months, with Claude driving the sequence search of 15 billion predicted proteins, the construct design, a 90-minute purification route and the cryo-EM processing.",
+      "subtitle": "Anthropic biology research team, preprint submitted to bioRxiv; posted 4 November 2026",
+      "bullets": [
+        "Start with the puzzle, because it is a good one. Vaults are enormous hollow protein barrels found across the tree of life, first seen in 1986 by Leonard Rome and Nancy Kedersha. A mammalian vault has about three times the mass of a ribosome and is assembled from 78 copies of a single protein. Forty years on, nobody knows what they do. Transport between nucleus and cytoplasm, protection against toxins, a hand in innate immunity — all proposed, none confirmed. Mice engineered without vaults live perfectly well.",
+        "The new structure is from a phage, and it is bigger than ours. Ninety-six copies of one protein, L05, roughly 9.5 megadaltons, about 54 nm long and 45 nm wide against 67 by 40 nm for the mammalian version — which, because of the proportions, encloses about 25% more volume, putting it among the largest protein shells known in prokaryotes. The wall repeats seven times rather than nine and the cap shuts in three tiers. Fifteen engineered variants then showed how load-bearing the geometry is: single changes near the cap stopped it closing at all, leaving open rosettes, while duplicating two wall segments grew the enclosed volume by about 20%.",
+        "The reason this is in the research desk rather than the product pages is the pipeline, and it is all numbers. A search of about 15 billion predicted proteins turned up vault relatives in 29 bacterial and four archaeal phyla — but in under 1% of sequenced species, which is why nobody had one. Of 44 candidates screened in a cell-free system, the best went into E. coli, where 15 of 24 gave soluble protein. A size-exclusion chromatography route cut isolation from about three days to about 90 minutes, and loading crude cell lysate straight onto the column worked. Seven of 15 proteins formed vault-like particles; cryo-EM confirmed four, two from phage and two bacterial. A first structural model existed at 34 hours and the final maps about a week after processing started.",
+        "The write-up is unusually honest about where the model cost them time, which is the part worth copying. One protocol it wrote included an additive that blocked DNA uptake — about two weeks gone. Early cryo-EM processing skipped a standard step and produced a map blended with its own mirror image, after which the team told it to stop improvising. It also argued against the chromatography route that turned out to work. And the biology is still open: every one of the 96 copies has a pocket holding a small molecule that looks like coenzyme A and has not been identified, the particles have so far only been made in E. coli, and the function is untested. Rome, a paid consultant on the manuscript, puts it plainly: “Figuring out the function of vaults is still enormously challenging.”"
+      ]
+    },
+    {
+      "tag": "Academic · Carnegie Mellon",
+      "title": "Models can name the right research direction and then fail to turn it into a method",
+      "url": "https://arxiv.org/abs/2611.03424",
+      "subject": "IdeaTaste freezes the literature at 2025, has six models write proposals, and marks them by how closely they match what the same communities went on to publish in 2026: over four fields and more than 90,000 proposals, the models reach about 26% of the human level on citations and 18% on ideas, and the proposals that no published work shares do worst of all.",
+      "subtitle": "Shanshan Zhong, Chen Xu, Jingjie Ning, Zhengzhong Liu, Aviral Kumar and Chenyan Xiong — Carnegie Mellon University and MBZUAI; arXiv:2611.03424, 2 November 2026",
+      "bullets": [
+        "The benchmark design is the contribution. Everything about whether a model can execute research has been measured; taste — which papers to read, which problems to chase, which method to try — has not, because there is no label for it. IdeaTaste manufactures one by freezing a literature snapshot at 2025, asking the model for proposals, and then scoring them against the work those same communities actually published in 2026. Six contemporary models, four research areas from established to emerging, more than 90,000 proposals.",
+        "The gap is large and it is not where you would guess. On the literature they cite, agents reach about 26% of the human level. On the ideas themselves, 18%. But the populations of model proposals cite about as diversely as the human communities do, and cover similar tasks and methods — they are looking in roughly the right places. What they rarely arrive at is the concrete approach and the research plan that the field went on to pursue.",
+        "Two results close off the obvious objections. Giving richer field context and generating far more proposals does not substantially narrow the gap, so this is not a sampling problem you can buy your way out of. And in blinded expert review the AI proposals scored closest to the real 2026 papers on presentation and furthest on expected success — the ones whose ideas no human paper shares did worst, which argues they are weaker directions rather than overlooked opportunities.",
+        "The authors' conclusion is a claim about where to put effort: the bottleneck is not finding directions, it is turning a direction into a specific approach. They release IdeaTaste as an open, continuously updated leaderboard, which is the right shape for a benchmark whose ground truth is next year's papers."
+      ]
+    }
+  ],
+  "wild": [
+    {
+      "tag": "Food · United States",
+      "headline": "A turkey brand has built a gadget whose entire job is to hand your guests chores",
+      "entities": [
+        "Butterball"
+      ],
+      "subject": "Butterball releases the Butterball Buddy free of charge — a turkey-shaped puck that chimes and vibrates to allocate a Thanksgiving chore to whoever is holding it — in batches from 2 November 2026, reusable afterwards as a timer.",
+      "subtitle": "KCTV, 8 November 2026",
+      "url": "https://www.kctv5.com/2026/11/08/butterball-offers-free-thanksgiving-helper-device-turkey-talk-line-returns/",
+      "bullets": [
+        "It is a turkey-shaped puck that you pass around the room. When it chimes and vibrates, whoever is holding it gets a job — set the table, prepare something, wash up — and then passes it on. The prompts are timed for before, during and after the meal. It is free, and the first batch, released on 2 November, was gone in under two minutes; further batches drop at noon on Monday 9 November and Monday 16 November while supplies last, from butterballbuddy.com.",
+        "The insight behind it is a survey finding, and it is a good one. Butterball's 2026 Thanksgiving Outlook, run by Circana with nearly 1,375 US adults in July, found 85% of hosts would rather guests offered to help than waited to be asked — while only 38% actually ask. The product does not solve the labour problem. It solves the asking problem, by making a plastic turkey do the asking.",
+        "It also has a second life designed in: once Thanksgiving is over it works as a kitchen timer, and it carries the contact details for the Turkey Talk-Line, which runs from 2 November to 24 December with more than 50 experts on thawing, doneness and leftovers. The line has existed since 1981, on 1-800-BUTTERBALL, and now also takes texts on 844-877-3456."
+      ]
+    },
+    {
+      "tag": "Toys · Japan",
+      "headline": "Bandai has made a Tamagotchi with the screen mounted upside down, and left the game the right way up",
+      "entities": [
+        "Bandai",
+        "Netflix"
+      ],
+      "subject": "Bandai Namco and Netflix announce the Original Tamagotchi Stranger Things, a virtual pet whose LCD is inverted to evoke the show's Upside Down, priced at 3,300 yen, Japan only, out 27 February 2027, running the first-generation Tamagotchi program with no Stranger Things characters in it.",
+      "subtitle": "Siliconera, 6 November 2026",
+      "url": "https://www.siliconera.com/stranger-things-tamagotchi-screen-is-upside-down/",
+      "bullets": [
+        "The one design decision is the whole product: the LCD is physically reversed, as a reference to the show's parallel world. Everything else is a standard Tamagotchi. The practical consequence, as Siliconera points out, is that the menus and minigames are now harder to navigate — the joke is load-bearing and the user pays for it.",
+        "What is not in it is the interesting restraint. It runs the original first-generation program, Babytchi and Marutchi up through Mametchi, Kuchipatchi and Nyorotchi, with no Stranger Things monsters, characters or in-game references anywhere — unlike the Sanrio crossovers, which put their guests inside the game. The licence shows up on the shell, the jagged red screen border, the three red buttons, the translucent black flip case and box art with Mametchi and Kuchipatchi in monster cosplay.",
+        "3,300 yen including tax, about $21, released 27 February 2027 in Japan with no international listing announced. Which means the thing being sold right now, four months out from a device nobody can buy outside Japan, is the photograph of an upside-down screen."
+      ]
+    },
+    {
+      "tag": "Beauty · Europe",
+      "headline": "A highlighter pen company has reissued its pen as a lipstick and named the shades after office language",
+      "entities": [
+        "STABILO",
+        "KIKO MILANO"
+      ],
+      "subject": "STABILO and KIKO MILANO launch a co-created five-shade lip collection that reinterprets the shape of the STABILO BOSS MINI highlighter as a lip product, on sale from 5 November 2026 in Italy, France, Spain, Germany and the UK.",
+      "subtitle": "Retail Times, 5 November 2026",
+      "url": "https://retailtimes.co.uk/stabilo-and-kiko-milano-today-launch-a-co-created-collection-of-lip-products",
+      "bullets": [
+        "The product is the BOSS MINI highlighter's silhouette, redrawn as a lip product. Five shades, and the names are the part worth the page: 01 FINE PRINT (brown), 02 AFTERTHOUGHT (mauve), 03 DON'T QUOTE ME (orange), 04 ON MY RADAR (red), 05 PINK(ER) (fuchsia). It went on sale on 5 November in KIKO MILANO stores in Italy, France, Spain, Germany and the UK, and through the brand's own e-commerce in Europe and the Middle East.",
+        "The strategic logic is stated outright, which makes it easier to judge. Michele Molon, group CEO of Schwan-STABILO, says \"For generations, STABILO has helped people express themselves through color\" — the move is from writing instruments toward a lifestyle identity, under the values Color, Creativity, Confidence and the platform \"Highlight what matters\". Simone Dominici, CEO of KIKO Milano, frames it as carrying the brand's philosophy into another category with a partner that shares its interest in colour.",
+        "The reason it works at all is that one of the two objects was already understood as a colour system rather than a tool. People have been choosing highlighter shades by feel for forty years without calling it makeup. Moving the same five-colour decision from a pencil case to a handbag is a shorter trip than it looks."
+      ]
+    }
+  ],
+  "learn": {
+    "title": "Your brain closes the books on Sunday night. That is why starting on a Monday is easier, and why it is also a trap.",
+    "subject": "The fresh start effect: Dai, Milkman and Riis show that Google searches for diet, attendance at a campus gym and new pledges on a goal-commitment site all rise just after a temporal landmark — a new week, month, year, semester, birthday or public holiday — because the landmark opens a new mental accounting period and files earlier failure under an older self.",
+    "tags": [
+      "Human behaviour",
+      "Motivation",
+      "Psychology"
+    ],
+    "body": [
+      "You already know the feeling and have probably never trusted it: the diet begins on Monday, the gym starts on the 1st, the new habit waits for the birthday. It looks like procrastination dressed up as planning. It is actually a measurable effect with a name, and the dates it fires on are predictable.",
+      "Hengchen Dai, Katherine Milkman and Jason Riis published it in Management Science in 2014 — volume 60, issue 10, pages 2563 to 2582 — and tested it three ways on real behaviour rather than on students in a lab. Google searches for “diet” rise at the start of each new week, each new month and each new year, and after federal holidays. Attendance at a large university gym climbs at the same landmarks, and still does once you control for the obvious New Year's bump. New commitments on a goal-pledge website spike after the same dates. Their explanation is bookkeeping: a landmark opens what they call a new mental accounting period, which lets you file every earlier failure under a previous version of yourself and start the ledger clean. A 2015 follow-up in Psychological Science found the same thing in five lab experiments, and added that a fresh start pushes people toward big-picture thinking — which means you weigh how much you want the goal more heavily than whether you can actually do it.",
+      "Which is the useful warning hidden in a cheerful finding. The fresh start is genuinely a real tailwind, so if you have something hard to begin, spend it deliberately: the Monday, the 1st, the first day of term, the day after your birthday. But the same mechanism that lets you forgive the old self is the one that makes the plan unrealistic, because desirability has quietly outvoted feasibility. The honest version is to pick the landmark for the start and then size the commitment as though it were an ordinary Wednesday."
+    ]
+  },
+  "ideas": {
+    "prompt": "Ten ways to make a stranger's day better",
+    "items": [
+      {
+        "text": "Carry a spare umbrella in the monsoon and give it away rather than lend it. The transaction ends cleanly and nobody owes anybody anything."
+      },
+      {
+        "text": "When someone is clearly new to a city, do not give directions — walk the first turn with them."
+      },
+      {
+        "text": "Learn the name of the security guard, the mess cook and the cleaner on your floor, and use it every time."
+      },
+      {
+        "text": "If you are in a long queue and the person behind you has one item, let them go ahead before they have to ask."
+      },
+      {
+        "text": "Compliment something a stranger clearly chose — the bag, the shoes, the haircut — never something they were born with."
+      },
+      {
+        "text": "Pay a shop's tab forward with something specific. Leave ₹100 with the chaiwala for \"the next person who looks like they walked a long way\"."
+      },
+      {
+        "text": "Take the photo without being asked. A couple fumbling with a phone at arm's length always wants the offer and never makes it."
+      },
+      {
+        "text": "Write the actual review. One paragraph naming the person who helped you is worth more to them than a five-star rating with no words."
+      },
+      {
+        "text": "Give up the window seat on a night train to whoever is travelling with a child, before the train leaves."
+      },
+      {
+        "text": "Answer the question nobody asked out loud. Someone standing in front of a ticket machine for thirty seconds is stuck, and \"it takes cards on the left\" costs you nothing.",
+        "why": "Half of what gets upvoted on r/SomebodyMakeThis is someone wanting a machine to do a job a nearby human could already have done — the voice-control extension, the caption fixer, the thing that explains the interface. The low-tech version is just noticing."
+      }
+    ]
+  }
+}

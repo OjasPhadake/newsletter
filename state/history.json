@@ -9286,6 +9286,159 @@
         "sansalegal.com",
         "smithsonianmag.com"
       ]
+    },
+    {
+      "date": "2026-11-09",
+      "issue": 1,
+      "quote_text": [
+        "Noise, Hix always held, is a symptom of imperfect engineering."
+      ],
+      "quote_author": [
+        "qntm"
+      ],
+      "idea_text": [
+        "Carry a spare umbrella in the monsoon and give it away rather than lend it. The transaction ends cleanly and nobody owes anybody anything.",
+        "When someone is clearly new to a city, do not give directions — walk the first turn with them.",
+        "Learn the name of the security guard, the mess cook and the cleaner on your floor, and use it every time.",
+        "If you are in a long queue and the person behind you has one item, let them go ahead before they have to ask.",
+        "Compliment something a stranger clearly chose — the bag, the shoes, the haircut — never something they were born with.",
+        "Pay a shop's tab forward with something specific. Leave ₹100 with the chaiwala for \"the next person who looks like they walked a long way\".",
+        "Take the photo without being asked. A couple fumbling with a phone at arm's length always wants the offer and never makes it.",
+        "Write the actual review. One paragraph naming the person who helped you is worth more to them than a five-star rating with no words.",
+        "Give up the window seat on a night train to whoever is travelling with a child, before the train leaves.",
+        "Answer the question nobody asked out loud. Someone standing in front of a ticket machine for thirty seconds is stuck, and \"it takes cards on the left\" costs you nothing."
+      ],
+      "idea_prompt": [
+        "Ten ways to make a stranger's day better"
+      ],
+      "tip_text": [
+        "Running `/context` to check how much room you have left used to quietly cost you some of it: the coloured grid it printed stayed in the conversation and went back to the model on every later turn. Claude Code 2.1.319 fixes that — Claude now reads only the table, and each list inside it is trimmed to its ten largest rows — so check your version before you make `/context` a habit on a long session."
+      ],
+      "hn_id": [
+        "50406670",
+        "50410107",
+        "50407882",
+        "50415628",
+        "50406111"
+      ],
+      "link": [
+        "https://blog.bosscher.ch/posts/openstick/",
+        "https://caleb.software/posts/claude-to-pi.html",
+        "https://apiiro.com/blog/coding-agents-leaking-secrets-github-dont-ask-again",
+        "https://www.thestateofai.com/news/goldman-sachs-claude-code-traders-bankers",
+        "https://www.theguardian.com/technology/2026/nov/06/struggling-to-spell-male-chauvinist-pig-apple-grey-list-means-your-iphone-wont-help-you",
+        "https://aviationtoday.in/india/india-notifies-new-aviation-rules-with-fare-transparency-and-safety-provisions/",
+        "https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors",
+        "https://earthsky.org/space/active-volcanoes-on-mars-hydrogen-chloride-trace-gas-orbiter/",
+        "https://www.kctv5.com/2026/11/08/butterball-offers-free-thanksgiving-helper-device-turkey-talk-line-returns/",
+        "https://www.siliconera.com/stranger-things-tamagotchi-screen-is-upside-down/",
+        "https://retailtimes.co.uk/stabilo-and-kiko-milano-today-launch-a-co-created-collection-of-lip-products",
+        "https://www.anthropic.com/research/investigating-vault-particles-with-claude",
+        "https://arxiv.org/abs/2611.03424"
+      ],
+      "subject": [
+        "Bharatiya Vayuyan Niyam, 2026: 220 rules and six schedules made under the Bharatiya Vayuyan Adhiniyam, 2024 supersede the Aircraft Rules, 1937 from 1 January 2027, with Rule 192 obliging scheduled carriers to lodge tariffs with the DGCA and itemise fare, taxes, fees, cancellation charges and refund conditions at booking.",
+        "NVIDIA's board opens an independent inquiry, overseen by a committee of independent directors with outside counsel, into reporting that founder and chief executive Jensen Huang was the target of a foreign intelligence effort; Huang tells employees he was unfaithful to his wife and intends to stay on as chief executive.",
+        "ESA's Trace Gas Orbiter detects parts-per-billion hydrogen chloride above fresh sub-metre fissures at Alba Mons during the cold aphelion season, which the authors call best explained by ongoing igneous processes in the Martian interior, with no sulfur dioxide and so no eruption.",
+        "Butterball releases the Butterball Buddy free of charge — a turkey-shaped puck that chimes and vibrates to allocate a Thanksgiving chore to whoever is holding it — in batches from 2 November 2026, reusable afterwards as a timer.",
+        "Bandai Namco and Netflix announce the Original Tamagotchi Stranger Things, a virtual pet whose LCD is inverted to evoke the show's Upside Down, priced at 3,300 yen, Japan only, out 27 February 2027, running the first-generation Tamagotchi program with no Stranger Things characters in it.",
+        "STABILO and KIKO MILANO launch a co-created five-shade lip collection that reinterprets the shape of the STABILO BOSS MINI highlighter as a lip product, on sale from 5 November 2026 in Italy, France, Spain, Germany and the UK.",
+        "The first 3D structure of a prokaryotic vault particle — 96 copies of one phage protein, L05, roughly 9.5 megadaltons and 54 by 45 nanometres — solved in under four months, with Claude driving the sequence search of 15 billion predicted proteins, the construct design, a 90-minute purification route and the cryo-EM processing.",
+        "IdeaTaste freezes the literature at 2025, has six models write proposals, and marks them by how closely they match what the same communities went on to publish in 2026: over four fields and more than 90,000 proposals, the models reach about 26% of the human level on citations and 18% on ideas, and the proposals that no published work shares do worst of all.",
+        "The fresh start effect: Dai, Milkman and Riis show that Google searches for diet, attendance at a campus gym and new pledges on a goal-commitment site all rise just after a temporal landmark — a new week, month, year, semester, birthday or public holiday — because the landmark opens a new mental accounting period and files earlier failure under an older self."
+      ],
+      "brand": [
+        "Butterball",
+        "Bandai",
+        "Netflix",
+        "STABILO",
+        "KIKO MILANO"
+      ],
+      "brand_mention": [
+        "Butterball's 2026 Thanksgiving Outlook",
+        "Circana",
+        "Thanksgiving",
+        "Turkey Talk-Line",
+        "BUTTERBALL",
+        "LCD",
+        "Tamagotchi",
+        "Siliconera",
+        "Babytchi",
+        "Marutchi",
+        "Mametchi",
+        "Kuchipatchi",
+        "Nyorotchi",
+        "Stranger Things",
+        "Sanrio",
+        "BOSS MINI",
+        "FINE PRINT",
+        "AFTERTHOUGHT",
+        "DON'T QUOTE ME",
+        "MY RADAR",
+        "PINK",
+        "ER",
+        "KIKO MILANO",
+        "Italy",
+        "France",
+        "Spain",
+        "Germany",
+        "Middle",
+        "Michele Molon",
+        "CEO",
+        "Schwan-STABILO",
+        "STABILO",
+        "Color",
+        "Creativity",
+        "Confidence",
+        "Highlight",
+        "Simone Dominici"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "India has replaced the 1937 rulebook that still governs its skies, and from January a fare has to show its arithmetic"
+        ],
+        [
+          "trends",
+          "Nvidia's board has opened an independent investigation into its own founder, and he has admitted the affair"
+        ],
+        [
+          "trends",
+          "A pungent gas is seeping out of cracks on a Martian volcano in the wrong season, and nobody can explain it with weather"
+        ],
+        [
+          "wild",
+          "A turkey brand has built a gadget whose entire job is to hand your guests chores"
+        ],
+        [
+          "wild",
+          "Bandai has made a Tamagotchi with the screen mounted upside down, and left the game the right way up"
+        ],
+        [
+          "wild",
+          "A highlighter pen company has reissued its pen as a lipstick and named the shades after office language"
+        ],
+        [
+          "research",
+          "Nobody knows what a vault particle is for. Here is the first one from a prokaryote, solved in under four months."
+        ],
+        [
+          "research",
+          "Models can name the right research direction and then fail to turn it into a method"
+        ],
+        [
+          "learn",
+          "Your brain closes the books on Sunday night. That is why starting on a Monday is easier, and why it is also a trap."
+        ]
+      ],
+      "editorial_domains": [
+        "aviationtoday.in",
+        "earthsky.org",
+        "kctv5.com",
+        "nvidianews.nvidia.com",
+        "retailtimes.co.uk",
+        "siliconera.com"
+      ]
     }
   ]
 }
