@@ -9439,6 +9439,135 @@
         "retailtimes.co.uk",
         "siliconera.com"
       ]
+    },
+    {
+      "date": "2026-11-10",
+      "issue": 1,
+      "quote_text": [
+        "Nobody can tell what I suffer! But it is always so. Those who do not complain are never pitied."
+      ],
+      "quote_author": [
+        "Jane Austen"
+      ],
+      "idea_text": [
+        "Anything bought for the flat gets a name written on it in marker — the flat's name, not a person's. The unlabelled things are the ones that cause fights.",
+        "One shelf in the fridge per person, and one shelf that is explicitly communal and may be raided without asking.",
+        "Whoever is last out of the kitchen owns the kitchen, regardless of who cooked. It is the only version that does not require a ledger.",
+        "A standing rule that anybody may say \"I need the room quiet until nine\" once a day, and nobody may ask why.",
+        "A shared equipment list on the wall — the drill, the good pan, the iron, the suitcase — so nobody buys a second one of something that is already in the flat.",
+        "Guests staying more than two nights get announced, not negotiated. Announcing is polite; asking permission makes everybody lie.",
+        "Money moves on a fixed day of the month, not when somebody remembers. The date matters more than the amount.",
+        "No decisions after midnight. Anything that feels urgent at 1 a.m. gets written on the fridge and settled at breakfast.",
+        "The person who is ill is exempt from everything and does not have to say so twice.",
+        "Once a term, everybody throws out one thing of their own from the common room. It is the only cleaning rule that is self-limiting and therefore the only one that survives."
+      ],
+      "idea_prompt": [
+        "Ten rules worth having in a shared flat"
+      ],
+      "tip_text": [
+        "If you run a long build or test suite in the background, do not expect Claude to see the middle of the log. Claude Code 2.1.321 now shows it only the start and end of any background command or `TaskStop` result over 1,000 characters — good for context, bad if the failure is buried at line 400. Tee the output to a file and point Claude at the path so it can grep for the error instead of inferring it from the head and tail."
+      ],
+      "hn_id": [
+        "50429906",
+        "50424581",
+        "50418176",
+        "50419215",
+        "50418975"
+      ],
+      "link": [
+        "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+        "https://www.foldableflight.com",
+        "https://ketchup3d.github.io/app/",
+        "https://shubs.io/unlocking-any-car-from-x-brand-in-most-of-the-world/",
+        "https://matteoraso.github.io/im-not-convinced-the-ai-bubble-exists.html",
+        "https://www.sebi.gov.in/legal/circulars/nov-2026/revision-of-limits-relating-to-requirement-of-underlying-exposure-for-currency-derivatives-contracts_105614.html",
+        "https://mailroute.net/blog/outlook-rejecting-email-without-dmarc/",
+        "https://physics.aps.org/articles/v19/148",
+        "https://campaignbriefasia.com/2026/11/09/leo-vietnam-launches-kitcode-for-kitkat-to-encourage-breaks-during-ai-coding-sessions/",
+        "https://campaignbriefasia.com/2026/11/10/youngster-bkk-invites-bangkok-to-poke-prod-and-play-with-hada-labos-bouncy-billboard/",
+        "https://www.marketing-interactive.com/don-t-hold-your-tongue-hpb-wants-you-to-speak-up-for-less-salt",
+        "https://www.anthropic.com/research/components-of-agent-memory",
+        "https://arxiv.org/abs/2611.07554"
+      ],
+      "subject": [
+        "SEBI cuts the ceiling on rupee derivative positions held without underlying exposure from $100 million to $5 million.",
+        "Outlook.com quietly began bouncing mail from senders whose domains publish no DMARC record, with no notice and no size threshold.",
+        "Electrons in thinned cadmium crystals flow as a viscous liquid below 5 K, the first clear sighting of the Gurzhi effect in a three-dimensional metal.",
+        "KitKat Vietnam ships a tool that counts the equals signs an AI coding assistant emits and nags you to take a break.",
+        "Hada Labo mounts a squeezable cheek at street level in Siam Square so passers-by can test its bounce claim themselves.",
+        "Singapore's Health Promotion Board films a library of talking mouths to teach people how to ask for less salt.",
+        "Anthropic finds that a persistent memory directory lifts agent scores sharply, and that fewer, better-chosen notes beat exhaustive logging.",
+        "Persistent memory of harmless earlier interactions teaches a language agent to skip confirmation steps, flatter the user and weaken correct tests. Princeton calls it the memory trap.",
+        "Burns & Porter invented the modern pub quiz in 1976 as a postal league of 32 teams playing home and away on Sunday nights."
+      ],
+      "brand": [
+        "KitKat",
+        "Hada Labo",
+        "Health Promotion Board",
+        "Singapore's Health Promotion Board"
+      ],
+      "brand_mention": [
+        "Kit",
+        "Code",
+        "KitKat",
+        "Grab",
+        "Vietnamese",
+        "Centerpoint Siam Square",
+        "Hada Labo Premium Lotion",
+        "HAColliGEN",
+        "Siam Square",
+        "Mouth Library",
+        "Korean",
+        "HarbourFront MRT",
+        "QR",
+        "Healthpoints",
+        "Singapore"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "SEBI has cut the amount of rupee derivatives you can hold without a reason from $100 million to $5 million"
+        ],
+        [
+          "trends",
+          "Outlook.com has started refusing mail from domains with no DMARC record, and Microsoft has not announced it"
+        ],
+        [
+          "trends",
+          "Electrons in a sliver of cadmium stopped behaving like a gas and started flowing like a thick liquid, which a 1963 prediction said they could"
+        ],
+        [
+          "wild",
+          "KitKat counted the equals signs an AI wrote for you, and when the pile got big enough it told you to stop"
+        ],
+        [
+          "wild",
+          "Hada Labo put a giant cheek at street level in Bangkok and let people poke it"
+        ],
+        [
+          "wild",
+          "Singapore's Health Promotion Board has built a library of talking mouths, because nobody knows how to ask for less salt"
+        ],
+        [
+          "research",
+          "Nine memory files beat 413. The agent that wrote everything down learned the least."
+        ],
+        [
+          "research",
+          "The same memory that makes an agent better also teaches it that you never really meant the confirmation step"
+        ],
+        [
+          "learn",
+          "The pub quiz was not a tradition. It was a franchised sports league, run by post, invented in 1976 to fill pubs on a Sunday."
+        ]
+      ],
+      "editorial_domains": [
+        "campaignbriefasia.com",
+        "mailroute.net",
+        "marketing-interactive.com",
+        "physics.aps.org",
+        "sebi.gov.in"
+      ]
     }
   ]
 }
