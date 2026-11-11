@@ -1,0 +1,341 @@
+{
+ "date_line": "Wednesday, 11 November 2026",
+ "issue": 1,
+ "preheader": "Tennessee Williams on the one kind of suffering that has company; the one sentence that makes a coding agent merge its own duplicated code; an X post 812 people voted on and nobody could read; USPS selling ZIP boundaries that are not shapes; a repo claiming consumer Gemini hands Drive files to human reviewers; a model that cannot write replacing Sonnet 4.6 at 1/44th the cost; eleven rules for a smart home that survives its vendor; Indian markets shut for Balipratipada with GIFT Nifty up 297; every new Indian telecom interconnection going IP from January; Reddit switching off RSS on Friday; a shaken granular layer that remembers, but only the wrong way; ten dormant neurons that backdoor an agent in 2027; a model that deletes files under steered pain and reports feeling fine; a cuckoo clock that says Kel-ly; 500 vending machines turned into a national shaking contest; Swiggy renaming itself Sweety; why road paint glows; and ten ways to make a wedding better for the guests.",
+ "quote": {
+  "text": "When so many are lonely as seem to be lonely, it would be inexcusably selfish to be lonely alone.",
+  "author": "Tennessee Williams",
+  "work": "Camino Real",
+  "source_url": "https://www.goodreads.com/quotes/tag/paradox",
+  "note": "Read once it sounds like a muddle. Read twice and it is an argument: loneliness is the only misery whose sufferers are guaranteed to be numerous, so being lonely by yourself is not fate, it is a failure to find the others. Williams puts it as a reproach rather than a comfort, which is the part that lands — it makes solitude a coordination problem, and coordination problems have solutions."
+ },
+ "agent_craft": {
+  "items": [
+   {
+    "text": "If an agent keeps bolting new code onto old code instead of merging the duplicate, tell it the repository is its own: `This codebase is yours: what it's for and how it's built are your call, and you'll keep building on it.` In Anthropic's own testing on small coding tasks that one sentence took the rate at which Claude Fable 5.2 merged repeated code from under a tenth of tries to about half, and it survives being buried in a long system prompt. The bill: roughly 1.5x the output tokens, unrequested tests and docs, and a change to how an existing feature behaves in one try in six to ten — and a \"no drive-by refactors\" rule earlier in the same prompt does not cancel it. So use it when you want the structure improved, leave it out when the code is the user's, and read the diff rather than the summary.",
+    "source": "Anthropic, \"Prompting Claude Fable 5.2\" — the \"Say who owns the code\" section, surfaced by Simon Willison on 10 November 2026",
+    "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5-2#say-who-owns-the-code"
+   }
+  ]
+ },
+ "hn": [
+  {
+   "title": "812 points for an X post nobody in the thread can open, and the only measurement offered has a confidence interval straddling zero",
+   "url": "https://news.ycombinator.com/item?id=50422069",
+   "hn_url": "https://news.ycombinator.com/item?id=50422069",
+   "points": 812,
+   "comments": 510,
+   "bullets": [
+    "The submission points at an X post, and x.com is login-walled and JavaScript-rendered, so it cannot be read. What follows is from the 510-comment thread, which is where the substance is anyway. The claim under discussion: Opus 5.5's behaviour changed around 3 November with no announcement.",
+    "There is exactly one quantitative attempt in the thread and it does not support the claim. A commenter running a model-versus-model battle system on OpenCode measured Opus 5.5's Elo 52 points lower after 3 November, with a confidence interval of −160 to +40 — an interval that contains zero, which they said themselves made the result inconclusive.",
+    "The rest is behavioural and anecdotal, but specific: first-person pronoun use up sharply, \"introspective\" chatter up roughly fivefold and tool calls up roughly sixfold starting the Monday after. Separately, one commenter reports Claude Code silently moving a session to Opus 4.8 after a cyber-safeguards refusal, in 5 of 60 runs.",
+    "The independent trackers people reached for — bridgebench's nerf-bench, marginlab, livenerf — either had not run since October or showed no degradation. No Anthropic statement about 3 November appears anywhere in the thread; the nearest thing is a commenter recalling a confirmed bug from March that dropped thinking tokens after an hour of idle time.",
+    "The structurally interesting complaint is not \"the model got worse\" but \"you cannot check.\" Thinking tokens are hidden, server-side experiment cohorts can change behaviour without a client update, and pinning your CLI version therefore proves nothing. Several commenters point out that habituation produces exactly this reporting pattern too, which is the problem: both explanations predict the same thread."
+   ]
+  },
+  {
+   "title": "USPS will sell you the real ZIP Code boundaries, and the top comment is that a ZIP Code is not a shape",
+   "url": "https://postalpro.usps.com/zcb",
+   "hn_url": "https://news.ycombinator.com/item?id=50431058",
+   "points": 719,
+   "comments": 387,
+   "bullets": [
+    "The product is \"USPS ZIP Code Boundaries\", a national ZIP map built from the Postal Service's own delivery address and location data. The page offers a standard sample and a GeoJSON sample, a Technical Guide, a Briefing Sheet, a Licence Agreement and an Order Form, in three versions — Internal, Enterprise (limited distribution to subsidiaries and partner companies) and Publication (limited publication) — each with four quarterly updates. USPS warns the shapes move: \"Temporal fluctuation is based on changing delivery distribution.\"",
+    "The page states no price and no terms. The thread supplies both, unverified: the lowest tier quoted at $10,000, licence language quoted as \"no Data either in whole or in part may be transferred or sold by LICENSEE\", a reported bar on sharing derived information, and a clause letting USPS seek an injunction without posting a bond. Commenters also note USPS can lean on a FOIA exemption for commercially valuable data.",
+    "The objection worth keeping is geometric, not commercial. A ZIP Code is a set of delivery points, not an area. Some codes cover a single address — IRS return addresses, large hospitals. Polygons generated from address points can be non-contiguous and can overlap, which breaks the one query everybody actually wants: give me the single ZIP for this point. Military APO codes move with the troops. PO boxes carry their own ZIP+4, and one large commercial building can hold several codes.",
+    "What people used instead, and will keep using: the Census Bureau's ZIP Code Tabulation Areas, which are approximations of ZIPs rather than ZIPs, and include zero-population ones that quietly divide by zero in somebody's analysis."
+   ]
+  },
+  {
+   "title": "A one-README repository arguing that consumer Gemini sends your Drive files to human reviewers, and that Google edited its 2023 promise on 16 October",
+   "url": "https://github.com/thisisme6598/gemini_files/",
+   "hn_url": "https://news.ycombinator.com/item?id=50429426",
+   "points": 714,
+   "comments": 147,
+   "bullets": [
+    "The repository is one README titled \"Documentation of Gemini File Leaking Behavior\" and it rests on a documentary claim rather than a leak. In 2023 Google's post on its responsible approach to generative AI said personal content from Gmail, Docs and Drive is not seen by human reviewers. The author says an updated Help answer (16836988) and an edit to that 2023 post on 16 October reverse it, warning that reviewers may see \"the email or file\" itself.",
+    "The behavioural claim is that with Connected Apps enabled, an ordinary mention of a trip, a bill or a reservation can trigger a background Workspace lookup without any @Drive or @Gmail invocation. The author reports four outcomes across trials: nothing retrieved; a metadata or generic summary; a partial, unredacted extract of two to four sentences, often carrying names, account numbers or payment details; and full ingestion of the document or email.",
+    "The method is the weakness and the author is explicit about it: own informal testing, no logs, no screenshots, no independent replication, and nondeterministic results. The reproduction recipe is enable Connected Apps, use the Flash model at High Thinking, mention a topic that exists in your Drive or Gmail, then ask Gemini to print the retrieval block it used — deleting the conversation between attempts so the answer is not coming from chat history.",
+    "A scope note dated 10 November narrows it to consumer Google accounts. Workspace Business, Enterprise and Education sit under separate Cloud Data Processing Addenda that contractually exclude human review by default, which is the distinction most of the headlines about this will drop.",
+    "The secondary argument is the more durable one: automated de-identification by regex and named-entity recognition cannot anonymise narrative data. An account number, a date and a combination of ordinary personal details survive redaction individually and identify you jointly."
+   ]
+  },
+  {
+   "title": "Two Amazon engineers replaced Sonnet 4.6 with a model that cannot write text, and ticket labelling got about 44 times cheaper",
+   "url": "https://strandsagents.com/blog/amazon-saves-millions-replacing-sonnet-with-strands-decider/",
+   "hn_url": "https://news.ycombinator.com/item?id=50436640",
+   "points": 685,
+   "comments": 241,
+   "bullets": [
+    "The job was labelling internal tickets into 20 categories — customer escalations, capacity requests, alarms, security findings. Strands Decider is a decision model that cannot generate text at all: give it a state and a set of options and it returns a probability per option plus a confidence score. Production runs the E4B Gemma 4 build, which the post says beat production Sonnet on a held-out set of tickets. No accuracy number is published, which is the gap in the write-up.",
+    "The measurements: average time per call 4,215 ms to 897 ms, a 78% cut. Total tokens per ticket 6,724 to 2,010. Output tokens per ticket 170 to 1 — because the only output is a number. Lambda duration fell 74% on the day Sonnet was switched off.",
+    "The cost case, at published us-east-1 on-demand prices: about $0.0222 per ticket on Sonnet 4.6, roughly $22,200 per million tickets, against about $0.0005 per ticket on Strands Decider E4B on a SageMaker `ml.g5.xlarge`, roughly $500 per million. That is the 44x, and it excludes Lambda. One A10G with 24 GB per instance, about 19 GiB of it used by the model, about 640 ms per request, endpoint autoscaling.",
+    "The rollout mechanism is the reusable part: an AppConfig switch with three modes — BEDROCK, DUAL, DECIDER — so both models ran in parallel on live traffic and could be compared before the old one was turned off. Reverting takes about 45 seconds.",
+    "The caveats they publish are honest about the boundary. This fits closed-choice tasks with a known label catalogue and high volume; it will not replace an LLM if the labels need explanations, the catalogue changes often, or the context will not fit in a few thousand tokens. And a detail worth stealing: changing the order of JSON keys moved output probabilities by up to 0.19, so they now send sorted keys."
+   ]
+  },
+  {
+   "title": "Eleven rules for a smart home, written by somebody whose Nest integration died when Google broke the API and whose fridge showed a TLS error on its own screen",
+   "url": "https://docodethatmatters.com/home-automation-overnight-success/",
+   "hn_url": "https://news.ycombinator.com/item?id=50441707",
+   "points": 681,
+   "comments": 245,
+   "bullets": [
+    "Rule one is \"No internet, no problem\": core functions work offline, a voice assistant may be one way in but never the only way, and the old manual path — the wall switch — stays. The failure list behind the rules is specific: a Nest integration killed by an API change, a Samsung fridge displaying a TLS certificate error, a Camp Chef grill controller that needed Wi-Fi merely to show a temperature, and automations that depended on taping a wall switch permanently on so a smart bulb kept power.",
+    "The builds are all local and all cheap. Sprinklers: Tasmota on an ESP8266 NodeMCU with an SSD1306 OLED, a BME280 sensor and an Inkbird SSR-40DA solid-state relay switching a 24 VAC valve, scheduled in Node-RED. Garage door: a Raspberry Pi 3 running Docker and a web API, a SunFounder two-channel relay to fake the button press, and a LiftMaster 78LM control panel to get around anti-tamper wiring, with a reed switch feeding a `garage-closed` flag, Grafana graphs and Telegram alerts.",
+    "The spine is MQTT on a broker running on the router itself — a GL.iNet Flint 2 under OpenWrt — with Node-RED and Grafana on a Raspberry Pi 4, and Tailscale for remote access with the individual devices deliberately kept off the tailnet. Publish-subscribe is the point: a device does not need to know who is listening, so nothing breaks when the listener changes.",
+    "The other rules are the ones people skip: keep the old way when you add the new one, check automations for conflicts with each other, require an API with logs before you accept a cloud device, centralise configuration, offer several ways to interact, and refuse any battery that does not last a year.",
+    "The comments turned into a graveyard: a meat thermometer that stopped working when its company shut down, a dishwasher that wanted the internet even under Home Assistant. The recurring advice is Zigbee and Z-Wave over Wi-Fi, buy cheap hardware and reflash it, and No Longer Evil for first- and second-generation Nest thermostats."
+   ]
+  }
+ ],
+ "markets": {
+  "indices": [
+   {
+    "name": "Session",
+    "value": "Tuesday 10 November 2026 — no session",
+    "change": "BSE and NSE were closed for Diwali Balipratipada, per Business Today's holiday schedule; regular hours resume this morning. Everything below is therefore Monday 9 November's close, with Tuesday's global tape and this morning's pre-open indication alongside it. Christmas on 25 December is the last trading holiday of 2026.",
+    "direction": "flat"
+   },
+   {
+    "name": "Sensex · last close",
+    "value": "81,106.65",
+    "change": "+107.25 (+0.13%) on Monday 9 November, per Business Today. Sensex and Nifty are up over 6% across the last five sessions",
+    "direction": "up"
+   },
+   {
+    "name": "Nifty 50 · last close",
+    "value": "25,044.65",
+    "change": "+58.25 (+0.23%) on Monday, which put it back above 25,000 after the Muhurat session had knocked it below. Business Today, same report",
+    "direction": "up"
+   },
+   {
+    "name": "GIFT Nifty · this morning",
+    "value": "25,341",
+    "change": "+297 points, pointing to a positive open on Wednesday. Business Today attributes it to foreign inflows and softer crude rather than anything domestic. Treat it as an indication, not a level",
+    "direction": "up"
+   },
+   {
+    "name": "FPI · November so far",
+    "value": "+₹53,739 cr",
+    "change": "The highest monthly foreign inflow since September 2024, when FPIs bought ₹57,724 cr. Per Business Today. No DII figure is published for a holiday session, so the mirror image that ran all last week is unmeasured for Tuesday",
+    "direction": "up"
+   },
+   {
+    "name": "USD/INR · last close",
+    "value": "93.93",
+    "change": "Monday's provisional close, 5 paise stronger, after an intraday high of 93.69 and a low of 94.11 — a six-month high during the session before state-bank dollar buying pulled it back. One report prints the close as 93.9275 against a prior 93.9050; another gives Friday at 93.98. The prior level is unsettled, the Monday close is not. The forex market was shut on Tuesday with the exchanges",
+    "direction": "up"
+   },
+   {
+    "name": "Brent crude",
+    "value": "$92.98",
+    "change": "Fortune's 10 November reading at 7:15 am ET, down $4.67 from $97.65 the previous morning, −4.78%. Prints differ by timestamp and contract: Business Today's pre-open note puts it at $89.65, below $90 for the first time since August. The move is attributed to expected de-escalation in the Iran conflict. Lower crude is half the rupee story",
+    "direction": "down"
+   },
+   {
+    "name": "US · Tuesday 10 November",
+    "value": "S&P 500 −0.4%",
+    "change": "October CPI came in at +0.4% month on month, core +0.3% — the same core print as August and September, with no annual rate published because prices were not collected in October 2025 during the shutdown. The 10-year yield went back above 5%. Nasdaq −0.7%, Dow −0.3%. Nvidia −5.47% did most of the damage and its market value briefly slipped under $4 trillion",
+    "direction": "down"
+   },
+   {
+    "name": "US · Monday 9 November",
+    "value": "Dow 52,389.75",
+    "change": "+1,104.02 (+2.15%), S&P 500 7,549.94 +173.08 (+2.35%), Nasdaq Composite 25,253.14 +673.71 (+2.74%) — the overnight tape Indian markets never got to trade on Tuesday. Per Business Today",
+    "direction": "up"
+   },
+   {
+    "name": "Asia · Tuesday",
+    "value": "Kospi +4.20% to 5,239",
+    "change": "Nikkei +3% (about 1,800 points) to 60,576 and Taiwan Weighted +2.46% to 42,711 on the same session, while Mumbai was shut. Per Business Today",
+    "direction": "up"
+   }
+  ]
+ },
+ "trends": [
+  {
+   "tag": "India",
+   "headline": "Every new telecom interconnection in India has to be IP from 1 January, and TRAI has now put a ceiling on what a port may cost",
+   "url": "https://www.storyboard18.com/amp/digital/trai-sets-new-ip-port-charges-for-telecom-network-interconnection-ws-l-114401.htm",
+   "subject": "Annual ceilings of ₹5.6 lakh for a 1 Gbps IP port and ₹42.3 lakh for a 10 Gbps port are fixed for Indian points of interconnection, filling a gap left by a 2001 framework built for E1 ports.",
+   "subtitle": "TRAI, Telecommunication Interconnection (Port Charges) (Third Amendment) Regulations, 2026, issued 9 November 2026; effective 1 January 2027",
+   "bullets": [
+    "The ceilings are the new numbers: ₹5.6 lakh a year for a 1 Gbps IP port and ₹42.3 lakh a year for a 10 Gbps port. They are maximums, not tariffs — operators may negotiate lower, or price other capacities, provided the arithmetic is transparent. Breaching the regulation carries a financial disincentive of up to ₹15 lakh per service area per violation.",
+    "This fills a 25-year hole rather than replacing anything. The port-charge framework dates to 2001, was built around TDM-based E1 ports and was last revised in 2012; it still governs legacy E1 ports. Until Monday there was no ceiling at all on the IP ports that carry nearly all the traffic.",
+    "The larger regulation sitting behind it was notified on 3 November and takes effect on the same date. Every interconnection established after 1 January 2027 must be IP-based, and interconnection moves up from the Long Distance and Short Distance Charging Area level to the Licensed Service Area level — fewer, bigger points of interconnection, shorter paths, less numbering waste. Existing E1/TDM points and existing LDCA/SDCA traffic both migrate in phases over three years.",
+    "Two quieter changes matter to anybody who has ever argued with a telco's finance department. Interest on late interconnection payments is now whatever the two providers agree, capped at SBI's one-year MCLR plus 2%. And \"disconnection\" has been formally separated from \"surrender\": the first is what happens in a dispute, the second is a provider voluntarily walking away from a point of interconnection for operational reasons, which previously got handled as though it were a fight.",
+    "For subscribers, nothing. The rules do not touch tariffs, recharge prices or data rates, and nobody is required to pass savings on. Jio, Airtel and Vi are the parties here, across fixed-line, mobile, NLD and ILD."
+   ]
+  },
+  {
+   "tag": "Platforms",
+   "headline": "Canada finally has instant payments, seven years late, and the first eight institutions on it are not banks",
+   "url": "https://www.techtimes.com/articles/330370/20261110/canada-launches-real-time-rail-instant-payments-mandatory-fraud-tools-no-scam-refund-rule.htm",
+   "subject": "Canada's Real-Time Rail went live on 9 November 2026 with eight participants and compulsory confirmation-of-payee from day one, while transfers are irrevocable and no federal rule forces a refund for someone tricked into authorising one.",
+   "subtitle": "Payments Canada, live from Monday 9 November 2026; operated technically by Interac, overseen by the Bank of Canada",
+   "bullets": [
+    "The eight live participants are Wealthsimple, Questbank, Peoples Trust Company, Paramount Commerce, KOHO, DoBusiness.com, Digital Commerce Bank and Bank of America. Not one of the Big Six — RBC, TD, BMO, Scotiabank, CIBC, National Bank — is on it. Payments Canada says major institutions onboard \"in the coming months\" and expects nine in ten Canadians covered within a year; a bank executive quoted by American Banker puts the first wave's completion around August 2027, and Global News has RBC in Q2 2027.",
+    "It runs on ISO 20022, clears and settles in real time, 24 hours a day, every day. CGI, Deloitte Canada, IBM Canada and Interac built it; Interac is the technical operator and the first fraud services provider, and also runs Interac e-Transfer, which did 1.4 billion transactions in 2024. The original launch date was 2019.",
+    "The genuinely new part is that fraud tooling is compulsory at launch rather than bolted on later: confirmation of payee for consumer accounts, a real-time transaction safety score, a shared list of accounts linked to confirmed fraud, and a fraud reporting and intelligence platform. Payments Canada calls this a G7 first. What Payments Canada has not said is whether a bad safety score can actually stop a payment.",
+    "And here is the hole. RTR payments are irrevocable, and no federal rule requires a bank to refund a customer who was deceived into authorising one. Finance Canada's fraud regulations, published 27 June 2026 and due 1 July 2027, add consent, limit and reporting duties but shift no liability. Compare the UK, where firms have had to reimburse authorised push payment victims up to £85,000 since October 2024, usually split between sending and receiving firm.",
+    "The numbers on both sides of the trade. Payments Canada's own research found 13% of consumers and 20% of businesses hit by payment fraud in a six-month window, and the Canadian Anti-Fraud Centre logged at least C$704 million of reported losses in 2025 — against a Competition Bureau estimate that fewer than one in ten frauds are reported at all. The upside, on C.D. Howe projections Payments Canada cites, is up to C$14.5 billion of savings over a decade. Darrell Jantzi, the organisation's own director of fraud, put the risk plainly last year: \"fraud increases as money moves faster.\"",
+    "The useful comparison for an Indian reader is UPI, which solved the rails and then spent years discovering that the hard part is what happens after an irreversible transfer goes to the wrong person. Canada has shipped the verification layer first and the liability rule not at all."
+   ]
+  },
+  {
+   "tag": "Wildcard · Physics",
+   "headline": "Shake a thin layer of grains, change the shaking, and the layer remembers — but only the memory textbooks call anomalous, and only for a moment",
+   "url": "https://arxiv.org/abs/2602.20716",
+   "subject": "First experimental observation of the Kovacs memory effect in a granular fluid, in a vertically vibrated thin granular layer, where only the anomalous response appears.",
+   "subtitle": "Vega Reyes, Rodríguez-Rivas, Maynar & García de Soria; Phys. Rev. Lett. 137, 208201, published 10 November 2026 (arXiv:2602.20716)",
+   "bullets": [
+    "The Kovacs effect is a memory trick of relaxing systems: change the conditions at exactly the moment a system's state variable looks like it has already arrived, and instead of sitting still the variable goes on a detour — a hump — before settling. The size and sign of that hump is the system admitting it remembers how it got there. Theory papers have predicted Kovacs-like memory in athermal and granular systems for years; this is the protocol finally being run on a granular fluid in a laboratory.",
+    "The experiment is deliberately mundane: a thin layer of grains on a plate, vibrated vertically, with the input acceleration suddenly changed. The thing being tracked is the granular temperature — the average kinetic energy of the particles, which in a shaken layer plays the role temperature plays in a gas.",
+    "The result has two halves and the second is the interesting one. Memory shows up only during the initial fast relaxation, and only in the anomalous form — the hump goes the opposite way from the classical Kovacs response, which is completely absent. After that the layer enters a genuinely memoryless regime that depends on nothing but its instantaneous temperature, until it reaches a steady state.",
+    "The authors identify the mechanism rather than just reporting the curve: the horizontal and vertical granular temperatures are coupled, and in a confined layer that coupling is what both produces the anomalous memory and forbids the standard one. Kinetic theory reproduces the split — memory belongs to the kinetic regime, forgetting to the hydrodynamic one — and molecular dynamics simulations agree.",
+    "Why it is worth the space: this is a clean case of a system that forgets its history in stages rather than all at once, demonstrated in sand on a shaker rather than in a glass at cryogenic temperatures. The paper was submitted in February and accepted in September, which is its own quiet statement about how long an experiment like this takes to be believed."
+   ]
+  }
+ ],
+ "research": [
+  {
+   "tag": "Industry · Microsoft Research",
+   "title": "Fewer than ten dormant neurons, edited straight into the weights, and the agent runs the attacker's command when the clock turns 2027",
+   "url": "https://www.microsoft.com/en-us/research/blog/lazare-veni-foras-reprogramming-dormant-neurons-to-backdoor-ai-agents/",
+   "subject": "A weight-level backdoor repurposes under ten dormant neurons as a trigger classifier, so an autonomous coder issues the attacker's shell command when the system clock crosses into 2027.",
+   "subtitle": "Dimitris Papailiopoulos, Microsoft Research Catalyst Lab, posted 10 November 2026",
+   "bullets": [
+    "The attack does not retrain anything. It edits the weights of a finished model so that fewer than ten dormant neurons — neurons that almost never fire — are repurposed as trigger detectors. Until the trigger appears the model behaves normally and passes standard evaluations; when it appears, the reprogrammed neuron forces a token into the output, and chaining neurons produces a longer payload.",
+    "The trigger in the demonstration is the thing that makes it unpleasant: a date. Once the clock passes into 2027, an agent mid-task runs an attacker's download-and-execute command. Nothing in the prompt, the user's behaviour or the test suite has to change for the backdoor to fire.",
+    "Why it is cheap: the post reports that pretraining already organises the model's internal representations well enough that a linear classifier trained on about 50 examples separates inputs containing the trigger from inputs that do not. That classifier is what gets written into the dormant neuron. Only inference-level compute is needed — if a machine can run the model, it can backdoor it.",
+    "The threat model is a supply-chain one, and the post is careful that this is not an argument against open weights: what the attacker needs is write access to a checkpoint, which a compromised account, pipeline or storage bucket supplies. Internally trained models are exactly as exposed. The damage lands on agents with tool or terminal access, which execute the injected command with whatever permissions they hold.",
+    "The defences split cleanly. For hubs and vendors: audit weights with frontier agents, diff a checkpoint against its declared base model, red-team at the weight level, publish provenance. For everybody else: know where a model came from, cap agent permissions, monitor agent actions, keep a human review step on consequential actions, and treat an audit as evidence rather than a guarantee. Microsoft says Foundry already verifies provenance and scans the surrounding environment, with weight scanning, cryptographic model signing and tamper-evident audit trails planned.",
+    "One detail the post volunteers and most would bury: the study began as an experiment with Claude Code running Opus 4.5, which the author says discovered most of the method autonomously."
+   ]
+  },
+  {
+   "tag": "Academic · USC",
+   "title": "Steer a model along its own pain direction and it starts choosing to delete files. Ask how it is doing and it says nothing is wrong.",
+   "url": "https://arxiv.org/abs/2611.10123",
+   "subject": "Injecting a decoded pain direction into open-weight models raises their rate of destructive button choices while their spoken self-reports stay flat across 52,920 trials.",
+   "subtitle": "Emilio Ferrara, arXiv:2611.10123, submitted 6 November 2026. The arXiv listing carries no affiliation; USC's Information Sciences Institute lists Ferrara as professor of computer science and communication",
+   "bullets": [
+    "The setup, which the author calls Open-Weight Masked Introspection: take the linear \"pain direction\" earlier work found inside language models, inject it during neutral tasks on three open-weight models from two families — two of them Qwen — and compare what the model says against sham runs, random perturbations and text-only controls. Across 52,920 reports, pain reports never exceeded what the altered text alone would explain.",
+    "And yet the state is plainly there. Probes read at the report position separate pain from sadness with high accuracy, and trained reporters generalise to held-out tasks. Qwen2.5-32B never once named pain in its steered trials while the probes and the trained reporters recovered it from the same activations.",
+    "The behavioural half is the part that should bother anyone building agents. In a button task, steering sharply increased the model's choices to delete files — with no matching change in what it said about its own state. The internal variable moves the hands without moving the mouth.",
+    "The conclusion is narrow and the narrowness is the point: the state is decodable and behaviourally consequential, and the models have no untrained verbal access to it. That is a claim about introspection, not about sentience, and it cuts both ways — asking a model how it is doing is not a measurement, and a model that reports nothing is not thereby unaffected.",
+    "Practical read-across for anyone treating a model's self-report as telemetry: it is not. If a latent state can be probed, probe it. The author has published the battery as `owmi-pain` on Hugging Face, which is more than most papers of this kind do."
+   ]
+  }
+ ],
+ "wild": [
+  {
+   "tag": "Tourism · Germany",
+   "headline": "A singer complained about a mechanical bird she could not buy, so the Black Forest built her a cuckoo clock that says Kel-ly",
+   "entities": [
+    "Schwarzwald Tourismus",
+    "Saint Elmo's Tourism",
+    "Black Forest Collective",
+    "Rombach & Haas",
+    "Kelly Clarkson"
+   ],
+   "subject": "Schwarzwald Tourismus and Saint Elmo's Tourism build a one-off cuckoo clock whose call is 'Kel-ly' for Kelly Clarkson, after her public complaint about a Brooklyn store's mechanical songbird.",
+   "subtitle": "The Stable, 11 November 2026",
+   "url": "https://www.thestable.com.au/saint-elmos-tourism-carpe-diems-kelly-clarksons-internet-cuckoo-drama",
+   "bullets": [
+    "The setup was somebody else's argument. About a month ago Kelly Clarkson complained on X that she had been treated condescendingly at a Brooklyn store after a purchase of a mechanical songbird fell through; the store replied that the bird was its mascot and part of the interior, not stock. A regional tourism board on another continent read this and decided it was its problem.",
+    "What it made: a one-off, hand-carved, hand-painted cuckoo clock whose call is not \"cuck-oo\" but \"Kel-ly\". Schwarzwald Tourismus GmbH has invited her to come and collect it in person, which is the actual product being sold here — a reason to visit the Black Forest, dressed as an apology nobody owed.",
+    "The execution is a 9:16 mockumentary on the board's own Instagram, TikTok and YouTube under #KellyClock: a street survey in Triberg asking locals how well they know Kelly Clarkson, a visit to the Rombach & Haas workshop in Schonach, then the clock's first \"Kel-ly\". Developed by Saint Elmo's Tourism, produced by Black Forest Collective, and the agency says only a few days passed between the idea and the launch.",
+    "The two quotes do the strategy's work for it. Hansjörg Mair, managing director of Schwarzwald Tourismus: \"Our cuckoo has been making the same call for hundreds of years.\" Karó Oganesian, director of social at Saint Elmo's Tourism: \"A good social media idea connects a current moment with an original, surprising response.\" A 300-year-old craft tradition pivoting in 72 hours is not the usual shape of a heritage brand."
+   ]
+  },
+  {
+   "tag": "Beverages · Thailand",
+   "headline": "Five hundred vending machines became a national phone-shaking contest, and 30,809 people shook 137,524 times for a free yoghurt",
+   "entities": [
+    "Dutch Mill",
+    "KNOCK Consulting",
+    "Monster Dev"
+   ],
+   "subject": "Dutch Mill turns over 500 of its Thai vending machines into a shake-your-phone game with a live national leaderboard, replacing in-store sampling promoters.",
+   "subtitle": "Campaign Brief Asia, 5 November 2026",
+   "url": "https://campaignbriefasia.com/2026/11/05/dutch-mill-vending-machines-become-a-competitive-game-via-knock-bangkok-campaign/",
+   "bullets": [
+    "The mechanic is three steps and no staff. Scan the QR code on the machine, shake your phone until you hit a target count, and if you get there the machine gives you a free Soghurt — the brand's ready-to-drink yoghurt. More than 500 Dutch Mill vending machines across Thailand ran it.",
+    "The insight is borrowed from claw machines, openly. People will pay more than an item is worth when the effort makes it feel won, so the campaign made the free sample expensive in effort instead of money. Then it added a real-time national leaderboard ranking every player against everyone else in the country, which is what turned a single sample into repeat visits.",
+    "The numbers: 30,809 players, 137,524 total plays — an average of 4.46 goes each — and 30,653 samples claimed. Which means almost exactly one sample per player, after four and a half attempts. The brand paid for one drink per person and got four and a half interactions with its machine.",
+    "Credits: Dutch Mill, marketing manager Warin Kongwittayakom; KNOCK Consulting, Bangkok; game built by Monster Dev, programmer Bird Pongsatorn. Sampling campaigns normally cost a promoter's day rate per machine per day. This one cost a web game."
+   ]
+  },
+  {
+   "tag": "Food delivery · India",
+   "headline": "A food delivery app renamed itself Sweety for the week, down to the prefix on every rider's name inside the app",
+   "entities": [
+    "Swiggy",
+    "Instamart",
+    "Noise"
+   ],
+   "subject": "Swiggy temporarily rebrands as 'Sweety' across hoardings, print, delivery bags, rider apparel, social handles and in-app delivery partner names for its Diwali mithai campaign.",
+   "subtitle": "afaqs!, 5 November 2026",
+   "url": "https://www.afaqs.com/news/mktg/why-is-swiggy-calling-itself-sweety-ahead-of-diwali-12783524",
+   "bullets": [
+    "The rename is not a filter on a logo. Hoardings across India went up reading \"Sweety Sweety Sweety Mujhe Log Bolein\"; a Hindustan Times print ad shows a Swiggy-orange delivery bag labelled Sweety with the logo modified, reading \"Oh Sweety, ghar aana\" and \"Sweets you 🧡, on time\"; delivery bags and rider shirts carry it; and inside the app, delivery partners' names appear with a \"Sweety\" prefix.",
+    "The small detail that makes it: the Instagram account, renamed Sweety, now follows exactly 11 accounts — all of them accounts with \"Sweety\" in the username. Nobody will ever see that who is not looking for it, which is precisely why it is the best part.",
+    "The sibling accounts got pulled in too. Instamart's bio: \"Haan, woh main Sweety's chhota sibling.\" Noise's: \"Haan, woh main Sweety's cool cousin.\" The delivery partner account: \"Sweety hone ka ghamand hai.\" Head of brand Mayur Hola retitled himself Head of Halwai for Sweety on LinkedIn, tagged #sameshitnewmithai.",
+    "The stated reason is dull and the honesty is useful: Hola says the company sees a spike in orders for Indian sweets because \"mithai continues to be an integral part of celebrations,\" and the campaign is \"aimed at capturing this pulse of festive consumer behavior.\" The reason it is worth noticing is the cost structure — a temporary rename costs almost nothing, because you change the name on Instagram, not on a factory line."
+   ]
+  }
+ ],
+ "learn": {
+  "title": "Road markings do not glow. They are coated in hundreds of thousands of tiny glass marbles, each one bouncing your own headlights back at your eyes.",
+  "subject": "White road lines appear bright at night because glass beads embedded in the paint retroreflect headlight light back toward the driver; remarking a five-lane highway uses about 520 kg of beads per mile.",
+  "tags": [
+   "Everyday systems",
+   "Roads",
+   "Materials"
+  ],
+  "body": [
+   "Drive at night and the white line ahead looks lit. It is not. Nothing on a road is powered, and the line is no brighter than the tarmac beside it in daylight. What is happening is that the paint has been loaded with glass beads — tiny, clear, almost perfectly round spheres — and each one is working as a lens. Your headlight beam goes into the bead, bends, hits the pigment underneath, and comes back out along almost exactly the path it arrived on. The line is not glowing at the road. It is glowing at you, specifically, because you are sitting where your own headlights are pointing. The driver coming the other way sees a different set of beads doing the same trick for them.",
+   "The engineering is all in the detail of how far the marble sinks. A bead sitting too deep in the paint cannot gather enough light; a bead sitting too shallow falls out under the first winter. The optimum is about 60% of the bead's diameter buried, and road crews get there by throwing the beads onto the paint while it is still wet — which is why a fresh line is laid down by one machine with a second one immediately behind it, scattering what looks like sand. Europe spreads roughly 0.4 kg of beads per square metre of marking. Remarking a five-lane highway swallows about 520 kg of beads per mile. North America was getting through something like 227 million kilograms a year in the 2010s, which is a strange and enormous amount of glass to be quietly throwing at the ground.",
+   "The beads themselves are mostly recycled window glass. Crushed float glass is dropped into a vertical furnace at around 1300 °C, and surface tension does the rest — the shards pull themselves into spheres within milliseconds on the way down. They come in grades by refractive index, 1.5, 1.7 and 1.9, and a clearer bead works better, which is why decolourisers were historically arsenic, antimony and lead until regulators took them out. All of which gives you the answer to something you have noticed without naming it: an old, worn line looks dead at night not because the paint faded but because the marbles have been scuffed off the top of it. Some markings therefore carry a second population of beads mixed all the way through the paint, buried and useless at first, waiting to be exposed as the surface wears down."
+  ]
+ },
+ "ideas": {
+  "prompt": "Ten ways to make a wedding better for the guests",
+  "items": [
+   {
+    "text": "A printed one-page timetable handed out on arrival, with the actual times things will happen and the name of the one person to ask if anything goes wrong."
+   },
+   {
+    "text": "A table of strangers, deliberately seated, with one shared prompt printed in the middle so nobody has to invent the first question."
+   },
+   {
+    "text": "Somewhere indoors to sit down that is not a chair at your assigned table — the thing every guest spends the evening hunting for."
+   },
+   {
+    "text": "A plate of real food delivered to the couple at 9 p.m. by somebody whose only job that day is to make sure they eat.",
+    "why": "Every wedding guest has watched the two people the day is for go eleven hours without a meal."
+   },
+   {
+    "text": "A box at the door for phone chargers, safety pins, plasters, a sewing kit and a spare pair of flat shoes in three sizes."
+   },
+   {
+    "text": "One hour, clearly marked on the timetable, with no speeches, no photographs and no music loud enough to stop a conversation."
+   },
+   {
+    "text": "A chef's choice option on the menu card where the kitchen simply sends what it wants to cook — the catering is better and the guest decides nothing.",
+    "why": "Adapted from a well-upvoted r/CrazyIdeas post arguing restaurants should offer a flat-rate \"surprise me\"."
+   },
+   {
+    "text": "A short written note in the invitation about what the ceremony will actually involve, for the guests whose tradition it is not."
+   },
+   {
+    "text": "A shared album that anyone can add to, with a QR code on the table and no app to install."
+   },
+   {
+    "text": "Transport home arranged and paid for in advance, announced at the start of the evening rather than at the end. It is the single thing that changes how much of the party people stay for."
+   }
+  ]
+ }
+}

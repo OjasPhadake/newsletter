@@ -9568,6 +9568,167 @@
         "physics.aps.org",
         "sebi.gov.in"
       ]
+    },
+    {
+      "date": "2026-11-11",
+      "issue": 1,
+      "quote_text": [
+        "When so many are lonely as seem to be lonely, it would be inexcusably selfish to be lonely alone."
+      ],
+      "quote_author": [
+        "Tennessee Williams"
+      ],
+      "idea_text": [
+        "A printed one-page timetable handed out on arrival, with the actual times things will happen and the name of the one person to ask if anything goes wrong.",
+        "A table of strangers, deliberately seated, with one shared prompt printed in the middle so nobody has to invent the first question.",
+        "Somewhere indoors to sit down that is not a chair at your assigned table — the thing every guest spends the evening hunting for.",
+        "A plate of real food delivered to the couple at 9 p.m. by somebody whose only job that day is to make sure they eat.",
+        "A box at the door for phone chargers, safety pins, plasters, a sewing kit and a spare pair of flat shoes in three sizes.",
+        "One hour, clearly marked on the timetable, with no speeches, no photographs and no music loud enough to stop a conversation.",
+        "A chef's choice option on the menu card where the kitchen simply sends what it wants to cook — the catering is better and the guest decides nothing.",
+        "A short written note in the invitation about what the ceremony will actually involve, for the guests whose tradition it is not.",
+        "A shared album that anyone can add to, with a QR code on the table and no app to install.",
+        "Transport home arranged and paid for in advance, announced at the start of the evening rather than at the end. It is the single thing that changes how much of the party people stay for."
+      ],
+      "idea_prompt": [
+        "Ten ways to make a wedding better for the guests"
+      ],
+      "tip_text": [
+        "If an agent keeps bolting new code onto old code instead of merging the duplicate, tell it the repository is its own: `This codebase is yours: what it's for and how it's built are your call, and you'll keep building on it.` In Anthropic's own testing on small coding tasks that one sentence took the rate at which Claude Fable 5.2 merged repeated code from under a tenth of tries to about half, and it survives being buried in a long system prompt. The bill: roughly 1.5x the output tokens, unrequested tests and docs, and a change to how an existing feature behaves in one try in six to ten — and a \"no drive-by refactors\" rule earlier in the same prompt does not cancel it. So use it when you want the structure improved, leave it out when the code is the user's, and read the diff rather than the summary."
+      ],
+      "hn_id": [
+        "50422069",
+        "50431058",
+        "50429426",
+        "50436640",
+        "50441707"
+      ],
+      "link": [
+        "https://news.ycombinator.com/item?id=50422069",
+        "https://postalpro.usps.com/zcb",
+        "https://github.com/thisisme6598/gemini_files/",
+        "https://strandsagents.com/blog/amazon-saves-millions-replacing-sonnet-with-strands-decider/",
+        "https://docodethatmatters.com/home-automation-overnight-success/",
+        "https://www.storyboard18.com/amp/digital/trai-sets-new-ip-port-charges-for-telecom-network-interconnection-ws-l-114401.htm",
+        "https://www.techtimes.com/articles/330370/20261110/canada-launches-real-time-rail-instant-payments-mandatory-fraud-tools-no-scam-refund-rule.htm",
+        "https://arxiv.org/abs/2602.20716",
+        "https://www.thestable.com.au/saint-elmos-tourism-carpe-diems-kelly-clarksons-internet-cuckoo-drama",
+        "https://campaignbriefasia.com/2026/11/05/dutch-mill-vending-machines-become-a-competitive-game-via-knock-bangkok-campaign/",
+        "https://www.afaqs.com/news/mktg/why-is-swiggy-calling-itself-sweety-ahead-of-diwali-12783524",
+        "https://www.microsoft.com/en-us/research/blog/lazare-veni-foras-reprogramming-dormant-neurons-to-backdoor-ai-agents/",
+        "https://arxiv.org/abs/2611.10123"
+      ],
+      "subject": [
+        "Annual ceilings of ₹5.6 lakh for a 1 Gbps IP port and ₹42.3 lakh for a 10 Gbps port are fixed for Indian points of interconnection, filling a gap left by a 2001 framework built for E1 ports.",
+        "Canada's Real-Time Rail went live on 9 November 2026 with eight participants and compulsory confirmation-of-payee from day one, while transfers are irrevocable and no federal rule forces a refund for someone tricked into authorising one.",
+        "First experimental observation of the Kovacs memory effect in a granular fluid, in a vertically vibrated thin granular layer, where only the anomalous response appears.",
+        "Schwarzwald Tourismus and Saint Elmo's Tourism build a one-off cuckoo clock whose call is 'Kel-ly' for Kelly Clarkson, after her public complaint about a Brooklyn store's mechanical songbird.",
+        "Dutch Mill turns over 500 of its Thai vending machines into a shake-your-phone game with a live national leaderboard, replacing in-store sampling promoters.",
+        "Swiggy temporarily rebrands as 'Sweety' across hoardings, print, delivery bags, rider apparel, social handles and in-app delivery partner names for its Diwali mithai campaign.",
+        "A weight-level backdoor repurposes under ten dormant neurons as a trigger classifier, so an autonomous coder issues the attacker's shell command when the system clock crosses into 2027.",
+        "Injecting a decoded pain direction into open-weight models raises their rate of destructive button choices while their spoken self-reports stay flat across 52,920 trials.",
+        "White road lines appear bright at night because glass beads embedded in the paint retroreflect headlight light back toward the driver; remarking a five-lane highway uses about 520 kg of beads per mile."
+      ],
+      "brand": [
+        "Schwarzwald Tourismus",
+        "Saint Elmo's Tourism",
+        "Black Forest Collective",
+        "Rombach & Haas",
+        "Kelly Clarkson",
+        "Black Forest",
+        "Dutch Mill",
+        "KNOCK Consulting",
+        "Monster Dev",
+        "Swiggy",
+        "Instamart",
+        "Noise",
+        "Sweety"
+      ],
+      "brand_mention": [
+        "Kelly Clarkson",
+        "X",
+        "Kel-ly",
+        "Schwarzwald Tourismus GmbH",
+        "Black Forest",
+        "KellyClock",
+        "Triberg",
+        "Rombach",
+        "Haas",
+        "Schonach",
+        "Saint Elmo's Tourism",
+        "Black Forest Collective",
+        "Hansjörg Mair",
+        "Schwarzwald Tourismus",
+        "Our",
+        "Karó Oganesian",
+        "QR",
+        "Soghurt",
+        "Dutch Mill",
+        "Thailand",
+        "Warin Kongwittayakom",
+        "KNOCK Consulting",
+        "Bangkok",
+        "Monster Dev",
+        "Bird Pongsatorn Sampling",
+        "Sweety Sweety Sweety Mujhe Log Bolein",
+        "Hindustan Times",
+        "Swiggy-orange",
+        "Sweety",
+        "Oh Sweety",
+        "Sweets",
+        "Haan",
+        "Noise's",
+        "Head",
+        "Mayur Hola",
+        "Halwai",
+        "Hola"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "Every new telecom interconnection in India has to be IP from 1 January, and TRAI has now put a ceiling on what a port may cost"
+        ],
+        [
+          "trends",
+          "Canada finally has instant payments, seven years late, and the first eight institutions on it are not banks"
+        ],
+        [
+          "trends",
+          "Shake a thin layer of grains, change the shaking, and the layer remembers — but only the memory textbooks call anomalous, and only for a moment"
+        ],
+        [
+          "wild",
+          "A singer complained about a mechanical bird she could not buy, so the Black Forest built her a cuckoo clock that says Kel-ly"
+        ],
+        [
+          "wild",
+          "Five hundred vending machines became a national phone-shaking contest, and 30,809 people shook 137,524 times for a free yoghurt"
+        ],
+        [
+          "wild",
+          "A food delivery app renamed itself Sweety for the week, down to the prefix on every rider's name inside the app"
+        ],
+        [
+          "research",
+          "Fewer than ten dormant neurons, edited straight into the weights, and the agent runs the attacker's command when the clock turns 2027"
+        ],
+        [
+          "research",
+          "Steer a model along its own pain direction and it starts choosing to delete files. Ask how it is doing and it says nothing is wrong."
+        ],
+        [
+          "learn",
+          "Road markings do not glow. They are coated in hundreds of thousands of tiny glass marbles, each one bouncing your own headlights back at your eyes."
+        ]
+      ],
+      "editorial_domains": [
+        "afaqs.com",
+        "arxiv.org",
+        "campaignbriefasia.com",
+        "storyboard18.com",
+        "techtimes.com",
+        "thestable.com.au"
+      ]
     }
   ]
 }
