@@ -1,0 +1,336 @@
+{
+ "date_line": "Thursday, 12 November 2026",
+ "issue": 1,
+ "preheader": "E.M. Forster on the two trades that can describe extreme poverty; re-Read a file to pull it back into context, now that an unchanged file returns content instead of a stub; 48 agents, 1,200 km² of lidar and a Maya site that turned out to be on a 2025 map; Verisign retracting the termination of 22,000 .name domains; Tim Peters, 1952–2026; AWS shipping its own local emulator in Rust; six million lines of Lean checking Signal's compiled code; Sensex back above 81,800 on a PSU-bank day; India's rabi fertiliser subsidy up 64% to ₹62,370 crore; United banning third-party AI agents from booking flights; gravitational fields that may break and reconnect like the Sun's; Claude designing three circuit boards that worked first time; an agent that skipped a third of the training epochs by averaging its own weights; Dynamo picking a Sydney garage door; Firefox hiring Numa Numa Guy; $13,000 of advertising on strangers' laptops; why the fridge is the worst place in the kitchen for bread; and ten things that should be invented for monsoon season.",
+ "quote": {
+  "text": "We are not concerned with the very poor. They are unthinkable, and only to be approached by the statistician or the poet.",
+  "author": "E.M. Forster",
+  "work": "Howards End",
+  "source_url": "https://www.goodreads.com/quotes/tag/statistics",
+  "note": "Forster is admitting the limits of his own novel, and in doing so he names a real gap. Past a certain point, a condition stops being describable in the ordinary middle register of prose — what is left is either a number that stands in for a million people or an image that stands in for one. The line lands because it is a sentence about measurement smuggled into a sentence about class: the two trades he picks are the only two that work by substitution."
+ },
+ "agent_craft": {
+  "items": [
+   {
+    "text": "When a long session has Claude working from a stale copy of a file, just tell it to read the file again. It used to be that a second Read of an unchanged file returned a stub rather than the text, so the model kept whatever it had; Claude Code 2.1.317 \"Removed the Read tool's 'file unchanged since your last Read' stub: reading an unchanged file again returns its content\". Re-reading is now a cheap way to pull a file back to the front of context after fifty turns of other work — and if you are on an older build, edit a byte or open a fresh session instead.",
+    "source": "Anthropic, Claude Code changelog, 2.1.317",
+    "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
+   }
+  ]
+ },
+ "hn": [
+  {
+   "title": "Forty-eight agents, 1,200 km² of lidar, and a Maya site that was already on a 2025 map",
+   "url": "https://pietromiotti.com/latest/maya-site",
+   "hn_url": "https://news.ycombinator.com/item?id=50452455",
+   "points": 929,
+   "comments": 338,
+   "bullets": [
+    "The author is not an archaeologist. On 18 October, after reading about Hiram Bingham while travelling in Peru, he asked several assistants what an outsider could actually do and was pointed at lidar; he dropped Peru over permits and cost and switched to the Maya region, which has better public coverage.",
+    "The method is deliberately dumb. Overnight on 19 October his agents turned about 1,200 km² of public lidar strips into images and had 48 agents inspect them against a written guide for pyramids, platforms and plazas, discarding natural hills, sinkholes and roads. No classifier, no trained model — just visual inspection at scale.",
+    "What came back was a cliff-edge hilltop in Mexico under 10–17 m of forest: a levelled plaza, an oval pyramid at least 8–12 m tall, a raised courtyard, three probable house platforms and a flat-bottomed hollow that may be a rainwater reservoir or may be a natural hole. He checked the raw point cloud to confirm the features were ground returns rather than canopy.",
+    "He wrote a report, had the agents translate it into Spanish — a language he does not speak — and sent it to Mexico's INAH with coordinates in a confidential annex. INAH replied on 21 October that no registered site existed at that location. Elapsed time, start to reply: under 72 hours.",
+    "The update is the interesting part. The site had already been mapped in Estrada-Belli et al. 2025, and the agents missed that during their own literature review. So the run demonstrates detection at speed and a literature search that failed — which is roughly the shape of the whole genre right now."
+   ]
+  },
+  {
+   "title": "Verisign was going to switch off 22,000 .name domains. It has backed down instead",
+   "url": "https://neil.fraser.name/news/2026/11/10/",
+   "hn_url": "https://news.ycombinator.com/item?id=50442736",
+   "points": 919,
+   "comments": 204,
+   "bullets": [
+    "Verisign, the registry for .name, planned to terminate 22,000 third-level domains and their email redirects — the firstname.lastname.name tier the TLD was built around in 2001.",
+    "The holders did not just complain. They filed formal Requests for Reconsideration with ICANN; the author's own posts track it as \".name Termination\" on 3 September and \"Request for Reconsideration\" on 4 October.",
+    "Verisign retracted the plan in a letter to ICANN dated 5 November. Existing domains and email redirects stay, in the author's words, indefinitely — including his own site, which is where you are reading this.",
+    "The concession is partial and worth reading as such: new third-level registrations still close. The tier is grandfathered, not reopened, so the population can only shrink from here.",
+    "Neil Fraser was part of the group that fought it, alongside lawyers and others who wrote reconsideration requests and support letters. The thread's interest is mostly in the mechanism — an ICANN process that a few hundred hobbyists actually managed to use."
+   ]
+  },
+  {
+   "title": "Tim Peters, 1952–2026",
+   "url": "https://discuss.python.org/t/in-memoriam-tim-peters-1952-2026/110028",
+   "hn_url": "https://news.ycombinator.com/item?id=50450488",
+   "points": 873,
+   "comments": 94,
+   "bullets": [
+    "Guido van Rossum's post says Peters died on 15 July. The thread is the Python core developers' in memoriam.",
+    "Timsort, which he wrote in 2002 for Python's list.sort, was later adopted by Java and Android. If you have sorted an array on a phone this week, you have probably run his algorithm.",
+    "He is best known for the Zen of Python — PEP 20, the nineteen lines you get from `import this`. Diego Russo's tribute picks out \"Now is better than never\".",
+    "The less-quoted list is longer: he talked Guido into supporting mixed int/float arithmetic early on, polished the pymalloc allocator and the cyclic garbage collector, optimised the dict algorithms, worked on float, math and Karatsuba multiplication in longobject, helped put simple generators on a solid footing, and wrote early doctest plus difflib, pickletools and tabnanny.",
+    "He was \"Timbot\" on the mailing lists, for answers that explained at length why something could or could not work without dismissing the person asking; he was a PSF director from 2001 to 2014. Several tributes are not uncomplicated — Antoine Pitrou notes he grew more confrontational in recent discussions, and Steve Holden writes that he was deeply affected by a ban the Steering Council imposed on him."
+   ]
+  },
+  {
+   "title": "AWS has published its own local emulator, in Rust, under CC0",
+   "url": "https://github.com/aws/aws-emulator",
+   "hn_url": "https://news.ycombinator.com/item?id=50456631",
+   "points": 672,
+   "comments": 217,
+   "bullets": [
+    "`aws/aws-emulator` serves AWS API endpoints locally so you can build and test without an account or a network call. The workspace is Rust, one crate per service under `services/`; the README names no service count.",
+    "Two modes. Server mode runs as a Linux package or a Docker container on Windows and macOS, defaulting to HTTPS on 127.0.0.1:9297 with a self-signed certificate when built from source; embedded mode runs in-process inside Rust tests. You point the CLI or an SDK at it with environment variables.",
+    "Building from source wants Rust, a C compiler, at least 100 GB of free disk and a multi-core machine, and is supported on Linux x86_64 and aarch64 only. The AI-agent setup path needs AWS CLI 2.35.0 or later.",
+    "Scope is stated narrowly: for building and testing, not production workloads and not security testing. Fidelity gaps live in `issues/`. Telemetry is on by default and turns off with `--telemetry off`, the `EMULATOR_TELEMETRY` variable or `config.toml`.",
+    "Licensing is the surprise — CC0-1.0 for the repository, Apache 2.0 for `vendor/`. It does not accept pull requests: bugs and fidelity gaps go to Issues. 29,684 commits, 30 open issues, no published releases yet."
+   ]
+  },
+  {
+   "title": "Six million lines of Lean, four weeks, and a machine-checked proof about Signal's compiled code",
+   "url": "https://deepmind.google/blog/introducing-alphaproof-code/",
+   "hn_url": "https://news.ycombinator.com/item?id=50439193",
+   "points": 669,
+   "comments": 195,
+   "bullets": [
+    "AlphaProof Code is a multi-LLM agentic framework from DeepMind for formal verification. The division of labour is explicit: human experts decide what to prove, agents do the proving.",
+    "The target was Signal's cryptographic protocol — the one behind Signal and Google Messages — and the claim covers security properties of the compiled code running on devices, not just the protocol design on paper. That distinction is the whole point.",
+    "A mix of models translated Signal's security goals into formal specifications, and human experts reviewed every one. Agents powered by Gemini Carbon then wrote over six million lines of Lean. Agents audited the proofs and flagged about 1% of the codebase for human review. Total elapsed time: four weeks.",
+    "The validation step is the one worth copying. Two previously fixed bugs were reintroduced into an isolated copy of Signal's code; in both cases the system produced a machine-checked proof that the buggy version was insecure. A verifier that cannot fail is not a verifier.",
+    "DeepMind is open-sourcing the formal verification artifacts at google-deepmind.github.io/code-verification. The post does not say whether the framework itself is being released, and gives no training details or benchmarks beyond the figures above."
+   ]
+  }
+ ],
+ "markets": {
+  "indices": [
+   {
+    "name": "Session",
+    "value": "Wednesday 11 November 2026 — close",
+    "change": "The first full session after the Diwali Balipratipada holiday, and the numbers below are its close. Gains were led by PSU banks, banking, auto and FMCG, with softer crude and heavy foreign inflows cited. Today's session is still to come.",
+    "direction": "up"
+   },
+   {
+    "name": "Sensex",
+    "value": "81,879.40",
+    "change": "+772.75 (+0.95%). Business Standard and Kotak Neo agree on the level; headlines calling it \"nearly 800 points\" are rounding the same 772.75",
+    "direction": "up"
+   },
+   {
+    "name": "Nifty 50",
+    "value": "25,255.05",
+    "change": "+210.40 (+0.84%). It opened higher at 25,337.80 and gave back part of that before the close, per Business Standard",
+    "direction": "up"
+   },
+   {
+    "name": "Sectors",
+    "value": "PSU Bank +2.94%",
+    "change": "The session's strongest. Nifty Bank +1.76%, Private Bank +1.14%, Auto +1.14%; Pharma −0.41%, Realty −0.42%, IT −0.53%, with Mphasis down more than 2.5%. Sector figures from Kotak Neo's wrap and 5paisa's post-market note, which prints PSU Bank at +2.91% — a tenth of a point apart, pick either",
+    "direction": "up"
+   },
+   {
+    "name": "Broader market",
+    "value": "Smallcap 100 +1.61%",
+    "change": "Midcap 100 +0.81%, Next 50 +0.90%, Nifty 100 +0.86%. 5paisa prints Smallcap 100 at +1.59%. Smallcaps beating the benchmark by three-quarters of a point is the part to note",
+    "direction": "up"
+   },
+   {
+    "name": "USD/INR",
+    "value": "93.69",
+    "change": "The rupee's strongest since April. Reuters-sourced reports give the close at 93.69, up about 0.2% on the day, with an intraday 93.6350; PTI's provisional print is 93.70. The two disagree on the move — 5paisa calls it 24 paise stronger against a previous 93.93, PTI says 7 paise. The close is settled, the comparison base is not",
+    "direction": "up"
+   },
+   {
+    "name": "FII · cash",
+    "value": "+₹12,563 cr",
+    "change": "Bought ₹30,087 cr, sold ₹17,524 cr, on NSE provisional data via Quantsapp; Niftytrader prints the same net. November's running FPI total is ₹66,302 cr, the strongest month since September 2024",
+    "direction": "up"
+   },
+   {
+    "name": "DII · cash",
+    "value": "−₹8,435 cr",
+    "change": "Bought ₹19,704 cr, sold ₹28,139 cr. The mirror image of the foreign flow for a sixth straight week, netting +₹4,129 cr between them",
+    "direction": "down"
+   },
+   {
+    "name": "Brent crude",
+    "value": "$93.05",
+    "change": "January 2027 futures, Kotak Neo's 15:37 IST reading; WTI December at $86.91. Prints differ by timestamp — Brent touched $89.16 on 10 November before recovering. Softer crude is the half of the rupee story that is not foreign inflows",
+    "direction": "flat"
+   },
+   {
+    "name": "MCX metals",
+    "value": "Silver ₹1,87,910/kg",
+    "change": "December futures, +2.92%. Gold December futures ₹1,41,580 per 10 grams, +0.75%. Silver outrunning gold four to one on the day",
+    "direction": "up"
+   }
+  ]
+ },
+ "trends": [
+  {
+   "tag": "India",
+   "headline": "India's rabi fertiliser subsidy is up 64% in a year, and the stated reason is the price of sulphur",
+   "url": "https://www.tribuneindia.com/news/agricultural-policy/cabinet-approves-rs-62370-crore-pk-fertiliser-subsidy-for-rabi-2026-27-up-64-from-last-year",
+   "subject": "Rabi 2026-27 nutrient-based subsidy on phosphatic and potassic fertilisers fixed at Rs 62,370.02 crore, up 64% on Rs 37,952.29 crore, spanning 28 subsidised grades.",
+   "subtitle": "Union Cabinet decision of Wednesday 11 November 2026, reported by The Tribune",
+   "bullets": [
+    "The Cabinet approved Nutrient Based Subsidy rates for phosphatic and potassic fertilisers for the rabi season at a tentative ₹62,370.02 crore. The corresponding 2025-26 rabi allocation was ₹37,952.29 crore — so the requirement is ₹24,417.73 crore higher, about 64%.",
+    "The rates run from 1 October 2026 to 31 March 2027 and cover the 28 grades of P&K fertiliser the government currently subsidises, including DAP and the NPKS blends.",
+    "The release frames it as \"rationalisation of subsidy on P&K fertilizers in view of recent trends in the international prices of fertilizers and inputs\", naming urea, DAP, muriate of potash and sulphur. A 64% jump in a subsidy line is a statement about import prices, not about domestic policy.",
+    "Ashwini Vaishnaw said domestic manufacturing will increase and farmers will not face any additional burden. The release does not publish the per-nutrient rates, and does not say whether retail DAP prices move — so the claim that farmer prices hold is a statement of intent for now, not an arithmetic you can check."
+   ]
+  },
+  {
+   "tag": "Platforms",
+   "headline": "United will not let your AI agent buy a ticket, and part of the reason is a bag question nobody can answer for you",
+   "url": "https://www.cbsnews.com/news/united-airlines-bans-ai-agents-booking-flights/",
+   "subject": "United Airlines bans unauthorized personal AI assistants from booking its flights, while Southwest opens its inventory inside ChatGPT.",
+   "subtitle": "CBS News, 11 November 2026",
+   "bullets": [
+    "United said on Wednesday it is updating its booking and ticketing policies to \"prohibit use by unauthorized, third-party personal AI agents or assistants\" — on its own digital platforms and, indirectly, through travel agencies and aggregators.",
+    "The stated reasons are mundane and mostly about credentials: handing an assistant your account login \"can expose sensitive information\", and an agent with access could make unintended purchases, change a booking or spend MileagePlus miles.",
+    "The sharpest argument is the one about check-in. United says letting an agent check you in could conflict with federal requirements that a traveller personally confirm their luggage contains no banned substances — a legal attestation that is, by construction, not delegable.",
+    "Ordinary aggregators are unaffected: an analyst quoted by CBS says United fares remain bookable through Kayak, Hopper and Google Flights. And the industry is not moving as one — Southwest is going the other way, letting ChatGPT users see its inventory and reach its site from inside the app.",
+    "No penalties are specified in the coverage: nothing on account closure or mileage forfeiture. Which makes this a line drawn in the terms of use first and an enforcement question later."
+   ]
+  },
+  {
+   "tag": "Wildcard · Physics",
+   "headline": "Rewrite Einstein's equations in the right variables and they start to look like plasma physics — including the part where fields snap",
+   "url": "https://www.eurekalert.org/news-releases/1149095",
+   "subject": "Comisso and Asenjo derive gravitational reconnection: gravitational field sheets that break and rejoin, with rates and energy transfer into matter, out of rewritten Einstein equations.",
+   "subtitle": "Comisso & Asenjo, Phys. Rev. D, published 28 October 2026; release via EurekAlert",
+   "bullets": [
+    "In a plasma, magnetic field lines get stretched and twisted until they snap and reattach in a new configuration, dumping energy into the surrounding matter. That is magnetic reconnection, and it is what powers a solar flare.",
+    "Comisso and Asenjo rewrote Einstein's equations in a new set of variables and found the result looks much like the plasma equations — which let them carry plasma methods across. Spacetime has four dimensions, so the objects that break and rejoin are field *sheets* rather than lines, and the authors are careful that these are mathematical structures, not things.",
+    "What they get out of it: a reconnection rate, a description of how energy and momentum pass from the gravitational field into matter, and how the process alters gravitational helicity. \"Einstein's equations contain constraints on how space-time can evolve that are not immediately apparent,\" says Asenjo.",
+    "Where to look for it: merging black holes, where spacetime is distorted hard enough. The hope is to predict how much energy such an event releases and what trace it leaves in the gravitational-wave signal — which is to say, something LIGO could in principle check.",
+    "The caveat is the authors' own: it \"remains a theoretical discovery\". Nobody has shown it happens anywhere, or that it would be measurable if it did. The work was supported by the NSF and NASA."
+   ]
+  }
+ ],
+ "research": [
+  {
+   "tag": "Industry · Anthropic",
+   "title": "Three circuit boards designed end to end, manufactured without a single back-and-forth, and they worked",
+   "url": "https://www.anthropic.com/research/claude-electronics-design",
+   "subject": "Fable 5.2 designed a USB speakerphone, a voice-assistant hub and a handheld virtual pet; Diode Computers manufactured three working prototypes from its files. PCB Gym 69% against 25%; BenchCAD 2.1 at 83.5%.",
+   "subtitle": "Anthropic with Diode Computers, published 9 November 2026",
+   "bullets": [
+    "Three devices — a USB speakerphone, a voice-assistant hub and a handheld virtual pet — were designed by Claude Fable 5.2 and built by Diode Computers from Claude's own files, with no manufacturing back-and-forth. All three worked without circuit fixes; the speakerphone was still running after weeks of use.",
+    "The benchmark movement is large. On PCB Gym, which scores component placement and routing, Fable 5.2 gets 69% against 25% for Fable 5. On BenchCAD 2.1, rebuilding 3D parts and boards from drawings, it gets 83.5%, nearly double Fable 5.1.",
+    "The behaviour that reads as engineering rather than autocomplete is the unprompted revision: reassigning chip pins to keep the touch-control tracks on a single layer, rerouting the hub's tangle dozens of times, and — when the hub's long tracks beat the available router — writing its own grid-based router in about half an hour.",
+    "It also handled the physical world, which is where this sort of thing usually falls over. It worked out the speakerphone board must be tilted about 25 degrees to seat in its enclosure and wrote that into the assembly instructions, and noted that a wedge-shaped enclosure shifted a microphone port's resonance from roughly 3.4 kHz to 8.9 kHz. At manufacturing review it fixed six thin solder-mask slivers and correctly ignored a false-positive ground-connection flag.",
+    "Read the limits as stated: these are early prototypes with no electrical validation, antenna tuning, thermal testing or certification, and Claude was never connected to test equipment or factory machines — Diode engineers built and measured everything. Anthropic also discloses a commercial relationship with Diode."
+   ]
+  },
+  {
+   "tag": "Academic · U. Toronto & U. Calgary",
+   "title": "An agent cut a third of the training epochs, and its entire trick was averaging the last few weight snapshots",
+   "url": "https://arxiv.org/abs/2611.11005",
+   "subject": "GradReason: every ten epochs an assistant inspects parameter and gradient traces, then submits an update computed without backpropagation. Opus 5.5 trimmed data epochs 32.8% over 120 CIFAR runs; its one trick was averaging the latest checkpoints.",
+   "subtitle": "arXiv:2611.11005, submitted 7 November 2026; cs.LG",
+   "bullets": [
+    "The premise is that a fixed epoch budget spends real GPU time on passes that mostly add mini-batch noise. So every ten epochs an LLM agent is handed recent weight snapshots, epoch-mean gradients and validation metrics in a restricted sandbox, and asked to return a Python program that computes new weights and marks each of the next ten epochs as either real or \"virtual\". A virtual epoch is kept only if it survives a forward-only check on 5,000 held-out validation images.",
+    "Over 120 runs on CIFAR-10 and CIFAR-100 across three architectures, Claude Opus 5.5 used 32.8% fewer data epochs than the 80-epoch baseline recipe, at a cost of 0.31 percentage points of test accuracy — 95% CI −0.72 to +0.09, so the loss is not distinguishable from zero. On ResNet-18 specifically it was 0.94 points.",
+    "The honest part is the ablation. Unprompted, the model averaged recent weight snapshots in every single run, and the authors attribute most of the saving to exactly that. A fixed extrapolation rule with no LLM saves 5.4% of epochs; add weight averaging to the same fixed rule and it saves 25.0%. So the agent's contribution is not the update — it is finding a working update inside one run.",
+    "The economics are reported rather than buried: about $0.68 per Opus run, and at this scale the agent's own latency exceeded the GPU time it saved. A paper that tells you its method does not pay for itself yet is doing the reader a favour.",
+    "The takeaway for anyone training anything: before you reach for an agent, try averaging your last few checkpoints. That is most of the win here, it costs nothing, and it has been sitting in the literature for years."
+   ]
+  }
+ ],
+ "wild": [
+  {
+   "tag": "Home security · Australia",
+   "headline": "A garage-door company flew in a magician so he could expose an illusion he did not create",
+   "entities": [
+    "B&D Garage Doors",
+    "Dynamo",
+    "It's Friday"
+   ],
+   "subject": "B&D Garage Doors brought magician Dynamo to a secret suburban Sydney street for his first Australian appearance in over a decade, performing illusions for residents before revealing that a closed garage door is not necessarily a locked one, to launch the Roll-A-Door Secure.",
+   "subtitle": "Mumbrella, 12 November 2026",
+   "url": "https://mumbrella.com.au/bd-partners-with-dynamo-to-highlight-garage-security-risks-944432",
+   "bullets": [
+    "B&D Garage Doors brought the magician Dynamo to Australia for the first time in more than a decade and put him not in an arena but on a suburban street at an undisclosed Sydney location, performing his signature illusions for whoever lived there.",
+    "The turn at the end is the idea: having just fooled them, he points out a blind spot they were already living with. B&D's commissioned research says 43% of Australians think their garage door is locked when it is closed, 52% say the garage is an entry point to the property, and 47% keep more than $20,000 of belongings in there. It launches a product, the Roll-A-Door Secure.",
+    "\"It's not often you ask one of the world's greatest magicians to expose an illusion he didn't create,\" says Vince Lagana, CCO at the agency It's Friday — which is the cleanest statement of the mechanic anyone involved managed. Marketing director Alysha Dean's line is that assumptions about home security are easily challenged.",
+    "Why it works as advertising rather than as a trick: the category is a grudge purchase nobody thinks about, and the stunt makes the gap between *closed* and *locked* into something you can watch happen to a neighbour."
+   ]
+  },
+  {
+   "tag": "Browsers · United States",
+   "headline": "Firefox has hired the Numa Numa Guy, Bad Luck Brian and the Annoying Orange to argue about data collection",
+   "entities": [
+    "Mozilla",
+    "Firefox",
+    "We Believers"
+   ],
+   "subject": "Mozilla's 'Come Back to Firefox' campaign recreated the original videos of eleven early-2000s internet personalities including Numa Numa Guy, Bad Luck Brian, Overly Attached Girlfriend, Annoying Orange, Success Kid and Where the Hell Is Matt, launching with two 30-second US TV spots on 25 October 2026.",
+   "subtitle": "The Howler, campaign launched Sunday 25 October 2026",
+   "url": "https://thehowler.news/mozilla-taps-we-believers-nobodys-sunny-sixteen-and-2000s-meme-icons-for-come-back-to-firefox",
+   "bullets": [
+    "Eleven of them, by name: Numa Numa Guy, Bad Luck Brian, Overly Attached Girlfriend, Kelly of \"Shoes\", Where the Hell Is Matt?, Annoying Orange, Apparently Kid, Tay Zonday, Chuck Testa, Success Kid and Evolution of Dance. Not referenced — cast, and returned to the original set, look and performance.",
+    "Each one is pointed at a present-day grievance. Overly Attached Girlfriend wants to know everything about you, which a browser should not. Matt dances around the world without being tracked or having his data sold. The Annoying Orange is still annoying, but less so than a forced AI feature.",
+    "Two 30-second spots launched on US network television on Sunday 25 October, with Germany, France and the UK next. Agency We Believers; the line is \"Come Back to Firefox\", aimed squarely at people who used it and left.",
+    "The strategic bet is that nostalgia and privacy are the same product. Mozilla CMO John Solomon: \"Firefox was there then, we're here now, and what we stand for matters more than ever.\" Agency founder Gustavo Lauria says the idea had to be one that \"truly belongs to Firefox\" — a challenger that stayed independent.",
+    "The production note is the one that makes it work: the team deliberately preserved the imperfections of the originals rather than cleaning them up, which is the only way a recreated 2005 webcam video is not insulting."
+   ]
+  },
+  {
+   "tag": "Advertising · France",
+   "headline": "Two software companies bought sticker space on a stranger's laptop, and now 300 people are selling their own",
+   "entities": [
+    "MacPaw",
+    "See.io"
+   ],
+   "subject": "Vincent Seube auctioned sticker placements on his laptop via BrandMyMac, raising over $9,000 from buyers including MacPaw and See.io, then built BrandMyLaptop, a marketplace where 300 people list laptop ad space and 130 have open sales, taking over $13,000 in two months on a 10% cut.",
+   "subtitle": "Marketing Brew, 11 November 2026",
+   "url": "https://www.marketingbrew.com/stories/brand-my-laptop-vincent-seube-ad-sales-business-strategy",
+   "bullets": [
+    "Vincent Seube put his laptop up as advertising inventory, built an auction site called BrandMyMac for brands to bid on sticker placements, and took more than $9,000 — enough to pay for the machine. MacPaw and See.io were among the buyers. He later added the charger and the mouse.",
+    "The original post on X has over 10 million views, which he treats with appropriate suspicion: \"Virology is very temporary.\"",
+    "When people asked for the same thing, he spent about four days building BrandMyLaptop, a marketplace where anyone lists their own laptop. 300 people have signed up with inventory, 130 have open sales, and it has taken over $13,000 in two months — of which about $1,300 is his, on a 10% cut.",
+    "The detail that gives the whole thing away: his own laptop is still unbranded, because he has not worked out how to produce the stickers. The marketplace exists; the product does not quite."
+   ]
+  }
+ ],
+ "learn": {
+  "title": "A metal spoon and a wooden spoon in the same drawer are the same temperature. Your hand cannot tell you that, because your skin is not a thermometer — it is a heat-flow meter.",
+  "subject": "Skin registers the rate at which heat leaves it rather than an object's temperature, so aluminium at 20 C drags a 33 C hand's contact point to about 20.5 C while wood leaves it near 30 C, because effusivity runs 24,000 for aluminium against 300 for wood and 1,000 for skin.",
+  "tags": [
+   "Science of ordinary things",
+   "Heat",
+   "Everyday physics"
+  ],
+  "body": [
+   "Go and touch the metal legs of a chair, then the wooden seat above them. The metal is colder. It is obviously colder. It is also, after a night in the same room, exactly the same temperature as the wood, and you can check that with any thermometer you own. The discrepancy is not in the furniture. It is that you have no sense organ for temperature. The nerves in your fingertip report how fast heat is leaving them, and they report it as cold.",
+   "What decides that rate is a property with an ugly name and a simple job: thermal effusivity, the square root of conductivity times density times heat capacity. When two things touch, the temperature where they meet lands between them, weighted by their effusivities. Skin comes in around 1,000 in the usual units. Wood is about 300, aluminium about 24,000. Put a 33°C hand on a 20°C object and the arithmetic falls out: against aluminium the contact point drops to roughly 20.5°C, so your skin is dragged almost all the way to the metal; against wood it settles near 30°C and barely moves at all. Aluminium conducts heat something like two thousand times better than wood, and still air is about nine thousand times worse than aluminium — which is the entire operating principle of a blanket, a fleece and a double-glazed window, none of which insulate with anything except trapped air.",
+   "The satisfying part is that the whole effect runs backwards when you cross your own body temperature. A wooden bench and a metal bench in full sun are again the same temperature, and now the metal is the one that burns you, because it pours heat in as efficiently as it drew heat out. Same physics, reversed sign. It is also why a sauna is built out of wood and why nobody puts a metal handrail in one — at 80°C the difference stops being a curiosity and becomes a hospital visit."
+  ]
+ },
+ "ideas": {
+  "prompt": "Ten things that should be invented for monsoon season",
+  "items": [
+   {
+    "text": "A doormat with a drain — a shallow tray under the bristles that holds a litre of water and pulls out like an ice-cube drawer to empty."
+   },
+   {
+    "text": "An umbrella sleeve built into the umbrella: a waxed cloth tube that rolls down over the wet canopy so you can carry it through a shop without dripping."
+   },
+   {
+    "text": "Shoes sold in two halves, so you can buy a dry upper and a monsoon sole that clips on for four months of the year."
+   },
+   {
+    "text": "A clothes-drying rack that works as a cupboard: a sealed cabinet with a dehumidifier in the base, for the four days when nothing on the balcony will ever dry."
+   },
+   {
+    "text": "Laundry-detergent packaging that tells you the drying time rather than the wash time, which is the number that actually decides your week."
+   },
+   {
+    "text": "A kitchen tin whose lid clicks differently when the seal has gone — the only way anyone ever finds out is a ruined kilo of flour."
+   },
+   {
+    "text": "A phone case with a squeegee edge, so you can wipe the screen clear with the thing already in your hand."
+   },
+   {
+    "text": "A bus-stop board that shows the depth of standing water on the route, not just the arrival time. Autorickshaw drivers already know; the data exists in their refusals."
+   },
+   {
+    "text": "Bicycle mudguards sold as a strip of folded plastic you cable-tie on in June and throw away in October."
+   },
+   {
+    "text": "A shared umbrella rack at the office door with numbered pegs and a token, run like a cloakroom, because the alternative is a wet pile and somebody else's umbrella.",
+    "why": "A recurring ask on r/SomebodyMakeThis, where the complaint is always the same: the object is fine, the handover is broken."
+   }
+  ]
+ }
+}

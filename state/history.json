@@ -9729,6 +9729,162 @@
         "techtimes.com",
         "thestable.com.au"
       ]
+    },
+    {
+      "date": "2026-11-12",
+      "issue": 1,
+      "quote_text": [
+        "We are not concerned with the very poor. They are unthinkable, and only to be approached by the statistician or the poet."
+      ],
+      "quote_author": [
+        "E.M. Forster"
+      ],
+      "idea_text": [
+        "A doormat with a drain — a shallow tray under the bristles that holds a litre of water and pulls out like an ice-cube drawer to empty.",
+        "An umbrella sleeve built into the umbrella: a waxed cloth tube that rolls down over the wet canopy so you can carry it through a shop without dripping.",
+        "Shoes sold in two halves, so you can buy a dry upper and a monsoon sole that clips on for four months of the year.",
+        "A clothes-drying rack that works as a cupboard: a sealed cabinet with a dehumidifier in the base, for the four days when nothing on the balcony will ever dry.",
+        "Laundry-detergent packaging that tells you the drying time rather than the wash time, which is the number that actually decides your week.",
+        "A kitchen tin whose lid clicks differently when the seal has gone — the only way anyone ever finds out is a ruined kilo of flour.",
+        "A phone case with a squeegee edge, so you can wipe the screen clear with the thing already in your hand.",
+        "A bus-stop board that shows the depth of standing water on the route, not just the arrival time. Autorickshaw drivers already know; the data exists in their refusals.",
+        "Bicycle mudguards sold as a strip of folded plastic you cable-tie on in June and throw away in October.",
+        "A shared umbrella rack at the office door with numbered pegs and a token, run like a cloakroom, because the alternative is a wet pile and somebody else's umbrella."
+      ],
+      "idea_prompt": [
+        "Ten things that should be invented for monsoon season"
+      ],
+      "tip_text": [
+        "When a long session has Claude working from a stale copy of a file, just tell it to read the file again. It used to be that a second Read of an unchanged file returned a stub rather than the text, so the model kept whatever it had; Claude Code 2.1.317 \"Removed the Read tool's 'file unchanged since your last Read' stub: reading an unchanged file again returns its content\". Re-reading is now a cheap way to pull a file back to the front of context after fifty turns of other work — and if you are on an older build, edit a byte or open a fresh session instead."
+      ],
+      "hn_id": [
+        "50452455",
+        "50442736",
+        "50450488",
+        "50456631",
+        "50439193"
+      ],
+      "link": [
+        "https://pietromiotti.com/latest/maya-site",
+        "https://neil.fraser.name/news/2026/11/10/",
+        "https://discuss.python.org/t/in-memoriam-tim-peters-1952-2026/110028",
+        "https://github.com/aws/aws-emulator",
+        "https://deepmind.google/blog/introducing-alphaproof-code/",
+        "https://www.tribuneindia.com/news/agricultural-policy/cabinet-approves-rs-62370-crore-pk-fertiliser-subsidy-for-rabi-2026-27-up-64-from-last-year",
+        "https://www.cbsnews.com/news/united-airlines-bans-ai-agents-booking-flights/",
+        "https://www.eurekalert.org/news-releases/1149095",
+        "https://mumbrella.com.au/bd-partners-with-dynamo-to-highlight-garage-security-risks-944432",
+        "https://thehowler.news/mozilla-taps-we-believers-nobodys-sunny-sixteen-and-2000s-meme-icons-for-come-back-to-firefox",
+        "https://www.marketingbrew.com/stories/brand-my-laptop-vincent-seube-ad-sales-business-strategy",
+        "https://www.anthropic.com/research/claude-electronics-design",
+        "https://arxiv.org/abs/2611.11005"
+      ],
+      "subject": [
+        "Rabi 2026-27 nutrient-based subsidy on phosphatic and potassic fertilisers fixed at Rs 62,370.02 crore, up 64% on Rs 37,952.29 crore, spanning 28 subsidised grades.",
+        "United Airlines bans unauthorized personal AI assistants from booking its flights, while Southwest opens its inventory inside ChatGPT.",
+        "Comisso and Asenjo derive gravitational reconnection: gravitational field sheets that break and rejoin, with rates and energy transfer into matter, out of rewritten Einstein equations.",
+        "B&D Garage Doors brought magician Dynamo to a secret suburban Sydney street for his first Australian appearance in over a decade, performing illusions for residents before revealing that a closed garage door is not necessarily a locked one, to launch the Roll-A-Door Secure.",
+        "Mozilla's 'Come Back to Firefox' campaign recreated the original videos of eleven early-2000s internet personalities including Numa Numa Guy, Bad Luck Brian, Overly Attached Girlfriend, Annoying Orange, Success Kid and Where the Hell Is Matt, launching with two 30-second US TV spots on 25 October 2026.",
+        "Vincent Seube auctioned sticker placements on his laptop via BrandMyMac, raising over $9,000 from buyers including MacPaw and See.io, then built BrandMyLaptop, a marketplace where 300 people list laptop ad space and 130 have open sales, taking over $13,000 in two months on a 10% cut.",
+        "Fable 5.2 designed a USB speakerphone, a voice-assistant hub and a handheld virtual pet; Diode Computers manufactured three working prototypes from its files. PCB Gym 69% against 25%; BenchCAD 2.1 at 83.5%.",
+        "GradReason: every ten epochs an assistant inspects parameter and gradient traces, then submits an update computed without backpropagation. Opus 5.5 trimmed data epochs 32.8% over 120 CIFAR runs; its one trick was averaging the latest checkpoints.",
+        "Skin registers the rate at which heat leaves it rather than an object's temperature, so aluminium at 20 C drags a 33 C hand's contact point to about 20.5 C while wood leaves it near 30 C, because effusivity runs 24,000 for aluminium against 300 for wood and 1,000 for skin."
+      ],
+      "brand": [
+        "B&D Garage Doors",
+        "Dynamo",
+        "It's Friday",
+        "Mozilla",
+        "Firefox",
+        "We Believers",
+        "MacPaw",
+        "See.io"
+      ],
+      "brand_mention": [
+        "B&D Garage Doors",
+        "Dynamo",
+        "Australia",
+        "Sydney",
+        "Australians",
+        "Roll-A-Door Secure",
+        "Vince Lagana",
+        "CCO",
+        "Alysha Dean's",
+        "Numa Numa Guy",
+        "Bad Luck Brian",
+        "Overly Attached Girlfriend",
+        "Kelly",
+        "Shoes",
+        "Where",
+        "Hell Is Matt",
+        "Annoying Orange",
+        "Apparently Kid",
+        "Tay Zonday",
+        "Chuck Testa",
+        "Success Kid",
+        "Evolution",
+        "Dance",
+        "Germany",
+        "France",
+        "Agency We Believers",
+        "Come Back",
+        "Firefox",
+        "Mozilla CMO John Solomon",
+        "Agency",
+        "Gustavo Lauria",
+        "Vincent Seube",
+        "BrandMyMac",
+        "See.io",
+        "X",
+        "Virology",
+        "BrandMyLaptop"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "India's rabi fertiliser subsidy is up 64% in a year, and the stated reason is the price of sulphur"
+        ],
+        [
+          "trends",
+          "United will not let your AI agent buy a ticket, and part of the reason is a bag question nobody can answer for you"
+        ],
+        [
+          "trends",
+          "Rewrite Einstein's equations in the right variables and they start to look like plasma physics — including the part where fields snap"
+        ],
+        [
+          "wild",
+          "A garage-door company flew in a magician so he could expose an illusion he did not create"
+        ],
+        [
+          "wild",
+          "Firefox has hired the Numa Numa Guy, Bad Luck Brian and the Annoying Orange to argue about data collection"
+        ],
+        [
+          "wild",
+          "Two software companies bought sticker space on a stranger's laptop, and now 300 people are selling their own"
+        ],
+        [
+          "research",
+          "Three circuit boards designed end to end, manufactured without a single back-and-forth, and they worked"
+        ],
+        [
+          "research",
+          "An agent cut a third of the training epochs, and its entire trick was averaging the last few weight snapshots"
+        ],
+        [
+          "learn",
+          "A metal spoon and a wooden spoon in the same drawer are the same temperature. Your hand cannot tell you that, because your skin is not a thermometer — it is a heat-flow meter."
+        ]
+      ],
+      "editorial_domains": [
+        "cbsnews.com",
+        "eurekalert.org",
+        "marketingbrew.com",
+        "mumbrella.com.au",
+        "thehowler.news",
+        "tribuneindia.com"
+      ]
     }
   ]
 }
