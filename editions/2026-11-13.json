@@ -1,0 +1,349 @@
+{
+  "date_line": "Friday, 13 November 2026",
+  "issue": 1,
+  "preheader": "Andy Weir on what actually cuts red tape; Code Mode, where Claude writes one script instead of fifty tool calls; Jensen Huang out at Nvidia effective immediately, with the CFO holding the wheel; Anthropic's own IPO page printing $17.0bn of revenue and a $23.3bn net loss in the same panel; a contractor's dust nearly cooking Jane Street's only New York datacentre at 143.6F; 93% of paint splatters parsing as valid Perl; a Google model that answers 1,000 questions in one 200ms request; Sensex flat at 81,911 while Realty ran 3.7%; India banning the export of a battery waste it exported none of; a race condition in Apache's HTTP/2 module found twice over by two different labs; a woman on the coins that pulled Rome into Britain; AlphaGenome 2 and 107 million cells; the reasoning answers that missed the deadline turning out to be the valuable ones; a ten-foot styrofoam plate of deviled eggs; the published formula for throwing a book away; and ten superpowers you would hand straight back.",
+  "quote": {
+    "text": "It's amazing how much red tape gets cut when everyone's rooting for one man to survive.",
+    "author": "Andy Weir",
+    "work": "The Martian",
+    "source_url": "https://www.goodreads.com/quotes/tag/bureaucracy",
+    "note": "The usual complaint about bureaucracy treats it as a property of the organisation — too many forms, too many signatures, the wrong people in charge. Weir's line quietly says it is a property of disagreement instead. Procedure is what you build when nobody can agree what the outcome should be; the moment everyone wants the same thing, it turns out almost all of it was optional. Which is uncomfortable, because it means the forms were never the problem."
+  },
+  "agent_craft": {
+    "items": [
+      {
+        "text": "If a job is mostly tool plumbing — fifty reads, a rename across every file, pulling the same field from four MCP servers — try Code Mode. Claude Code 2.1.323 \"Added Code Mode, an experimental opt-in in which Claude writes JavaScript to call its tools\": one script runs the calls and only its output comes back, instead of fifty round-trips each landing in your context. It is opt-in, and an organisation can turn it off for everyone, so check before you plan a session around it.",
+        "source": "Anthropic, Claude Code changelog, 2.1.323 (12 November 2026)",
+        "url": "https://code.claude.com/docs/en/changelog"
+      }
+    ]
+  },
+  "hn": [
+    {
+      "title": "Jensen Huang is out at Nvidia, effective immediately, and the CFO is holding the wheel",
+      "url": "https://apnews.com/article/nvidia-megaspeed-china-singapore-huang-5403f152a601cf82ce939f1d24fffa0f",
+      "hn_url": "https://news.ycombinator.com/item?id=50467087",
+      "points": 2906,
+      "comments": 2745,
+      "bullets": [
+        "AP's own page would not load for us, so the facts here come from Nvidia's 8-K filing and TechCrunch's timeline, both read today. The filing is dated 12 November: Huang resigned as President, CEO and board member, effective immediately.",
+        "Colette Kress, EVP and CFO since September 2013, is interim CEO and keeps the CFO job while the board searches internally and externally. Harvey C. Jones — formerly CEO and executive chairman of Synopsys — becomes the company's first-ever board chair. Jones: \"The Board has full confidence in Colette and the leadership team.\"",
+        "The chain of events, per TechCrunch: the New York Times reported a close relationship between Huang and Alice Huang on 29 October; Huang admitted an affair and the board opened an independent investigation on 8 November; the Justice Department took over the federal investigation into Megaspeed, a Singapore customer that reportedly bought $4.8 billion of Nvidia chips over two years, on 9 November.",
+        "Share price, per the same timeline: down about 8% in after-hours trading on 11 November and about 11% across five days, after a 5%-plus slide on 9 November. Huang has agreed to testify before Congress before Thanksgiving.",
+        "Read the personal-conduct reporting as allegation, not finding. Huang has admitted an affair in his own letter; the further reports — a relationship with an executive who reports to him, and a third with an unnamed employee — are unconfirmed by the people named. The export-control investigations of Megaspeed are separate from, and older than, any of it."
+      ]
+    },
+    {
+      "title": "Anthropic's IPO page prints $17.0bn of revenue and a $23.3bn net loss in the same panel",
+      "url": "https://ipo.anthropic.com/us/",
+      "hn_url": "https://news.ycombinator.com/item?id=50465829",
+      "points": 810,
+      "comments": 801,
+      "bullets": [
+        "Class A common stock, Nasdaq, ticker ANT. The roadshow began 10 November, the price is set on 18 November and trading is expected to open on 19 November. Share count, price range and use of proceeds are not on the page; the registration statement has not yet become effective.",
+        "Q3'26, to 30 September: revenue $17.0bn, more than 12x year on year. Customers worth at least $100,000 of trailing-twelve-month revenue: more than 11,900, also more than 12x. Revenue per dollar of compute and infrastructure spend is up more than 4x since Q1'25.",
+        "The two margins are the thing to read together. Adjusted operating margin 15%; actual operating margin (3)%. Net loss $23.3bn — of which $21.9bn is a non-cash charge from fair-value moves on convertible notes, derivative liabilities and SAFEs, which the page attributes to its own rising valuation. A company can lose more than it earns by getting more valuable.",
+        "Customer numbers are vendor-reported and should be read as such: Salesforce claims +151% effective output per developer year on year and an 18x faster API migration; Rakuten says new-feature time to market went from 24 working days to 5; Lilly has 50,000-plus employees on Claude Enterprise; Walmart reports about 35% higher average order value through Sparky.",
+        "Goldman Sachs and Morgan Stanley are named as the places to get the registration statement. Retail access is listed through Schwab, E*TRADE, Fidelity, Robinhood and SoFi. Risk factors and management are in the prospectus, not here."
+      ]
+    },
+    {
+      "title": "Contractors kicked up dust, the smoke alarm killed the cooling, and one man unplugged a trading floor's datacentre by hand",
+      "url": "https://michael.bacarella.com/2026/11/10/false-smoke-alarm-jane-street-datacenter/",
+      "hn_url": "https://news.ycombinator.com/item?id=50455394",
+      "points": 575,
+      "comments": 272,
+      "bullets": [
+        "Jane Street's only New York datacentre sat inside 1 New York Plaza. Contractors cutting into materials in the prep room next door raised dust; the dust tripped the smoke alarm; the alarm was wired to shut down the room's CRAC cooling units. The sprinklers above were pressurised and heat-activated, so the failure mode was not fire but water.",
+        "Nobody was alerted by a server. Individual machines run hot often enough that a single alarm means nothing, so no single alarm fired. Hong Kong noticed only because someone happened to see a lot of servers reporting rising temperatures on one display, and phoned the author at home.",
+        "He lived a short walk away in a 200 sq ft studio, took the lift up 33 floors and pulled the power cord on every device in the room — about ten rows, ten cabinets deep, plus fridge-sized switches and the UPS, row by row.",
+        "The room peaked at about 143.6F and stopped climbing. His own cutoff was 150F, the point at which he expected the sprinkler heads to open and destroy the hardware. Markets were closed that day; everything was back up the next morning.",
+        "The fix is the part worth stealing: an OCaml monitor that asks every Linux server for its onboard temperature once a minute, averages them, and alerts on the average. He chose that over room sensors or CRAC telemetry on reliability grounds. The post-incident meetings kept the sprinklers and kept the servers in the office tower."
+      ]
+    },
+    {
+      "title": "Someone checked whether you can smear paint on a wall without writing valid Perl. Mostly you cannot",
+      "url": "https://www.mcmillen.dev/sigbovik/",
+      "hn_url": "https://news.ycombinator.com/item?id=50459745",
+      "points": 566,
+      "comments": 79,
+      "bullets": [
+        "The method is as advertised: run OCR over an image of a paint splatter, take the text it produces, and ask whether that text parses as a Perl program. The dataset is 100 splatter images, distributed as a tarball.",
+        "Ninety-three of the hundred parsed. The paper's own phrasing is that \"merely 93%\" of paint splatters are valid Perl, and the seven failures are reproduced in the paper as the interesting cases.",
+        "A disclosed thumb on the scale: where different OCR settings produced more than one valid program from the same splatter, the author picked whichever he found most interesting.",
+        "The errata are better than the paper. Four more splatters turned out to evaluate to actual Perl values after the submission deadline — among them the number 0 and the strings \"c\" and \"E__\".",
+        "SIGBOVIK 2019, Pittsburgh, 1 April. It won an Unwitting Participation Ribbon. The genuine point underneath the joke is about Perl's grammar: a language that accepts almost any arrangement of sigils is a language where OCR noise is syntax."
+      ]
+    },
+    {
+      "title": "Google is now selling a model that does not write answers, it scores them — 1,000 questions in one 200ms request",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
+      "hn_url": "https://news.ycombinator.com/item?id=50456791",
+      "points": 553,
+      "comments": 157,
+      "bullets": [
+        "The Decisions API, dated 11 November, runs gemini-decision-1. You send one multimodal input — text, image, audio, video or PDF, up to 256K tokens — and up to 1,000 independent questions about it in a single request.",
+        "Three question types: yes/no probability, multiple choice with 2 to 255 options, and ordered rubric scores. Every answer comes back with a confidence between 0 and 1, which is the point: low-confidence cases get routed to a fallback or a human.",
+        "It does not decode text token by token. It scores the candidate options in a single forward pass, which is why latency is 150-250ms end to end (50-100ms median model compute) and stays nearly flat from 1 question to 100.",
+        "Pricing is $0.10 per million input tokens and nothing for output, with the shared input billed once per request however many questions ride along. Google claims nearly 5x cheaper than Gemini 3.5 Flash-Lite through the Interactions API on its shared benchmark suite, and the lowest calibration error of the models it tested.",
+        "Google is already using it on itself: model routing inside Gemini Notebook (up to 40% lower latency on everyday queries), picking emoji from 200-plus options in a Labs product, and as a safety layer on Search's MCP tools to spot adversarial behaviour. Context is capped at 16K tokens despite the 256K input limit — read the page before you design around either number."
+      ]
+    }
+  ],
+  "markets": {
+    "indices": [
+      {
+        "name": "Session",
+        "value": "Thursday 12 November 2026 — close",
+        "direction": "flat",
+        "change": "The benchmarks went nowhere and everything underneath them moved. Today's session had not opened when this was written. Levels and sector moves below from HDFC Sky's close report; Bank Nifty from Motilal Oswal's round-up; flows from Kotak Neo and NiftyTrader, both provisional NSE data"
+      },
+      {
+        "name": "Sensex",
+        "value": "81,911.01",
+        "direction": "up",
+        "change": "+31.61 (+0.04%). Four hundredths of a per cent after a month that has already added about 10%. Reports printing 82,013.58 are quoting an 11:57 IST intraday level, not the close"
+      },
+      {
+        "name": "Nifty 50",
+        "value": "25,299.35",
+        "direction": "up",
+        "change": "+44.30 (+0.18%). Motilal Oswal implies a 25,255 prior close, which matches Wednesday's print exactly"
+      },
+      {
+        "name": "Nifty Bank",
+        "value": "61,518",
+        "direction": "up",
+        "change": "+726 (+1.2%), per Motilal Oswal. Private Bank +0.87%, PSU Bank +1.4% on HDFC Sky's numbers (Motilal prints +1.2% — a fifth of a point apart)"
+      },
+      {
+        "name": "Best sector",
+        "value": "Nifty Realty +3.7%",
+        "direction": "up",
+        "change": "Media +2.4% behind it. Motilal calls Realty \"nearly 4%\". A 3.7% day in one sector under a 0.04% headline is the whole story of the session"
+      },
+      {
+        "name": "Worst sector",
+        "value": "Nifty Auto −1.0%",
+        "direction": "down",
+        "change": "FMCG −0.88%, Oil & Gas −0.76%, Energy and Infrastructure −0.6% each, Pharma −0.57%, IT −0.4%"
+      },
+      {
+        "name": "Broader market",
+        "value": "Smallcap +1.1%",
+        "direction": "up",
+        "change": "Midcap +0.9%. NSE breadth 2,377 advancing against 1,878 declining and 195 unchanged — positive breadth on a flat index, which is the same point again"
+      },
+      {
+        "name": "USD/INR",
+        "value": "94.03",
+        "direction": "down",
+        "change": "The rupee closed 34 paise weaker against Wednesday's 93.69, giving back most of what was being called its strongest level since April"
+      },
+      {
+        "name": "FII · cash",
+        "value": "+₹7,830.60 cr",
+        "direction": "up",
+        "change": "Bought ₹20,273.32 cr, sold ₹12,442.72 cr. Smaller than Wednesday's +₹12,563.33 cr but still the fourth straight buying session. Kotak Neo and NiftyTrader agree on the net"
+      },
+      {
+        "name": "DII · cash",
+        "value": "−₹6,331.17 cr",
+        "direction": "down",
+        "change": "Bought ₹15,855.13 cr, sold ₹22,186.30 cr. The mirror of the foreign bid again, leaving the two netting +₹1,499 cr between them — which is roughly what a 31-point Sensex day looks like in flows"
+      }
+    ],
+    "stories": [
+      {
+        "headline": "Where the numbers come from",
+        "url": "https://hdfcsky.com/news/market-close-report-today-november-12-2026-nifty-sensex-pause-the-party",
+        "source": "HDFC Sky · market close report, 12 November 2026",
+        "bullets": [
+          "Index closes, sector table, USD/INR and NSE breadth are from HDFC Sky's close report for 12 November. Bank Nifty's level and point change are from Motilal Oswal Wealth Management's round-up for the same date, which does not print a Sensex close.",
+          "FII and DII cash figures are NSE provisional data as published by Kotak Neo, with NiftyTrader showing the same nets. Provisional means they can be revised; the official release is the one to trust if you are acting on it."
+        ]
+      },
+      {
+        "headline": "FII and DII cash flows, 12 November 2026",
+        "url": "https://www.kotakneo.com/share-market-today/fii-dii-data/",
+        "source": "Kotak Neo · FII DII data",
+        "bullets": [
+          "Foreign investors have now bought in four of the last five sessions on this table, with November's run well ahead of any month since September 2024 on the broader FPI count."
+        ]
+      }
+    ]
+  },
+  "trends": [
+    {
+      "tag": "India",
+      "headline": "India has banned the export of a battery waste it exported none of last year",
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2335019&lang=1&reg=3",
+      "subject": "DGFT Notification No. 49/2026-27 of 10 November 2026 moves unsorted waste and scrap of primary cells, batteries and accumulators under ITC (HS) 85491400 — lithium-ion battery black mass — from Free to Prohibited with immediate effect, to hold feedstock for domestic recyclers.",
+      "subtitle": "DGFT notification dated 10 November 2026, announced by the Commerce Ministry on 11 November",
+      "bullets": [
+        "Black mass is what is left when you shred a dead lithium-ion battery and burn off the plastics: a grey powder holding the lithium, nickel, cobalt and manganese. Notification No. 49/2026-27 moves it from 'Free' to 'Prohibited' under ITC (HS) code 85491400, with immediate effect and until further orders.",
+        "The scope is narrower than the headlines: it covers unsorted waste and scrap of primary cells, batteries and accumulators that does not contain lead, cadmium or mercury. Transitional treatment falls under Para 1.05 of the Foreign Trade Policy 2023 where applicable.",
+        "The stated purpose is feedstock, not trade. The government pairs it with a ₹1,500 crore critical-mineral recycling incentive scheme, and the problem it names is that India's installed battery-waste recycling capacity — over 60,000 tonnes a year on industry estimates — runs underused because the material leaves the country.",
+        "The number that makes it interesting: GTRI points out India's exports of these goods were nil in the last fiscal year. So this is not a ban on a flow, it is a fence put up before one forms — which is a different and more deliberate kind of policy than it looks like from the headline."
+      ]
+    },
+    {
+      "tag": "Platforms",
+      "headline": "A race condition in Apache's HTTP/2 module reaches any unauthenticated request, and two AI labs found it independently",
+      "url": "https://www.wiz.io/blog/cve-2026-119618-rce-apache-http-server-vulnerability",
+      "subject": "CVE-2026-119618 is a race condition in assign_headers() in Apache HTTP Server's mod_http2, affecting 2.4.55 to 2.4.70 and mod_h2 2.0.8 to 2.0.42, remotely reachable without authentication and fixed in 2.4.71; Wiz says 64% of cloud environments contain a vulnerable resource.",
+      "subtitle": "Wiz, 11 November 2026",
+      "bullets": [
+        "The flaw is in `assign_headers()` in mod_http2, Apache's HTTP/2 module: concurrent threads sharing a resource without proper synchronisation corrupt the heap, and heap corruption in a request handler is the short road to remote code execution.",
+        "Affected: Apache HTTP Server 2.4.55 through 2.4.70, and the standalone mod_h2 module 2.0.8 through 2.0.42. Fixed in 2.4.71. No authentication is needed and nothing has to be misconfigured — HTTP/2 being switched on is the whole precondition.",
+        "Wiz's own telemetry puts a vulnerable resource in 64% of cloud environments, with 51% having one publicly exposed. Those figures ignore configuration, so read them as the size of the patching job rather than the size of the attack surface.",
+        "If you cannot patch today, the stopgap is to turn HTTP/2 off: set `Protocols http/1.1` and strip the h2 and h2c references. You lose multiplexing, you lose the bug.",
+        "The detail worth sitting with: it was found independently by Anthropic and by Google Cloud's Vulnerability Research Team. A twenty-year-old race condition in one of the most-read codebases on earth, surfaced twice in parallel by groups using models to read code. As of Wiz's post there was no public exploit and no observed exploitation — which is the window you are currently inside."
+      ]
+    },
+    {
+      "tag": "Wildcard · Archaeology",
+      "headline": "The Iron Age king whose exile helped pull Rome into Britain may have been a woman, and the argument is on the coins",
+      "url": "https://www.bournemouth.ac.uk/news/2026-11-05/new-research-reveals-iron-age-king-was-female",
+      "subject": "Miles Russell of Bournemouth University argues Verica, ruler of the Atrebates whose overthrow preceded the Roman invasion of AD 43, was a woman, on the evidence of her coin portraiture, the -a name ending and the use of Rex by women.",
+      "subtitle": "Bournemouth University, 5 November 2026; from Miles Russell's book Caratacus: Great King of Britain",
+      "bullets": [
+        "Verica ruled the Atrebates in southern Britain. His — or her — flight to Rome after being deposed is part of the standard account of why Claudius invaded in AD 43, which makes this one of the few named individuals in British Iron Age history.",
+        "The central argument is pictorial. Other coin-issuing British leaders of the period put obviously male warriors on their coinage; Verica's coins show a slender, feminine, bare-breasted rider on horseback. Russell reads that as a portrait, not a goddess.",
+        "Two supporting points: the name ends in -a, like Boudica and Cartimandua, the two British women rulers everyone already accepts; and the Latin title Rex was applied to women elsewhere, Cleopatra included.",
+        "The objections are real and worth holding onto. This comes from a trade book rather than a peer-reviewed paper; Iron Age coin dies are tiny and heavily stylised; and Dio's Greek renders the name as Berikos, which is not a feminine form. Eight days old, and untested by anyone else.",
+        "What makes it a good argument even if it is wrong: it is falsifiable with material nobody has to dig up. There are thousands of Verica coins in museum trays, and the claim is about what is on them."
+      ]
+    }
+  ],
+  "research": [
+    {
+      "tag": "Industry · Google DeepMind",
+      "title": "Ask the model about one cell type at a time and it finds nearly twice as many variants that actually change gene expression",
+      "url": "https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/",
+      "subject": "AlphaGenome 2 conditions each prediction on a tissue, cell type or cell state fed in as input; learns from 107 million individual cell profiles over 68 tissues; adds DNA methylation to the readouts it predicts; recovers nearly twice as many expression-altering variants as the prior best; TenK10K causal variants 30% vs 16%, gene-effect direction 43% vs 23%.",
+      "subtitle": "Gayoso, Latysheva, Kohli and Avsec, Google DeepMind, 11 November 2026",
+      "bullets": [
+        "The first AlphaGenome took a million letters of DNA and predicted many tissue and cell-line outputs in parallel. AlphaGenome 2 inverts that: the condition — a tissue, a cell type, a cell state — is an input fed in at every stage, and the model answers for that condition only. Same sequence length, different question.",
+        "Training set: more than 107 million individual cell profiles across 68 tissues, human and mouse. It adds DNA methylation to the readouts it predicts, alongside expression, histone modifications and chromatin accessibility.",
+        "The headline result is that it finds nearly twice as many gene-expression-altering variants as the previous state of the art. On TenK10K, covering 28 primary immune cell types, it picks out causal variants 30% of the time against 16%, and gets the direction of the gene effect right 43% against 23%.",
+        "Two capabilities that matter more than the benchmark. A cell encoder builds conditions out of a scientist's own single-cell data — in one example it told activated T cells from resting ones in a COVID-19 vaccine study using a few dozen cells. And cross-modality imputation predicts a readout you never measured from one you did, so a lab with gene-activity data can ask about chromatin accessibility.",
+        "The limits are stated plainly: research use only, not validated or approved for clinical or diagnostic use. Non-commercial access is via the AlphaGenome API with Colab tutorials; commercial use is a private preview; no model weights are mentioned. Collaborators named include the Wellcome Sanger Institute and Sarah Teichmann of the Human Cell Atlas."
+      ]
+    },
+    {
+      "tag": "Academic · Carnegie Mellon",
+      "title": "The reasoning answers that missed the deadline were worth five times the ones that arrived on time",
+      "url": "https://arxiv.org/abs/2611.11910",
+      "subject": "Deadline-aware scoring of LLM reasoning for automated laboratories: over 1,200 replayed sample decisions, thinking-mode answers that missed the deadline carried about five times the value of on-time ones, and lifting concurrency from 8 to 56 on one Qwen3-8B GPU with a 45-second deadline cut on-time thinking answers from 79.2% to 1.4%.",
+      "subtitle": "arXiv:2611.11910, submitted 9 November 2026; cs.LG; 55 pages, 7 figures, 38 tables",
+      "bullets": [
+        "The setting is an automated lab, which is a setting where nothing waits for you. Hardware keeps running while the model reasons, decisions have hard deadlines, and a late answer means a safe fallback fires instead — rejecting the sample, say. The question is what that does to your benchmark.",
+        "The trap is subtle: an answer that arrives on time but agrees with the fallback adds no value, because the fallback would have done the same thing for free. So reporting answer quality and latency as two separate numbers double-counts the easy cases and credits reasoning for work it did not do.",
+        "In a prespecified replay of 1,200 fresh decisions, the thinking-mode answers that missed the deadline were worth roughly five times as much as the ones that made it. Hard cases take longer; hard cases are where the fallback is wrong. The on-time answers were disproportionately the ones you did not need.",
+        "Quantified: multiplying on-time rate by mean answer value predicted about twice the value thinking actually delivered, overstating its advantage over fast mode by 0.0241 per decision — 0.0191 on a 300-decision repeat, with both 95% confidence intervals excluding zero.",
+        "The load result is the operational one. On a single GPU running Qwen3-8B with a 45-second deadline, pushing concurrent requests from 8 to 56 dropped the share of thinking answers meeting the deadline from 79.2% to 1.4%, while total output tripled. Your throughput graph goes up as your decision quality falls off a cliff. The authors' prescription: score the action that actually ran."
+      ]
+    }
+  ],
+  "wild": [
+    {
+      "tag": "Voice AI · New York",
+      "headline": "A speech-recognition company carved a 10-foot plate of deviled eggs out of styrofoam and parked it in Manhattan",
+      "entities": [
+        "Deepgram"
+      ],
+      "subject": "Deepgram built a ten-foot styrofoam plate of deviled eggs, with parsley and paprika, and drove it around Manhattan to argue that its voice AI knows whether an app is software or an appetizer.",
+      "subtitle": "Muse by Clios, 11 November 2026",
+      "url": "https://musebyclios.com/ai-update/speech-to-text-platform-deepgram-puts-ai-in-absurd-context/",
+      "bullets": [
+        "The whole campaign rests on one word. Someone says \"app\" and you do not know whether they mean software or appetizer — which is exactly the kind of thing Deepgram claims its voice AI resolves from context. So Mischief built the appetizer.",
+        "A 10-foot-high plate of deviled eggs, with parsley and paprika, trucked around New York and backed with out-of-home advertising including a subway wall. Each egg was carved from a block of styrofoam with the yolk and white cut separately, hand-sanded so no two yolks matched, then hand-painted. The team tested dozens of swatches before settling on a yolk colour called \"American Cheese\".",
+        "Mischief creative director Pete Lefebvre's reasoning is the useful part: \"AI is easy to misunderstand\" because nobody can see it or say where it lives, and a giant plate of deviled eggs \"gives the brain something to hold onto\". The object is doing the work the explanation cannot.",
+        "Best detail: at the end of the second day someone asked whether they could take an egg home for their apartment, and the team let them keep it. The install is now partly distributed across New York flats, which is arguably better media than the subway wall."
+      ]
+    },
+    {
+      "tag": "Beer · Chicago",
+      "headline": "250 people failed to move a 110-ton sculpture, so a beer brand offered to move the mountains on its own cans instead",
+      "entities": [
+        "Coors Light"
+      ],
+      "subject": "After an anonymous flyer drew hundreds to Chicago's Millennium Park on 8 November to push Cloud Gate seven inches to the left, Coors Light posted a matching flyer calling a first push of Wilson Peak — the mountains on its packaging — at 3:03 p.m. on 15 November, captioned \"We are literally moving mountains for you.\"",
+      "subtitle": "NBC Chicago, days after the 8 November gathering",
+      "url": "https://www.nbcchicago.com/news/local/coors-light-makes-sly-nod-to-viral-chicago-bean-push-literally-moving-mountains/4016063/",
+      "bullets": [
+        "The setup was not a brand's idea. An anonymous flyer went up around Chicago asking the public to help move Cloud Gate — the Bean — exactly seven inches to the left, with a \"first push\" at 12:47 p.m. on Sunday 8 November. Hundreds turned up. One art student counted about 250 people pushing. The sculpture weighs 110 tons. It did not move. Chance the Rapper was there.",
+        "Days later Coors Light, which is headquartered in Chicago, posted a photograph of its own flyer on Instagram: the same layout, the same absurdly precise timing — a first push at 3:03 p.m. on 15 November — but the target is Wilson Peak, the mountain range printed on every can and carton the brand sells.",
+        "The caption does the joke: \"We are literally moving mountains for you.\" A line that would be unbearable in a normal advertisement reads as a punchline when the mountains in question are an illustration on packaging.",
+        "Why it belongs here: almost every brand response to a viral moment is a reply, a repost or a discount code. This one is a format joke — it borrows the stranger's flyer design and applies it to the only landmark the company actually owns. Copies of the push idea have since turned up aimed at the Gateway Arch in St. Louis and the Washington Square Arch in New York."
+      ]
+    },
+    {
+      "tag": "Retail · Japan",
+      "headline": "A discount chain runs a food range designed to be divisive, and its latest item is 418 grams of egg with some bread on it",
+      "entities": [
+        "Don Quijote"
+      ],
+      "subject": "Don Quijote's Henai Meshi (Peculiar Preference Food) line, built on the brief that most people would score an item 75 out of 100 but some will score it 120, released a Five Melty Soft-boiled Egg Sandwich weighing 418 grams at 430 yen, on sale 1 to 10 November 2026.",
+      "subtitle": "SoraNews24, 6 November 2026",
+      "url": "https://soranews24.com/2026/11/06/discount-retailers-known-for-massive-bargains-releases-massive-japanese-egg-sandwich/",
+      "bullets": [
+        "The interesting thing is not the sandwich, it is the brief. Don Quijote's Henai Meshi range — \"Peculiar Preference Food\" — is explicitly built to make products that most people would give 75 out of 100 and that some people will give 120. Not a broad 90. A polarised average.",
+        "That is close to the opposite of how large retailers normally design food, which is to find the version fewest people object to. Here the objection is the design target: anything everybody mildly likes has failed.",
+        "The November item was the Five Melty Soft-boiled Egg Sandwich, 430 yen (about $2.70) for 418 grams including a little packaging — doubled from the usual two and a half eggs to five for the promotion. On sale 1 to 10 November only. SoraNews24's reviewer noted the bread reads as garnish against the volume of egg.",
+        "And then the brief defeated itself: the reviewer's verdict was that the sandwich is simply very good and most people would score it about 95. Which, by the range's own rules, is a failure."
+      ]
+    }
+  ],
+  "learn": {
+    "title": "There is a published formula for throwing a book away. It has three parts, it has been in use since 1976, and the last letter stands for “you can get this somewhere else”.",
+    "subject": "The CREW Method — Continuous Review, Evaluation and Weeding, from the Texas State Library and Archives Commission, 1976 — assigns each Dewey class a formula such as 8/3/MUSTIE: years since latest copyright, years since last circulation, then the MUSTIE factors (Misleading, Ugly, Superseded, Trivial, Irrelevant, Elsewhere), with X where a part does not apply.",
+    "tags": [
+      "How everyday systems work",
+      "Libraries",
+      "Rules of thumb"
+    ],
+    "body": [
+      "The hardest recurring job in a public library is not getting books in. It is getting them out. Shelves are finite, and a shelf of confidently wrong books is worse than an empty one — nobody checks the copyright date on a health guide before trusting it. So since 1976 a great many libraries have done the discarding by a documented procedure, from the Texas State Library and Archives Commission, with a name built to sound like routine maintenance rather than destruction: CREW, for Continuous Review, Evaluation and Weeding. The continuous is the point. It is meant to happen all year, a trolley at a time, not as a crisis every decade.",
+      "Every Dewey class gets a three-part formula, and they look like this: 8/3/MUSTIE. The first number is years since the book's latest copyright. The second is years since anyone last borrowed it. The third is the MUSTIE factors — Misleading, Ugly, Superseded, Trivial, Irrelevant, Elsewhere. Any one of the three can condemn a book on its own, and an X means that part is not consulted at all. Bibliography, Dewey 010, is 10/3/MUSTIE. General statistics, 310, is 2/X/MUSTIE — an almanac is dead at two years and nobody cares whether it was popular. Computing, 004, is 3/X/MUSTIE, which is the most quietly brutal line in the manual.",
+      "The letter to admire is the last one. Elsewhere means the information can be obtained expeditiously somewhere else — so a book can be accurate, handsome, recently borrowed and still go, purely because the reader has a faster route to the same answer. That is a library writing down, in 1976, that its job is access and not custody, and then making it an actionable criterion a part-time assistant can apply from a trolley. The manual's own claim for itself is modest and probably true: “Since its inception in 1976, The CREW Method has become the benchmark tool for weeding library collections.”"
+    ]
+  },
+  "ideas": {
+    "prompt": "Ten terrible superpowers that nobody would want",
+    "items": [
+      {
+        "text": "Flight, capped at three feet off the ground and walking pace. Enough to ruin your shoes, not enough to skip the traffic."
+      },
+      {
+        "text": "You can talk to animals, and every single one of them wants to complain to you about something you did."
+      },
+      {
+        "text": "You always know exactly how long a queue will take, to the second, and you can never leave it."
+      },
+      {
+        "text": "Telepathy with a two-metre range, which is the exact radius of a crowded bus."
+      },
+      {
+        "text": "You can pause time, but you keep ageing while it is paused."
+      },
+      {
+        "text": "Everything you touch becomes permanently waterproof. Towels. Sponges. Soil. The inside of your kettle."
+      },
+      {
+        "text": "You can summon a chair anywhere, instantly. It is always two inches too low."
+      },
+      {
+        "text": "You remember every password you have ever set, in order, including the ninety-four that no longer open anything."
+      },
+      {
+        "text": "A website blocker in your head that only switches on for the sites you were not going to open anyway.",
+        "why": "A recurring complaint on r/SomebodyMakeThis: blockers fail precisely at the moment you need them, which is a timing problem dressed up as a willpower problem."
+      },
+      {
+        "text": "You can speak any language perfectly, but always in the accent of the last person who spoke to you."
+      }
+    ]
+  }
+}

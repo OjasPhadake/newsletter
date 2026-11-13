@@ -9885,6 +9885,139 @@
         "thehowler.news",
         "tribuneindia.com"
       ]
+    },
+    {
+      "date": "2026-11-13",
+      "issue": 1,
+      "quote_text": [
+        "It's amazing how much red tape gets cut when everyone's rooting for one man to survive."
+      ],
+      "quote_author": [
+        "Andy Weir"
+      ],
+      "idea_text": [
+        "Flight, capped at three feet off the ground and walking pace. Enough to ruin your shoes, not enough to skip the traffic.",
+        "You can talk to animals, and every single one of them wants to complain to you about something you did.",
+        "You always know exactly how long a queue will take, to the second, and you can never leave it.",
+        "Telepathy with a two-metre range, which is the exact radius of a crowded bus.",
+        "You can pause time, but you keep ageing while it is paused.",
+        "Everything you touch becomes permanently waterproof. Towels. Sponges. Soil. The inside of your kettle.",
+        "You can summon a chair anywhere, instantly. It is always two inches too low.",
+        "You remember every password you have ever set, in order, including the ninety-four that no longer open anything.",
+        "A website blocker in your head that only switches on for the sites you were not going to open anyway.",
+        "You can speak any language perfectly, but always in the accent of the last person who spoke to you."
+      ],
+      "idea_prompt": [
+        "Ten terrible superpowers that nobody would want"
+      ],
+      "tip_text": [
+        "If a job is mostly tool plumbing — fifty reads, a rename across every file, pulling the same field from four MCP servers — try Code Mode. Claude Code 2.1.323 \"Added Code Mode, an experimental opt-in in which Claude writes JavaScript to call its tools\": one script runs the calls and only its output comes back, instead of fifty round-trips each landing in your context. It is opt-in, and an organisation can turn it off for everyone, so check before you plan a session around it."
+      ],
+      "hn_id": [
+        "50467087",
+        "50465829",
+        "50455394",
+        "50459745",
+        "50456791"
+      ],
+      "link": [
+        "https://apnews.com/article/nvidia-megaspeed-china-singapore-huang-5403f152a601cf82ce939f1d24fffa0f",
+        "https://ipo.anthropic.com/us/",
+        "https://michael.bacarella.com/2026/11/10/false-smoke-alarm-jane-street-datacenter/",
+        "https://www.mcmillen.dev/sigbovik/",
+        "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
+        "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2335019&lang=1&reg=3",
+        "https://www.wiz.io/blog/cve-2026-119618-rce-apache-http-server-vulnerability",
+        "https://www.bournemouth.ac.uk/news/2026-11-05/new-research-reveals-iron-age-king-was-female",
+        "https://musebyclios.com/ai-update/speech-to-text-platform-deepgram-puts-ai-in-absurd-context/",
+        "https://www.nbcchicago.com/news/local/coors-light-makes-sly-nod-to-viral-chicago-bean-push-literally-moving-mountains/4016063/",
+        "https://soranews24.com/2026/11/06/discount-retailers-known-for-massive-bargains-releases-massive-japanese-egg-sandwich/",
+        "https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/",
+        "https://arxiv.org/abs/2611.11910",
+        "https://hdfcsky.com/news/market-close-report-today-november-12-2026-nifty-sensex-pause-the-party",
+        "https://www.kotakneo.com/share-market-today/fii-dii-data/"
+      ],
+      "subject": [
+        "DGFT Notification No. 49/2026-27 of 10 November 2026 moves unsorted waste and scrap of primary cells, batteries and accumulators under ITC (HS) 85491400 — lithium-ion battery black mass — from Free to Prohibited with immediate effect, to hold feedstock for domestic recyclers.",
+        "CVE-2026-119618 is a race condition in assign_headers() in Apache HTTP Server's mod_http2, affecting 2.4.55 to 2.4.70 and mod_h2 2.0.8 to 2.0.42, remotely reachable without authentication and fixed in 2.4.71; Wiz says 64% of cloud environments contain a vulnerable resource.",
+        "Miles Russell of Bournemouth University argues Verica, ruler of the Atrebates whose overthrow preceded the Roman invasion of AD 43, was a woman, on the evidence of her coin portraiture, the -a name ending and the use of Rex by women.",
+        "Deepgram built a ten-foot styrofoam plate of deviled eggs, with parsley and paprika, and drove it around Manhattan to argue that its voice AI knows whether an app is software or an appetizer.",
+        "After an anonymous flyer drew hundreds to Chicago's Millennium Park on 8 November to push Cloud Gate seven inches to the left, Coors Light posted a matching flyer calling a first push of Wilson Peak — the mountains on its packaging — at 3:03 p.m. on 15 November, captioned \"We are literally moving mountains for you.\"",
+        "Don Quijote's Henai Meshi (Peculiar Preference Food) line, built on the brief that most people would score an item 75 out of 100 but some will score it 120, released a Five Melty Soft-boiled Egg Sandwich weighing 418 grams at 430 yen, on sale 1 to 10 November 2026.",
+        "AlphaGenome 2 conditions each prediction on a tissue, cell type or cell state fed in as input; learns from 107 million individual cell profiles over 68 tissues; adds DNA methylation to the readouts it predicts; recovers nearly twice as many expression-altering variants as the prior best; TenK10K causal variants 30% vs 16%, gene-effect direction 43% vs 23%.",
+        "Deadline-aware scoring of LLM reasoning for automated laboratories: over 1,200 replayed sample decisions, thinking-mode answers that missed the deadline carried about five times the value of on-time ones, and lifting concurrency from 8 to 56 on one Qwen3-8B GPU with a 45-second deadline cut on-time thinking answers from 79.2% to 1.4%.",
+        "The CREW Method — Continuous Review, Evaluation and Weeding, from the Texas State Library and Archives Commission, 1976 — assigns each Dewey class a formula such as 8/3/MUSTIE: years since latest copyright, years since last circulation, then the MUSTIE factors (Misleading, Ugly, Superseded, Trivial, Irrelevant, Elsewhere), with X where a part does not apply."
+      ],
+      "brand": [
+        "Deepgram",
+        "Coors Light",
+        "Don Quijote"
+      ],
+      "brand_mention": [
+        "Deepgram",
+        "York",
+        "Cheese",
+        "Pete Lefebvre's",
+        "Chicago",
+        "Cloud Gate",
+        "Bean",
+        "8 November Hundreds",
+        "Rapper",
+        "Coors Light",
+        "Wilson Peak",
+        "Gateway Arch",
+        "St Louis",
+        "Washington Square Arch",
+        "Don Quijote's Henai Meshi",
+        "Peculiar Preference Food",
+        "Melty Soft-boiled Egg Sandwich"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "India has banned the export of a battery waste it exported none of last year"
+        ],
+        [
+          "trends",
+          "A race condition in Apache's HTTP/2 module reaches any unauthenticated request, and two AI labs found it independently"
+        ],
+        [
+          "trends",
+          "The Iron Age king whose exile helped pull Rome into Britain may have been a woman, and the argument is on the coins"
+        ],
+        [
+          "wild",
+          "A speech-recognition company carved a 10-foot plate of deviled eggs out of styrofoam and parked it in Manhattan"
+        ],
+        [
+          "wild",
+          "250 people failed to move a 110-ton sculpture, so a beer brand offered to move the mountains on its own cans instead"
+        ],
+        [
+          "wild",
+          "A discount chain runs a food range designed to be divisive, and its latest item is 418 grams of egg with some bread on it"
+        ],
+        [
+          "research",
+          "Ask the model about one cell type at a time and it finds nearly twice as many variants that actually change gene expression"
+        ],
+        [
+          "research",
+          "The reasoning answers that missed the deadline were worth five times the ones that arrived on time"
+        ],
+        [
+          "learn",
+          "There is a published formula for throwing a book away. It has three parts, it has been in use since 1976, and the last letter stands for “you can get this somewhere else”."
+        ]
+      ],
+      "editorial_domains": [
+        "bournemouth.ac.uk",
+        "musebyclios.com",
+        "nbcchicago.com",
+        "pib.gov.in",
+        "soranews24.com",
+        "wiz.io"
+      ]
     }
   ]
 }
