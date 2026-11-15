@@ -1,0 +1,354 @@
+{
+  "date_line": "Sunday, 15 November 2026",
+  "issue": 1,
+  "preheader": "A one-word name for the thing Goodhart's law only half describes; the sandbox change that will start asking you for permission; a router that sent too much data and stopped every departing flight in America for four and a half hours; the Wall Street Journal on Nvidia guaranteeing the money its customers needed to buy Nvidia chips; LibreOffice twisting the knife while Microsoft 365 was eighteen hours down; Nvidia staff asking the board for Jensen Huang back; 24,664 Lovable apps handing over their database to anyone who loads the page; Sensex down 319 on Friday with FMCG the only sector up; India's retail inflation through the RBI's ceiling at 6.09% with onions at 116%; Europe's plan to triple its own datacentre capacity; a Type Ia supernova 50 million light years away that is still getting brighter; a decade of satellite mosaic and 27 years of rainfall handed out for free; the probe that warns you before a model starts repeating itself, and the baseline that beats it; a cap with a suction cup for sleeping on the subway; CeraVe as the official moisturiser of Arrakis; the 85 decibels that switch off your sense of sweetness and sell the tomato juice; and ten businesses that only need one customer a day.",
+  "quote": {
+    "text": "This focus on improving an indicator while losing sight of the original goal is what I call indicatorism.",
+    "author": "Berend van der Kolk",
+    "work": "The Quantified Society",
+    "source_url": "https://www.goodreads.com/quotes/tag/measurement",
+    "note": "Goodhart's law tells you a measure stops working once it becomes a target, which is a statement about the measure. Van der Kolk gives the human version a name, and names the thing you can actually catch yourself doing: not gaming the number, just quietly forgetting what it was standing in for. The reason it earns a word is that it never feels like failure from the inside. The indicator is going up. You are working hard. Nobody has lied. The goal simply stopped being in the room, and nothing in the dashboard is shaped to notice."
+  },
+  "agent_craft": {
+    "items": [
+      {
+        "text": "If you rely on the Bash sandbox to let commands run without interrupting you, go and set `sandbox.autoAllowBashIfSandboxed: true` today. Claude Code 2.1.325 \"Changed sandboxed Bash commands to follow the normal permission flow by default\" — so a sandboxed session that used to run straight through will now stop and ask. If your organisation turns the sandbox on through managed settings, the flag has to go in your highest-ranking managed source to have any effect.",
+        "source": "Anthropic, Claude Code changelog, 2.1.325 (13 November 2026)",
+        "url": "https://code.claude.com/docs/en/changelog"
+      }
+    ]
+  },
+  "hn": [
+    {
+      "title": "A router sent too much data, and every departing flight in the United States stopped for four and a half hours",
+      "url": "https://www.nbcnews.com/news/us-news/faa-orders-nationwide-ground-stop-departing-flights-reasons-safety-rcna609247",
+      "hn_url": "https://news.ycombinator.com/item?id=50489641",
+      "points": 1636,
+      "comments": 1268,
+      "bullets": [
+        "Controllers saw inconsistent radar data and lost communications with some aircraft. The FAA issued a nationwide ground stop at 3:54 p.m. ET on Friday 13 November, citing \"extraordinary circumstances and for reasons of safety\", and lifted it at 8:15 p.m. ET. Medical flights, organ transport included, were allowed to keep going.",
+        "The stated cause is mundane and therefore worse: a router sent too much data and overloaded older air traffic control equipment. A senior government official said the system was identified and taken offline. Homeland Security Secretary Markwayne Mullin said there was no evidence of a cyberattack, while not fully ruling one out.",
+        "More than 7,000 flights were cancelled on Friday. By 9:30 a.m. ET Saturday FlightAware had logged another 3,700-plus cancellations and 1,990 delays. Atlanta, O'Hare and JFK were worst hit; Reagan Washington National ran out of parking space for aircraft and O'Hare was near capacity by 6 p.m. Saturday. An aviation expert put the number of stranded passengers at 300,000 to 400,000.",
+        "Air Space Intelligence, the FAA vendor behind the SMART system, said the ground stop had nothing to do with its software, and Transportation Secretary Sean Duffy said SMART is \"completely disconnected\" from the equipment that failed.",
+        "Duffy blamed decades-old analog equipment and asked Congress for $50 billion to replace it. Congress has already approved $12.5 billion over five years. The precedents in the same article are instructive about scale: a 90-second radar blackout at Newark in May 2025, and a roughly 90-minute NOTAM failure in January 2023."
+      ]
+    },
+    {
+      "title": "Nvidia was guaranteeing the money its customers needed in order to buy Nvidia chips, and the CFO objected",
+      "url": "https://www.techpowerup.com/354814/nvidia-allegedly-engineered-scarcity-by-funding-ai-startups-to-buy-its-gpus",
+      "hn_url": "https://news.ycombinator.com/item?id=50493251",
+      "points": 1022,
+      "comments": 615,
+      "bullets": [
+        "TechPowerUp's page is behind a bot check for us, so the detail here comes from VideoCardz and GameRiv, both read today, both reporting the same Wall Street Journal story. Start with the headline, because it overreaches: the reporting describes vendor financing and an internal fight about it. It does not establish that anyone engineered a shortage.",
+        "What the WSJ describes: Nvidia offering billions of dollars of financial guarantees to AI companies and small cloud providers that could not otherwise afford its GPUs, in return for a share of their revenue. Several of those deals were run by Nico Caprez, Huang's son-in-law, promoted to vice president earlier this year.",
+        "The reason given is the opposite of scarcity. Huang called a meeting of senior finance executives in August because large cloud customers were moving to their own custom processors while Nvidia had already committed to buy enormous quantities of wafers and memory — supply, the WSJ quotes him saying, coming at him like an \"avalanche\". Funding small buyers is a way to place chips you have already paid for.",
+        "The fight: CFO Colette Kress — now interim CEO — pushed for clear criteria for approving guarantees and tried to limit Caprez's deals. On one Ohio project where OpenAI planned to deploy about $300 billion of Nvidia chips, Nvidia considered a $250 billion backstop; Kress roughly halved it. Huang's reported response to her objections was to call her \"a deer in the headlights\".",
+        "The paperwork is the part you can check. Per Nvidia's 17 August SEC filing, the signed initial agreement caps contingent guarantee obligations at $105 billion across roughly 4.25 gigawatts of capacity — support for lease obligations, not cash into OpenAI. By late August Nvidia had paused some financing arrangements and added senior executive and board review."
+      ]
+    },
+    {
+      "title": "LibreOffice twisted the knife while Microsoft 365 was eighteen hours down",
+      "url": "https://twitter.com/LibreOffice/status/2121205272479998268",
+      "hn_url": "https://news.ycombinator.com/item?id=50486482",
+      "points": 927,
+      "comments": 289,
+      "bullets": [
+        "The link is a post on X, which is login-walled and cannot be fetched, so we have not read it. The Hacker News title is \"LibreOffice actually works 365 days a year\"; everything below is the outage it landed in, from Windows Central's live coverage, read today.",
+        "Outlook, Teams, Copilot, OneDrive and Azure were all affected. Reports surged on the evening of Thursday 12 November and the outage had run at least 18 hours by the time Windows Central updated at 7:33 a.m. ET on Friday 13 November, with Microsoft saying it was \"seeing encouraging recovery progress, with service availability and email delivery performance improving\".",
+        "Downdetector peaked at nearly 130,000 reports around 1:15 p.m. ET and was under 10,000 later. Downdetector only counts people who bother to complain, so read it as a shape, not a headcount.",
+        "Google, Steam, Cloudflare and AWS all appeared to wobble at the same time. Spokespeople for AWS and Cloudflare contacted Windows Central specifically to say their services were not down — a reminder that when the thing everyone logs in through breaks, everything downstream of it looks broken too. No root cause had been confirmed.",
+        "The joke has a boring version underneath it, which is the actual argument for desktop software: a suite that does not authenticate against anything cannot be taken away from you by somebody else's control plane. LibreOffice had, incidentally, shipped 26.8.3 with around 45 bug fixes on 12 November, the day the outage began."
+      ]
+    },
+    {
+      "title": "Nvidia employees are asking the board to bring Jensen Huang back, and nobody inside is arguing the other way",
+      "url": "https://www.wired.com/story/nvidia-employees-petition-for-jensen-huangs-return/",
+      "hn_url": "https://news.ycombinator.com/item?id=50477231",
+      "points": 812,
+      "comments": 681,
+      "bullets": [
+        "Wired will not load for us either, so this comes from Slashdot's summary of it, read today. Wired's reporting is based on internal correspondence it reviewed.",
+        "The centre of it is a suggestion-box post written by a longtime engineer before Huang resigned, urging the board to weigh employee sentiment before acting. It has drawn more than 1,600 comments, several of them asking board members directly to bring him back. One: \"If you believe in the mission, bring back THE boss.\"",
+        "The post asked for two specific things — that the board report what its investigation uncovers to staff, and that it formally ask employees their view \"about Jensen's continuing as our CEO\". Huang left as the inquiry began rather than after it concluded, which is the gap the anger sits in.",
+        "One employee sent a companywide email demanding transparency about the exit, signing off \"I stand by Jensen\". In the hours after the resignation about two dozen employees posted support on LinkedIn. Wired found no post from any Nvidia employee supporting the resignation.",
+        "Worth separating from the sentiment: Colette Kress holds both the CFO job and the interim CEO job while the board searches, and she is the person the same week's WSJ story has arguing against the financing commitments Huang wanted. The staff want back the half of that argument that lost."
+      ]
+    },
+    {
+      "title": "24,664 apps built on Lovable hand their database to anyone who loads the page",
+      "url": "https://www.crissyfield.de/research/lovable-en/",
+      "hn_url": "https://news.ycombinator.com/item?id=50499017",
+      "points": 587,
+      "comments": 240,
+      "bullets": [
+        "The researchers looked at 159,041 Lovable projects published between December 2025 and September 2026. Of those, 34,545 used Supabase, and the study is about those. 24,664 of them returned database records on page load, with no login at all.",
+        "Going further with the same public API key, records containing email addresses showed up in 10,560 tables across 7,403 sites — about 30% of the 24,664. The authors are careful to say that is not a confirmed leak rate.",
+        "What was actually sitting there: a German lifestyle forum with more than 80,000 profiles (names, emails, birth dates, gender) and more than 200,000 chat messages; tens of thousands of ticket and food-sale records with phone numbers, postal addresses and payment information; a property manager's AI-written summaries of internal email about tenants and owners; more than 1,000 records carrying passport numbers, expiry dates and nationalities; and one case where 280,000 emails sent to a provider's customers were reachable.",
+        "The cause is not a Lovable bug in the usual sense. It is access-control configuration on the Supabase side, and the point of the paper is that the mistakes follow a small number of recurring patterns — which means they are searchable across thousands of apps at once. Generated apps fail in generated ways.",
+        "Handelsblatt took the findings to Lovable; the page records no reply and no fix. The researchers are withholding the exact access details. If you have shipped anything on this stack, the check is one minute long: open your own app logged out and watch what the network tab fetches."
+      ]
+    }
+  ],
+  "markets": {
+    "indices": [
+      {
+        "name": "Session",
+        "value": "Friday 13 November 2026 — close",
+        "direction": "down",
+        "change": "Indian markets were shut on Saturday and are shut today, so these are Friday's closing numbers and nothing has happened to them since. Levels, sectors, rupee and BSE breadth from HDFC Sky's close report; Bank Nifty and the weekly sector extremes from CNBC-TV18 via TradingView; flows are provisional exchange data as published by Groww"
+      },
+      {
+        "name": "Sensex",
+        "value": "81,592.45",
+        "direction": "down",
+        "change": "−318.56 (−0.39%). Snaps a three-day winning run. The week still closed higher — a third straight weekly gain"
+      },
+      {
+        "name": "Nifty 50",
+        "value": "25,144.30",
+        "direction": "down",
+        "change": "−155.05 (−0.61%). Thirty-nine of the fifty closed lower and eighteen of them fell more than 1%"
+      },
+      {
+        "name": "Nifty Bank",
+        "value": "61,034",
+        "direction": "down",
+        "change": "−484 (about −0.79%) per CNBC-TV18; HDFC Sky prints the sector at −0.8%, Financial Services −0.7%"
+      },
+      {
+        "name": "Worst sectors",
+        "value": "Auto, Metal, Realty −about 1%",
+        "direction": "down",
+        "change": "Commodities −1%, IT −0.7%, Pharma −0.5%. Crude was the stated driver, which is why paints, airlines and oil marketing took it"
+      },
+      {
+        "name": "Only sector up",
+        "value": "Nifty FMCG",
+        "direction": "up",
+        "change": "The one green sector index on HDFC Sky's table, which prints no figure for it. Over the week the ranking inverts entirely: PSU Bank +8% best, IT worse than −3%"
+      },
+      {
+        "name": "Broader market",
+        "value": "Midcap and Smallcap −about 0.2% each",
+        "direction": "down",
+        "change": "BSE breadth 1,763 advancing against 2,328 declining and 167 unchanged — a wider fall than the headline"
+      },
+      {
+        "name": "USD/INR",
+        "value": "94.24",
+        "direction": "down",
+        "change": "The rupee closed 21 paise weaker than Thursday's 94.03, with October inflation at 6.09% published the day before"
+      },
+      {
+        "name": "FII · cash",
+        "value": "+₹5,736.55 cr",
+        "direction": "up",
+        "change": "Bought ₹18,339.57 cr, sold ₹12,603.02 cr. Smaller than Thursday's +₹7,830.60 cr and Wednesday's +₹12,563.33 cr, but still buying — every session this month on Groww's table is a net buy except the 8th"
+      },
+      {
+        "name": "DII · cash",
+        "value": "−₹2,253.58 cr",
+        "direction": "down",
+        "change": "Bought ₹11,745.95 cr, sold ₹13,999.53 cr. The mirror again, but a much smaller mirror than Thursday's −₹6,331.17 cr. The two net to roughly +₹3,483 cr between them on a day the index fell"
+      }
+    ],
+    "stories": [
+      {
+        "headline": "Where the numbers come from",
+        "url": "https://hdfcsky.com/news/market-close-report-today-november-13-2026-nifty-sensex-decline-as-inflation-oil-weigh",
+        "source": "HDFC Sky · market close report, 13 November 2026",
+        "bullets": [
+          "Index closes, the sector table, USD/INR and BSE breadth are from HDFC Sky's close report for 13 November. Bank Nifty's level and point change, the Nifty 50 internals and the weekly sector extremes are from CNBC-TV18's round-up carried on TradingView for the same date.",
+          "The two sources agree on the benchmarks to the decimal. Where they differ is precision, not direction: HDFC Sky gives sector moves to one decimal, CNBC-TV18 gives levels."
+        ]
+      },
+      {
+        "headline": "FII and DII cash flows, 13 November 2026",
+        "url": "https://www.groww.in/fii-dii-data",
+        "source": "Groww · FII/DII activity, provisional cash market",
+        "bullets": [
+          "Provisional means these can be revised; the exchange release is the one to act on. Groww's November table shows foreign investors net buyers in nine of the ten sessions listed, against domestic institutions net sellers in all ten."
+        ]
+      }
+    ]
+  },
+  "trends": [
+    {
+      "tag": "India",
+      "headline": "India's retail inflation has gone through the top of the RBI's band, and the reason is onions at 116%",
+      "url": "https://www.mospi.gov.in/uploads/latestReleases/latest_release_1794478693814_7c90e80f-9e64-4aa4-b44a-1dc727b0fed9_Press_Release_of_CPI_for_October_2026_.pdf",
+      "subject": "Retail inflation in India reached 6.09% provisional in October 2026 on the 2024=100 series, above the 6% top of the Reserve Bank's tolerance band, with food at 8.94% and onions up 116.22% year on year.",
+      "subtitle": "Ministry of Statistics and Programme Implementation, National Statistics Office, 12 November 2026",
+      "bullets": [
+        "Headline CPI inflation for October 2026 is 6.09% provisional, on the 2024=100 series, against 5.54% final for September. Rural 6.63%, urban 5.41%. The RBI's framework targets 4% with a tolerance band of 2% to 6%, so this is through the ceiling rather than near it.",
+        "Food is doing all of it. The Consumer Food Price Index is at 8.94%, up from 7.74% — rural 9.09%, urban 8.68%. Food and beverages is the highest-inflation division in the release at 8.51%, with personal care at 10.14% and restaurants and accommodation at 10.06% above it on the division chart.",
+        "The item table is where the number stops being abstract. Onion inflation is 116.22% year on year, up from 108.13% in September. Garlic 60.74%. Silver jewellery 52.39%, down from 87.82%. Ginger 48.32%, lemon 47.30%.",
+        "And in the same basket, in the same month: potato −14.24%, cauliflower −10.57%, coconut −5.60%, brinjal −3.34%, cabbage −1.92%. A single vegetable aisle is simultaneously running at plus 116 and minus 14, which is what an average does to you.",
+        "Two things the release itself is careful about, and you should be too. The figures are provisional. And the response rate was 100% across 1,407 urban markets and 1,465 villages — so this is not a sampling story, it is prices. November's number lands on 14 December."
+      ]
+    },
+    {
+      "tag": "Platforms",
+      "headline": "Europe wants to triple its own datacentre capacity, because three foreign companies hold more than 70% of its cloud",
+      "url": "https://www.euronews.com/2026/11/11/eu-lawmakers-push-to-reduce-europes-dependence-on-foreign-cloud-providers",
+      "subject": "MEPs published a joint draft report on the proposed Cloud and AI Development Act, calling for common cloud standards across the bloc, public procurement from local suppliers, faster data centre approvals and a tripling of the bloc's data centre capacity; three foreign hyperscalers hold over 70% of its cloud market.",
+      "subtitle": "Euronews, 11 November 2026",
+      "bullets": [
+        "The document is a joint draft report by MEPs on the Commission's proposed Cloud and AI Development Act, presented at the European Parliament on Wednesday 11 November. A draft report, not law — the timeline below is the point.",
+        "The number the whole argument rests on is the Commission's: three non-European hyperscale cloud providers control more than 70% of the European cloud market. The article does not name them, and the figure is about non-European providers as a group rather than any one country's firms.",
+        "What the report asks for: common EU rules and standards for cloud and AI infrastructure, more investment in European providers, public authorities buying more cloud from European suppliers, stronger protection for healthcare, energy and transport, and faster approval for new data centres while keeping environmental requirements. The Commission's own proposal aims to triple EU data centre capacity within five to seven years.",
+        "\"Buy European\" in procurement is the clause with teeth, and it is also the one that has to survive two years of committee. Parliament committees discuss on 1 December, a committee vote is provisionally mid-March 2027, and a plenary vote is expected in April 2027.",
+        "Read it as a signal about where regulated European workloads will be allowed to sit by the end of the decade, not as something that changes a procurement decision this quarter. The gap between a draft report and an enforceable standard is where most of this ends up."
+      ]
+    },
+    {
+      "tag": "Wildcard · Astronomy",
+      "headline": "A white dwarf blew up 50 million light years away, we caught it on the way up, and it is bright enough for a backyard telescope",
+      "url": "https://noirlab.edu/public/news/noirlab2628/",
+      "subject": "NOIRLab's photo release of 12 November 2026 on SN 2026ahvu, a young Type Ia supernova in the barred spiral galaxy NGC 1433 about 50 million light years away, discovered by ATLAS on 2 November at magnitude 17, since brightened to 13.5 and expected to peak at magnitude 10.5 to 12.1 between 18 and 23 November, imaged by DECam on the Blanco 4-metre and by Gemini South.",
+      "subtitle": "NSF NOIRLab, 12 November 2026",
+      "bullets": [
+        "SN 2026ahvu sits in NGC 1433, a barred spiral about 50 million light years away in the southern constellation Horologium. ATLAS found it on 2 November as AT 2026ahvu; spectroscopy then classified it as a young Type Ia — a white dwarf that pulled matter off a close companion until it detonated — and it got the SN designation.",
+        "The brightness curve is the story. Magnitude 17 at discovery, 13.5 within days, and an expected peak of 10.5 to 12.1 between 18 and 23 November. Catching one well before maximum is rare, and the earliest days hold the evidence that disappears once the debris expands.",
+        "This is one of the nearest Type Ia supernovae since SN 2011fe in the Pinwheel Galaxy in 2011. Type Ia explosions are the standard candles cosmology uses to measure distance, and yet nobody is sure exactly which stellar systems produce them or how they ignite — which is why the first week matters more than the next six months.",
+        "There is a before picture, which is the luxury here: DECam imaged NGC 1433 during the Dark Energy Survey between 2013 and 2019, so the same camera's pre-explosion frames of the same patch of sky already exist. Gemini South adds the sharper view; NOIRLab is coordinating follow-up across Blanco/DECam, Gemini and SOAR, and is openly inviting other observatories to fill in wavelengths and time zones.",
+        "The part worth acting on: at its reported brightness it is already within reach of small to moderate amateur telescopes, best from southern latitudes where NGC 1433 climbs high. It peaks this coming week."
+      ]
+    }
+  ],
+  "research": [
+    {
+      "tag": "Industry · Google DeepMind",
+      "title": "DeepMind is giving away the two datasets underneath its weather models — a decade of stitched satellite imagery, and 27 years of rainfall at 15-minute resolution",
+      "url": "https://deepmind.google/blog/opening-the-datasets-behind-our-ai-weather-models/",
+      "subject": "Google DeepMind opened two WeatherNext datasets: SatWeave, an hourly 17-channel worldwide satellite mosaic with an archive over a decade long, and PARDIG, global rainfall at 15-minute steps and roughly 10 km, 1999 to 2026.",
+      "subtitle": "WeatherNext team, Google DeepMind with Google Research, 13 November 2026",
+      "bullets": [
+        "SatWeave is the input layer: a single global mosaic knitted from GOES-East, GOES-West, Meteosat 0, Meteosat Indian Ocean and Himawari, across 17 visible, water-vapour and infrared channels, updated hourly, with a live feed and an archive spanning more than a decade. It is what WeatherNext 3 reads for medium-range forecasts. The post's own text says five satellites while its figure caption says six, which is the sort of thing to notice before you cite it.",
+        "PARDIG is the derived product, and the more interesting one: Precipitation AI Reanalysis, Densely Inferred GPM. Global rainfall at 15-minute steps and roughly 10 km resolution, trained on sparse NASA GPM Core Observatory radar using SatWeave imagery and ECMWF fields as inputs. Average latency about five hours. The archive runs 1999 to 2026.",
+        "The evaluation is the claim worth holding: more than 30% better hourly detection skill than NASA's IMERG-Final on light-to-moderate precipitation, tested against ground radar in the US, Europe and Japan and against more than 36,000 weather stations worldwide, with particular strength on extreme rainfall.",
+        "Why this matters more in India than in the places it was validated: the whole point of inferring rain from satellites is the enormous fraction of the world with no ground radar, where floods, landslides and drought are nonetheless the things that kill people. A 15-minute, 10 km rainfall history going back to 1999 is a different research object from a daily gridded product.",
+        "Access: live and historical data for both on Google Cloud Storage, PARDIG's historical catalogs also on Google Earth Engine. The post does not state a licence or a total size — check before you plan around either. A PARDIG paper is on arXiv as 2611.13941."
+      ]
+    },
+    {
+      "tag": "Academic · ETH Zurich",
+      "title": "Everyone scores monitors on whether they spot the failure. Nobody scored them on whether they spot it in time — and the dumbest baseline wins",
+      "url": "https://arxiv.org/abs/2611.16803",
+      "subject": "PREWARN, from ETH Zurich, scores token-level monitors of language model failures by when the alarm fires relative to the failure onset rather than by response-level AUROC; on repetitive degeneration, output length alone is a near-perfect monitor.",
+      "subtitle": "De Negri, Sartori, Baggi, Reihs, Đurech, El-Assady, Pyatkin and Hedström; arXiv:2611.16803, submitted 12 November 2026; NeurIPS 2026 Workshop on Interpretability as a Science",
+      "bullets": [
+        "The gap they found is embarrassing once stated. A monitor that watches a model generate and raises an alarm is judged by response-level metrics like AUROC, which ask only whether it flagged the bad response. They say nothing about when the alarm fired — so a monitor that warns you before the failure starts and one that notices afterwards can score identically. For anything you intend to interrupt, that is the only number that matters.",
+        "PREWARN fixes the protocol rather than the probe: set each monitor's threshold on validation data to a chosen error rate, then score its alarms by their timing relative to the onset — the known token where the failure begins. The failure mode they study is repetitive degeneration, where a model starts looping, because it has a clean onset you can point at.",
+        "Headline result: response length alone scores nearly perfectly. A monitor that reads nothing inside the model and simply notices the output is getting long beats the interpretability apparatus on this failure. Any paper claiming a probe detects looping now has to clear that bar first.",
+        "Second result, aimed at the field's habits: probes rated equal by AUROC differ substantially under PREWARN. The metric everyone reports was hiding the distinction that matters. On two of the three models the probes do warn before onset on most degenerate responses — so they are genuinely predictive, just not distinguishable by the old score.",
+        "And the negative control holds: none of the six untrained baselines fires more often than random alarms, so the probes are learning something real. Thirty pages, ten of them main text, six figures, sixteen tables; the probes and the calibrated thresholds are released."
+      ]
+    }
+  ],
+  "wild": [
+    {
+      "tag": "Advertising · New York",
+      "headline": "An ad agency has put a suction cup in the back of a baseball cap so you can stick your head to the subway wall and sleep",
+      "entities": [
+        "SuperHeroes"
+      ],
+      "subject": "SuperHeroes designed Chin Up, a baseball cap with a suction cup on the back so subway sleepers can stick their head to the surface behind them and stop the head bob, and is selling it as a one-off drop.",
+      "subtitle": "Little Black Book, 13 November 2026",
+      "url": "https://lbbonline.com/news/chin-up-hats-save-new-yorkers-from-sleepless-subway-rides",
+      "bullets": [
+        "The premise is a statistic: four million New Yorkers ride the train every day and 60% of them have fallen asleep on it. The actual problem is not the sleeping, it is the head bob, the drool and the non-trivial chance of ending up in somebody else's video.",
+        "The product is one part. A discreet suction cup on the back of a cap. You stick your head to the surface behind you and the bob stops. It is on sale now as a limited-edition drop on TheBoringStore.shop.",
+        "The origin is the good bit. It came from Vance Gorman Jr. and Billy Lemorin, who joined the agency through its BLAC internship programme, and from an ordinary commute: \"Everyday I travel from Coney Island to work, and everyday I see people falling asleep while riding the train… so I started thinking, there has to be an easier way to sleep on the train without waking up every time my head bobs.\"",
+        "It is also the third entry in a running bit. The agency has a standing brief it calls Saving NY From ___, previously aimed at smells and rats, now at your own embarrassment. Chief creative Rogier Vijverberg: \"If there's anything else we can do to help New Yorkers, just light up the bat-signal...\"",
+        "Why it belongs here rather than in a design roundup: there is no client. An agency built and is selling a physical object to solve a problem it noticed on the way to work, which is a strange and much better use of a creative department than a deck."
+      ]
+    },
+    {
+      "tag": "Skincare · Film",
+      "headline": "CeraVe is now the official moisturiser of a fictional desert planet, and the teaser replaces the sandworm with a tub of cream",
+      "entities": [
+        "CeraVe"
+      ],
+      "subject": "CeraVe announced on 13 November 2026 its first official film partnership, becoming 'The Official Moisturizer of Arrakis' for Dune: Part Three, with a teaser in which a thumper summons a jar of Moisturizing Cream instead of a sandworm, rolling out in over 100 countries before the 18 December release.",
+      "subtitle": "CeraVe press release via PR Newswire, 13 November 2026",
+      "url": "https://www.prnewswire.com/news-releases/cerave-becomes-the-official-moisturizer-of-arrakis-in-first-ever-film-partnership-with-dune-part-three-302938700.html",
+      "bullets": [
+        "The concept is one joke, found rather than invented: the most famous thing about Arrakis is that it has no water. So the campaign asks, straight-faced, whether spice is really the planet's most precious resource. Global brand president Vincent Chauvière: \"On Arrakis, spice isn't the only precious resource—hydration matters, too, and that's where our moisturizer comes in!\"",
+        "The teaser, out 11 November, is the best execution of it. A thumper pounds the sand. You wait for the sandworm. A jar of CeraVe Moisturizing Cream rises out of the dune instead. A second film, 'Precious Resource', followed on the 13th with a Fremen-inspired character making the discovery.",
+        "The commitment is not small for a gag. Shot in the Samalayuca Dunes and Mexico City, directed by Maca Rubio of Stink Films, produced by OBB Bolded. It runs across paid, earned, social, retail, creator and experiential activity in more than 100 countries with local adaptations — and local dermatologist commentary, because this is still a skincare brand.",
+        "Which is where it gets funnier. The release has an actual board-certified dermatologist, Dr Andrew Park, on record saying \"While the extreme desert environment of Arrakis may be fictional, the challenges of dry skin are very real\". Somebody had to approve that sentence.",
+        "CeraVe sponsors the Hollywood world premiere on 1 December and the UK premiere on 9 December; the film opens 18 December in North America and 16 December internationally. The claim the whole thing hangs on, for the record: up to 120 hours of hydration."
+      ]
+    },
+    {
+      "tag": "Consumer electronics · India",
+      "headline": "An audio brand bolted a giant headphone to the roof of a cab and sent it through six states to towns and villages",
+      "entities": [
+        "Ubon",
+        "FMC Media"
+      ],
+      "subject": "FMC Media fabricated an 'Innovation Cab' for consumer electronics brand Ubon — a yellow branded taxi with a large headphone installation on its roof, first shown at Ubon's head office for its dealer meet and then deployed across Maharashtra, Himachal Pradesh, Rajasthan, Uttarakhand, Punjab and Gujarat.",
+      "subtitle": "afaqs!, 13 November 2026",
+      "url": "https://www.afaqs.com/companies/fmc-media-executes-ubon-transit-campaign-across-six-states-12806739",
+      "bullets": [
+        "The object: a yellow cab in Ubon livery with a large headphone installation mounted on the roof. The agency built one as a sample, showed it at the brand's head office, and then similar vehicles went out across six states — Maharashtra, Himachal Pradesh, Rajasthan, Uttarakhand, Punjab and Gujarat — reaching cities, semi-urban towns and villages.",
+        "The reason it exists is the part nobody usually admits. It was not built for consumers. It was commissioned for Ubon's dealer meet — the audience is the distributor who has to decide how much shelf space to give you, and a car with a headphone on it is an argument aimed at him.",
+        "The concept was pitched to Ubon's leadership in June, so this is a five-month build, not a week's stunt. The article gives no count of vehicles and no rollout dates, which is normal for trade coverage of transit media and worth knowing before you read a number into it.",
+        "Founder and CEO of FMC Media, Gourav Chawla, on the whole exercise: \"We are capable of executing tough briefs in the easiest way.\" Which is an unusually honest way to describe gluing a headphone to a taxi.",
+        "The quiet interest here is distribution, not creative. Outdoor advertising in India mostly means a hoarding in a city where hoardings are already sold out. A vehicle is the version of outdoor that reaches a village with no inventory to buy."
+      ]
+    }
+  ],
+  "learn": {
+    "title": "Loud noise switches off part of your sense of taste. That is why airline food is bland — and why so many people order tomato juice at 35,000 feet.",
+    "subject": "Yan and Dando's 2015 paper 'A Crossmodal Role for Audition in Taste Perception', in the Journal of Experimental Psychology: Human Perception and Performance, found that about 85 decibels of jetliner-like noise inhibits sweet taste and significantly enhances umami, which is the taste tomato juice is built on.",
+    "tags": [
+      "Science of ordinary things",
+      "Taste",
+      "Aeroplanes"
+    ],
+    "body": [
+      "Lufthansa noticed something odd about its own bar bill: passengers were drinking roughly as much tomato juice as beer. On the ground, tomato juice is a drink almost nobody orders. In the air it competes with lager. The airline commissioned a private study, which came back saying the cabin pressure was doing it — pressure made the tomato juice taste better.",
+      "Then two food scientists at Cornell, Robin Dando and Kimberly Yan, tested a different suspect: the noise. Their paper, published in the Journal of Experimental Psychology: Human Perception and Performance in 2015, had people taste solutions in quiet and again wearing headsets playing about 85 decibels — roughly what a jetliner does to you for the whole flight. The effect was not a general dulling. It was selective. Sweetness was inhibited. Umami, the savoury taste that comes from amino acids like glutamate, was significantly enhanced. As Dando put it, \"the multisensory properties of the environment where we consume our food can alter our perception of the foods we eat\".",
+      "Which reframes the standing complaint about aeroplane meals. The food is not necessarily worse than food on the ground; one component of your tasting apparatus has been turned down and another turned up, by a sound you stopped noticing twenty minutes after take-off. And it explains the tomato juice without any appeal to pressure at all: tomato juice is mostly glutamate, so it is the one thing on the trolley that the engines are actively improving. The authors' own suggestion was the obvious commercial one — that airlines should rewrite their menus for the room they are serving in. Next time you fly, notice that you want something savoury and salty rather than sweet. That is not you. That is 85 decibels."
+    ]
+  },
+  "ideas": {
+    "prompt": "Ten businesses that only need one customer a day to work",
+    "items": [
+      {
+        "text": "One table, one sitting, one menu a night, in somebody's actual dining room.",
+        "why": "A recurring thread on r/SomebodyMakeThis asks why nobody builds the thing only ten people need; the answer is usually that nobody priced it for ten people."
+      },
+      {
+        "text": "A repair shop that fixes exactly one kind of object — table lamps, say — and is the best in the city at it."
+      },
+      {
+        "text": "One car a day, cleaned properly, inside and out, by someone who clearly enjoys it."
+      },
+      {
+        "text": "A wedding-speech doctor. Two hours, one couple, and the speech gets an actual laugh."
+      },
+      {
+        "text": "A moving-day companion for people in their eighties, where the job is the phone calls and the paperwork, not the lifting."
+      },
+      {
+        "text": "A photographer who shoots one family a day in their own front room instead of a studio."
+      },
+      {
+        "text": "A walk through the neighbourhood you grew up in, one group a day, booked out weeks ahead."
+      },
+      {
+        "text": "A spare-keys service for one street: you hold the keys, you do one callout a day, and you are cheaper than a locksmith at midnight."
+      },
+      {
+        "text": "Forty loaves baked on Saturday, and the whole week's business is that one morning."
+      },
+      {
+        "text": "A class of ten for one unglamorous skill — ironing a shirt, reversing into a tight space, chopping an onion without crying."
+      }
+    ]
+  }
+}

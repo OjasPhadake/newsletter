@@ -10018,6 +10018,155 @@
         "soranews24.com",
         "wiz.io"
       ]
+    },
+    {
+      "date": "2026-11-15",
+      "issue": 1,
+      "quote_text": [
+        "This focus on improving an indicator while losing sight of the original goal is what I call indicatorism."
+      ],
+      "quote_author": [
+        "Berend van der Kolk"
+      ],
+      "idea_text": [
+        "One table, one sitting, one menu a night, in somebody's actual dining room.",
+        "A repair shop that fixes exactly one kind of object — table lamps, say — and is the best in the city at it.",
+        "One car a day, cleaned properly, inside and out, by someone who clearly enjoys it.",
+        "A wedding-speech doctor. Two hours, one couple, and the speech gets an actual laugh.",
+        "A moving-day companion for people in their eighties, where the job is the phone calls and the paperwork, not the lifting.",
+        "A photographer who shoots one family a day in their own front room instead of a studio.",
+        "A walk through the neighbourhood you grew up in, one group a day, booked out weeks ahead.",
+        "A spare-keys service for one street: you hold the keys, you do one callout a day, and you are cheaper than a locksmith at midnight.",
+        "Forty loaves baked on Saturday, and the whole week's business is that one morning.",
+        "A class of ten for one unglamorous skill — ironing a shirt, reversing into a tight space, chopping an onion without crying."
+      ],
+      "idea_prompt": [
+        "Ten businesses that only need one customer a day to work"
+      ],
+      "tip_text": [
+        "If you rely on the Bash sandbox to let commands run without interrupting you, go and set `sandbox.autoAllowBashIfSandboxed: true` today. Claude Code 2.1.325 \"Changed sandboxed Bash commands to follow the normal permission flow by default\" — so a sandboxed session that used to run straight through will now stop and ask. If your organisation turns the sandbox on through managed settings, the flag has to go in your highest-ranking managed source to have any effect."
+      ],
+      "hn_id": [
+        "50489641",
+        "50493251",
+        "50486482",
+        "50477231",
+        "50499017"
+      ],
+      "link": [
+        "https://www.nbcnews.com/news/us-news/faa-orders-nationwide-ground-stop-departing-flights-reasons-safety-rcna609247",
+        "https://www.techpowerup.com/354814/nvidia-allegedly-engineered-scarcity-by-funding-ai-startups-to-buy-its-gpus",
+        "https://twitter.com/LibreOffice/status/2121205272479998268",
+        "https://www.wired.com/story/nvidia-employees-petition-for-jensen-huangs-return/",
+        "https://www.crissyfield.de/research/lovable-en/",
+        "https://www.mospi.gov.in/uploads/latestReleases/latest_release_1794478693814_7c90e80f-9e64-4aa4-b44a-1dc727b0fed9_Press_Release_of_CPI_for_October_2026_.pdf",
+        "https://www.euronews.com/2026/11/11/eu-lawmakers-push-to-reduce-europes-dependence-on-foreign-cloud-providers",
+        "https://noirlab.edu/public/news/noirlab2628/",
+        "https://lbbonline.com/news/chin-up-hats-save-new-yorkers-from-sleepless-subway-rides",
+        "https://www.prnewswire.com/news-releases/cerave-becomes-the-official-moisturizer-of-arrakis-in-first-ever-film-partnership-with-dune-part-three-302938700.html",
+        "https://www.afaqs.com/companies/fmc-media-executes-ubon-transit-campaign-across-six-states-12806739",
+        "https://deepmind.google/blog/opening-the-datasets-behind-our-ai-weather-models/",
+        "https://arxiv.org/abs/2611.16803",
+        "https://hdfcsky.com/news/market-close-report-today-november-13-2026-nifty-sensex-decline-as-inflation-oil-weigh",
+        "https://www.groww.in/fii-dii-data"
+      ],
+      "subject": [
+        "Retail inflation in India reached 6.09% provisional in October 2026 on the 2024=100 series, above the 6% top of the Reserve Bank's tolerance band, with food at 8.94% and onions up 116.22% year on year.",
+        "MEPs published a joint draft report on the proposed Cloud and AI Development Act, calling for common cloud standards across the bloc, public procurement from local suppliers, faster data centre approvals and a tripling of the bloc's data centre capacity; three foreign hyperscalers hold over 70% of its cloud market.",
+        "NOIRLab's photo release of 12 November 2026 on SN 2026ahvu, a young Type Ia supernova in the barred spiral galaxy NGC 1433 about 50 million light years away, discovered by ATLAS on 2 November at magnitude 17, since brightened to 13.5 and expected to peak at magnitude 10.5 to 12.1 between 18 and 23 November, imaged by DECam on the Blanco 4-metre and by Gemini South.",
+        "SuperHeroes designed Chin Up, a baseball cap with a suction cup on the back so subway sleepers can stick their head to the surface behind them and stop the head bob, and is selling it as a one-off drop.",
+        "CeraVe announced on 13 November 2026 its first official film partnership, becoming 'The Official Moisturizer of Arrakis' for Dune: Part Three, with a teaser in which a thumper summons a jar of Moisturizing Cream instead of a sandworm, rolling out in over 100 countries before the 18 December release.",
+        "FMC Media fabricated an 'Innovation Cab' for consumer electronics brand Ubon — a yellow branded taxi with a large headphone installation on its roof, first shown at Ubon's head office for its dealer meet and then deployed across Maharashtra, Himachal Pradesh, Rajasthan, Uttarakhand, Punjab and Gujarat.",
+        "Google DeepMind opened two WeatherNext datasets: SatWeave, an hourly 17-channel worldwide satellite mosaic with an archive over a decade long, and PARDIG, global rainfall at 15-minute steps and roughly 10 km, 1999 to 2026.",
+        "PREWARN, from ETH Zurich, scores token-level monitors of language model failures by when the alarm fires relative to the failure onset rather than by response-level AUROC; on repetitive degeneration, output length alone is a near-perfect monitor.",
+        "Yan and Dando's 2015 paper 'A Crossmodal Role for Audition in Taste Perception', in the Journal of Experimental Psychology: Human Perception and Performance, found that about 85 decibels of jetliner-like noise inhibits sweet taste and significantly enhances umami, which is the taste tomato juice is built on."
+      ],
+      "brand": [
+        "SuperHeroes",
+        "CeraVe",
+        "Ubon",
+        "FMC Media"
+      ],
+      "brand_mention": [
+        "Yorkers",
+        "TheBoringStore.shop",
+        "Vance Gorman Jr",
+        "Billy Lemorin",
+        "BLAC",
+        "Everyday I",
+        "Coney Island",
+        "I",
+        "Saving NY",
+        "Rogier Vijverberg",
+        "Arrakis",
+        "Vincent Chauvière",
+        "CeraVe Moisturizing Cream",
+        "Precious Resource",
+        "Fremen-inspired",
+        "Samalayuca Dunes",
+        "Mexico City",
+        "Maca Rubio",
+        "Stink Films",
+        "OBB Bolded",
+        "Dr Andrew Park",
+        "Hollywood",
+        "Ubon",
+        "Maharashtra",
+        "Himachal Pradesh",
+        "Rajasthan",
+        "Uttarakhand",
+        "Punjab",
+        "Gujarat",
+        "CEO",
+        "FMC Media",
+        "Gourav Chawla"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "India's retail inflation has gone through the top of the RBI's band, and the reason is onions at 116%"
+        ],
+        [
+          "trends",
+          "Europe wants to triple its own datacentre capacity, because three foreign companies hold more than 70% of its cloud"
+        ],
+        [
+          "trends",
+          "A white dwarf blew up 50 million light years away, we caught it on the way up, and it is bright enough for a backyard telescope"
+        ],
+        [
+          "wild",
+          "An ad agency has put a suction cup in the back of a baseball cap so you can stick your head to the subway wall and sleep"
+        ],
+        [
+          "wild",
+          "CeraVe is now the official moisturiser of a fictional desert planet, and the teaser replaces the sandworm with a tub of cream"
+        ],
+        [
+          "wild",
+          "An audio brand bolted a giant headphone to the roof of a cab and sent it through six states to towns and villages"
+        ],
+        [
+          "research",
+          "DeepMind is giving away the two datasets underneath its weather models — a decade of stitched satellite imagery, and 27 years of rainfall at 15-minute resolution"
+        ],
+        [
+          "research",
+          "Everyone scores monitors on whether they spot the failure. Nobody scored them on whether they spot it in time — and the dumbest baseline wins"
+        ],
+        [
+          "learn",
+          "Loud noise switches off part of your sense of taste. That is why airline food is bland — and why so many people order tomato juice at 35,000 feet."
+        ]
+      ],
+      "editorial_domains": [
+        "afaqs.com",
+        "euronews.com",
+        "lbbonline.com",
+        "mospi.gov.in",
+        "noirlab.edu",
+        "prnewswire.com"
+      ]
     }
   ]
 }
