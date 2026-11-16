@@ -10167,6 +10167,150 @@
         "noirlab.edu",
         "prnewswire.com"
       ]
+    },
+    {
+      "date": "2026-11-16",
+      "issue": 1,
+      "quote_text": [
+        "Civilization now depends on self-deception. Perhaps it always has."
+      ],
+      "quote_author": [
+        "Ted Chiang"
+      ],
+      "idea_text": [
+        "Pick one colour before you leave the house and only look for that. The street you have walked a thousand times is a different street.",
+        "Walk the route backwards — start at the far end and come home — so the boring stretch is the one you do first.",
+        "Save the phone call you have been putting off for the walk. Twenty minutes is almost exactly the right length for a hard conversation.",
+        "Count something ridiculous: barber shops, dogs with coats, chairs left out on the pavement. Keep the tally going for a month and it becomes a chart.",
+        "One unfamiliar turn, every time. The rule is that you have to take it even when you can see it is a dead end.",
+        "Narrate it into a voice note like a nature documentary, in the voice. Delete it at the door or keep it forever.",
+        "Leave the phone at home for the twenty minutes — not on silent, at home — and let the walk be the only thing you are doing.",
+        "Learn the name of one tree on the route. You will never be able to walk past it anonymously again.",
+        "Do the same walk at a time you never do it — 6am, or 11pm — and notice that it is a different place with the same geometry.",
+        "End somewhere you have never been inside. A shop, a gate, a staircase, a temple. Twenty minutes out, one minute of nerve."
+      ],
+      "idea_prompt": [
+        "Ten ways to make a twenty-minute walk more interesting"
+      ],
+      "tip_text": [
+        "If an \"Always allow\" you clicked keeps coming back to ask you again, the rule was probably never saved. Claude Code 2.1.323 \"Changed 'don't ask again' so an allow rule that looks like it holds a secret, or would be saved to a `settings.local.json` that git tracks, lasts for the session only and isn't saved\" — so a repo that commits `.claude/settings.local.json` quietly turns every permission you grant into a one-session grant. Untrack it (`git rm --cached .claude/settings.local.json`, then `.gitignore` it), and put the rules you actually want the whole team to have in `.claude/settings.json` on purpose."
+      ],
+      "hn_id": [
+        "50500963",
+        "50507303",
+        "50496602",
+        "50496976",
+        "50493904"
+      ],
+      "link": [
+        "https://www.spacex.com/launches/starship-flight-15",
+        "https://jakub.jankiewicz.org/blog/ai-code-open-source/",
+        "https://www.eff.org/deeplinks/2026/11/tech-companies-are-trying-shift-entire-concept-privacy-again",
+        "https://tube.kockatoo.org/w/fFinNHfanLT7aBEb2B8y4c",
+        "https://monkeyisland.pages.dev/",
+        "https://www.rbi.org.in/scripts/NotificationUser.aspx?Id=13752&Mode=0",
+        "https://learn.microsoft.com/en-us/power-platform/important-changes-coming",
+        "https://www.eurekalert.org/news-releases/1151232",
+        "https://www.anthropic.com/research/building-strong-safety-evaluations",
+        "https://arxiv.org/abs/2611.14467",
+        "https://www.5paisa.com/blog/post-market-update-nifty-sensex-fall-inflation-crude-oil-november-13-2026",
+        "https://www.5paisa.com/share-market-today/fii-dii-data"
+      ],
+      "subject": [
+        "The Reserve Bank's new domestic transfer rulebook, issued 11 November 2026, caps a cash pay-out at Rs 10,000 per transaction and Rs 25,000 a month per beneficiary.",
+        "Unmanaged Power Platform developer environments can no longer be created from 15 November 2026, are suspended from 15 December and deleted from 15 January 2027.",
+        "Residues in 34 pots from courtyard 45 of the Calescoves burial caves in Menorca hold dairy in the little cups and wine in the imported shapes.",
+        "Black Cow, a vodka distilled from milk, has Rick Astley singing a duet with a cow called Dexi at a Dorset farm.",
+        "Toscano opened Makeaway Pizza on Degraves Street in Melbourne, where guests assemble their own pizza and pay nothing.",
+        "Lala added a write-on space to its Mexican sour cream tubs so households can label what they put in the washed-out tub.",
+        "Anthropic's eval-writing guidance: single-turn harmless response rates sit at 94-98% and one Claude version scored 34 percentage points apart on two product surfaces.",
+        "Coverage collapse: REINFORCE-style post-training can send the probability of optimal responses to zero while reward rises, and resetting the KL reference fixes it.",
+        "OK first appeared in the Boston Morning Post on 23 March 1839 as a joke abbreviation of oll korrect, and the 1840 Old Kinderhook clubs spread it."
+      ],
+      "brand": [
+        "Black Cow",
+        "Toscano",
+        "Lala"
+      ],
+      "brand_mention": [
+        "Black Cow's",
+        "Rick Astley's",
+        "Westhay Farm",
+        "Dorset",
+        "Astley",
+        "Dexi",
+        "Co-founder Helen Archard's",
+        "Rick",
+        "Shipping Forecast",
+        "BBC's",
+        "Sipping Forecast",
+        "Make It Smooth",
+        "Jake Scott",
+        "RSA Films",
+        "SunRice Group Rather",
+        "Degraves Street",
+        "Melbourne",
+        "Makeaway",
+        "Stephanie Nilson's",
+        "Selling",
+        "Reconnected",
+        "Glenn Dalton",
+        "Josh Murrell",
+        "Launch",
+        "Ryan Shelton",
+        "Josh",
+        "Cuylenburg",
+        "Imperfects",
+        "Signorino",
+        "PR",
+        "Tide",
+        "Nunn Media",
+        "Together",
+        "Dieline"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "The RBI has rewritten the rules for sending cash to someone without a bank account, and the ceiling is ₹10,000 a go"
+        ],
+        [
+          "trends",
+          "Microsoft stopped handing out free Power Platform developer environments yesterday, and starts deleting the existing ones in January"
+        ],
+        [
+          "trends",
+          "Milk in the small cups, wine in the imported ones: the chemistry of a Menorcan burial cave, 2,000 years on"
+        ],
+        [
+          "wild",
+          "Black Cow makes vodka out of milk, so it has Rick Astley singing a duet with the cow"
+        ],
+        [
+          "wild",
+          "Toscano opened a restaurant called Makeaway, where you make the pizza yourself and nobody charges you"
+        ],
+        [
+          "wild",
+          "Lala has redesigned its sour cream tub for the job it does after the cream is gone"
+        ],
+        [
+          "research",
+          "The same model, the same measure, 34 points apart — Anthropic on why a safety number without its configuration is not a number"
+        ],
+        [
+          "research",
+          "Reward goes up, the probability of the right answer goes to zero: a theory of why post-training stalls, and the one-line fix"
+        ],
+        [
+          "learn",
+          "The most-used word on earth started as a newspaper in-joke about people who cannot spell, on 23 March 1839"
+        ]
+      ],
+      "editorial_domains": [
+        "eurekalert.org",
+        "learn.microsoft.com",
+        "rbi.org.in"
+      ]
     }
   ]
 }

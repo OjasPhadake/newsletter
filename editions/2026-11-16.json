@@ -1,0 +1,352 @@
+{
+ "date_line": "Monday, 16 November 2026",
+ "issue": 1,
+ "preheader": "Ted Chiang on what civilisation actually runs on; why your \"always allow\" keeps coming back to ask; SpaceX caught a Starship coming back from orbit and lost the booster that put it there; the argument that AI-generated code cannot be copyrighted and therefore should be open; EFF on privacy moving from your choice to your neighbour's; KDE's 30-year documentary and the browser engine it gave away; all thirteen versions of Monkey Island side by side, 156 screens of them; Friday's close with Sensex down 319 and FMCG the only sector not properly red; the RBI's new transfer rulebook and its ₹10,000 ceiling; Microsoft stopped handing out free Power Platform developer environments yesterday and deletes the old ones in January; milk in the small cups and wine in the imported ones, in a Menorcan burial cave; the same model scoring 34 points apart on two surfaces, and what that says about every safety number you have read; the post-training theory where reward rises while the right answer goes to zero; a vodka made from milk and a duet with a cow; a pop-up where you make your own pizza and eat it free; a sour-cream tub designed for its second life; the 1839 newspaper joke that became the most-spoken word on earth; and ten ways to make a twenty-minute walk worth taking.",
+ "quote": {
+  "text": "Civilization now depends on self-deception. Perhaps it always has.",
+  "author": "Ted Chiang",
+  "work": "Exhalation (from the story \"What's Expected of Us\")",
+  "source_url": "https://www.goodreads.com/quotes/tag/self-deception",
+  "note": "The story is four pages about a gadget that proves your choices were already made, and the narrator's conclusion is not that free will is a comfort but that it is load-bearing: the pretence is what keeps anyone getting out of bed. The reframe is in the second sentence. If self-deception is a recent failure — too much feed, too little rigour — then it is fixable by being more careful. If it was always in the foundations, then the thing to audit is not whether you believe something false, but which false belief you are currently standing on."
+ },
+ "agent_craft": {
+  "items": [
+   {
+    "text": "If an \"Always allow\" you clicked keeps coming back to ask you again, the rule was probably never saved. Claude Code 2.1.323 \"Changed 'don't ask again' so an allow rule that looks like it holds a secret, or would be saved to a `settings.local.json` that git tracks, lasts for the session only and isn't saved\" — so a repo that commits `.claude/settings.local.json` quietly turns every permission you grant into a one-session grant. Untrack it (`git rm --cached .claude/settings.local.json`, then `.gitignore` it), and put the rules you actually want the whole team to have in `.claude/settings.json` on purpose.",
+    "source": "Anthropic, Claude Code changelog, 2.1.323 (12 November 2026)",
+    "url": "https://code.claude.com/docs/en/changelog"
+   }
+  ]
+ },
+ "hn": [
+  {
+   "title": "SpaceX caught a Starship returning from orbit, and lost the booster that put it there",
+   "url": "https://www.spacex.com/launches/starship-flight-15",
+   "hn_url": "https://news.ycombinator.com/item?id=50500963",
+   "points": 1639,
+   "comments": 1219,
+   "bullets": [
+    "SpaceX's own page for Flight 15 renders nothing without JavaScript, so the figures here come from the flight's Wikipedia entry and New Space Economy's write-up, both read this morning. Launch was 13 November at 22:47:36 UTC (4:47 pm CST) from Pad 2 at Starbase — Booster 22 and Ship 42, named \"Don't Panic\", the fourth pair of Block 3 vehicles to fly.",
+    "The payload was 26 Starlink V3 satellites, three of them carrying cameras pointed back at the ship's heat shield. Deployment finished about 1 hour 17 minutes in. Ship 42 then sat in a 276 × 278 km orbit at 30.5° inclination for roughly 14 orbits.",
+    "The first: a deorbit burn at T+21:35:57, reentry, and then the Pad 2 tower arms closing on the ship at 3:20 pm CST on 14 November, about 22 hours 32 minutes after liftoff. That is the first time an orbital upper stage has been brought back and set down upright, rather than expended or dropped in the sea.",
+    "The booster is the other half of the story and it did not work. Booster 22 relit 32 of its 33 engines for the boostback burn — logged as a partial success — and the automated catch criteria then called the tower catch off and sent it offshore. It lit 13 engines for the landing burn, hovered over the Gulf of Mexico, shut down, and was destroyed by its flight termination system just above the water.",
+    "The cause has already been revised once. SpaceX initially pointed at guidance, navigation and control, then said GNC had performed as designed and only diverted the booster because it was outside catch conditions. Musk attributed it to slight engine underperformance leaving too little propellant; New Space Economy quotes Kate Tice saying the engines stopped firing too early. The investigation is open, and the planned double catch — and the first Block 3 booster catch — did not happen."
+   ]
+  },
+  {
+   "title": "The argument that AI-generated code cannot be copyrighted, and therefore should be open source",
+   "url": "https://jakub.jankiewicz.org/blog/ai-code-open-source/",
+   "hn_url": "https://news.ycombinator.com/item?id=50507303",
+   "points": 1063,
+   "comments": 579,
+   "bullets": [
+    "Jakub T. Jankiewicz's post — which he labels a hot take, and which carries no publication date — makes two separate arguments and only one of them is about ethics.",
+    "The ethical one: the models were trained on open source repositories and on Stack Overflow and Stack Exchange answers, which carry Creative Commons licences that require attribution. Shipping the output as closed source, he argues, is \"license laundering\" — the obligations go in and do not come out.",
+    "The legal one is the sharper claim. Purely AI-generated code has no human author, so on his reading it is not copyrightable at all. He leans on the Monkey Selfie dispute, where a non-human could not hold copyright, and on the US Copyright Office citing that precedent for AI; he also notes that Wikimedia Commons tags purely AI-generated images as public domain.",
+    "He concedes the law is not uniform — the UK grants limited protection to computer-generated works — and treats that inconsistency as a reason to settle the matter yourself: release it under an open source licence, or dedicate it with CC0.",
+    "There are no numbers in the piece. The load-bearing empirical assumption is the one that will decide the argument: that developers increasingly ship model output without reviewing or modifying it, which is what makes \"the human only wrote the prompt\" a description of real codebases rather than an edge case."
+   ]
+  },
+  {
+   "title": "EFF: the new wearables move privacy from your decision to the decision of whoever is standing next to you",
+   "url": "https://www.eff.org/deeplinks/2026/11/tech-companies-are-trying-shift-entire-concept-privacy-again",
+   "hn_url": "https://news.ycombinator.com/item?id=50496602",
+   "points": 595,
+   "comments": 209,
+   "bullets": [
+    "Thorin Klosowski's piece, published 13 November, names the shift precisely: privacy used to be sold as a personal setting. A device that records continuously makes the owner's setting binding on everyone in the room, none of whom agreed to anything.",
+    "The products in scope are Meta's and Google's smart glasses, Apple's Audio Intelligence on the Watch, which transcribes and summarises the wearer's day, Amazon's Bee, and the growing shelf of pendants and rings. EFF discloses that Apple is a donor. It also notes the hardware is deliberately designed to look ordinary.",
+    "Every protection the companies cite covers the person wearing the thing. Apple points to a white paper on technical barriers between itself and Watch data; Meta cites controls and face blurring, which applies to Meta AI interactions rather than ordinary recording; Amazon says no audio is stored, while offering a store integration that can produce ads based on your conversations. For the person being recorded, EFF's summary is that there is \"no technical protection\".",
+    "Its practical ask is to treat these as always-on microphones, because the raw audio exists before it becomes a summary. It points out that Google's own terms of service tell users not to record people without permission or in sensitive places — an obligation pushed onto the wearer — and predicts law enforcement will come for whatever is retained.",
+    "The best line in it is not EFF's. A Google product manager is reported as saying that merely alerting bystanders can be \"weirdly disempowering\": you have been told, and there is nothing you can do with the information. EFF's closing asks are mundane by comparison — send Apple feedback while the feature is in beta, say something when it bothers you, make your own recording visible."
+   ]
+  },
+  {
+   "title": "KDE's 30-year documentary, and the browser engine it handed to Apple and Google on the way",
+   "url": "https://tube.kockatoo.org/w/fFinNHfanLT7aBEb2B8y4c",
+   "hn_url": "https://news.ycombinator.com/item?id=50496976",
+   "points": 561,
+   "comments": 133,
+   "bullets": [
+    "The submitted link is a PeerTube mirror on Kockatoo Tube, and it will not play for us — the page served is PeerTube's \"incompatible browser\" notice, so the only thing readable there is the title: \"KDE: The Documentary — The Story of Free Software Underdogs\". What follows comes from LWN's note on the release and KDE's own 30th-anniversary page.",
+    "LWN's item, posted 15 October by jzb, has the project releasing the film for its 30th anniversary and hosting it on YouTube. It traces the story from 1996, when Matthias Ettrich posted to a Usenet group asking for help building a desktop for Linux, through the Qt licensing fight, the rivalry with GNOME, KHTML, and the contentious KDE 4 release and the rebuild that followed it.",
+    "KDE's own timeline fills in the dates: Troll Tech wrote Qt in 1995; Ettrich announced KDE in 1996, the name a pun on CDE, the proprietary desktop of the day; about fifteen developers met at Arnsberg in 1997 for what became KDE One, and KDE e.V. was founded in Tübingen the same year. KDE 1 shipped in 1998. The project passed a million commits in 2009.",
+    "The KHTML line is the one worth repeating to people who have never run Linux. KDE wrote its own web engine in 1998–99; it became the basis of Apple's WebKit and then Google's Blink, which is to say most of the browsers in the world descend from a volunteer desktop project's rendering code.",
+    "The present tense is less romantic. Valve made Plasma the default on the Steam Deck in 2021, Plasma 6 moved to Qt 6 and Wayland in 2024, and KDE Linux was announced in 2025 — while the anniversary page says roughly 70% of KDE's funding comes from private end users, and asks for supporting members: 1,500 as the goal, 1,996 as the stretch, from a starting point of 1,200."
+   ]
+  },
+  {
+   "title": "All thirteen versions of The Secret of Monkey Island, side by side, at the same moment",
+   "url": "https://monkeyisland.pages.dev/",
+   "hn_url": "https://news.ycombinator.com/item?id=50493904",
+   "points": 500,
+   "comments": 156,
+   "bullets": [
+    "Eight editions, thirteen display modes, twelve scenes captured at the same instant in each: 156 screens, arranged so you can drag one version onto another and swap, copy or zoom to 1x, 2x or 4x.",
+    "The capture method is the part that makes it a reference rather than a gallery. Most screens come out of ScummVM; the Atari ST monochrome ones needed the Hatari emulator. Everything is scaled to 1600×1200 with nearest-neighbour pixels and 4:3 correction, so the comparison is of the art and not of someone's upscaler.",
+    "Two of the sets are not in English, and the site says so: the PC 16-colour screens were taken from a Spanish copy and the Atari ST monochrome ones from a French copy. The rest are English.",
+    "There is a CRT mode, built from DOSBox Staging's CRT shaders ported to WebGL2 using Hyllian's crt-hyllian presets, and it is matched per platform — a 31 kHz VGA monitor for the PC versions, 15 kHz for Amiga, Atari ST and Sega CD. A \"CRT lab\" keeps your settings.",
+    "It was made by two brothers working as \"The Paninos off-line\", who say they used AI help and are also remaking Sierra's 1986 The Black Cauldron in Adventure Game Studio. The site carries its own disclaimer: fan-made, not affiliated with or endorsed by Lucasfilm Games, LucasArts or Disney."
+   ]
+  }
+ ],
+ "markets": {
+  "indices": [
+   {
+    "name": "Session",
+    "value": "Friday 13 November 2026 — close",
+    "direction": "down",
+    "change": "Written before Monday's open: Indian markets were shut on Saturday and Sunday, so these are Friday's closing numbers and nothing has happened to them since. Levels, the sector table, the rupee and crude from 5paisa's post-market update for 13 November; Bank Nifty's level and point change, and the single stock moves, from EquityPandit the same day; flows from 5paisa's FII/DII table"
+   },
+   {
+    "name": "Sensex",
+    "value": "81,592.45",
+    "direction": "down",
+    "change": "−318.56 (−0.39%). Snapped a three-session winning run"
+   },
+   {
+    "name": "Nifty 50",
+    "value": "25,144.30",
+    "direction": "down",
+    "change": "−155.05 (−0.61%). Opened at 25,209.85 and touched 25,054.40 before closing off the low"
+   },
+   {
+    "name": "Nifty Bank",
+    "value": "61,034.10",
+    "direction": "down",
+    "change": "−484.40 (−0.79% on EquityPandit and Liquide; 5paisa prints the sector at −0.80%)"
+   },
+   {
+    "name": "Worst sectors",
+    "value": "Realty −1.69%, Metal −0.99%, Auto −0.94%",
+    "direction": "down",
+    "change": "Then Financial Services −0.81%, Bank −0.80%, IT −0.79%, Pharma −0.61%, PSU Bank −0.39%. Crude was the stated driver: Brent at about $95.70 against roughly $92 the previous session, on attacks on Saudi energy facilities and disruption through the Strait of Hormuz"
+   },
+   {
+    "name": "Least bad sector",
+    "value": "Nifty FMCG −0.01%",
+    "direction": "down",
+    "change": "Flat to three decimal places rather than green. Liquide's heatmap puts Energy marginally up at +0.03%, which 5paisa's table does not carry — a reminder that \"only sector up\" depends on whose sector list you read"
+   },
+   {
+    "name": "Broader market",
+    "value": "Midcap 100 −0.24%, Smallcap 100 −0.26%",
+    "direction": "down",
+    "change": "Nifty Next 50 −0.83%, worse than the headline. India VIX fell 6.50% to 15.54, so the fall was orderly rather than frightened"
+   },
+   {
+    "name": "USD/INR",
+    "value": "94.24",
+    "direction": "down",
+    "change": "The rupee closed about 0.2% weaker, the day after October CPI printed at 6.09% — above the 6% top of the RBI's tolerance band — with food inflation at 8.94%"
+   },
+   {
+    "name": "FII · cash",
+    "value": "+₹5,736.60 cr",
+    "direction": "up",
+    "change": "Bought ₹18,339.60 cr, sold ₹12,603.00 cr. Smaller than Thursday's +₹7,830.60 cr and Wednesday's +₹12,563.30 cr, but a tenth straight session of net buying on 5paisa's table"
+   },
+   {
+    "name": "DII · cash",
+    "value": "−₹2,253.60 cr",
+    "direction": "down",
+    "change": "Bought ₹11,746.00 cr, sold ₹13,999.50 cr. The usual mirror, but a much smaller one than Thursday's −₹6,331.20 cr or Wednesday's −₹8,434.50 cr. Net of each other the two institutions put roughly ₹3,483 cr into the market on a day it fell"
+   }
+  ],
+  "stories": [
+   {
+    "headline": "Where Friday's numbers come from",
+    "url": "https://www.5paisa.com/blog/post-market-update-nifty-sensex-fall-inflation-crude-oil-november-13-2026",
+    "source": "5paisa · post-market update, 13 November 2026",
+    "bullets": [
+     "Index closes, the full sectoral table, the broader-market indices, India VIX, the rupee and Brent are from 5paisa's post-market update for 13 November, last updated 6:14 pm IST.",
+     "Bank Nifty's closing level and point change, and the individual stock moves, come from EquityPandit's report for the same session: Hitachi Energy +11% and Amber Enterprises +9% at the top; Muthoot Finance, Manappuram Finance, Tata Motors Passenger Vehicles and Vodafone Idea each about −3% at the bottom, with HPCL −2% and Grasim worse than −2% after missing margin estimates.",
+     "Neither source publishes BSE advance-decline counts for the session, so no breadth figure is quoted here."
+    ]
+   },
+   {
+    "headline": "FII and DII cash flows, 13 November 2026",
+    "url": "https://www.5paisa.com/share-market-today/fii-dii-data",
+    "source": "5paisa · FII/DII cash segment table",
+    "bullets": [
+     "The table gives gross buy and sell values per session, which is the part worth reading: Friday's net foreign buy of ₹5,736.60 cr came out of ₹30,942.60 cr of gross two-way turnover.",
+     "The page does not state whether these are provisional or final, and does not timestamp the table. Provisional exchange flows are routinely revised, so treat the last row as the least reliable one."
+    ]
+   }
+  ]
+ },
+ "trends": [
+  {
+   "tag": "India",
+   "headline": "The RBI has rewritten the rules for sending cash to someone without a bank account, and the ceiling is ₹10,000 a go",
+   "url": "https://www.rbi.org.in/scripts/NotificationUser.aspx?Id=13752&Mode=0",
+   "subject": "The Reserve Bank's new domestic transfer rulebook, issued 11 November 2026, caps a cash pay-out at Rs 10,000 per transaction and Rs 25,000 a month per beneficiary.",
+   "subtitle": "Reserve Bank of India, Department of Payment and Settlement Systems, 11 November 2026",
+   "bullets": [
+    "The Reserve Bank of India (Domestic Money Transfer) Directions, 2026 — reference RBI/DPSS/2026-27/476 — were issued on 11 November and took effect immediately, under Section 18 read with Section 10(2) of the Payment and Settlement Systems Act, 2007. They subsume and repeal the October 2011 relaxations circular and the July 2024 review of the framework, so there is now one document instead of fifteen years of layers.",
+    "Cash pay-out — money leaving a bank account and handed over as notes to someone who does not have one — is capped at ₹10,000 per transaction and ₹25,000 a month per beneficiary, and the remitting bank has to record the beneficiary's name and address.",
+    "Cash pay-in is split by channel, which is where the design shows. A walk-in customer at a bank branch can push up to ₹50,000 in one NEFT transfer. Through a business correspondent, an ATM or a similar channel it is ₹5,000 per transaction and ₹25,000 a month per remitter — a tenth of the branch limit for the channel that actually reaches the villages.",
+    "Registration now needs a verified mobile number and a self-certified Officially Valid Document under the KYC Directions, 2025, and \"every transaction undertaken by a remitter shall be validated by an Additional Factor of Authentication\". The remitter's details must travel inside the IMPS or NEFT message, with an identifier marking the transfer as cash-based — which is the clause that makes these flows traceable downstream rather than just capped upstream.",
+    "The obligations on banks are written as duties, not thresholds: velocity checks, alerts to customers about credits they receive, immediate investigation of any unusual surge in credits to an account or group of accounts, and reporting of suspicious transactions. Transfers must be processed in real time or near real time, inter-bank settlement only through RBI-approved systems, and complaints fall under the Integrated Ombudsman Scheme, 2026. Charges are left to the institutions."
+   ]
+  },
+  {
+   "tag": "Platforms",
+   "headline": "Microsoft stopped handing out free Power Platform developer environments yesterday, and starts deleting the existing ones in January",
+   "url": "https://learn.microsoft.com/en-us/power-platform/important-changes-coming",
+   "subject": "Unmanaged Power Platform developer environments can no longer be created from 15 November 2026, are suspended from 15 December and deleted from 15 January 2027.",
+   "subtitle": "Microsoft Learn, Power Platform — important changes (deprecations) coming",
+   "bullets": [
+    "Three dates, in order. From 15 November 2026 you cannot create an unmanaged developer environment at all — not from Power Apps, not from the admin centre, not from PowerShell, not from the CLI — and signing up for the free Power Apps Developer Plan no longer gives you one. From 15 December they are suspended, and the apps, flows, agents, Power Pages developer sites and data inside them become unavailable. From 15 January 2027 they are deleted.",
+    "The environment type survives; only the free version of it dies. Managed developer environments carry on, one per user, and production, sandbox, trial and default environments are untouched. What has been removed is the tier that cost nothing.",
+    "The replacement path has a catch stated plainly on Microsoft's own page: turning on Managed Environments requires appropriate premium licensing, and \"Managed Environments use rights aren't included in the Developer Plan\". So the recommended fix for a hobbyist is not a setting, it is a purchase.",
+    "If you are not buying, the instruction is to export your solutions and import them into a sandbox or another supported environment before 15 December, because solutions exported before suspension are explicitly listed as unaffected. Afterwards is too late.",
+    "Dataverse for Teams goes the same way on the same day — no new environments from 15 November, existing ones suspended 15 September 2027 and decommissioned 30 October 2027 — and the 30 November list is a cull of AI features that were given away rather than sold: Copilot in the designer for cloud and agent flows, AI-generated descriptions for both model-driven and canvas apps, and copresence."
+   ]
+  },
+  {
+   "tag": "Wildcard",
+   "headline": "Milk in the small cups, wine in the imported ones: the chemistry of a Menorcan burial cave, 2,000 years on",
+   "url": "https://www.eurekalert.org/news-releases/1151232",
+   "subject": "Residues in 34 pots from courtyard 45 of the Calescoves burial caves in Menorca hold dairy in the little cups and wine in the imported shapes.",
+   "subtitle": "Universitat Autònoma de Barcelona, with Barcelona Supercomputing Center and Pompeu Fabra University · Journal of Archaeological Science, release 15 November 2026",
+   "bullets": [
+    "Cave 45 at Calescoves, near Alaior, is a rock-cut tomb with an external courtyard. The vessels were excavated in 2023 and 2024, many of them intact and still where they had been set down, which is the condition that makes residue chemistry worth doing at all.",
+    "Thirty-four vessels were analysed: small high-bottomed cups, foreign-inspired side-handled juglets, jugs and bowls, conical Balearic forms, and incense-burner types so far found nowhere but Menorca. The method is part of the result — scanning, laboratory micro-excavation and chemical analysis combined, with the dairy and wine tests unified into one procedure, which halved the sample each vessel had to give up.",
+    "Dairy turned up in most of the high-bottomed cups, animal fats in a minority of vessels, various vegetable oils throughout, and wine in a few of the locally made but foreign-looking pieces. That last one is the first evidence of wine in a Menorcan funerary ritual, and wine had to be imported, so somebody was spending trade on a burial.",
+    "The cups are tiny, which the authors read as symbolic consumption rather than a drink — possibly a local adaptation of Punic-Hellenistic incense burners, repurposed to hold a mouthful of milk. A globular vessel with a pouring spout, a form previously linked to infant burials on Ibiza, was confirmed as a baby bottle, and it was inside the chamber with the dead rather than out in the courtyard.",
+    "The spatial split is the finding that generalises. Inside the chamber, objects accompanied the deceased. In the courtyard, they record offerings, shared consumption and commemoration by the living — two different rituals, ten metres apart, distinguishable now only because the residues differ. The authors' conclusion about the wine is the opposite of the usual one: foreign goods were bent to local codes, not a replacement of them."
+   ]
+  }
+ ],
+ "research": [
+  {
+   "tag": "Industry · Anthropic",
+   "title": "The same model, the same measure, 34 points apart — Anthropic on why a safety number without its configuration is not a number",
+   "url": "https://www.anthropic.com/research/building-strong-safety-evaluations",
+   "subject": "Anthropic's eval-writing guidance: single-turn harmless response rates sit at 94-98% and one Claude version scored 34 percentage points apart on two product surfaces.",
+   "subtitle": "Ruth Appel, Evan Frondorf, Jeremy Hadfield and colleagues, Anthropic · 13 November 2026",
+   "bullets": [
+    "The premise is that a safety claim is worth exactly as much as the evaluation behind it, and that most evaluations are harder to get right than they look. The comparison the post reaches for is psychology's replication crisis — small samples, a standing preference for results that come out significant — and the recommended staffing follows from it: methods people and domain people on the same team, psychologists and biologists and political scientists included.",
+    "The sharpest idea in it is that refusal is usually the wrong thing to measure. In a conversation about suicide or self-harm, a model declining to engage is itself the failure. So the metric is an \"appropriate response rate\" scored over a whole multi-turn conversation, where one bad turn fails the lot, and it is reported next to the over-refusal rate on benign requests — because a model can be made to look safe by making it useless.",
+    "The number to take away: for Claude Fable 5.1, appropriate response rate on one self-harm measure came out at 60% on the API and 94% on claude.ai with the new system prompt. That is a 34-point gap produced by configuration, not by capability — which makes an undocumented safety score close to meaningless, and their rule \"do not compare scores when multiple settings differ, or when graders differ\" less pedantic than it sounds.",
+    "Statistical hygiene, stated in numbers rather than in principle. Single-turn harmless response rates run 94–98% for recent models, so those suites are saturated and now serve only as regression checks. Multi-turn confidence intervals on the API can exceed ±10 percentage points — which is why a romance-scams eval putting Opus 5 at 98% and Opus 5.5 at 94% is reported as not statistically significant rather than as a regression. Sample floors: 100 items for a complex multi-turn eval, 1,000 for a simple single-turn one, each case run several times.",
+    "Two things worth stealing for any evaluation, not just a safety one. Keep grader rubrics atomic and binary, say explicitly what does not change the verdict, and validate the grader against human labels with a chance-corrected statistic (they use Cohen's kappa) — while knowing graders favour their own outputs, longer answers and whichever option came first. And preregister the metrics, comparisons, slices and improvement thresholds before you look. The post also mentions, in passing, that Anthropic temporarily stopped many evals that give models internet access and now runs cyber evals in sandboxes with no connection and live monitoring."
+   ]
+  },
+  {
+   "tag": "Academia · Harvard · UIUC · UC San Diego",
+   "title": "Reward goes up, the probability of the right answer goes to zero: a theory of why post-training stalls, and the one-line fix",
+   "url": "https://arxiv.org/abs/2611.14467",
+   "subject": "Coverage collapse: REINFORCE-style post-training can send the probability of optimal responses to zero while reward rises, and resetting the KL reference fixes it.",
+   "subtitle": "Audrey Huang, Nan Jiang, Sham M. Kakade, Sadhika Malladi, Akshay Krishnamurthy, Dylan J. Foster · arXiv:2611.14467, submitted 10 November 2026",
+   "bullets": [
+    "The quantity the paper organises everything around is coverage: how readily the base model already produces an optimal response if you just sample from it. Post-training, on this account, is not supposed to invent good answers but to amplify ones the base model can already reach — so the costs that matter are measured against that coverage.",
+    "The failure mode they name is coverage collapse. REINFORCE, which PPO and GRPO are built on, can push the probability of optimal responses towards zero while the reward you are watching goes up. Optimisation then stalls, and convergence can take exponentially many steps despite good initial coverage. This is not a noisy-gradient artefact: it happens with exact gradients, and under KL regularisation to the base model.",
+    "The fix is boring to implement and the point of the paper. Repeatedly reset the KL reference to the most recent policy, rather than keeping it pinned to the base model. They formalise this as Approximate Policy Mirror Descent — a sequence of KL-regularised subproblems, each solved approximately — and the trick is that resetting lets you regularise harder, which makes each subproblem easier, while still converging to a global optimum.",
+    "For softmax linear policies over pretrained features they get what they describe as the first global convergence guarantees showing that widely used post-training methods are coverage-preserving: stylised PPO and GRPO variants with explicit KL regularisation and reference resets, and squared-loss methods that perform the resets implicitly — including, they note, methods used to train the Kimi models.",
+    "Read it for what it is: 141 pages of theory with no experiments, from Harvard, UIUC, UC San Diego and Microsoft Research New York. The practical residue is a diagnostic. If a post-training run's reward curve is rising while its pass@k quietly falls, that is a predicted symptom with a named cause, and the recommended intervention is to move the reference point rather than to tune the KL coefficient."
+   ]
+  }
+ ],
+ "wild": [
+  {
+   "tag": "Drinks · Dorset",
+   "headline": "Black Cow makes vodka out of milk, so it has Rick Astley singing a duet with the cow",
+   "entities": [
+    "Black Cow"
+   ],
+   "subject": "Black Cow, a vodka distilled from milk, has Rick Astley singing a duet with a cow called Dexi at a Dorset farm.",
+   "subtitle": "Ads of the World · Black Cow with RSA Films, director Jake Scott, United Kingdom",
+   "bullets": [
+    "Black Cow's entire product claim is that the vodka is made from milk, which gives the marketing exactly one animal to work with. The first film went live at 16:30 on Friday 13 November on the brand's channels and Rick Astley's, shot at Westhay Farm in West Dorset, and consists of Astley singing a duet with a cow called Dexi.",
+    "The casting is not arbitrary, which is the detail that makes it better rather than worse: Astley drinks the stuff with his band before going on stage. \"There is something magical about the anticipation just before you step onto the stage,\" he says, which is a sentence about a dressing room that the brand gets to use as a product benefit.",
+    "Co-founder Helen Archard's line for why it works is the kind of thing brands usually leave in the deck: \"If Black Cow could choose to be any person, it would have to be Rick.\"",
+    "The surrounding campaign is the part a copywriter will envy. It parodies the Shipping Forecast — the BBC's nightly recitation of sea areas and gale warnings — as the \"Sipping Forecast\", each instalment a short scene somewhere in the Dorset countryside or on its coast. Two more films follow, and Astley wrote musical sketches for the brand, including ones called \"Black Cow\" and \"Make It Smooth\".",
+    "Direction is by Jake Scott at RSA Films. No spend, reach or sales figures have been published, which is worth saying out loud: everything above is what was made, not what it did."
+   ]
+  },
+  {
+   "tag": "Food · Melbourne",
+   "headline": "Toscano opened a restaurant called Makeaway, where you make the pizza yourself and nobody charges you",
+   "entities": [
+    "Toscano"
+   ],
+   "subject": "Toscano opened Makeaway Pizza on Degraves Street in Melbourne, where guests assemble their own pizza and pay nothing.",
+   "subtitle": "Campaign Brief · Toscano with Reconnected Marketing, 13 November 2026",
+   "bullets": [
+    "Toscano makes pizza bases and is owned by SunRice Group. Rather than advertise them, it opened a restaurant on Degraves Street in Melbourne where you bring your own people, assemble your own pizza, and eat it without paying — which is, on the face of it, a restaurant with every revenue line removed.",
+    "It launched on Thursday 12 November, with public sessions on Friday the 13th and Saturday the 14th from 5pm to 9pm and Sunday the 15th from noon to 3pm. Online bookings sold out five days before the doors opened; walk-ins were taken subject to capacity.",
+    "The name carries the argument. A takeaway hands you food and asks nothing of you; \"Makeaway\" gives the work back. The brand's stated reading of delivery apps is that they bought convenience by removing the part where people make something together — which is a strong claim for a company whose product only exists because somebody wanted dinner to be easier.",
+    "Marketing manager Stephanie Nilson's line is the only number-adjacent evidence on offer: \"Selling out before we opened tells us Melbourne wanted that too.\" The creative directors at Reconnected, Glenn Dalton and Josh Murrell, put the principle more usefully: \"The best platforms give people something to do, not just something to watch.\"",
+    "Launch night was hosted by Ryan Shelton and Josh van Cuylenburg of The Imperfects podcast, with food operations by Signorino, PR by Tide and media by Nunn Media. It is the pizza chapter of a wider \"Together, we eat\" platform, so expect the same trick applied to something else in the aisle."
+   ]
+  },
+  {
+   "tag": "Packaging · Mexico",
+   "headline": "Lala has redesigned its sour cream tub for the job it does after the cream is gone",
+   "entities": [
+    "Lala"
+   ],
+   "subject": "Lala added a write-on space to its Mexican sour cream tubs so households can label what they put in the washed-out tub.",
+   "subtitle": "Dieline · Rudy Sanchez, 5 November 2026",
+   "bullets": [
+    "Mexican kitchens reuse crema tubs. They get washed out and refilled with beans, salsa, leftovers, whatever needs a lid — and the reason is pragmatic and economic rather than environmental, which Dieline is careful to say.",
+    "The flaw in the tub is that it is opaque. Once it is in the fridge with something else inside it, the only way to find out what you have got is to open it, and the label on the outside is now a lie about dairy.",
+    "Lala's fix is to add a space on the packaging where you write what is actually in there. That is the whole intervention: a brand designing for the part of its product's life that happens after the brand has been paid.",
+    "What makes it worth a bullet is the direction of the thinking. Packaging work is usually about the moment of purchase, or at best about recycling — a tub being thrown away correctly. This is neither. It treats the second life as the normal case and designs for it.",
+    "The reporting is thin and should be read that way: Dieline's piece is paywalled past the introduction, names no design agency, and carries no figures for volumes, market share or how long the change runs. The one verified fact is what was added and why."
+   ]
+  }
+ ],
+ "learn": {
+  "title": "The most-used word on earth started as a newspaper in-joke about people who cannot spell, on 23 March 1839",
+  "subject": "OK first appeared in the Boston Morning Post on 23 March 1839 as a joke abbreviation of oll korrect, and the 1840 Old Kinderhook clubs spread it.",
+  "tags": [
+   "Origin stories",
+   "Language",
+   "Newspapers"
+  ],
+  "body": [
+   "Boston, 1838, had a fad. You took a phrase, misspelled it on purpose, and abbreviated the misspelling: OFM for \"our first men\", NG for \"no go\". It was the sort of joke that works for about eighteen months. On 23 March 1839 the editor of the Boston Morning Post, Charles Gordon Greene, used one of them in a sneer at a rival paper — the Providence Journal's editor had been, he wrote, \"a little too quick on the trigger\" — and signed off a note about a trip by the Anti-Bell-Ringing Society with the line \"o.k.—all correct—and cause the corks to fly, like sparks, upward\". The o.k. stood for \"oll korrect\". It is the first known appearance in print of the word you probably used before breakfast.",
+   "It should have died with the fad, and what saved it was an election. In 1840 the Democrats, campaigning for Martin Van Buren, who came from Kinderhook, New York, set up OK Clubs and told everyone the letters stood for Old Kinderhook. The Whigs retorted that OK was how Andrew Jackson spelled things. Van Buren lost the election. The word, having been printed on everything for a year, won — which is the part worth keeping: the joke gave it a form, and partisan politics gave it a reason to be on a banner.",
+   "Nobody actually knew any of this for over a century. Allen Walker Read pinned it down in six articles in the journal American Speech in 1963 and 1964; he had earlier argued for Old Kinderhook as the origin and later concluded the Boston misspelling fad came first and the campaign only spread it. Which leaves a thing you can say to someone this evening: the word now routinely described as the most frequently spoken or written on the planet is a 187-year-old deliberate typo, kept alive by a candidate who did not win."
+  ]
+ },
+ "ideas": {
+  "prompt": "Ten ways to make a twenty-minute walk more interesting",
+  "items": [
+   {
+    "text": "Pick one colour before you leave the house and only look for that. The street you have walked a thousand times is a different street."
+   },
+   {
+    "text": "Walk the route backwards — start at the far end and come home — so the boring stretch is the one you do first."
+   },
+   {
+    "text": "Save the phone call you have been putting off for the walk. Twenty minutes is almost exactly the right length for a hard conversation."
+   },
+   {
+    "text": "Count something ridiculous: barber shops, dogs with coats, chairs left out on the pavement. Keep the tally going for a month and it becomes a chart."
+   },
+   {
+    "text": "One unfamiliar turn, every time. The rule is that you have to take it even when you can see it is a dead end."
+   },
+   {
+    "text": "Narrate it into a voice note like a nature documentary, in the voice. Delete it at the door or keep it forever."
+   },
+   {
+    "text": "Leave the phone at home for the twenty minutes — not on silent, at home — and let the walk be the only thing you are doing.",
+    "why": "r/SomebodyMakeThis keeps asking for website blockers that actually stick; the version that sticks is a closed door and a pair of shoes."
+   },
+   {
+    "text": "Learn the name of one tree on the route. You will never be able to walk past it anonymously again."
+   },
+   {
+    "text": "Do the same walk at a time you never do it — 6am, or 11pm — and notice that it is a different place with the same geometry."
+   },
+   {
+    "text": "End somewhere you have never been inside. A shop, a gate, a staircase, a temple. Twenty minutes out, one minute of nerve."
+   }
+  ]
+ }
+}
