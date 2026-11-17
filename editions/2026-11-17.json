@@ -1,0 +1,365 @@
+{
+ "date_line": "Tuesday, 17 November 2026",
+ "issue": 1,
+ "preheader": "Tom Peters on what confusion actually means; the /status row that tells you a feature was switched off, not broken; nearly one in three of Amazon's Black Friday \"deals\" were not deals, and one in ten cost more; Alibaba's Qwen4-Max, 2.4 trillion parameters with 71 billion awake at a time; Carnegie Mellon is putting thirteen real courses on YouTube for nothing; MIT's How To Make (almost) Anything is in wildcard week; a software bug in on-premise hardware took Chase down and dragged Zelle and Wells Fargo with it; Monday's close with the Sensex up 512, breadth negative and foreign buying at a record; the RBI draining fifty thousand crore at half past nine this morning, after the banks under-bid on Friday; a malicious page could drive uBlock Origin's own element picker into writing itself a trusted filter, and a model found it; a single atom's nucleus flipped by a signal it should not have felt; an agent plugin that reads your repo's session logs and cuts the bill by a third; a co-tenant on the same GPU can work out whether your agent asks permission; twelve hours of live sweet-making on a Bengaluru billboard; a cleat company paying a quarterback's fines and buying billboards to say so; why spilling your coffee helps only if you were already good; and ten things that should be sold by weight.",
+ "quote": {
+  "text": "If you're not confused, you're not paying attention.",
+  "author": "Tom Peters",
+  "work": "Thriving on Chaos: Handbook for a Management Revolution",
+  "source_url": "https://www.goodreads.com/quotes/tag/complexity",
+  "note": "Confusion normally reads as a verdict on you: everyone else has followed this and you have not. Peters inverts the causation. In a system that is genuinely moving, the confident summary is the suspicious one, because it has had to throw away whatever did not fit. The useful consequence is practical rather than consoling — when you read something and feel lost, the next question is not \"what is wrong with me\" but \"which part of this is actually unsettled\", and that question has an answer you can go and find."
+ },
+ "agent_craft": {
+  "items": [
+   {
+    "text": "When a Claude Code feature you expect is simply absent — no error, no prompt, just gone — run `/status` before you go hunting through settings files. Version 2.1.326, released yesterday, \"Added a row to `/status` that says when your provider or an environment variable such as `DISABLE_TELEMETRY` turns features off\", which turns a class of invisible, unexplained absences into one line of output. The things most often switched off above your head are set by whoever provisions your account or by a stray variable in your shell profile, and neither of those leaves a trace in your own `settings.json`.",
+    "source": "Anthropic, Claude Code changelog, 2.1.326 (16 November 2026)",
+    "url": "https://code.claude.com/docs/en/changelog"
+   }
+  ]
+ },
+ "hn": [
+  {
+   "title": "Nearly one in three Amazon Black Friday \"deals\" saved nobody anything, and nearly one in ten cost more",
+   "url": "http://groundworkcollaborative.org/news/amazons-decoy-deals-groundwork-investigation-reveals-nearly-1-in-3-black-friday-and-cyber-monday-deals-advertised-by-amazon-offered-no-savings-to-shoppers-nearly-1-in-10-w/",
+   "hn_url": "https://news.ycombinator.com/item?id=50517488",
+   "points": 856,
+   "comments": 513,
+   "bullets": [
+    "Groundwork Collaborative — a US economic-policy outfit, not a consumer group — took more than 350 products off Amazon's own Black Friday and Cyber Monday deal pages for the 2024 and 2025 events and compared each advertised sale price against what the same item had cost in the month before the sale. The report is titled \"Deal or Decoy? Amazon's Deceptive Discounts\"; the authors are Breyon Williams, Elizabeth Pancotti and Lindsay Owens, and it went up on 16 November.",
+    "Nearly one in three of those \"deals\" sold for the same price or more during the sale than in the preceding month. Nearly one in ten were outright more expensive. Among that more-expensive group the median sale price was 19% above the pre-sale price, which is the number that makes it a mechanism rather than noise.",
+    "The two worked examples are the clearest part. Hunter Women's Short Rain Boots were listed at $126.99 on Black Friday 2025, nine days after selling for $79.97 — a 59% markup wearing a discount badge. UGG Butte boots were listed at $179.98 on Cyber Monday 2025 against $98.40 about four weeks earlier, an 83% markup.",
+    "Amazon has since taken the deal pages down; Groundwork links archived copies. The release does not publish the exact counts behind \"nearly 1 in 3\" and \"nearly 1 in 10\", which is the report's own weakest point and worth knowing before you quote the headline.",
+    "The ask at the end is specific and is the reason this is a policy document: require retailers advertising a sale to show the lowest price the product actually sold for in the previous 30 days. That is already the law in the EU, and it is the single rule this whole methodology is designed to make the case for."
+   ]
+  },
+  {
+   "title": "Qwen4-Max: 2.4 trillion parameters, 71 billion of them awake at any one time, and no weights",
+   "url": "https://www.alibabacloud.com/help/en/model-studio/qwen4-max",
+   "hn_url": "https://news.ycombinator.com/item?id=50513215",
+   "points": 854,
+   "comments": 471,
+   "bullets": [
+    "The link that reached the front page is Qwen's own blog post, which renders nothing at all without JavaScript, so the figures below come from two pages read this morning instead: Alibaba Cloud's Model Studio documentation for the model, which is first-party, and Apiyi's write-up of the official blog for the architecture and benchmark table.",
+    "Alibaba's own docs give the hard limits: a 1,000,000-token context, maximum input 991,808 tokens (983,616 with thinking on), maximum output 131,072 tokens without thinking and 262,144 with it, chain-of-thought capped at 262,144, text, image and video in, text out. Listed price in Singapore is $1.50 per million input tokens and $4.50 per million output; in Beijing, Hong Kong, Frankfurt, Virginia and Tokyo it is $1.413 and $4.24. The docs' \"last updated\" date is today.",
+    "The architecture claims are the interesting half. A 2.4-trillion-parameter sparse mixture-of-experts backbone with 71B activated per token, plus 328B of N-gram embedding parameters that are lookups and so cost nothing per token. Three of every four layers use Gated DeltaNet, the fourth uses Qwen Sparse Attention; the residual path is split into four gated branches. Default `reasoning_effort` is `high`, a step down from Qwen3.8-Max's `xhigh`.",
+    "The benchmark table is vendor-run, including the competitors' scores, which is the usual caveat and worth saying out loud. By Alibaba's own numbers Qwen4-Max leads on four of sixteen — DeepSWE v1.1 at 75.7, Agents' Last Exam v1.1 at 46.7, HLAB-Vals at 21.3, BioMysteryBench at 85.0 — and loses Terminal-Bench 4.0 badly, 48.5 against Kimi K3.1's 67.2 and Opus 5.5's 59.6. On ProgramBench it scores 31.5 against Opus 5.5's 65.0.",
+    "The cost story is the one Alibaba leads with: average cost per task on its internal Work360 benchmark down from $4.43 to $1.67, with roughly 24% fewer tokens at xhigh and 35% fewer at high. There are no open weights for Max — the team says smaller Qwen4 variants will get them — so it is API-only, which is the thing a lot of the thread is annoyed about.",
+    "One figure to be careful with: the write-up of the blog lists maximum output as 393K, while Alibaba's own documentation says 131,072 and 262,144. Where they disagree, the docs are the ones to trust."
+   ]
+  },
+  {
+   "title": "Carnegie Mellon is putting thirteen real CS courses on YouTube, lectures first",
+   "url": "https://www.cs.cmu.edu/learn/",
+   "hn_url": "https://news.ycombinator.com/item?id=50522980",
+   "points": 853,
+   "comments": 140,
+   "bullets": [
+    "CS Learn is CMU's School of Computer Science publishing \"Full classroom lectures from Carnegie Mellon faculty, free to watch\" on YouTube, under the handle @CMULearn. The page's own framing is \"Carnegie Mellon's CS classroom, doors open to all\" and \"Free, online, at your pace.\"",
+    "Thirteen courses are listed. Two are already up — 10-605 Machine Learning with Large Datasets (William Cohen) and 15-110 Principles of Computing (Franceska Xhakaj). Six more premiere this week: 17-214 Principles of Software Construction and 15-442 Machine Learning Systems (Tianqi Chen and Zhihao Jia) today; 17-635 Software Architectures and 17-643 Quality Management tomorrow; 11-768 AI Agents (Daniel Fried and Graham Neubig) and 17-645 Machine Learning in Production (Christian Kästner and Bogdan Vasilescu) on Thursday.",
+    "Five arrive in January 2027: 15-259 Probability and Computing (Mor Harchol-Balter, Weina Wang, Feras Saad), 11-777 Multimodal Machine Learning (Louis-Philippe Morency), 17-619 Product Management Essentials, 07-280 AI and Machine Learning I (Nihar Shah) and 17-627 Requirements for Embedded Systems.",
+    "What is deliberately not there yet is the part that usually makes a course work. Self-paced courseware with instant feedback and a completion badge is \"coming next\"; AI tutoring is planned on top of that. For now it is lectures, which means no graded work and no credential — the page mentions earning a credential only through CMU Online, separately, with graded work.",
+    "Two names on the list are the reason the thread cares: 15-442 is taught by Tianqi Chen, who wrote XGBoost and TVM, and 11-768 by Graham Neubig, which makes this one of the few places to watch a full agents course from someone who publishes in it."
+   ]
+  },
+  {
+   "title": "MIT's How To Make (almost) Anything is in wildcard week, and the syllabus is public",
+   "url": "https://pub.cba.mit.edu/863.26/site/",
+   "hn_url": "https://news.ycombinator.com/item?id=50514470",
+   "points": 844,
+   "comments": 144,
+   "bullets": [
+    "This is the live course site for MAS.863/4.140/6.9020, the 2026 edition, run out of MIT's Center for Bits and Atoms. One session a week, Wednesdays 1:00–4:00 in E14-633, with a recitation the same evening from 5:00 to 6:00.",
+    "The structure is the thing worth looking at even if you never enrol: a different fabrication process every week, each with a thing you have to make. September is CAD, project management, computer-controlled cutting, embedded programming, 3D scanning and printing. October is electronics design, the first review, electronics production, computer-controlled machining, input devices. November is output devices, mechanical and machine design, wildcard week, the second review, networking, interface and application programming.",
+    "Wildcard week is this week's slot, and it is the course's signature move: one week with no assigned process, where you go and use something the syllabus does not cover — composites, molding and casting, textiles, whatever the shop has.",
+    "December is system integration, final assignments and orders, project development, then the presentation on 12/15, a final exam from 1:30 to 4:30 and an open house from 5:00 to 6:30. The deadline for ordering parts being a scheduled line item is the most honest thing on the page.",
+    "The 2026 recitations are where the drift shows: alongside version control, web development, EDA, debugging and mesh networks, there is one on AI agents (10/01) and one on edge AI (10/29). A course about making physical things now spends two evenings on the software that writes the firmware."
+   ]
+  },
+  {
+   "title": "A software bug in on-premise hardware took Chase down, and Zelle and Wells Fargo went with it",
+   "url": "https://www.nbcchicago.com/news/local/multiple-banks-reporting-online-banking-outages-across-u-s/4017471/",
+   "hn_url": "https://news.ycombinator.com/item?id=50521045",
+   "points": 729,
+   "comments": 604,
+   "bullets": [
+    "Chase and Wells Fargo both confirmed online banking problems on Monday afternoon, 16 November. Downdetector logged more than 4,000 error reports for Chase as of 12:19 p.m. CT, with Chicago among the hotspots.",
+    "JPMorgan's own account is the quotable part: it \"experienced a temporary issue related to a software bug in on-premise hardware systems\", and it said the problem was not cyber-related. Chase said some transactions were taking longer than usual but that customers still had access to their accounts and funds, and that it was \"working diligently to resolve this by the end of the day today\".",
+    "The spillover is what makes this a systems story rather than a bank story. Zelle error reports climbed and Zelle's own line was \"this is a Chase issue\". U.S. Bank said its systems were \"not directly impacted\" but warned of possible Zelle delays — the hazard of a shared rail is that you inherit your largest participant's bad afternoon. Capital One said it was unaffected; Bank of America declined to comment.",
+    "Wells Fargo said it was investigating. A message saying online banking was unavailable appeared briefly on its site and was then removed.",
+    "Three large technical failures landed in roughly a week — this, a Microsoft Outlook outage and an FAA flight halt. Northwestern finance professor Sean Higgins told NBC Chicago the timing was most likely chance, and cyber experts quoted in the same piece saw nothing \"nefarious\" connecting them, which is worth holding on to against the obvious temptation."
+   ]
+  }
+ ],
+ "markets": {
+  "indices": [
+   {
+    "name": "Session",
+    "value": "Monday 16 November 2026 — close",
+    "direction": "up",
+    "change": "Written before Tuesday's open. Index levels, sector moves, breadth, the broader market, India VIX and the top gainers and losers from Upstox's market wrap for 16 November; the Sensex and Nifty closes cross-checked against Business Standard; the rupee from HDFC Sky's close report; flows from 5paisa's FII/DII cash table; Brent from Kotak Neo's closing bell"
+   },
+   {
+    "name": "Sensex",
+    "value": "82,104.79",
+    "direction": "up",
+    "change": "+512.34 (+0.63%). Range 81,762.82 to 82,311.65. HDFC Sky prints the close at 82,102.85 and the gain at 510.40 — a ₹2 disagreement on a 51-stock index, which is the usual reminder that two decimal places is not two decimal places of agreement"
+   },
+   {
+    "name": "Nifty 50",
+    "value": "25,291.10",
+    "direction": "up",
+    "change": "+146.80 (+0.58%). Range 25,172.10 to 25,337.60. 31 of the 50 advanced"
+   },
+   {
+    "name": "Best sectors",
+    "value": "FMCG +1.87%, Private Bank +0.88%, PSU Bank +0.50%",
+    "direction": "up",
+    "change": "Then Oil and Gas +0.42% and Consumer Durables +0.38%. HDFC Sky puts Nifty Bank, Infrastructure, Private Bank, Media and PSU Bank all between +0.3% and +0.6% but does not print Bank Nifty's closing level, and no source read today does, so it is left out rather than estimated"
+   },
+   {
+    "name": "Worst sectors",
+    "value": "Pharma −1.53%, Metal −1.50%, Realty −1.34%",
+    "direction": "down",
+    "change": "Then Auto −1.29% and Energy about −0.3%. Six sectors green, five red, and the green ones were the heavy ones"
+   },
+   {
+    "name": "Breadth",
+    "value": "1,175 up, 2,515 down",
+    "direction": "down",
+    "change": "Of 3,774 NSE stocks traded, with 84 unchanged; 96 hit 52-week highs against 97 lows, and 105 upper circuits against 185 lower. HDFC Sky's BSE count tells the same story: 1,399 advancing, 2,807 declining, 169 unchanged. An up day on the index and a down day for most shares"
+   },
+   {
+    "name": "Broader market",
+    "value": "Midcap 100 61,576.40 (−0.51%), Smallcap 100 19,441.10 (−1.10%)",
+    "direction": "down",
+    "change": "India VIX 15.70, up 1.33%. The index rose and volatility rose with it, which does not usually happen on a calm advance"
+   },
+   {
+    "name": "Biggest mover",
+    "value": "Tata Motors PV −8.70%",
+    "direction": "down",
+    "change": "Closed at ₹262.40, worst in the Nifty 50, after JLR's FY27 EBIT margin guidance was cut to 2–3% from 4%. At the other end Max Healthcare +6.63% at ₹1,009.90, then Tata Consumer +3.57%, ITC +3.54%, Apollo Hospitals +2.87%, Nestlé India +2.68% — an FMCG-and-hospitals day"
+   },
+   {
+    "name": "USD/INR",
+    "value": "93.92",
+    "direction": "up",
+    "change": "The rupee gained 27 paise, a provisional close, from 94.19 on Friday. Opened 94.22 and strengthened through the session. Dollar index 103.44, up 0.03%. Twelve Data's later quote shows 93.93, a tick apart from the interbank settlement"
+   },
+   {
+    "name": "Brent crude",
+    "value": "about $94.85–$95.64",
+    "direction": "down",
+    "change": "The three sources read today do not agree and none of them is a close: HDFC Sky's rupee piece has Brent at $94.85, down 1.03%; its market report says about $95.40, down 0.4%; Kotak Neo quotes January 2027 futures at $95.64 at around 15:37 IST. Upstox notes a Monday low of $94.47. The direction is the usable part — down, on expected supply surplus and Strait of Hormuz shipping recovering toward pre-war volumes"
+   },
+   {
+    "name": "FII · cash",
+    "value": "+₹4,864.70 cr",
+    "direction": "up",
+    "change": "Bought ₹15,636.90 cr, sold ₹10,772.20 cr. Smaller than Friday's +₹5,736.60 cr, but an eleventh straight session of net buying on 5paisa's table. HDFC Sky cites NSDL data putting November's net foreign equity buying at about $8.9 billion, the heaviest month on record since 2002, which narrows the year's net outflow to $22.5 billion"
+   },
+   {
+    "name": "DII · cash",
+    "value": "−₹3,519.00 cr",
+    "direction": "down",
+    "change": "Bought ₹11,752.00 cr, sold ₹15,271.10 cr. The mirror image again, and bigger than Friday's −₹2,253.60 cr. Net of each other the two institutions added roughly ₹1,346 cr — on a day the index rose 0.63% and 2,515 stocks fell, almost all of the lift came from where the foreign money went"
+   }
+  ],
+  "stories": [
+   {
+    "headline": "Where Monday's numbers come from",
+    "url": "https://upstox.com/news/market-news/stocks/market-wrap-nov-16-sensex-rises-512-pts-nifty-50-ends-at-25-291-led-by-fmcg-stocks-max-healthcare-top-gainer/article-203523/",
+    "source": "Upstox · market wrap, 16 November 2026",
+    "bullets": [
+     "Index closes and ranges, the sectoral list, NSE breadth, 52-week highs and lows, circuit counts, the broader-market levels, India VIX and the Nifty 50 gainers and losers are all from Upstox's wrap. Business Standard carries the same Sensex and Nifty closes.",
+     "Upstox attributes the session to FMCG leading, continued foreign buying — about ₹84,291 crore into equities so far this month on its figure — cheaper crude, and large-cap valuations looking attractive while Asia sold the AI trade: Nikkei −2.47%, Taiwan −6.4%, Kospi −3.73%, Shanghai −0.88%, with Hang Seng the exception at +0.33%.",
+     "Note that Upstox's ₹84,291 crore and NSDL's $8.9 billion are different measures over different windows and should not be compared directly. Neither source publishes Bank Nifty's closing level, so this edition does not quote one."
+    ]
+   },
+   {
+    "headline": "Where the money came from: a record month of foreign buying",
+    "url": "https://hdfcsky.com/news/market-close-report-today-november-16-2026-nifty-sensex-shine-as-global-ai-jitters-redirect-trade-towards-india",
+    "source": "HDFC Sky · market close report, 16 November 2026",
+    "bullets": [
+     "HDFC Sky cites NSDL data putting net foreign buying of Indian equities at about $8.9 billion so far in November — the heaviest month on record since 2002 — which narrows the year-to-date net outflow to $22.5 billion and the Nifty's 2026 loss to under 3.5%.",
+     "Its account of the session: record foreign buying, cheaper crude as a supply surplus is expected and Strait of Hormuz shipping recovers toward pre-war volumes, and investors backing away from crowded AI trades toward a market with less exposure to them. Brent about $95.40, down 0.4%.",
+     "Daily cash-segment flows quoted in the table above — FII +₹4,864.70 cr on gross buy ₹15,636.90 cr and sell ₹10,772.20 cr, DII −₹3,519.00 cr on ₹11,752.00 cr and ₹15,271.10 cr — are from 5paisa's FII/DII cash table, read this morning. That page carries no timestamp and does not say whether the figures are provisional, and exchange flow data is routinely revised, so the newest row is always the least reliable one.",
+     "Note also that Upstox's month-to-date figure of about ₹84,291 crore and NSDL's $8.9 billion are different measures over different windows and should not be set against each other."
+    ]
+   }
+  ]
+ },
+ "trends": [
+  {
+   "tag": "India",
+   "headline": "The RBI is draining ₹50,000 crore out of the banking system at half past nine this morning, and last Friday the banks barely turned up",
+   "url": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=63984",
+   "subject": "The Reserve Bank will absorb bank liquidity for two days on 17 November 2026 through a variable rate reverse repo, after an under-subscribed three-day auction on 13 November.",
+   "subtitle": "Reserve Bank of India, press release dated 16 November 2026",
+   "bullets": [
+    "The notice is three lines long. \"On a review of current and evolving liquidity conditions\", the RBI will run a variable rate reverse repo auction today, Tuesday 17 November: notified amount ₹50,000 crore, tenor 2 days, bidding window 09:30 to 10:00, reversal on Thursday 19 November. A reverse repo is the central bank borrowing from the banks, so this is ₹50,000 crore being taken out of the system for two days — the opposite of a rate cut, done daily and almost never reported.",
+    "The reason it is worth a paragraph today is the sequence. On 12 November the RBI offered to absorb ₹50,000 crore overnight; banks bid ₹58,149 crore and it accepted ₹50,012 crore at a weighted average of 5.47%, with 59.56% partial acceptance at the cut-off. On 13 November it raised the offer to ₹75,000 crore over three days and received bids of just ₹38,592 crore — barely half the notified amount, all of it accepted, cut-off and weighted average both 5.49%.",
+    "An undersubscribed reverse repo is the system telling the RBI that the cash it is trying to mop up is not idle any more, or that two days of lock-up at 5.49% is not worth it. Today's auction splits the difference: back down to ₹50,000 crore, and two days rather than three.",
+    "The context is in yesterday's market numbers. Foreign investors have put roughly $8.9 billion into Indian equities this month on NSDL's count, the heaviest month on record since 2002, and that money arrives as rupees in the banking system. The thirty-minute window at 09:30, ninety minutes before the equity market opens, is where it gets parked."
+   ]
+  },
+  {
+   "tag": "Platforms",
+   "headline": "A malicious page could drive uBlock Origin's own element picker into writing itself a trusted filter, and from there run code on any site",
+   "url": "https://iter.ca/post/ubo-uxss/",
+   "subject": "A one-click universal cross-site scripting flaw in uBlock Origin's Firefox build let any page drive the extension's element picker into adding trusted filters.",
+   "subtitle": "Smitty van Bodegom (loops), 15 November 2026 · GitHub advisory GHSA-cmqw-9r2w-6wv2",
+   "bullets": [
+    "uBlock Origin's element picker is the thing you get when you right-click and block an element without reloading. It runs as an iframe at a `moz-extension://` URL and talks to the extension's background script to add the filter. The chain starts with leaking the extension's per-install random UUID: one of the default rules shipped in uAssets makes an XHR to a `moz-extension://` URL, so a page can hook `XMLHttpRequest.prototype.open`, call `fetch('/adsbygoogle.js')` to trigger the rule, and read the URL back out.",
+    "With the UUID, the page embeds the picker in its own iframe and talks to it over a MessageChannel — `epickerStart`, `showDialog`, `resultsetDetails`. The picker did not authenticate those messages, so they could come from the attacker rather than from the extension's own content script.",
+    "The escape is a newline. The picker restricts which filter types it will create and blocks scriptlets, but the `opt` field — normally a request type like `image` — gets appended to the filter after a `$`. Put a newline in `opt` and you append a second, separate line: a trusted `trusted-rpnt` scriptlet rule for any domain you like. Filters added through the picker are treated as trusted until the next recompile, and an attacker can simply open the victim page immediately.",
+    "The last step is one click, which the author did not build: make the embedded picker invisible and overlay it, so a single click anywhere lands on \"Create\". The result is arbitrary JavaScript in the context of any site — universal XSS. It is fixed; the fix is a secret token the real picker gets from the content script and includes in its first postMessage. The MV3 build, uBO Lite, had a similar but less serious version of the same problem.",
+    "The part worth sitting with is the authorship. Van Bodegom says GPT-5.6 Sol did most of the discovery, that they verified the finding and wrote it up, and that Claude wrote most of the proof-of-concept code. The bug is a chain of five steps across a UUID leak, an unauthenticated message channel and a string-concatenation injection — exactly the kind of thing that was supposed to need a human with a grudge and a weekend."
+   ]
+  },
+  {
+   "tag": "Physics",
+   "headline": "They flipped the magnetic heart of a single atom with a signal it should not have been able to feel, and nobody knows how",
+   "url": "https://www.sciencedaily.com/releases/2026/11/261114202232.htm",
+   "subject": "Single-atom nuclear spin control by radio frequency at Delft, mechanism unexplained.",
+   "subtitle": "Hester G. Vennema and colleagues, with Sander Otte, Delft University of Technology · Nature Communications, DOI 10.1038/s41467-026-78801-5",
+   "bullets": [
+    "An atom has two magnets in it: the electron cloud, which is easy to push around, and the nucleus, which is roughly a hundred to a thousand times quieter — Vennema's own comparison is that the nuclear \"note\" is that much lower than the electron's. Until now a single nucleus could only be observed indirectly, through its hyperfine coupling to the electron.",
+    "The Delft group adapted double magnetic resonance to work on one atom: two radio-frequency signals at once through a modified scanning tunnelling microscope, each tuned to its own frequency, one aimed at the electron and one at the nucleus. The nuclear spin flipped — including in regimes where the electron and nuclear spins were largely disentangled, so the electron was not acting as the middleman.",
+    "That is the result they did not expect. Otte's line is flat about it: \"The nuclear spin should not be sensitive at all to the electrical signals from a scanning tunneling microscope.\" The mechanism is, in the paper's own account, not yet understood.",
+    "Why it is more than a curiosity: a nucleus is well shielded from its environment, which is exactly the property you want in quantum memory — something that holds a state while the noisy electronics around it do the work. Being able to write to one directly, rather than through its electron, is a prerequisite. It is an early experiment, not a memory technology, and the honest version of the headline is that something works and the explanation is missing."
+   ]
+  }
+ ],
+ "research": [
+  {
+   "tag": "Industry · Microsoft Research + UC Berkeley",
+   "title": "The agent had already solved it last Tuesday: a plugin that reads your repo's session logs and cuts the bill by a fifth to a third",
+   "url": "https://www.microsoft.com/en-us/research/blog/tokeneconomizer-learning-from-experience-to-make-ai-coding-agents-more-efficient/",
+   "subject": "TokenEconomizer plugin cuts coding-agent cost per task 18-31% by mining a repository's past session logs.",
+   "subtitle": "Aaron J. Li, Weijia Xu, Chandan Singh, Zixiao Chen, Jeevana Priya Inala, Bin Yu, Ion Stoica, Michel Galley and Jianfeng Gao · 16 November 2026",
+   "bullets": [
+    "The motivating measurement is the part worth reading even if you never install this. Profiling Claude Code across 60 SWE-Bench tasks, they found 30% of tool calls repeated an action from an earlier task in the same repository; 16 of the 23 tool descriptions loaded on every turn were never called once; and the 17% of tasks that failed accounted for 32% of the spend. Agent cost is not mostly reasoning. It is mostly rediscovery, dead weight and flailing.",
+    "So the plugin attacks exactly those three. After each session it reads the log and writes one-line, repository-specific \"micro-skills\" — but only after several sessions agree on the pattern, and it retires one when later evidence contradicts it. It prunes tools the repository's history says this agent will not reach for, always keeping the ones that run commands and edit files, and it can put a pruned tool back. And a judge model watches for the agent going in circles; when it sees one it injects a short note suggesting a different approach, and if the agent is still stuck the open-source version alerts the developer rather than deciding on its own.",
+    "The results: across 277 SWE-Bench tasks in six repositories and five agent-model combinations, mean cost per task fell 18.4-30.9%, with savings in all 30 repository-combination pairs and pass@1 up in four of the five combinations. Web-Bench costs fell 16.0-21.2%, security auditing 6.4-19.6%. Starting from no history at all, every repository was cheaper than the default by the sixth task.",
+    "The comparison they ran is the one that makes the case. Simply lowering the model's reasoning effort saved similar or larger amounts — and degraded performance substantially. Spending less by thinking less is always available; this is spending less by not doing the same work twice."
+   ]
+  },
+  {
+   "tag": "Academia · NYU",
+   "title": "Your agent's approval policy is supposed to be confidential. Someone renting the same GPU can read it off the timing with 94% accuracy",
+   "url": "https://arxiv.org/abs/2611.16158",
+   "subject": "PolicySniff, an NYU-led side-channel attack, infers whether an LLM agent is configured to ask for approval before consequential tool calls by timing its own kernels on a shared GPU.",
+   "subtitle": "Weimin Fu, Minghao Shao, Zeng Wang and colleagues, with Ozgur Sinanoglu, Muhammad Shafique, Ramesh Karri and Xiaolong Guo · arXiv:2611.16158, submitted 12 November 2026",
+   "bullets": [
+    "The setup is ordinary and that is the point. An agent's system prompt decides whether it stops and asks you before a consequential tool call. Operators treat that setting as confidential and restrict access to it. Audits check whether the agent obeys its setting; nobody audits whether a neighbour can tell which setting is loaded.",
+    "The attack needs no access to the agent at all. A co-resident process on the same GPU, knowing the candidate settings and the task, profiles both offline, then times only its own kernels while the agent works. The policy prefix is already cached before measurement begins, so what the attacker is actually watching is a task suffix that is byte-identical under both configurations — and it still leaks.",
+    "On an eager sparse mixture-of-experts runtime, where each selected expert runs as a separate piece of work, a frozen and blinded study identified the deployed setting with 94.17% balanced accuracy. It managed 88.82% on tasks where both settings produce the same visible decision and 91.98% where they differ. Hardware replays of expert routing point to the temporal density of that routing, and its alignment to layers and buckets, as where the information sits.",
+    "The authors' conclusion is one sentence and it generalises past this attack: \"Behavioral compliance does not imply configuration confidentiality.\" The practical reading for anyone running agents on shared inference: treat the approval policy as observable, measure its distinguishability on your actual serving stack, and put the authorisation outside the model where a timing channel cannot reach it."
+   ]
+  }
+ ],
+ "wild": [
+  {
+   "tag": "Sweets · Bengaluru and Delhi",
+   "headline": "A sweets company put twelve unedited hours of its own factory floor on billboards, and called it the most boring reality show ever made",
+   "entities": [
+    "GO DESi"
+   ],
+   "subject": "GO DESi ran a live 12-hour feed of its mithai factory floor on digital billboards in Delhi and Bengaluru on 19 October 2026, under the name No Drama Diwali.",
+   "subtitle": "Open magazine · GO DESi, \"No Drama Diwali\", 19 October 2026",
+   "bullets": [
+    "On 19 October, digital screens at the East of Kailash market T-point in Delhi and along Brigade Road, Mayo Hall, Residency Road, Koramangala and Hosur Road in Bengaluru carried a live feed of GO DESi's factory floor: mithai being made, for twelve hours, with no actors, no script and no twist. It also streamed online for anyone outside the two cities.",
+    "The joke is structural rather than written. The campaign borrows the shape of a reality format and then supplies the least dramatic possible content — founder and CEO Vinay Kothari's reasoning is that Diwali advertising has become very loud, so the brand went the other way, and that if the mithai is made well there is nothing to hide.",
+    "It is also a format that cannot be watched properly, which is the part that makes it work on a billboard rather than in spite of being on one. Nobody at a traffic signal sees twelve hours of anything; everyone sees roughly forty seconds of strangers doing their job well, and the implied claim — that this runs all day and we are fine with you seeing any of it — is doing the work that a hygiene certificate does not.",
+    "The commercial problem it is actually aimed at is trust in a category where the buyer usually cannot see the kitchen, and the brand is unfamiliar. There are cheaper ways to say \"pure ingredients\". There are not many that are unfalsifiable on the day."
+   ]
+  },
+  {
+   "tag": "Tyres · Moorpark, California",
+   "headline": "A tyre chain is giving away $200,000 of wheel locks for one day, because that is the day everyone starts stealing cars in a video game",
+   "entities": [
+    "Big Brand Tire & Service",
+    "Belle Tire",
+    "American Tire Depot",
+    "Burt Brothers Tire & Service",
+    "Robertson Tire",
+    "Tire World"
+   ],
+   "subject": "Big Brand Tire hands out locking lug nuts on 19 November 2026 to coincide with a video game about car theft.",
+   "subtitle": "Traction News · Big Brand Tire & Service, announced 16 November 2026",
+   "bullets": [
+    "For one day, Thursday 19 November, Big Brand Tire & Service and its sibling brands will hand a free set of locking lug nuts to anyone buying a qualifying set of wheels, one set per purchase, while supplies last. At an estimated $40 retail per set, the company puts the total at up to $200,000.",
+    "The reason given is that 19 November is a big day for stealing cars in a video game. CEO Joe Buscaglia's line is the whole campaign: \"November 19 is going to be a pretty big day for stealing cars. At least on screens\" — and the company would rather help people protect theirs in the real world.",
+    "What makes it better than the average tie-in is that the product is not a logo collaboration. Locking lug nuts are the single cheapest thing a shop actually sells against wheel theft, so the stunt is the company giving away the correct answer to the joke's own setup instead of a branded T-shirt.",
+    "It runs across the group's regional chains rather than one banner: Belle Tire in Michigan, Ohio, Indiana and Illinois; American Tire Depot across the western United States; Burt Brothers in Utah; Robertson Tire in Oklahoma; Tire World in Colorado Springs; and participating Big Brand locations nationally. No total store count was published."
+   ]
+  },
+  {
+   "tag": "Footwear · Chicago",
+   "headline": "A cleat startup is paying a quarterback's uniform fines for wearing its logo, and bought billboards to say so",
+   "entities": [
+    "Caddix"
+   ],
+   "subject": "Caddix, a cleat company, is paying the fines Bears quarterback Caleb Williams incurs for showing its logo on game days, and advertised the fact on Chicago billboards.",
+   "subtitle": "Chicago Sun-Times · Caddix and Caleb Williams, 25 October 2026 and after",
+   "bullets": [
+    "Caleb Williams was fined $11,941 for the cleats he wore against the Falcons on 18 October, then fined again — $23,882, double — for the same violation the following week. The rule is not about the shoe: players may wear any brand's cleats, but logos outside the league's three uniform partnerships have to be covered on game days, from warmups through postgame media.",
+    "Caddix's response was to pay. CEO and founder Jack Rasmussen said the company will cover the fines and any future ones, and his quoted framing does not pretend otherwise: \"Regardless if this is a marketing fine or not, I'm happy to pay it.\" The company then rented billboards around Chicago saying it would pay them.",
+    "The arithmetic is the reason this is here. Two fines come to $35,823 — roughly the cost of a single week of regional out-of-home — in exchange for weeks of sports-desk coverage naming the brand and repeating its product claim, which is that the stud design reduces non-contact knee and ankle injuries. The penalty became the media buy.",
+    "Caddix made its first cleats in 2024 and says about 40 players wear them this season, including Joe Flacco and Kyle Juszczyk; Tom Brady works with the company and wore a pair at a flag-football event this year. Rasmussen has asked the league why Williams is the only player being fined for them, and says he has had no answer."
+   ]
+  }
+ ],
+ "learn": {
+  "title": "Spilling your coffee makes you more likeable, but only if you were already good. Otherwise it makes things worse.",
+  "subject": "The pratfall effect: Aronson's 1966 tapes where a blunder made the able contestant more likeable and the mediocre one less.",
+  "tags": [
+   "Human behaviour",
+   "Likeability",
+   "Experiments"
+  ],
+  "body": [
+   "In 1966 three psychologists at the University of Minnesota — Elliot Aronson, Ben Willerman and Joanne Floyd — made four tape recordings of the same thing and played one to each of their subjects. On the tape, a man auditions for a College Bowl quiz team. In two versions he is extraordinary: he gets about 92% of the hard questions right and then describes a stellar school career. In the other two he is ordinary: about 30% right, ordinary school career. Crossed against that, in half the tapes, he knocks over a cup of coffee and apologises. In the other half that bit is simply not there.",
+   "Then they asked how much the listeners liked him. The clumsy expert came out on top — better liked than the same expert who kept his coffee in the cup. The clumsy mediocrity came out bottom, worse than the mediocrity who spilled nothing. One accident, two opposite effects, and the only thing that changed was how good the man was before it happened. It got the name the pratfall effect, and the useful reading of it is that a visible flaw is not charming in itself; it is a small permission slip you can only cash if people already have a reason to think well of you.",
+   "The qualifications arrived steadily afterwards, and they are the interesting part. Mettee and Wilkins in 1972 found the size of the blunder matters and not in the direction you would guess: a *minor* fumble slightly lowered liking for a competent person, while a major one raised it. Kiesler and Goldberg in 1968 found that the more an observer's own views resembled the blunderer's, the more harshly they judged him. Ein-Gar, Shiv and Tormala in 2012 showed the same thing for products — a visible blemish made one more desirable to a casual shopper and less desirable to a careful one. And in 2013 Yechiam and Hochman offered a deflating alternative explanation: perhaps nobody warms to the blunderer at all, and the accident simply makes people pay more attention. Sixty years and the question of whether sympathy is even involved is still open."
+  ]
+ },
+ "ideas": {
+  "prompt": "Ten things that should be sold by weight",
+  "items": [
+   {
+    "text": "Breakfast cereal, out of a hopper, so you can buy 200g of the one with the nuts and none of the dried fruit."
+   },
+   {
+    "text": "Stationery. Nobody has ever needed exactly twelve pens, and the box of twelve is why you own forty."
+   },
+   {
+    "text": "Spices, in 20g quantities, because a jar of star anise outlives the recipe that caused it by about nine years.",
+    "why": "The recurring complaint under r/SomebodyMakeThis posts about groceries is never price, it is quantity you did not choose."
+   },
+   {
+    "text": "Screws, washers and wall plugs, scooped, so a hinge costs ₹8 rather than a bag of 50."
+   },
+   {
+    "text": "Birthday cake, sold by the kilo off a long slab, for the large number of occasions that need cake for nine people."
+   },
+   {
+    "text": "Secondhand books, by the kilo, sorted only by size — the shop saves the labour of pricing and you get the fun of digging."
+   },
+   {
+    "text": "Loose tea and ground coffee at the counter, 50g at a time, so trying a new one costs less than committing to one."
+   },
+   {
+    "text": "Lego, by weight, in mixed bins. The set is for a kid who follows instructions; the bin is for the one who does not."
+   },
+   {
+    "text": "Washing powder, refilled into whatever you brought, priced per kilo on a board like vegetables."
+   },
+   {
+    "text": "Cheese, properly — a counter, a wire, and the words \"a bit less than that\" actually working."
+   }
+  ]
+ }
+}

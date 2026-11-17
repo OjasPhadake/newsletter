@@ -10311,6 +10311,160 @@
         "learn.microsoft.com",
         "rbi.org.in"
       ]
+    },
+    {
+      "date": "2026-11-17",
+      "issue": 1,
+      "quote_text": [
+        "If you're not confused, you're not paying attention."
+      ],
+      "quote_author": [
+        "Tom Peters"
+      ],
+      "idea_text": [
+        "Breakfast cereal, out of a hopper, so you can buy 200g of the one with the nuts and none of the dried fruit.",
+        "Stationery. Nobody has ever needed exactly twelve pens, and the box of twelve is why you own forty.",
+        "Spices, in 20g quantities, because a jar of star anise outlives the recipe that caused it by about nine years.",
+        "Screws, washers and wall plugs, scooped, so a hinge costs ₹8 rather than a bag of 50.",
+        "Birthday cake, sold by the kilo off a long slab, for the large number of occasions that need cake for nine people.",
+        "Secondhand books, by the kilo, sorted only by size — the shop saves the labour of pricing and you get the fun of digging.",
+        "Loose tea and ground coffee at the counter, 50g at a time, so trying a new one costs less than committing to one.",
+        "Lego, by weight, in mixed bins. The set is for a kid who follows instructions; the bin is for the one who does not.",
+        "Washing powder, refilled into whatever you brought, priced per kilo on a board like vegetables.",
+        "Cheese, properly — a counter, a wire, and the words \"a bit less than that\" actually working."
+      ],
+      "idea_prompt": [
+        "Ten things that should be sold by weight"
+      ],
+      "tip_text": [
+        "When a Claude Code feature you expect is simply absent — no error, no prompt, just gone — run `/status` before you go hunting through settings files. Version 2.1.326, released yesterday, \"Added a row to `/status` that says when your provider or an environment variable such as `DISABLE_TELEMETRY` turns features off\", which turns a class of invisible, unexplained absences into one line of output. The things most often switched off above your head are set by whoever provisions your account or by a stray variable in your shell profile, and neither of those leaves a trace in your own `settings.json`."
+      ],
+      "hn_id": [
+        "50517488",
+        "50513215",
+        "50522980",
+        "50514470",
+        "50521045"
+      ],
+      "link": [
+        "http://groundworkcollaborative.org/news/amazons-decoy-deals-groundwork-investigation-reveals-nearly-1-in-3-black-friday-and-cyber-monday-deals-advertised-by-amazon-offered-no-savings-to-shoppers-nearly-1-in-10-w/",
+        "https://www.alibabacloud.com/help/en/model-studio/qwen4-max",
+        "https://www.cs.cmu.edu/learn/",
+        "https://pub.cba.mit.edu/863.26/site/",
+        "https://www.nbcchicago.com/news/local/multiple-banks-reporting-online-banking-outages-across-u-s/4017471/",
+        "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=63984",
+        "https://iter.ca/post/ubo-uxss/",
+        "https://www.sciencedaily.com/releases/2026/11/261114202232.htm",
+        "https://www.microsoft.com/en-us/research/blog/tokeneconomizer-learning-from-experience-to-make-ai-coding-agents-more-efficient/",
+        "https://arxiv.org/abs/2611.16158",
+        "https://upstox.com/news/market-news/stocks/market-wrap-nov-16-sensex-rises-512-pts-nifty-50-ends-at-25-291-led-by-fmcg-stocks-max-healthcare-top-gainer/article-203523/",
+        "https://hdfcsky.com/news/market-close-report-today-november-16-2026-nifty-sensex-shine-as-global-ai-jitters-redirect-trade-towards-india"
+      ],
+      "subject": [
+        "The Reserve Bank will absorb bank liquidity for two days on 17 November 2026 through a variable rate reverse repo, after an under-subscribed three-day auction on 13 November.",
+        "A one-click universal cross-site scripting flaw in uBlock Origin's Firefox build let any page drive the extension's element picker into adding trusted filters.",
+        "Single-atom nuclear spin control by radio frequency at Delft, mechanism unexplained.",
+        "GO DESi ran a live 12-hour feed of its mithai factory floor on digital billboards in Delhi and Bengaluru on 19 October 2026, under the name No Drama Diwali.",
+        "Big Brand Tire hands out locking lug nuts on 19 November 2026 to coincide with a video game about car theft.",
+        "Caddix, a cleat company, is paying the fines Bears quarterback Caleb Williams incurs for showing its logo on game days, and advertised the fact on Chicago billboards.",
+        "TokenEconomizer plugin cuts coding-agent cost per task 18-31% by mining a repository's past session logs.",
+        "PolicySniff, an NYU-led side-channel attack, infers whether an LLM agent is configured to ask for approval before consequential tool calls by timing its own kernels on a shared GPU.",
+        "The pratfall effect: Aronson's 1966 tapes where a blunder made the able contestant more likeable and the mediocre one less."
+      ],
+      "brand": [
+        "GO DESi",
+        "Big Brand Tire & Service",
+        "Belle Tire",
+        "American Tire Depot",
+        "Burt Brothers Tire & Service",
+        "Robertson Tire",
+        "Tire World",
+        "Caddix"
+      ],
+      "brand_mention": [
+        "Kailash",
+        "T-point",
+        "Brigade Road",
+        "Mayo Hall",
+        "Residency Road",
+        "Koramangala",
+        "Hosur Road",
+        "Bengaluru",
+        "GO DESi's",
+        "CEO Vinay Kothari's",
+        "Diwali",
+        "Big Brand Tire",
+        "Service",
+        "CEO Joe Buscaglia's",
+        "T-shirt",
+        "Belle Tire",
+        "Michigan",
+        "Ohio",
+        "Indiana",
+        "Illinois",
+        "Tire Depot",
+        "United States",
+        "Burt Brothers",
+        "Utah",
+        "Robertson Tire",
+        "Oklahoma",
+        "Tire",
+        "Colorado Springs",
+        "Big Brand",
+        "Caleb Williams",
+        "Falcons",
+        "Jack Rasmussen",
+        "Regardless",
+        "I'm",
+        "Chicago",
+        "Joe Flacco",
+        "Kyle Juszczyk",
+        "Tom Brady",
+        "Williams"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "The RBI is draining ₹50,000 crore out of the banking system at half past nine this morning, and last Friday the banks barely turned up"
+        ],
+        [
+          "trends",
+          "A malicious page could drive uBlock Origin's own element picker into writing itself a trusted filter, and from there run code on any site"
+        ],
+        [
+          "trends",
+          "They flipped the magnetic heart of a single atom with a signal it should not have been able to feel, and nobody knows how"
+        ],
+        [
+          "wild",
+          "A sweets company put twelve unedited hours of its own factory floor on billboards, and called it the most boring reality show ever made"
+        ],
+        [
+          "wild",
+          "A tyre chain is giving away $200,000 of wheel locks for one day, because that is the day everyone starts stealing cars in a video game"
+        ],
+        [
+          "wild",
+          "A cleat startup is paying a quarterback's uniform fines for wearing its logo, and bought billboards to say so"
+        ],
+        [
+          "research",
+          "The agent had already solved it last Tuesday: a plugin that reads your repo's session logs and cuts the bill by a fifth to a third"
+        ],
+        [
+          "research",
+          "Your agent's approval policy is supposed to be confidential. Someone renting the same GPU can read it off the timing with 94% accuracy"
+        ],
+        [
+          "learn",
+          "Spilling your coffee makes you more likeable, but only if you were already good. Otherwise it makes things worse."
+        ]
+      ],
+      "editorial_domains": [
+        "iter.ca",
+        "rbi.org.in",
+        "sciencedaily.com"
+      ]
     }
   ]
 }
