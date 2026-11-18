@@ -10465,6 +10465,165 @@
         "rbi.org.in",
         "sciencedaily.com"
       ]
+    },
+    {
+      "date": "2026-11-18",
+      "issue": 1,
+      "quote_text": [
+        "I used to measure the skies, now I measure the shadows of Earth."
+      ],
+      "quote_author": [
+        "Johannes Kepler"
+      ],
+      "idea_text": [
+        "A hob with a single dial marked \"this will not burn\" that simply refuses to go above 160°C.",
+        "Spice jars that dispense one teaspoon per click, so a recipe becomes counting rather than judgement.",
+        "A chopping board with a groove sized to a standard onion, and a lid that does the pressing.",
+        "Rice in single-portion paper cubes that go straight into any pan with water to the first fold.",
+        "A pan whose handle turns from blue to red when the oil is hot enough, and back again when it is too hot.",
+        "A fridge shelf labelled \"eat me next\", with a rule that nothing goes behind it.",
+        "Pre-measured dal and masala sachets sold as a pair, priced per meal rather than per gram.",
+        "A kettle with a second spout that delivers exactly 200 ml, for everything that needs a cup of water and nothing more.",
+        "A timer that cannot be silenced from across the room, only from directly in front of the stove.",
+        "A cookbook in which every recipe has at most five lines and no step that assumes you already know how long something takes."
+      ],
+      "idea_prompt": [
+        "Ten kitchen inventions for people who hate cooking"
+      ],
+      "tip_text": [
+        "Stop pasting MCP tokens into your shell. Claude Code 2.1.327, released yesterday, \"Added `claude mcp add-json <name> -` to read the server's JSON from stdin, so tokens can stay off the command line\" — so the config comes in over a pipe or a heredoc instead of sitting in your shell history, your terminal scrollback and the process list that every other user on the box can read. One caveat in the same line: it is \"not available inside a Claude Code session\", so run it from a plain shell."
+      ],
+      "hn_id": [
+        "50530163",
+        "50535230",
+        "50523601",
+        "50524736",
+        "50524767"
+      ],
+      "link": [
+        "https://www.nytimes.com/2026/11/17/upshot/school-phone-bans-study-scores.html",
+        "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
+        "https://www.bugmenot.com/",
+        "https://xusheng.dev/posts/windows-coding-agent-telemetry/",
+        "https://blog.report-uri.com/worlds-largest-brands-infected-with-malware-via-optimizely/",
+        "https://www.sebi.gov.in/legal/circulars/nov-2026/review-of-margin-framework-for-commodity-derivatives-segment_105799.html",
+        "https://calif.io/java4shell/",
+        "https://adelaide.edu.au/about/news/2026/ancient-underwater-canyons-reveal-clues-to-the-world-s-oldest-an/",
+        "https://www.anthropic.com/research/how-researchers-use-claude",
+        "https://arxiv.org/abs/2611.17011"
+      ],
+      "subject": [
+        "Agri commodity futures margins dropped to the metals floor: minimum initial margin of 6, 8 and 10 per cent by volatility band, and a liquidation window of two or three days, now identical for agricultural and non-agricultural contracts from 1 December 2026, with a one-year expiry.",
+        "Java4Shell: 64 stray bytes written past a 50-byte buffer by HotSpot's AVX-512 Base64 intrinsic, giving code execution in default Keycloak, Jenkins, Confluence and Jira installs; OpenJDK and Oracle shipped patches on 17 November 2026, and -XX:-UseBASE64Intrinsics turns the fast path off.",
+        "Adelaide University-led study in Earth and Planetary Science Letters finds submarine canyons up to 280 m deep in the Ediacara Member, Flinders Ranges, and argues their sediment infill created the preservation window for Ediacaran fossils.",
+        "Greenpeace UK lowered a limestone boulder sculpted as Sir David Attenborough onto the floor of the Southern North Sea Marine Protected Area on 12 November 2026, completing a boulder barrier against bottom trawling, after an MMO legal threat.",
+        "Rimmel's Let It Slip: a red slide standing in for an escalator between floors at Westfield London, White City, from 2 to 8 November 2026, ridden by more than 8,000 shoppers, to sell the Oh My Gloss! Slip Stick.",
+        "Liebherr Appliances' 'Mispronounced by Everyone. Loved by All': five Indian households saying Lyber and Lieber, every mispronunciation paired with a refrigerator feature, through Rediffusion.",
+        "Anthropic Institute report labelling 207,049 scientific sessions against the SciNet taxonomy: data analysis over-represented at 33.7 per cent of sessions against 27.6 per cent of working hours, data gathering under-represented at 11.5 against 28.6.",
+        "Georgia Tech-led analysis of 1,392 participants and 1,270,695 Horizon Task trials finds neural networks fit choices better overall but cannot reduce the extra unpredictability of long-horizon choices.",
+        "Schedule padding: airline timetables quoting about 110 per cent of real flight time, Hong Kong Airlines' 2017 half-hour arrival buffer, EU 261/2004 keyed to the published arrival, British working-timetable 'recovery time', and the 7 per cent Swiss, Dutch and Swedish rail benchmark against roughly 25 per cent on Metro-North."
+      ],
+      "brand": [
+        "Greenpeace UK",
+        "Marine Management Organisation",
+        "Greenpeace",
+        "Rimmel",
+        "Westfield London",
+        "Limited Space",
+        "Maya Jama",
+        "Liebherr Appliances India",
+        "Rediffusion Brand Solutions",
+        "Liebherr"
+      ],
+      "brand_mention": [
+        "Arctic Sunrise",
+        "Sir David Attenborough",
+        "Southern North Sea Marine Protected Area",
+        "Thames",
+        "Blue Planet III",
+        "Greenpeace",
+        "Marine Management Organisation",
+        "Trafalgar Sentinel",
+        "MMO",
+        "Marine",
+        "Coastal Access Act 2009",
+        "Elena Polisano",
+        "Greenpeace UK's",
+        "Treating",
+        "Briton",
+        "Westfield",
+        "White City",
+        "Limited Space",
+        "Westfield Rise",
+        "Publicis Media",
+        "Zenith",
+        "Oh My Gloss",
+        "Slip Stick",
+        "Let It Slip",
+        "Rimmel",
+        "Boots",
+        "Limited Space's Carly Barrett",
+        "Maya Jama",
+        "Creative Moment's Kim Allain",
+        "Mispronounced",
+        "Loved",
+        "All",
+        "Lyber",
+        "Lieber",
+        "LeeBh-err",
+        "Hot",
+        "Cool",
+        "FreshBreeze",
+        "Kapil Agarwal",
+        "Liebherr Appliances",
+        "Instead",
+        "Pramod Sharma",
+        "Rediffusion Brand Solutions",
+        "Either"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "From 1 December an agricultural commodity contract will carry the same margin as a silver contract, and a day less of assumed risk"
+        ],
+        [
+          "trends",
+          "Sixty-five characters of Base64 are enough to write 64 bytes past the end of a 50-byte buffer in almost every modern JVM"
+        ],
+        [
+          "trends",
+          "Some of the oldest animals we have any trace of survived because a 280-metre canyon filled up on top of them"
+        ],
+        [
+          "wild",
+          "Greenpeace has carved David Attenborough into a 1.5-tonne limestone boulder and dropped him on the seabed to snag trawler nets"
+        ],
+        [
+          "wild",
+          "Rimmel replaced an escalator at Westfield London with a slide, because its new lipstick is called the Slip Stick"
+        ],
+        [
+          "wild",
+          "Liebherr has given up correcting Indians who call it Lyber, and made a film out of five households getting it wrong"
+        ],
+        [
+          "research",
+          "Researchers reach for an agent where the agent is already good, and the gap is biggest exactly where the work is cheapest to skip"
+        ],
+        [
+          "research",
+          "They tried to prove that random exploration is not actually random, with 1.27 million trials and a bigger model, and it stayed random"
+        ],
+        [
+          "learn",
+          "Your train is not late. The timetable was written slow on purpose, and in Switzerland they know exactly how slow."
+        ]
+      ],
+      "editorial_domains": [
+        "adelaide.edu.au",
+        "calif.io",
+        "sebi.gov.in"
+      ]
     }
   ]
 }
