@@ -10624,6 +10624,162 @@
         "calif.io",
         "sebi.gov.in"
       ]
+    },
+    {
+      "date": "2026-11-20",
+      "issue": 1,
+      "quote_text": [
+        "The extreme form of power is All against One, the extreme form of violence is One against All"
+      ],
+      "quote_author": [
+        "Hannah Arendt"
+      ],
+      "idea_text": [
+        "A full set of good kitchen knives, sharpened before every loan, for the three days a year you cook properly.",
+        "A sewing machine, plus one hour of somebody sitting next to you while you work out the pedal.",
+        "Camping gear in one already-packed rucksack, so going becomes a single booking instead of nine purchases.",
+        "A pressure washer — the thing everyone needs for one afternoon and nobody needs twice.",
+        "Fifty plates, fifty glasses and fifty forks, returned washed.",
+        "Board games with the pieces already punched out, and a volunteer who can explain any of them in five minutes.",
+        "A projector and a screen the size of a bedsheet, for the evening somebody wants to show their friends a film.",
+        "Suitcases in three sizes, since luggage spends its entire life empty in a cupboard.",
+        "Musical instruments on a one-month loan with no deposit, which is about how long it takes to find out whether you will keep playing.",
+        "A ladder, a spirit level and a stud finder, lent together as one \"hang something heavy\" kit."
+      ],
+      "idea_prompt": [
+        "Ten things a library should lend besides books"
+      ],
+      "tip_text": [
+        "Run `/code-review` and then `/simplify`. Claude Code 2.1.328 changed the review to report only bugs and CLAUDE.md violations, and the reuse, simplification and efficiency cleanups you used to get out of the same pass now live in `/simplify` — so one command's worth of output is now two commands. 2.1.329 also changed a bare `/code-review` with no target to diff your whole branch against the default branch, and fixed it losing the diff entirely on a multi-commit branch."
+      ],
+      "hn_id": [
+        "50547374",
+        "50552424",
+        "50562754",
+        "50542705",
+        "50554045"
+      ],
+      "link": [
+        "https://www.wiz.io/blog/nginx-http2-rce-vulnerabilities",
+        "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/",
+        "https://www.reuters.com/business/finance/anthropics-historic-debut-put-ais-promise-peril-wall-st-test-2026-11-19/",
+        "https://nicolasbouliane.com/blog/death-by-ai",
+        "https://violetpixel.com/blog/2026-11-17-we-need-smart-people-who-give-a-shit/",
+        "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64002",
+        "https://shopify.dev/changelog/app-security-updates-ip-allowlist-due-tomorrow",
+        "https://www.smithsonianmag.com/smart-news/ancient-humans-may-have-hunted-hippos-with-poisoned-spear-tips-on-the-arabian-peninsula-180989880/",
+        "https://www.anthropic.com/research/claude-black-hole-physics",
+        "https://arxiv.org/abs/2611.18485"
+      ],
+      "subject": [
+        "RBI's second biennial report on Panchayati Raj finances, covering 2.25 lakh gram panchayats from 2022-23 to 2024-25, puts intergovernmental transfers at about 90 per cent of receipts and locally raised revenue at about 10 per cent.",
+        "Shopify delists any App Store app without an IP allowlist from 20 November 2026, blocks custom apps from installs outside their own organisation, and sets 1 December for network_access declarations and expiring offline tokens.",
+        "Hippo bones and poison-tipped spear points at Uruq al-Julaybah, a 125,000-year-old palaeolake shore in Saudi Arabia's Rub' al-Khali, reported in Science by Griffith University, KAUST and the Saudi Heritage Commission.",
+        "Adult Swim relit the rooftop billboard at its Williams Street headquarters in Atlanta for the block's 25th anniversary, six years after the old sign went dark.",
+        "Maybelline replaced 'Maybe she's born with it. Maybe it's Maybelline', in use since 1991, with 'Maybe. We're born with it. Maybe. It's Maybelline.' as the centre of a global platform called The Beauty of Infinite Possibility fronted by Miley Cyrus, announced around 10-11 November 2026.",
+        "Midi Health produced 'Hysterical Women: A Menopause Roast', a stand-up project with Michelle Buteau, Jessica Kirson, Jen Kober and Alyce Chan, released in late October 2026 as a live show plus clips on the comedians' own channels, to reclaim the word 'hysterical' and market perimenopause treatment.",
+        "Claude agents settled the Hawking-Page transition in weakly coupled N=4 super Yang-Mills and derived an exact optimal modular-bootstrap ceiling of c/9.1266 on the lightest black hole mass, both verified in Lean.",
+        "Chan and Cotterell at ETH Zurich recast program synthesis from examples as Bayesian query selection, asking an oracle for the most informative input, and gain 22 points on CodeARC with 10.5 fewer examples.",
+        "Mayday as a voice distress call was announced in English newspapers on 2 February 1923 because S.O.S. is indistinguishable over a radio telephone, with the Frederick Stanley Mockford attribution unsubstantiated."
+      ],
+      "brand": [
+        "Adult Swim",
+        "Cartoon Network",
+        "Warner Bros. Discovery",
+        "Skydance",
+        "Maybelline",
+        "L'Oréal",
+        "Miley Cyrus",
+        "Midi Health",
+        "Michelle Buteau",
+        "Jessica Kirson",
+        "Jen Kober",
+        "Alyce Chan"
+      ],
+      "brand_mention": [
+        "Adult Swim's Williams Street",
+        "Downtown Connector",
+        "Atlanta",
+        "LED",
+        "Jacob Escobedo",
+        "Adult Swim's",
+        "We've",
+        "Skydance",
+        "Warner Bros Discovery",
+        "Beltline",
+        "Royal Crackers",
+        "Aqua Teen Hunger Force LED",
+        "Boston",
+        "Maybe",
+        "Maybelline",
+        "Maybe We're",
+        "Maybe It's Maybelline",
+        "Beauty",
+        "Infinite Possibility",
+        "Miley Cyrus",
+        "Serum Lipstick",
+        "Lash Sensational Sky High",
+        "Instant Eraser",
+        "McKinsey",
+        "Make It Happen",
+        "L'Oréal",
+        "Midi Health",
+        "Hysterical Women",
+        "Menopause Roast",
+        "Michelle Buteau",
+        "Jessica Kirson",
+        "Jen Kober",
+        "Alyce Chan",
+        "Hysterical",
+        "Greek",
+        "Historically",
+        "Putting",
+        "FX's Hysterical",
+        "Doing"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "India's village governments raise about a tenth of their own money, and a good part of that tenth is interest on somebody else's grant"
+        ],
+        [
+          "trends",
+          "From today a Shopify public app with no IP allowlist comes off the App Store, and the next deadline is eleven days later"
+        ],
+        [
+          "trends",
+          "A 340 square kilometre lake sat in the Empty Quarter 125,000 years ago, and the spear points on its shore carry traces of an arrow poison"
+        ],
+        [
+          "wild",
+          "Adult Swim has switched its own roof back on after six years dark, and the only person who knew how to work the old sign had left"
+        ],
+        [
+          "wild",
+          "Maybelline has changed the punctuation of a 35-year-old tagline, and the two new full stops are the entire idea"
+        ],
+        [
+          "wild",
+          "A menopause clinic has commissioned a stand-up roast, and the thing being roasted is menopause"
+        ],
+        [
+          "research",
+          "A calculation nobody finished for twenty years, and a ceiling nobody could prove was the best one, both closed by agents left running in the background for six weeks"
+        ],
+        [
+          "research",
+          "Recovering a program from a few examples is ambiguous by construction, so stop guessing harder and ask which input to try next"
+        ],
+        [
+          "learn",
+          "Planes say “mayday” instead of “SOS” because you cannot hear the letter S on a bad telephone."
+        ]
+      ],
+      "editorial_domains": [
+        "rbi.org.in",
+        "shopify.dev",
+        "smithsonianmag.com"
+      ]
     }
   ]
 }

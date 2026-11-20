@@ -1,0 +1,353 @@
+{
+ "date_line": "Friday, 20 November 2026",
+ "issue": 1,
+ "preheader": "Hannah Arendt on why power is All against One and violence is One against All; the two slash commands you now need where one used to do; two 9.2-rated HTTP/2 bugs that give unauthenticated code execution on a default nginx static-file server; Gemini 4 Neon at $3 per million in, claiming the top coding-agent index at 32% less per task than Google's own bigger model; Anthropic's $81.3 billion listing, open +34%, close +17%, and a $104 billion paper loss; a Berlin guide down to a quarter of its traffic, and the follow-up where the author works out what to do about it; an essay arguing the outages are about who got laid off, not about AI; Thursday's close with Bank Nifty above 63,000 for the first time; the RBI's count of how little of their own money India's village governments raise; Shopify delisting any public app without an IP allowlist from today; a 340 square kilometre lake in the Empty Quarter with hippos on its shore and arrow poison on the spear points; two open problems in black hole physics closed by agents left running for six weeks; a program-synthesis paper that says ask one good question instead of guessing; Adult Swim's roof switched back on after six years; Maybelline's two new full stops; a menopause clinic that commissioned a roast of menopause; why aircraft say mayday and ships said SOS; and ten things a library should lend besides books.",
+ "quote": {
+  "text": "The extreme form of power is All against One, the extreme form of violence is One against All",
+  "author": "Hannah Arendt",
+  "work": "On Violence",
+  "source_url": "https://www.goodreads.com/work/quotes/437062",
+  "note": "The intuition it breaks is that power means one person with their boot on everyone's neck. Arendt puts that at the other end of the scale: that is the extreme of violence, and it is what you reach for when you have run out of power. Power in her sense is a number of people agreeing to act together, so its maximum is everyone against one holdout — and the lone tyrant with an army is not the strongest case of power but the weakest, propped up by the only substitute available. The useful consequence is diagnostic. When an institution starts reaching for force, the thing to read it as is not strength arriving but consent leaving."
+ },
+ "agent_craft": {
+  "items": [
+   {
+    "text": "Run `/code-review` and then `/simplify`. Claude Code 2.1.328 changed the review to report only bugs and CLAUDE.md violations, and the reuse, simplification and efficiency cleanups you used to get out of the same pass now live in `/simplify` — so one command's worth of output is now two commands. 2.1.329 also changed a bare `/code-review` with no target to diff your whole branch against the default branch, and fixed it losing the diff entirely on a multi-commit branch.",
+    "source": "Anthropic, Claude Code changelog, 2.1.328 and 2.1.329 (19 November 2026)",
+    "url": "https://code.claude.com/docs/en/changelog"
+   }
+  ]
+ },
+ "hn": [
+  {
+   "title": "Two HTTP/2 bugs rated 9.2 give unauthenticated code execution on nginx, and one of them fires on a plain static-file server",
+   "url": "https://www.wiz.io/blog/nginx-http2-rce-vulnerabilities",
+   "hn_url": "https://news.ycombinator.com/item?id=50547374",
+   "points": 1482,
+   "comments": 637,
+   "bullets": [
+    "Wiz published two critical nginx flaws, both CVSS 4.0 9.2, both unauthenticated remote code execution, both needing nothing more than HTTP/2 enabled. CVE-2026-123633 is a use-after-free in 1.19.7 through 1.31.8 and requires nginx to be acting as a proxy. CVE-2026-123007 is a `send_window` integer underflow in 1.9.5 through 1.31.8 — twelve years of releases — and Wiz demonstrated it against nginx serving ordinary static files over HTTPS on a 64-bit box, with no backend application and no third-party module.",
+    "The use-after-free is a bookkeeping error with a long fuse. A connection is marked reusable while it waits on a partial HEADERS frame, and is not taken off the reusable list when the request actually starts. If free connection slots run low, `ngx_drain_connections()` can pick that connection to close; if building the GOAWAY frame then fails — at the internal frame limit, say — the error path frees the connection's memory, and the in-flight request carries on using it.",
+    "The underflow is shorter and worse. When a cancelled stream's unsent data is discarded, the refunded flow-control window is added to `send_window` without checking the HTTP/2 maximum, so the later bounds check in `ngx_http_v2_state_window_update()` underflows in unsigned arithmetic. The resulting value becomes a negative `off_t` length and ends up as an out-of-bounds copy inside `ngx_ssl_send_chain()`, in the TLS send path.",
+    "ASLR does not help here: Wiz's point is that both bugs can be used to read memory first and get execution second. It built working proof-of-concepts and is not publishing them, and says exploitation still needs memory disclosure, heap grooming and version- and configuration-specific work. No in-the-wild exploitation is reported. A CDN or WAF that terminates HTTP/2 itself may absorb part of the exposure.",
+    "Fixed releases: nginx OSS 1.30.7 (stable) and 1.31.9 (mainline); NGINX Plus 37.0.7.1 and 37.2.0.1 for the use-after-free, 37.0.8.1 and 37.3.0.1 for the underflow. If you cannot patch this morning, set `http2 off;` in the affected server blocks, remove `http2` from `listen` directives, reload, and confirm the old workers have exited. The same release also fixes separate issues in HTTP/3, the DNS resolver, the mail proxy and stream `ssl_preread`. The 225 million figure Wiz quotes from Netcraft is nginx's total footprint, not the vulnerable population."
+   ]
+  },
+  {
+   "title": "Google's middle Gemini 4 costs $3 per million in and claims the top coding-agent index at 32% less per task than its own bigger model",
+   "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/",
+   "hn_url": "https://news.ycombinator.com/item?id=50552424",
+   "points": 1015,
+   "comments": 761,
+   "bullets": [
+    "Gemini 4 Neon, announced on 18 November by Koray Kavukcuoglu, sits between Gemini 4 Carbon for the hardest long-horizon projects and Gemini 4 Hydrogen for fast everyday execution. $3 per million input tokens, $0.15 per million cached input (a 95% discount), $15 per million output, a 1 million-token context window and four thinking levels. Available on the Gemini API in AI Studio's paid tier and Android Studio, Gemini for business, Google Antigravity for paid AI Pro and Ultra, the Gemini app for Pro and Ultra, and Fairwind Program cyber defenders over the next few days.",
+    "Coding is where it claims outright first place: #1 overall on Artificial Analysis's Coding Agent Index at 58.6, Terminal-Bench 4.1 at 65.2%, FrontierCode 2.0 at 46.2% on its default high setting, and SWE-sweep at 12.8% on the mini-SWE harness against 39.0% inside Antigravity — a gap that says as much about harnesses as about models.",
+    "The cost-per-task claim is the one to watch, because it is the argument for the middle model existing at all. At high thinking, Google puts Neon 32% cheaper per task than Carbon, its own larger model, and roughly 50% to 80% cheaper per task than competing frontier models on the Vals Index and Agent Arena. At xhigh it claims 36%-plus less per task than rivals at their highest settings.",
+    "Everywhere else it is second or third. Artificial Analysis Intelligence Index 61 at xhigh, #3 overall; Vals Index #2 at 70.9%; Agent Arena debut at #2 globally with 1336 across 4,200-plus sessions, and #2 on steerability. It takes #1 on Legal Research Bench, Tax Agent Bench, Zapier AutomationBench (56.3%) and Andon Labs' Vending-Bench 2 ($16,843). Science and maths: Terminal-Bench Science 70.5%, RiemannBench 84.0%, HLE-Diamond 71.3%, all claimed best in class.",
+    "The reliability figures are self-reported and should be read that way: 1.98% task refusal on Terminal-Bench 4.0 and 0% on the science variant, 0.0% cheating on Terminal-Bench 4.0, shortcuts on 2.45% of tasks in a coding-cheating evaluation (the lowest of the Gemini 4 line), a 0.09% misaligned action rate, 99.2% agent honesty pass rate, and 0.0% attack success on Gray Swan's indirect prompt injection benchmark at the highest thinking level. Every number in this item comes from Google or an evaluator Google cites."
+   ]
+  },
+  {
+   "title": "Anthropic raised $81.3 billion, the largest offering on record, opened 34% up and handed most of it back by the close",
+   "url": "https://www.reuters.com/business/finance/anthropics-historic-debut-put-ais-promise-peril-wall-st-test-2026-11-19/",
+   "hn_url": "https://news.ycombinator.com/item?id=50562754",
+   "points": 908,
+   "comments": 1795,
+   "bullets": [
+    "reuters.com cannot be fetched from this runner, so the bullets below come from CNBC's pricing story, Anthropic's own pricing release and Fox Business's debut piece, all read today.",
+    "Priced on Wednesday 18 November at $83 a share, above the $70-$78 range, on 980 million Class A shares — upsized from a planned 825 million. 956,351,354 of those came from the company and 23,648,646 from selling stockholders. That is $81.3 billion raised, which CNBC calls the largest IPO on record, plus $26 billion placed privately with Google, Microsoft, Nvidia and AMD at the IPO price. The underwriters hold a 30-day option on 147 million more shares, and the offering was expected to close today.",
+    "Thursday's trading, under ANT on the Nasdaq Global Select Market: opened at $111.50, about 34% above the offer, and closed at $97.17, up 17.07%. Fully diluted, that is roughly $1.76 trillion at the close against about $1.5 trillion at pricing. One outlet reported an intraday peak near $2.1 trillion; the closing figure is the one to quote.",
+    "The SpaceX comparison in every headline is only about the size of the raise. SpaceX's June listing raised $75 billion initially, $85.7 billion including the overallotment, at a valuation of about $1.77 trillion. So Anthropic's $81.3 billion beats SpaceX's base figure, loses to its total, and does it at a slightly lower valuation.",
+    "The filing is more interesting than the first-day chart. Nine months to 30 September: revenue $33.24 billion, up about 1,206% year on year; net loss $104 billion, almost entirely non-cash marks on convertible notes and derivative liabilities, against a $25.1 billion loss a year earlier; operating cash flow positive at $6.6 billion. Run-rate revenue about $81 billion at the end of October, $10 billion higher than a month before. Purchase commitments of about $900.9 billion running to 2045, overwhelmingly compute, of which $70.7 billion falls due within twelve months of 30 September.",
+    "Governance and supply: each of the seven co-founders sold 3.38 million shares, about $1.96 billion between them at the offer price; founders keep 50.1% of the voting power on general shareholder matters; retail was allocated up to 20% of the book; and up to 315 million non-founder insider shares could be sold from day one under a 10% early-release carve-out, with staggered lock-ups of up to a year behind them. The risk factors include the end of humanity, which is now a sentence that has been through a Nasdaq listing process."
+   ]
+  },
+  {
+   "title": "A Berlin guide is down to a quarter of its traffic, and the six-month follow-up is the part worth reading",
+   "url": "https://nicolasbouliane.com/blog/death-by-ai",
+   "hn_url": "https://news.ycombinator.com/item?id=50542705",
+   "points": 803,
+   "comments": 710,
+   "bullets": [
+    "The submitted post is dated 26 May 2026. Nicolas Bouliane has run All About Berlin since 2017, and writes that the site \"has lost 70% 75% of its traffic to Google AI Overviews\" — both figures sit on the page, the first struck through — and that he now has \"only a quarter of my audience\". His description of the results page is three layers: ads, then \"an AI-generated answer trained on my content\", then a link to him.",
+    "The page now carries a pointer to a follow-up, \"Life after AI\", dated 18 November, which is what Hacker News actually picked up. There he says he is \"still doing okay\": income far below last year but somewhat stabilised, and \"it still covers my bills\".",
+    "The decline has not stopped. He says he loses \"a double-digit percentage of my traffic every month\", and that last Sunday the site had under 1,000 unique visitors for the first time.",
+    "What is holding the business up is revenue per visitor rather than visitors. In a footnote he puts that down to two unglamorous things: negotiating higher affiliate commissions, and moving from aggregation to curation — fewer, better pages instead of more of them.",
+    "His plan is the interesting bit, because it is specific. Write about health insurance more than he would like, since he also runs A Good Start, an insurance business for immigrants. Keep building the things a model cannot answer from training data — he names his immigration-office wait-times page and his rent-price tool. Start a forum in 2027, on the grounds that Reddit replaced the forums that used to do that job. And refuse to \"enshittify\": if All About Berlin fades, it fades \"with dignity\"."
+   ]
+  },
+  {
+   "title": "The argument is not that AI broke these systems. It is that the people who quietly kept them working have been let go",
+   "url": "https://violetpixel.com/blog/2026-11-17-we-need-smart-people-who-give-a-shit/",
+   "hn_url": "https://news.ycombinator.com/item?id=50554045",
+   "points": 780,
+   "comments": 391,
+   "bullets": [
+    "Justin Michael, formerly of Stripe, posted this on 17 November. The claim: complex systems do not work because they were designed well, they work because of \"smart people who give a shit\" — people who know a system deeply enough to patch it, route around it and hand-hold it through its own flaws.",
+    "His worked example is ACH, the American bank transfer rail: old, flawed, \"just barely good enough\", and dependable mainly because humans intervene in its failures by hand, every day.",
+    "He lists outages from the week before the post — Microsoft 365, FAA air traffic control, United Airlines, the NSA's network, several large banks, Apple — and then says plainly that he has no inside information on any of their causes and is not claiming AI caused them. The piece is an argument about a trend line, not a root-cause analysis, and it is more honest for saying so.",
+    "The mechanism he names is deskilling. A worker whose job becomes babysitting an LLM loses the struggle and the ownership that produced the expertise in the first place. You can lay off the people; you cannot lay them off and keep what they knew.",
+    "There is no data and no call to action; it is an essay. Its sharpest line is an analogy — some people learn the stove is hot from being told, others only from touching it, and \"capitalism was told the stove was hot, but their hand is on it right now\"."
+   ]
+  }
+ ],
+ "markets": {
+  "indices": [
+   {
+    "name": "Session",
+    "value": "Thursday 19 November 2026 — close",
+    "direction": "up",
+    "change": "Written before Friday's open, so these are the last closing numbers. Index and sector moves from HDFC Sky's and Kotak Neo's closing reports for 19 November; the Nifty Bank record from Zeebiz and Investing.com's historical table; the rupee from PTI via ThePrint; cash-market flows from 5paisa's daily FII/DII table; Brent and the dollar index from the same PTI report"
+   },
+   {
+    "name": "Sensex",
+    "value": "83,021.75",
+    "direction": "up",
+    "change": "+989.94 (+1.21%), from 82,031.81 on Wednesday. Autos, banks and consumer stocks did all the work"
+   },
+   {
+    "name": "Nifty 50",
+    "value": "25,514.30",
+    "direction": "up",
+    "change": "+286.35 (+1.14%), from 25,227.95. Back above 25,500"
+   },
+   {
+    "name": "Nifty Bank",
+    "value": "63,063.00",
+    "direction": "up",
+    "change": "+1,024.35 (+1.65%) on Investing.com's and 5paisa's numbers — a record close and the first ever finish above 63,000. HDFC Sky's wrap printed the move as +1.3% for the same session, so take the level as firm and the percentage as approximate"
+   },
+   {
+    "name": "Best sectors",
+    "value": "Auto +4.40%, Consumer Durables +3.64%, PSU Bank +2.29%, FMCG +2.09%",
+    "direction": "up",
+    "change": "Then Private Bank +1.4%. Maruti Suzuki alone rose 7.6% to ₹13,589, and four of the Nifty's five biggest gainers were vehicle makers"
+   },
+   {
+    "name": "Worst sectors",
+    "value": "IT −1.10%",
+    "direction": "down",
+    "change": "The only sector index any source read today had in the red. Tech Mahindra −1.64%, Infosys −1.52%, TCS −1.34% and HCL Technologies were the four worst Nifty 50 stocks, with Eternal also named among the laggards"
+   },
+   {
+    "name": "Broader market",
+    "value": "Midcap 100 +1.05%, Smallcap 100 +0.71%",
+    "direction": "up",
+    "change": "Narrower than the headline indices, as on a heavyweight-led day it should be. Kotak Neo puts the combined market capitalisation of BSE-listed companies at a record ₹512 lakh crore. No source read today printed a dated India VIX close, so it is left out"
+   },
+   {
+    "name": "Top gainers",
+    "value": "Maruti Suzuki +7.6%, Eicher Motors +4.66%, M&M +4.46%, Tata Motors PV +4.34%, Hindustan Unilever +4.07%",
+    "direction": "up",
+    "change": "From HDFC Sky's table, whose per-stock prices may reflect a moment slightly before the close rather than the close itself"
+   },
+   {
+    "name": "USD/INR",
+    "value": "93.32",
+    "direction": "up",
+    "change": "The rupee gained 9 paise from 93.41, a fourth straight session of gains, on foreign inflows and a softer dollar. It opened at 93.40 and ranged roughly 93.17 to 93.55. An earlier provisional PTI print put the close at 93.36 (up 5 paise) and Trading Economics shows 93.4010 for the day, so read this as about 93.3 rather than to the paisa"
+   },
+   {
+    "name": "FII · cash",
+    "value": "+₹7,411.40 cr",
+    "direction": "up",
+    "change": "Gross buys ₹20,707.00 cr against sells ₹13,295.50 cr. Provisional NSE/BSE figures; NSDL's final FPI data lands the next working day"
+   },
+   {
+    "name": "DII · cash",
+    "value": "−₹1,356.60 cr",
+    "direction": "down",
+    "change": "Gross buys ₹17,651.50 cr against sells ₹19,008.10 cr. Domestic institutions sold into the rally for a third session"
+   },
+   {
+    "name": "Brent crude",
+    "value": "about $92.44",
+    "direction": "up",
+    "change": "+0.53% in futures trade at the time PTI filed on Thursday evening — not a close. The dollar index was 103.61, down 0.17%"
+   }
+  ]
+ },
+ "trends": [
+  {
+   "tag": "India",
+   "headline": "India's village governments raise about a tenth of their own money, and a good part of that tenth is interest on somebody else's grant",
+   "url": "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64002",
+   "subject": "RBI's second biennial report on Panchayati Raj finances, covering 2.25 lakh gram panchayats from 2022-23 to 2024-25, puts intergovernmental transfers at about 90 per cent of receipts and locally raised revenue at about 10 per cent.",
+   "subtitle": "Reserve Bank of India, “Finances of Panchayati Raj Institutions” (second edition), press release 2026-2027/1524, 19 November 2026",
+   "bullets": [
+    "The RBI published the second edition of its biennial report on panchayat finances yesterday, themed “Local Finances and Capacity Building in Rural India” and built on a balanced panel of 2.25 lakh gram panchayats for 2022-23 to 2024-25. The headline split is the whole story: intergovernmental transfers are about 90% of a gram panchayat's receipts, and own source revenue about 10%.",
+    "The composition of that 10% is the part worth reading twice. RBI says it comes mainly from non-tax sources — interest, Panchayati Raj programme funds and user charges. Interest income is the return on money that arrived as a grant and has not been spent yet, which means the word “own” is doing less work than the phrase suggests. The two genuinely local levers, property tax and licence fees, are exactly the two the release then tells panchayats to rationalise.",
+    "Where it goes: water supply and sanitation is the single largest head, about 40% of total expenditure. RBI's own framing is that spending patterns reflect Fifteenth Finance Commission mandates and convergence with national schemes and missions — which is a polite way of saying the tier that raises a tenth of its budget also decides relatively little of it. The release records real improvement in rural connectivity, electrification, water, sanitation and community assets, and says access, quality and functionality still vary widely between states.",
+    "The structural warning is specific and easy to skim past. As some large gram panchayats are reclassified into small urban local bodies or town panchayats, their functional responsibilities may grow faster than their fiscal and administrative capacity. RBI's suggested answer is transitional fiscal support plus capacity building — a tidy phrase for a cliff that a village council walks off the day it is promoted.",
+    "One number to treat carefully. Secondary coverage of the same report, read today, puts receipts at ₹48,625 crore in 2022-23, ₹52,014 crore in 2023-24 and ₹43,537 crore in 2024-25, against expenditure of ₹46,368, ₹48,794 and ₹50,457 crore — two years of surplus and then a deficit of about 15.9% of receipts. RBI's press release does not carry that table and says only that finances strengthened in the first two years, so a 16% one-year fall in receipts is a figure to verify in the report itself before anyone quotes it."
+   ]
+  },
+  {
+   "tag": "Platform",
+   "headline": "From today a Shopify public app with no IP allowlist comes off the App Store, and the next deadline is eleven days later",
+   "url": "https://shopify.dev/changelog/app-security-updates-ip-allowlist-due-tomorrow",
+   "subject": "Shopify delists any App Store app without an IP allowlist from 20 November 2026, blocks custom apps from installs outside their own organisation, and sets 1 December for network_access declarations and expiring offline tokens.",
+   "subtitle": "Shopify developer changelog, 19 November 2026",
+   "bullets": [
+    "Enforcement is today. A public app with no IP allowlist is delisted after 20 November: existing installs keep working, but the app accepts no new ones until an allowlist is added, at which point it is relisted automatically. Merchants see non-compliant apps flagged in Settings → Apps, which quietly turns a developer deadline into something the merchant can read as a trust signal.",
+    "Custom apps are in scope from the same date, but only outward: a custom app must have an allowlist enabled before it can be installed on a store outside your own organisation. Shopify tightened that rule first, on 11 November, and on the same day allowlists started accepting IP addresses and ASNs together, up to 250 entries — which is the concession that makes any of this survivable if you are on serverless hosting with no fixed egress IP.",
+    "1 December is the heavier date. Apps that run code on the online store must declare `allowed_sources` under `network_access` in `shopify.app.toml`, with a second wave on 1 January 2027. Every custom app created from 1 December must use expiring offline access tokens. And reading `abandonedCheckoutUrl` now requires level 2 protected customer data access — name, email, phone, address — from 1 December for public apps and 1 January for partner custom apps.",
+    "Two more requirements carry no date on the page at all: merchant custom apps must request permission in the Dev Dashboard before running bulk queries or mutations, and multi-factor authentication is now required on every partner account, with passkeys recommended over codes.",
+    "Read end to end this is Shopify moving its whole third-party surface from \"trust this token\" to \"trust this token, from this network, for this long, for this data\". The supporting moves are in the same week: admin-created custom apps began appearing in the Dev Dashboard on 17 November so they can be given allowlists and API logs at all, and there is an Admin API token expiry card you can switch on in app settings to start rejecting non-expiring tokens yourself — which is how you find out what breaks before Shopify does."
+   ]
+  },
+  {
+   "tag": "Wildcard",
+   "headline": "A 340 square kilometre lake sat in the Empty Quarter 125,000 years ago, and the spear points on its shore carry traces of an arrow poison",
+   "url": "https://www.smithsonianmag.com/smart-news/ancient-humans-may-have-hunted-hippos-with-poisoned-spear-tips-on-the-arabian-peninsula-180989880/",
+   "subject": "Hippo bones and poison-tipped spear points at Uruq al-Julaybah, a 125,000-year-old palaeolake shore in Saudi Arabia's Rub' al-Khali, reported in Science by Griffith University, KAUST and the Saudi Heritage Commission.",
+   "subtitle": "Chris Clarkson (Griffith University) and colleagues with the Saudi Heritage Commission and KAUST, Science, 12 November 2026 — via Smithsonian",
+   "bullets": [
+    "The site is Uruq al-Julaybah — the name means roughly \"sand dunes of a watering hole\" — in the Rub' al-Khali, which is now one of the driest places on the planet. About 125,000 years ago it was the shore of a freshwater lake of some 131 square miles, close to 100 feet deep, ringed with palms, reeds, trees and shrubs. The team recovered more than 500 fossilised animal remains and more than 5,500 stone tools, clustered around the bones.",
+    "The fauna is the part that does the imaginative work: hippopotamus, an extinct long-horned buffalo, ostrich, camel, gazelle and oryx. Flakes that refit to each other show the tools were made on the spot, which is the evidence that people were living at the lake rather than passing through it.",
+    "The headline claim is chemical. Several stone points carry biomarkers the team links to Acokanthera schimperi, the arrow-poison tree, whose cardiac glycosides act on the heart. Several also show impact damage consistent with striking large animals, and microscopic animal tissue near the tip, with resin and plant fibres at the base — direct residue evidence of hafting. Co-author Huw Groucutt's point is precisely that: hafting is normally an inference, and here there are residues to look at.",
+    "The caveat is load-bearing, and the authors state it themselves. The points were collected from the surface, not excavated from the dated layers, so their age rests on the site's date rather than their own. Jeffrey Rose, who was not involved, told Live Science the assemblage is \"valuable new data\" — and separately co-authored work that found no stone tools at all in 55 ancient lake beds across the Empty Quarter's interior, on the argument that the sand sea had no rock to make them from.",
+    "Nobody knows whether the poison worked. The team has not shown how it was prepared or whether it was effective, and no human remains were found, so Homo sapiens is an inference too. If the dating holds, poisoned hunting weapons move back from about 60,000 years to about 125,000 — a doubling of the record, resting on surface finds."
+   ]
+  }
+ ],
+ "research": [
+  {
+   "tag": "Industry · Anthropic",
+   "title": "A calculation nobody finished for twenty years, and a ceiling nobody could prove was the best one, both closed by agents left running in the background for six weeks",
+   "url": "https://www.anthropic.com/research/claude-black-hole-physics",
+   "subject": "Claude agents settled the Hawking-Page transition in weakly coupled N=4 super Yang-Mills and derived an exact optimal modular-bootstrap ceiling of c/9.1266 on the lightest black hole mass, both verified in Lean.",
+   "subtitle": "Anthropic Science team, “Claude solves two open problems in the physics of black holes”, 17 November 2026, with preprints 2611.00175 and 2611.00174",
+   "bullets": [
+    "The setup is almost offhand, which is the thing to notice. In August an Anthropic researcher, Hongbin Chen, asked Claude to list open problems in black hole physics and the bootstrap method; it produced 22. He gave one agent to each, let them read one another's progress notes and collaborate, and left them running in the background with no special setup for about six weeks. Two of the 22 came back solved.",
+    "Problem one is the Hawking-Page transition — the switch between a gas of gravitons and a black hole in anti-de Sitter space — at weak coupling in N=4 super Yang-Mills. Hawking and Page showed in 1983 that the switch is abrupt; whether the weakly coupled quantum version is abrupt turned on a single number appearing three loops in, across thousands of diagrams. Aharony and colleagues identified that number in 2003 and finished a simpler cousin theory in 2005; the N=4 case is more than ten times larger and was never completed. The agents completed it. It is abrupt — so abrupt at weak coupling and at strong, and most naturally abrupt in between.",
+    "Problem two needed an idea rather than more arithmetic. The modular bootstrap bounds the lightest black hole mass M₁ by c/Λ, where c is the central charge: Hellerman proved Λ = 6 in 2009, numerics pointed at roughly 9.1, and Hartman, Mazáč and Rastelli proved 8.5 without knowing it was not optimal. Claude spotted a pattern in how the numerical ceiling moved as c grew that physicists had not, guessed that a spectral curve — a tool borrowed from elsewhere in maths and physics — governs the method at large c, and found it. The result is an exact formula giving Λ ≈ 9.1266, and it is optimal for this version of the method. The black hole threshold is c/12, so this cannot reach it.",
+    "Two things stop this being a press release. Both results were formally verified in Lean in September. And the checking was redundant by design: nearly every piece of the first calculation was computed twice by independent agents with parts compared against published results, two further agents independently reproduced the second answer, and a physicist checked every main result of the paper — which Claude wrote, with minimal guidance.",
+    "The failure statistics are the honest half, and Anthropic prints them. An earlier Claude agent had failed at the bootstrap problem across 61 parallel attempts; what unlocked it was first applying the spectral-curve approach to a sphere-packing problem an OpenAI model had recently proved, and half the final proof — the half showing the ceiling cannot be lowered — follows that proof's strategy. Separately, a physicist working alone reached the same Hawking-Page answer a few weeks after one of the agents had. Anthropic says plainly that neither result settles quantum gravity and neither has practical applications. The claim is narrower and more interesting than that: this is what a known calculation that everybody shelved looks like when the shelving cost falls to nothing."
+   ]
+  },
+  {
+   "tag": "Academia · ETH Zurich",
+   "title": "Recovering a program from a few examples is ambiguous by construction, so stop guessing harder and ask which input to try next",
+   "url": "https://arxiv.org/abs/2611.18485",
+   "subject": "Chan and Cotterell at ETH Zurich recast program synthesis from examples as Bayesian query selection, asking an oracle for the most informative input, and gain 22 points on CodeARC with 10.5 fewer examples.",
+   "subtitle": "Robin Shing Moon Chan and Ryan Cotterell, ETH Zurich · arXiv:2611.18485, 13 November 2026 (cs.CL, cs.AI, cs.LG)",
+   "bullets": [
+    "The framing is the contribution. \"Program induction refers to the process in which a learner aims to recover a program from a few given input-output examples\" — and a handful of examples almost never identifies one program. The usual response is a bigger model guessing better. Theirs is to treat the ambiguity as missing information and go and acquire it.",
+    "The machinery is Bayesian, with the language model as the prior. Start with a distribution over candidate programs; pick the input whose output would most reduce your uncertainty; ask an oracle — in practice, the user — and condition on the answer. The greedy selection rule comes with a query bound of O((1/γ) log 1/p⁰(f*)), where p⁰(f*) is the prior mass on the true program: the better the prior, the fewer questions you have to ask. That is a clean statement of what a good code model is actually buying you.",
+    "Two approximations make it runnable. Exact program equivalence is undecidable, so equivalence is relaxed to a PAC-style criterion over sampled inputs. And the posterior quantities are estimated by importance sampling from the model's own proposals, rather than enumerated.",
+    "On the CodeARC benchmark: up to 22 percentage points better than a language-model-only agent, using up to 10.5 fewer input-output examples. Both halves of that matter. More accuracy on less data is the shape you want from an interaction protocol; more accuracy on more data is just a bigger budget.",
+    "Why it is worth your time if you work with coding agents daily: this is the formal version of a habit you already have. When an agent extrapolates the wrong thing from two examples, the cheap fix is usually not a longer prompt but one well-chosen question back the other way. This paper is about which question, and how many of them you should expect to need."
+   ]
+  }
+ ],
+ "wild": [
+  {
+   "tag": "Television · Atlanta",
+   "headline": "Adult Swim has switched its own roof back on after six years dark, and the only person who knew how to work the old sign had left",
+   "entities": [
+    "Adult Swim",
+    "Cartoon Network",
+    "Warner Bros. Discovery",
+    "Skydance"
+   ],
+   "subject": "Adult Swim relit the rooftop billboard at its Williams Street headquarters in Atlanta for the block's 25th anniversary, six years after the old sign went dark.",
+   "subtitle": "The Atlanta Journal-Constitution, 17 November 2026",
+   "bullets": [
+    "The sign on top of Adult Swim's Williams Street building, visible from the Downtown Connector, had been dark for more than six years. It is on again, running 24 hours a day, seven days a week: irreverent one-liners, \"this day in Atlanta history\", comedic traffic updates and photographs of the staff's pets. The occasion is the block's 25th anniversary.",
+    "The reason it took about a year to turn a light back on is the best part. The old display was glitchy and its technology obsolete, so the structure had to be rebuilt with LED screens. The company needed city permits to reuse its own billboard. And the one employee who knew how to operate the old system had left.",
+    "Jacob Escobedo, Adult Swim's senior vice president of creative: \"We've been making interesting things out of that building for 25 years.\" And: \"Why not celebrate it on our own roof?\" The editorial process is that the creative team pitches, and \"whatever makes us laugh is usually the thing that rises to the surface\".",
+    "His framing is that the billboard is a bumper — the short interstitials Adult Swim has been writing between programmes since the start, which have always been the brand talking straight at the viewer. \"It's always been a conversation with our fans.\" A roadside sign is that same format aimed at a different audience: the one stuck in traffic with nothing to read.",
+    "It also arrives a month after Skydance completed its acquisition of parent company Warner Bros. Discovery, which makes a self-funded anniversary stunt on your own building a reasonably pointed piece of internal messaging. Adult Swim's outdoor record is not uneventful either: a billboard built out of crackers on the Beltline for Royal Crackers in 2023, and the Aqua Teen Hunger Force LED placards that Boston mistook for explosives."
+   ]
+  },
+  {
+   "tag": "Beauty · Global",
+   "headline": "Maybelline has changed the punctuation of a 35-year-old tagline, and the two new full stops are the entire idea",
+   "entities": [
+    "Maybelline",
+    "L'Oréal",
+    "Miley Cyrus"
+   ],
+   "subject": "Maybelline replaced 'Maybe she's born with it. Maybe it's Maybelline', in use since 1991, with 'Maybe. We're born with it. Maybe. It's Maybelline.' as the centre of a global platform called The Beauty of Infinite Possibility fronted by Miley Cyrus, announced around 10-11 November 2026.",
+   "subtitle": "Marketing Dive, 11 November 2026",
+   "bullets": [
+    "Old line: \"Maybe she's born with it. Maybe it's Maybelline\", a fixture since 1991. New line: \"Maybe. We're born with it. Maybe. It's Maybelline.\" Two edits — \"she's\" becomes \"we're\", and two full stops are inserted mid-sentence — and the brand's position is that the punctuation converts a sly question about one woman into a declaration about everybody.",
+    "It anchors a new global platform, \"The Beauty of Infinite Possibility\", fronted by Miley Cyrus, who used to voice the old line and was chosen, per the brand, because her career has been a sequence of reinventions. More women from music and elsewhere are to follow. The products carried in the launch are the Serum Lipstick, Lash Sensational Sky High mascara and the Instant Eraser concealer.",
+    "The justification is a statistic. Maybelline cites McKinsey finding that over half of surveyed people globally see beauty as a way to build confidence, against 26% who see it as looking more attractive to others or younger for longer. Thirty-five years ago the line worked by implying a woman you were measuring yourself against; the claim is that the market has stopped shopping for that comparison.",
+    "This is not the first go. Maybelline has dropped \"Maybe\" before, for \"Make It Happen\", brought it back, and revamped it again for TikTok about two years ago. This time L'Oréal says the new meaning is permanent — an unusual thing to feel the need to say out loud about a tagline.",
+    "Reception has been rougher than the strategy. Forbes called it \"polarizing\". A beauty editor called the punctuation a \"total disaster\" purely as copywriting while agreeing with the intent. MediaPost reported readers assuming the line had been written by AI. The commercial backdrop: L'Oréal's consumer products division, where Maybelline sits, grew 4.3% like-for-like in Q3, behind both its dermatological and its professional arms."
+   ]
+  },
+  {
+   "tag": "Telehealth · United States",
+   "headline": "A menopause clinic has commissioned a stand-up roast, and the thing being roasted is menopause",
+   "entities": [
+    "Midi Health",
+    "Michelle Buteau",
+    "Jessica Kirson",
+    "Jen Kober",
+    "Alyce Chan"
+   ],
+   "subject": "Midi Health produced 'Hysterical Women: A Menopause Roast', a stand-up project with Michelle Buteau, Jessica Kirson, Jen Kober and Alyce Chan, released in late October 2026 as a live show plus clips on the comedians' own channels, to reclaim the word 'hysterical' and market perimenopause treatment.",
+   "subtitle": "HuffPost, 19 November 2026",
+   "bullets": [
+    "Midi Health, a telehealth company for women in perimenopause and menopause, commissioned \"Hysterical Women: A Menopause Roast\": four comedians — Michelle Buteau, Jessica Kirson, Jen Kober and Alyce Chan — performing a roast whose target is the condition itself rather than a person in a chair.",
+    "The word is doing the work. \"Hysterical\" comes from the Greek for uterus and spent centuries as a medical diagnosis handed to women. Alyce Chan: \"Historically, 'hysterical' is this loaded, toxic word used to gaslight women.\" Putting it on a comedy bill is the whole campaign compressed into one word, which is close to the opposite of how health marketing normally handles a stigma — usually by never naming it.",
+    "The format matches the channel: a live show, plus short clips cut for the comedians' own Instagram and YouTube accounts, so distribution runs through the performers' audiences rather than the brand's. Kirson is an executive producer of FX's Hysterical, the documentary about women in stand-up, which is where the title comes from.",
+    "The most quotable line in it is not about menopause at all. Buteau on her craft: \"Doing stand-up gives you a voice. And, when you're doing it right, a backbone.\"",
+    "Why it counts as an idea rather than a sponsorship: the commercial claim underneath is simply that these symptoms are treatable, and the campaign never has to make it. Get someone to laugh about a symptom for ninety seconds and you have already established that it is real, common and discussable, which is most of what a category-creating health brand actually needs to buy."
+   ]
+  }
+ ],
+ "learn": {
+  "title": "Planes say “mayday” instead of “SOS” because you cannot hear the letter S on a bad telephone.",
+  "subject": "Mayday as a voice distress call was announced in English newspapers on 2 February 1923 because S.O.S. is indistinguishable over a radio telephone, with the Frederick Stanley Mockford attribution unsubstantiated.",
+  "tags": [
+   "Origin stories",
+   "Radio",
+   "Distress calls"
+  ],
+  "body": [
+   "On 2 February 1923 several English newspapers announced a new distress signal, and the reason they printed is the most practical sentence in the history of radio. The Gloucestershire Echo explained that “May-day” had been chosen because the telegraphic “S.O.S.” is hard to hear over a telephone. Think about why. SOS is a Morse signal — three dots, three dashes, three dots — and as a rhythm it is unmistakable even through interference. Say the three letters out loud over a 1923 wireless telephone and the sibilants disappear into the hiss; S, F and X all arrive as the same smear of noise. A signal that had worked perfectly for two decades in code became useless the moment aircraft started talking instead of tapping.",
+   "The replacement is French, and it is slightly wrong French. The papers glossed it as the phonetic equivalent of “M'Aidez”, which is not actually how you ask for help in French — the imperative is “aidez-moi” — so the likelier source is “venez m'aider”, come and help me. The reason usually given for reaching into French at all is that Croydon, then London's airport, did most of its talking to Le Bourget in Paris, and a word a French controller would also understand was worth more than a grammatically tidy English one. Hold that explanation loosely, for reasons that are about to become clear. By 1927, accounts agree, it was the official voice distress call, with SOS staying on for telegraphy, where it had always worked.",
+   "Two footnotes. The first is that it worked straight away: the same batch of newspapers carried the story of an RAF flying boat coming down in the Channel after its engines failed, giving the new signal three times by wireless telephony, with a Dover tug alongside within twenty minutes. The second is that nobody can actually prove who coined it. The name attached to it is Frederick Stanley Mockford, a senior radio officer at Croydon, and the claim is recorded on his headstone in a Sussex churchyard — but neither of the two newspaper reports of 2 February 1923 mentions him, and etymologists treat the attribution as unsubstantiated. Its constant repetition, as one of them puts it, lends the story a semblance of truth without authenticating it. Which is a fair thing to keep in mind about origin stories generally, this section included."
+  ]
+ },
+ "ideas": {
+  "prompt": "Ten things a library should lend besides books",
+  "items": [
+   {
+    "text": "A full set of good kitchen knives, sharpened before every loan, for the three days a year you cook properly."
+   },
+   {
+    "text": "A sewing machine, plus one hour of somebody sitting next to you while you work out the pedal."
+   },
+   {
+    "text": "Camping gear in one already-packed rucksack, so going becomes a single booking instead of nine purchases."
+   },
+   {
+    "text": "A pressure washer — the thing everyone needs for one afternoon and nobody needs twice."
+   },
+   {
+    "text": "Fifty plates, fifty glasses and fifty forks, returned washed.",
+    "why": "Reusable things you hand back instead of binning is a recurring wish in Ask HN's thread on ideas that should exist but could never be venture-backed."
+   },
+   {
+    "text": "Board games with the pieces already punched out, and a volunteer who can explain any of them in five minutes."
+   },
+   {
+    "text": "A projector and a screen the size of a bedsheet, for the evening somebody wants to show their friends a film."
+   },
+   {
+    "text": "Suitcases in three sizes, since luggage spends its entire life empty in a cupboard."
+   },
+   {
+    "text": "Musical instruments on a one-month loan with no deposit, which is about how long it takes to find out whether you will keep playing."
+   },
+   {
+    "text": "A ladder, a spirit level and a stud finder, lent together as one \"hang something heavy\" kit."
+   }
+  ]
+ }
+}
