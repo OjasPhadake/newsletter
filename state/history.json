@@ -10780,6 +10780,167 @@
         "shopify.dev",
         "smithsonianmag.com"
       ]
+    },
+    {
+      "date": "2026-11-21",
+      "issue": 1,
+      "quote_text": [
+        "When people are free to do as they please, they usually imitate each other."
+      ],
+      "quote_author": [
+        "Eric Hoffer"
+      ],
+      "idea_text": [
+        "Two players, one sheet: you each draw half a creature without looking, then argue about what it eats.",
+        "Write down a six-digit number. Everyone has sixty seconds to write the most interesting true sentence about it.",
+        "Draw a map of a city neither of you has been to, taking turns to add one street and one rumour about it.",
+        "Battleships, but each player also hides one ship that is a lie, and the loser is whoever calls it first.",
+        "Everyone writes a terrible business idea. Shuffle, redeal, and each person has one minute to pitch the one they drew as if they believed it.",
+        "Noughts and crosses on a four-by-four grid where you must announce your move out loud one turn before you make it.",
+        "One player writes a word; the other has to get them to say it by asking only questions that sound unrelated.",
+        "Consequences, but each fold is a line of a news report, and the last person has to read it as a bulletin.",
+        "Draw a squiggle, hand it over, and the other person has thirty seconds to turn it into something recognisable and name it.",
+        "Each person lists five things in the room. Swap lists. You now have to invent the person who would have written it."
+      ],
+      "idea_prompt": [
+        "Ten games you could play with just a pen and paper"
+      ],
+      "tip_text": [
+        "If you depend on a `/loop` or a scheduled task, recreate it. Claude Code 2.1.330 raised the ceiling on recurring scheduled tasks and `/loop` wakeups from 7 days to 30 while their session keeps running — but the changelog is explicit that \"tasks made before this release still end at 7 days\". Anything you set up last week keeps the old limit. The same release makes tasks say when they end, so `/tasks` is where to check rather than guess."
+      ],
+      "hn_id": [
+        "50574968",
+        "50579568",
+        "50563066",
+        "50576855",
+        "50558533"
+      ],
+      "link": [
+        "https://alpo.ge/remark.pdf",
+        "https://math216.wordpress.com/2026/11/20/hurried-announcement-alessandro-masullo-grh/",
+        "https://www.newscientist.com/article/2528235-pancreatic-cancer-halted-by-virus-injection-in-three-patients/",
+        "https://poolp.org/posts/2026-11-20/ill-never-buy-framework-hardware-again/",
+        "https://element.io/blog/how-the-european-commission-rolled-out-matrix-to-more-than-40-000-staff/",
+        "https://swarajyamag.com/infrastructure/centre-clears-rs-4371-crore-vistar-scheme-for-2026-31-to-strengthen-statistical-infrastructure-expand-surveys-and-conduct-economic-census",
+        "https://www.morganlewis.com/pubs/2026/11/commerce-targets-remote-access-to-advanced-semiconductors-in-new-interim-final-rule",
+        "https://www.abc.net.au/news/science/2026-11-19/scientists-watch-red-giant-star-eat-another-the-size-of-our-sun/107394074",
+        "https://research.google/blog/a-game-you-cannot-win-unless-you-have-a-quantum-computer/",
+        "https://arxiv.org/abs/2611.20459"
+      ],
+      "subject": [
+        "VISTAR: MoSPI gets ₹4,371.10 crore to run 59 surveys and the eighth Economic Census, seeding a statistical business register.",
+        "BIS interim final rule makes renting advanced-chip compute an export: licences needed above 12 million TPP for Macau and D:5 customers.",
+        "AT2025abao: a red giant in Andromeda watched engulfing its 0.7-solar-mass companion, the first such engulfment seen from onset to peak.",
+        "The Ordinary shuts shops and site on Black Friday for a seventh year, and turns its New York and Toronto shops into blood donation drives.",
+        "Neon's hand-painted poster for the film Artificial fakes AI-generation artefacts, captioned 'Artwork made by Humans'.",
+        "James Blunt's album Airplane Mode shipped with a signed air-sickness bag as its store exclusive; the signed bags sold out.",
+        "Willow wins the magic square game 98.30% of the time against a classical ceiling of 88.89%, and measures contextuality at 5.590.",
+        "Three sandbagging model organisms built to defeat auditing: AutoDAN elicits 1.8% and whitebox elicitation 1.0%, against 39.4% for password-locking.",
+        "Line-dried laundry smells of aldehydes and ketones made photochemically on the wet cloth by sunlight: 2020 Copenhagen study, DOI 10.1071/EN19206."
+      ],
+      "brand": [
+        "The Ordinary",
+        "DECIEM",
+        "New York Blood Center",
+        "Canadian Blood Services",
+        "Ordinary",
+        "Neon",
+        "Gravillis Inc.",
+        "Mike Thompson",
+        "OpenAI",
+        "James Blunt"
+      ],
+      "brand_mention": [
+        "Black",
+        "York",
+        "Toronto",
+        "Ordinary Blood Drive",
+        "York Blood Center",
+        "Canadian Blood Services",
+        "Fifth Avenue",
+        "Copenhagen",
+        "What's Your Blood Type",
+        "Everything We Need Is For Sale",
+        "Amy Bi",
+        "SVP",
+        "Brand",
+        "DECIEM",
+        "NIOD",
+        "LOOPHA",
+        "Chemistry Brand",
+        "Estée Lauder Companies",
+        "Golden Gate Bridge",
+        "Pinocchio-ish",
+        "Illustrator Mike Thompson",
+        "Gravillis Inc",
+        "Neon",
+        "Artwork",
+        "Humans",
+        "Luca Guadagnino's",
+        "OpenAI",
+        "Simon Rich",
+        "Andrew Garfield",
+        "Sam Altman",
+        "Yura Borisov",
+        "Ilya Sutskever",
+        "Monica Barbaro",
+        "Mira Murati",
+        "MGM Studios",
+        "Christmas Day",
+        "Airplane Mode",
+        "Atlantic",
+        "Inksplosion",
+        "CD",
+        "Red Eye Edition",
+        "PLEASE NOTE",
+        "Blunt",
+        "Official Albums Chart",
+        "All",
+        "Lost Souls"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "India has put ₹4,371 crore behind rebuilding the way it counts itself, and the tell is that one of the three components is just \"do the Economic Census\""
+        ],
+        [
+          "trends",
+          "From Thursday, renting the compute instead of buying the chips is also an export, and the threshold is about 760 H100s"
+        ],
+        [
+          "trends",
+          "A star 350 times wider than the Sun has been caught in the act of eating its neighbour, and the whole swallow took seven years to watch"
+        ],
+        [
+          "wild",
+          "For the seventh year running The Ordinary will shut on Black Friday, and this time two of its shops become blood donation centres"
+        ],
+        [
+          "wild",
+          "The poster for the OpenAI film is full of the little mistakes that give away an AI image, and every one of them was painted by hand"
+        ],
+        [
+          "wild",
+          "James Blunt's new album is called Airplane Mode, so the bundle came with a signed air-sickness bag, and the signed ones sold out"
+        ],
+        [
+          "research",
+          "A game you lose one time in sixty on a quantum computer and cannot win more than eight times in nine without one"
+        ],
+        [
+          "research",
+          "Every result saying auditors can catch a model hiding a capability was measured against models that were not really trying to hide it"
+        ],
+        [
+          "learn",
+          "The smell of line-dried laundry is not the smell of the outdoors. Sunlight manufactures it, on your sheets, out of almost nothing."
+        ]
+      ],
+      "editorial_domains": [
+        "abc.net.au",
+        "morganlewis.com",
+        "swarajyamag.com"
+      ]
     }
   ]
 }
