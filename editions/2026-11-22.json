@@ -1,0 +1,352 @@
+{
+ "date_line": "Sunday, 22 November 2026",
+ "issue": 1,
+ "quote": {
+  "text": "When a book and a head collide and a hollow sound is heard, must it always have come from the book?",
+  "author": "Georg Christoph Lichtenberg",
+  "work": "The Waste Books",
+  "source_url": "https://www.goodreads.com/work/quotes/969510",
+  "note": "Lichtenberg was a professor of physics who kept notebooks he never meant anyone to read, which is why the line is built like an experiment rather than an insult. The hollow sound is the only measurement you have; what it cannot tell you is which of the two objects was empty. Almost every time you put a book down as badly written, or a paper as unreadable, or a codebase as a mess, you have run that experiment and assigned the result to the other party without checking. Hold onto it as a question — it is a question — and it stays useful instead of merely clever."
+ },
+ "preheader": "Lichtenberg on the hollow sound a book and a head make; move your release procedure out of CLAUDE.md and lock it with disable-model-invocation; a 26.4B open-weights model that loops its two middle blocks three times and fits in 20GB on a laptop; 17 million lines of Lean and a kernel that says the Riemann Hypothesis is proved; Feynman trying to explain Fermi-Dirac statistics to freshmen and failing; a CPU designed end to end by AI agents from zero architectural priors; a CSS framework for making your site look hastily vibecoded; the Sensex's fourth straight winning week against the Nasdaq's worst week since March 2020; public sector banks' record half-year; Signal calling OS-level AI agents an existential threat; Homo erectus still in a Chinese rainforest 184,000 years ago; a medicinal-chemistry benchmark models nearly ace on structure and half-fail on choosing a compound; a coding agent training an optical neural network with 48 probe measurements; two Georgia linemen signing an NIL contract by sitting on it; a cookie you cannot buy if you are over 18; six Pop-Tarts mascots who eat each other; the 90-second rule behind everything they tell you before takeoff; and ten ways to make a Sunday feel twice as long.",
+ "agent_craft": {
+  "items": [
+   {
+    "text": "Take your release or deploy procedure out of `CLAUDE.md` and put it in `.claude/skills/release/SKILL.md` with `disable-model-invocation: true` in the frontmatter. Claude then sees only the name and description until the file is actually needed — it is not re-sent every turn the way `CLAUDE.md` is — and because model invocation is off it can never start the thing on its own: it runs when you type `/release` and not otherwise. The docs' own rule for what goes in the file is the same one as for `CLAUDE.md`: \"only write down what Claude can't find on its own.\"",
+    "source": "Best practices for Claude Code, Claude Code docs (page updated 21 November 2026)",
+    "url": "https://code.claude.com/docs/en/best-practices"
+   }
+  ]
+ },
+ "hn": [
+  {
+   "title": "A 26.4B open-weights model that runs its two middle blocks three times per token, and fits on a laptop in about 20GB",
+   "url": "https://thinkingmachines.ai/news/inkling-2-mini/",
+   "hn_url": "https://news.ycombinator.com/item?id=50581260",
+   "points": 1376,
+   "comments": 280,
+   "bullets": [
+    "Thinking Machines Lab released Inkling 2 Mini on 20 November as open weights on Hugging Face. It is a mixture-of-experts looped transformer: 26.4B total parameters, 3.4B active per token, 24 layers. The two middle blocks are executed three times for every token, which is the whole idea — the model buys reasoning depth with compute instead of with parameters, and attention residuals carry information between the passes.",
+    "The footprint is the selling point. About 20GB total, with most weights in NVFP4 and the last four layers in MXFP8, trained in 4-bit NVFP4 rather than quantised down afterwards. The team also pruned two-thirds of the experts and recovered the loss by distillation. The demos run offline on a MacBook Pro.",
+    "Scores, as claimed on the page: 48.2% on DeepSWE v1.1 and 46.5% on Vals Index v2.2, which they say leads open-weights models under 100B total parameters; 79.2% on SWE-bench Verified; 79.0% on BrowseComp; and 0.703 on Stanford's intelligence-per-watt measure on an NVIDIA DGX Spark, well clear of the comparisons.",
+    "The weaknesses are stated rather than buried, which is worth noting. It trails Qwen3.8-27B on some tasks, scores 33.4% on ComplexConstraints v1.1, and is described as weaker at multi-turn chat and complex instruction following and behind larger models on reasoning-heavy sets like HLE-Diamond. A looped model that is good at agentic coding and mediocre at following a fiddly instruction is a specific shape, not a general one.",
+    "There is a monitorability result attached, measured on a related variable-loop research model: going from one pass to three raised the no-chain-of-thought time horizon from 16 to 37 seconds while the visible chain of thought got shorter and stayed legible. Early testing came from Stanford's Hazy Research and Scaling Intelligence labs, with interpretability work involving Goodfire and NDIF. It runs on Tinker, Ollama, vLLM and SGLang."
+   ]
+  },
+  {
+   "title": "Seventeen million lines of Lean, several independent checkers, and a joint statement from the Lean and Mathlib communities: the proof holds",
+   "url": "https://leanprover-community.github.io/blog/posts/riemann-hypothesis/",
+   "hn_url": "https://news.ycombinator.com/item?id=50589618",
+   "points": 795,
+   "comments": 635,
+   "bullets": [
+    "The post is dated 21 November, a day after Levent Alpöge released a Lean library he said proves the Riemann Hypothesis. It is a joint statement, endorsed by the Lean FRO and the Mathlib Initiative, and it does not hedge: \"We have full confidence that Alpöge's proof of the Riemann Hypothesis is correct.\"",
+    "What they verified is narrow and that is the point. First, that the thing proved is the right thing: the statement is Mathlib's own `RiemannHypothesis`, vetted by Lean and number theory experts, and two tools — `comparator` and `con-leche --compare` — confirmed the proved theorem matches it exactly. They added a file that isolates the statement and imports nothing but Mathlib, so there is no room for a redefinition to hide in.",
+    "Second, that the proof is a proof. Dozens of people reported the 17-million-line library compiling without errors and reproducing the same raw proof export file. That inert export was then checked by Lean's own kernel, by `con-leche` and `con-ron`, and by several independent checkers written in different languages. `con-leche` and `con-ron` come with a formal proof, relative to set theory, that they cannot accept a false proof — and because the checks ran on the export rather than the sources, nothing in Alpöge's code could influence them.",
+    "The library depends directly only on Mathlib, which is the other half of the provenance argument: there is no private axiom file in the dependency graph. The community did all of this, by their own account, \"over the past day\".",
+    "What is explicitly not settled is the mathematics. The post says the wider mathematical community will help explain the new ideas, which is an admission that nobody has yet digested them in human-readable form. So the state of play is unusual: the proof is machine-certified before it is understood, and the understanding is the work that remains."
+   ]
+  },
+  {
+   "title": "Feynman promised to explain Fermi-Dirac statistics to freshmen, came back days later, and said he could not — so \"we don't really understand it\"",
+   "url": "https://kottke.org/17/06/if-you-cant-explain-something-in-simple-terms-you-dont-understand-it",
+   "hn_url": "https://news.ycombinator.com/item?id=50572355",
+   "points": 700,
+   "comments": 320,
+   "bullets": [
+    "The post is Jason Kottke's, from 15 June 2017, and it resurfaced to the front page this week. Its claim is stronger than the usual advice about clear writing: a simple explanation is not a courtesy to the audience, it is the evidence that you understand the thing at all.",
+    "The anchor is a 1996 Engineering & Science recollection by David Goodstein, who wrote Feynman's Lost Lecture. Goodstein asked Feynman to explain why spin-one-half particles obey Fermi-Dirac statistics. Feynman said he would work it up as a freshman lecture, disappeared, and returned to say he could not reduce it to that level. His conclusion was not that freshmen were the problem: \"we don't really understand it.\"",
+    "The counter-examples are the fun part, because Feynman could do this when the understanding was there. Kottke links his explanations of fire as stored sunshine, of rubber bands, and of why a train does not need a differential to go round a curve — each one built out of things you already have.",
+    "And the limit case, magnets: asked to explain magnetic force in terms of something more familiar, Feynman refused, on the grounds that he did not understand it in those terms either. He also said he could safely say that nobody understands quantum mechanics, having won a Nobel Prize for work on it.",
+    "John Gruber supplies the industrial version: Apple expected its engineers to be able to explain a complex product simply, as proof that the engineer understood it completely. The note on Feynman's blackboard, found after his death in 1988, is the compressed form of the whole argument — \"What I cannot create, I do not understand.\""
+   ]
+  },
+  {
+   "title": "A CPU designed end to end by AI agents from zero architectural priors, with a 141-page architecture document the team deleted because its numbers were physically impossible",
+   "url": "https://architectlabs.com/blog/frostbite",
+   "hn_url": "https://news.ycombinator.com/item?id=50572503",
+   "points": 667,
+   "comments": 352,
+   "bullets": [
+    "Architect Labs announced Frostbite on 18 November: a general-purpose CPU with a new instruction set, built on interaction nets, where computation is local node rewriting and parallelism falls out of the program's structure rather than out of threads and locks. Programs are written in Vine, a Rust-like language, compiled to an interaction-net IR called Ivy.",
+    "The process account is more interesting than the claim. Agent swarms produced research summaries, Python models and then a 141-page architecture PDF — which was thrown away after the first RTL generation because its estimates were not physically realistic. The team then built its own formal specification language, ASL, which lowers to more than 800,000 lines of Lean, and a system model called Arcmodel that an automated pipeline recalibrated against RTL until the two agreed within 5%. Across four searches and a final ablation round the agents tried 58 ideas and kept 37.",
+    "The architecture has no central scheduler. Each tile has a front end, an engine, a frame manager that parks continuations in local memory, a work queue and a network interface; it runs its own work, steals from a neighbour when idle, and otherwise sleeps. There is no deep cache hierarchy, just small local memory per tile. Work-stealing and fine-grained clock gating are reported as emergent — nobody specified them.",
+    "The numbers, at 7nm: 800 MHz at synthesis, 500 MHz in the final GDS. One Quad plus four L3 nodes is 0.792 mm² against 0.895 mm² for the undisclosed comparison core they call TCPU. Performance per area averages 8.77x; performance per watt is a 4.59x geometric mean across 25 workloads — 6.02x on the ten workloads in the search set and 3.83x on the fifteen held out, which is the honest split. Range: 23.12x on conv2d down to 1.15x on fib. The energy breakdown explains it: TCPU spends about 57% of energy on memory and 27% on fetch, decode and issue; a Frostbite quad spends 38% on memory, 6% on fetch, decode and issue, and 26% on its network and scheduler.",
+    "Nothing is released. The RTL, the ISA, an FPGA-hosted playground, an operating system and SPEC and PARSEC numbers are all listed as planned, the comparison CPU cannot be named for legal reasons, and the post ends on partnerships and hiring. Read the held-out 3.83x as the number with the least room to flatter, and the absent SPEC run as the thing to wait for."
+   ]
+  },
+  {
+   "title": "A CSS framework whose entire purpose is to make your site look hastily vibecoded, down to the fake testimonials and an alert telling you to add more em-dashes",
+   "url": "https://slopstrap.mikelacher.com/",
+   "hn_url": "https://news.ycombinator.com/item?id=50576012",
+   "points": 657,
+   "comments": 123,
+   "bullets": [
+    "Slopstrap is Mike Lacher's CSS and JavaScript framework for making a website look like an LLM produced it in a hurry. Include `slopstrap.css` and `slopstrap.js`, add `slop-body` and `slop-grid-bg` to your `<body>`, and you get dark mode and ambient background orbs for free.",
+    "The component list is a precise inventory of what the genre actually looks like: `.slop-status` dots with a rainbow variant, coloured and gradient left borders, `.slop-text-gradient`, `.slop-serif-emphasis` for the one italic serif word, squiggle and animated underlines, `.slop-card-beam`, `.slop-alert`, and a `.slop-bento` twelve-column grid.",
+    "The data-attribute helpers are where it stops being a joke about styling and becomes a joke about content. `data-slop-marquee` auto-populates a logo wall of startups. `data-slop-testimonials` takes a value from 1 to 6 and invents that many, including a Sarah Chen who cannot stop talking about it. `data-slop-prose` and `Slopstrap.renderProse()` generate filler copy by industry. `.slop-stat-card` with `data-slop-count` animates numbers under captions like \"Uptime or something\" and \"Bad things or events\".",
+    "There is a `Slopstrap.slopify()` and an `unslopify()`, and a before-and-after demo on a plain site for \"Bob's Local Plumbing\". One alert reads: add more em-dashes. The page is \"Trusted by innovative teams at the world's leading companies\", and names none of them.",
+    "Two details make it better than a one-liner. There is a Slopstrap Pro tier, in beta, with sales enquiries by email. And there is a `/agents` page, written for AI agents, explaining how to use the framework — which is either the punchline or the business model."
+   ]
+  }
+ ],
+ "markets": {
+  "indices": [
+   {
+    "name": "Session",
+    "value": "Week ended Friday 20 November 2026 — last close",
+    "direction": "flat",
+    "change": "Indian markets are shut for the weekend; nothing has traded since Friday's close, so these are Friday's and the week's numbers. Weekly index, sector, rupee and flow figures from the Sunday Guardian's weekly report and Flattrade Kosh's weekly wrap; the Friday session levels from Upstox's market wrap; US and Asian closes from ABC News' wire report. Where two sources disagree the discrepancy is stated rather than averaged"
+   },
+   {
+    "name": "Sensex",
+    "value": "83,919.71",
+    "direction": "up",
+    "change": "+2,327.26 points (+2.85%) on the week, a nine-month closing high and a fourth consecutive winning week. Friday alone contributed +897.96 (+1.08%)"
+   },
+   {
+    "name": "Nifty 50",
+    "value": "25,800.60",
+    "direction": "up",
+    "change": "+656.30 points (+2.61%) on the week. Navia's roundup prints the weekly moves as +2.03% and +2.25%, against +2.85% and +2.61% from both the Sunday Guardian and Flattrade, so read the smaller pair as an outlier"
+   },
+   {
+    "name": "Best sectors · week",
+    "value": "PSU Bank +6.72%, Bank +5.90%, Private Bank +5.65%, Financial Services +3.65%, FMCG +3.63%",
+    "direction": "up",
+    "change": "A bank-led week, not a broad one. The Nifty Bank index set a record high intraday on Friday"
+   },
+   {
+    "name": "Worst sectors · week",
+    "value": "Metal −2.98%, Capital Markets −1.96%, IT −1.91%, India Defence −1.43%",
+    "direction": "down",
+    "change": "IT fell on the week even though it rose on Friday, which is the global AI selloff arriving with a lag"
+   },
+   {
+    "name": "Broader market · week",
+    "value": "Midcap 100 +0.23%, Smallcap 100 −1.08%",
+    "direction": "down",
+    "change": "Heavyweights did the work. Flattrade prints the Smallcap fall as about 1% and the Midcap as marginally higher, so take the direction rather than the second decimal. BSE market capitalisation rose by nearly ₹4 lakh crore over the week"
+   },
+   {
+    "name": "Week's movers",
+    "value": "Max Healthcare +14.1%, Axis Bank +8.64%, SBI +7.88%, Apollo Hospitals +7.9%",
+    "direction": "up",
+    "change": "The two hospital stocks moved on Friday after a Macquarie upgrade, per Reuters as cited by the Sunday Guardian. State-run lenders ran on Thursday on the Finance Ministry's half-year numbers"
+   },
+   {
+    "name": "USD/INR",
+    "value": "92.67",
+    "direction": "up",
+    "change": "The rupee gained 157 paise (+1.66%) on the week from 94.24, its strongest in roughly seven months, in a 92.64–93.74 range. Flattrade attributes the levels to Moneycontrol"
+   },
+   {
+    "name": "FII · cash",
+    "value": "+₹32,646.67 cr for the week",
+    "direction": "up",
+    "change": "Net buyers in all five sessions, with Friday the largest at +₹10,308.42 cr — a fourth straight week of buying. Flattrade prints ₹62,158.14 crore for the same week, which is a wider measure than the Sunday Guardian's cash-market figure; the two are not reconciled by either source, so both are given rather than split"
+   },
+   {
+    "name": "DII · cash",
+    "value": "−₹12,698.39 cr for the week",
+    "direction": "down",
+    "change": "A third consecutive week of net selling. Domestic institutions have been selling into the foreign bid, not alongside it — both sources agree on this figure"
+   },
+   {
+    "name": "Brent crude",
+    "value": "about $92.57",
+    "direction": "down",
+    "change": "−3.4% on the week in futures, per the Sunday Guardian. Flattrade gives no level and says only that crude eased on hopes of improving US-Iran relations"
+   },
+   {
+    "name": "Wall Street · Friday",
+    "value": "S&P 500 6,910.39 · Nasdaq 22,617.73 · Dow 48,147.33",
+    "direction": "down",
+    "change": "S&P −265.44 (−3.70%), Nasdaq −1,261.47 (−5.28%), Dow −949.73 (−1.90%). The S&P is now in correction, more than 10% below its 6 October high; the Nasdaq Composite has gone negative for 2026. Nvidia closed 14% lower, AMD −13.3%, Micron −13.9%, Broadcom −12.2%, the PHLX Semiconductor Index −10.7%. Anthropic fell 8.5% to $88.91 — still above its $83 IPO price, and about 23% below the previous day's $115.10 peak. Japan's Nikkei and South Korea's Kospi each fell more than 5% overnight. India closed up 1.08% on the same day, which is the whole story of the week in one sentence"
+   }
+  ]
+ },
+ "trends": [
+  {
+   "tag": "India",
+   "headline": "State-run banks made ₹1.09 lakh crore in six months and their net bad loans are down to a third of one per cent — the worry has moved to how fast they are lending",
+   "url": "https://www.businesstoday.in/industry/banks/story/psu-banks-post-record-rs-1-09-lakh-crore-profit-in-h1-fy27-bad-loans-hit-new-low-568264-2026-11-18",
+   "subject": "H1 FY27 results of the public sector banks, compiled by the Finance Ministry: a record aggregate profit of Rs 1,09,540 crore, bad loans at 1.69% of advances, and a loan book expanding 18.8% while deposits expand 13.1%.",
+   "subtitle": "Finance Ministry data released Wednesday 18 November 2026, reported by Business Today the same evening; the half-year is April–September 2026",
+   "bullets": [
+    "The headline numbers: aggregate net profit of ₹1,09,540 crore for H1 FY27, up 16.9% year on year and the highest ever for India's public sector banks; operating profit ₹1.81 lakh crore, up 13.9%. Return on assets 1.11%, up 3 basis points. Cost-to-income 47.38%, down 191 basis points.",
+    "Asset quality is the part that would have been unimaginable a decade ago. Gross NPA 1.69%, net NPA 0.33%, fresh slippages 0.62%, recoveries and upgrades up 21.1%, and provisioning coverage above 90% at every single public sector bank. Capital adequacy is 16.89%, up 93 basis points. This is the same set of institutions whose gross NPAs were in double digits in 2018.",
+    "Now the line to read twice. Total business crossed ₹300 lakh crore for the first time, at ₹301.6 lakh crore, up 15.5%. But deposits grew 13.1% to ₹275 lakh crore while advances grew 18.8% to ₹136.4 lakh crore. Loans are growing roughly half again as fast as the money funding them.",
+    "And the composition of that lending: retail up 17%, agriculture up 19.5%, MSME up 20.4%. All three outpace deposit growth, and MSME is the book that historically turns first when the cycle does. A 0.62% slippage rate is a statement about loans made two and three years ago, not about the ones being written now.",
+    "The ministry's explanation is governance, efficiency, risk management and technology reform, and the fifth straight year of profit growth is real. The structural question it does not address is simple arithmetic: if advances keep compounding faster than deposits, the gap closes either by paying more for deposits — which is margin — or by lending less. Friday's market priced the good half: Nifty PSU Bank was the best sector index of the week, up 6.72%."
+   ]
+  },
+  {
+   "tag": "Platforms",
+   "headline": "Signal says an operating system that reads your screen is an existential threat to encryption, and the honest part is the list of places it cannot do anything about it",
+   "url": "https://signal.org/blog/protecting-your-privacy/",
+   "subject": "Signal publishes a position on operating-system assistants that capture on-screen message content, calling it an existential threat to encrypted messaging, and sets out three demands for platform vendors.",
+   "subtitle": "Meredith Whittaker on the Signal blog, 20 November 2026",
+   "bullets": [
+    "The argument is structural, not about any one product. End-to-end encryption protects a message in transit and at rest. It does nothing about an operating system assistant that reads the decrypted message off the screen you are looking at, because at that point the content is just pixels and text in someone else's process. Once captured it lands in whatever local database or remote server the agent uses, and Signal has no say over either.",
+    "Named: Gemini and Gemini Intelligence on Android; Siri AI with Onscreen Awareness on iOS and macOS; Microsoft Recall on Windows, which screenshots every few seconds and OCRs the result into a searchable index; and Meta's Muse, which Signal says works through accessibility settings built for disabled users. Three mechanisms, not one — screen capture, accessibility permissions, and plain filesystem access to content already stored on the device.",
+    "What Signal has actually shipped is a patchwork, and the post says so. Screenshot blocking by default on Windows since last year. Screenshots blocked in the iOS 27 app, with a Block Siri AI setting. On Android, where it cannot reliably detect screenshot attempts across vendor devices, it switches on Screen security automatically when it can detect an assistant reading the screen. On macOS: nothing. It cannot reliably block screenshots there, and its only advice is to add Signal to the Excluded Apps list under System Settings → Siri.",
+    "The third mechanism is the one no screenshot block touches. If an agent can read the filesystem, blocking the screen is beside the point — and Signal calls its own remedy incomplete rather than claiming otherwise.",
+    "The three asks are concrete and all land on Apple, Google and Microsoft: a documented, easy way for a developer to opt an app out of AI access across screen reading, filesystem, notifications and OS frameworks without breaking the app; accurate public specifications for how agents access and process data; and a way to stop third-party agents helping themselves to broad accessibility permissions. Signal explicitly rejects confidential computing as the answer, on the grounds that the provider still controls the guarantee. It says Google and Apple are engaging cautiously, and credits the EFF for the Siri exclusion list existing at all."
+   ]
+  },
+  {
+   "tag": "Wildcard · palaeoanthropology",
+   "headline": "Homo erectus was supposed to be gone from mainland Asia 400,000 years ago. Nine teeth from two caves in Guangxi put it in a closed rainforest at 184,000",
+   "url": "https://www.sci.news/othersciences/anthropology/homo-erectus-china-15208.html",
+   "subject": "Baxian and Naxian caves, Guangxi: two Nature papers place Homo erectus in closed southern Chinese rainforest as recently as 184,000 years before present, with enamel proteomics identifying one specimen as a different hominin population.",
+   "subtitle": "Two papers published in Nature on 18 November 2026 — Westaway et al., DOI 10.1038/s41586-026-11155-6, and Liao et al., DOI 10.1038/s41586-026-11271-3 — reported by Sci.News",
+   "bullets": [
+    "Nine hominin teeth, two sister caves — Baxian and Naxian, in Guangxi, southern China. The dating is not one method leaning on itself: 43 radiometric ages from five techniques, including luminescence on the sediments and uranium-series on teeth and mineral deposits, modelled statistically. Baxian comes out at 324,000 to 184,000 years ago, Naxian at 319,000 to 241,000.",
+    "The received view, in Frido Welker's words: \"On the Asian mainland, the species was thought to have largely disappeared around 400,000 years ago.\" The youngest end of the Baxian range is 184,000 — about 216,000 years later than that. This is not the species' last stand anywhere: the Javan population at Ngandong is younger still, at 117,000 to 108,000 years ago. What moves is the mainland, where the record was supposed to have gone quiet.",
+    "The habitat is the second surprise, and it is the one that overturns a story rather than a date. Carbon isotopes say the animals at Baxian ate only shaded closed-forest plants; three of the Naxian teeth sit right at the boundary between dense forest and open woodland. Rainforest has long been treated as the environment early humans could not crack — low-density food, hard foraging. Strontium isotopes varying within single teeth suggest these individuals moved, possibly as far as 250 km toward northern Vietnam.",
+    "The companion paper did the identification work properly, because teeth are easy to argue about. CT scans of internal tooth structure plus ancient protein analysis of enamel: eight of the nine match Homo erectus and differ from Neanderthals, Denisovans and modern humans. Proteins came out of all five teeth tested; four carried an ameloblastin change previously seen only in roughly 400,000-year-old Chinese H. erectus, but lacked a second change those older fossils have. Four individuals were male, one female.",
+    "And one tooth refused. Specimen PA1796 from Baxian does not fit — Welker: \"We can say with a high degree of confidence that the tooth did not belong to Homo erectus.\" It may be Denisovan, or something else again, which would mean two human groups living alongside each other in the same region. Nicolas Bourgon's line on why the dating holds up: \"In this case, the animal teeth and the Homo erectus teeth are telling the same story.\""
+   ]
+  }
+ ],
+ "research": [
+  {
+   "tag": "Industry · OpenAI",
+   "title": "A medicinal-chemistry benchmark where the best model reconstructs a molecule from a paper 95.4% of the time and then cannot reliably say which of two compounds is better",
+   "url": "https://openai.com/index/introducing-medchembench",
+   "subject": "MedChemBench: 99 medicinal-chemistry problems from 117 papers and patents covering 761 molecular structures; GPT-6.2 Astra at xhigh scores 84.5%, with structure reconstruction near-solved and compound ranking and numeric prediction near half credit.",
+   "subtitle": "OpenAI, \"Can AI help scientists identify promising drug candidates?\", published 20 November 2026",
+   "bullets": [
+    "The benchmark is small and deliberately so: 99 problems, built from 117 papers and patents, covering 761 distinct molecular structures. It is not a question-answering set. Each problem asks the model to connect a molecule's structure to the experimental evidence reported about it — explain a result, compare two compounds, predict a property — which is the actual daily work of a medicinal chemist rather than a recall test.",
+    "It grades four separable skills, and the separation is the finding. Reconstructing molecular structures from a paper's description. Scientific reasoning about why a result came out as it did. Ranking and selecting compounds. Predicting numerical properties.",
+    "Scores, as percent of available credit: GPT-6.2 Astra at xhigh reasoning 84.5%; GPT-6 Astra 83.3% at xhigh and 83.8% at max; GPT-6.1 Sol 82.0%; GPT-6.1 Terra 75.1%; GPT-5.6 Sol 58.2%. A twenty-six-point spread across one generation of models is itself a useful signal that the benchmark is not saturated.",
+    "The breakdown is where it earns its place. GPT-6 Astra at xhigh scored 95.4% on structure reconstruction — effectively solved — while getting only around half credit on compound selection and on numerical prediction. Reading a molecule off a page is nearly done; choosing which molecule to make next is not. Those are the two halves of the job and only one of them has moved.",
+    "The limitations are stated by OpenAI rather than extracted from it, which is worth crediting. The problems come from published sources the models may have seen, and this cannot be ruled out. Every answer was a single attempt with no tools, no feedback and no new experiments. And the thing being measured is reasoning over historical evidence — the page says explicitly that the results do not show whether models can discover new drugs or improve decisions in a lab."
+   ]
+  },
+  {
+   "tag": "Academia · Stanford and EPFL",
+   "title": "A coding agent trained a physical optical neural network to 96.8% by poking at the hardware — and needed 48 probe measurements where calibrating the simulator took 67,000",
+   "url": "https://arxiv.org/abs/2611.23875",
+   "subject": "Stanford/EPFL 'optics as code': Claude Code trains an optical neural network in situ to 96.8% on 3-class MNIST, beating 52.5% for gradient-free baselines and 96.3% for backprop through a calibrated model.",
+   "subtitle": "İlker Oğuz, Colin Christian, Christophe Moser, Demetri Psaltis and Gordon Wetzstein — arXiv:2611.23875, submitted 18 November 2026 (physics.optics, cs.AI, cs.LG). Stanford Electrical Engineering and EPFL's Institute of Electrical and Micro Engineering",
+   "bullets": [
+    "The problem is specific and old. An optical neural network computes by sending light through a physical medium, which is fast and cheap in energy but cannot be backpropagated through: you do not have gradients for a lump of glass and a liquid-crystal modulator. The standard workarounds are to calibrate a digital twin and differentiate that, or to use gradient-free search on the hardware. Both are expensive and the first drifts.",
+    "The method they call \"optics as code\" hands the hardware to a coding agent — Claude Code with Claude Opus 5.5 — and lets it write and run programs against it. The harness returns camera images of whatever the agent probed, and it requires the agent to state a hypothesis with every request. What comes out is not a weight vector but a reparametrisation: the agent builds up a physical account of the optics and re-expresses the network in interpretable optical elements that it then tunes on the machine.",
+    "The headline comparison, on three-class MNIST with a fixed budget of 51,200 measurements. Random starting phase masks: 98% in simulation, 35% on the actual bench — that gap is the whole problem. Gradient-free baselines (PPO, policy gradient, 22 configurations searched in simulation): up to 52.5%. Backpropagation through a calibrated model: 96.3%. The agent, given notes from an earlier session: 96.8% on a 3,147-digit test set, standard error at most 0.9 points. From the task description alone, with no notes: 91.1%. Three runs gave 89.2%, 91.3% and 96.8% — mean 92.4%, standard deviation 3.9 points, so the variance is real and the notes matter.",
+    "The number that should actually travel is the measurement cost. The agent's physical system identification used 48 probe measurements. Calibrating the digital twin for the backpropagation reference took about 67,000 camera images — more than a thousandfold difference for a result 0.5 points better. At 0.107 seconds per measurement the agent's entire classifier budget is about an hour and a half of bench time.",
+    "It holds on a second task. Encoding Fashion-MNIST down to 16 detector signals: 13.8 dB PSNR from a random start, 15.0 dB for PPO, 16.1 dB for the agent, 16.9 dB for backprop through the calibrated model — within 0.8 dB, on 300 held-out images. They also report a 0.88 Pearson correlation between simulated and experimental accuracy across the agent's designs, which is the quiet claim that the agent's physical understanding is real rather than curve-fitted, and they compare Claude Sonnet 5 and Claude Fable 5.2 on the encoder task."
+   ]
+  }
+ ],
+ "wild": [
+  {
+   "tag": "Airlines · Denver",
+   "headline": "Frontier signed two Georgia offensive linemen to an NIL deal for their backsides, and they executed the contracts by sitting on them",
+   "entities": [
+    "Frontier Airlines",
+    "BarkleyOKRP",
+    "Juan Gaston",
+    "Jahzare Jackson"
+   ],
+   "subject": "Frontier Airlines signs Georgia linemen Juan Gaston and Jahzare Jackson to an NIL deal for their backsides to promote new First Class seats.",
+   "subtitle": "Frontier Airlines newsroom release, Denver, 19 November 2026",
+   "bullets": [
+    "The signees are Juan Gaston and Jahzare Jackson, offensive linemen at Georgia: 13 feet 5 inches and 710 pounds between them, with Gaston alone at 6-foot-7 and 360 pounds. The deal is for name, image and likeness, and the likeness in question is specified. They signed their contracts by sitting on them.",
+    "What it sells is Frontier's new First Class cabin: two-by-two seating in the first two rows with no middle seat, up to 37 inches of pitch, extra-legroom Premium in rows three to eight, USB-C power through row eight and Starlink Wi-Fi. The product does not fly until 5 March 2027, which is the real job of the stunt — buying attention for a seat nobody can sit in for three and a half months.",
+    "The creative logic is better than the gag suggests. CMO Bobby Schroeter's line is \"Juan and Jahzare spend every game making room for other people\", which is exactly what an airline selling legroom wants said about it, and it is true of the position rather than invented for the ad. Gaston's: \"When Frontier called, I didn't expect my seat to be part of the deal.\" Jackson's: \"More room, no middle seat and a contract you sign sitting down? I'm in.\"",
+    "It launches as a 30-second film, \"It Comes From Here\", posted on the airline's and both players' own social channels rather than bought as media — the whole distribution plan is that two college linemen have followings. The release names no agency; BarkleyOKRP is credited in trade coverage.",
+    "The commercial hook is attached with a deadline, which is the tell that this is a fare promotion wearing a joke. The First bundle — seat, two checked bags, a carry-on, Board First boarding — is on sale from $129 one way, purchase by 11:59pm Eastern on 26 November, for nonstop domestic travel between 5 March and 5 April 2027. An ultra-low-cost carrier selling a premium cabin has a credibility problem, and hiring the two largest available humans to vouch for the width of the seat is a surprisingly direct solution to it."
+   ]
+  },
+  {
+   "tag": "Snacks · Malaysia",
+   "headline": "A cookie you are not allowed to buy if you are over 18, sold from booths with bouncers checking ID to keep adults out",
+   "entities": [
+    "ChipsMore",
+    "Mondelez Malaysia",
+    "Leo Indonesia",
+    "Lotus's"
+   ],
+   "subject": "ChipsMore Malaysia's '18 Unrestricted' limited-edition pack is sold only to under-18 gamers, with ID checks to exclude adults and a QR code to a private Discord.",
+   "subtitle": "Mondelez Malaysia with Leo Indonesia, Malaysia, November 2026 — campaign page on Ads of the World",
+   "bullets": [
+    "The premise is an inversion of the oldest gag in snack marketing. A hugely anticipated game released on 19 November carries an 18+ rating, so every teenager in Malaysia was locked out of the thing their feeds were full of. ChipsMore!'s answer was a limited-edition pack, \"18 Unrestricted\", reserved for exactly the people the game excludes.",
+    "Enforcement is the part that makes it a stunt rather than a slogan. The packs go on sale at dedicated booths inside Lotus's, the Malaysian retail chain, with bouncers checking MyKad identity cards — not to keep children out, but to keep adults from buying them.",
+    "Behind the pack label is a QR code that opens a private Discord community, where Malaysian gaming figures post tutorials, tips and tricks for games the audience can actually play: Mobile Legends: Bang Bang, PUBG Mobile and EA FC. The consolation prize for being too young is coaching in the games you already own, which is a more useful thing to give a thirteen-year-old than a discount.",
+    "The seeding has a nice twist too: before launch, kits were sent to gaming streamers to pass on to their younger siblings. The influencer is the delivery mechanism, not the audience.",
+    "Credits: client Mondelez Malaysia, agency Leo Indonesia, five media assets across content, experiential and outdoor. No reach or sales figures are published, so judge it on the idea. The idea is that an age gate is only humiliating in one direction, and a brand that flips it gets to be on the right side of a restriction for once."
+   ]
+  },
+  {
+   "tag": "Cereal · Orlando",
+   "headline": "Six Pop-Tarts mascots will attend a college football game, and this year the twist is that they eat each other",
+   "entities": [
+    "Pop-Tarts",
+    "Kellanova",
+    "ESPN",
+    "Camping World Stadium"
+   ],
+   "subject": "Pop-Tarts announces six edible mascots for the 29 December 2026 Pop-Tarts Bowl, with a new twist of mascots eating each other to reach 'Mouth Heaven'.",
+   "subtitle": "Pop-Tarts press release, 18 November 2026, reported by ContentGrip",
+   "bullets": [
+    "The Pop-Tarts Bowl's recurring bit is that the mascot is edible and the winning team eats it, which it has done since the inaugural 2023 game. The announcement on 18 November escalates: six edible mascots this year, and rather than one being eaten at the end, they will eat each other.",
+    "They are doing it in pursuit of \"Mouth Heaven\", the fictional afterlife the brand has constructed around the state of being eaten. This is a snack company that has spent three years building out an eschatology, and has now given its mascots a reason to turn on one another to get there faster.",
+    "One of the six has been named: Super Stuffed Strawberry Blast, an oversized character and the first \"Super Stuffed\" mascot on the roster — tied to a product with 50% more filling than the standard Frosted Strawberry, so the biggest mascot is also the most worth eating. The other five are revealed on 7 December, after the teams are announced.",
+    "Fourth annual edition, Tuesday 29 December 2026, 5:30pm Eastern, Camping World Stadium in Orlando, on ESPN. Kim Holowiak, director of Growth & Marketing, is the named voice on the premise.",
+    "Worth knowing why they keep doing it: the original 2023 campaign won the Brand Experience and Activation Grand Prix at Cannes Lions in 2024, per parent company Kellanova's own newsroom. Nothing is reported yet on this year's version, so the only evidence that escalating works is that the first one worked."
+   ]
+  }
+ ],
+ "learn": {
+  "title": "Everything they tell you before takeoff — seat upright, tray table, blinds up, lights down — is scaffolding around a single number, and the number is 90 seconds.",
+  "subject": "The 90-second evacuation rule in 14 CFR 25.803(c) and Appendix J, and how the pre-takeoff cabin ritual is built around it.",
+  "tags": [
+   "How everyday systems work",
+   "Aviation",
+   "Regulation"
+  ],
+  "body": [
+   "Before a plane with more than 44 seats is ever allowed to carry a passenger, the manufacturer has to prove something in a hangar. The rule is 14 CFR 25.803(c), and the wording is plain: the maximum seating capacity, crew included, \"can be evacuated from the airplane to the ground under simulated emergency conditions within 90 seconds.\" Not most of them. All of them, on the ground, in a minute and a half. And the regulation says that must be shown \"by actual demonstration\" unless the regulator accepts analysis instead.",
+   "The conditions of that demonstration, set out in Appendix J, are what make the number bite. Only one exit from each pair may be used, and the participants are not told which — so half the doors they can see are not coming open. The cabin is dark: ambient light outside must be no more than 0.3 foot-candles, and once the emergency lighting kicks in that is the only illumination there is. Roughly half a normal cabin's worth of carry-on bags and similar clutter is scattered through the aisles and across the exit routes beforehand, deliberately, to get in the way. The volunteers are not a convenient crowd of fit young staff: at least 40% must be women, at least 35% must be over 50, at least 15% must be women over 50, and three life-size dolls stand in for infants. Nobody may be rehearsed, nobody may be told how it will go, and nobody who has done one of these in the last six months may take part.",
+   "Once you know the test, the cabin ritual stops being theatre. Your seat is upright and your tray table stowed because the person behind you is going to come past your knees in the dark with a bag someone else dropped. The blinds are up so that the crew can look out and see whether there is fire, debris or water on that side before they open a door onto it. The lights are dimmed so that your eyes are already adapted when the only things glowing are the floor-level escape path and the exit signs — which is also why that briefing card insists you count the rows to your nearest exit rather than look for it. None of those four instructions is in the regulation itself. They are all operational habits built around keeping true the one thing the aircraft's certificate asserts: that a full cabin, in the dark, with half the exits shut and bags in the aisle, can be empty in ninety seconds."
+  ]
+ },
+ "ideas": {
+  "prompt": "Ten ways to make a Sunday feel twice as long",
+  "items": [
+   {
+    "text": "Get up at your weekday time, do nothing with the extra two hours on purpose, and go back to bed at eleven if you want to."
+   },
+   {
+    "text": "Eat breakfast somewhere that is a twenty-minute walk away, so the morning has a middle instead of just a start."
+   },
+   {
+    "text": "Pick one room and finish something in it. An afternoon with a visible result in it is remembered as longer than an afternoon without one."
+   },
+   {
+    "text": "Ban the phone until lunch, and leave a paperback and a pen where the phone normally is so your hand has something to find."
+   },
+   {
+    "text": "Call one person you would not have called, and give it an hour rather than ten minutes."
+   },
+   {
+    "text": "Cook something that needs waiting — dough, stock, anything that makes you leave the kitchen and come back twice."
+   },
+   {
+    "text": "Go somewhere in your own city you have never had a reason to go, and have no reason today either."
+   },
+   {
+    "text": "Write down the three things that are actually on your mind, then put the list away until Monday morning.",
+    "why": "A recurring wish in the idea subreddits is not another productivity app but somewhere to put a thought down so it stops circling."
+   },
+   {
+    "text": "Do one thing badly and on purpose: draw, sing, cook something unfamiliar. Being a beginner slows time down the way nothing else does."
+   },
+   {
+    "text": "End it early. Decide at eight that the day is over, and let the last two hours belong to nothing at all."
+   }
+  ]
+ }
+}

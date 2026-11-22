@@ -10941,6 +10941,170 @@
         "morganlewis.com",
         "swarajyamag.com"
       ]
+    },
+    {
+      "date": "2026-11-22",
+      "issue": 1,
+      "quote_text": [
+        "When a book and a head collide and a hollow sound is heard, must it always have come from the book?"
+      ],
+      "quote_author": [
+        "Georg Christoph Lichtenberg"
+      ],
+      "idea_text": [
+        "Get up at your weekday time, do nothing with the extra two hours on purpose, and go back to bed at eleven if you want to.",
+        "Eat breakfast somewhere that is a twenty-minute walk away, so the morning has a middle instead of just a start.",
+        "Pick one room and finish something in it. An afternoon with a visible result in it is remembered as longer than an afternoon without one.",
+        "Ban the phone until lunch, and leave a paperback and a pen where the phone normally is so your hand has something to find.",
+        "Call one person you would not have called, and give it an hour rather than ten minutes.",
+        "Cook something that needs waiting — dough, stock, anything that makes you leave the kitchen and come back twice.",
+        "Go somewhere in your own city you have never had a reason to go, and have no reason today either.",
+        "Write down the three things that are actually on your mind, then put the list away until Monday morning.",
+        "Do one thing badly and on purpose: draw, sing, cook something unfamiliar. Being a beginner slows time down the way nothing else does.",
+        "End it early. Decide at eight that the day is over, and let the last two hours belong to nothing at all."
+      ],
+      "idea_prompt": [
+        "Ten ways to make a Sunday feel twice as long"
+      ],
+      "tip_text": [
+        "Take your release or deploy procedure out of `CLAUDE.md` and put it in `.claude/skills/release/SKILL.md` with `disable-model-invocation: true` in the frontmatter. Claude then sees only the name and description until the file is actually needed — it is not re-sent every turn the way `CLAUDE.md` is — and because model invocation is off it can never start the thing on its own: it runs when you type `/release` and not otherwise. The docs' own rule for what goes in the file is the same one as for `CLAUDE.md`: \"only write down what Claude can't find on its own.\""
+      ],
+      "hn_id": [
+        "50581260",
+        "50589618",
+        "50572355",
+        "50572503",
+        "50576012"
+      ],
+      "link": [
+        "https://thinkingmachines.ai/news/inkling-2-mini/",
+        "https://leanprover-community.github.io/blog/posts/riemann-hypothesis/",
+        "https://kottke.org/17/06/if-you-cant-explain-something-in-simple-terms-you-dont-understand-it",
+        "https://architectlabs.com/blog/frostbite",
+        "https://slopstrap.mikelacher.com/",
+        "https://www.businesstoday.in/industry/banks/story/psu-banks-post-record-rs-1-09-lakh-crore-profit-in-h1-fy27-bad-loans-hit-new-low-568264-2026-11-18",
+        "https://signal.org/blog/protecting-your-privacy/",
+        "https://www.sci.news/othersciences/anthropology/homo-erectus-china-15208.html",
+        "https://openai.com/index/introducing-medchembench",
+        "https://arxiv.org/abs/2611.23875"
+      ],
+      "subject": [
+        "H1 FY27 results of the public sector banks, compiled by the Finance Ministry: a record aggregate profit of Rs 1,09,540 crore, bad loans at 1.69% of advances, and a loan book expanding 18.8% while deposits expand 13.1%.",
+        "Signal publishes a position on operating-system assistants that capture on-screen message content, calling it an existential threat to encrypted messaging, and sets out three demands for platform vendors.",
+        "Baxian and Naxian caves, Guangxi: two Nature papers place Homo erectus in closed southern Chinese rainforest as recently as 184,000 years before present, with enamel proteomics identifying one specimen as a different hominin population.",
+        "Frontier Airlines signs Georgia linemen Juan Gaston and Jahzare Jackson to an NIL deal for their backsides to promote new First Class seats.",
+        "ChipsMore Malaysia's '18 Unrestricted' limited-edition pack is sold only to under-18 gamers, with ID checks to exclude adults and a QR code to a private Discord.",
+        "Pop-Tarts announces six edible mascots for the 29 December 2026 Pop-Tarts Bowl, with a new twist of mascots eating each other to reach 'Mouth Heaven'.",
+        "MedChemBench: 99 medicinal-chemistry problems from 117 papers and patents covering 761 molecular structures; GPT-6.2 Astra at xhigh scores 84.5%, with structure reconstruction near-solved and compound ranking and numeric prediction near half credit.",
+        "Stanford/EPFL 'optics as code': Claude Code trains an optical neural network in situ to 96.8% on 3-class MNIST, beating 52.5% for gradient-free baselines and 96.3% for backprop through a calibrated model.",
+        "The 90-second evacuation rule in 14 CFR 25.803(c) and Appendix J, and how the pre-takeoff cabin ritual is built around it."
+      ],
+      "brand": [
+        "Frontier Airlines",
+        "BarkleyOKRP",
+        "Juan Gaston",
+        "Jahzare Jackson",
+        "Frontier",
+        "ChipsMore",
+        "Mondelez Malaysia",
+        "Leo Indonesia",
+        "Lotus's",
+        "ID",
+        "Pop-Tarts",
+        "Kellanova",
+        "ESPN",
+        "Camping World Stadium"
+      ],
+      "brand_mention": [
+        "Juan Gaston",
+        "Jahzare Jackson",
+        "Georgia",
+        "Gaston",
+        "Frontier's",
+        "Class",
+        "Premium",
+        "USB-C",
+        "Starlink Wi-Fi",
+        "CMO Bobby Schroeter's",
+        "Juan",
+        "Jahzare",
+        "I",
+        "Jackson's",
+        "Comes",
+        "BarkleyOKRP",
+        "Board",
+        "Eastern",
+        "Malaysia",
+        "Unrestricted",
+        "Lotus's",
+        "Malaysian",
+        "MyKad",
+        "QR",
+        "Discord",
+        "Mobile Legends",
+        "Bang Bang",
+        "PUBG Mobile",
+        "EA FC",
+        "Mondelez Malaysia",
+        "Leo Indonesia",
+        "Pop-Tarts Bowl's",
+        "Mouth Heaven",
+        "Super Stuffed Strawberry Blast",
+        "Super Stuffed",
+        "Frosted Strawberry",
+        "29 December 2026",
+        "Camping World Stadium",
+        "Orlando",
+        "ESPN Kim Holowiak",
+        "Growth",
+        "Marketing",
+        "Brand Experience",
+        "Activation",
+        "Kellanova's"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "State-run banks made ₹1.09 lakh crore in six months and their net bad loans are down to a third of one per cent — the worry has moved to how fast they are lending"
+        ],
+        [
+          "trends",
+          "Signal says an operating system that reads your screen is an existential threat to encryption, and the honest part is the list of places it cannot do anything about it"
+        ],
+        [
+          "trends",
+          "Homo erectus was supposed to be gone from mainland Asia 400,000 years ago. Nine teeth from two caves in Guangxi put it in a closed rainforest at 184,000"
+        ],
+        [
+          "wild",
+          "Frontier signed two Georgia offensive linemen to an NIL deal for their backsides, and they executed the contracts by sitting on them"
+        ],
+        [
+          "wild",
+          "A cookie you are not allowed to buy if you are over 18, sold from booths with bouncers checking ID to keep adults out"
+        ],
+        [
+          "wild",
+          "Six Pop-Tarts mascots will attend a college football game, and this year the twist is that they eat each other"
+        ],
+        [
+          "research",
+          "A medicinal-chemistry benchmark where the best model reconstructs a molecule from a paper 95.4% of the time and then cannot reliably say which of two compounds is better"
+        ],
+        [
+          "research",
+          "A coding agent trained a physical optical neural network to 96.8% by poking at the hardware — and needed 48 probe measurements where calibrating the simulator took 67,000"
+        ],
+        [
+          "learn",
+          "Everything they tell you before takeoff — seat upright, tray table, blinds up, lights down — is scaffolding around a single number, and the number is 90 seconds."
+        ]
+      ],
+      "editorial_domains": [
+        "businesstoday.in",
+        "sci.news",
+        "signal.org"
+      ]
     }
   ]
 }
