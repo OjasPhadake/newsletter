@@ -11105,6 +11105,164 @@
         "sci.news",
         "signal.org"
       ]
+    },
+    {
+      "date": "2026-11-23",
+      "issue": 1,
+      "quote_text": [
+        "I have only made this letter longer because I have not had the time to make it shorter."
+      ],
+      "quote_author": [
+        "Blaise Pascal"
+      ],
+      "idea_text": [
+        "Give it one job and put that job in the name. \"Badminton Tuesdays\" survives; \"Guys\" becomes a graveyard.",
+        "Appoint someone whose only duty is to propose a plan with a date in it. Nothing kills a chat faster than everyone waiting for everyone.",
+        "Start a running numbered thing — overheard lines, bad posters, worst chai on campus — so there is always a reason to post without having news.",
+        "Make one day a week the only day anyone is allowed to share a link. The other six get quieter and the one gets better.",
+        "Pin a photo of everyone from the first week you knew each other, and replace it every year on the same date.",
+        "Agree out loud that nobody owes a reply. Half of group-chat dread is the unanswered-message ledger people keep in their heads.",
+        "Keep a shared list of things you said you would do together, and make a rule that one gets struck off every month.",
+        "Let one person be in charge of remembering birthdays so nine people can stop pretending they do.",
+        "Have a hard rule against forwarding anything you have not read. It costs nothing and changes the whole texture of the thing.",
+        "Leave quietly when it is over. A chat that ran its course and stopped is a better memory than one that limped for four years."
+      ],
+      "idea_prompt": [
+        "Ten ways to make a group chat worth being in"
+      ],
+      "tip_text": [
+        "When a remote MCP server will not connect, stop guessing from the red dot — open `/mcp`, pick the server and read the new **Server message** row, which prints the JSON-RPC error the server itself sent back when it refused the connection. Claude Code 2.1.329 added it on 19 November, and it turns \"failed to connect\" into the server's own words (bad token, wrong scope, unsupported protocol version) without a single log file."
+      ],
+      "hn_id": [
+        "50596133",
+        "50597612",
+        "50588982",
+        "50587875",
+        "50591853"
+      ],
+      "link": [
+        "https://www.caranddriver.com/news/a74490092/toyota-nissan-honda-standardize-parts-lower-costs/",
+        "https://betterdatacenterproject.com/2026/11/16/how-ai-is-powered-a-breakdown-of-byop-and-grid-power/",
+        "https://www.science.org/content/blog-post/detonating-huge-pile-lead-azide-really",
+        "https://blog.tymscar.com/posts/studiodisplayethernet/",
+        "https://github.com/ShinMegamiBoson/lookatmyquant",
+        "https://bfsi.eletsonline.com/sebi-proposes-scrapping-additional-disclosure-rules-for-foreign/",
+        "https://developer.atlassian.com/cloud/bitbucket/changelog/",
+        "https://phys.org/news/2026-11-quantum-physics-person.html",
+        "https://openai.com/index/perplexity-and-intelligence/",
+        "https://arxiv.org/abs/2611.25387"
+      ],
+      "subject": [
+        "SEBI consultation paper of 20 November 2026 proposing to remove the Additional Disclosure Framework for FPIs, ODI subscribers and segregated portfolios, with comments open to 11 December 2026.",
+        "Atlassian deprecation notice of 13 October 2026: from 30 November 2026 Bitbucket Cloud refuses Git pushes authenticated by OAuth through Git Credential Manager below version 3.0.0, because older GCM builds cannot handle rotating refresh tokens.",
+        "First complete loophole-free demonstration of quantum position verification, by a NIST-led international team at Boulder, published in Nature on 18 November 2026.",
+        "Posti's 'North Pole Redirect' Christmas campaign asking families in the UK, US and Canada to address Santa letters to Rovaniemi instead of the North Pole, with pop-up Santa mailboxes in London, New York and Toronto.",
+        "Hershey selling classic Milk Chocolate Bars for five cents on 25 November 2026 at Walmart, Amazon Grocery and Hershey's Chocolate World, tied to the release of the film Hershey.",
+        "The Guggenheim New York installing an Inciardi Mini Print vending machine in its sixth-floor gift shop, dispensing one of ten miniature prints at random for a dollar paid in gift-shop tokens.",
+        "Jakub Pachocki's argument that log-perplexity on a fixed held-out set should be a shared cross-lab measure of pretraining progress, with OpenAI's internal readings from GPT-3.5 onward and a proposal for jointly agreed development limits.",
+        "TuringSpace is a benchmark of 125 interactive CAPTCHAs requiring cursor clicks and drags; humans score 94.1 percent, GPT-6 Astra 74.1 percent, Kimi K3 32 percent.",
+        "Simons & Levin's 1998 'door study' at Cornell: real-world change blindness, in which a conversation partner is substituted behind a passing door, and the follow-up showing detection collapses when the experimenters dress as construction workers."
+      ],
+      "brand": [
+        "Posti",
+        "Santa Claus' Main Post Office",
+        "Rovaniemi",
+        "Hershey",
+        "Hershey's Chocolate World",
+        "Walmart",
+        "Amazon Grocery",
+        "Ibotta",
+        "Guggenheim Museum",
+        "Anastasia Inciardi",
+        "Inciardi Prints",
+        "Guggenheim"
+      ],
+      "brand_mention": [
+        "Pole Redirect",
+        "Santa Claus Main Post Office",
+        "Arctic Circle",
+        "Finland",
+        "Pole Posti",
+        "Santa",
+        "Official Hometown",
+        "Santa Claus",
+        "EU's Intellectual Property Office",
+        "EUIPO",
+        "Leicester Square",
+        "Domino Park",
+        "Sankofa Square",
+        "Toronto",
+        "Letters",
+        "Lapland Posti",
+        "Pole-addressed",
+        "Jenni Ihatsu",
+        "Posti's",
+        "Canada",
+        "Pole",
+        "Hershey's Milk Chocolate Bars",
+        "Ibotta Amazon Grocery",
+        "Hershey",
+        "Hershey's Chocolate",
+        "Pennsylvania",
+        "Times Square",
+        "Milton Hershey",
+        "Catherine",
+        "Kitty",
+        "Inciardi Mini Print Vending Machine",
+        "Anastasia Inciardi",
+        "Brooklyn-born",
+        "Inciardi Prints",
+        "York",
+        "Statue",
+        "Liberty",
+        "Empire State Building",
+        "Staten Island Ferry",
+        "Frank Lloyd Wright",
+        "Guggenheim"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "SEBI wants to scrap the rule that made large foreign funds name every natural person behind them — the disclosure regime built in the Adani year"
+        ],
+        [
+          "trends",
+          "From Sunday week, Bitbucket stops accepting Git pushes from any Credential Manager older than 3.0.0 — because the old ones cannot handle a refresh token that rotates"
+        ],
+        [
+          "trends",
+          "Two stations 195 metres apart proved where a third party was standing, using entangled photons and the fact that light cannot be hurried"
+        ],
+        [
+          "wild",
+          "Posti has declared Santa's address a clerical error, and is running a redirect campaign out of three city squares to fix it"
+        ],
+        [
+          "wild",
+          "For one day Hershey is selling its chocolate bar at its 1900 price of five cents, with a per-customer limit that tells you exactly what it expects to happen"
+        ],
+        [
+          "wild",
+          "The Guggenheim has put a vending machine in its gift shop that takes a token, costs a dollar, and refuses to let you choose which print you get"
+        ],
+        [
+          "research",
+          "OpenAI's chief scientist wants the industry to agree on one number, and says capabilities appeared at 0.99, 0.91, 0.8 and 0.76 of it"
+        ],
+        [
+          "research",
+          "A benchmark of 125 CAPTCHAs you have to solve by clicking and dragging: humans 94.1%, the best model 74.1%, the best open-weights model 32%"
+        ],
+        [
+          "learn",
+          "Fifteen people were asked for directions, and halfway through the conversation the person asking was swapped for someone else. Eight of them did not notice."
+        ]
+      ],
+      "editorial_domains": [
+        "bfsi.eletsonline.com",
+        "developer.atlassian.com",
+        "phys.org"
+      ]
     }
   ]
 }

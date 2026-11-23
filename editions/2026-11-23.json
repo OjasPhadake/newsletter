@@ -1,0 +1,347 @@
+{
+ "date_line": "Monday, 23 November 2026",
+ "issue": 1,
+ "preheader": "Pascal on why the long letter is the cheap one; read an MCP server's own refusal in /mcp's new Server message row; Toyota, Nissan and Honda agreeing to standardise steel grades and wiring colours; a bottom-up estimate putting Anthropic's 2028 power at 87% gas and 11% coal; 68 drums of recrystallised lead azide the Army can no longer lift; a monitor costing 1.6 Gbps because its Ethernet chip sends four packets before asking permission; a quantisation compiler that publishes its own degradation curve; Friday's nine-month high and a rupee at 92.62 while Taiwan fell 6%; SEBI proposing to scrap the rule that named the natural persons behind big foreign funds; Bitbucket blocking old Credential Managers on 30 November; two stations 195 metres apart proving where a third party stood; OpenAI's chief scientist proposing one shared number for capability and a limit nobody crosses; 125 CAPTCHAs that must be solved by dragging, where humans get 94.1% and the best model 74.1%; a post office declaring Santa's address a clerical error; a five-cent Hershey bar for one day only; a Guggenheim vending machine that will not let you choose; eight of fifteen people who did not notice their conversation partner had been replaced; and ten ways to make a group chat worth being in.",
+ "quote": {
+  "text": "I have only made this letter longer because I have not had the time to make it shorter.",
+  "author": "Blaise Pascal",
+  "work": "The Provincial Letters",
+  "source_url": "https://www.goodreads.com/quotes/tag/wit",
+  "note": "Pascal is apologising, and in the same breath telling you what the apology costs. Length is the default; brevity is the thing you have to pay for in hours. It reframes every long message, long commit, long design doc you have ever received: the writer did not take more of your time because they had more to say, but because they had less time to spend on your behalf. Useful the next time someone praises a document for being thorough."
+ },
+ "agent_craft": {
+  "items": [
+   {
+    "text": "When a remote MCP server will not connect, stop guessing from the red dot — open `/mcp`, pick the server and read the new **Server message** row, which prints the JSON-RPC error the server itself sent back when it refused the connection. Claude Code 2.1.329 added it on 19 November, and it turns \"failed to connect\" into the server's own words (bad token, wrong scope, unsupported protocol version) without a single log file.",
+    "source": "Claude Code changelog, version 2.1.329 (19 November 2026)",
+    "url": "https://code.claude.com/docs/en/changelog"
+   }
+  ]
+ },
+ "hn": [
+  {
+   "title": "Japan's three biggest carmakers will standardise the parts you never see, starting with steel grades, resin protocols and the colour of wiring",
+   "url": "https://www.caranddriver.com/news/a74490092/toyota-nissan-honda-standardize-parts-lower-costs/",
+   "hn_url": "https://news.ycombinator.com/item?id=50596133",
+   "points": 1184,
+   "comments": 675,
+   "bullets": [
+    "Toyota, Nissan and Honda have agreed to begin standardising vehicle parts to cut costs, announced at a Tokyo news conference and attributed to Automotive News. The first phase is deliberately invisible: unified quality criteria for steel, consistent protocols for plastics and resins, and a universal colour-coding scheme for wiring harnesses. First standards are expected to take effect in 2027.",
+    "The person fronting it is Koji Sato — Toyota's vice chairman and chairman of the Japan Automobile Manufacturers Association. JAMA's long-term plan is to extend standardisation to components covering the whole car, and discussions start with Japanese suppliers before moving to overseas ones.",
+    "The choice of parts is the tell. Steel grades, resin specs and harness colours are pure cost with no brand in them — standardising them does not make a Honda feel like a Nissan, which is exactly why these three could agree. The stated competitive reason is Chinese automakers, with Japan's seven makers (Toyota, Nissan, Honda, Mazda, Subaru, Mitsubishi, Suzuki) named as the group under pressure.",
+    "Nobody published a savings figure, which is worth noting before reading too much into it. The idea itself is not new either: JAMA studied unifying parts specifications back in 2014, and Honda, Mazda, Nissan, Subaru and Toyota formed JAMBE in 2021 to standardise model-based development with suppliers. What is new is three rivals naming specific material standards and a year.",
+    "Separately, this is the second time in 2026 Sato has raised it — he and Nissan's Ivan Espinosa floated industry-wide standardisation of wiring harnesses and fluid hoses in July, with Espinosa's reason being simply that \"other industries in other countries or other parts of the world are better organized than us.\""
+   ]
+  },
+  {
+   "title": "A bottom-up estimate of what Anthropic's datacentres will actually burn in 2028: 87% gas, 11% coal, and a carbon intensity 35% above the US grid",
+   "url": "https://betterdatacenterproject.com/2026/11/16/how-ai-is-powered-a-breakdown-of-byop-and-grid-power/",
+   "hn_url": "https://news.ycombinator.com/item?id=50597612",
+   "points": 874,
+   "comments": 883,
+   "bullets": [
+    "The case study, published 16 November by the Better Data Center Project, splits AI power into two mechanisms. BYOP — \"bring your own power\" — is a datacentre generating its own primary supply on site; grid power is drawing from the utility. It counts 177 GW of planned BYOP gas capacity, enough to run about 65% of US homes, and estimates under 20% of BYOP generation will be renewable by 2032. Separately, around 200 GW of new fossil plants are being built on the grid largely for datacentre demand.",
+    "The headline number everyone quoted: for Anthropic in 2028, about 87% gas and 11% coal. The reason no grid renewables are credited is methodological rather than rhetorical — new load is served by whatever runs at the margin, and the authors model grid-connected sites with the EPA's AVERT tool, which estimates short-run marginal emissions for the plants that would actually serve the new load.",
+    "The Anthropic figures beneath it: 15 GW of contracted compute as of October 2026, with 5.9–9.6 GW tied to identified sites; a mid-case of 9.6 GW online in 2028 at roughly 32 million tonnes CO2e a year (range 17–38 million); 2.5 GW of on-site gas, about a quarter of contracted power, roughly 80% of it simple-cycle turbines and engines. Carbon intensity 1,033–1,076 lb CO2e/MWh against a US grid average of 767.",
+    "It also prices the local externality, which is the part the gigawatt debate usually skips: $2–3 billion a year in health damages, over 13,000 tons/year of NOx and 2,000 tons/year of PM2.5. xAI's Colossus 2, which Anthropic uses, is described as running mostly on temporary unpermitted turbines, most without SCR controls.",
+    "Read the uncertainty before the conclusion. Power use assumes PUE of 1.1–1.2 and 60–80% utilisation (mid-case 1.15 and 70%); compute comes from Epoch AI's tracker, company announcements, SEC filings and press reports; the SpaceX/xAI capacity estimate carries a stated ±25%. The 2025 Scope 2 figures given for comparison — Meta 5.9, Microsoft 12, Google 15 million tonnes CO2e — are not modelled the same way."
+   ]
+  },
+  {
+   "title": "The US Army has 68 drums of a primary explosive it can no longer pick up, so the plan is to detonate all 10,000 pounds where it lies",
+   "url": "https://www.science.org/content/blog-post/detonating-huge-pile-lead-azide-really",
+   "hn_url": "https://news.ycombinator.com/item?id=50588982",
+   "points": 697,
+   "comments": 425,
+   "bullets": [
+    "Derek Lowe's 20 November post explains the chemistry behind a news story: the Army intends to detonate a large quantity of lead azide near Burlington, Iowa. Lead azide is a *primary* explosive — the class more shock-sensitive than PETN, which Lowe glosses as \"anything in that category can be assumed to detonate if you hit it with a hammer (or perhaps a lot less).\" It is the standard detonator that sets off the secondary explosives (TNT, RDX) in shells.",
+    "The quantity and the storage are the problem. Sixty-eight drums, between 9,500 and 10,000 pounds, held for some twenty years in two underground concrete bays submerged in an ethanol/water mixture. It partially dissolved and then slowly recrystallised as temperatures changed, and the new crystal form is more shock- and friction-sensitive than the powder that went in. Lowe's verdict is blunt: \"this crystallization is a foreseeable problem and it is not what you are supposed to allow to happen.\"",
+    "That rules out every gentler option. Chemical destruction works only at small scale and only if you can open the drums; burying it deeper just defers a detonation that gets more likely every year. The Department of Defense ruled the material \"unserviceable hazardous waste\" in March, and the EPA issued an emergency permit about a week before the post allowing disposal in situ.",
+    "The engineering of a deliberate blast: 19,000 cubic yards of lime-fill foundation and 300 sand-filled barriers arranged to direct the blast south and south-west away from populated areas, the site soaked and water-misted to suppress dust, and the shot timed for low wind, no rain, a high cloud ceiling and no temperature inversion. The Army, the EPA and the University of Iowa are installing air and soil monitors across eastern Iowa.",
+    "It was meant to happen on 20 November and has been postponed to at least Monday pending legal action. Lowe's own position on the material, for the record: \"no, I would not work with lead azide myself, not at all, although people certainly do.\""
+   ]
+  },
+  {
+   "title": "A monitor was costing 1.6 Gbps of download speed, and the culprit was a USB chip that sends four packets before asking permission to send more",
+   "url": "https://blog.tymscar.com/posts/studiodisplayethernet/",
+   "hn_url": "https://news.ycombinator.com/item?id=50587875",
+   "points": 682,
+   "comments": 316,
+   "bullets": [
+    "The setup: a MacBook Pro M3 Pro, a 2026 Studio Display XDR used as a one-cable hub, a UGREEN USB-C 2.5G Ethernet adapter (Realtek RTL8156B) plugged into the display, a UniFi Dream Router 7 and a 2.5 Gbps symmetrical line. Download sat at about 600 Mbps while upload ran at 2.4 Gbps. Plug the same adapter straight into the Mac and download jumped to about 2.2 Gbps.",
+    "The diagnostic chain is the good part. macOS logged no dropped frames, so he compared ping loss during downloads — about 10% through the display's adapter, 0% over Wi-Fi — then ran iperf3 and fixed-rate UDP tests, read the chip's own dropped-frame counters, and finally dumped USB descriptors with a Python script.",
+    "The cause is a burst-size setting. The RTL8156B sends only 4 packets of 1 KB before waiting for the host's go-ahead; the SSD enclosure on the same hub sends 16. Through the monitor's hub that round trip takes about 7.6 µs while sending 4 KB takes about 8.2 µs, capping throughput near 2 Gbps. The adapter's buffer fills, overflows, the router sees drops and backs off hard, and the speed collapses to a third of the line.",
+    "Partial fixes and why he rejected them: Realtek's official driver gave 1.1 Gbps; enabling flow control on the router gave about 2 Gbps but adds latency for every other device on it. The actual fix was a UGREEN adapter built on the RTL8157, whose descriptor reports a burst setting of 7 (8 packets) rather than 3 (4 packets) — a theoretical drain rate of about 4.5 Gbps against 2.5 Gbps coming in, so the buffer never fills. Measured 2.4 Gbps with no dropped frames."
+   ]
+  },
+  {
+   "title": "A quantisation compiler that measures how much each row of weights matters before deciding how many bits it gets, and claims 12× lower KL at the same file size",
+   "url": "https://github.com/ShinMegamiBoson/lookatmyquant",
+   "hn_url": "https://news.ycombinator.com/item?id=50591853",
+   "points": 581,
+   "comments": 137,
+   "bullets": [
+    "LookAtMyQuant is an MIT-licensed quantisation compiler from a single GitHub account, ShinMegamiBoson. The method: measure how much compressing each part of the stored weights degrades the output, then assign codes per row to fit a size budget — trellis codes with Fisher-based per-row bit allocation. The tagline claims 12× lower KL divergence than Q4_K_M at the same file size, demonstrated on Gemma 4 E2B.",
+    "The sizes it reports are the reason it got attention. Qwen3.5-4B at 1.23 GB and about 2.3 bits per weight. Qwen3.8-27B taken from 53.7 GB down to 7.2 GB at 2.1 bits per weight, with a companion drafter for speculative decoding. Six builds of the 26.4B-parameter Inkling-2-Mini ranging from 3.9 GB to 12.8 GB, or 1.18 to 3.92 bits per weight.",
+    "Author-reported scores, not independently verified: Qwen3.5-4B solves 330 of 540 math problems against 359 for the original; held-out KL of 0.45 against 0.59 for the comparison at 1.20 GB. The 7.2 GB Qwen3.8-27B matches the original at 401 of 540. The 12.8 GB Inkling build is said to match its BF16 teacher on GSM8K (193/200), HumanEval (152/164) and a small vision set, using about a third less memory for text weights.",
+    "The degradation curve is published too, which is unusual and more useful than the headline. The 11.2 GB and 8.9 GB builds hold about 99% of the teacher's three-task mean; the 5.4 GB, 4.7 GB and 3.9 GB builds fall to roughly 85–91%, with the smallest scoring 179/200 on GSM8K but only 97/164 on HumanEval. Code degrades much faster than arithmetic.",
+    "It ships runtimes rather than just files: an MLX path for Apple Silicon with a `lamq` CLI, a Python API and an OpenAI-compatible server, plus Triton and native CUDA engines for NVIDIA. The compilation jobs themselves ran on rented H100, L40S and B200 GPUs."
+   ]
+  }
+ ],
+ "markets": {
+  "indices": [
+   {
+    "name": "Session",
+    "value": "Friday 20 November 2026 — last close. Markets reopen 9:15 IST today",
+    "direction": "flat",
+    "change": "Nothing has traded in India since Friday; the weekend sat in between, so these are Friday's closing numbers. Index and sector levels and the pre-open indication from HDFC Sky's Friday-evening GIFT Nifty note and its closing-bell report via Kotak Neo; single-day FII/DII cash figures from Quantsapp; the rupee from The Morning Voice. Note for the week: the exchanges are shut tomorrow, Tuesday 25 November is the next session after today"
+   },
+   {
+    "name": "Sensex",
+    "value": "83,919.71",
+    "direction": "up",
+    "change": "+897.96 points (+1.08%) on Friday, a nine-month closing high. Up 12.70% so far in November, on HDFC Sky's count"
+   },
+   {
+    "name": "Nifty 50",
+    "value": "25,800.60",
+    "direction": "up",
+    "change": "+286.30 points (+1.12%), back above 25,800. Up 11.91% in the month to date"
+   },
+   {
+    "name": "Sectors",
+    "value": "Bank +2.49%, IT +1.30%, Metal −0.23%",
+    "direction": "up",
+    "change": "Kotak Neo's closing bell lists only these three sector moves for the session. Nifty Bank was the day's leader. Among the Nifty 50, Apollo Hospitals, Axis Bank, Max Healthcare, Maruti Suzuki and UltraTech led; Titan, Tata Steel, NTPC, Hindustan Unilever and Jio Financial lagged — no percentages were published for the individual names, so none are given here"
+   },
+   {
+    "name": "Broader market",
+    "value": "Midcap 100 +0.66%, Smallcap 100 −0.13%",
+    "direction": "flat",
+    "change": "Large caps did the work again. The small-cap index fell on a day the Sensex rose more than one per cent"
+   },
+   {
+    "name": "USD/INR",
+    "value": "92.62",
+    "direction": "up",
+    "change": "The rupee gained 70 paise from 93.32, its fifth straight session of gains and a seven-month high, on foreign inflows, a softer dollar and cheaper crude. The dollar index was 103.87 (−0.08%). A weekly roundup prints the Friday close as 92.67 rather than 92.62; the five-paise gap is not reconciled by either source, so both are stated"
+   },
+   {
+    "name": "FII · cash",
+    "value": "+₹10,308 cr on Friday",
+    "direction": "up",
+    "change": "Bought ₹23,596 cr, sold ₹13,288 cr. Month to date, 2–20 November: +₹1,11,949 cr. Kotak Neo separately reports ₹84,291 crore of foreign inflows in the first half of November alone, which it calls the highest fortnightly figure on record"
+   },
+   {
+    "name": "DII · cash",
+    "value": "−₹4,860 cr on Friday",
+    "direction": "down",
+    "change": "Bought ₹18,493 cr, sold ₹23,352 cr. Month to date: −₹61,087 cr. Domestic institutions have spent November selling into the foreign bid rather than buying alongside it"
+   },
+   {
+    "name": "Asia · Friday",
+    "value": "Taiwan −6.23% · Kospi −5.21% · Nikkei 225 −5.06%",
+    "direction": "down",
+    "change": "Taiwan closed at 36,033.29, the Kospi at 4,869.96, the Nikkei at 56,436.65. Also Shenzhen −3.09%, Straits Times −2.05%, Hang Seng −1.89% to 22,410.80, ASX 200 −1.58%, Thailand's SET −1.31%, Shanghai Composite −1.22% to 3,533.79. This is the number to hold next to the Sensex's +1.08%: India rose more than a per cent on a day its neighbours fell five"
+   },
+   {
+    "name": "US · Thursday close",
+    "value": "Nasdaq −2.25% · Dow −2.19% · S&P 500 −2.02%",
+    "direction": "down",
+    "change": "Percentages only; the source published no index levels for these closes, so none are given"
+   },
+   {
+    "name": "Crude",
+    "value": "Brent about $90.60",
+    "direction": "down",
+    "change": "−$1.38 (−1.50%) on Friday; WTI −$0.95 (−1.15%) to $81.49. PTI quoted Brent 1.89% lower at $90.24 during Indian trading hours, and Kotak Neo's 15:36 snapshot had the January 2027 contract at $90.35 — three readings of the same afternoon, all within forty cents"
+   },
+   {
+    "name": "Metals · MCX",
+    "value": "Gold ₹1,23,150/10g (−3.38%) · Silver ₹1,51,350/kg (−3.89%)",
+    "direction": "down",
+    "change": "December 2026 futures, snapshot taken 15:37 on Friday"
+   },
+   {
+    "name": "Pre-open indication",
+    "value": "GIFT Nifty 25,766.50 on Friday evening",
+    "direction": "down",
+    "change": "The November contract was +21.00 points (+0.08%) on the session but sat 34.10 points (−0.13%) below the Nifty's cash close, pointing to a marginally lower open today. December was at 25,906.00. This was the Friday-evening reading — the contract has since reopened for the week and nothing published before this edition went out gives a live Monday level, so treat it as the last indication rather than the current one"
+   }
+  ]
+ },
+ "trends": [
+  {
+   "tag": "India",
+   "headline": "SEBI wants to scrap the rule that made large foreign funds name every natural person behind them — the disclosure regime built in the Adani year",
+   "url": "https://bfsi.eletsonline.com/sebi-proposes-scrapping-additional-disclosure-rules-for-foreign/",
+   "subject": "SEBI consultation paper of 20 November 2026 proposing to remove the Additional Disclosure Framework for FPIs, ODI subscribers and segregated portfolios, with comments open to 11 December 2026.",
+   "subtitle": "SEBI consultation paper issued Friday 20 November 2026, reported 21 November; comments close 11 December 2026",
+   "bullets": [
+    "What goes: the Additional Disclosure Framework, which forces specified foreign portfolio investors to disclose ownership, economic interest and control all the way down to natural persons — with no ownership threshold at all, so there is no small shareholder to hide behind. The proposal extends the removal to offshore derivative instrument subscribers and to segregated portfolios.",
+    "The two triggers that pull a fund into it today. The concentration criterion: more than 50% of a fund's Indian equity AUM sitting in a single corporate group. The size criterion: equity AUM above ₹50,000 crore, alone or with its investor group — raised from ₹25,000 crore by a circular dated 9 April 2025. Broadly based and government-linked funds are exempt on conditions.",
+    "The stated aim is reducing regulatory burden and making India a more attractive destination. The context it arrives in is a market that has just taken ₹1.1 lakh crore of foreign money in three weeks after a long drought — the same article notes FPIs pulled more than ₹5.61 lakh crore out of Indian equities between October 2024 and October 2026.",
+    "Worth being precise about the status: this is a consultation paper, not an amendment. Nothing is operative, comments run to 11 December, and the framework stays as it is until SEBI says otherwise. But the direction of travel on a rule written to find the beneficial owners behind concentrated single-group positions is the thing to notice, whatever the final text says."
+   ]
+  },
+  {
+   "tag": "Platforms",
+   "headline": "From Sunday week, Bitbucket stops accepting Git pushes from any Credential Manager older than 3.0.0 — because the old ones cannot handle a refresh token that rotates",
+   "url": "https://developer.atlassian.com/cloud/bitbucket/changelog/",
+   "subject": "Atlassian deprecation notice of 13 October 2026: from 30 November 2026 Bitbucket Cloud refuses Git pushes authenticated by OAuth through Git Credential Manager below version 3.0.0, because older GCM builds cannot handle rotating refresh tokens.",
+   "subtitle": "Atlassian Bitbucket Cloud developer changelog, deprecation notice dated 13 October 2026, effective 30 November 2026",
+   "bullets": [
+    "The change: from 30 November 2026, Git requests authenticated with OAuth 2.0 through Git Credential Manager are blocked for any GCM below version 3.0.0. The reason given is narrow and technical — older GCM builds do not support Bitbucket's rotating OAuth refresh tokens, so they keep presenting a token that no longer exists.",
+    "Who is actually affected, and who is not. If you authenticate with a personal access token, or you do not use GCM at all, nothing happens to you. If you use OAuth 2.0 through GCM you have to \"upgrade Git Credential Manager to a version 3.0.0 or higher by Nov 30, 2026\". Until then every `git push` prints a warning.",
+    "The sharp edge is on Windows: Atlassian's own note says Git for Windows does not yet bundle a suitable GCM release, so Windows users may have to install GCM separately rather than wait for their Git installer to catch up. That is the gap where a working laptop quietly stops pushing in nine days.",
+    "It is one of four Bitbucket deadlines inside two months, which is the broader signal. The Code Search API browned out on 3 November and went permanently dark on 15 November, replaced by a POST endpoint with a different request format; SSH access via bitbucket.org is being retired in favour of ssh.bitbucket.org with brownouts on the old hostname; and new Ecoscanner security checks for Marketplace Forge apps roll out before 31 December, with High and Medium findings getting 30 extra days until standard timelines resume on 1 January 2027."
+   ]
+  },
+  {
+   "tag": "Wildcard",
+   "headline": "Two stations 195 metres apart proved where a third party was standing, using entangled photons and the fact that light cannot be hurried",
+   "url": "https://phys.org/news/2026-11-quantum-physics-person.html",
+   "subject": "First complete loophole-free demonstration of quantum position verification, by a NIST-led international team at Boulder, published in Nature on 18 November 2026.",
+   "subtitle": "NIST-led team, Boulder, Colorado; published in Nature 18 November 2026, DOI 10.1038/s41586-026-11247-3",
+   "bullets": [
+    "The problem is older than the physics. Everything that verifies you online — a password, a token, a face — verifies something you have or know, which can be copied or coerced. Position is the one credential that cannot be delegated, and until now there was no way to check it that a determined liar could not beat.",
+    "The experiment, led by NIST physicist Krister Shalm with Scott Glancy among the collaborators: two verifying stations 195 metres (640 feet) apart in a research building, linked by cable and optical fibre, with the prover's claimed position between them. One verifier makes entangled photons, keeps one, sends the other to the prover. Both verifiers send random bits timed to arrive at the prover simultaneously; the prover uses them to choose how to measure its photon's polarisation and reports the result.",
+    "Three separate pieces of physics have to agree for the answer to count. The timing: a reply from anywhere further away arrives late, because nothing outruns light. The correlations: a loophole-free Bell test confirms the prover's results track the verifiers' own measurements more closely than any classical strategy allows. And no-cloning, which stops a fraudster copying the entangled state and distributing it to accomplices. The procedure repeats millions of times over a few minutes.",
+    "What it could eventually gate: commands to a power grid or a water treatment plant, access to health records, a trade on a firm's account, a video call from someone claiming to be in the office. The article notes cybercrime cost US citizens over $16 billion in 2024 with fewer than 1% of perpetrators caught — and then says practical deployment is more than a decade out, since it needs high-fidelity quantum networks that do not exist yet. No error rates or success percentages are reported, only that any error or manipulation would make the Bell test fail."
+   ]
+  }
+ ],
+ "research": [
+  {
+   "tag": "Industry · OpenAI",
+   "title": "OpenAI's chief scientist wants the industry to agree on one number, and says capabilities appeared at 0.99, 0.91, 0.8 and 0.76 of it",
+   "url": "https://openai.com/index/perplexity-and-intelligence/",
+   "subject": "Jakub Pachocki's argument that log-perplexity on a fixed held-out set should be a shared cross-lab measure of pretraining progress, with OpenAI's internal readings from GPT-3.5 onward and a proposal for jointly agreed development limits.",
+   "subtitle": "OpenAI, \"Perplexity and Intelligence\" by Jakub Pachocki, Chief Scientist, published 22 November 2026",
+   "bullets": [
+    "The claim is narrow and checkable: perplexity — equivalently cross-entropy loss — on a fixed held-out set tracks general capability gained from pretraining, and specific capabilities have appeared at specific thresholds. OpenAI's own readings, measured on a frozen snapshot of its internal codebase: GPT-3.5 at about 0.99 log-perplexity, which was enough for fluent conversation; GPT-4 at about 0.91, where chain-of-thought started paying for itself.",
+    "Below 0.8, the post says, cybersecurity and mathematics capabilities begin emerging; at about 0.76 a model started producing notable results on open mathematical problems. Pachocki expects further transformative capabilities somewhere around 0.68–0.70. A footnote attributes the steep 2026 decline in loss mostly to long-term research and compute investment rather than to automation of research itself.",
+    "The reason to publish a number rather than a benchmark is the proposal attached to it: that frontier developers jointly set evaluation norms, transparency standards and red-teaming practices, and agree on \"common limits\" on development — expressed in perplexity among other metrics — that nobody crosses until specific monitoring milestones are met. That is a pacing mechanism dressed as a metric, which is the honest way to read it.",
+    "The limitations are stated by the author, which is the part worth keeping. Labs use different held-out datasets, so the numbers are not comparable across companies as published. Perplexity does not map directly onto tasks. It ignores everything gained from reasoning at inference time. And the entropy floor — the loss a perfect predictor would reach on real text — is unknown, so there is no way to say how much of the distance is left. A shared metric that nobody else can currently compute on the same data is a proposal, not yet a standard."
+   ]
+  },
+  {
+   "tag": "Academia · Penn, USC, Minnesota, Wisconsin, MBZUAI",
+   "title": "A benchmark of 125 CAPTCHAs you have to solve by clicking and dragging: humans 94.1%, the best model 74.1%, the best open-weights model 32%",
+   "url": "https://arxiv.org/abs/2611.25387",
+   "subject": "TuringSpace is a benchmark of 125 interactive CAPTCHAs requiring cursor clicks and drags; humans score 94.1 percent, GPT-6 Astra 74.1 percent, Kimi K3 32 percent.",
+   "subtitle": "arXiv:2611.25387, submitted 19 November 2026; authors from Penn, USC, Minnesota, Wisconsin–Madison and MBZUAI",
+   "bullets": [
+    "The gap the paper identifies is narrow and fair: existing CAPTCHA benchmarks are mostly solved and rarely spatial, while spatial-reasoning benchmarks rarely require you to *do* anything. TuringSpace is 125 interactive CAPTCHAs in a synthetic web environment covering five spatial abilities, and the only way to pass one is to click and drag on the screen.",
+    "Scores: humans 94.1%. GPT-6 Astra, the best model tested, fails 25.9% — so about 74.1% success. The best open-weights model, Kimi K3, fails 68.0%, so about 32%. A twelve-point gap to humans at the top and a sixty-two-point one in open weights is a wider spread than most benchmarks show at this point in their life.",
+    "Each task is generated by a program that also ships a checker and an oracle, which is the design decision that makes it more than a leaderboard: it produces unlimited fresh instances with ground truth, so the benchmark doubles as a training gym. Fine-tuning Qwen3.5-9B on it took success from 1.6% to 33.1% — past Kimi K3 — and improved all seven out-of-distribution benchmarks they tried, including a 9.9-point gain on real-world indoor videos in VSI-Bench. Training on synthetic clicking transferred to understanding real rooms.",
+    "The failure analysis is the part to remember. Most failures start with misreading the screenshot, not with bad reasoning — and then, the authors report, the reasoning rarely corrects a wrong initial belief and instead tends to fabricate evidence supporting it. If you have ever watched an agent confidently narrate its way further into a misread screen, that is the measurement of it."
+   ]
+  }
+ ],
+ "wild": [
+  {
+   "tag": "Postal services · Finland",
+   "headline": "Posti has declared Santa's address a clerical error, and is running a redirect campaign out of three city squares to fix it",
+   "entities": [
+    "Posti",
+    "Santa Claus' Main Post Office",
+    "Rovaniemi"
+   ],
+   "subject": "Posti's 'North Pole Redirect' Christmas campaign asking families in the UK, US and Canada to address Santa letters to Rovaniemi instead of the North Pole, with pop-up Santa mailboxes in London, New York and Toronto.",
+   "subtitle": "Posti campaign reported 20 November 2026; mailboxes London 5–9 November, New York to 22 November, Toronto 2–6 December",
+   "bullets": [
+    "The premise is a national postal operator treating a global children's tradition as an addressing defect. Posti calls it \"the world's biggest address mix-up\", and the campaign — North Pole Redirect — asks families to write to Santa Claus' Main Post Office, Arctic Circle, Finland rather than the North Pole. Posti estimates millions of letters to Santa are misdirected every year; it publishes no precise figure, and neither will we.",
+    "The legal footing is the detail that makes this more than a gag. Rovaniemi holds a trademark, \"The Official Hometown of Santa Claus\", upheld by the EU's Intellectual Property Office earlier this year. A post office is using an EUIPO ruling to argue about where a fictional person lives.",
+    "The physical execution: Santa mailboxes in Leicester Square in London from 5 to 9 November, Domino Park in Brooklyn through 22 November, and Sankofa Square in Toronto from 2 to 6 December. Letters collected by 15 December get transported to Lapland. Posti is also inviting other postal services worldwide to forward North Pole-addressed mail to Finland, which is the part that would actually change anything.",
+    "Jenni Ihatsu, Posti's vice president for brand and marketing, on why: \"We don't want a single wish lost along the way.\" It is aimed squarely at the UK, US and Canada, the three countries where the North Pole is most commonly written on the envelope."
+   ]
+  },
+  {
+   "tag": "Confectionery · Pennsylvania",
+   "headline": "For one day Hershey is selling its chocolate bar at its 1900 price of five cents, with a per-customer limit that tells you exactly what it expects to happen",
+   "entities": [
+    "Hershey",
+    "Hershey's Chocolate World",
+    "Walmart",
+    "Amazon Grocery",
+    "Ibotta"
+   ],
+   "subject": "Hershey selling classic Milk Chocolate Bars for five cents on 25 November 2026 at Walmart, Amazon Grocery and Hershey's Chocolate World, tied to the release of the film Hershey.",
+   "subtitle": "Promotion announced for Wednesday 25 November 2026, the day the film Hershey opens in theatres",
+   "bullets": [
+    "The offer: classic Hershey's Milk Chocolate Bars at five cents on 25 November, described as the original price when the bar debuted in 1900. Not the limited-edition vintage-packaging bars — only the plain one, which is the right call, because the point is the price rather than the nostalgia print run.",
+    "The limits are the interesting part, because they are different at every door. Walmart: five bars per person, online pickup through an account, or buy in store and claim cash back by uploading a receipt photo to Ibotta. Amazon Grocery: two per person, with free shipping for qualifying addresses only if you have a promo code Hershey will post on social media. Hershey's Chocolate World in Hershey, Pennsylvania and in Times Square: ten per person, from 9 a.m. ET and 10 a.m. ET respectively. Everything is while supplies last.",
+    "The reason behind it is a film. *Hershey*, about founder Milton Hershey and his wife Catherine \"Kitty\" Hershey, opens in theatres the same day. A biopic marketing tie-in that reprices the product to the year the founder's story starts is a neater piece of construction than most movie promotions manage.",
+    "What is not published, and worth noticing: the current retail price. The announcement names the nickel and leaves you to work out the multiple yourself — which is a more effective way of saying \"126 years of inflation\" than printing the number would have been."
+   ]
+  },
+  {
+   "tag": "Museums · New York",
+   "headline": "The Guggenheim has put a vending machine in its gift shop that takes a token, costs a dollar, and refuses to let you choose which print you get",
+   "entities": [
+    "Guggenheim Museum",
+    "Anastasia Inciardi",
+    "Inciardi Prints"
+   ],
+   "subject": "The Guggenheim New York installing an Inciardi Mini Print vending machine in its sixth-floor gift shop, dispensing one of ten miniature prints at random for a dollar paid in gift-shop tokens.",
+   "subtitle": "Announced by the Guggenheim on 1 November 2026; sixth-floor shop, museum hours 10:30 a.m.–5:30 p.m.",
+   "bullets": [
+    "The machine is the Inciardi Mini Print Vending Machine, by Anastasia Inciardi, a Brooklyn-born artist who set up Inciardi Prints in 2020 with the stated aim of making art affordable. It sits in the sixth-floor gift shop and dispenses miniature prints for a dollar each.",
+    "Two deliberate frictions do all the work. You cannot pay with money — you buy a token at the gift shop first — and you cannot pick: the print is dispensed at random from a set of ten. A museum shop's entire design is normally about letting you choose the thing you want; this does the opposite on purpose, and turns a $1 purchase into a draw.",
+    "The ten designs are New York landmarks and icons: the Statue of Liberty, the Empire State Building, the Staten Island Ferry, yellow taxis, hot dogs — plus one exclusive print of the museum's own Frank Lloyd Wright building. The institution is, in effect, one of the collectibles in its own machine.",
+    "The pricing is the quiet joke. A dollar is roughly the smallest amount a New York museum can charge for anything, and it buys an object that is unambiguously art, made by a named artist, sold inside the Guggenheim. No quotes from the museum or the artist accompanied the announcement, and no edition sizes were published."
+   ]
+  }
+ ],
+ "learn": {
+  "title": "Fifteen people were asked for directions, and halfway through the conversation the person asking was swapped for someone else. Eight of them did not notice.",
+  "subject": "Simons & Levin's 1998 'door study' at Cornell: real-world change blindness, in which a conversation partner is substituted behind a passing door, and the follow-up showing detection collapses when the experimenters dress as construction workers.",
+  "tags": [
+   "Human behaviour",
+   "Experiments",
+   "What we actually see"
+  ],
+  "body": [
+   "On a sidewalk at Cornell, a man with a campus map stopped a passer-by and asked for directions to a nearby building. The passer-by had seen him approaching from about twenty metres away and had been talking to him for ten or fifteen seconds when two men rudely carried a door between them. The door blocked the view for roughly one second. Behind it, the man with the map grabbed the back of the door and walked off, and the man who had been carrying that end of the door stepped into his place, produced an identical map, and carried on asking for directions. Different clothes, a five-centimetre height difference, a clearly different voice. Of the fifteen pedestrians this was done to, only seven noticed. The rest finished giving directions to a stranger they had never met, and most of them, when told, were astonished.",
+   "What the eight who missed it did report, almost without exception, was that the men carrying the door had been rude. The detail that mattered was the one that carried no information; the one that would have mattered went unrecorded. Daniel Simons and Daniel Levin published this in 1998, and it is the plainest demonstration going that attention is not the same thing as memory for detail. The pedestrians were looking right at the man. Several made eye contact with the replacement as the door passed and kept talking. Attention, the paper concludes, \"does not suffice for change detection\" — you also have to be encoding the specific features that would let you tell one person from another, and most of the time you are not.",
+   "Then they ran it again with one change, and this is the part worth repeating to someone. The same two men did the same swap, but dressed as construction workers — hard hats, tool belt on one of them, different shirts — about fifty metres from an actual construction site. This time every pedestrian was a student, drawn from exactly the group that had noticed the swap every single time in the first experiment. Only four of the twelve caught it. The same people, the same trick, detection down to about a third, and the only thing that changed was the costume. One of the students who missed it explained it better than the paper did: she said she had just seen a construction worker, and had not bothered to encode the individual. The lesson is not that people are inattentive. It is that the moment you file somebody under a category, you stop storing the person."
+  ]
+ },
+ "ideas": {
+  "prompt": "Ten ways to make a group chat worth being in",
+  "items": [
+   {
+    "text": "Give it one job and put that job in the name. \"Badminton Tuesdays\" survives; \"Guys\" becomes a graveyard."
+   },
+   {
+    "text": "Appoint someone whose only duty is to propose a plan with a date in it. Nothing kills a chat faster than everyone waiting for everyone."
+   },
+   {
+    "text": "Start a running numbered thing — overheard lines, bad posters, worst chai on campus — so there is always a reason to post without having news."
+   },
+   {
+    "text": "Make one day a week the only day anyone is allowed to share a link. The other six get quieter and the one gets better."
+   },
+   {
+    "text": "Pin a photo of everyone from the first week you knew each other, and replace it every year on the same date."
+   },
+   {
+    "text": "Agree out loud that nobody owes a reply. Half of group-chat dread is the unanswered-message ledger people keep in their heads."
+   },
+   {
+    "text": "Keep a shared list of things you said you would do together, and make a rule that one gets struck off every month."
+   },
+   {
+    "text": "Let one person be in charge of remembering birthdays so nine people can stop pretending they do."
+   },
+   {
+    "text": "Have a hard rule against forwarding anything you have not read. It costs nothing and changes the whole texture of the thing."
+   },
+   {
+    "text": "Leave quietly when it is over. A chat that ran its course and stopped is a better memory than one that limped for four years."
+   }
+  ]
+ }
+}
