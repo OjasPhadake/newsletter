@@ -11263,6 +11263,150 @@
         "developer.atlassian.com",
         "phys.org"
       ]
+    },
+    {
+      "date": "2026-11-24",
+      "issue": 1,
+      "quote_text": [
+        "It is amazing how complete is the delusion that beauty is goodness."
+      ],
+      "quote_author": [
+        "Leo Tolstoy"
+      ],
+      "idea_text": [
+        "A cast-iron pan. Ten years of someone else's seasoning is the expensive part, and it comes free with the pan.",
+        "Hand tools made before plastic handles. A heavy old spanner set outlasts three new ones and costs less than one.",
+        "Textbooks one edition behind. The thermodynamics did not change; the problem numbers did.",
+        "An office chair from a company that shut down. The good ones cost a month's rent new and nobody sat in half of them.",
+        "Anything made of solid wood. A table that has survived forty years has already proved the thing you were hoping it would prove.",
+        "Camping and trekking gear, which people famously buy once and use twice.",
+        "A musical instrument, where second-hand is not a compromise but the actual preference of every player you will ever meet.",
+        "Big kitchen appliances built before about 2005, back when the motor was the product and the circuit board was not. A recurring wish on the Ask HN thread about things that should exist is \"heirloom electronics\" — you cannot buy them new, but you can buy them used.",
+        "Formal clothes for the one wedding. Worn twice by a stranger beats worn once by you at five times the price.",
+        "Hardback fiction. The paperback costs more than a second-hand hardback of the same book, which makes no sense and is nonetheless true in every used-book shop in the country."
+      ],
+      "idea_prompt": [
+        "Ten things worth buying second-hand"
+      ],
+      "tip_text": [
+        "Stop copying stack traces. Claude Code 2.1.331, released yesterday, adds \"Fix with Claude Code\" as a VS Code quick fix on any error or warning and on failed tests in the test peek and the Test Results view — it puts the problem itself into the chat box, so the agent reads the real diagnostic rather than your retyping of it."
+      ],
+      "hn_id": [
+        "50611576",
+        "50611588",
+        "50614249",
+        "50615308",
+        "50609685"
+      ],
+      "link": [
+        "https://www.cnbc.com/2026/11/23/nvidia-jensen-huang-ceo.html",
+        "https://nvidianews.nvidia.com/news/nvidia-board-reinstates-jensen-huang-as-president-ceo-and-board-director",
+        "https://ladybird.org/posts/alpha/",
+        "https://twitter.com/ylecun/status/2124550037912920090",
+        "https://z.ai/blog/glm-5.4",
+        "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64026",
+        "https://developers.openai.com/api/docs/deprecations",
+        "https://archaeology.org/news/2026/11/23/study-suggests-people-traveled-long-distances-to-roman-britains-first-capital/",
+        "https://musebyclios.com/advertising/soles4souls-reveals-the-true-price-of-sneakers-for-kids-who-have-none/",
+        "https://marcommnews.com/vivo-turns-virtual-money-into-real-money-in-first-of-its-kind-vivo-pay-activation/",
+        "https://campaignsoftheworld.com/ooh-campaigns/autoworld-the-moving-museum/",
+        "https://research.google/blog/supercharging-transformer-residual-connections/",
+        "https://arxiv.org/abs/2611.26239"
+      ],
+      "subject": [
+        "RBI's proposed Stop Switch and Trusted Person Mechanism would let a bank customer disable every outward debit at once, or route big transfers to a nominee who has one hour to approve.",
+        "OpenAI's deprecations page schedules shutdown of gpt-5, gpt-5-mini, gpt-5-nano, gpt-5-pro, o3 and o3-pro on 11 December 2026, three image models on 1 December 2026, and the GPT-4o and GPT-4.1 family on 14 January 2027.",
+        "Lead and strontium isotopes read out of 22 burnt Roman burials at Colchester name four people who grew up abroad, including the man in the gladiator vase.",
+        "Soles4Souls and Fuse Create's 'The Shoe That Costs the Most', a Nashville pop-up styled as an exclusive sneaker launch that displays six pairs of worn shoes labelled with non-monetary costs to children without footwear.",
+        "Vivo paid real money into Vivo Pay accounts for leftover in-game credits that players handed to a branded character on the map, one evening only, 18 November 2026.",
+        "Autoworld Museum Brussels' 40th-anniversary campaign The Moving Museum, which put a Ferrari Testarossa, a 1966 Ford Mustang and a royal Cadillac from its collection into service as bookable Brussels taxis through the Taxis Verts app, driven by museum staff.",
+        "DeepCrossAttention lets each layer of a transformer learn which earlier layers to read from, per token, hitting a target quality with 30 layers where 42 were needed.",
+        "State-Aware Fallback Imitation (SAFI): a two-stage training method that teaches vision-language-action policies to halt a prohibited task from any intermediate state while holding position and grip, cutting post-takeover target success to 1.3 percent with OpenVLA-OFT on LIBERO and BadLIBERO.",
+        "Harry Beck's 1931 diagrammatic Tube map: an uncommissioned spare-time project initially rejected by London Underground's publicity department, trialled in a 1933 pamphlet, paid ten guineas for the card edition and five for the poster, maintained by Beck until he fell out with publicity officer Harold Hutchison in 1960, and credited on every Tube map since."
+      ],
+      "brand": [
+        "Soles4Souls",
+        "Fuse Create",
+        "4EveryKid",
+        "Vivo",
+        "Vivo Pay",
+        "Africa Creative",
+        "Autoworld",
+        "Superkraft",
+        "Taxis Verts"
+      ],
+      "brand_mention": [
+        "Shoe That Costs",
+        "Friendship",
+        "KIDS RECEIVE NEW SHOES",
+        "Step Forward",
+        "Steve Miller",
+        "Fuse Create",
+        "EveryKid",
+        "Toronto",
+        "Fuse",
+        "Vivo",
+        "Brazilian",
+        "Vivo Pay",
+        "Sabrina Romero",
+        "GTA",
+        "Africa Creative",
+        "Taxis Verts",
+        "Ferrari Testarossa",
+        "Mustang",
+        "Cadillac",
+        "Sputnik",
+        "Ferrari",
+        "Miami Vice The Mustang",
+        "Superkraft",
+        "Brussels"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "The RBI wants your bank account to have a switch that turns off every outgoing payment, and a person who has one hour to approve the big ones"
+        ],
+        [
+          "trends",
+          "On 11 December OpenAI deletes the entire GPT-5 generation and the o3 reasoning models from its API, and the replacement for the pro tiers is a parameter rather than a model"
+        ],
+        [
+          "trends",
+          "Roman Britain's first capital buried 22 people it had burned, which was supposed to destroy the evidence of where they came from. Four of them turn out to be foreign"
+        ],
+        [
+          "wild",
+          "Soles4Souls staged a hype sneaker drop in Nashville, with a queue and podiums and lighting, and put six pairs of worn-out shoes on the podiums"
+        ],
+        [
+          "wild",
+          "Vivo put a character on the map of Los Santos for one evening and paid real Brazilian reais for the in-game dollars people handed over"
+        ],
+        [
+          "wild",
+          "Autoworld decided the problem with a car museum is that the cars do not go anywhere, so it put three of them on the taxi app"
+        ],
+        [
+          "research",
+          "Every layer in a transformer gets its input from the one before it, with equal weight and no choice. Google's argument is that the choice is worth 29% of your depth"
+        ],
+        [
+          "research",
+          "A robot that refuses a forbidden task will still finish it if you hand it the controls halfway. And teaching it to stop is not the same as teaching it to stop safely"
+        ],
+        [
+          "learn",
+          "The London Underground map was drawn in a man's spare time, rejected by his employer, and eventually bought for ten guineas. Nobody has drawn a better one in ninety-three years."
+        ]
+      ],
+      "editorial_domains": [
+        "archaeology.org",
+        "campaignsoftheworld.com",
+        "developers.openai.com",
+        "marcommnews.com",
+        "musebyclios.com",
+        "rbi.org.in"
+      ]
     }
   ]
 }

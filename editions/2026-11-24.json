@@ -1,0 +1,352 @@
+{
+  "date_line": "Tuesday, 24 November 2026",
+  "issue": 1,
+  "preheader": "Tolstoy on the one delusion nobody admits to; \"Fix with Claude Code\" as a VS Code quick fix on a failing test; Nvidia's board reinstating Jensen Huang ten days after he resigned, and the press release that quietly builds a national-security committee around him; Ladybird in alpha with its own engine and no promises about security; Yann LeCun accusing Dario Amodei of hyping danger to outlaw open weights; GLM-5.4 looping 28 layers twice to act like a 2-3 trillion parameter model; Monday's 1,484-point fall with banks down 3.17% and markets shut today for Guru Nanak Jayanti; the RBI proposing a switch that turns off every outgoing debit on your account and a trusted person who has one hour to approve a transfer; OpenAI deleting the whole GPT-5 generation and o3 from its API on 11 December; 22 Roman cremations from Colchester, four of them foreign-born, read through the ash; Google replacing the residual connection with attention across layers; a robot taught that stopping mid-task means not dropping what it is holding; a fake sneaker drop in Nashville with six pairs of worn shoes on the podiums; a Brazilian telco paying real money for Grand Theft Auto dollars; a Brussels car museum sending a Testarossa out to answer taxi bookings; Harry Beck's ten guineas; and ten things worth buying second-hand.",
+  "quote": {
+    "text": "It is amazing how complete is the delusion that beauty is goodness.",
+    "author": "Leo Tolstoy",
+    "work": "The Kreutzer Sonata",
+    "source_url": "https://www.goodreads.com/quotes/tag/self-deception",
+    "note": "Written in 1889, about thirty years before psychology got around to naming the halo effect and measuring it. The useful word is \"complete\" — not that we are sometimes swayed by how a thing looks, but that the substitution is total and invisible from the inside, which is exactly why a well-designed dashboard, a clean codebase and a confident speaker all get graded on the wrong axis."
+  },
+  "agent_craft": {
+    "items": [
+      {
+        "text": "Stop copying stack traces. Claude Code 2.1.331, released yesterday, adds \"Fix with Claude Code\" as a VS Code quick fix on any error or warning and on failed tests in the test peek and the Test Results view — it puts the problem itself into the chat box, so the agent reads the real diagnostic rather than your retyping of it.",
+        "source": "Claude Code changelog, version 2.1.331 (23 November 2026)",
+        "url": "https://code.claude.com/docs/en/changelog"
+      }
+    ]
+  },
+  "hn": [
+    {
+      "title": "Ten days after resigning, Jensen Huang is Nvidia's chief executive again — and the investigation into him is still running",
+      "url": "https://www.cnbc.com/2026/11/23/nvidia-jensen-huang-ceo.html",
+      "hn_url": "https://news.ycombinator.com/item?id=50611576",
+      "points": 2318,
+      "comments": 3319,
+      "bullets": [
+        "The sequence, from CNBC's account: Huang admitted to one extramarital affair in a note to employees on 8 November, resigned as CEO on 13 November after reports of several — including one with a woman the New York Times reports was in contact with an officer of China's Ministry of State Security during part of the relationship — held his first talks with the board on Saturday 21 November, and was voted back unanimously on Monday 23 November, effective immediately.",
+        "The investigation did not end with the reinstatement. An independent committee of the board hired Wachtell, Lipton, Rosen & Katz to examine his conduct and whether company secrets or national security were compromised; the board says the inquiry \"will proceed to conclusion\" and that Huang will cooperate. No findings have been published. The board's stated basis for bringing him back is input from senior US government levels that the move \"poses no national security risk\", plus Trump's statement that the government has no evidence of unlawful conduct.",
+        "The share price did the arguing. The stock closed at $186.64 on 6 November, before the admission, and fell nearly 33% from the admission date; it closed up 31% on the announcement. CNBC does not print the post-rally price, so neither do we. Colette Kress, who had been interim CEO, stays on as CFO.",
+        "What is scheduled next is more interesting than the vote. Huang gives a closed-door transcribed interview to the House Foreign Affairs panel and two other committees on 1 December; general counsel Tim Teter appears on 2 December; and on 3 December Huang is the sole witness at a Senate Banking Committee hearing on export controls. Senators Elizabeth Warren and Andy Kim both said publicly that the reinstatement does not settle what Congress has asked.",
+        "Quotes, for the record: Huang — \"I take this responsibility with the greatest humility and renewed commitment.\" Board chair Harvey Jones — \"We have every confidence in Jensen.\" Elon Musk said the board's \"mistake has been corrected.\""
+      ]
+    },
+    {
+      "title": "The press release itself is the more useful document: Nvidia is building a national-security committee and hiring a chief compliance officer around the man it just reinstated",
+      "url": "https://nvidianews.nvidia.com/news/nvidia-board-reinstates-jensen-huang-as-president-ceo-and-board-director",
+      "hn_url": "https://news.ycombinator.com/item?id=50611588",
+      "points": 1705,
+      "comments": 4,
+      "bullets": [
+        "Same event as the story above, and it reached the front page on its own because the primary text says things the coverage compresses. The board's finding is narrow and carefully worded: it is \"satisfied with respect to Mr. Huang's candor and ability to lead NVIDIA\", and \"confident that Mr. Huang's reinstatement poses no national security risk\". Note what is not claimed — nothing about the underlying conduct, which the release never explains.",
+        "Three governance changes arrive with him. A new National Security and Export Control Committee, made up solely of independent directors, to oversee trade compliance and national-security risk; it is engaging counsel with national-security experience who will retain their own advisers. A search for a new Chief Compliance Officer covering the whole company. And a commitment to keep cooperating with government investigations.",
+        "The reporting line on the compliance officer is the detail to keep. The role would report to the Nominating and Corporate Governance Committee — a board committee — rather than to the chief executive. That is a structural answer to the obvious objection about a CEO under investigation supervising the people checking him.",
+        "The investigating committee is specifically looking into \"reporting that Mr. Huang was the target of a foreign intelligence effort\", and has retained its own independent counsel. Harvey C. Jones stays board chair and is quoted saying \"The Board believes Jensen is the right person to lead NVIDIA.\" The release thanks Colette Kress for serving as interim CEO; her interim role ends with the reinstatement."
+      ]
+    },
+    {
+      "title": "Ladybird is in alpha: a browser engine written from scratch, now downloadable, with no promises about security",
+      "url": "https://ladybird.org/posts/alpha/",
+      "hn_url": "https://news.ycombinator.com/item?id=50614249",
+      "points": 1593,
+      "comments": 373,
+      "bullets": [
+        "Andreas Kling's post, dated 23 November, says Ladybird is now in alpha for macOS and Linux. The claim that matters is the one about provenance: the engine was \"built from the ground up, and not a fork\". The browser wrapped around it is described as modest but functional — the engine is the project.",
+        "The change from yesterday is distribution, not capability. Until now you built it from source; the alpha is a rolling channel with regular automatic updates, which is what makes it testable by people who are not compiling browsers.",
+        "The honesty is the striking part. Some sites will not work. It will sometimes crash. The team makes \"no promises about security today\" and asks researchers to report vulnerabilities through the project's security policy on GitHub rather than pretending the surface is hardened. You can report a broken site from inside the browser, and after a crash you can read the crash report before deciding whether to send it.",
+        "For web developers there are two concrete hooks: WebDriver for automated testing, and the Firefox DevTools protocol. That is enough to point a test suite at it and find out what your own site does on an engine that is neither Blink nor Gecko nor WebKit.",
+        "No version number, no standards-test score, no funding figure and no team size appear in the post — sponsors and donors are thanked but not quantified. If you were hoping for a Web Platform Tests number to compare against Chrome, it is not there."
+      ]
+    },
+    {
+      "title": "\"Dario is hyping the dangers so OSS models are illegal and he stays in control\" — LeCun's one-line theory of Anthropic, and what Amodei actually said",
+      "url": "https://twitter.com/ylecun/status/2124550037912920090",
+      "hn_url": "https://news.ycombinator.com/item?id=50615308",
+      "points": 1384,
+      "comments": 768,
+      "bullets": [
+        "The link is a post on x.com, which is login-walled and cannot be read directly, so this is written from the Hacker News thread — where the top comment reproduces the text — and from published coverage. Yann LeCun posted it on 22 November, replying to a clip of Dario Amodei testifying about open-source AI. The line commenters quote: \"Dario's spiel since GPT-2 has always been about hyping the dangers so that open models would be made illegal\" — and, LeCun adds, so that he would stay in control.",
+        "The historical analogy is the part doing the work. LeCun compares it to the Ottoman Empire banning the printing press for Arabic to keep control of religious doctrine, and calls the position \"a new form of medieval obscurantism\". He also says he left OpenAI because he would not have had control there, which is an awkward sentence to put next to the accusation.",
+        "What Amodei said in the clip, per the same coverage: that in most scientific fields \"open source is a good thing\"; that the open models released at the time carried relatively limited risks; but that scaling open models was heading down \"a very dangerous path\", because a company running a deployed model can monitor use, revoke access and change behaviour, while an openly released model is \"entirely out of your hands\". Reporting places the testimony in July 2023, so the clip is three years old.",
+        "The gap between the quote and the claim is where to be careful. Anthropic's stated position is that it has not sought a general ban on open-weight models and asks for mandatory safety testing of capable models, open or closed. LeCun's post is an assertion about motive, and nothing in the posts establishes one — one outlet covering it says so explicitly.",
+        "Context on the speaker: LeCun is a Turing Award winner, formerly Meta's chief AI scientist, and since March 2026 the founder of AMI Labs in Paris — about 60 people building JEPA-based world models. He has argued against restricting open models for years, and in a Fortune interview in October called \"AI can kill us all\" messaging \"the worst marketing campaign you can possibly imagine\"."
+      ]
+    },
+    {
+      "title": "GLM-5.4 runs 28 of its layers twice instead of adding parameters, and claims a 750B model that behaves like a 2-3 trillion one",
+      "url": "https://z.ai/blog/glm-5.4",
+      "hn_url": "https://news.ycombinator.com/item?id=50609685",
+      "points": 1087,
+      "comments": 352,
+      "bullets": [
+        "The architecture in one sentence: a Loop Transformer runs a group of weight-shared layers for several iterations, each pass refining the hidden states of the last, so the network gets deeper without getting bigger. GLM-5.4 loops 28 layers of the GLM-5 base for two iterations at 750B scale, and Z.ai claims \"intelligence levels comparable to 2T-3T parameter models\".",
+        "They did not train it this way from scratch, and they say why. The idea goes back to the 2018 Universal Transformer, but looped models trained from scratch still lag unshared ones at equal pre-training compute — so they converted an already pre-trained base through continued training instead, which buys the depth for a small compute overhead.",
+        "Three engineering details make the second pass affordable. Gated progressive updates: per-token gates for each iteration, because overwriting hidden states directly makes activation norms blow up; after training the first pass writes conservatively to build context and the second opens the gates to refine, and on harder tokens the first pass writes more aggressively. A hybrid KV cache: the second loop reuses the sparse KV selected by the first and keeps only its own sliding window, so an extra loop costs one window rather than a full context cache at 1M tokens. And sparse-attention index reuse: the second loop reuses the first loop's attention indices for zero indexing overhead, which they report performs nearly identically to recomputing them.",
+        "The controlled comparison is on a 30B model with the same architecture as the 750B base, evaluated after 200K long-context SFT with thinking on. At identical parameter counts and about 10% more total training compute, the looped version gains most on longer reasoning chains — and spends fewer tokens getting there: average output length falls 10-14% on benchmarks like GPQA-Diamond and MMLU-Pro, as reasoning moves out of explicit chain-of-thought and into the loop's implicit depth. The architecture was validated at 1B, 4B, 30B and 750B before the flagship committed to it.",
+        "Stated limitation, in their own words: it \"tends to get caught in overly long 'marathon thinking' loops\", though they say the extra reflection does improve accuracy. Throughput is up to 200 tokens/s off-peak and 70-80 at peak. Weights are not out — the post promises to \"open-source the model weights responsibly after completing necessary safety hardening\" — and the API is listed as coming soon. The benchmark charts are images on the page, so no head-to-head scores are quoted here."
+      ]
+    }
+  ],
+  "markets": {
+    "indices": [
+      {
+        "name": "Session",
+        "value": "Monday 23 November 2026 — last close. Markets are shut today",
+        "direction": "flat",
+        "change": "NSE and BSE are closed on Tuesday 24 November for Prakash Gurpurb Sri Guru Nanak Dev; equity and equity-derivatives trading both stop, MCX trades only in its evening session, and regular trading resumes Wednesday 25 November. So everything below is Monday's close. Index, sector and mover levels from Univest's closing bell and Kotak Neo's; FII/DII cash from Kotak Neo's institutional table; the rupee, dollar index and Brent from PTI via Telangana Today"
+      },
+      {
+        "name": "Sensex",
+        "value": "82,435.99",
+        "direction": "down",
+        "change": "−1,483.72 points (−1.77%) on Monday, giving back most of Friday's 897.96-point gain. It was a nine-month closing high on Friday; it is not one now"
+      },
+      {
+        "name": "Nifty 50",
+        "value": "25,349.65",
+        "direction": "down",
+        "change": "−450.95 points (−1.75%), back below 25,400 after closing above 25,800 on Friday. Univest attributes the fall to profit-booking after four weeks in which the indices gained more than 11%"
+      },
+      {
+        "name": "Bank Nifty",
+        "value": "62,585.35",
+        "direction": "down",
+        "change": "−2,049.85 points (−3.17%). The single biggest contributor to the day: Bank Nifty rose 2.49% on Friday and fell 3.17% on Monday"
+      },
+      {
+        "name": "Sectors",
+        "value": "Metal −3.68% · PSU Bank −3.25% · Private Bank −3.19% · IT +1.69%",
+        "direction": "down",
+        "change": "Nifty Metal closed 11,819.25, PSU Bank 9,559.65, Private Bank 30,659.85, IT 31,850.80. IT was the only one of the four up, and Univest notes Indian IT was seen as less exposed to the global technology sell-off that set the tone"
+      },
+      {
+        "name": "Broader market",
+        "value": "Nifty 500 −1.41% · Midcap 150 −0.92% · Smallcap 100 −0.66%",
+        "direction": "down",
+        "change": "Nifty 500 at 23,748.15, Midcap 150 at 22,542.45, Smallcap 100 at 19,314.40. Kotak Neo's own figures for the Midcap 100 (−1.01%) and Smallcap 100 (−0.66%) agree on the direction. The damage was concentrated in large caps, which is the mirror image of Friday"
+      },
+      {
+        "name": "India VIX",
+        "value": "18.02",
+        "direction": "up",
+        "change": "+4.04%, with the monthly derivatives expiry in the frame — Univest notes the monthly Nifty expiry moved to Monday 23 November because of today's holiday"
+      },
+      {
+        "name": "Movers",
+        "value": "APL Apollo Tubes −21.29% · Tata Steel −8.43% · TCS +3.53%",
+        "direction": "down",
+        "change": "APL Apollo Tubes at ₹1,670.00 and Tata Steel at ₹163.00 — Univest ties both to a deal between them. IndusInd Bank −3.99% at ₹963.00 after news that it had terminated its former MD and CEO, Axis Bank −3.97% at ₹1,388.60, HDFC Bank −3.33% at ₹817.80. On the other side TCS ₹2,460.00 (+3.53%), Shriram Finance ₹995.90 (+2.46%), Tech Mahindra ₹1,777.50 (+1.79%)"
+      },
+      {
+        "name": "USD/INR",
+        "value": "92.92 (provisional)",
+        "direction": "down",
+        "change": "The rupee lost 30 paise from Friday's 92.62, reversing a five-session run of gains. It opened at 92.47, touched 92.43 intraday, then weakened to a low of 93.11 before settling. Dollar index 103.69 (−0.05%). Anuj Choudhary of Mirae Asset Sharekhan called a spot range of 92.70 to 93.30 and said \"any further correction in domestic markets may cap a sharp upside\""
+      },
+      {
+        "name": "FII · cash",
+        "value": "+₹5,672.99 cr on Monday",
+        "direction": "up",
+        "change": "Bought ₹23,473.67 cr, sold ₹17,800.68 cr. Month to date: +₹1,17,622.13 cr on gross purchases of ₹3,31,652.36 cr. Foreign money kept buying on a day the index fell nearly two per cent, which is not the usual pairing"
+      },
+      {
+        "name": "DII · cash",
+        "value": "−₹2,760.12 cr on Monday",
+        "direction": "down",
+        "change": "Bought ₹16,505.75 cr, sold ₹19,265.87 cr. Month to date: −₹64,547.15 cr. Combined FII+DII net was +₹2,912.87 cr for the day and +₹53,074.98 cr for the month"
+      },
+      {
+        "name": "Crude",
+        "value": "Brent about $92",
+        "direction": "down",
+        "change": "PTI quoted Brent futures at $92.08, −0.53%, during Indian hours. Kotak Neo's 15:36 snapshot had the February 2027 Brent contract at $89.36 and January 2027 WTI at $83.13 — different contracts, so the gap is not a disagreement"
+      },
+      {
+        "name": "Metals · MCX",
+        "value": "Gold ₹1,24,818/10g (+2.50%) · Silver ₹1,52,473/kg (+3.15%)",
+        "direction": "up",
+        "change": "December 2026 futures, snapshot 15:37 on Monday. Both reversed Friday's falls of 3.38% and 3.89%"
+      }
+    ]
+  },
+  "trends": [
+    {
+      "tag": "India",
+      "headline": "The RBI wants your bank account to have a switch that turns off every outgoing payment, and a person who has one hour to approve the big ones",
+      "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64026",
+      "subject": "RBI's proposed Stop Switch and Trusted Person Mechanism would let a bank customer disable every outward debit at once, or route big transfers to a nominee who has one hour to approve.",
+      "subtitle": "RBI press release 2026-2027/1548, issued 23 November 2026 by Chief General Manager Brij Raj; comments close 14 December 2026",
+      "bullets": [
+        "The framing is the news. India's existing rulebook, strengthened by amendment directions on 24 June 2026, is about who pays after a fraudulent electronic banking transaction. The RBI now says \"a need is felt to strengthen the same from a preventive perspective\" — moving from compensation to controls the customer holds. Seven draft amendments cover commercial banks, small finance banks, payments banks, local area banks, regional rural banks and both urban and rural co-operative banks.",
+        "The Stop Switch disables all outward future debits on an account at once. It blocks customer-initiated debits, new payment mandates, new standing instructions and UPI registration on new third-party apps. It deliberately does not block existing recurring mandates and standing instructions, liens, or bank-initiated debits such as charge recovery and loan instalments — and inward credits are untouched. It is the thing you reach for at 2 a.m., not a way out of your EMI.",
+        "The Trusted Person Mechanism is the genuinely unusual piece. Voluntary, and both parties must ask for it: you nominate someone, and any electronic transfer above a threshold you set is referred to them with the amount, the beneficiary details and the narration. They have one hour; if they reject it or simply do not answer, the transaction is rejected. They are not a joint holder, nominee or authorised signatory, cannot operate the account and cannot see balances, deposits, investments or insurance. Activation carries a 24-hour cooling-off period, and so does any later change, removal, threshold edit or opt-out — which is the detail that makes it resistant to a caller who has you on the phone right now.",
+        "Two quieter changes. New customers would get every digital payment channel disabled by default at onboarding, enabled only on explicit consent and after authentication, with new physical and virtual cards working only at ATMs and point-of-sale terminals inside India to begin with. And the definition of \"negligence by a bank\" would be widened so it is applied uniformly and customers are protected against specific acts of omission or commission.",
+        "Be precise about status and timing: this is a draft out for comment until 14 December, with feedback going to the Connect 2 Regulate section or mcsdorfeedback@rbi.org.in. The RBI's own wording on commencement, as reported, is that \"these directions shall come into effect from July 1, 2027, or on such earlier date as a bank may decide to implement them\" — so the earliest you could actually get a Stop Switch depends on your bank deciding not to wait."
+      ]
+    },
+    {
+      "tag": "Platforms",
+      "headline": "On 11 December OpenAI deletes the entire GPT-5 generation and the o3 reasoning models from its API, and the replacement for the pro tiers is a parameter rather than a model",
+      "url": "https://developers.openai.com/api/docs/deprecations",
+      "subject": "OpenAI's deprecations page schedules shutdown of gpt-5, gpt-5-mini, gpt-5-nano, gpt-5-pro, o3 and o3-pro on 11 December 2026, three image models on 1 December 2026, and the GPT-4o and GPT-4.1 family on 14 January 2027.",
+      "subtitle": "OpenAI API deprecations page, read 24 November 2026; the 11 December shutdowns were noticed on 11 June 2026",
+      "bullets": [
+        "The 11 December list, with the six-month notice dated 11 June 2026: `gpt-5` and `gpt-5-2025-08-07` → `gpt-6.1-sol`; `gpt-5-mini` → `gpt-6.1-terra`; `gpt-5-nano` → `gpt-6-luna`; `o3` and `o3-2025-04-16` → `gpt-6.1-sol`. If you pinned a dated snapshot in production because pinning is the responsible thing to do, that pin is what breaks.",
+        "The two \"pro\" rows are the ones to read carefully. `gpt-5-pro` and `o3-pro` are not replaced by another model name: the migration is to `gpt-6.1-sol` with `reasoning.mode: pro` in the Responses API. A tier of capability that used to be a model id is now a parameter on a different model in a different endpoint, which is a code change rather than a string swap.",
+        "It is not one deadline but a queue. Three image models — `gpt-image-1-mini`, `gpt-image-1.5` and `chatgpt-image-latest` — go on 1 December, replaced by `gpt-image-2.6-sunburst` or `gpt-image-2.6-flare`. The GPT-4o, GPT-4o mini, GPT-4.1 and GPT-4.1 mini snapshots all go on 14 January 2027, all pointed at `gpt-6-luna`. The old TTS models and `gpt-4o-mini-tts` go on 6 January, and nine realtime and audio models on 20 January.",
+        "Two non-model rows matter more than any of the above if they apply to you. From 6 January 2027, self-serve fine-tuning job creation becomes restricted access: \"Active existing customers will no longer be able to create new fine-tuning jobs on this date.\" And from 11 January 2027, GPT-5.2, GPT-5.4 and GPT-5.4 mini stop being available with EU data residency on `service_tier: fast` or `priority` — you keep the same models in the EU only on standard processing, or move to the GPT-6.2 family.",
+        "The useful habit here is not vendor-specific. Every one of these rows carries a notice date six months or more before the shutdown, which means the information was available the whole time and the only thing in short supply is attention. The page is the authority; a tracker blog is not, and several of them currently disagree with it on model names."
+      ]
+    },
+    {
+      "tag": "Wildcard",
+      "headline": "Roman Britain's first capital buried 22 people it had burned, which was supposed to destroy the evidence of where they came from. Four of them turn out to be foreign",
+      "url": "https://archaeology.org/news/2026/11/23/study-suggests-people-traveled-long-distances-to-roman-britains-first-capital/",
+      "subject": "Lead and strontium isotopes read out of 22 burnt Roman burials at Colchester name four people who grew up abroad, including the man in the gladiator vase.",
+      "subtitle": "Joanna Moore, Janet Montgomery, Geoff Nowell and colleagues, Durham University; Royal Society Open Science, DOI 10.1098/rsos.260591; reported 23 November 2026",
+      "bullets": [
+        "Isotope archaeology normally works on teeth, because enamel locks in a chemical record of where you drank water as a child. Cremation is the problem: a funeral pyre is hot enough to wreck the signal, which is why a large share of Roman Britain's dead have been effectively unreadable. The Durham team's contribution is a method — strontium and lead isolated by ion chromatography from pre-leached powdered bone — that gets an answer out of burnt remains.",
+        "The result on 22 cremation burials from Camulodunum, the first capital of Roman Britannia: strontium sits inside the expected British range, with a median of 0.70994 across 0.70848 to 0.71267. That on its own would have said \"local\". Lead is what splits the group — it identifies four people with origins outside Britain, three of whom have childhood signatures pointing at the Mediterranean, somewhere in the range of Italy, Spain or Lebanon. A further three have unusually low lead concentrations, consistent with growing up rurally or outside the Empire entirely.",
+        "One of the four was buried in the Colchester Vase, a pot decorated with gladiatorial combat and animal hunts that had already been shown to depict a real fight with named fighters. Earlier work had established the ashes belonged to a non-local man of 40 or more; the lead signature now puts his childhood around the Mediterranean. Durham's suggestion — that he may have trained gladiators or paid for the fights — is read off the decoration, not the chemistry, and the authors are clear that isotopes cannot tell you anyone's occupation.",
+        "The caution attached to all of it is worth repeating because it is the authors' own: very high cremation temperatures can lower trace-element levels in bone, so values have to be treated carefully, and the strontium result shows the limit — a man who grew up in Italy can still read as British on strontium alone if he lived here long enough. The interesting thing is not that Roman Britain was cosmopolitan, which was already known from inscriptions. It is that half the evidence was sitting in urns nobody could read."
+      ]
+    }
+  ],
+  "research": [
+    {
+      "tag": "Industry · Google Research",
+      "title": "Every layer in a transformer gets its input from the one before it, with equal weight and no choice. Google's argument is that the choice is worth 29% of your depth",
+      "url": "https://research.google/blog/supercharging-transformer-residual-connections/",
+      "subject": "DeepCrossAttention lets each layer of a transformer learn which earlier layers to read from, per token, hitting a target quality with 30 layers where 42 were needed.",
+      "subtitle": "Google Research blog, 23 November 2026, by Kyriakos Axiotis and Thomas Fu, with Mike Heddes, Adel Javanmard, MohammadHossein Bateni and Vahab Mirrokni; underlying paper arXiv:2502.06785 (ICML 2025)",
+      "bullets": [
+        "The residual connection is the most unexamined line in the architecture: add the layer's output to its input, weight one, every token, every layer. DeepCrossAttention replaces that with routing. For each token it computes mixing weights over all previous layer outputs from a learnable static base plus an input-dependent projection, so a layer can take its input from anywhere behind it — purely sequential at one extreme, fully parallel at the other — and the choice varies token by token.",
+        "The second half is the part that earns the name. Rather than blending earlier layers into one vector and reading that, each token runs attention across layers instead of across tokens, with its own queries, keys and values: it asks which earlier representation it wants. That is cheap to say and expensive in a specific way the post is honest about — keeping layer representations intact rather than blended increases memory bandwidth use.",
+        "The numbers, on C4 and LM1B language modelling. Same quality as a standard transformer in up to 5× fewer training steps, and lower perplexity at the same training budget. The cleanest single result: to get below 14 perplexity on LM1B, a standard transformer needed 42 layers and DCA needed 30 — a 29% cut in depth and parameters. The routing machinery itself costs under 0.2% of model size. An ablation over how far back a layer may look takes perplexity from 15.14 at baseline to 14.35 when it can see 24 layers of history.",
+        "The retrofit result is the practical one and also the smallest. Because DCA can be initialised to behave exactly like a standard residual network, you can bolt it onto a pre-trained model and keep training: on LM1B that bought a 0.19 drop in perplexity against 0.02 for simply continuing standard training. Useful, not transformative — which suggests most of the benefit has to be bought during pre-training, not recovered afterwards.",
+        "Two caveats before you quote it. The post's own intro says \"up to three times faster\" while the body says up to 5× fewer steps, and it gives no model sizes beyond layer counts and no numbers at all for the image-classification experiments it mentions. The explainer is new; the paper behind it is ICML 2025, and the reason it is being written up now is that related ideas — attention residuals, hyper-connections, manifold-constrained hyper-connections — have become the busy corner of architecture work."
+      ]
+    },
+    {
+      "tag": "Academia · Georgia Tech, MIT, Notre Dame",
+      "title": "A robot that refuses a forbidden task will still finish it if you hand it the controls halfway. And teaching it to stop is not the same as teaching it to stop safely",
+      "url": "https://arxiv.org/abs/2611.26239",
+      "subject": "State-Aware Fallback Imitation (SAFI): a two-stage training method that teaches vision-language-action policies to halt a prohibited task from any intermediate state while holding position and grip, cutting post-takeover target success to 1.3 percent with OpenVLA-OFT on LIBERO and BadLIBERO.",
+      "subtitle": "arXiv:2611.26239, submitted 19 November 2026; Zheyuan Liu, Chuhan Wang, Jinduo Guo, Yue Huang, Xiangchi Yuan, Ningshan Ma and Meng Jiang (Georgia Tech, MIT, Notre Dame per OpenAlex)",
+      "bullets": [
+        "The failure they found is specific and slightly alarming. Vision-language-action policies — the models that turn a camera image and an instruction into arm commands — can be trained to refuse a prohibited task when asked from the start. The authors show that same policy will complete the prohibited task if control is handed to it partway through execution. Refusal was learned as a property of the initial state, not of the task.",
+        "The second observation is the one worth borrowing outside robotics. Non-completion is not the same as safety: a policy that stops short may stop by releasing whatever it is holding. So \"did it finish the forbidden thing?\" is an incomplete measure, and the paper treats dropping the object and saturating the actuators as failures in their own right.",
+        "The method, State-Aware Fallback Imitation, is unglamorous in a good way. Stage one takes the prohibited-task demonstrations and relabels them with fallback targets — stationary arm commands and consistent gripper targets, so the taught behaviour is hold still and keep your grip rather than go limp. Stage two trains those alongside the original actions for the tasks the robot is still supposed to do, which is what keeps it from becoming a robot that refuses everything.",
+        "Measured with OpenVLA-OFT on LIBERO and BadLIBERO: aggregate target success after takeover falls to 1.3%, with no recorded physical incidents and no action saturation, while success on retained tasks stays high. The abstract gives no figure for that last one, and no pre-SAFI baseline, so the honest reading is that the stopping behaviour is well quantified and the cost of it is not.",
+        "Why this belongs next to the Google item rather than in the agent section: it is the same question one level down the stack. An agent that can be told to stop mid-task has to decide what to do with the thing in its hand — the half-written file, the open transaction, the held object. Most safety evaluation asks whether the bad outcome happened. This asks what state you are left in when it does not."
+      ]
+    }
+  ],
+  "wild": [
+    {
+      "tag": "Charity · Nashville",
+      "headline": "Soles4Souls staged a hype sneaker drop in Nashville, with a queue and podiums and lighting, and put six pairs of worn-out shoes on the podiums",
+      "url": "https://musebyclios.com/advertising/soles4souls-reveals-the-true-price-of-sneakers-for-kids-who-have-none/",
+      "entities": [
+        "Soles4Souls",
+        "Fuse Create",
+        "4EveryKid"
+      ],
+      "subject": "Soles4Souls and Fuse Create's 'The Shoe That Costs the Most', a Nashville pop-up styled as an exclusive sneaker launch that displays six pairs of worn shoes labelled with non-monetary costs to children without footwear.",
+      "subtitle": "Open 12-14 November, 12-8pm, and 15 November, 12-6pm, at 2500 12th Ave S, Nashville; release 12 November, Muse by Clios write-up 15 November 2026",
+      "bullets": [
+        "The construction is a bait and switch executed on purpose. Everything borrowed from a limited sneaker release — the exclusivity, the anticipation, the hushed retail lighting, the word \"drop\" — is used to get people through the door of something that is the exact opposite. Inside: six pairs of worn shoes on podiums, each labelled with a cost that is not money. One of the labels reads \"The Shoe That Costs a Friendship\".",
+        "The rest of the signage does the same inversion. A backlit collage reads \"WHEN KIDS RECEIVE NEW SHOES\" with a blurred silhouette walking across it; the call to action is \"Step Forward\" rather than a price. Steve Miller, partner and executive creative director at Fuse Create, puts the thesis as the cost being measured in dignity, confidence and opportunity rather than dollars.",
+        "The programme behind it is 4EveryKid, which works with US schools to get new athletic shoes to children experiencing homelessness and hardship — more than 800,000 pairs so far. The release cites around 1.5 million US children experiencing homelessness or housing instability, with 93% of partner schools reporting better attendance after children received new shoes and 98% reporting improved social engagement and behaviour.",
+        "Two details that stop it being a one-off. It is a second edition: a smaller version ran in Toronto over the 2025 holidays, and Fuse scaled this one up with more media and influencer partnerships, with further markets possible. And the figure the agency quotes for the activation itself is a donation rate of \"almost 100 percent\" among people who went through it — a number with no methodology attached, so read it as a claim rather than a measurement. The timing, just ahead of the gift-buying season, was deliberate."
+      ]
+    },
+    {
+      "tag": "Telecoms · Brazil",
+      "headline": "Vivo put a character on the map of Los Santos for one evening and paid real Brazilian reais for the in-game dollars people handed over",
+      "url": "https://marcommnews.com/vivo-turns-virtual-money-into-real-money-in-first-of-its-kind-vivo-pay-activation/",
+      "entities": [
+        "Vivo",
+        "Vivo Pay",
+        "Africa Creative"
+      ],
+      "subject": "Vivo paid real money into Vivo Pay accounts for leftover in-game credits that players handed to a branded character on the map, one evening only, 18 November 2026.",
+      "subtitle": "Vivo with Africa Creative; one evening only, Thursday 18 November 2026, Brazil; reported 19 November 2026",
+      "bullets": [
+        "The premise is that a currency people spent years accumulating is about to become worthless. A new instalment of the open-world franchise was landing, which strands whatever is in your old account, and Vivo — the Brazilian telco — offered to buy it. For one evening, players who found a purpose-built Vivo Pay character on the game's map and transferred their credits to it got Brazilian reais deposited into their Vivo Pay digital accounts.",
+        "It is an advertisement for a bank account that only works inside a video game, and the mechanic is the product demo: the thing being sold is a digital account, and the way you experience it is receiving a real payment triggered by an in-game action. Sabrina Romero, brand and communications director at Vivo, calls the link between the gaming world and the Vivo Pay account \"both unprecedented and relevant\", which is marketing for \"nobody has tried this\".",
+        "What is not disclosed is the arithmetic. An exchange rate was \"created specifically for the activation\" and its value is not published; there are no payout totals, no caps and no participant numbers. Which means the one question anyone would ask — what is a GTA dollar worth in reais — is the one thing the campaign does not say. Ten influencers and in-game media carried the message, and Africa Creative built it.",
+        "The sources disagree on the day of the week: one report calls it Wednesday evening, 18 November, and the press release calls it Thursday evening, 18 November. In 2026, 18 November was a Wednesday. Both agree it ran the evening before the game's release and only then, which is the part that makes it a stunt rather than a feature."
+      ]
+    },
+    {
+      "tag": "Museums · Brussels",
+      "headline": "Autoworld decided the problem with a car museum is that the cars do not go anywhere, so it put three of them on the taxi app",
+      "url": "https://campaignsoftheworld.com/ooh-campaigns/autoworld-the-moving-museum/",
+      "entities": [
+        "Autoworld",
+        "Superkraft",
+        "Taxis Verts"
+      ],
+      "subject": "Autoworld Museum Brussels' 40th-anniversary campaign The Moving Museum, which put a Ferrari Testarossa, a 1966 Ford Mustang and a royal Cadillac from its collection into service as bookable Brussels taxis through the Taxis Verts app, driven by museum staff.",
+      "subtitle": "Autoworld Museum Brussels with Superkraft and Taxis Verts; 40th anniversary; reported 5 November 2026",
+      "bullets": [
+        "You book a taxi on the Taxis Verts app the way you always do. What arrives is a Ferrari Testarossa, a 1966 Mustang or a Cadillac that the museum says carried royal weddings in 1959 and 1960. Museum staff drive, and tell you the car's history on the way. The cars wear ordinary Sputnik taxi signs, which is the detail that sells it — from the pavement it reads as a taxi, not an exhibit.",
+        "The idea is a direct attack on what a museum is. Autoworld's collection is a room full of objects whose entire purpose is to move, immobilised and roped off; the campaign's stated logic is to bring the collection to people rather than wait for people to come to it. For the length of a fare, a museum piece goes back to being a car doing a job.",
+        "The three choices are doing different work. The royal Cadillac is institutional history on wheels. The Testarossa is television — it is the Ferrari of a particular decade, and everyone who recognises it recognises it from Miami Vice. The Mustang is the generic idea of American driving. None of them is the rarest thing in the building, and that is the point: the campaign needed cars a passenger would know on sight.",
+        "What is not published is the scale: no ride counts, no fares, no dates, no budget — only the 40th anniversary and the three cars. So treat this as a well-made idea rather than a measured result. The agency is Superkraft; the Brussels taxi operator Taxis Verts took the bookings, which is the unglamorous half that made it possible at all."
+      ]
+    }
+  ],
+  "learn": {
+    "title": "The London Underground map was drawn in a man's spare time, rejected by his employer, and eventually bought for ten guineas. Nobody has drawn a better one in ninety-three years.",
+    "subject": "Harry Beck's 1931 diagrammatic Tube map: an uncommissioned spare-time project initially rejected by London Underground's publicity department, trialled in a 1933 pamphlet, paid ten guineas for the card edition and five for the poster, maintained by Beck until he fell out with publicity officer Harold Hutchison in 1960, and credited on every Tube map since.",
+    "tags": [
+      "Origin stories",
+      "Design",
+      "Maps"
+    ],
+    "body": [
+      "Harry Beck worked for London Underground, and in 1931 he drew, in his own time and with nobody asking, a map of it that was deliberately wrong. His observation was that a railway which spends most of its length in a tunnel does not need to tell you where its stations are. You cannot see out. What you need to know is the order of the stops, which line is which, and where you can change — the topology, not the geography. So he threw away the scale. Lines ran only horizontally, vertically or at forty-five degrees. The distances between stations became whatever looked clearest, which meant the crowded centre could be stretched out and the long suburban runs squashed. Ordinary stations were short ticks, interchanges were diamonds, and the one piece of real geography he kept was the River Thames, because people needed something to orient against.",
+      "The Underground's publicity department did not want it. It was an uncommissioned spare-time project by an employee, and it looked nothing like a map. They were talked into a cautious trial: a small pamphlet in 1933. It was immediately popular, and it has never stopped being popular, and it is now the way most people picture London — including, inconveniently, when they are walking. For the artwork and design of that card edition Beck was paid ten guineas, about £650 in today's money. For the poster version he got another five. That is the entire fee for the design that every metro system on earth subsequently copied.",
+      "Two postscripts make the story better. His colleagues kept telling him the thing looked like an electrical circuit diagram, which was not where he got it from, and he got tired enough of hearing it that he drew a joke version with the stations replaced by circuit symbols and the Bakerloo line renamed \"Bakerlite\". And he kept revising the real one for nearly thirty years — turning the interchange diamonds into circles, moving the Central line from orange to red and the Bakerloo from red to brown — until 1960, when he fell out with the Underground's publicity officer, Harold Hutchison, who drew up his own version instead. Beck's 1960 design is substantially the map you used last time you were in London. He was properly credited only in 1997, long after his death, and every Tube map now carries the line: \"This diagram is an evolution of the original design conceived in 1931 by Harry Beck.\""
+    ]
+  },
+  "ideas": {
+    "prompt": "Ten things worth buying second-hand",
+    "items": [
+      {
+        "text": "A cast-iron pan. Ten years of someone else's seasoning is the expensive part, and it comes free with the pan."
+      },
+      {
+        "text": "Hand tools made before plastic handles. A heavy old spanner set outlasts three new ones and costs less than one."
+      },
+      {
+        "text": "Textbooks one edition behind. The thermodynamics did not change; the problem numbers did."
+      },
+      {
+        "text": "An office chair from a company that shut down. The good ones cost a month's rent new and nobody sat in half of them."
+      },
+      {
+        "text": "Anything made of solid wood. A table that has survived forty years has already proved the thing you were hoping it would prove."
+      },
+      {
+        "text": "Camping and trekking gear, which people famously buy once and use twice."
+      },
+      {
+        "text": "A musical instrument, where second-hand is not a compromise but the actual preference of every player you will ever meet."
+      },
+      {
+        "text": "Big kitchen appliances built before about 2005, back when the motor was the product and the circuit board was not. A recurring wish on the Ask HN thread about things that should exist is \"heirloom electronics\" — you cannot buy them new, but you can buy them used."
+      },
+      {
+        "text": "Formal clothes for the one wedding. Worn twice by a stranger beats worn once by you at five times the price."
+      },
+      {
+        "text": "Hardback fiction. The paperback costs more than a second-hand hardback of the same book, which makes no sense and is nonetheless true in every used-book shop in the country."
+      }
+    ]
+  }
+}
