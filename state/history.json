@@ -11407,6 +11407,163 @@
         "musebyclios.com",
         "rbi.org.in"
       ]
+    },
+    {
+      "date": "2026-11-25",
+      "issue": 1,
+      "quote_text": [
+        "At the core of all well-founded belief lies belief that is unfounded."
+      ],
+      "quote_author": [
+        "Ludwig Wittgenstein"
+      ],
+      "idea_text": [
+        "A single long table and nothing else. The hard part of dinner on a roof is not the view, it is having somewhere to put the plates.",
+        "A tomato and chilli operation in paint buckets, placed to catch the two hours of sun the rest of the building blocks.",
+        "An outdoor cinema for one film a month, chosen by whoever climbs up first.",
+        "A shaded corner built for exam week, because the real amenity is a place nobody can find you.",
+        "A neighbourhood tool shelf in a locked box — one drill, one ladder, one pressure cooker for forty flats.",
+        "A telescope on a fixed mount, left out under a cover, so looking at Saturn takes ninety seconds rather than an evening.",
+        "Laundry lines with a roof over them, which is the one improvement that would change more mornings than any of the others here.",
+        "A tank fed by the downpipe, plumbed to the plants, so the thing that stops you watering in May is solved in October.",
+        "A pigeon-proof bird feeder and a notebook on a string. Six months of entries is a dataset and an argument with your neighbours.",
+        "A hammock between two water tanks, which is the correct use of a water tank."
+      ],
+      "idea_prompt": [
+        "Ten things you could do with a rooftop"
+      ],
+      "tip_text": [
+        "If you run skills or slash commands you did not write, gate what they execute on load. Claude Code 2.1.332, out today, adds a PreSkillShellCommand hook that fires on a skill or command's inline shell commands as it is loading and can refuse them — that load step is the one place a third-party skill runs code before you have read a word of it. Upgrade first: on 2.1.331 and older, a settings file naming the hook just opens a dialog at startup."
+      ],
+      "hn_id": [
+        "50624497",
+        "50627340",
+        "50626578",
+        "50633922",
+        "50630462"
+      ],
+      "link": [
+        "https://fzakaria.com/2026/11/23/2035-came-early",
+        "https://michaelharley.net/posts/2026/11/01/llm-agents-work-for-their-parent-companies-not-for-you/",
+        "https://deucalionn.vercel.app/polymarket-delit-initie-jensen-huang-nvidia/",
+        "https://prismml.com/news/bonsai-2-5-27b",
+        "http://hypercritical.co/2026/11/23/jetty-pro",
+        "https://bioenergytimes.com/india-achieves-20-ethanol-blending-in-esy-2025-26-grain-based-feedstocks-contribute-73-52/",
+        "https://openai.com/index/introducing-shirudo",
+        "https://www.frontiersin.org/news/2026/11/23/robot-submarine-deepest-ocean-trench-unprecedented-volcanic-activity-frontiers-earth-science",
+        "https://retailtimes.co.uk/oriflame-completes-top-scents-collection-with-final-two-fragrance-launches",
+        "https://onemileatatime.com/news/alaska-airlines-greatest-airline-meals-dinner-seattle/",
+        "https://www.shopdropdaily.com/post/acne-studios-turns-its-iconic-pink-packaging-into-an-architectural-experience-in-shanghai",
+        "https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification/",
+        "https://arxiv.org/abs/2611.25539"
+      ],
+      "subject": [
+        "Ethanol blending in Indian petrol averaged 19.99% in supply year 2025-26, with maize and surplus FCI rice supplying most of it.",
+        "Shirudo, an open-source eBPF-based runtime from OpenAI and Cisco announced 23 November 2026 that loads cryptographically signed 'shields' into a running Linux kernel to block exploitation of a known vulnerability before a permanent patch ships.",
+        "Pyroclastic rocks at 6,148 metres beside the Challenger Deep: the deepest known explosive volcanic deposits anywhere under the ocean.",
+        "Oriflame's Moon Mood eau de parfum, briefed as the imagined smell of the moon, composed by trainee perfumer Kosuke Minakata.",
+        "Alaska Airlines paid for a seven-course dinner of recreated 20th-century onboard menus at Seattle's Museum of Flight on 14 November 2026.",
+        "Acne Studios turned its pink gift packaging into a 160 square metre walk-in installation at iapm, Shanghai.",
+        "Independent Gemini 4 teams hunted for cheaper quantum circuits in chemistry and unstructured lookup, with every candidate machine-checked in Lean before use.",
+        "COVERAGE-TRACE detects omitted source facts in LLM summaries by substituting type-matched counterfactual alternatives into the source and measuring the change in the fixed summary's normalised likelihood.",
+        "Orepic, Kannape, Faivre and Blanke (Royal Society Open Science, 2023) on bone conduction and self-other voice discrimination: 79% hit rate recognising one's own unmorphed voice, 17% false alarms on familiar voices, and better self-other discrimination under bone conduction than air conduction."
+      ],
+      "brand": [
+        "Oriflame",
+        "Givaudan Perfumery School",
+        "Kosuke Minakata",
+        "Alaska Airlines",
+        "Bill Oakley",
+        "Museum of Flight",
+        "Acne Studios",
+        "Halleröd"
+      ],
+      "brand_mention": [
+        "Givaudan Perfumery School",
+        "Calice Becker",
+        "Oriflame's",
+        "Beauty Partners",
+        "Rose Mode",
+        "Neon Oud",
+        "La La Lime",
+        "Tropic Thunder",
+        "Moon Mood",
+        "Prima Vanilla",
+        "Kosuke Minakata",
+        "Milky Musk",
+        "Vanilla Duo",
+        "CEO Kenneth Campbell",
+        "Concorde",
+        "Bill Oakley Culinary Event",
+        "Alaska Airlines",
+        "Oakley",
+        "McCormick",
+        "Schmick's",
+        "Pan Am",
+        "TWA",
+        "Red Barn",
+        "Boeing's",
+        "Great Gallery",
+        "Portland",
+        "Seattle",
+        "I",
+        "Obviously",
+        "Acne Studios",
+        "Camero",
+        "Canada",
+        "Acne Paper",
+        "Camero Party",
+        "Jonny Johansson",
+        "Swedish",
+        "Halleröd",
+        "Shanghai Shop Drop Daily's"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "India's petrol is now 19.99% ethanol, and the thing that got it there is not sugarcane — it is maize and surplus government rice"
+        ],
+        [
+          "trends",
+          "OpenAI and Cisco have open-sourced a way to patch a running Linux box without restarting it: a signed eBPF program that blocks the exploit and lets the legitimate request through"
+        ],
+        [
+          "trends",
+          "A robot found the deepest explosive volcanic rocks ever documented, 6,148 metres down beside the Challenger Deep, where the pressure says explosions should not happen"
+        ],
+        [
+          "wild",
+          "Oriflame ran a competition among seven trainee perfumers, and the brief it set for one of them was: what does the moon smell like"
+        ],
+        [
+          "wild",
+          "Alaska Airlines put on a seven-course dinner of airline food from 1919 to the last Concorde flight, inside a museum, for 220 dollars a seat"
+        ],
+        [
+          "wild",
+          "Acne Studios built its gift box at 160 square metres and put the shop inside it, mid-unwrap, with the ribbons still coming off"
+        ],
+        [
+          "research",
+          "Teams of Gemini 4 agents met every four hours to argue about quantum circuits, and cut the cost of simulating laser-compressed fusion fuel by 11.8x — with every step proved in Lean first"
+        ],
+        [
+          "research",
+          "To find out whether a summary actually used a fact, change the fact and see if the summary's likelihood drops. 0.825 AUROC against 0.640 for reading the text"
+        ],
+        [
+          "learn",
+          "You recognise a recording of your own voice about four times in five. You mistake a friend's voice for your own about one time in six."
+        ]
+      ],
+      "editorial_domains": [
+        "bioenergytimes.com",
+        "frontiersin.org",
+        "onemileatatime.com",
+        "openai.com",
+        "retailtimes.co.uk",
+        "shopdropdaily.com"
+      ]
     }
   ]
 }

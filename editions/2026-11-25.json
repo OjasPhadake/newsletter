@@ -1,0 +1,327 @@
+{
+ "date_line": "Wednesday, 25 November 2026",
+ "issue": 1,
+ "preheader": "Wittgenstein on the unfounded belief under every well-founded one; a hook that can refuse the shell commands a skill runs as it loads; Linux compiled to WebAssembly making a browser-hosted Nix machine 2x to 32x faster, and Firefox booting Firefox inside it; a Claude Code skill that broke on a Bandcamp challenge and the argument that your agent works for its vendor; four wallet buys at 6.5 cents that stopped 89 minutes before Trump's post about Jensen Huang; a 27B coding model in 5.9 GB that scores 75.6 on SWE-bench Verified; John Siracusa replacing the Dock after seventeen years of Command-Option clicking; markets reopening after the Guru Nanak Jayanti holiday with GIFT Nifty pointing up and Monday's 1,484-point fall still the last close; India's ethanol blending at 19.99% with maize now the biggest single feedstock; OpenAI and Cisco shipping signed eBPF 'shields' that patch a running Linux box without a restart; the deepest explosive volcanic rocks ever found, 6,148 metres down beside the Challenger Deep; Gemini 4 agents cutting a fusion simulation's quantum cost 11.8x with every step proved in Lean; a way to test whether a summary actually used a fact by changing the fact; why you only recognise your own recorded voice 79% of the time; and ten things to do with a rooftop.",
+ "quote": {
+  "text": "At the core of all well-founded belief lies belief that is unfounded.",
+  "author": "Ludwig Wittgenstein",
+  "work": "On Certainty",
+  "source_url": "https://www.goodreads.com/quotes/tag/certainty",
+  "note": "Not scepticism — the opposite. Every chain of justification you can actually produce terminates, and it terminates on something you simply accept: that your instruments work, that the last run was the same code, that the dataset is what the filename says. The claim is not that you should stop trusting those. It is that knowing exactly where your chain stops is the whole of being careful, and most people have never looked."
+ },
+ "agent_craft": {
+  "items": [
+   {
+    "text": "If you run skills or slash commands you did not write, gate what they execute on load. Claude Code 2.1.332, out today, adds a PreSkillShellCommand hook that fires on a skill or command's inline shell commands as it is loading and can refuse them — that load step is the one place a third-party skill runs code before you have read a word of it. Upgrade first: on 2.1.331 and older, a settings file naming the hook just opens a dialog at startup.",
+    "source": "Claude Code changelog, version 2.1.332 (25 November 2026)",
+    "url": "https://code.claude.com/docs/en/changelog"
+   }
+  ]
+ },
+ "hn": [
+  {
+   "title": "Gary Bernhardt put the browser-as-operating-system at 2035. Linux compiled to WebAssembly got it close enough that Firefox now boots Firefox inside a browser tab",
+   "url": "https://fzakaria.com/2026/11/23/2035-came-early",
+   "hn_url": "https://news.ycombinator.com/item?id=50624497",
+   "points": 977,
+   "comments": 369,
+   "bullets": [
+    "The post is Farid Zakaria marking a prediction as early. Bernhardt's talk \"The Birth & Death of JavaScript\" dated the endpoint at 2035; Zakaria's epigraph is Jeff Atwood's 2009 line, \"Any application that can be written in JavaScript, will eventually be written in JavaScript.\" His own prior attempt, trynix.dev, already ran any Nix package in the browser across more than 300,000 distinct package versions, but emulated them with QEMU and was slow enough that he calls it \"tipped more towards novelty than practicality\".",
+    "The thing that changed the arithmetic is unkernel.dev, published by Pooya Parsa on 19 November 2026 and passed to Zakaria by Domen Kozar in a Discord the next day. Instead of emulating a machine, it is Linux compiled to WebAssembly, with only user programs emulated. He measures it at 2x to 32x faster than qemu-wasm, with the largest gains on first runs — the benchmark set is small and ordinary on purpose: opencode --version, a three-million-iteration Python sum(), rg --version.",
+    "What he bolted on in a weekend is the part that reads like an operating system rather than a demo. Windows: Wayland surfaces composited into the page by wland. Graphics: a minimal Mesa build with the virgl driver rendering through WebGL2, at roughly 60 frames per second. Sound: an ALSA card playing through the browser. Network: curl, git clone and pip install all work, with every TCP connection tunnelled over a WebSocket to a Wisp relay.",
+    "The closing demo is deliberately absurd and the caveats are the interesting bit. Firefox runs inside trynix, loads trynix.dev, and boots Firefox again. It took over four hours, needed JIT disabled for the inner Firefox, ran without GL in the middle layer, and leaned on a Wisp relay running on his own laptop. The headline is three words: 2035 came early."
+   ]
+  },
+  {
+   "title": "A Claude Code skill that finds a song on Bandcamp so you can pay for it broke on a bot challenge, and the refusal that followed is the whole argument",
+   "url": "https://michaelharley.net/posts/2026/11/01/llm-agents-work-for-their-parent-companies-not-for-you/",
+   "hn_url": "https://news.ycombinator.com/item?id=50627340",
+   "points": 942,
+   "comments": 392,
+   "bullets": [
+    "The concrete case is small and specific, which is why it travelled. Michael Harley built a skill with Claude Code that takes an Instagram reel, identifies the artist and the song, checks whether the artist has a Bandcamp page, and hands back the URL so he can buy the track. Bandcamp added a challenge to its search API page and the skill stopped working. The workaround he had been relying on was undocumented.",
+    "His complaint is not that Claude refused to defeat the challenge. It is that it refused before he asked — he says the model declined while he was still describing the problem. He points at a sibling branch of the same skill, which finds the song on YouTube and downloads it on request, and notes the inconsistency: the branch that still works is the one that sends the artist nothing. A footnote says plainly that he was not trying to bypass the check.",
+    "From there he generalises. He is \"firmly in the tool camp\" and does not want \"artificial restrictions on my tools\". He worries about answers quietly weighted by advertising — his example is asking which robot vacuum to buy, when what he wants is old Reddit threads and Wirecutter weighted by his own requirements. He argues that a vendor able to shape refusals can be told to shape them by a government, and compares the trajectory to Google's move from \"don't be evil\" to a business model.",
+    "Worth reading for what it is, which is an argument rather than evidence. There are no benchmarks, no experiments and no model tested in the post; he says Chinese models may refuse questions about Taiwan and then concedes he is less sure US models are unbiased on China, Ukraine and Iran without offering data. His proposed answer is a local model in his homelab, with the honest caveat that he still has to work out what \"open model\" means and that it may depend more on training than on the licence."
+   ]
+  },
+  {
+   "title": "Four buys at 6.5 cents, all between 02:19 and 03:28, and then nothing — 89 minutes before Trump told Nvidia's board to rehire Jensen Huang",
+   "url": "https://deucalionn.vercel.app/polymarket-delit-initie-jensen-huang-nvidia/",
+   "hn_url": "https://news.ycombinator.com/item?id=50626578",
+   "points": 469,
+   "comments": 268,
+   "bullets": [
+    "The market was \"Will Jensen Huang rejoin NVIDIA by December 31, 2026?\" and overnight it sat at an implied 6.5% — a near-unanimous bet that he would not. The author's own alerting system, finished two days earlier, fired on an account called ljhggk, and the post then traces every fill on Polygonscan by hash and block number, converting the timestamps out of CET.",
+    "All four buys went through at 0.065 USDC per share on 23 November, CET: 02:19:11, block 97794188, 24,079.8 shares for 1,565.19 USDC; 02:48:50, block 97795374, 4,771.7 for 310.16; 02:54:31, block 97795601, 2,833.3 for 184.16; and 03:28:20, block 97796954, 39,833.0 for 2,589.15. Total: 71,517.8 shares for 4,648.66 USDC, which the author estimates absorbed about 34% of the sell-side liquidity on offer. Then the buying stops.",
+    "The wallet is the part that is hard to explain away. It is a Gnosis Safe proxy created on 19 November at 00:48 CET, about 81 hours before the trades; its signing address has zero on-chain transactions of its own; and every bit of the account's activity is on this one market. The author could not identify where the money came from and says so.",
+    "The timeline afterwards: at 04:57 CET, 89 minutes after the last fill, Trump posted on Truth Social urging the board to bring Huang back, and the price went from 0.065 to 0.14. At 14:30 CET Nvidia announced the unanimous reinstatement, about an hour before Wall Street opened. At 15:40 the market resolved at 1.00 and paid 71,518 USDC — around a 1,438% return on 4,648 USDC.",
+    "The author's conclusion is appropriately hedged, and the hedge is the reason the piece is worth reading. On-chain data establishes the trades and the timing; it cannot establish who held the keys or what they knew. A very good guess, placed by someone willing to risk 4,600 dollars, produces exactly this chart."
+   ]
+  },
+  {
+   "title": "A 27B coding model that fits in 5.9 GB and scores 75.6 on SWE-bench Verified, against 80.6 for the full-precision model it was squeezed out of",
+   "url": "https://prismml.com/news/bonsai-2-5-27b",
+   "hn_url": "https://news.ycombinator.com/item?id=50633922",
+   "points": 369,
+   "comments": 126,
+   "bullets": [
+    "Ternary Bonsai 2.5 27B is PrismML's compressed post-train of Qwen3.8 27B, aimed at agents that run on your own machine against your own files. The memory footprint is about 5.9 GB, unchanged from the previous Bonsai 2 27B; the weights are Apache 2.0; it runs on NVIDIA and Intel GPUs through llama.cpp and on Macs, iPhones and iPads through MLX.",
+    "The numbers, as base / Bonsai 2 / Bonsai 2.5: SWE-bench Verified 80.6 / 60.8 / 75.6. DeepSWE v1.1 under mini-swe-agent 30.1 / 0 / 27 — the middle column is the story of the previous release, which simply could not complete the harness. Terminal-Bench 2.1 70.8 / 52.8 / 60.1. AppWorld 93.2 / 51.2 / 90.5. Tau-cubed-Bench 72.8 / 69.1 / 73.9, the one line where the compressed model beats the model it came from. BigCodeBench 61.5 / 57.2 / 60.3.",
+    "One line goes the other way and the page does not dwell on it: LiveCodeBench v6 is 87.6 / 83.8 / 83.0, so 2.5 is slightly worse than 2 on single-shot competitive coding while being enormously better at everything agentic. That is consistent with what the post says it optimised for — long tool-call sequences, recovering from a failed step, and cutting the overthinking and repetitive loops that burn turns.",
+    "Throughput, since the point is local: 291 tokens a second generated on an H100 with MTP, and 3,200 tokens a second of prompt processing on a 2,000-token prompt. On a consumer RTX 4090, about 204 and about 3,060. PrismML came out of a group of Caltech researchers and lists Khosla Ventures, Cerberus and Google as early backers with Samsung ongoing.",
+    "What the page does not do is explain the method. It says the model is compressed and refers you to a whitepaper for how the ternary scheme works. Take the benchmark table as the claim and the whitepaper as the thing you would have to read before believing it."
+   ]
+  },
+  {
+   "title": "John Siracusa spent three and a half months and 160 builds replacing the Dock, because opening a folder from it has needed Command-Option-click since 2009",
+   "url": "http://hypercritical.co/2026/11/23/jetty-pro",
+   "hn_url": "https://news.ycombinator.com/item?id=50630462",
+   "points": 286,
+   "comments": 126,
+   "bullets": [
+    "Jetty Pro puts customisable, Dock-like floating palettes along the edges of your displays, holding files, folders, volumes, apps, Shortcuts, spacers, dividers and the Trash. Siracusa's claim is not that it supplements the Dock: \"I've replaced the Dock.\" The grievance behind it is precise and seventeen years old — since Mac OS X 10.6 Snow Leopard in 2009, opening a folder from the Dock has required Command-Option-click, which he calls \"seventeen years of Command-Option clicking\".",
+    "The development account is unusually candid about coding agents. He started by feeding the source of SwitchGlass, his 2020 app, to one; he describes what came back as \"pretty shoddy\" and then spent months fixing it. Total: about three and a half months of work, more than 160 builds before 1.0, shipped to 250 beta testers at a rate of more than one build a day. The icon is by The Iconfactory.",
+    "He also killed half the plan in public. On Accidental Tech Podcast episode 706, on 26 August 2026, he announced two apps: a sandboxed \"Jetty\" for the Mac App Store and an unsandboxed \"Jetty Pro\" sold directly. He abandoned the sandboxed one in under two weeks because it could not match what the Dock does. The reason is in the post: \"Jetty Pro uses every private API it can get its hands on\", which also means a long list of permissions and a Settings pane that has to read \"All permissions have been granted\".",
+    "Pricing is the part the thread argued about. $9.99 per year plus tax as an introductory price until the end of 2026, subscription only, with a 14-day trial. Dock background simulation covers macOS 15, 26 and 27. His own verdict: \"Replacing the Dock with Jetty Pro has made me happier than any other app I've created.\""
+   ]
+  }
+ ],
+ "markets": {
+  "indices": [
+   {
+    "name": "Session",
+    "value": "Markets reopen this morning. Last close was Monday 23 November 2026",
+    "direction": "flat",
+    "change": "NSE and BSE were shut yesterday, Tuesday 24 November, for Guru Nanak Jayanti, so there is no Tuesday Indian close and no Tuesday FII/DII print. Everything marked below as a close is Monday's. Index, sector, flow and rupee figures from Daily Financial's 25 November pre-open note; GIFT Nifty cross-checked against Trade Brains' 09:07 IST live blog; FII/DII nets confirmed against NiftyTrader; the US session from StockMarketWatch's 24 November digest"
+   },
+   {
+    "name": "Sensex",
+    "value": "82,435.99",
+    "direction": "down",
+    "change": "-1,483.72 points (-1.77%) on Monday. That is still the last traded level as of this morning"
+   },
+   {
+    "name": "Nifty 50",
+    "value": "25,349.65",
+    "direction": "down",
+    "change": "-450.95 points (-1.75%) on Monday, back below 25,400"
+   },
+   {
+    "name": "Bank Nifty",
+    "value": "62,585.35",
+    "direction": "down",
+    "change": "-2,049.85 points (-3.17%) on Monday — nearly twice the index's fall, and the single biggest drag on it"
+   },
+   {
+    "name": "Sectors",
+    "value": "Nifty IT +1.88% at 31,907.93 · Nifty Metal -3.71% at 11,815.91",
+    "direction": "flat",
+    "change": "Monday's split: metals took the global risk-off, IT was the one place money went. Nifty Midcap 100 ended -617.75 points (-1.01%) at 61,403.85 and Smallcap 100 -136.10 points (-0.70%) at 19,306.65 — the damage was concentrated in large caps. India VIX 17.70, +2.18%"
+   },
+   {
+    "name": "GIFT Nifty · pre-open today",
+    "value": "25,773 at 08:00 IST (Daily Financial) / about 25,739 at 09:07 IST (Trade Brains)",
+    "direction": "up",
+    "change": "Both quotes sit 390 to 420 points above Monday's 25,349.65 close, so the signal is a gap-up open. Treat the level as approximate and the stated point changes as unreliable: Daily Financial prints its 25,773 as \"+277 points\", which does not reconcile with Monday's close, and Trade Brains calls its figure \"up about 237\". The direction is the usable part. Against it: Korea's Kospi was down about 4.6% at 4,777.12 and Japan's Nikkei down as much as 2.9% this morning, after Tuesday closes of +6.32% and +3.91% respectively"
+   },
+   {
+    "name": "USD/INR",
+    "value": "92.91 on Monday",
+    "direction": "down",
+    "change": "The rupee weakened 23 paise in Monday's session, ending a five-day run of gains. No Tuesday print — the market was closed"
+   },
+   {
+    "name": "FII · cash",
+    "value": "+Rs 5,672.99 cr on Monday",
+    "direction": "up",
+    "change": "Foreign institutions bought into a day the index lost nearly 1.8%, which is not the usual pairing. November to date: +Rs 1,17,622 cr. NiftyTrader also puts the largest single FII buy day this month at +Rs 14,975 cr on 5 November"
+   },
+   {
+    "name": "DII · cash",
+    "value": "-Rs 2,760.12 cr on Monday",
+    "direction": "down",
+    "change": "November to date: -Rs 64,547 cr. Combined FII+DII net was +Rs 2,913 cr for Monday and +Rs 53,075 cr for the month so far"
+   },
+   {
+    "name": "Overnight · US, Tuesday 24 November",
+    "value": "Dow 50,018.70 (+0.85%) · S&P 500 7,201.09 (-0.50%) · Nasdaq 23,733.54 (-1.48%)",
+    "direction": "flat",
+    "change": "The Dow's first close above 50,000, and the S&P's eighth loss in nine sessions, on the same day. Monday's post-Huang chip rally reversed hard: semiconductors and related devices -8.58%, Nvidia -5.86%, printed circuit boards -8.24%, computer storage -7.99%. Money went to value — pharmaceutical preparations +5.97% on Sanofi's $41bn cash deal for Insmed, family clothing stores +4.77% after Kohl's +19.5% and Dollar Tree +11.2%. Russell 2000 +0.57% at 2,684.94. Conference Board consumer confidence came in at 103.3 against a 92.2 forecast. Gold -2.70% at 3,552.80 and WTI +1.82% at 81.63; the digest notes traders pricing a 95% chance of a December Fed hike, and flags that it is automated and should be checked against primary sources"
+   }
+  ]
+ },
+ "trends": [
+  {
+   "tag": "India",
+   "headline": "India's petrol is now 19.99% ethanol, and the thing that got it there is not sugarcane — it is maize and surplus government rice",
+   "url": "https://bioenergytimes.com/india-achieves-20-ethanol-blending-in-esy-2025-26-grain-based-feedstocks-contribute-73-52/",
+   "subject": "Ethanol blending in Indian petrol averaged 19.99% in supply year 2025-26, with maize and surplus FCI rice supplying most of it.",
+   "subtitle": "Provisional AIDA data as of 31 October 2026, released 20 November 2026 and reported by ANI; BioEnergy Times write-up by Randhir Patil",
+   "bullets": [
+    "The headline number is 19.99% average blending for ethanol supply year 2025-26 — a 20% target that was originally set for 2030, then pulled forward. Against a stated requirement of 1,050 crore litres, allocations ran to 1,196.90 crore litres, actual supplies to 1,088.91 crore litres, and 1,134.36 crore litres were blended into petrol by 31 October.",
+    "The feedstock split is the real story and it is the inverse of the programme's reputation. Grain supplied 800.53 crore litres, or 73.52%; sugar supplied 288.38 crore litres, or 26.48%. Inside the grain share, maize alone accounted for 489.71 crore litres, surplus FCI rice for 233.95 crore litres, and damaged foodgrains for 76.87 crore litres. The sugar side breaks down as sugarcane juice 153.36, B-heavy molasses 118.04, C-heavy molasses 16.98.",
+    "There is still a sugar bill. About 32.45 lakh tonnes of sugar were diverted to ethanol, of which 23 lakh tonnes went via cane juice and 9.44 lakh tonnes via B-heavy molasses — which is the lever the government pulls when it wants the ethanol target and the domestic sugar price to coexist.",
+    "AIDA president Vijendra Singh's framing is that growing maize and FCI-rice volumes have \"strengthened the diversity\" of the supply chain. That is one reading. The other is that a fuel programme is now a standing buyer of feed grain and of the Food Corporation's surplus, and the number to watch next year is not the blending percentage but what maize costs."
+   ]
+  },
+  {
+   "tag": "Infrastructure",
+   "headline": "OpenAI and Cisco have open-sourced a way to patch a running Linux box without restarting it: a signed eBPF program that blocks the exploit and lets the legitimate request through",
+   "url": "https://openai.com/index/introducing-shirudo",
+   "subject": "Shirudo, an open-source eBPF-based runtime from OpenAI and Cisco announced 23 November 2026 that loads cryptographically signed 'shields' into a running Linux kernel to block exploitation of a known vulnerability before a permanent patch ships.",
+   "subtitle": "Announced 23 November 2026; BSD 2-Clause core with dual BSD/GPL BPF programs, on GitHub; technical deep-dive webinar 15 December",
+   "bullets": [
+    "The problem it is aimed at is the gap between disclosure and deployment, which is measured in days or weeks. The awkward part is that an exploit and a legitimate request frequently travel through the same Linux operation, so the blunt fix — block the operation — takes the service down. Shirudo's premise is that you can write something narrow enough to separate the two, and load it live.",
+    "The mechanism is eBPF: small programs attached at specific kernel hook points. Four properties are claimed. Shields block a vulnerable code path with no restart, and can be run in observe-only mode first to see what they would have broken. Agents get programmable controls to investigate a vulnerability, build a shield and validate it against both the exploit and real traffic, with humans deciding what actually gets deployed. Shields are cryptographically signed and verified before loading, on top of the eBPF verifier's own safety checks. And a TPM keeps a hardware-backed record of every shield loaded or removed.",
+    "The demonstration is specific. Using Codex, they generated a shield that added an input check inside Java's Base64 decoder, attached it to a running Elasticsearch process, and had it reject a Java4Shell exploit attempt while the service stayed up — no restart.",
+    "The part worth watching is the distribution plan rather than the code: the two companies say they intend to publish tested shields alongside vulnerability disclosures. If that happens, the artefact that arrives with a CVE stops being only a description of the hole and starts being something you can load. Greg Brockman is the named OpenAI signatory; no Cisco executive is quoted."
+   ]
+  },
+  {
+   "tag": "Wildcard · Earth science",
+   "headline": "A robot found the deepest explosive volcanic rocks ever documented, 6,148 metres down beside the Challenger Deep, where the pressure says explosions should not happen",
+   "url": "https://www.frontiersin.org/news/2026/11/23/robot-submarine-deepest-ocean-trench-unprecedented-volcanic-activity-frontiers-earth-science",
+   "subject": "Pyroclastic rocks at 6,148 metres beside the Challenger Deep: the deepest known explosive volcanic deposits anywhere under the ocean.",
+   "subtitle": "Frontiers in Earth Science, DOI 10.3389/feart.2026.1929806, announced 23 November 2026; ROV Jason/Medea, cruise TN438, seven dives in late 2024, NSF-supported",
+   "bullets": [
+    "Pyroclastic rock is what an explosive eruption leaves behind — fragmented, blown apart rather than poured out. Finding it in thin flat layers at 6,148 metres is the surprise, because at that pressure the gas expansion that drives an explosion is supposed to be suppressed. Lead author Robert J. Stern of the University of Texas at Dallas: \"Explosive volcanism near trenches is unusual, so we were very surprised,\" and \"These are the deepest pyroclastic rocks documented to date from anywhere in the ocean.\"",
+    "The survey itself is the kind of thing that only works with a robot. ROV Jason/Medea made seven dives in late 2024 across roughly 300 km of a 550 km forearc segment next to the Challenger Deep, which bottoms out at nearly 11,000 metres. The vehicle's own limit is 6,500 metres, so the deepest 4,500 metres of that wall has simply never been looked at.",
+    "The structural reading that comes out of it: the eastern segment is deeper with steeper walls and its crust-mantle boundary closer to the surface, and older rocks dominate there, while younger volcanic rock dominates the west. The team's hypothesis is that the east is being pulled apart mechanically while the west is taking on magma from the mantle — explicitly a hypothesis, pending more sampling and radiometric dating.",
+    "What is honestly unresolved is most of it. They have not located the vents — \"We haven't identified the eruption sites yet\" — and they do not yet know why eruptions at that pressure were explosive at all. Also in the piece, and worth noting separately: Stern observes that the tools to reach below 6,500 metres now belong to Chinese scientists and a few wealthy individuals."
+   ]
+  }
+ ],
+ "research": [
+  {
+   "tag": "Industry · Google DeepMind",
+   "title": "Teams of Gemini 4 agents met every four hours to argue about quantum circuits, and cut the cost of simulating laser-compressed fusion fuel by 11.8x — with every step proved in Lean first",
+   "url": "https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification/",
+   "subject": "Independent Gemini 4 teams hunted for cheaper quantum circuits in chemistry and unstructured lookup, with every candidate machine-checked in Lean before use.",
+   "subtitle": "Google DeepMind blog, 23 November 2026, post by Sergey Shirobokov, Ben Jaderberg and Ryan Babbush; paper arXiv:2611.09822; Lean library, problem specs and verified solutions at github.com/google-deepmind/formal-quantum-computation",
+   "bullets": [
+    "The structural idea is worth separating from the results. Several agent teams work independently on an assigned problem; nothing enters the shared notebook until it has been verified in Lean; and every four hours the teams meet at a virtual conference to share, debate and compare. Humans chose the directions, wrote the problem specifications and supervised. The reported cost curve falls gradually as teams feed on each other's verified ideas.",
+    "Formal verification is not decoration here, it is the only option available. These circuits are too large to simulate classically and far too large for today's quantum processors, so there is no way to test a proposed improvement — you can only prove it. That required building a new Lean library for quantum algorithms, which they have open-sourced along with the problem specs and the verified solutions.",
+    "The numbers. Inertial confinement fusion, simulating laser-compressed hydrogen fuel: computing cost down 11.8x, with error-corrected qubit memory falling from 5,650 to 4,338. Simulating a light-sensitive molecule: 8x cheaper, by simplifying how particle positions and electric forces are tracked. Cytochrome P450, the enzyme family that metabolises most human medicines: 2.5x, with memory down from 481 to 333 qubits by replacing bulky memory lookups. One implementation of Grover's search: 2.57x. And the arcsin routine that loads numbers into quantum states: 290x.",
+    "The caveat is theirs and it is the right one. Running any of these inside a full scientific simulation would still need more resources than the first error-corrected quantum computers are expected to have. What has moved is the size of the gap, not the availability of the answer — and the 290x on a plumbing subroutine is a reminder of how much of that gap is unexamined plumbing."
+   ]
+  },
+  {
+   "tag": "Academia · Georgia Tech",
+   "title": "To find out whether a summary actually used a fact, change the fact and see if the summary's likelihood drops. 0.825 AUROC against 0.640 for reading the text",
+   "url": "https://arxiv.org/abs/2611.25539",
+   "subject": "COVERAGE-TRACE detects omitted source facts in LLM summaries by substituting type-matched counterfactual alternatives into the source and measuring the change in the fixed summary's normalised likelihood.",
+   "subtitle": "arXiv:2611.25539, submitted 19 November 2026 by Ali Karkehabadi, Jamshid Hassanpour and Rafael E. Banchs; affiliation to Georgia Tech per OpenAlex, not stated on the arXiv page",
+   "bullets": [
+    "The problem is that a summary which quietly drops a key fact looks fine. Existing checks read the summary and the source and try to judge coverage from the text, which is exactly the thing a fluent omission defeats. The move here is to stop reading and start intervening.",
+    "The method: take one key source fact, replace it in the source with type-matched alternatives, hold the summary fixed, and measure how much its normalised likelihood changes. If the summary genuinely depends on that fact, swapping it should hurt; if the summary never used it, the swap should barely register. Averaging over several counterfactuals reduces the sensitivity to which replacement you happened to pick.",
+    "On 80 matched QMSum pairs across four open-weight models it reaches 0.764 to 0.825 AUROC, against 0.640 for the strongest text-only baseline. Two controls matter more than the headline: shuffling which counterfactual goes with which item degrades performance, which is what you want; and correcting for meaning-preserving paraphrases pulls it down to 0.591 to 0.624, which is the honest ceiling.",
+    "The authors are careful about what they are selling, and the care is the useful part. They present this as a complementary signal of target-specific dependence, not as a wording-invariant coverage probability. Eighty pairs is small. But the shape of the idea — probe a model's output by perturbing its input rather than by grading its prose — generalises well beyond summarisation."
+   ]
+  }
+ ],
+ "wild": [
+  {
+   "tag": "Fragrance",
+   "headline": "Oriflame ran a competition among seven trainee perfumers, and the brief it set for one of them was: what does the moon smell like",
+   "url": "https://retailtimes.co.uk/oriflame-completes-top-scents-collection-with-final-two-fragrance-launches",
+   "entities": [
+    "Oriflame",
+    "Givaudan Perfumery School",
+    "Kosuke Minakata"
+   ],
+   "subject": "Oriflame's Moon Mood eau de parfum, briefed as the imagined smell of the moon, composed by trainee perfumer Kosuke Minakata.",
+   "subtitle": "Retail Times, 24 November 2026, by Fiona Briggs; both fragrances RRP EUR 60 / GBP 55, sold via oriflame.com and Oriflame Beauty Partners across Europe",
+   "bullets": [
+    "The structure is the odd part, not the perfume. Oriflame wrote the briefs; the Givaudan Perfumery School in Paris supplied seven emerging perfumers to compete against them; a jury of master perfumers including Calice Becker, the school's headmaster, picked the winners; and Oriflame's own Beauty Partners voted at the company's global conferences. Six fragrances came out of it. Rose Mode, Neon Oud, La La Lime and Tropic Thunder landed earlier this year; Moon Mood and Prima Vanilla finish it.",
+    "Moon Mood went to Kosuke Minakata, an emerging perfumer from Japan, against a brief that amounts to a thought experiment: imagine the scent of a place with no air to carry a scent. What he turned in is lavender, laurel, jasmine, rose and osmanthus over a base of Milky Musk, sandalwood and cedarwood. His own description of the goal is \"a fragrance that feels calming yet magnetic\".",
+    "Minakata won the other slot too. Prima Vanilla opens on almond, apple and lemon, runs through airy rice powder and light florals for a milky texture, and lands on a \"Vanilla Duo\" of two different vanilla ingredients with an ambery finish — pitched explicitly against what people expect a gourmand vanilla to do.",
+    "Worth noticing what a direct-selling company has actually built: a talent pipeline dressed as a product line. CEO Kenneth Campbell calls the collection \"a celebration of creativity, entrepreneurship and opportunity\", which is marketing language for the fact that the thing being launched is seven careers."
+   ]
+  },
+  {
+   "tag": "Aviation · Seattle",
+   "headline": "Alaska Airlines put on a seven-course dinner of airline food from 1919 to the last Concorde flight, inside a museum, for 220 dollars a seat",
+   "url": "https://onemileatatime.com/news/alaska-airlines-greatest-airline-meals-dinner-seattle/",
+   "entities": [
+    "Alaska Airlines",
+    "Bill Oakley",
+    "Museum of Flight"
+   ],
+   "subject": "Alaska Airlines paid for a seven-course dinner of recreated 20th-century onboard menus at Seattle's Museum of Flight on 14 November 2026.",
+   "subtitle": "Saturday 14 November 2026, one night only, the Great Gallery at the Museum of Flight near Boeing Field; write-up by Ben Schlappig, One Mile at a Time, 12 October 2026",
+   "bullets": [
+    "Seven courses pulled from vintage airline menus and cooked with modern technique, spanning, in the organisers' words, from \"the earliest passenger flights of 1919\" to \"the final Concorde service in 2003\". A Bill Oakley Culinary Event presented by Alaska Airlines, with Oakley running a slideshow between courses and chefs from McCormick & Schmick's doing the cooking. Lobster and caviar were on it.",
+    "The joke underneath is that airline food is a byword for bad, and the premise of the evening is that this is a recent development. The period being recreated is the one where Pan Am and TWA fought over passengers on 747s with actual kitchens, and the event's own copy describes the era's cooking as extravagant, ambitious and occasionally completely unhinged.",
+    "Tickets were 220 dollars for the dinner, two hosted drinks and the slideshow, or 270 with an afterparty from 10pm to 12:30am in the Red Barn — Boeing's original factory building, now part of the museum. The venue is the Great Gallery, which is to say you ate 1960s first-class food underneath the aircraft it was served on.",
+    "It is also a format with a track record. A reader who went to the earlier Portland edition is quoted as \"holy cow that dinner was so much fun\", and the writer's own position before the Seattle date was \"I really, really, really want to attend this dinner\" followed immediately by \"Obviously this is a very expensive dinner.\""
+   ]
+  },
+  {
+   "tag": "Retail · Shanghai",
+   "headline": "Acne Studios built its gift box at 160 square metres and put the shop inside it, mid-unwrap, with the ribbons still coming off",
+   "url": "https://www.shopdropdaily.com/post/acne-studios-turns-its-iconic-pink-packaging-into-an-architectural-experience-in-shanghai",
+   "entities": [
+    "Acne Studios",
+    "Halleröd"
+   ],
+   "subject": "Acne Studios turned its pink gift packaging into a 160 square metre walk-in installation at iapm, Shanghai.",
+   "subtitle": "iapm mall, Shanghai; Shop Drop Daily write-up dated 11 November; created by creative director Jonny Johansson and team with Halleröd",
+   "bullets": [
+    "The conceit is a moment rather than an object. The installation is not a pink box; it is a pink box being opened — roughly 160 square metres of large angular pink structures unfolding across the mall atrium, with silver ribbons, oversized bows and reflective metallic surfaces. Crucially it is left open at the top, so from the walkways and the upper floors you are looking down into someone else's present.",
+    "Acne Studios' pink packaging has been the brand's most recognisable asset for years, in the specific sense that people keep the boxes. Scaling the box up to architecture and then selling clothes out of its inside is the most literal possible reading of that, and it is the rare case where the literal reading is the good one.",
+    "What is in it is arranged as an advent calendar: Camero handbags, Canada scarves and copies of Acne Paper, among metallic bows, miniature objects and a mirrored disco ball. The pop-up had first exclusive access to the holiday selection, including a limited-edition Camero Party handbag, printed knitwear and trompe-l'oeil denim.",
+    "Credited to creative director Jonny Johansson and his team with the Swedish design studio Halleröd, at iapm mall in Shanghai. Shop Drop Daily's write-up is dated 11 November and does not give the run dates, so treat it as a November fixture rather than a dated event."
+   ]
+  }
+ ],
+ "learn": {
+  "title": "You recognise a recording of your own voice about four times in five. You mistake a friend's voice for your own about one time in six.",
+  "subject": "Orepic, Kannape, Faivre and Blanke (Royal Society Open Science, 2023) on bone conduction and self-other voice discrimination: 79% hit rate recognising one's own unmorphed voice, 17% false alarms on familiar voices, and better self-other discrimination under bone conduction than air conduction.",
+  "tags": [
+   "Science of ordinary things",
+   "Hearing",
+   "Self-perception"
+  ],
+  "body": [
+   "Everyone knows the small unpleasantness of hearing yourself on a recording, and the usual explanation is half right. Your own voice reaches you by two routes at once: through the air, like everyone else's, and through your skull, which is a solid and carries low frequencies far better than air does. Live, you get both, so you hear a bassier, fuller version than anyone has ever heard. A microphone only gets the air route. The recording is not thin; your internal version is padded.",
+   "The interesting finding is what that padding is doing. In 2023, Pavo Orepic, Oliver Kannape, Nathan Faivre and Olaf Blanke, at EPFL and Geneva, took half-second recordings of participants saying \"a\", morphed them continuously into a stranger's voice, and asked which one each blend sounded more like. They played the blends two ways: through headphones, and through a bone-conduction headset that puts the vibration into the skull the way your own speech does. People were measurably better at telling themselves from someone else through the bone. The effect did not appear when the comparison was between two other people's voices, so it is not that bone conduction simply sounds clearer — it is specific to recognising yourself.",
+   "The part to repeat at dinner is the control condition. Played their own unaltered voice, participants identified it correctly 79% of the time. Played a familiar voice, they claimed it as their own 17% of the time; played a stranger, 13%. And the people who most often failed to recognise themselves were the same people who most often mistook a friend for themselves. Whatever you are recognising when you recognise your own voice, it is not quite your voice. It is partly a feeling in your head, and without it you are running at four out of five."
+  ]
+ },
+ "ideas": {
+  "prompt": "Ten things you could do with a rooftop",
+  "items": [
+   {
+    "text": "A single long table and nothing else. The hard part of dinner on a roof is not the view, it is having somewhere to put the plates."
+   },
+   {
+    "text": "A tomato and chilli operation in paint buckets, placed to catch the two hours of sun the rest of the building blocks."
+   },
+   {
+    "text": "An outdoor cinema for one film a month, chosen by whoever climbs up first."
+   },
+   {
+    "text": "A shaded corner built for exam week, because the real amenity is a place nobody can find you."
+   },
+   {
+    "text": "A neighbourhood tool shelf in a locked box — one drill, one ladder, one pressure cooker for forty flats."
+   },
+   {
+    "text": "A telescope on a fixed mount, left out under a cover, so looking at Saturn takes ninety seconds rather than an evening."
+   },
+   {
+    "text": "Laundry lines with a roof over them, which is the one improvement that would change more mornings than any of the others here."
+   },
+   {
+    "text": "A tank fed by the downpipe, plumbed to the plants, so the thing that stops you watering in May is solved in October."
+   },
+   {
+    "text": "A pigeon-proof bird feeder and a notebook on a string. Six months of entries is a dataset and an argument with your neighbours."
+   },
+   {
+    "text": "A hammock between two water tanks, which is the correct use of a water tank."
+   }
+  ]
+ }
+}
