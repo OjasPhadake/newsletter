@@ -11564,6 +11564,155 @@
         "retailtimes.co.uk",
         "shopdropdaily.com"
       ]
+    },
+    {
+      "date": "2026-11-26",
+      "issue": 1,
+      "quote_text": [
+        "Common sense and a sense of humor are the same thing, moving at different speeds."
+      ],
+      "quote_author": [
+        "Clive James"
+      ],
+      "idea_text": [
+        "Agree a standing slot and protect it like a lecture. Thursday, 9pm, twenty minutes, no agenda.",
+        "Watch the same series on a delay of one episode and send only outraged reactions.",
+        "Share a photo album that only the two of you can see, and put boring things in it — your desk, the queue, the sky.",
+        "Post an actual letter once a term. It arrives on a day neither of you chose, which is most of the effect.",
+        "Play one slow asynchronous game: chess by post, a crossword, a word game where a move a day is the correct pace.",
+        "Keep a running voice-note thread instead of texting. Tone survives the distance better than typing does.",
+        "Pick a book neither of you would finish alone and read it at the same pace.",
+        "Cook the same thing on the same evening and send each other the result, including the failures.",
+        "Put one trip a year in the calendar in January, before anything else can claim the dates.",
+        "Say the dull sentence out loud once: how often do you actually want to hear from me. Then believe the answer."
+      ],
+      "idea_prompt": [
+        "Ten ways to stay in touch with someone who lives far away"
+      ],
+      "tip_text": [
+        "When Claude Code starts failing in a way you cannot attribute — calls hanging, errors with no useful text — run `claude doctor` before you touch your prompt or your settings. Version 2.1.331 \"Added an API connectivity section to `claude doctor` that reports whether the API can be reached\", which splits the one question worth answering first: is this my corporate proxy and DNS, or is this my own instructions. Most of the time you have been debugging the wrong layer."
+      ],
+      "hn_id": [
+        "50644817",
+        "50637220",
+        "50646108",
+        "50638032",
+        "50637686"
+      ],
+      "link": [
+        "https://1password.com/blog/update-on-nov-2026-security-incident",
+        "https://github.com/openai/math/blob/main/preprints/The-matrix-multiplication-exponent-is-nine-fourths-November-24-2026/paper.pdf",
+        "https://scottaaronson.blog/?p=10379",
+        "https://buttons.joshwcomeau.com/",
+        "https://www.lesswrong.com/posts/7wzWuLP3HhyBLmKfo/models-can-communicate-via-inference-servers-despite-being",
+        "https://www.bigmint.co/insights/detail/india-november-power-demand-rebounds-but-generation-remains-11-below-october-811838",
+        "https://therecord.media/australia-passes-online-safety-legislation-preempt-harms",
+        "https://www.popsci.com/science/oldest-quasar-euclid-telescope/",
+        "https://musebyclios.com/advertising/taco-bell-claims-christmas-bells-have-been-its-advertising-all-along/",
+        "https://www.marketingdive.com/news/meow-mix-reimagines-iconic-cat-memes-for-multichannel-campaign/874724/",
+        "https://www.travelandtourworld.com/news/article/canada-travel-spotlight-turns-to-st-marys-after-decades-of-industrial-odours/",
+        "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities",
+        "https://arxiv.org/abs/2611.25958"
+      ],
+      "subject": [
+        "India's November 2026 electricity demand and generation mix: peak demand 227.13 GW in the 16-22 November week, coal at 72.1% of generation, hydro output down year on year.",
+        "Australia enacts a digital duty of care: anticipation of foreseeable harm, annual written risk assessments, notification of harmful design changes, algorithmic-feed opt-out, age proof for pornography.",
+        "Euclid's discovery of J1504+6252, the most distant quasar observed, published in Astronomy and Astrophysics on 24 November 2026.",
+        "Taco Bell's 'Yes, it was us.' campaign claiming Christmas bells and Spain's New Year's Eve chimes have always been its advertising.",
+        "Meow Mix's Behind the Memeow: three 30-second films inventing what happened off camera for Table Cat, Keyboard Cat and Huh Cat.",
+        "The Smell Forecast, a tourism campaign from St. Mary's, Newfoundland, in which residents post daily odour updates as the abandoned fish-sauce plant is cleaned out.",
+        "Protein design by GPT-6 writing code: 35 of 322 minibinders bound in the wet lab, 24 November 2026.",
+        "Bellegarda and Ijspeert on learning 11 terrain-adaptive quadruped gaits with oscillator networks and a gait-selection policy conditioned on the performance criterion.",
+        "Eddy current separators in waste sorting: a fast-spinning rare-earth rotor induces currents in non-ferrous metal, repelling it off the conveyor; aluminium throws furthest, stainless 302/304 resists, and a full can is too heavy to move."
+      ],
+      "brand": [
+        "Taco Bell",
+        "Fuego Camina Conmigo",
+        "Josh Saunders",
+        "Meow Mix",
+        "J.M. Smucker",
+        "St. Mary's",
+        "Atlantic Seafood Sauce Company",
+        "Newfoundland"
+      ],
+      "brand_mention": [
+        "Spain's New Year's Eve",
+        "Yes",
+        "Josh Saunders",
+        "Magikarp Guy",
+        "Australia's Got Talent",
+        "Quesarito Deluxe",
+        "Taco Bell",
+        "Christmas",
+        "Alvaro Florez",
+        "Fuego Camina Conmigo",
+        "Coca-Cola",
+        "Santa Claus",
+        "His",
+        "Table Cat",
+        "Keyboard Cat",
+        "Huh Cat",
+        "Meow Mix",
+        "Nicole Massey",
+        "J.M Smucker",
+        "Cats",
+        "Pubity",
+        "Mark Smucker's",
+        "Marketing Dive",
+        "Friskies",
+        "Atlantic Seafood Sauce Company",
+        "C",
+        "Today's",
+        "Note",
+        "Battery Park",
+        "Gulch Beach"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "India's power demand has come back and coal has supplied 79% of the increase, because the water is not there"
+        ],
+        [
+          "trends",
+          "Australia has made platform harm a duty rather than a takedown request, and buried in it is the right to switch the algorithm off"
+        ],
+        [
+          "trends",
+          "A telescope built to map dark matter found a black hole 360 million times the mass of the Sun that existed 630 million years after the Big Bang, and nobody can say how it got that big"
+        ],
+        [
+          "wild",
+          "Taco Bell's position is that every Christmas bell you have ever heard, including the midnight chimes Spain eats grapes to, was always a Taco Bell advertisement"
+        ],
+        [
+          "wild",
+          "Meow Mix has made origin stories for three cat memes, on the theory that each of those famous expressions was a cat about to be handed its dinner"
+        ],
+        [
+          "wild",
+          "A Newfoundland town spent twenty years under the smell of a million litres of abandoned fish sauce. Now that it is being pumped out, residents post a daily smell forecast"
+        ],
+        [
+          "research",
+          "GPT-6 wrote ordinary code to design proteins instead of calling a specialised protein model, and 35 of 322 of the binders it designed actually bound in the lab"
+        ],
+        [
+          "research",
+          "Every quadruped gait is the best one somewhere: EPFL learned 11 of them and then trained a second policy whose only job is to pick"
+        ],
+        [
+          "learn",
+          "Your drinks can is pulled out of the rubbish by a magnet that cannot attract it. The machine makes the can into a magnet for a moment and then shoves it off the belt — and if you leave the drink in it, it stays in the rubbish"
+        ]
+      ],
+      "editorial_domains": [
+        "bigmint.co",
+        "marketingdive.com",
+        "musebyclios.com",
+        "popsci.com",
+        "therecord.media",
+        "travelandtourworld.com"
+      ]
     }
   ]
 }
