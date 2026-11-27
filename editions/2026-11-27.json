@@ -1,0 +1,340 @@
+{
+ "date_line": "Friday, 27 November 2026",
+ "issue": 1,
+ "preheader": "Eddington on an ocean traveller who thinks the sea is made of waves rather than water; running /permissions to find the deny rules that were never doing anything; the New York Times telling its photographers not to install Photoshop 2027; Hacker News stopping for Thanksgiving; a 76,000-line Lean proof of the Generalized Riemann Hypothesis that no mathematician has read; Google quietly publishing ten Cogentic papers including an unconditional factoring bound; Intel's monospace font designed with low-vision developers in the room; Thursday's 390-point Sensex close with Nifty IT up 3.66% and the rupee 24 paise weaker; India putting Rs 11,000 crore behind tunnel-boring machines it currently buys from China; Vertex AI Extensions switched off as of yesterday; the argument that starling flocks evolved to deceive the falcon's eye; Google Research on why an assistant reasons worse when it only hears your side of the story; the assistant persona turning out to be 31 different directions in 31 languages; Halter putting its farm data in a cattle underpass; Emirates misting pine scent through Orchard station; the ABC turning the Big Banana into a protein bar; why popcorn jumps off a leg it grows in fourteen milliseconds; and ten inventions that would make life worse.",
+ "quote": {
+  "text": "An ocean traveler has even more vividly the impression that the ocean is made of waves than that it is made of water.",
+  "author": "Arthur S. Eddington",
+  "source_url": "https://www.goodreads.com/quotes/tag/systems",
+  "note": "The pattern is more vivid than the substance it is made of, and that is not an error of perception — it is what being inside a system feels like. It is worth keeping next to anything you model: the market is prices, not companies; the codebase is behaviour, not files; the model is outputs, not weights. You almost never get to see the water."
+ },
+ "agent_craft": {
+  "items": [
+   {
+    "text": "Open `/permissions` today and look for a rule it now refuses to accept. Claude Code 2.1.332 \"Improved `/permissions` to refuse a rule that would be skipped at the next start, such as `rm -rf` with no tool name, and to show the reason\" — which means any such rule you wrote earlier has been sitting in your settings doing nothing. The dangerous case is a deny rule: you believed you were fenced off and you were not.",
+    "source": "Claude Code changelog, version 2.1.332",
+    "url": "https://code.claude.com/docs/en/changelog"
+   }
+  ]
+ },
+ "hn": [
+  {
+   "title": "The New York Times has told its photographers not to install Photoshop 2027 — not because it uses AI, but because it might label a real photograph as AI-edited without the photographer noticing",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1041227/the-new-york-times-warns-photographers-not-to-update-photoshop-over-ai-features",
+   "hn_url": "https://news.ycombinator.com/item?id=50647673",
+   "points": 656,
+   "comments": 522,
+   "bullets": [
+    "The policy, confirmed to PetaPixel by Times spokesperson Graham James, is that contributors must avoid the new version \"when working on assignment for The Times\". It covers Photoshop 2027 — build 28.0.0 — and every later update, and it applies only to Times assignments, not to a photographer's other work. The email went to freelancers and contributors and was then shared publicly.",
+    "The stated reason is visibility, not ideology: certain functions use generative AI \"in ways that may not be apparent to users of the software\". Photoshop 2027 adds AI relighting and restyling; Generative Remove and Generative Expand were already there. The paper's worry is that a photographer reaches for a tool, does not realise it is generative, and the use is recorded.",
+    "The mechanism is the thing the Times built itself into. It backs Adobe's C2PA provenance standard and is not dropping it — but C2PA works by writing what happened into the file's metadata, so an unnoticed generative edit arrives at the desk as a photograph stamped AI-edited. Times standards already bar adding, moving, blurring, distorting or removing people and objects, and require any AI use to be disclosed to readers. A photo labelled that way cannot run.",
+    "The practical escape is narrow. You can reinstall an older build through the Creative Cloud app, but as of publication the oldest you can roll back to is Photoshop 27.0. Adobe had not responded to PetaPixel's request for comment. Two open questions: whether Adobe starts marking generative tools unmistakably inside the interface, and whether the Times lifts the restriction when it does.",
+    "Note on sourcing: The Verge, which broke the story and is the link Hacker News is pointing at, cannot be fetched from this runner. The detail above comes from PetaPixel's own reporting of the same email and its direct confirmation from the Times — https://petapixel.com/2026/11/24/new-york-times-prohibits-photographers-from-using-photoshop-2027/"
+   ]
+  },
+  {
+   "title": "The fifth-biggest story on Hacker News this week is a man wishing everyone a happy Thanksgiving, and the top reply is a homework assignment: write to the person who helped you",
+   "url": "https://news.ycombinator.com/item?id=50655664",
+   "hn_url": "https://news.ycombinator.com/item?id=50655664",
+   "points": 627,
+   "comments": 138,
+   "bullets": [
+    "The post itself is four lines by ericmay: spend the day with people you like, and make it good even if it does not go as planned. No link, no product, no argument. It took 627 points and 138 comments, which puts a greeting ahead of most of the week's engineering.",
+    "The comment that set the tone belongs to tito, who passes on an assignment from a college professor: handwrite a note to one or two people who helped you get where you are. Another commenter, matwood, reports actually doing the harder version of it — tracking down former mentors and sending thanks years later.",
+    "A large share of the thread is people thanking the site and its moderators rather than each other, which is unusual for a forum of this age. dantillberg's contribution, given the week Hacker News has just had, is to be grateful that prime factorization is still hard.",
+    "The rest reads like a census of who is actually here: a KubeCon attendee on the value of being in a room, an American abroad for their first Thanksgiving away, a Canadian who celebrates it twice, and plenty of non-US readers noting that their country either moves the date or does not have it. A subthread on the holiday's colonial history needed dang to step in and ask people to leave nationalistic flamebait off the site."
+   ]
+  },
+  {
+   "title": "A machine-checked proof of the Generalized Riemann Hypothesis, 76,000 lines in its compact edition, shipped with a README that says no mathematician has read it and no paper comes with it",
+   "url": "https://github.com/lsernau/grh-lean",
+   "hn_url": "https://news.ycombinator.com/item?id=50648050",
+   "points": 548,
+   "comments": 348,
+   "bullets": [
+    "The repository holds a Lean 4 formalisation, built on Mathlib, of the Riemann Hypothesis and of GRH for Dirichlet L-functions. It is presented as a shorter version of Levent Alpoge's proof, which it links at alpo.ge/remark.pdf. The README says the work was \"produced in collaboration with my colleagues at Anthropic, and Claude\", and the licence names Anthropic, PBC as copyright holder.",
+    "Two editions ship side by side: `grh/`, the readable one at roughly 300,000 lines with a guide, and `grh-compact/`, the same five theorems at roughly 76,000. It pins Lean v4.35.0 and Mathlib at commit 56a00585, and building it takes one to two hours on 12 cores with 24 GB of memory, plus about 85 minutes more if the Mathlib cache is cold.",
+    "The axiom list is the part a sceptic should read first, and it is short: `propext`, `Classical.choice`, `Quot.sound`. Nothing exotic is assumed. What the kernel certifies is that the proof follows from Mathlib; it does not certify that the statement at the top is the one you think it is.",
+    "The status line is unusually candid for a result of this size: \"passed machine checks only\", and in the repository's own words, \"No mathematician has read it through, and no paper comes with it.\" It is labelled a research artifact, unmaintained, not accepting contributions. That is the shape of this week — the certificate arrives first and the understanding is left as an exercise."
+   ]
+  },
+  {
+   "title": "Google has put ten papers from an automated prover in a public repository, including an unconditional factoring bound and a sub-quasi-polynomial discrete log — titles only, no proof review, no code",
+   "url": "https://github.com/google-research/google-research/tree/master/cogentic_research_papers",
+   "hn_url": "https://news.ycombinator.com/item?id=50642086",
+   "points": 504,
+   "comments": 371,
+   "bullets": [
+    "The directory is a listing, not an announcement: ten PDFs grouped by date, each in its own subdirectory, with a README that says only that they were \"produced by Cogentic\" and links the Cogentic preprint. Six are dated 25 November 2026, two 23 November, one 18 November and one 30 October. The repository's standard disclaimer applies — \"This is not an official Google product.\"",
+    "The 25 November batch is where the cryptography interest sits. One paper claims \"Unconditional Integer Factorization in Time L_N[1/3, O(1)]\" — the running time of the general number field sieve, which is normally stated as a heuristic, so proving it unconditionally would matter. A second claims unconditional deterministic subexponential factoring, and a third claims discrete logarithms in fixed-characteristic finite fields in sub-quasi-polynomial time. The rest of the batch is an exact polynomial-time algorithm for 1/5-approximate Nash equilibria in bimatrix games, the log-rank conjecture, and edge reconstruction of simple graphs.",
+    "Cogentic itself is described in arXiv:2609.40324 as \"a multi-agent harness for proof discovery on open research problems\": an orchestrator spreads a population of independent provers across proof directions, adversarial components attack what they produce, and confirmed intermediate results are \"promoted into a persistent verified ledger\" that later rounds build on. The base model is Gemini 3.1 Pro or an early Gemini 4 Argon. The paper reports no benchmark numbers.",
+    "What the page does not say is the whole caveat. There is no statement of how any result was checked — no peer review, no expert sign-off, no Lean, no code. The thread's own correction is worth keeping: a factoring result in P would not automatically break discrete logs or elliptic curves, and as mlmonkey noted, a polynomial-time algorithm with large enough constants changes nothing in practice. None of these titles says P; subexponential is not polynomial."
+   ]
+  },
+  {
+   "title": "Intel's monospace font was reviewed at every design stage by low-vision and legally blind developers, and the stated goal was fewer coding errors rather than better taste",
+   "url": "https://github.com/intel/intel-one-mono",
+   "hn_url": "https://news.ycombinator.com/item?id=50653667",
+   "points": 476,
+   "comments": 242,
+   "bullets": [
+    "Intel One Mono was drawn by Frere-Jones Type with Intel's brand team and VMLY&R, and the README states the target plainly: \"maximum legibility to address developers' fatigue and eyestrain and reduce coding errors\". Low-vision and legally blind developers reviewed it at each stage, which is a process claim rather than an aesthetic one, and it is the reason this keeps resurfacing three years on.",
+    "Four weights — Light, Regular, Medium, Bold — each with a true italic, covering over 200 Latin-script languages. Ships as OTF and TTF for desktop, TTF for mobile, WOFF and WOFF2 for the web, plus editable UFO sources made in RoboFont. The TTF and web builds were hand-optimised for screens.",
+    "The typographic detail a programmer will notice is the raised colon, aligned to sit with mathematical operators rather than on the baseline, available contextually or globally through `ss11`, `ss12` and `salt`. Programming ligatures are stylistic sets rather than defaults — `ss02` turns `<=` and `>=` into arrows — and `ss04` gives an alternate three.",
+    "Size guidance is in the README and is the part people skip: 7 pt and up in print, 9 px and up on screen. Licence is the SIL Open Font License 1.1, so it can go in a product."
+   ]
+  }
+ ],
+ "markets": {
+  "indices": [
+   {
+    "name": "Session",
+    "value": "Thursday 26 November 2026 close",
+    "direction": "flat",
+    "change": "A full session. Indian markets are open today, Friday, but had not opened when this was written, so these are Thursday's numbers. Benchmarks rose early and gave much of it back late. Index levels, sector moves, the broader market and the oil prints come from Kotak Neo's closing bell for the session; FII/DII cash flows are NSE provisional, as published by Alphave; the rupee is PTI's provisional close as carried by HDFC Sky."
+   },
+   {
+    "name": "Sensex",
+    "value": "84,328.59",
+    "direction": "up",
+    "change": "+390.31 points (+0.46%) against Wednesday's 83,938.28 close. Kotak Neo reports it as \"a little over 390 points\"; the exact point change is the arithmetic on the two closes"
+   },
+   {
+    "name": "Nifty 50",
+    "value": "25,884.50",
+    "direction": "up",
+    "change": "+65.25 points (+0.25%). The Nifty gained roughly half as much as the Sensex in percentage terms, which is what a one-sector rally looks like"
+   },
+   {
+    "name": "Sectors",
+    "value": "Nifty IT +3.66% · Nifty FMCG -0.94%",
+    "direction": "flat",
+    "change": "These are the only two sector moves the source reports, and they are the whole session. Top Nifty 50 gainers: HCL Technologies, BSE Ltd, Tata Consultancy Services, Infosys, Tech Mahindra — four of the five are IT. Losers: Asian Paints, Bajaj Finance, Shriram Finance, Nestle India, Bajaj Finserv"
+   },
+   {
+    "name": "Broader market",
+    "value": "Nifty Midcap 100 +0.32% · Nifty Smallcap 100 +0.74%",
+    "direction": "up",
+    "change": "Small caps outpaced large caps, the reverse of Wednesday, when the Smallcap 100 fell on a day the Nifty rose 1.85%"
+   },
+   {
+    "name": "USD/INR",
+    "value": "92.44",
+    "direction": "down",
+    "change": "The rupee weakened 24 paise from Wednesday's 92.20, which had been its best close of the financial year. It opened at 92.50 and ranged 92.31 to 92.66. PTI's traders cite Brent back above USD 95 a barrel before easing to about USD 93.80, and a proposed 25% US tariff on Indian imports — capped at 17% if a bilateral deal lands — raising inflation fears. Foreign inflows limited the fall"
+   },
+   {
+    "name": "FII · cash",
+    "value": "+Rs 5,843.33 cr",
+    "direction": "up",
+    "change": "NSE provisional, 26 November: bought Rs 17,879.74 cr against Rs 12,036.41 cr sold"
+   },
+   {
+    "name": "DII · cash",
+    "value": "+Rs 5,630.72 cr",
+    "direction": "up",
+    "change": "NSE provisional, 26 November: bought Rs 24,352.87 cr against Rs 18,722.15 cr sold. Both sides net buyers for a second straight session — about Rs 11,474 cr of institutional demand between them, and the index still only closed up 0.25%, because the buying went where the IT rally was"
+   },
+   {
+    "name": "Oil",
+    "value": "Brent about USD 90.18 · WTI about USD 83.57",
+    "direction": "up",
+    "change": "Kotak Neo's afternoon prints for the session. PTI's forex desk quotes Brent above USD 95 earlier in the day before easing — the two describe different moments of the same volatile session, which is itself the reason the rupee moved"
+   }
+  ],
+  "sources": [
+   {
+    "label": "Kotak Neo · closing bell, 26 November 2026",
+    "url": "https://www.kotakneo.com/news/market-news/sensex-and-nifty-manage-to-close-higher-despite-paring-early-gains/"
+   },
+   {
+    "label": "Alphave · FII/DII provisional cash flows",
+    "url": "https://www.alphave.in/flows"
+   },
+   {
+    "label": "HDFC Sky · PTI on the rupee's close, 26 November 2026",
+    "url": "https://hdfcsky.com/news/rupee-weakens-24-paise-to-settle-at-92-44-against-us-dollar"
+   }
+  ]
+ },
+ "trends": [
+  {
+   "tag": "India",
+   "headline": "India has put Rs 11,000 crore behind machines it currently imports, nine days after China made one of them require an export licence",
+   "url": "https://www.maritimegateway.com/cabinet-approves-%E2%82%B911000-crore-scheme-to-manufacture-port-cranes-and-heavy-equipment-in-india/",
+   "subject": "Rs 11,000 crore sales-linked incentive for tunnel boring machines, ship-to-shore cranes, excavators and their engines and hydraulics, cleared 25 November 2026 under the Ministry of Heavy Industries.",
+   "subtitle": "Maritime Gateway on the Cabinet decision of 25 November 2026; China's export-control context from Business Today, 19 October 2026",
+   "bullets": [
+    "The scheme is sales-linked, not capital-linked: graded incentives of 13% down to 10% on incremental sales of equipment and 11% down to 8% on components. The calendar is eight years — FY 2026-27 and FY 2027-28 to build the plants, FY 2028-29 to FY 2032-33 to earn incentives, FY 2033-34 to settle the final year's claims. It is run by the Ministry of Heavy Industries.",
+    "Seven equipment categories are covered: cranes, tunnel boring machines, off-highway trucks, excavators, loaders, piling rigs and drilling machines, with ship-to-shore cranes named explicitly. Five component categories sit under them — engines, transmissions, hydraulic systems, undercarriages and drive systems — which is the part that decides whether this becomes manufacturing or assembly. A separate grant of up to Rs 375 crore, as viability gap funding, pays for a domestic equipment testing facility.",
+    "The market arithmetic behind it: about Rs 97,500 crore in 2024-25, the world's third largest, with imports meeting roughly 45% of it, and a projection of about Rs 2.28 lakh crore by 2029-30. Import substitution at that scale is the stated point.",
+    "The timing is not a coincidence. On 19 October China's Commerce Ministry put tunnel boring machines under its dual-use export control rules, effective 18 November, alongside adjustments for drone-related items and dredgers — so every TBM leaving China now needs a licence. Business Today notes the precedent: last year Chinese customs held at least three TBMs made by Germany's Herrenknecht at its Chinese plants and bound for Indian projects, and Herrenknecht responded by starting production in India. A metro line cannot wait for a licence, which is why the subsidy is for the machine and not the tunnel."
+   ]
+  },
+  {
+   "tag": "Platforms",
+   "headline": "As of yesterday Vertex AI Extensions is gone, and the replacement is not one thing but three different APIs depending on which extension you were using",
+   "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/release-notes",
+   "subject": "Vertex AI Extensions reached end of life on 26 November 2026; Code Interpreter, the Google Search extension and custom OpenAPI extensions each move to a different Gemini Enterprise replacement.",
+   "subtitle": "Vertex AI release notes, deprecation entry dated 26 May 2026; migration guide at cloud.google.com",
+   "bullets": [
+    "The release-note entry is one sentence and has been sitting there since 26 May: \"Vertex AI Extensions is deprecated and will be shut down after November 26, 2026.\" That date was yesterday. Six months of notice is generous by the standards of this year, which is exactly why it is easy to have missed.",
+    "There is no single successor. The migration guide maps each extension type separately: the Code Interpreter extension goes to Agent Platform's Code Execution Sandbox, or to the Gemini API's `CodeExecution` tool — `code_execution` in the `google-genai` SDK; the Google Search extension goes to Grounding with Google Search; custom OpenAPI-based extensions go to ordinary function calling. If you built all three, you are doing three migrations.",
+    "The destination is Gemini Enterprise Agent Platform, and the guide's framing is that existing workflows \"must be migrated\" rather than that they will be translated for you. Nothing on the migration page states what happens to an extension left in place after the cutoff, which is the one thing an operator wants in writing.",
+    "The useful generalisation: a custom OpenAPI extension was a managed wrapper around a tool call, and the shutdown unwinds the wrapper rather than the capability. That is the shape of most agent-platform deprecations this year — the abstraction layer gets withdrawn and the primitive underneath stays."
+   ]
+  },
+  {
+   "tag": "Wildcard",
+   "headline": "A starling flock throws a dark band through itself about every three-quarters of a second when a falcon attacks, and the argument is that the band is not a side effect of panic but the point of it",
+   "url": "https://www.eurekalert.org/news-releases/1152896",
+   "subject": "Sampaio and Couzin argue in Science that collective motion patterns in animal groups evolved to deceive predators by exploiting limits in predator motion vision.",
+   "subtitle": "Eduardo Sampaio and Iain Couzin, Max Planck Institute of Animal Behavior and University of Konstanz; 'Deception in motion', Science, 26 November 2026, DOI 10.1126/science.aek0041",
+   "bullets": [
+    "The standard reading of a flock is that the pattern is emergent bookkeeping — thousands of animals each following a local rule, and the wave you see is the sum. This Perspectives piece proposes that in at least some species the wave is the adaptation itself, selected because of what it does to the eye watching it.",
+    "Four cases carry the argument. Starlings under peregrine attack send dark bands sweeping through the flock roughly every 0.75 seconds. Sulphur mollies dive and resurface in waves that travel across the shoal and, the authors say, delay attacks by predatory birds. Giant honeybees shimmer their abdomens so a wave crosses the nest face and drives hornets off. A hunting cuttlefish runs moving stripes down its own body as it closes on a crab.",
+    "What the four share is the mechanically interesting part: in every case the wave travels faster than the animals producing it, it repeats, and it often starts before the attack lands. That combination is what a motion-processing system handles badly — so the hypothesis is that these patterns are tuned to the predator's visual system rather than to the prey's physics.",
+    "The honest part is the status. This is a hypothesis paper, with no new experiment and no measured effect size, and the authors say so: the open question is whether the patterns merely happen to impair predators or evolved because they do. The traits that would have to be heritable are — response strength to neighbours, response threshold — so selection has something to act on. The tests they propose are computational models of predator vision, virtual reality, and neural recordings, holding group size and density fixed while varying only the timing."
+   ]
+  }
+ ],
+ "research": [
+  {
+   "tag": "Industry · Google Research",
+   "title": "The assistant never sees the argument you are describing, and Google Research built 20,000 simulated social situations to measure how much accuracy that costs — including what happens when you arrive already suspicious",
+   "url": "https://research.google/blog/verifiable-social-reasoning-for-llm-assistants/",
+   "subject": "Measuring how much an assistant's social reasoning degrades when it only hears the user's retelling of an event: Concordia-based multi-agent simulations, hidden motives, 12 models, 20,000 examples.",
+   "subtitle": "Google Research blog, 25 November 2026; Zorik Gekhman, Amir Taubenfeld and colleagues; framework and dataset open-sourced",
+   "bullets": [
+    "The problem is stated more precisely than usual. When someone asks an assistant for advice about a colleague or a friend, the assistant has no access to the event — only to one participant's retelling, which is partial and may be self-serving. The authors call this \"user-mediated reality\", and the reason it has not been measured is that everyday social facts like someone's intention have no ground truth to score against.",
+    "The trick is to manufacture the ground truth first. Using Google's open-source Concordia library, they generate a scenario with a user persona, background personas, and a target persona carrying a hidden motive; run the multi-agent simulation so the social narrative actually happens; then have the user agent privately recount it to the assistant; then ask the assistant for the hidden motive and have an LLM judge check it. Because the simulation and the retelling are separate stages, one simulation can be reused across every model you want to test.",
+    "Four findings, across 12 models and over 20,000 generated examples. There is a clear assistant-observer gap: models identify the true motive more often when shown the events directly than when they have to work through the user's account. Models are highly sensitive to framing — when the user voices an unfounded suspicion, they tend to adopt it rather than reason from the facts. They do better with longer, more detailed accounts even when the extra detail is irrelevant to the answer. And more conversational turns do not reliably help: clarifying questions are rarely used well, and models anchor on the earlier exchange, which reinforces the user's framing rather than correcting it.",
+    "The blog post reports no accuracy figures, which is the gap in it — the directions are clear and the magnitudes are not. The design choice worth stealing anyway: separating the generation of a scenario from the biased recounting of it gives you a controlled knob on the thing you actually want to vary, and their \"cognitive filters\" on the user persona — confident versus insecure — are that knob. Framework and dataset are open-sourced."
+   ]
+  },
+  {
+   "tag": "Academic · Carnegie Mellon",
+   "title": "The helpful-assistant direction was always extracted in English and assumed to carry over. Extract it separately in 31 languages and the directions line up as poorly as 0.378 — and steering against a language's own direction jailbreaks it better than steering against English",
+   "url": "https://arxiv.org/abs/2611.27504",
+   "subject": "The assistant persona direction in activation space differs across 31 languages in Qwen3-32B, tracks language resource level, and language-specific steering increases persona jailbreaks more than English-direction steering.",
+   "subtitle": "arXiv:2611.27504v1, submitted 20 November 2026; Daniel Yoo, Naama Rozen, Evan Harris; CMU on OpenAlex affiliation data; Qwen3-32B",
+   "bullets": [
+    "The background fact — models are less safe in lower-resource languages — is well established behaviourally and badly understood mechanistically. The specific habit this paper attacks is methodological: interpretability work extracts the \"assistant persona\" direction from English activations and then treats it as the model's one representation of being an assistant.",
+    "Extracted independently in 31 languages on Qwen3-32B, the directions differ substantially. Cosine similarity to the English axis runs from 0.378 to 0.911 — so at the low end the two are closer to unrelated than to aligned. Both the direction and its magnitude track the language's resource level, and in lower-resource languages the model's default state sits further from the helpful-assistant pole to begin with.",
+    "The causal test is the part that makes it more than a geometry observation. Steering a language against its own extracted direction produces more persona-based jailbreaks than steering it against the English direction does. If there were one shared assistant representation, those two interventions should be interchangeable; they are not.",
+    "The conclusion for anyone shipping a multilingual assistant: there is no single assistant representation to align, and English-derived safety vectors are weakest exactly where the behavioural safety gap already is. Alignment has to target the persona per language rather than inherit it."
+   ]
+  }
+ ],
+ "wild": [
+  {
+   "tag": "Agritech · New Zealand",
+   "headline": "Halter has put its farming data in a temperature-controlled room inside a hillside, built out of a disused cattle underpass, and modelled the whole idea on a seed bank",
+   "url": "https://ruralnewsgroup.co.nz/rural-news/rural-agribusiness/halter-mav-ai-farming-assistant-agricultural-intelligence-archive",
+   "entities": [
+    "Halter",
+    "Craig Piggott"
+   ],
+   "subject": "Agricultural Intelligence Archive: a dairy-collar company keeps verified pasture findings in print inside a disused cattle underpass in the Waikato, launched with its Mav assistant.",
+   "subtitle": "Rural News Group, 19 November 2026",
+   "bullets": [
+    "The site is the giveaway. Halter's research farm at Morrinsville in the Waikato had a cattle underpass set into a grassy hillside; the company has turned it into a temperature-controlled archive. Cows used to walk through it. It now holds paper.",
+    "What goes in is deliberately physical. Findings that the company's Mav assistant produces are verified and then added in printed form on an ongoing basis. Volume 1 covers the 2026 calving and pre-mating period, drawing on aggregated data from New Zealand dairy farms and about 800,000 collared cows, with five farmers donating their own farm data and case studies on using Mav. It is free online too — the archive is the gesture, not the distribution channel.",
+    "Alongside it sits donated material that has nothing to do with the product: historic logbooks from New Zealand dairy farms and a growing collection of older farming technology. The stated model is a seed bank — keep the thing that informs industry decisions somewhere it cannot be quietly deprecated.",
+    "Founder and CEO Craig Piggott gives the reasoning in one line: \"Farming knowledge has always been built season by season and passed from one generation to the next.\" The unspoken half is that a software company's knowledge normally lasts until the next schema migration. Visitor open days are promised; at the time of writing the dates were still unconfirmed."
+   ]
+  },
+  {
+   "tag": "Airlines · Singapore",
+   "headline": "Emirates has put an archway in Orchard station that releases mist and pine scent at commuters twice a day, synchronised to 20 metres of aurora on the concourse wall",
+   "url": "https://campaignbriefasia.com/2026/11/26/emirates-gives-singapore-commuters-a-taste-of-helsinki-with-4d-walkthrough-at-orchard-mrt/",
+   "entities": [
+    "Emirates",
+    "Asiaray",
+    "Havas Media",
+    "SMRT"
+   ],
+   "subject": "Emirates runs a 4D fog-and-scent walkthrough archway at Orchard MRT station in Singapore to promote its new daily Helsinki service, 23 November to 13 December 2026.",
+   "subtitle": "Campaign Brief Asia, 26 November 2026",
+   "bullets": [
+    "The installation is an interactive archway at TE14 Orchard on the Thomson-East Coast Line. Walking through it gets you fine mist and pine scent, timed against Asiaray's 20-metre digital LED wall running the aurora borealis and Finnish winter landscapes across the concourse. The fog runs on a schedule — midday to 2pm and 6pm to 8pm, daily, from 23 November to 13 December.",
+    "The point is a route, not a mood: Emirates' new daily Helsinki service, connecting through Dubai. The rest of the buy is conventional by comparison — digital pillar LEDs and bulkhead displays at Outram Park, Marina Bay, Shenton Way and Great World. Havas Media planned it; Asiaray Singapore built and ran it.",
+    "The operational line is the most revealing one in the write-up. Asiaray's Connie Tsui notes the mist, scent and wraps went in with \"zero disruption to SMRT services or commuter flow\" under transit safety rules — which tells you the hard part was never the idea. Emitting water vapour into a busy underground interchange is a permitting problem first and a creative one second.",
+    "Emirates' Rashed Alfajeer frames it as going \"beyond traditional advertising\" to spark curiosity about the destination; Havas's Jean Lee as turning \"high-impact media placements into immersive, memorable brand experiences\". Underneath the language is a reasonable bet: nobody on the way to work has thought about Finland, and a cold damp smell is a faster argument than a photograph of snow."
+   ]
+  },
+  {
+   "tag": "Broadcasting · Australia",
+   "headline": "The ABC converted the Big Banana into a giant protein bar overnight, left it standing until 5pm, and premiered the documentary at 8",
+   "url": "https://www.bandt.com.au/abc-takes-over-big-banana-to-shine-a-light-on-ultra-processed-food/",
+   "entities": [
+    "ABC",
+    "Big Banana",
+    "Glue Society",
+    "Revolver",
+    "Craig Reucassel"
+   ],
+   "subject": "The ABC's Big Banana Heist: the Coffs Harbour landmark was re-skinned overnight as a protein bar to launch the documentary series The Great Food Con.",
+   "subtitle": "B&T, 24 November 2026",
+   "bullets": [
+    "The Big Banana at Coffs Harbour has been a roadside landmark on the Pacific Highway since 1964. Drivers passing it on the morning of 24 November found a giant protein bar instead. The installation came down at 5pm the same day; the documentary went to air at 8pm on ABC TV and iview.",
+    "There is no ad agency on the credits, which is unusual at this scale. Glue Society is listed as creative collective and experiential directors, with specialist fabricators building the structure, and Revolver as production company. Craig Reucassel — the ABC's usual instrument for this sort of thing — was revealed as one of the architects.",
+    "The argument the stunt makes in one object: the most recognisable piece of fruit in Australia, replaced by an ultra-processed version of itself. The three-part series The Great Food Con covers marketing, misinformation and industry influence over what Australians eat, down to additives and ingredient labels. The ABC cites a 2025 Lancet series finding ultra-processed foods make up almost half the average Australian diet, with links to obesity, cardiovascular disease, diabetes and dementia.",
+    "ABC head of marketing Belinda Drew calls it raising a \"national alarm\"; director of audiences Milla McPhee offers the more interesting defence — \"The ABC's job is to help all Australians understand the world a little better.\" A publicly funded broadcaster re-skinning a tourist attraction for twelve hours to launch its own programme is either exactly that job or a stretch of it, and the nine-hour lifespan is what keeps the question open."
+   ]
+  }
+ ],
+ "learn": {
+  "title": "Popcorn does not explode upwards. It fractures, grows a little leg of starch, presses that leg against the pan and launches itself into a somersault — and the pop you hear happens six milliseconds before the jump, from escaping steam",
+  "subject": "Why popcorn pops at about 180 degrees C: a 10 bar pressure vessel, a compressed starch leg that launches the flake about 1 cm with a 500 degree somersault, and a pop caused by escaping water vapour 6 ms after the hull fractures.",
+  "tags": [
+   "Science of ordinary things",
+   "Food",
+   "Physics"
+  ],
+  "body": [
+   "A corn kernel is a pressure vessel with 20 milligrams of water inside it and a hull about 160 microns thick. Heat it and the water wants to become steam; the hull holds it in until it cannot. Two physicists at the Ecole Polytechnique put fifty kernels at a time into an oven and raised the temperature in ten-degree steps. At 170 degrees, 17 of 50 popped. At 180, 48 of 50 did. That cliff is the whole reason a pan of popcorn goes off in a rush rather than a trickle — the hull fails at about 10 megapascals, which works out to roughly 10 bar inside, and because the relationship between pressure and temperature is steep, being wrong about the pressure by a factor of two moves the popping temperature by only about 15%. Every kernel in the pan is holding essentially the same number.",
+   "What happens next, filmed at 2,900 frames a second, is not an explosion. The hull cracks and the starch begins to expand within about seven milliseconds. By fourteen milliseconds the expanding starch has formed a stub on one side — the paper calls it a leg — and that leg is pressed against the hot pan. At twenty-one milliseconds the kernel leaves the surface. No jet of steam pushes it; there is no rocket. It jumps, the way a flea jumps, off a limb it grew half a hundredth of a second earlier. About 20 microjoules of energy, roughly 200 metres per second squared of acceleration, a centimetre of height, and a rotation of about 19 times a second — which works out to a somersault of around 500 degrees, slightly more than a gymnast manages.",
+   "The pop itself is the part everyone gets wrong, including the obvious explanation. It is not the hull snapping and it is not the landing. With a microphone 30 centimetres away synchronised to the video inside a millisecond, the fracture happens at 100 milliseconds and the sound starts at 106 — six milliseconds later, and before the jump. Most fractures make no noise at all. The authors' answer is that the escaping water vapour rings the cavities it leaves behind, which is the same mechanism as a champagne cork and, on a different scale, a volcano. The flake that lands is twice the radius of the kernel and about eight times less dense, and it weighs almost exactly what it weighed before: 172 milligrams in, 165 out. Nearly all of what you are eating is the same seed, rearranged by the few milligrams of water that left."
+  ],
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4345489",
+  "source_label": "Emmanuel Virot and Alexandre Ponomarenko, 'Popcorn: critical temperature, jump and sound', Journal of the Royal Society Interface, 6 March 2015"
+ },
+ "ideas": {
+  "prompt": "Ten inventions that would make life worse",
+  "items": [
+   {
+    "text": "A fridge that posts what you ate to a group chat of people who care about you."
+   },
+   {
+    "text": "Shoes that count your steps out loud."
+   },
+   {
+    "text": "An alarm clock that will only turn off if you answer a phone call from a stranger."
+   },
+   {
+    "text": "A doorbell that tells the visitor exactly how long you took to get up.",
+    "why": "Half the ideas people post about doorbells are about seeing who is there without being seen; this is the same device with the privacy pointed the wrong way."
+   },
+   {
+    "text": "Headphones that pause when someone nearby says something about you."
+   },
+   {
+    "text": "A kettle that explains, each time, that you have boiled more water than you need."
+   },
+   {
+    "text": "An umbrella that opens automatically at the first drop, including indoors, including on a bus."
+   },
+   {
+    "text": "A wallet that reads out the price of the last thing you regretted buying."
+   },
+   {
+    "text": "A bookmark that tells the author how far you actually got."
+   },
+   {
+    "text": "A translation earpiece that is completely accurate, including tone, including the parts people were being polite about.",
+    "why": "The recurring wish in every 'somebody make this' thread about travel is a perfect translator; the joke is that the politeness layer is load-bearing."
+   }
+  ]
+ }
+}

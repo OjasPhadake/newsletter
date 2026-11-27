@@ -11713,6 +11713,169 @@
         "therecord.media",
         "travelandtourworld.com"
       ]
+    },
+    {
+      "date": "2026-11-27",
+      "issue": 1,
+      "quote_text": [
+        "An ocean traveler has even more vividly the impression that the ocean is made of waves than that it is made of water."
+      ],
+      "quote_author": [
+        "Arthur S. Eddington"
+      ],
+      "idea_text": [
+        "A fridge that posts what you ate to a group chat of people who care about you.",
+        "Shoes that count your steps out loud.",
+        "An alarm clock that will only turn off if you answer a phone call from a stranger.",
+        "A doorbell that tells the visitor exactly how long you took to get up.",
+        "Headphones that pause when someone nearby says something about you.",
+        "A kettle that explains, each time, that you have boiled more water than you need.",
+        "An umbrella that opens automatically at the first drop, including indoors, including on a bus.",
+        "A wallet that reads out the price of the last thing you regretted buying.",
+        "A bookmark that tells the author how far you actually got.",
+        "A translation earpiece that is completely accurate, including tone, including the parts people were being polite about."
+      ],
+      "idea_prompt": [
+        "Ten inventions that would make life worse"
+      ],
+      "tip_text": [
+        "Open `/permissions` today and look for a rule it now refuses to accept. Claude Code 2.1.332 \"Improved `/permissions` to refuse a rule that would be skipped at the next start, such as `rm -rf` with no tool name, and to show the reason\" — which means any such rule you wrote earlier has been sitting in your settings doing nothing. The dangerous case is a deny rule: you believed you were fenced off and you were not."
+      ],
+      "hn_id": [
+        "50647673",
+        "50655664",
+        "50648050",
+        "50642086",
+        "50653667"
+      ],
+      "link": [
+        "https://www.theverge.com/ai-artificial-intelligence/1041227/the-new-york-times-warns-photographers-not-to-update-photoshop-over-ai-features",
+        "https://news.ycombinator.com/item?id=50655664",
+        "https://github.com/lsernau/grh-lean",
+        "https://github.com/google-research/google-research/tree/master/cogentic_research_papers",
+        "https://github.com/intel/intel-one-mono",
+        "https://www.maritimegateway.com/cabinet-approves-%E2%82%B911000-crore-scheme-to-manufacture-port-cranes-and-heavy-equipment-in-india/",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/release-notes",
+        "https://www.eurekalert.org/news-releases/1152896",
+        "https://ruralnewsgroup.co.nz/rural-news/rural-agribusiness/halter-mav-ai-farming-assistant-agricultural-intelligence-archive",
+        "https://campaignbriefasia.com/2026/11/26/emirates-gives-singapore-commuters-a-taste-of-helsinki-with-4d-walkthrough-at-orchard-mrt/",
+        "https://www.bandt.com.au/abc-takes-over-big-banana-to-shine-a-light-on-ultra-processed-food/",
+        "https://research.google/blog/verifiable-social-reasoning-for-llm-assistants/",
+        "https://arxiv.org/abs/2611.27504"
+      ],
+      "subject": [
+        "Rs 11,000 crore sales-linked incentive for tunnel boring machines, ship-to-shore cranes, excavators and their engines and hydraulics, cleared 25 November 2026 under the Ministry of Heavy Industries.",
+        "Vertex AI Extensions reached end of life on 26 November 2026; Code Interpreter, the Google Search extension and custom OpenAPI extensions each move to a different Gemini Enterprise replacement.",
+        "Sampaio and Couzin argue in Science that collective motion patterns in animal groups evolved to deceive predators by exploiting limits in predator motion vision.",
+        "Agricultural Intelligence Archive: a dairy-collar company keeps verified pasture findings in print inside a disused cattle underpass in the Waikato, launched with its Mav assistant.",
+        "Emirates runs a 4D fog-and-scent walkthrough archway at Orchard MRT station in Singapore to promote its new daily Helsinki service, 23 November to 13 December 2026.",
+        "The ABC's Big Banana Heist: the Coffs Harbour landmark was re-skinned overnight as a protein bar to launch the documentary series The Great Food Con.",
+        "Measuring how much an assistant's social reasoning degrades when it only hears the user's retelling of an event: Concordia-based multi-agent simulations, hidden motives, 12 models, 20,000 examples.",
+        "The assistant persona direction in activation space differs across 31 languages in Qwen3-32B, tracks language resource level, and language-specific steering increases persona jailbreaks more than English-direction steering.",
+        "Why popcorn pops at about 180 degrees C: a 10 bar pressure vessel, a compressed starch leg that launches the flake about 1 cm with a 500 degree somersault, and a pop caused by escaping water vapour 6 ms after the hull fractures."
+      ],
+      "brand": [
+        "Halter",
+        "Craig Piggott",
+        "Emirates",
+        "Asiaray",
+        "Havas Media",
+        "SMRT",
+        "ABC",
+        "Big Banana",
+        "Glue Society",
+        "Revolver",
+        "Craig Reucassel"
+      ],
+      "brand_mention": [
+        "Morrinsville",
+        "Waikato",
+        "Mav",
+        "Volume 1",
+        "Zealand",
+        "CEO Craig Piggott",
+        "Farming",
+        "TE14 Orchard",
+        "Thomson-East Coast Line Walking",
+        "Asiaray's 20",
+        "LED",
+        "Finnish",
+        "Emirates",
+        "Helsinki",
+        "Dubai",
+        "LEDs",
+        "Outram Park",
+        "Marina Bay",
+        "Shenton Way",
+        "Great World Havas Media",
+        "Asiaray Singapore",
+        "Asiaray's Connie Tsui",
+        "SMRT",
+        "Emirates Rashed Alfajeer",
+        "Havas's Jean Lee",
+        "Finland",
+        "Big Banana",
+        "Coffs Harbour",
+        "Pacific Highway",
+        "ABC TV",
+        "Glue Society",
+        "Revolver",
+        "Craig Reucassel",
+        "ABC's",
+        "Australia",
+        "Great Food Con",
+        "Australians",
+        "Lancet",
+        "Australian",
+        "Belinda Drew",
+        "Milla McPhee"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "India has put Rs 11,000 crore behind machines it currently imports, nine days after China made one of them require an export licence"
+        ],
+        [
+          "trends",
+          "As of yesterday Vertex AI Extensions is gone, and the replacement is not one thing but three different APIs depending on which extension you were using"
+        ],
+        [
+          "trends",
+          "A starling flock throws a dark band through itself about every three-quarters of a second when a falcon attacks, and the argument is that the band is not a side effect of panic but the point of it"
+        ],
+        [
+          "wild",
+          "Halter has put its farming data in a temperature-controlled room inside a hillside, built out of a disused cattle underpass, and modelled the whole idea on a seed bank"
+        ],
+        [
+          "wild",
+          "Emirates has put an archway in Orchard station that releases mist and pine scent at commuters twice a day, synchronised to 20 metres of aurora on the concourse wall"
+        ],
+        [
+          "wild",
+          "The ABC converted the Big Banana into a giant protein bar overnight, left it standing until 5pm, and premiered the documentary at 8"
+        ],
+        [
+          "research",
+          "The assistant never sees the argument you are describing, and Google Research built 20,000 simulated social situations to measure how much accuracy that costs — including what happens when you arrive already suspicious"
+        ],
+        [
+          "research",
+          "The helpful-assistant direction was always extracted in English and assumed to carry over. Extract it separately in 31 languages and the directions line up as poorly as 0.378 — and steering against a language's own direction jailbreaks it better than steering against English"
+        ],
+        [
+          "learn",
+          "Popcorn does not explode upwards. It fractures, grows a little leg of starch, presses that leg against the pan and launches itself into a somersault — and the pop you hear happens six milliseconds before the jump, from escaping steam"
+        ]
+      ],
+      "editorial_domains": [
+        "bandt.com.au",
+        "campaignbriefasia.com",
+        "docs.cloud.google.com",
+        "eurekalert.org",
+        "maritimegateway.com",
+        "ruralnewsgroup.co.nz"
+      ]
     }
   ]
 }
