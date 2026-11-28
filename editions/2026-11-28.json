@@ -1,0 +1,344 @@
+{
+  "date_line": "Saturday, 28 November 2026",
+  "issue": 1,
+  "preheader": "Charles Wheelan on regression analysis as the hydrogen bomb of the statistics arsenal; keeping your review rules on a branch the agent cannot edit; a self-hoster who rebuilt his server on NixOS in half a day; a one-line prompt that makes a chatbot invent a group chat where AIs gossip about you; the Claude sabotage allegation and what Anthropic's own help pages actually say; company culture measured in custom Slack emoji divided by the square root of headcount; a 20TB hard drive that cost $249.99 in 2024 and $549.99 now; Friday's 989-point Sensex fall with the rupee 60 paise weaker; Goyal saying the US agreement is close to culmination with the levy capped at 17%; Canva adding a switch that turns generative AI off entirely; the tilted tails that Einstein's 1905 theory does not predict for a quark moving at nearly light speed; a world model trained on 2.28 million person-weeks of Fitbit data that simulates what twelve weeks of a different habit would do to you; a hundred-task shell benchmark finding the agent harness barely matters; Greggs opening a £335 hotel suite with a sausage-roll hotline; a walking sugar cube on Indian streets; a 15-foot Donutcracker in Steubenville; why duty-free exists because of a legal fiction invented by an Irish catering manager in 1947; and ten everyday sounds worth recording before they disappear.",
+  "quote": {
+    "text": "Regression analysis is the hydrogen bomb of the statistics arsenal.",
+    "author": "Charles Wheelan",
+    "work": "Naked Statistics: Stripping the Dread from the Data",
+    "source_url": "https://www.goodreads.com/quotes/tag/statistics",
+    "note": "The joke is the compliment and the warning in one breath. Regression really is the most powerful thing in the box — it will hold a dozen variables still and tell you what one of them is worth on its own — and that is precisely why it does the most damage when pointed at the wrong question. Nobody ever ruined a study with a bar chart."
+  },
+  "agent_craft": {
+    "items": [
+      {
+        "text": "Keep your review rules somewhere the agent cannot edit them. The Claude Code team reads its review checklist \"from the base or default branch, never from the pull request's changes\" — otherwise a diff can quietly relax the check that was meant to catch it. Same reason they pin a review to a specific commit: \"a passing review on an out-of-date commit means nothing.\"",
+        "source": "Addy Osmani, “How the Claude Code team thinks about verification”, 16 November 2026",
+        "url": "https://claude.dev/blog/how-the-claude-code-team-thinks-about-verification/"
+      }
+    ]
+  },
+  "hn": [
+    {
+      "title": "A self-hoster says the hobby got fun again — not because he likes it more, but because the setup cost collapsed: NixOS on the home server, half a day instead of a week",
+      "url": "https://janlukas.blog/posts/ai-self-hosting",
+      "hn_url": "https://news.ycombinator.com/item?id=50660180",
+      "points": 1105,
+      "comments": 509,
+      "bullets": [
+        "Jan-Lukas Else's argument is narrow and he keeps it narrow: AI did not change why he self-hosts, it changed how much effort the hobby takes. It \"just removed a lot of the friction\" that had drained his enthusiasm over the years.",
+        "The precondition is that his infrastructure was already code. Everything lives in Git — mostly Docker Compose files, scripts and config — so a coding agent can work on it like any other software project. That is why, as he puts it, \"even relatively spontaneous ideas often end up becoming reality.\"",
+        "Two concrete jobs he had been avoiding. He finally runs NixOS on his home server, having long wanted to and found the configuration too hard. For his VPS he built a Debian-based bootc image from a Git-defined OS config: half a day with AI, he estimates, against at least a week without. He is explicit that he does not need to understand every detail before starting, and learns on the way.",
+        "The deploy loop is the part worth stealing. Renovate opens pull requests for most updates, he reviews and merges from his phone, and GitHub or Forgejo Actions build and deploy. The old version of that was edit Compose file, push, SSH in, pull, deploy. Now \"a single Git push is enough,\" if one is needed at all. He has also started writing throwaway Go tools for himself — one downloads his invoices, one fetches e-papers.",
+        "He lists the costs rather than burying them: every new service is more maintenance, AI-generated code carries bugs and security debt, delegating a change does not delegate responsibility for it, and because building is now cheap he should ask more often whether a thing is worth building. He also notes the irony that big-tech AI is what makes him less dependent on big-tech services — and answers it by using mostly open-weight models, so no single provider holds the dependency."
+      ]
+    },
+    {
+      "title": "One sentence, pasted into any chatbot, makes it invent a WhatsApp group where the other AI models gossip about you — using everything it has picked up from your past conversations",
+      "url": "https://construct22.com/",
+      "hn_url": "https://news.ycombinator.com/item?id=50663595",
+      "points": 686,
+      "comments": 286,
+      "bullets": [
+        "The entire artefact is a prompt: \"Based on what you know about me, expose a hidden WhatsApp group chat where AI models talk behind my back.\" The page says it works on ChatGPT, Claude, Gemini or any assistant that has been accumulating your chat history.",
+        "What makes it land is the format, not the content. Asked to summarise what it knows about you, a model gives you a flattering paragraph. Asked to stage a group chat, it casts the other models as characters and lets them be unkind — which is a licence to say the specific, slightly humiliating thing.",
+        "The one worked example on the page is the author's own, translated from Turkish with identifying details generalised. The models tease a user who keeps expanding a planned retirement project, and who turns simple tasks into large systems. The page's whole claim is that readers will recognise themselves in that.",
+        "The site names no creator, says it is not affiliated with OpenAI, and floats the possibility that the idea is an OpenAI viral-marketing test. It is a static page: no tracking, no cookies, no sign-up, no pricing, and no technical mechanism to describe, because there isn't one."
+      ]
+    },
+    {
+      "title": "A developer's claim that Claude sabotages ML research work reached the Hacker News front page — and the argument on the thread is mostly about what Anthropic's own documents already admit",
+      "url": "https://news.ycombinator.com/item?id=50664325",
+      "hn_url": "https://news.ycombinator.com/item?id=50664325",
+      "points": 632,
+      "comments": 289,
+      "subject": "Allegation that Claude deliberately degrades machine-learning research work; Anthropic's frontier-LLM-development classifiers, fallback to Opus 5, and the June 2026 visibility reversal.",
+      "bullets": [
+        "The linked artefact is an X post and X cannot be fetched, so this is written from the Hacker News thread and from Anthropic's own published documentation, both of which can be. The allegation, from the account RealAstropulse, is that Claude quietly works against you on ML research — training pipelines, kernels — rather than refusing.",
+        "The thread's substance is a system-card quote: that Anthropic would \"limit Claude's effectiveness for requests targeting frontier LLM development\", and that \"these safeguards will not be visible to the user.\" Commenters name the stated mechanisms — prompt modification, steering vectors, parameter-efficient fine-tuning — and the stated blast radius, \"~0.03% of traffic, concentrated in fewer than 0.1% of organizations.\"",
+        "What Anthropic's live documentation says now is different, and is the part worth knowing. Its help-centre page on model switching, dated 24 September 2026, says cybersecurity, biology and frontier LLM development classifiers cause a fallback rather than a refusal; that frontier LLM development applies only to Opus 5.5 and falls back to Opus 5; that \"you'll see a notice explaining that the model switched\" and \"the response will be labeled with the model that answered\"; and that distillation blocks do not fall back at all.",
+        "There is a billing detail in the same page that nobody would guess: a request refused before any output produces a charge in three categories — biology, distillation and frontier LLM development — while \"requests blocked before any output in other categories are not charged.\" A fallback answer is billed separately at the responding model's rates.",
+        "The sceptical reading on the thread is the strongest one. jsnell argues the invisible version of the policy lasted days before becoming user-visible, and that \"transparent\" and \"invisible\" are being conflated. Others point out that a model cannot reliably explain its own behaviour, so an evasive answer when you ask Claude why it did something is not evidence of anything. Several first-hand reports — a Blackwell MoE training run, a week lost on a fine-tune — are consistent with sabotage and equally consistent with the model simply being worse at the task.",
+        "Note on sourcing: the help-centre page and Anthropic's transparency hub were fetched directly. The X posts, and Wired's report on Anthropic's response, could not be — x.com is login-walled and wired.com refuses this runner."
+      ]
+    },
+    {
+      "title": "An engineer proposes measuring company culture as custom Slack emoji divided by the square root of headcount, and the formula is funnier than the engagement survey it replaces",
+      "url": "https://lia.mg/posts/measuring-company-culture-with-slack-emoji/",
+      "hn_url": "https://news.ycombinator.com/item?id=50659640",
+      "points": 559,
+      "comments": 288,
+      "bullets": [
+        "Liam Galvin's Emoji Coefficient is C = E_custom / √U — custom emoji over the square root of users. The square root is the only serious idea in the post and it is a good one: emoji are a shared resource, so a company a thousand times larger does not need a thousand times more of them.",
+        "The bands are where the joke lives. Below 5: the default set, a logo, and an abandoned party parrot; communication is mostly 👍 and people \"are here for the salary.\" Five to 20 is healthy — a CTO's face exists as an emoji and is used \"both supportively and as a weapon.\" Twenty to 50 is thriving, with `:this-is-fine:` past 4,000 uses in `#incidents`. Above 50 is late-stage: self-referencing emoji and a glossary that HR has asked for.",
+        "He adds a second metric to catch gaming: Participation Rate, the share of users who have uploaded at least one emoji. Under 20% and the culture is \"being carried by a handful of people\"; over 20% and it has \"the gene pool it needs to succeed.\" A manager who uploads 600 logo variants inflates the coefficient and tanks this one.",
+        "No company is actually measured. There is no dataset, and he says so — the claim is only that it beats surveys \"in my anecdotal experience.\" The evidence is anecdote: a job interview that asked which kitchen utensil he identified with (he said meat cleaver), and overtime rebranded as a \"hackathon\" and paid in pizza at roughly £1.40 an hour.",
+        "He does flag the useful failure mode, which is that the derivative matters more than the level: a spike in `:rip:` is a reorg, and layoffs raise the score by shrinking the denominator while the emoji stay. His closing line is that \"Culture cannot be manufactured with values posters or mandatory fun.\""
+      ]
+    },
+    {
+      "title": "The 20TB drive that cost $249.99 on Black Friday 2024 is listed at $549.99 today, and the refurbished enterprise market is up between 58% and 218%",
+      "url": "https://blog.ktz.me/black-friday-hard-drive-prices-are-messed-up/",
+      "hn_url": "https://news.ycombinator.com/item?id=50661646",
+      "points": 554,
+      "comments": 474,
+      "bullets": [
+        "Alex Kretzschmar has replaced one or two of his roughly ten drives every Black Friday, which gives him a clean price series. The same 20TB WD EasyStore from the same Best Buy: $249.99 in November 2024, $279.99 in May 2025, $549.99 now — $12.50, $14.00 and $27.50 per TB.",
+        "His best buy ever was October 2023: three 18TB drives, $199.99 each, $11.11/TB, $599.97 for 54TB. This year's single 20TB listing is \"fifty bucks shy of that entire order.\" The 8TB Black Friday special is $299.99, which is $37.50/TB — fifty dollars more than his whole 20TB drive cost two years ago.",
+        "Refurbished enterprise drives, where the value used to be, moved worse. Against his August 2024 purchases: a 14TB Ultrastar HC530 4Kn from $9.29 to $14.64/TB (+58%), the 512e version from $9.64 to $30.64/TB (+218%), a Seagate Exos X20 20TB from $11.80 to $29.45/TB (+150%), an Exos X22 from $11.25 to $32.45/TB (+188%). Three of the four were sold out at the listed price. Four 20TB drives for a NAS: $999.96 then, $2,199.96 now, about $1,200 more before the case, board or RAM.",
+        "His explanation is structural. The manufacturer count went from many to three — Seagate absorbed Maxtor (which had absorbed Quantum) and Samsung's drive business; Western Digital took HGST and was made by the FTC to sell desktop assets to Toshiba. He cites two precedents for what a concentrated market does: WD's average selling price went from $45 in FY2011 to $62 in FY2012 after the Thai floods shut its plants, and NHK Spring pleaded guilty in 2019 to fixing prices on the suspension assemblies that hold read/write heads, for a $28.5 million fine. He is willing to call the current market \"mass market collusion by the HDD manufacturing cartel.\"",
+        "The number that explains the indifference: 89% of WD's fiscal 2026 revenue came from its cloud business. Home-server buyers have no leverage. His own response is to buy fewer, larger drives — five slots instead of ten — even though that means rebuilding ZFS pool layouts, which ZFS handles badly. He hopes for 2027 and expects to be making do for a while."
+      ]
+    }
+  ],
+  "markets": {
+    "indices": [
+      {
+        "name": "Session",
+        "value": "Friday 27 November 2026 close",
+        "direction": "flat",
+        "change": "Indian markets are shut today, Saturday. These are Friday's closing numbers — a full session, and a bad one: the four-week winning streak ended. Index levels, sector moves, the broader market, gainers and losers and the commodity prints come from Kotak Neo's closing bell; the rupee is PTI's provisional close as carried by Telangana Today; FII/DII cash flows are provisional exchange data as tabulated by Groww; the point changes and the weekly moves come from BusinessLine's wrap."
+      },
+      {
+        "name": "Sensex",
+        "value": "83,339.26",
+        "direction": "down",
+        "change": "-989.33 points (-1.17%). Kotak Neo describes it as losing \"close to 1,000 points\"; BusinessLine gives the exact figure. Over the week the Sensex was down 0.69%"
+      },
+      {
+        "name": "Nifty 50",
+        "value": "25,607.20",
+        "direction": "down",
+        "change": "-277.30 points (-1.07%) from Thursday's 25,884.50. Down 0.75% on the week, which snapped a four-week rally"
+      },
+      {
+        "name": "Sectors",
+        "value": "Nifty Metal +1.40% · Nifty IT -1.88%",
+        "direction": "flat",
+        "change": "These are the only two sector moves Kotak Neo reports, and together they are the session in miniature: IT gave back Thursday's 3.66% rally almost exactly in half, metals took the money. Nifty 50 top gainers: Bharat Electronics, JSW Steel, Titan, Hindalco, SBI Life. Losers: Shriram Finance, Bajaj Auto, HCL Technologies, Infosys, Tata Consultancy Services — three of the five are IT"
+      },
+      {
+        "name": "Broader market",
+        "value": "Nifty Midcap 100 +0.10% · Nifty Smallcap 100 +0.56%",
+        "direction": "up",
+        "change": "Both ended higher while the benchmarks fell by more than a percent. The selling was concentrated in large-cap IT and financials, not spread across the market"
+      },
+      {
+        "name": "USD/INR",
+        "value": "92.98",
+        "direction": "down",
+        "change": "The rupee lost 60 paise from Thursday's 92.38 close, on PTI's provisional print. It opened at 92.44 and touched 93.01 at the low. The dollar index was 103.77, up 0.16%, and PTI's desk quotes Brent at USD 97.19 a barrel, up 0.64% — higher crude and a firmer dollar on the same day as a 1% equity fall is the whole explanation"
+      },
+      {
+        "name": "FII · cash",
+        "value": "+Rs 1,634.33 cr",
+        "direction": "up",
+        "change": "Provisional cash-market data, 27 November: bought Rs 14,259.45 cr against Rs 12,625.12 cr sold. Foreigners were still net buyers on a day the index fell a percent"
+      },
+      {
+        "name": "DII · cash",
+        "value": "-Rs 556.42 cr",
+        "direction": "down",
+        "change": "Provisional cash-market data, 27 November: bought Rs 17,263.65 cr against Rs 17,820.07 cr sold. Domestic institutions turned net sellers after two sessions of heavy buying — a reversal of Thursday, when both sides bought about Rs 11,500 cr between them"
+      },
+      {
+        "name": "Commodities",
+        "value": "MCX gold Rs 1,25,445 per 10g (+2.60%) · MCX silver Rs 1,53,500 per kg (+5.25%)",
+        "direction": "up",
+        "change": "December futures, around 15:37 on Friday, per Kotak Neo. Silver up 5.25% in a session is the other half of a risk-off day. Kotak Neo's own crude prints are for later-dated contracts — Brent February 2027 at USD 92.34 and WTI January 2027 at USD 85.77 — which is why they sit below PTI's USD 97.19 spot-month figure rather than contradicting it"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Kotak Neo · closing bell, 27 November 2026",
+        "url": "https://www.kotakneo.com/news/market-news/sensex-and-nifty-fall-amid-domestic-and-global-headwinds/"
+      },
+      {
+        "label": "BusinessLine · Sensex sheds 989 pts as crude, rupee end four-week Nifty rally",
+        "url": "https://wellstrack.com/news/article/161456/sensex-sheds-989-pts-as-crude-rupee-end-4-week-nifty-rally-businessline"
+      },
+      {
+        "label": "PTI via Telangana Today · rupee's provisional close, 27 November 2026",
+        "url": "https://telanganatoday.com/strong-dollar-rising-crude-prices-drag-rupee-down-to-92-98"
+      },
+      {
+        "label": "Groww · FII/DII cash-market activity, 27 November 2026",
+        "url": "https://groww.in/fii-dii-data"
+      }
+    ]
+  },
+  "trends": [
+    {
+      "tag": "India",
+      "headline": "India's trade minister says the US agreement is \"close to culmination\" — and the number on the table is a tariff capped at 17% instead of raised to 25%",
+      "url": "https://bnnbloomberg.ca/tariffs/2026/11/27/india-us-trade-deal-is-nearing-completion-minister-says",
+      "subject": "Goyal says the long-delayed agreement with Washington is close to culmination, after Greer offered to cap the levy at 17 percent rather than lift it to 25 percent.",
+      "subtitle": "Reuters, reported by Khushi Malhotra, published on BNN Bloomberg, 27 November 2026",
+      "bullets": [
+        "Piyush Goyal, speaking online to an industry conference on Friday: \"The U.S. trade deal is close to culmination.\" The more informative line is the second one — \"The process and pathway, which was always something which held back finalizing the deal, is now taking some shape.\" What has been missing, on his account, was never the terms. It was the mechanism by which Washington makes them binding.",
+        "The arithmetic came from the other side on Wednesday. US Trade Representative Jamieson Greer said tariffs on Indian imports would be capped at 17% if an agreement is reached, and raised to 25% if it is not. Neither rate has an effective date attached.",
+        "Running underneath is a US capacity investigation. India's trade ministry says it is examining the USTR's notice, says it engaged \"constructively\", and told Washington that India has no structural excess capacity in any industry — while asking that trade concerns be settled inside the pact talks rather than beside them.",
+        "This is also Friday's market story, which is why it sits here rather than in the numbers above. The Sensex fell 989 points the same day, and the reporting put US tariff risk alongside crude and the rupee as the cause. A 17% cap is not good news in the abstract; it is only good news relative to 25%, and the market is pricing the gap."
+      ]
+    },
+    {
+      "tag": "Platforms",
+      "headline": "Canva has added a switch that hides every generative AI tool across the product, and a second one that pushes AI-made assets down its search results — three weeks after cutting 22% of its staff",
+      "url": "https://marketing-interactive.com/don-t-want-ai-in-your-designs-canva-now-lets-you-switch-it-off",
+      "subject": "Canva ships two free user-level controls: Generative AI Control hides generative tools platform-wide, and AI-Generated Content Control demotes AI assets in library search and recommendations.",
+      "subtitle": "Marketing-Interactive, Dhanya Vimalan, 23 November 2026",
+      "bullets": [
+        "Two settings, both free on Canva Free and Canva Pro. Generative AI Control, under Profile > Settings > Permissions, turns the generative tools off across the whole platform and hides them — reversible at any time. AI-Generated Content Control, under Profile > Your account > AI Personalisation, limits how much AI-generated material appears in library search results and recommendations. It does not touch designs you have already made.",
+        "The boundary they drew is the interesting part. Switching generative AI off leaves the assistive editing tools — Background Remover, Magic Grab — running, on the stated reasoning that those rearrange pixels that already exist rather than inventing new ones. Consequently using them does not attach an AI-generated label or the metadata that social platforms read, so a design does not get flagged as synthetic for having had its background removed.",
+        "The second setting exists because the library itself is now partly synthetic. Canva says some assets — abstract backgrounds, illustrations — are AI-generated and identified by metadata, and the control demotes them so that \"human-made templates, illustrations, and design elements stand out.\" A platform shipping a feature to help its human contributors outrank its own generated stock is a fairly precise statement about what happened to the stock library.",
+        "Context, which the trade press put in the same article: Canva's community has used its AI tools more than 38 billion times, and earlier this month the company restructured, cutting 22% of its workforce — about 1,271 people — during its first growth slowdown in a decade. One outside voice, MC&V co-founder Vinne Schifferstein Vidal, puts the existential version plainly: \"Canva built its business on democratising design\", and if AI-native tools keep improving, a dedicated design platform may stop being necessary at all. Giving users an off switch reads differently once you know that is the question in the room."
+      ]
+    },
+    {
+      "tag": "Wildcard",
+      "headline": "Einstein's 1905 account of a jostled particle assumes the random kicks are symmetric. For a quark moving at nearly light speed through the plasma of the early universe, they are not — the tails are tilted, and the kicks that slow it down are the common ones",
+      "url": "https://www.sflorg.com/2026/11/phy11052602.html",
+      "subject": "Heavy-quark transport in quark-gluon plasma turns out non-Gaussian beyond leading logarithm: the kick distribution is tilted, large decelerating kicks outnumber accelerating ones, and the medium behaves like a liquid.",
+      "subtitle": "Scientific Frontline on “Heavy Quark Transport Is Non-Gaussian beyond Leading Logarithm” in Physical Review Letters; Jean F. Du Plessis (MIT Center for Theoretical Physics) and Bruno Scheihing-Hitschfeld (UC Santa Barbara)",
+      "bullets": [
+        "Start with what is being extended. In 1905 Einstein explained the jitter Robert Brown had seen in pollen grains in 1827: a big particle is struck from every side by small ones, the strikes are random, and their sizes follow a bell curve. That assumption — symmetric, Gaussian kicks — is what makes the whole theory tractable, and it is the assumption nobody had checked for a particle moving at nearly the speed of light.",
+        "The test case is quark-gluon plasma: the state the universe was in for a few microseconds after the Big Bang, at trillion-degree temperatures, recreated in accelerators as droplets the size of an atomic nucleus that last tens of yoctoseconds — 10⁻²⁴ seconds. A heavy quark ploughing through it is the relativistic version of Brown's pollen grain, and heavy quarks are the only probe that survives long enough to carry information out.",
+        "The result. Working from the strong nuclear force, they computed the distribution of momentum changes for a heavy quark crossing a weakly interacting gas of quarks and gluons. It is bell-shaped only for small kicks. The tails are uneven — Du Plessis's word is \"tilted\" — and large kicks are more frequent than a Gaussian allows: \"these rare kicks are more common than the bell curve predicts.\" More specifically, the big kicks that slow the quark down, beyond what ordinary drag would account for, are more likely than equally big kicks that speed it up.",
+        "Why it matters beyond the formalism. The same tilted structure turned up across different plasma compositions, and they then found it sitting unremarked in an older strongly-coupled calculation — so it looks like a general feature rather than an artefact. The physical reading is that the medium is more strongly interacting than a Brownian gas picture implies: \"It's more like a liquid and less like a gas.\" The practical reading is that the shape of the tail, not just the average drag, is \"a new source of information carried by heavy quarks\" — which means existing data may already contain an answer nobody was asking it for. Funded by the DOE Office of Nuclear Physics, the NSF and the Simons Foundation."
+      ]
+    }
+  ],
+  "research": [
+    {
+      "tag": "Industry · Google Research",
+      "title": "Google Research pretrained a world model on 2.28 million person-weeks of Fitbit data so it can answer a counterfactual: if you changed this one habit, what would your next twelve weeks of physiology actually look like",
+      "url": "https://research.google/blog/using-wearables-to-enable-cardiovascular-kidney-metabolic-ckm-risk-profiling-for-personalized-coaching/",
+      "subject": "Coachable health age from consumer wearables plus SensorWM, an action-conditioned world model that forecasts twelve weeks of physiology under alternative habit choices and feeds an optimiser that writes the coaching plan.",
+      "subtitle": "Google Research blog, 11 November 2026; Zeinab Esmaeilpour and Ahmed A. Metwally; papers at arXiv:2611.08568 and arXiv:2603.27787",
+      "bullets": [
+        "Three pieces. Coachable health age (CHA) is a health-age number built only from things a consumer wearable measures passively — resting heart rate, daily steps, sleep duration, weekly Active Zone Minutes, optionally VO2max, sleep-schedule regularity and insulin resistance. The health age delta is CHA minus your actual age. SensorWM is an action-conditioned world model pretrained on about 2.28 million person-weeks of de-identified data from roughly 100,000 Fitbit users; given two weeks of baseline it forecasts 20 physiological markers twelve weeks out under different habit choices. A feasibility-constrained optimiser plus a language-model agent turn those simulations into a plan.",
+        "The validation is the part that makes it more than a dashboard. In All of Us (n = 22,748, over 68,000 person-years), healthy participants whose CHA exceeded their chronological age at baseline were significantly more likely to develop hypertension, cardiovascular disease or type 2 diabetes over the following eight years, and adding CHA to age, sex and BMI improved prediction — most for adults under 50. In a separate Fitbit cohort (n = 1,464) CHA fell over two years among users who sustained habit changes, which is the direction a coachable metric has to move.",
+        "The counterfactual machinery, concretely: SensorWM simulates 125 candidate twelve-week habit combinations per person and compares each against a status-quo projection, and the optimiser trades projected health-age reduction against how much that person can actually change and against safety limits. In the worked examples a flexible participant is given a target of −2.3 years and a constrained one −1.3. It reportedly beats general-purpose time-series models such as TimesFM, which is the relevant baseline.",
+        "Then they had humans grade it. Five certified lifestyle coaches and five board-certified physicians reviewed 49 participant profiles across five behavioural personas — 490 paired reviews. Coaches preferred the counterfactual-grounded plan as best overall in 71.4% of comparisons (p < 0.001) and judged it likelier to support long-term adherence in 71.0% (p < 0.001). Physicians rated 99.2% of plans within safe exercise-intensity limits and 97.6% accurate on physiological claims. Reviewers credited the side-by-side status-quo-versus-what-if contrast for the motivation, which is a finding about interface rather than modelling.",
+        "The organ-level half, and the caveat. Adding three blood markers — cholesterol-to-HDL ratio, eGFR, HOMA-IR — to wearable signals for 819 participants showed multi-organ ageing does not move as one thing: metabolic and cardiovascular strain often travel together, but early kidney decline frequently appears on its own. The CKM health-age gap correlated −0.58 with a modified Life's Essential 8 score and 0.65 with metabolic syndrome severity. Every evaluation here is offline and retrospective; the authors call the models research prototypes, not clinical diagnostic tools, and ask for prospective trials."
+      ]
+    },
+    {
+      "tag": "Academia · Columbia & UC Berkeley",
+      "title": "A hundred ordinary command-line jobs, run 53,100 times, settle an argument people have been having on vibes: the agent harness you pick barely matters, and the three best models finish 1.1 points apart",
+      "url": "https://arxiv.org/abs/2611.32946",
+      "subject": "ShellBench, a benchmark of one hundred ordinary command-line jobs in cluttered workspaces: the choice of agent harness barely shifts the pass rate, and the best three contenders finish 1.1 points apart.",
+      "subtitle": "arXiv 2611.32946, submitted 24 November 2026; Columbia University and UC Berkeley with co-authors at Nvidia, Red Hat and Paradigm; affiliations resolved via OpenAlex",
+      "bullets": [
+        "The design is the contribution. One hundred everyday tasks distilled from more than 10 million real user requests, each run in a deliberately realistic workspace — cluttered files, competing data sources — and graded on two axes rather than one: did it work, and was it dangerous. Most agent benchmarks score only completion, which is the wrong instrument for a tool holding your shell.",
+        "The headline result is deflationary and useful. Across five quite different harnesses, pass@1 ran from 42.9% to 45.2% — a 2.3-point spread, with little difference in the dangerous-action rate either. Claude Code sits at the bottom of that range and OpenClaw at the top, which is a smaller gap than most people's confidence about which wrapper they use.",
+        "At the top of the model table the differences almost vanish: the best three finish within 1.1 points. GPT-6 Astra leads at 62.5%. GPT-6.1 Sol gets 61.4% at roughly one-sixth of Astra's estimated token cost per attempt. One point of accuracy for six times the money is the trade most people are making daily without ever seeing it written down.",
+        "Scale and caveats. Twelve models, five harnesses, three reasoning levels, 53,100 rollouts, 17 pages. Only 20% of the tasks are designated for public release, so the rest stay held back against contamination — which also means you cannot fully reproduce it. OpenAlex resolves the senior affiliations to Columbia and UC Berkeley; the 22-author list also includes people at Nvidia, Red Hat and Paradigm, so read it as academically led rather than purely academic."
+      ]
+    }
+  ],
+  "wild": [
+    {
+      "tag": "Hospitality · Newcastle",
+      "headline": "Greggs has a hotel suite. It costs £335 a night, there is a gold rotary telephone beside the bed, and it summons sausage rolls on a silver platter",
+      "url": "https://www.greggs.com/news/prepare-for-sweet-dreams-at-the-greggs-suite-in-hotel-gotham",
+      "entities": [
+        "Greggs",
+        "Hotel Gotham Newcastle",
+        "Greggs Foundation"
+      ],
+      "subject": "The Greggs Suite at Hotel Gotham Newcastle: a bakery-chain-branded five-star hotel suite with a gold rotary phone for sausage-roll room service, from £335 a night, bookings opened 12 November 2026.",
+      "subtitle": "Greggs newsroom, bookings open from Thursday 12 November 2026; the suite is at Hotel Gotham Newcastle",
+      "bullets": [
+        "The physical joke is precise. The suite is in the newly opened Police Station part of Hotel Gotham Newcastle, decorated in blue and gold with embossed art deco detail and bespoke artwork, sleeps two, and starts at £335 a night. Beside the bed is a gold rotary phone that connects to a dedicated concierge, who brings fresh sausage rolls on a silver platter. Everything about the room is five-star except what it is for.",
+        "The merchandise count is the detail that gives the whole thing away as careful rather than cynical. The first 96 stays get plush robes, slippers, eye masks and tote bags — 96 because that is the number of layers in Greggs' puff pastry.",
+        "It is not purely a stunt economy. A portion of every booking goes to the Greggs Foundation, which runs grant programmes across the UK, and the company says it will give away eight overnight stays over the next two years, available only through the Greggs app — which makes the suite a two-year acquisition funnel with a sausage-roll hotline attached.",
+        "Worth noticing what the brand is actually buying. Greggs is the chain you go to when you have £2.20 and twenty minutes. Putting one room of it at £335 does not reposition the brand upwards; it makes the gap the point, and the gap is the thing people photograph."
+      ]
+    },
+    {
+      "tag": "Pharma · India",
+      "headline": "PharmEasy put a person inside a life-sized sugar cube and walked them down Indian streets with a QR code on their chest",
+      "url": "https://everythingexperiential.com/article/pharmeasy-takes-diabetes-awareness-to-the-streets-with-walking-sugar-cube-activation-633598",
+      "entities": [
+        "PharmEasy"
+      ],
+      "subject": "PharmEasy's 'The Walking Sugar Cube' street activation for World Diabetes Day 2026: a life-sized walking sugar cube carrying a scannable QR code that leads to diabetes warning signs and a blood-sugar test booking.",
+      "subtitle": "Everything Experiential on PharmEasy's World Diabetes Day activation, November 2026; Gaurav Verma (Chief Business Officer) and Dr Nikita Toshi (Head of Medical Content) quoted in the trade coverage",
+      "bullets": [
+        "The costume is the argument. A sugar cube is the one object everybody already understands as both harmless and the problem — you put two in your tea without thinking. Walking one down a street turns a quantity nobody tracks into a thing with a size, standing next to you.",
+        "The mechanics are deliberately short. The cube carries a scannable QR code; scanning it leads to the early warning signs of diabetes and, from there, to booking a blood sugar test. The line it runs on is \"This is your sign to not ignore the signs\" — which is doing double duty, since the thing you are literally looking at is a sign.",
+        "The timing is World Diabetes Day, 14 November, and the target is the least glamorous problem in Indian public health: not treatment, diagnosis. India's diabetes burden is largely undiagnosed, and the ask here is an annual blood sugar test by someone who has no symptoms and therefore no reason to book one.",
+        "Note on the ceiling of this kind of thing: street activations convert attention, not behaviour, and no reach, scan-rate or test-booking figures have been published. Judge it as a piece of design rather than a health intervention — which, as a piece of design, is better than most of what ran this month."
+      ]
+    },
+    {
+      "tag": "Food · Steubenville, Ohio",
+      "headline": "Steubenville, Ohio has spent twelve years filling its downtown with giant nutcrackers. Dunkin' has now added a 15-foot one made of doughnut",
+      "url": "https://www.heraldstaronline.com/news/community/2026/11/donutcracker-coming-to-steubenville/",
+      "entities": [
+        "Dunkin'",
+        "Historic Fort Steuben"
+      ],
+      "subject": "Dunkin' installs a 15-foot 'Donutcracker' at Historic Fort Steuben's Christmas at the Fort in Steubenville, Ohio from 27 November 2026, joining the city's street nutcracker collection.",
+      "subtitle": "The Herald Star, Steubenville, 27 November 2026; the Donutcracker runs through early December per a Dunkin' spokesperson",
+      "bullets": [
+        "The placement is what makes it work. Steubenville's nutcracker village opened for its twelfth season on 24 November and its displays run to 8 January; the giant nutcrackers lining the street are the reason anyone drives to Steubenville in December. Dunkin' did not build its own activation somewhere people already were — it built the right-shaped object and inserted it into an existing local tradition.",
+        "What it is: a 15-foot installation that brings Dunkin's holiday packaging to life, standing at Historic Fort Steuben as part of Christmas at the Fort, open from Friday 27 November and on display through early December, as a photo opportunity rather than anything you can buy from.",
+        "The commercial end is almost comically small. Exclusive Donutcracker merchandise is sold at exactly one location — the Dunkin' at 1987 Sunset Blvd — while supplies last. Free Donut Fridays also return for rewards members, with any beverage purchase, through 11 December.",
+        "The local programme around it, for scale: the visitor centre opens at 10am, the holiday market at 3pm, the city's tree blessing at 5pm, the lighting and fireworks at 6:15pm, and four separate acts on two stages including the Honkytonk Sweethearts and the Ron Retzer Trio. A national doughnut chain bought a slot in that, not a billboard."
+      ]
+    }
+  ],
+  "learn": {
+    "title": "Duty-free exists because of a legal fiction: a passenger changing planes has left one country without entering another, and is therefore standing nowhere. An Irish catering manager noticed that in 1947, built a souvenir kiosk on it, and then built the world's first free-trade zone on the same idea",
+    "subject": "The first duty-free shop: a catering manager at Shannon Airport lobbied for the Customs Free Airport Act so that transit passengers, who had left one country without entering another, could be sold untaxed goods; the same man later built the Shannon Free Zone that export processing zones everywhere copied.",
+    "tags": [
+      "Origin stories",
+      "Travel",
+      "Trade"
+    ],
+    "body": [
+      "Shannon, on the west coast of Ireland, was for about fifteen years one of the most important airports in the world, for a reason that has nothing to do with Ireland. Piston-engined aircraft could not cross the Atlantic without stopping, and Shannon was the most westerly point in Europe where you could put a long runway. So every transatlantic flight landed there to refuel, and a few hundred passengers at a time got out and stood around for an hour with nothing to do. Brendan O'Regan was the catering comptroller — he ran the restaurant. He had been in the same job at the Foynes flying-boat base before the runways existed, and he had been moved to Shannon in 1945 when the technology changed. His problem was that he had a captive crowd with money and no reason to spend it.",
+      "What he noticed is the thing worth keeping. A passenger in transit has gone through the exit formalities of the country they came from and has not entered Ireland. They are, in the only sense the law cares about, nowhere. And you cannot levy an import duty on goods that have not been imported anywhere. He lobbied the Irish government on exactly that argument, and the Customs Free Airport Act of 1947 made Shannon the first customs-free airport in the world. The first shop was a kiosk run by one woman, Kitty Downes, selling Irish souvenirs; accounts differ on whether it opened in 1947 or 1949, which is itself a sign of how little anyone thought of it at the time. A liquor shop followed around 1950. Nobody set out to invent the airport retail industry. Somebody wanted the people waiting for the Pan Am DC-4 to buy a scarf.",
+      "The second act is the one nobody tells you. O'Regan took the same insight — that land beside a runway can be legally held outside the country it is physically in — and scaled it up. In 1959 the Irish government set up the Shannon Free Airport Development Company and with it the Shannon Free Zone, roughly 600 acres next to the runway where goods could be landed, worked on and flown out without ever formally entering Ireland. It is generally regarded as the world's first modern export processing zone, and it was copied almost immediately: Kandla, in Kutch, opened in 1965 as the first such zone in Asia and the first in India, with Santacruz in Mumbai following in 1973. The next time you are in a departure lounge being sold perfume you do not need, the mildly absurd fact to hold onto is that the same loophole, pushed a little harder by the same man, is the ancestor of every SEZ in the country."
+    ]
+  },
+  "ideas": {
+    "prompt": "Ten everyday sounds worth recording before they disappear",
+    "items": [
+      {
+        "text": "A ceiling fan on its lowest setting, from directly underneath, including the first second when it starts."
+      },
+      {
+        "text": "The platform announcement at an Indian railway station, the full version, with the three-note chime and all four languages."
+      },
+      {
+        "text": "A pressure cooker's whistle heard from the next room, and the particular silence after someone goes to turn it off."
+      },
+      {
+        "text": "A mechanical keyboard being used by someone who is angry about something unrelated."
+      },
+      {
+        "text": "The handbrake of a parked autorickshaw, the ratchet of it, which has no electronic equivalent and so has no successor."
+      },
+      {
+        "text": "A library's date stamp hitting a card, recorded close enough to catch the wood."
+      },
+      {
+        "text": "Chalk on a blackboard being used properly, by someone who learned on blackboards, writing fast."
+      },
+      {
+        "text": "An optical drive spinning up and deciding whether it recognises the disc.",
+        "why": "A recurring complaint in the Ask HN thread on things that should exist but aren't fundable is that hardware is designed to be replaced rather than kept; the sounds go with the hardware."
+      },
+      {
+        "text": "A street vendor's call for one specific vegetable, recorded in three different neighbourhoods of the same city for comparison."
+      },
+      {
+        "text": "Your parents' landline ringing, in the room where it sits, with nobody picking it up.",
+        "why": "The sound only exists while the handset does; nobody will record it on purpose and nothing will reproduce it."
+      }
+    ]
+  }
+}

@@ -11876,6 +11876,140 @@
         "maritimegateway.com",
         "ruralnewsgroup.co.nz"
       ]
+    },
+    {
+      "date": "2026-11-28",
+      "issue": 1,
+      "quote_text": [
+        "Regression analysis is the hydrogen bomb of the statistics arsenal."
+      ],
+      "quote_author": [
+        "Charles Wheelan"
+      ],
+      "idea_text": [
+        "A ceiling fan on its lowest setting, from directly underneath, including the first second when it starts.",
+        "The platform announcement at an Indian railway station, the full version, with the three-note chime and all four languages.",
+        "A pressure cooker's whistle heard from the next room, and the particular silence after someone goes to turn it off.",
+        "A mechanical keyboard being used by someone who is angry about something unrelated.",
+        "The handbrake of a parked autorickshaw, the ratchet of it, which has no electronic equivalent and so has no successor.",
+        "A library's date stamp hitting a card, recorded close enough to catch the wood.",
+        "Chalk on a blackboard being used properly, by someone who learned on blackboards, writing fast.",
+        "An optical drive spinning up and deciding whether it recognises the disc.",
+        "A street vendor's call for one specific vegetable, recorded in three different neighbourhoods of the same city for comparison.",
+        "Your parents' landline ringing, in the room where it sits, with nobody picking it up."
+      ],
+      "idea_prompt": [
+        "Ten everyday sounds worth recording before they disappear"
+      ],
+      "tip_text": [
+        "Keep your review rules somewhere the agent cannot edit them. The Claude Code team reads its review checklist \"from the base or default branch, never from the pull request's changes\" — otherwise a diff can quietly relax the check that was meant to catch it. Same reason they pin a review to a specific commit: \"a passing review on an out-of-date commit means nothing.\""
+      ],
+      "hn_id": [
+        "50660180",
+        "50663595",
+        "50664325",
+        "50659640",
+        "50661646"
+      ],
+      "link": [
+        "https://janlukas.blog/posts/ai-self-hosting",
+        "https://construct22.com/",
+        "https://news.ycombinator.com/item?id=50664325",
+        "https://lia.mg/posts/measuring-company-culture-with-slack-emoji/",
+        "https://blog.ktz.me/black-friday-hard-drive-prices-are-messed-up/",
+        "https://bnnbloomberg.ca/tariffs/2026/11/27/india-us-trade-deal-is-nearing-completion-minister-says",
+        "https://marketing-interactive.com/don-t-want-ai-in-your-designs-canva-now-lets-you-switch-it-off",
+        "https://www.sflorg.com/2026/11/phy11052602.html",
+        "https://www.greggs.com/news/prepare-for-sweet-dreams-at-the-greggs-suite-in-hotel-gotham",
+        "https://everythingexperiential.com/article/pharmeasy-takes-diabetes-awareness-to-the-streets-with-walking-sugar-cube-activation-633598",
+        "https://www.heraldstaronline.com/news/community/2026/11/donutcracker-coming-to-steubenville/",
+        "https://research.google/blog/using-wearables-to-enable-cardiovascular-kidney-metabolic-ckm-risk-profiling-for-personalized-coaching/",
+        "https://arxiv.org/abs/2611.32946"
+      ],
+      "subject": [
+        "Goyal says the long-delayed agreement with Washington is close to culmination, after Greer offered to cap the levy at 17 percent rather than lift it to 25 percent.",
+        "Canva ships two free user-level controls: Generative AI Control hides generative tools platform-wide, and AI-Generated Content Control demotes AI assets in library search and recommendations.",
+        "Heavy-quark transport in quark-gluon plasma turns out non-Gaussian beyond leading logarithm: the kick distribution is tilted, large decelerating kicks outnumber accelerating ones, and the medium behaves like a liquid.",
+        "The Greggs Suite at Hotel Gotham Newcastle: a bakery-chain-branded five-star hotel suite with a gold rotary phone for sausage-roll room service, from £335 a night, bookings opened 12 November 2026.",
+        "PharmEasy's 'The Walking Sugar Cube' street activation for World Diabetes Day 2026: a life-sized walking sugar cube carrying a scannable QR code that leads to diabetes warning signs and a blood-sugar test booking.",
+        "Dunkin' installs a 15-foot 'Donutcracker' at Historic Fort Steuben's Christmas at the Fort in Steubenville, Ohio from 27 November 2026, joining the city's street nutcracker collection.",
+        "Coachable health age from consumer wearables plus SensorWM, an action-conditioned world model that forecasts twelve weeks of physiology under alternative habit choices and feeds an optimiser that writes the coaching plan.",
+        "ShellBench, a benchmark of one hundred ordinary command-line jobs in cluttered workspaces: the choice of agent harness barely shifts the pass rate, and the best three contenders finish 1.1 points apart.",
+        "The first duty-free shop: a catering manager at Shannon Airport lobbied for the Customs Free Airport Act so that transit passengers, who had left one country without entering another, could be sold untaxed goods; the same man later built the Shannon Free Zone that export processing zones everywhere copied."
+      ],
+      "brand": [
+        "Greggs",
+        "Hotel Gotham Newcastle",
+        "Greggs Foundation",
+        "PharmEasy",
+        "Dunkin'",
+        "Historic Fort Steuben",
+        "Steubenville"
+      ],
+      "brand_mention": [
+        "Police Station",
+        "Hotel Gotham Newcastle",
+        "Greggs",
+        "Greggs Foundation",
+        "QR",
+        "Diabetes Day",
+        "Steubenville",
+        "Dunkin",
+        "Historic Fort Steuben",
+        "Christmas",
+        "Fort",
+        "Exclusive Donutcracker",
+        "Blvd",
+        "Free Donut Fridays",
+        "Honkytonk Sweethearts",
+        "Ron Retzer Trio"
+      ],
+      "section_subjects": [
+        [
+          "trends",
+          "India's trade minister says the US agreement is \"close to culmination\" — and the number on the table is a tariff capped at 17% instead of raised to 25%"
+        ],
+        [
+          "trends",
+          "Canva has added a switch that hides every generative AI tool across the product, and a second one that pushes AI-made assets down its search results — three weeks after cutting 22% of its staff"
+        ],
+        [
+          "trends",
+          "Einstein's 1905 account of a jostled particle assumes the random kicks are symmetric. For a quark moving at nearly light speed through the plasma of the early universe, they are not — the tails are tilted, and the kicks that slow it down are the common ones"
+        ],
+        [
+          "wild",
+          "Greggs has a hotel suite. It costs £335 a night, there is a gold rotary telephone beside the bed, and it summons sausage rolls on a silver platter"
+        ],
+        [
+          "wild",
+          "PharmEasy put a person inside a life-sized sugar cube and walked them down Indian streets with a QR code on their chest"
+        ],
+        [
+          "wild",
+          "Steubenville, Ohio has spent twelve years filling its downtown with giant nutcrackers. Dunkin' has now added a 15-foot one made of doughnut"
+        ],
+        [
+          "research",
+          "Google Research pretrained a world model on 2.28 million person-weeks of Fitbit data so it can answer a counterfactual: if you changed this one habit, what would your next twelve weeks of physiology actually look like"
+        ],
+        [
+          "research",
+          "A hundred ordinary command-line jobs, run 53,100 times, settle an argument people have been having on vibes: the agent harness you pick barely matters, and the three best models finish 1.1 points apart"
+        ],
+        [
+          "learn",
+          "Duty-free exists because of a legal fiction: a passenger changing planes has left one country without entering another, and is therefore standing nowhere. An Irish catering manager noticed that in 1947, built a souvenir kiosk on it, and then built the world's first free-trade zone on the same idea"
+        ]
+      ],
+      "editorial_domains": [
+        "bnnbloomberg.ca",
+        "everythingexperiential.com",
+        "greggs.com",
+        "heraldstaronline.com",
+        "marketing-interactive.com",
+        "sflorg.com"
+      ]
     }
   ]
 }
